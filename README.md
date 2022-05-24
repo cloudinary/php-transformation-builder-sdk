@@ -1,7 +1,7 @@
 [![Build Status](https://app.travis-ci.com/cloudinary/php-transformation-builder-sdk.svg)](https://app.travis-ci.com/cloudinary/php-transformation-builder-sdk) 
 [![license](https://img.shields.io/github/license/cloudinary/php-transformation-builder-sdk.svg?maxAge=2592000)](https://github.com/cloudinary/php-transformation-builder-sdk/blob/master/LICENSE) 
-[![Packagist](https://img.shields.io/packagist/v/cloudinary/transformation-builder-sdk.svg?maxAge=2592000)](https://packagist.org/packages/cloudinary/php-transformation-builder-sdk) 
-[![Packagist](https://img.shields.io/packagist/dt/cloudinary/transformation-builder-sdk.svg?maxAge=2592000)](https://packagist.org/packages/cloudinary/php-transformation-builder-sdk/stats)
+[![Packagist](https://img.shields.io/packagist/v/cloudinary/transformation-builder-sdk.svg?maxAge=2592000)](https://packagist.org/packages/cloudinary/transformation-builder-sdk) 
+[![Packagist](https://img.shields.io/packagist/dt/cloudinary/transformation-builder-sdk.svg?maxAge=2592000)](https://packagist.org/packages/cloudinary/transformation-builder-sdk/stats)
 
 Cloudinary PHP Transformation Builder SDK
 ==================
