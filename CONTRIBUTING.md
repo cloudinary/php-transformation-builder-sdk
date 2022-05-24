@@ -4,17 +4,17 @@ Contributions are welcome and greatly appreciated!
 
 ## Reporting a bug
 
-- Make sure that the bug was not already reported by searching in GitHub under [Issues](https://github.com/cloudinary/cloudinary_php) and the Cloudinary [Support forms](https://support.cloudinary.com).
-- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/cloudinary/cloudinary_php/issues/new).
+- Make sure that the bug was not already reported by searching in GitHub under [Issues](https://github.com/cloudinary/php-transformation-builder-sdk) and the Cloudinary [Support forms](https://support.cloudinary.com).
+- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/cloudinary/php-transformation-builder-sdk/issues/new).
   Be sure to include a **title and clear description**, as relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
-- If you require assistance in the implementation of cloudinary_php please [submit a request](https://support.cloudinary.com/hc/en-us/requests/new) on Cloudinary's site.
+- If you require assistance in the implementation of php-transformation-builder-sdk please [submit a request](https://support.cloudinary.com/hc/en-us/requests/new) on Cloudinary's site.
 
 ## Requesting a feature
 
 We would love to receive your requests!
 Please be aware that the library is used in a wide variety of environments and that some features may not be applicable to all users.
 
-- Open a GitHub [issue](https://github.com/cloudinary/cloudinary_php) describing the benefits (and possible drawbacks) of the requested feature
+- Open a GitHub [issue](https://github.com/cloudinary/php-transformation-builder-sdk) describing the benefits (and possible drawbacks) of the requested feature
 
 ## Fixing a bug / Implementing a new feature
 
@@ -31,12 +31,12 @@ When contributing code, either to fix a bug or to implement a new feature, pleas
 
 #### Fork the Project
 
-Fork [project on Github](https://github.com/cloudinary/cloudinary_php) and check your copy.
+Fork [project on Github](https://github.com/cloudinary/php-transformation-builder-sdk) and check your copy.
 
 ```
-git clone https://github.com/contributor/cloudinary_php.git
-cd cloudinary_php
-git remote add upstream https://github.com/cloudinary/cloudinary_php.git
+git clone https://github.com/contributor/php-transformation-builder-sdk.git
+cd php-transformation-builder-sdk
+git remote add upstream https://github.com/cloudinary/php-transformation-builder-sdk.git
 ```
 
 #### Create a Topic Branch
@@ -106,7 +106,7 @@ git push origin my-feature-branch
 
 #### Make a Pull Request
 
-Go to https://github.com/contributor/cloudinary_php and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are normally reviewed within a few days.
+Go to https://github.com/contributor/php-transformation-builder-sdk and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are normally reviewed within a few days.
 Ensure the PR description clearly describes the problem and solution. Include relevant issue number if applicable.
 
 #### Rebase

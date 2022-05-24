@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="cloudinary_php coding standard">
-    <description>cloudinary_php coding standard</description>
+<ruleset name="php-transformation-builder-sdk coding standard">
+    <description>php-transformation-builder-sdk coding standard</description>
 
     <!-- display progress -->
     <arg value="p"/>
