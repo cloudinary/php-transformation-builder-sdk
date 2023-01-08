@@ -108,12 +108,11 @@ final class ResizeTest extends TestCase
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Liquid Rescaling is not supported for
-     */
     public function testLiquidForUnsupportedCropMode()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Liquid Rescaling is not supported for');
+
         Scale::limitFit(100, 200)->liquidRescaling();
     }
 
