@@ -185,4 +185,20 @@ trait MiscEffectTrait
     {
         return new Shadow($strength, $position, $color);
     }
+
+    /**
+     * Adds a natural looking shadow to an image.
+     *
+     * @param int $azimuth   Value in range 0 - 360 (degrees).
+     * @param int $elevation Value in range 0 - 90 (degrees).
+     * @param int $spread    Value in range 0 -100.
+     *
+     * @return DropShadow
+     *
+     * @see \Cloudinary\Transformation\DropShadow
+     */
+    public static function dropShadow($azimuth = null, $elevation = null, $spread = null)
+    {
+        return new DropShadow($azimuth, $elevation, $spread);
+    }
 }
