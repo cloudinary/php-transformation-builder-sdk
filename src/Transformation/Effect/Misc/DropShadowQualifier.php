@@ -34,7 +34,7 @@ class DropShadowQualifier extends EffectQualifier
     }
 
     /**
-     * Sets the azimuth of the drop shadow effect.
+     * Sets the direction the light is coming from to cause the shadow effect. 
      *
      * @param int $azimuth Value in range 0 - 360 (degrees).
      *
@@ -48,7 +48,7 @@ class DropShadowQualifier extends EffectQualifier
     }
 
     /**
-     *  Sets the elevation of the drop shadow effect.
+     *  Sets the height of the light source above the 'ground' to cause the shadow effect.
      *
      * @param int $elevation Value in range 0 - 90 (degrees).
      *
@@ -62,7 +62,7 @@ class DropShadowQualifier extends EffectQualifier
     }
 
     /**
-     * Sets the spread of the drop shadow effect.
+     * Sets the spread of the light source. A small number means 'point' light. A larger number means 'area' light. 
      *
      * @param int $spread Value in range 0 -100.
      *
