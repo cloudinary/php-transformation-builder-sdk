@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Test\Unit\Transformation\Common;
 
+use Cloudinary\Test\TransformationTestCase;
 use Cloudinary\Transformation\Argument\Color;
 use Cloudinary\Transformation\Argument\PointValue;
 use Cloudinary\Transformation\ArtisticFilter;
@@ -27,12 +28,11 @@ use Cloudinary\Transformation\StyleTransfer;
 use Cloudinary\Transformation\WhiteBalance;
 use Cloudinary\Transformation\Xmp;
 use OutOfRangeException;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Class SampleTest
  */
-final class EffectTest extends TestCase
+final class EffectTest extends TransformationTestCase
 {
     protected $effectLevel = 17;
     protected $effectNegativeLevel = -17;
@@ -295,6 +295,26 @@ final class EffectTest extends TestCase
         self::assertEquals(
             'co_green,e_shadow:17,x_30,y_40',
             (string)Effect::shadow()->strength(17)->offset(30, 40)->color(Color::GREEN)
+        );
+    }
+
+    public function testDropShadow()
+    {
+        self::assertStrEquals(
+            'e_dropshadow',
+            Effect::dropShadow()
+        );
+        self::assertStrEquals(
+            'e_dropshadow:elevation_11',
+            Effect::dropShadow()->elevation(11)
+        );
+        self::assertEquals(
+            'e_dropshadow:azimuth_10;elevation_11;spread_12',
+            Effect::dropShadow()->azimuth(10)->elevation(11)->spread(12)
+        );
+        self::assertEquals(
+            'e_dropshadow:azimuth_10;elevation_11;spread_12',
+            Effect::dropShadow()->spread(12)->elevation(11)->azimuth(10)
         );
     }
 
