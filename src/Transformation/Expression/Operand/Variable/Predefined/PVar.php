@@ -96,7 +96,7 @@ class PVar extends Expression
     public function __construct($name)
     {
         if (empty($name) || ! self::isPredefinedVariable($name)) {
-            throw new InvalidArgumentException("Invalid predefined variable name: '${name}'");
+            throw new InvalidArgumentException("Invalid predefined variable name: '{$name}'");
         }
 
         parent::__construct($name);
