@@ -17,6 +17,7 @@ use Cloudinary\Transformation\ArtisticFilter;
 use Cloudinary\Transformation\Cartoonify;
 use Cloudinary\Transformation\Dither;
 use Cloudinary\Transformation\Effect;
+use Cloudinary\Transformation\ForegroundObject;
 use Cloudinary\Transformation\GradientFade;
 use Cloudinary\Transformation\PixelEffect;
 use Cloudinary\Transformation\Position;
@@ -34,7 +35,7 @@ use OutOfRangeException;
  */
 final class EffectTest extends TransformationTestCase
 {
-    protected $effectLevel = 17;
+    protected $effectLevel         = 17;
     protected $effectNegativeLevel = -17;
 
     public function testColorEffects()
@@ -265,6 +266,48 @@ final class EffectTest extends TransformationTestCase
         self::assertEquals(
             'e_bgremoval:red',
             (string)PixelEffect::removeBackground()->colorToRemove(Color::red())
+        );
+    }
+
+    public function testBackgroundRemoval()
+    {
+        self::assertEquals(
+            'e_background_removal',
+            (string)Effect::backgroundRemoval()
+        );
+
+        self::assertEquals(
+            'e_background_removal',
+            (string)Effect::backgroundRemoval()->fineEdges(null)
+        );
+
+        self::assertEquals(
+            'e_background_removal:fineedges_y',
+            (string)Effect::backgroundRemoval()->fineEdges()
+        );
+
+        self::assertEquals(
+            'e_background_removal:fineedges_y',
+            (string)Effect::backgroundRemoval()->fineEdges(true)
+        );
+
+        self::assertEquals(
+            'e_background_removal:fineedges_y',
+            (string)Effect::backgroundRemoval()->fineEdges('y')
+        );
+
+        self::assertEquals(
+            'e_background_removal:fineedges_n',
+            (string)Effect::backgroundRemoval()->fineEdges(false)
+        );
+
+        self::assertEquals(
+            'e_background_removal:fineedges_y;hints_(cat;dog;bicycle)',
+            (string)Effect::backgroundRemoval()->fineEdges()->hints(
+                ForegroundObject::cat(),
+                ForegroundObject::DOG,
+                'bicycle'
+            )
         );
     }
 

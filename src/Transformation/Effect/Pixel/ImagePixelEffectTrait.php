@@ -69,6 +69,23 @@ trait ImagePixelEffectTrait
     }
 
     /**
+     * Uses the Cloudinary AI Background Removal add-on to make the background of an image transparent.
+     *
+     *
+     * @param bool|null $fineEdges        Enables detailed background removal around a foreground object with fine
+     *                                    detail around its edges.
+     * @param array     $hints            A list of foreground objects to keep.
+     *
+     * @return BackgroundRemoval
+     *
+     * @see \Cloudinary\Transformation\BackgroundRemoval
+     */
+    public static function backgroundRemoval($fineEdges = null, $hints = [])
+    {
+        return new BackgroundRemoval($fineEdges, $hints);
+    }
+
+    /**
      * Applies an ordered dither filter to the image.
      *
      * Use the constants defined in \Cloudinary\Transformation\OrderedDither for $level.
