@@ -302,6 +302,11 @@ final class EffectTest extends TransformationTestCase
         );
 
         self::assertEquals(
+            'e_background_removal:fineedges_y;hints_(cat)',
+            (string)Effect::backgroundRemoval()->fineEdges()->hints(ForegroundObject::cat())
+        );
+
+        self::assertEquals(
             'e_background_removal:fineedges_y;hints_(cat;dog;bicycle)',
             (string)Effect::backgroundRemoval()->fineEdges()->hints(
                 ForegroundObject::cat(),
