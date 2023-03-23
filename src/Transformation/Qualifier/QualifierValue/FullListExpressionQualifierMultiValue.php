@@ -29,11 +29,11 @@ class FullListExpressionQualifierMultiValue extends ListExpressionQualifierMulti
      */
     public function __toString()
     {
-        $value = parent::__toString();
-        if (StringUtils::contains($value, static::VALUE_DELIMITER)) {
-            return '(' . $value . ')';
+        $string = parent::__toString();
+        if (!empty($string)) {
+            return '(' . $string . ')';
         }
 
-        return $value;
+        return $string;
     }
 }
