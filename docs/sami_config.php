@@ -13,11 +13,11 @@ return new Sami(
     [
         'theme'                => 'cloudinary',
         'template_dirs'        => [$docsDir . 'themes'],
-        'title'                => 'Cloudinary PHP Transformation Builder SDK',
+        'title'                => 'Cloudinary PHP Transformation Builder',
         'version'              => '1.2.0',
         'build_dir'            => $docsDir . 'build',
         'cache_dir'            => $docsDir . 'cache',
-        'default_opened_level' => 1,
+        'default_opened_level' => 2,
         'filter'               => new CloudinaryFilter(),
     ]
 );

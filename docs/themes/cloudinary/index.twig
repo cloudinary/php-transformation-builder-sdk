@@ -1,0 +1,23 @@
+{% from "macros.twig" import render_classes %}
+
+{% set extension = 'class.twig' %}
+{% set namespace = 'Cloudinary\\Transformation\\' %}
+{% set subnamespaces = [] %}
+{% set exceptions = [] %}
+
+{% extends extension %}
+
+{% block page_content %}
+
+    <div class="page-header">
+        <h1> {{ project.config('title') }}</h1>
+    </div>
+
+    {% if classes %}
+        <h2>Classes</h2>
+        {{ render_classes(classes) }}
+    {% endif %}
+
+{% endblock %}
+
+{% block body_class 'index' %}
