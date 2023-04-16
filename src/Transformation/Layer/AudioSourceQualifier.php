@@ -13,17 +13,17 @@ namespace Cloudinary\Transformation;
 use Cloudinary\ClassUtils;
 
 /**
- * Class VideoSourceQualifier
+ * Class AudioSourceQualifier
  */
-class VideoSourceQualifier extends BaseSourceQualifier
+class AudioSourceQualifier extends BaseSourceQualifier
 {
     /**
      * @var string $sourceType The type of the layer.
      */
-    protected $sourceType = 'video';
+    protected $sourceType = 'audio';
 
     /**
-     * VideoSourceQualifier constructor.
+     * AudioSourceQualifier constructor.
      *
      * @param $source
      */
@@ -31,17 +31,17 @@ class VideoSourceQualifier extends BaseSourceQualifier
     {
         parent::__construct();
 
-        $this->video($source);
+        $this->audio($source);
     }
 
     /**
-     * Sets the video source.
+     * Sets the audio source.
      *
-     * @param SourceValue|string $source The video source.
+     * @param SourceValue|string $source The audio source.
      *
      * @return $this
      */
-    public function video($source)
+    public function audio($source)
     {
         $this->value->setValue(ClassUtils::verifyInstance($source, SourceValue::class));
 

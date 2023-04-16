@@ -27,22 +27,15 @@ abstract class BaseSourceContainer extends BaseAction
     protected $source;
 
     /**
-     * @var Position $position Layer position.
-     */
-    protected $position;
-
-    /**
-     * BaseLayerContainer constructor.
+     * BaseSourceContainer constructor.
      *
      * @param BaseSource|string $source   The source.
-     * @param Position          $position Layer position.
      */
-    public function __construct($source = null, $position = null)
+    public function __construct($source = null)
     {
         parent::__construct();
 
         $this->source($source);
-        $this->position($position);
     }
 
     /**
@@ -53,15 +46,6 @@ abstract class BaseSourceContainer extends BaseAction
      * @return static
      */
     abstract public function source($source);
-
-    /**
-     * Sets the source position.
-     *
-     * @param Position $position The Position of the layer.
-     *
-     * @return static
-     */
-    abstract public function position($position = null);
 
     /**
      * Sets stack position of the source.
@@ -100,7 +84,6 @@ abstract class BaseSourceContainer extends BaseAction
     {
         $sourceQualifiers     = $this->source ? $this->source->getStringQualifiers() : [];
         $sourceTransformation = $this->source ? $this->source->getTransformation() : null;
-        $positionQualifiers   = $this->position ? $this->position->getStringQualifiers() : [];
         $additionalQualifiers = $this->getStringQualifiers();
 
         $additionalQualifiers [] = Flag::layerApply();
@@ -108,7 +91,7 @@ abstract class BaseSourceContainer extends BaseAction
         return [
             'source'         => $sourceQualifiers,
             'transformation' => $sourceTransformation,
-            'additional'     => ArrayUtils::mergeNonEmpty($positionQualifiers, $additionalQualifiers),
+            'additional'     => $additionalQualifiers,
         ];
     }
 
@@ -131,13 +114,12 @@ abstract class BaseSourceContainer extends BaseAction
     /**
      * Serializes to json.
      *
-     * @return mixed
+     * @return array
      */
     public function jsonSerialize()
     {
         return [
             'source'   => $this->source,
-            'position' => $this->position,
         ];
     }
 }

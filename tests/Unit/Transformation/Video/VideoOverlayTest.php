@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Test\Unit\Transformation\Video;
 
+use Cloudinary\Transformation\AudioSource;
 use Cloudinary\Transformation\Compass;
 use Cloudinary\Transformation\CompassPosition;
 use Cloudinary\Transformation\Concatenate;
@@ -17,6 +18,8 @@ use Cloudinary\Transformation\Crop;
 use Cloudinary\Transformation\Fill;
 use Cloudinary\Transformation\Gravity;
 use Cloudinary\Transformation\ImageSource;
+use Cloudinary\Transformation\Overlay;
+use Cloudinary\Transformation\Source;
 use Cloudinary\Transformation\Timeline;
 use Cloudinary\Transformation\VideoEdit;
 use Cloudinary\Transformation\VideoOverlay;
@@ -39,7 +42,7 @@ final class VideoOverlayTest extends TestCase
 
         $il = (new ImageSource('test'))->transformation($t);
 
-        $p = new CompassPosition(Compass::southWest(), 17, 19);
+        $p   = new CompassPosition(Compass::southWest(), 17, 19);
         $tlp = Timeline::position(0, 10);
 
         $expected = "l_test/$tExpected/eo_10,fl_layer_apply,g_south_west,so_0,x_17,y_19";
@@ -103,6 +106,47 @@ final class VideoOverlayTest extends TestCase
                                ->trim(Timeline::position(2, 5))
                                ->resize($resize)
                 )
+        );
+    }
+
+    public function testAudioOverlay()
+    {
+        self::assertEquals(
+            "l_audio:chopin/fl_layer_apply",
+            (string)(new VideoTransformation())
+                ->overlay(Overlay::audioSource('chopin'))
+        );
+
+        self::assertEquals(
+            "l_audio:chopin/eo_5,fl_layer_apply,so_2",
+            (string)(new VideoTransformation())
+                ->overlay(Overlay::audioSource('chopin')->timeline(Timeline::position(2, 5)))
+        );
+
+        self::assertEquals(
+            "l_audio:chopin/e_volume:50/fl_layer_apply",
+            (string)(new VideoTransformation())
+                ->overlay(
+                    Overlay::audioSource('')
+                           ->source(
+                               VideoSource::audio('chopin')
+                                          ->videoEdit(VideoEdit::volume(50))
+                           )
+                )
+        );
+
+        self::assertEquals(
+            "l_audio:chopin/fl_layer_apply",
+            (string)(new VideoTransformation())
+                ->overlay(
+                    Overlay::source(Source::audio('chopin'))
+                )
+        );
+
+        self::assertEquals(
+            "fl_splice,l_audio:chopin/fl_layer_apply",
+            (string)(new VideoTransformation())
+                ->concatenate(Concatenate::audioSource('chopin'))
         );
     }
 }

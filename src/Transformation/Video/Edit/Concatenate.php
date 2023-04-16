@@ -44,6 +44,18 @@ class Concatenate extends VideoOverlay
     }
 
     /**
+     * Concatenate audio.
+     *
+     * @param mixed $source The audio source.
+     *
+     * @return AudioSource
+     */
+    public static function audioSource($source)
+    {
+        return ClassUtils::verifyInstance($source, AudioSource::class);
+    }
+
+    /**
      * Concatenate image.
      *
      * @param mixed $source The image source.
