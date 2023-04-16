@@ -13,7 +13,7 @@ namespace Cloudinary\Transformation;
 use Cloudinary\ClassUtils;
 
 /**
- * Defines how to manipulate a video layer.
+ * Defines how to manipulate an audio layer.
  *
  * **Learn more**: <a
  * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_video_overlays" target="_blank">
@@ -21,25 +21,23 @@ use Cloudinary\ClassUtils;
  *
  * @api
  */
-class VideoSource extends AssetBasedSource
+class AudioSource extends AssetBasedSource
 {
-    use VideoTransformationTrait;
-    use VideoSourceTrait;
+    use VideoTransformationTrait; // FIXME: keep only relevant audio transformations.
     use AudioSourceTrait;
-    use ImageSourceTrait;
 
     /**
-     * VideoLayer constructor.
+     * AudioSource constructor.
      *
      * @param $source
      */
     public function __construct($source)
     {
-        parent::__construct(ClassUtils::verifyInstance($source, VideoSourceQualifier::class));
+        parent::__construct(ClassUtils::verifyInstance($source, AudioSourceQualifier::class));
     }
 
     /**
-     * Getter for the video transformation.
+     * Getter for the audio (video) transformation.
      *
      * Creates a new VideoTransformation if not initialized.
      *
@@ -59,16 +57,29 @@ class VideoSource extends AssetBasedSource
     /**
      * Getter for the layer qualifier.
      *
-     * @return VideoSourceQualifier
+     * @return AudioSourceQualifier
      *
      * @internal
      */
     protected function getSourceQualifier()
     {
         if (! isset($this->qualifiers['source'])) {
-            $this->qualifiers['source'] = new VideoSourceQualifier(null);
+            $this->qualifiers['source'] = new AudioSourceQualifier(null);
         }
 
         return $this->qualifiers['source'];
+    }
+
+
+    /**
+     * Named constructor.
+     *
+     * @param BaseSource|string $source The layer source.
+     *
+     * @return static
+     */
+    protected static function createWithSource($source)
+    {
+        return $source;
     }
 }

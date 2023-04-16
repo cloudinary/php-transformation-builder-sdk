@@ -25,4 +25,5 @@ abstract class Source
 {
     use ImageSourceTrait;
     use VideoSourceTrait;
+    use AudioSourceTrait;
 }

@@ -14,15 +14,15 @@ use Cloudinary\ArrayUtils;
 use Cloudinary\ClassUtils;
 
 /**
- * Defines how the video layer is applied.
+ * Defines how the audio layer is applied.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_video_overlays" target="_blank">
- * Video overlays</a>
+ * href="https://cloudinary.com/documentation/video_layers#audio_overlays" target="_blank">
+ * Audio overlays</a>
  *
  * @api
  */
-class VideoOverlay extends BasePositionalSourceContainer
+class AudioOverlay extends BaseSourceContainer
 {
     /**
      * @var Timeline $timeline The timeline position of the overlay.
@@ -33,15 +33,13 @@ class VideoOverlay extends BasePositionalSourceContainer
      * BaseLayerContainer constructor.
      *
      * @param BaseSource|string $source
-     * @param BasePosition|null $position
      * @param Timeline|null     $timeline
      */
     public function __construct(
         $source = null,
-        $position = null,
         $timeline = null
     ) {
-        parent::__construct($source, $position);
+        parent::__construct($source);
 
         $this->timeline($timeline);
     }
@@ -51,7 +49,7 @@ class VideoOverlay extends BasePositionalSourceContainer
      *
      * @param Timeline|null $timeline The timeline position of the overlay.
      *
-     * @return BasePositionalSourceContainer
+     * @return AudioOverlay
      */
     public function timeline(Timeline $timeline = null)
     {
@@ -73,18 +71,6 @@ class VideoOverlay extends BasePositionalSourceContainer
     }
 
     /**
-     * Indicates that the video should be used as a cutter for the main video.
-     *
-     * @return $this
-     */
-    public function cutter()
-    {
-        $this->source->setFlag(LayerFlag::cutter());
-
-        return $this;
-    }
-
-    /**
      * Sets the source.
      *
      * @param BaseSource $source The source.
@@ -93,21 +79,7 @@ class VideoOverlay extends BasePositionalSourceContainer
      */
     public function source($source)
     {
-        $this->source = ClassUtils::verifyInstance($source, BaseSource::class, VideoSource::class);
-
-        return $this;
-    }
-
-    /**
-     * Sets the layer position.
-     *
-     * @param Position $position The Position of the layer.
-     *
-     * @return static
-     */
-    public function position($position = null)
-    {
-        $this->position = ClassUtils::verifyInstance($position, BasePosition::class, AbsolutePosition::class);
+        $this->source = ClassUtils::verifyInstance($source, BaseSource::class, AudioSource::class);
 
         return $this;
     }

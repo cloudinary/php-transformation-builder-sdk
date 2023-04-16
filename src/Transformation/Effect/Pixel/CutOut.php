@@ -51,7 +51,7 @@ class CutOut extends SourceBasedEffectAction
      *
      * @return array
      *
-     * @see BaseSourceContainer::getSubActionQualifiers
+     * @see BasePositionalSourceContainer::getSubActionQualifiers
      */
     protected function getSubActionQualifiers()
     {

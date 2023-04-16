@@ -10,9 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Asset\AssetDescriptor;
-use Cloudinary\Asset\BaseAsset;
-
 /**
  * Class AssetBasedLayer
  */
