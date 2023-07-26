@@ -28,9 +28,9 @@ class BorderValue extends QualifierMultiValue
     /**
      * BorderValue constructor.
      *
-     * @param null $color
-     * @param null $width
-     * @param null $style
+     * @param string     $color
+     * @param int|string $width
+     * @param string     $style
      */
     public function __construct($color = null, $width = null, $style = null)
     {

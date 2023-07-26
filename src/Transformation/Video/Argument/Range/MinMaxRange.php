@@ -25,8 +25,8 @@ class MinMaxRange extends QualifierMultiValue
     /**
      * MinMaxRange constructor.
      *
-     * @param      $min
-     * @param null $max
+     * @param int $min
+     * @param int $max
      */
     public function __construct($min, $max = null)
     {

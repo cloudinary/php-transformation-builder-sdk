@@ -29,10 +29,10 @@ class LimitedEffectQualifier extends ValueEffectQualifier
     /**
      * LimitedEffectQualifier constructor.
      *
-     * @param       $effectName
-     * @param       $range
-     * @param       $level
-     * @param array $args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $level
+     * @param array  $args
      */
     public function __construct($effectName, $range, $level = null, ...$args)
     {

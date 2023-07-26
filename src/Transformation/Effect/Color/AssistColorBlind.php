@@ -22,7 +22,7 @@ class AssistColorBlind extends LimitedEffectQualifier
     /**
      * AssistColorBlind constructor.
      *
-     * @param null $strength
+     * @param string $strength
      */
     public function __construct($strength = null)
     {

@@ -25,7 +25,7 @@ trait CompassGravityTrait
      * The compass direction represents a location in the image, for example, Gravity::northEast() represents the
      * top right corner.
      *
-     * @param $compassGravity
+     * @param string $compassGravity
      *
      * @return static
      *

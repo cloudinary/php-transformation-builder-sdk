@@ -33,11 +33,11 @@ class VectorizeValue extends QualifierMultiValue
     /**
      * VectorizeValue constructor.
      *
-     * @param null $colors
-     * @param null $detail
-     * @param null $despeckle
-     * @param null $paths
-     * @param null $corners
+     * @param int   $colors
+     * @param float $detail
+     * @param float $despeckle
+     * @param int   $paths
+     * @param int   $corners
      */
     public function __construct($colors = null, $detail = null, $despeckle = null, $paths = null, $corners = null)
     {

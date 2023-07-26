@@ -23,8 +23,8 @@ class Shear extends EffectQualifier
     /**
      * Shear constructor.
      *
-     * @param null $skewX
-     * @param      $skewY
+     * @param float $skewX
+     * @param float $skewY
      */
     public function __construct($skewX = null, $skewY = null)
     {

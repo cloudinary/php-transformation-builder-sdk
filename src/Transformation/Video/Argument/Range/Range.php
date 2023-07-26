@@ -34,7 +34,7 @@ class Range implements ComponentInterface
     /**
      * Range constructor.
      *
-     * @param null $range
+     * @param mixed $range
      */
     public function __construct($range = null)
     {

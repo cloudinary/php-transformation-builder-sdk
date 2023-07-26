@@ -32,9 +32,9 @@ class Timeline extends BaseQualifier
     /**
      * Region constructor.
      *
-     * @param null $startOffset
-     * @param null $endOffset
-     * @param null $duration
+     * @param mixed $startOffset
+     * @param mixed $endOffset
+     * @param mixed $duration
      */
     public function __construct($startOffset = null, $endOffset = null, $duration = null)
     {

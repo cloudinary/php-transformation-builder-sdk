@@ -31,9 +31,9 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return EffectAction
      */
@@ -43,10 +43,10 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param       $range
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return EffectAction
      */
@@ -56,10 +56,10 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param       $range
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return LevelEffectAction
      */
@@ -69,10 +69,10 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param       $range
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return StrengthEffectAction
      */
@@ -82,10 +82,10 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param       $range
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return BlendEffectAction
      */
@@ -95,10 +95,10 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param       $range
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return ThresholdEffectAction
      */
@@ -108,9 +108,9 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param mixed  $value
+     * @param mixed  ...$args
      *
      * @return DurationEffectAction
      */
@@ -120,9 +120,9 @@ trait EffectActionTrait
     }
 
     /**
-     * @param       $effectName
-     * @param null  $value
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $value
+     * @param mixed  ...$args
      *
      * @return ToleranceEffectAction
      */

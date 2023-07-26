@@ -10,8 +10,11 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\Transformation\Argument\ColorValue;
 use Cloudinary\Transformation\Argument\Text\Stroke;
 use Cloudinary\Transformation\Argument\Text\TextStyleTrait;
+use Cloudinary\Transformation\Background;
+use Cloudinary\Transformation\TextStyle;
 
 /**
  * Defines how to manipulate a text layer.
@@ -36,10 +39,10 @@ class TextSource extends BaseSource implements ImageTransformationInterface
     /**
      * TextLayer constructor.
      *
-     * @param string $text
-     * @param null   $style
-     * @param null   $color
-     * @param null   $backgroundColor
+     * @param string                       $text
+     * @param string|TextStyle             $style
+     * @param string                       $color
+     * @param string|Background|ColorValue $backgroundColor
      */
     public function __construct($text = null, $style = null, $color = null, $backgroundColor = null)
     {

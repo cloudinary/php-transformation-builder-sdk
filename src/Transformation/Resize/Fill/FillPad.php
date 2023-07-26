@@ -10,6 +10,10 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\Transformation\Argument\ColorValue;
+use Cloudinary\Transformation\Background;
+use Cloudinary\Transformation\CropMode;
+use Cloudinary\Transformation\Expression\Expression;
 use InvalidArgumentException;
 
 /**
@@ -26,11 +30,11 @@ class FillPad extends Fill
     /**
      * FillPad constructor.
      *
-     * @param      $cropMode
-     * @param null $width
-     * @param null $height
-     * @param null $gravity
-     * @param null $background
+     * @param string|CropMode              $cropMode
+     * @param int|string|Expression        $width
+     * @param int|string|Expression        $height
+     * @param mixed                        $gravity
+     * @param string|Background|ColorValue $background
      */
     public function __construct($cropMode, $width = null, $height = null, $gravity = null, $background = null)
     {

@@ -20,7 +20,7 @@ trait FocalGravityTrait
     /**
      * Sets the focal gravity for resizing.
      *
-     * @param $focalGravity
+     * @param mixed $focalGravity
      *
      * @return $this
      */

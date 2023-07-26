@@ -25,7 +25,7 @@ class Text extends QualifierMultiValue
     /**
      * Text constructor
      *
-     * @param null $text
+     * @param string $text
      */
     public function __construct($text = null)
     {

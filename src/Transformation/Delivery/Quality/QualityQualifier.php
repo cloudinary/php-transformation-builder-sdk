@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\Transformation\BaseComponent;
 use Cloudinary\Transformation\Qualifier\BaseExpressionQualifier;
 
 /**
@@ -60,9 +61,9 @@ class QualityQualifier extends BaseExpressionQualifier
     /**
      * Quality constructor.
      *
-     * @param       $strength
-     * @param null  $preset
-     * @param array $values
+     * @param mixed               $strength
+     * @param mixed|BaseComponent $preset
+     * @param mixed               $values
      */
     public function __construct($strength, $preset = null, ...$values)
     {
