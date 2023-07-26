@@ -30,9 +30,9 @@ class Cartoonify extends LimitedEffectQualifier
     /**
      * Trim constructor.
      *
-     * @param null  $lineStrength
-     * @param null  $colorReduction
-     * @param array $args
+     * @param float        $lineStrength
+     * @param float|string $colorReduction
+     * @param array        $args
      */
     public function __construct($lineStrength = null, $colorReduction = null, ...$args)
     {

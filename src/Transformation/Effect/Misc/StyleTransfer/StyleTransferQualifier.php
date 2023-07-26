@@ -24,7 +24,7 @@ class StyleTransferQualifier extends LimitedEffectQualifier
      * StyleTransfer constructor.
      *
      * @param int   $strength
-     * @param null  $preserveColor
+     * @param bool  $preserveColor
      * @param array $args
      */
     public function __construct($strength = null, $preserveColor = null, ...$args)

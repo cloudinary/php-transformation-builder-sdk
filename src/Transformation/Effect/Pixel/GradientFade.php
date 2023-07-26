@@ -46,8 +46,8 @@ class GradientFade extends StrengthEffectAction
     /**
      * GradientFade constructor.
      *
-     * @param      $strength
-     * @param null $type
+     * @param int|string $strength
+     * @param string     $type
      */
     public function __construct($strength = null, $type = null)
     {

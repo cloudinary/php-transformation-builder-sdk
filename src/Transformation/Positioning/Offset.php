@@ -20,8 +20,8 @@ class Offset extends BaseAction
     /**
      * Offset constructor.
      *
-     * @param null $x
-     * @param null $y
+     * @param float|int|string $x
+     * @param float|int|string $y
      */
     public function __construct($x = null, $y = null)
     {

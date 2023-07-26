@@ -53,7 +53,7 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * SimulateColorBlind constructor.
      *
-     * @param null $condition
+     * @param string $condition
      */
     public function __construct($condition = null)
     {

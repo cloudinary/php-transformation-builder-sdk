@@ -23,9 +23,9 @@ class CustomFunctionValue extends QualifierMultiValue
     /**
      * CustomFunctionValue constructor.
      *
-     * @param null $source
-     * @param null $type
-     * @param null $preprocess
+     * @param mixed $source
+     * @param mixed $type
+     * @param mixed $preprocess
      */
     public function __construct($source = null, $type = null, $preprocess = null)
     {

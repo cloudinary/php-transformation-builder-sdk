@@ -44,7 +44,7 @@ class AutoGradientBackground extends AutoBackground
      *
      * @param string     $mode              The auto background mode.
      * @param int|string $gradientColors    The number of gradient colors to select. Possible values: 2 or 4. Default: 2
-     * @param null       $gradientDirection The direction. Use the constants defined in the GradientDirection class.
+     * @param string     $gradientDirection The direction. Use the constants defined in the GradientDirection class.
      */
     public function __construct($mode, $gradientColors = null, $gradientDirection = null)
     {

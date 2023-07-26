@@ -10,6 +10,9 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\Transformation\CropMode;
+use Cloudinary\Transformation\Expression\Expression;
+
 /**
  * Class Fill
  */
@@ -22,10 +25,10 @@ class Fill extends BaseResizeAction
     /**
      * Fill constructor.
      *
-     * @param      $cropMode
-     * @param null $width
-     * @param null $height
-     * @param null $gravity
+     * @param string|CropMode       $cropMode
+     * @param int|string|Expression $width
+     * @param int|string|Expression $height
+     * @param mixed                 $gravity
      */
     public function __construct($cropMode, $width = null, $height = null, $gravity = null)
     {

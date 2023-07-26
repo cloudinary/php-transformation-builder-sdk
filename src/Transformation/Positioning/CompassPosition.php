@@ -20,9 +20,9 @@ class CompassPosition extends BasePosition
     /**
      * CompassPosition constructor.
      *
-     * @param null $gravity
-     * @param null $x Offset x
-     * @param null $y Offset y
+     * @param string           $gravity
+     * @param float|int|string $x Offset x
+     * @param float|int|string $y Offset y
      */
     public function __construct($gravity = null, $x = null, $y = null)
     {

@@ -31,8 +31,8 @@ class Improve extends BlendEffectQualifier
     /**
      * Improve constructor.
      *
-     * @param      $blend
-     * @param null $mode
+     * @param       $blend
+     * @param mixed $mode
      */
     public function __construct($blend = null, $mode = null)
     {

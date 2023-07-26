@@ -62,9 +62,9 @@ class Gradient extends BaseComponent
     /**
      * Gradient constructor.
      *
-     * @param null $type
-     * @param null $numberOfColors
-     * @param null $direction
+     * @param string $type
+     * @param int    $numberOfColors
+     * @param string $direction
      */
     public function __construct($type = null, $numberOfColors = null, $direction = null)
     {

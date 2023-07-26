@@ -10,6 +10,8 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\Transformation\Region;
+
 /**
  * Class RegionEffectAction
  */
@@ -20,11 +22,11 @@ class RegionEffectAction extends EffectAction
     /**
      * RegionEffectAction constructor.
      *
-     * @param       $effectName
-     * @param       $range
-     * @param       $strength
-     * @param null  $region
-     * @param mixed ...$args
+     * @param string $effectName
+     * @param array  $range
+     * @param mixed  $strength
+     * @param Region $region
+     * @param mixed  ...$args
      */
     public function __construct($effectName, $range, $strength = null, $region = null, ...$args)
     {
