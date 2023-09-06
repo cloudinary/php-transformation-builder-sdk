@@ -18,9 +18,9 @@ use Cloudinary\ClassUtils;
 class VideoSourceQualifier extends BaseSourceQualifier
 {
     /**
-     * @var string $sourceType The type of the layer.
+     * @var string $assetType The asset type of the layer.
      */
-    protected $sourceType = 'video';
+    protected $assetType = 'video';
 
     /**
      * VideoSourceQualifier constructor.

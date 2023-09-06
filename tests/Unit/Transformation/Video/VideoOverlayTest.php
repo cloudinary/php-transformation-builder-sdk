@@ -10,7 +10,7 @@
 
 namespace Cloudinary\Test\Unit\Transformation\Video;
 
-use Cloudinary\Transformation\AudioSource;
+use Cloudinary\Test\TransformationTestCase;
 use Cloudinary\Transformation\Compass;
 use Cloudinary\Transformation\CompassPosition;
 use Cloudinary\Transformation\Concatenate;
@@ -25,12 +25,11 @@ use Cloudinary\Transformation\VideoEdit;
 use Cloudinary\Transformation\VideoOverlay;
 use Cloudinary\Transformation\VideoSource;
 use Cloudinary\Transformation\VideoTransformation;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Class VideoOverlayTest
  */
-final class VideoOverlayTest extends TestCase
+final class VideoOverlayTest extends TransformationTestCase
 {
     public function testVideoOverlay()
     {
@@ -106,6 +105,15 @@ final class VideoOverlayTest extends TestCase
                                ->trim(Timeline::position(2, 5))
                                ->resize($resize)
                 )
+        );
+    }
+
+    public function testVideoFetch()
+    {
+        self::assertEquals(
+            "l_video:fetch:" . self::B64_FETCH_VIDEO_URL . "/fl_layer_apply",
+            (string)(new VideoTransformation())
+                ->overlay(Overlay::videoSource(VideoSource::fetchVideo(self::FETCH_VIDEO_URL)))
         );
     }
 

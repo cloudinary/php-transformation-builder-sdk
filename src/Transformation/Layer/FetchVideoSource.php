@@ -10,28 +10,41 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\ClassUtils;
+
 /**
- * Defines how to manipulate an image layer.
+ * Defines how to manipulate a fetched video layer.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/image_transformations#image_and_text_overlays target="_blank">
- * Image overlays</a>
+ * href=https://cloudinary.com/documentation/video_layers#layer_transformations target="_blank">
+ * Video overlays</a>
  *
  * @api
  */
-class FetchImageSource extends ImageSource
+class FetchVideoSource extends VideoSource
 {
+    /**
+     * VideoLayer constructor.
+     *
+     * @param $source
+     */
+    public function __construct($source)
+    {
+        parent::__construct($source);
+
+        $this->setSource($source);
+    }
     /**
      * Sets the source of the layer.
      *
-     * @param string|BaseSourceQualifier $source The source.
+     * @param string|FetchSourceQualifier $source The source.
      *
      * @return $this
      */
     public function setSource($source)
     {
 
-        if ($source instanceof BaseSourceQualifier) {
+        if ($source instanceof FetchSourceQualifier) {
             $this->getSourceQualifier()->fetchUrl($source->getValue());
 
             return $this;
@@ -46,14 +59,14 @@ class FetchImageSource extends ImageSource
     /**
      * Gets the layer qualifier.
      *
-     * @return ImageSourceQualifier
+     * @return FetchSourceQualifier
      *
      * @internal
      */
     protected function getSourceQualifier()
     {
         if (! isset($this->qualifiers['source'])) {
-            $this->qualifiers['source'] = new FetchSourceQualifier(null);
+            $this->qualifiers['source'] = (new FetchSourceQualifier(null))->assetType("video");
         }
 
         return $this->qualifiers['source'];

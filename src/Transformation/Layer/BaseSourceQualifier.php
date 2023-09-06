@@ -29,6 +29,11 @@ class BaseSourceQualifier extends BaseQualifier
     protected $sourceType;
 
     /**
+     * @var string $assetType The type of the asset.
+     */
+    protected $assetType;
+
+    /**
      * @var string The stack position of the layer.
      */
     protected $stackPosition = LayerStackPosition::OVERLAY;
@@ -76,6 +81,20 @@ class BaseSourceQualifier extends BaseQualifier
     }
 
     /**
+     * Sets the asset type.
+     *
+     * @param string $assetType The type of the asset.
+     *
+     * @return $this
+     */
+    public function assetType($assetType)
+    {
+        $this->assetType = $assetType;
+
+        return $this;
+    }
+
+    /**
      * Serializes to string.
      *
      * @return string
@@ -83,7 +102,8 @@ class BaseSourceQualifier extends BaseQualifier
     public function __toString()
     {
         $sourceTypeStr = $this->sourceType ? "$this->sourceType:" : '';
+        $assetTypeStr  = $this->assetType && $this->assetType != "image" ? "$this->assetType:" : '';
 
-        return empty((string)$this->value) ? '' : "{$this->getSourceKey()}_{$sourceTypeStr}{$this->value}";
+        return empty((string)$this->value) ? '' : "{$this->getSourceKey()}_$assetTypeStr$sourceTypeStr$this->value";
     }
 }
