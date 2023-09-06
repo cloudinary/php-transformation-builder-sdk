@@ -46,6 +46,10 @@ class FetchSourceQualifier extends BaseSourceQualifier
      */
     public function fetchUrl($fetchUrl)
     {
+        if (StringUtils::contains($fetchUrl, ':fetch:')) {
+            list($this->assetType, $this->sourceType, $fetchUrl) = explode(':', $fetchUrl, 3);
+        }
+
         $this->setQualifierValue(StringUtils::truncatePrefix($fetchUrl, 'fetch:'));
 
         return $this;

@@ -26,7 +26,8 @@ if (! defined('JSON_INVALID_UTF8_SUBSTITUTE')) {
  */
 abstract class TransformationTestCase extends TestCase
 {
-    const ASSET_ID = 'sample';
+    const ASSET_ID       = 'sample';
+    const VIDEO_ASSET_ID = 'dog';
 
     const IMG_EXT        = 'png';
     const IMG_EXT_JPG    = 'jpg';
@@ -34,7 +35,12 @@ abstract class TransformationTestCase extends TestCase
     const IMAGE_NAME     = self::ASSET_ID . '.' . self::IMG_EXT;
     const IMAGE_NAME_GIF = self::ASSET_ID . '.' . self::IMG_EXT_GIF;
 
+    const VIDEO_EXT       = 'mp4';
+    const VIDEO_NAME      = self::VIDEO_ASSET_ID . '.' . self::VIDEO_EXT;
     const FETCH_IMAGE_URL = 'https://res.cloudinary.com/demo/image/upload/' . self::IMAGE_NAME;
+    const FETCH_VIDEO_URL = 'https://res.cloudinary.com/demo/video/upload/' . self::VIDEO_NAME;
+
+    const B64_FETCH_VIDEO_URL = 'aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGVtby92aWRlby91cGxvYWQvZG9nLm1wNA==';
 
     /**
      * Asserts that string representations of the objects are equal.

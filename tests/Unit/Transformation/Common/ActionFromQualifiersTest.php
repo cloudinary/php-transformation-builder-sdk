@@ -656,6 +656,10 @@ final class ActionFromQualifiersTest extends TransformationTestCase
             'private'                             => [['public_id' => 'logo', 'type' => 'private'], 'private:logo'],
             'format'                              => [['public_id' => 'logo', 'format' => 'png'], 'logo.png'],
             'video'                               => [['resource_type' => 'video', 'public_id' => 'cat'], 'video:cat'],
+            'fetch video'                         => [
+                ['resource_type' => 'video', 'url' => self::FETCH_VIDEO_URL],
+                'video:fetch:' . self::B64_FETCH_VIDEO_URL
+            ],
             'text'                                => [
                 ['public_id' => 'logo', 'text' => 'Hello World, Nice to meet you?'],
                 'text:logo:Hello%20World%252C%20Nice%20to%20meet%20you%3F',
@@ -721,6 +725,10 @@ final class ActionFromQualifiersTest extends TransformationTestCase
             'fetch image url'                     => [
                 'fetch:' . self::FETCH_IMAGE_URL,
                 'fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGVtby9pbWFnZS91cGxvYWQvc2FtcGxlLnBuZw==',
+            ],
+            'fetch video url'                     => [
+                'video:fetch:' . self::FETCH_VIDEO_URL,
+                'video:fetch:' . self::B64_FETCH_VIDEO_URL,
             ],
             'logo'                                => [
                 ['public_id' => 'logo', 'type' => 'upload', 'resource_type' => 'image'],
