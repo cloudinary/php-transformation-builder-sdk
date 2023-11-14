@@ -266,7 +266,7 @@ class QualifierMultiValue extends BaseComponent
             ArrayUtils::sortByArray($this->arguments, $this->argumentOrder)
         );
         $namedValues = ArrayUtils::implodeAssoc(
-            ArrayUtils::sortByArray($this->namedArguments),
+            ArrayUtils::sortByArray($this->namedArguments, $this->argumentOrder),
             static::VALUE_DELIMITER,
             static::KEY_VALUE_DELIMITER
         );

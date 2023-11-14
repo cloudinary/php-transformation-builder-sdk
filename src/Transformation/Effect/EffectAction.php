@@ -29,6 +29,6 @@ class EffectAction extends Action
      */
     public function __construct($effect, ...$args)
     {
-        parent::__construct(ClassUtils::verifyInstance($effect, EffectQualifier::class, null, ...$args));
+        parent::__construct(ClassUtils::verifyInstance($effect, static::MAIN_QUALIFIER, null, ...$args));
     }
 }

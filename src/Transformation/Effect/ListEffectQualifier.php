@@ -16,6 +16,11 @@ namespace Cloudinary\Transformation;
  */
 class ListEffectQualifier extends EffectQualifier
 {
+    /**
+     * @var string VALUE_CLASS The class of the qualifier value. Can be customized by derived classes.
+     */
+    const VALUE_CLASS = QualifierMultiValue::class;
+
     const PROPERTIES = 'properties';
 
     /**
@@ -28,7 +33,7 @@ class ListEffectQualifier extends EffectQualifier
     {
         parent::__construct($effectName);
 
-        $this->getValue()->setSimpleValue(self::PROPERTIES, new ListExpressionQualifierMultiValue(...$values));
+        $this->getValue()->setSimpleValue(self::PROPERTIES, new ListQualifierMultiValue(...$values));
     }
 
     /**
