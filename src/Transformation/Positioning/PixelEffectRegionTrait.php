@@ -11,7 +11,7 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Trait RegionTrait
+ * Trait PixelEffectRegionTrait
  */
 trait PixelEffectRegionTrait
 {
@@ -48,5 +48,20 @@ trait PixelEffectRegionTrait
     public static function custom($x = null, $y = null, $width = null, $height = null)
     {
         return new Region($x, $y, $width, $height);
+    }
+
+    /**
+     * Returns the rectangle region.
+     *
+     * @param int $x      X.
+     * @param int $y      Y.
+     * @param int $width  Width.
+     * @param int $height Height.
+     *
+     * @return RectangleRegion
+     */
+    public static function rectangle($x = null, $y = null, $width = null, $height = null)
+    {
+        return new RectangleRegion($x, $y, $width, $height);
     }
 }

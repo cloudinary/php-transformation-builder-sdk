@@ -11,16 +11,12 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Trait ImageEffectTrait
- *
- * @api
+ * Class GenerativeEffectAction
  */
-trait ImageEffectTrait
+class GenerativeEffectAction extends EffectAction
 {
-    use ImageColorEffectTrait;
-    use ImagePixelEffectTrait;
-    use MiscEffectTrait;
-    use AddonEffectTrait;
-    use ThemeEffectTrait;
-    use GenerativeEffectTrait;
+    const MAIN_QUALIFIER = ListEffectQualifier::class;
+
+    const MULTIPLE = 'multiple';
+    const PROMPT   = 'prompt';
 }

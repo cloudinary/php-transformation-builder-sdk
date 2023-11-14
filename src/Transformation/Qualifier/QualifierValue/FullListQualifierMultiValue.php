@@ -14,13 +14,13 @@ use Cloudinary\StringUtils;
 use Cloudinary\Transformation\Qualifier\BaseQualifier;
 
 /**
- * Class FullListExpressionQualifierMultiValue
+ * Class FullListQualifierMultiValue
  *
- * This class represents a complex list expression value of the cloudinary transformation qualifier.
+ * This class represents a complex list value of the cloudinary transformation qualifier.
  *
  * @used-by BaseQualifier
  */
-class FullListExpressionQualifierMultiValue extends ListExpressionQualifierMultiValue
+class FullListQualifierMultiValue extends ListQualifierMultiValue
 {
     /**
      * Serializes to string.

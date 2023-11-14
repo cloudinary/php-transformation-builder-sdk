@@ -11,16 +11,14 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Trait ImageEffectTrait
- *
- * @api
+ * Class GenerativeEffect
  */
-trait ImageEffectTrait
+abstract class GenerativeEffect
 {
-    use ImageColorEffectTrait;
-    use ImagePixelEffectTrait;
-    use MiscEffectTrait;
-    use AddonEffectTrait;
-    use ThemeEffectTrait;
+    const GENERATIVE_RECOLOR = 'gen_recolor';
+    const GENERATIVE_REMOVE  = 'gen_remove';
+    const GENERATIVE_REPLACE  = 'gen_replace';
+    const GENERATIVE_RESTORE  = 'gen_restore';
+
     use GenerativeEffectTrait;
 }

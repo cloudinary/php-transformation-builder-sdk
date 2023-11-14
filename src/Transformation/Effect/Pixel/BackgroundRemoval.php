@@ -10,6 +10,8 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\TransformationUtils;
+
 /**
  * Class BackgroundRemoval
  *
@@ -51,7 +53,7 @@ class BackgroundRemoval extends EffectAction
      */
     public function fineEdges($fineEdges = true)
     {
-        $value = $fineEdges === true ? 'y' : ($fineEdges === false ? 'n' : $fineEdges);
+        $value = TransformationUtils::boolToString($fineEdges, 'y', 'n');
 
         $this->getMainQualifier()->getPropertiesValue()->setSimpleNamedValue(self::FINE_EDGES, $value);
 
