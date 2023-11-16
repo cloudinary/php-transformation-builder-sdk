@@ -33,6 +33,11 @@ class Background extends BaseQualifier
     use ColorValueTrait;
 
     /**
+     * @var string $name The name.
+     */
+    protected static $name = 'background';
+
+    /**
      * Background constructor.
      *
      * @param $color
@@ -81,5 +86,18 @@ class Background extends BaseQualifier
     public static function auto($autoBackground = null)
     {
         return ClassUtils::forceInstance($autoBackground, AutoBackground::class);
+    }
+
+    /**
+     * Applies generative AI background.
+     *
+     * @param string|array $prompt           Use natural language to describe what generate in the image.
+     * @param bool         $ignoreForeground Whether to take foreground elements into account.
+     *
+     * @return GenerativeFillBackground
+     */
+    public static function generativeFill($prompt = null, $ignoreForeground = null)
+    {
+        return new GenerativeFillBackground($prompt, $ignoreForeground);
     }
 }
