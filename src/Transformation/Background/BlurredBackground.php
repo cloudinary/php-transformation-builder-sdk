@@ -22,11 +22,6 @@ namespace Cloudinary\Transformation;
 class BlurredBackground extends Background
 {
     /**
-     * @var string $name The name.
-     */
-    protected static $name = 'background';
-
-    /**
      * @var array $valueOrder The order of the values.
      */
     protected $valueOrder = [0, 'intensity', 'brightness']; // FIXME: first item should be named!

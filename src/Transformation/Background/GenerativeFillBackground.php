@@ -31,9 +31,9 @@ class GenerativeFillBackground extends Background
     const PROPERTIES = 'properties';
 
     /**
-     * @var string $name The name.
+     * @var array $valueOrder The order of the values.
      */
-    protected static $name = 'background';
+    protected $valueOrder = [0, self::PROPERTIES];
 
     /**
      * GenerativeFillBackground constructor.
@@ -45,7 +45,7 @@ class GenerativeFillBackground extends Background
     {
         parent::__construct(self::GEN_FILL);
 
-        $this->getValue()->setSimpleValue(self::PROPERTIES, new ListQualifierMultiValue());
+        $this->value->setSimpleValue(self::PROPERTIES, new ListQualifierMultiValue());
 
         $this->prompt($prompt);
         $this->ignoreForeground($ignoreForeground);

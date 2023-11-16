@@ -33,6 +33,11 @@ class Background extends BaseQualifier
     use ColorValueTrait;
 
     /**
+     * @var string $name The name.
+     */
+    protected static $name = 'background';
+
+    /**
      * Background constructor.
      *
      * @param $color
