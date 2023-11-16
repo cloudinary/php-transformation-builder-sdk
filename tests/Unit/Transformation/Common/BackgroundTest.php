@@ -113,4 +113,39 @@ final class BackgroundTest extends TransformationTestCase
             )
         );
     }
+
+    public function testGenerativeFillBackground()
+    {
+        self::assertStrEquals(
+            'b_gen_fill,c_pad,h_500,w_500',
+            (new Transformation())->resize(
+                Resize::pad(500, 500)->background(Background::generativeFill())
+            )
+        );
+
+        self::assertStrEquals(
+            'b_gen_fill:prompt_bowls of cereal,c_pad,h_500,w_500',
+            (new Transformation())->resize(
+                Resize::pad(500, 500)->background(Background::generativeFill()->prompt('bowls of cereal'))
+            )
+        );
+
+        self::assertStrEquals(
+            'b_gen_fill:ignore-foreground_true;prompt_bowls of cereal,c_pad,h_500,w_500',
+            (new Transformation())->resize(
+                Resize::pad(500, 500)->background(
+                    Background::generativeFill()->prompt('bowls of cereal')->ignoreForeground()
+                )
+            )
+        );
+
+        self::assertStrEquals(
+            'b_gen_fill:ignore-foreground_false,c_pad,h_500,w_500',
+            (new Transformation())->resize(
+                Resize::pad(500, 500)->background(
+                    Background::generativeFill()->ignoreForeground(false)
+                )
+            )
+        );
+    }
 }
