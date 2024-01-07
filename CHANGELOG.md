@@ -1,3 +1,12 @@
+1.4.0 / 2024-01-07
+==================
+
+New functionality and features
+------------------------------
+
+  * Add support for `generativeFill` background
+  * Add support for AI generative effects
+
 1.3.0 / 2023-10-04
 ==================
 
