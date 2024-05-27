@@ -94,4 +94,12 @@ final class GenerativeEffectTest extends TransformationTestCase
             (string)Effect::generativeReplace('balloon', 'airplane')->preserveGeometry(false)->detectMultiple()
         );
     }
+
+    public function testGenerativeUpscale()
+    {
+        self::assertEquals(
+            'e_upscale',
+            (string)Effect::upscale()
+        );
+    }
 }
