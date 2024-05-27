@@ -1,3 +1,13 @@
+1.5.0 / 2024-05-27
+==================
+
+New functionality and features
+------------------------------
+
+  * Add support for `blurFaces` and `blurRegion` effects
+  * Add support for `auto` resize
+  * Add support for `upscale` effect
+
 1.4.0 / 2024-01-07
 ==================
 
