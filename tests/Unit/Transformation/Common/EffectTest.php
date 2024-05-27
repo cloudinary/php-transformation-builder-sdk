@@ -226,6 +226,21 @@ final class EffectTest extends TransformationTestCase
         );
 
         self::assertEquals(
+            'e_blur_region:2000,h_40,w_30,x_10,y_20',
+            (string)Effect::blurRegion(2000, 10, 20, 30, 40)
+        );
+
+        self::assertEquals(
+            'e_blur_region:2000,h_40,w_30,x_10,y_20',
+            (string)Effect::blurRegion()->strength(2000)->x(10)->y(20)->width(30)->height(40)
+        );
+
+        self::assertEquals(
+            'e_blur_region:$var1,h_$var5,w_$var4,x_$var2,y_$var3',
+            (string)Effect::blurRegion()->strength('$var1')->x('$var2')->y('$var3')->width('$var4')->height('$var5')
+        );
+
+        self::assertEquals(
             'e_blur_faces:17',
             (string)Effect::blur(17)->region(Region::faces())
         );
@@ -233,6 +248,16 @@ final class EffectTest extends TransformationTestCase
         self::assertEquals(
             'e_blur_faces:17',
             (string)Effect::blur()->strength(17)->region(Region::faces())
+        );
+
+        self::assertEquals(
+            'e_blur_faces:17',
+            (string)Effect::blurFaces(17)
+        );
+
+        self::assertEquals(
+            'e_blur_faces:17',
+            (string)Effect::blurFaces()->strength(17)
         );
 
         self::assertEquals(
