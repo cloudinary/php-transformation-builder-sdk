@@ -121,6 +121,11 @@ class CropMode extends BaseQualifier
     const THUMBNAIL = 'thumb';
 
     /**
+     * The AUTO crop mode automatically determines the best crop based on the gravity and specified dimensions.
+     */
+    const AUTO = 'auto';
+
+    /**
      * The IMAGGA_CROP crop mode crops your image based on automatically calculated areas of interest within each
      * specific photo.
      *

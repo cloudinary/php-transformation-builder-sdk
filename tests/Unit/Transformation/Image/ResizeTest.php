@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Test\Unit\Transformation\Image;
 
+use Cloudinary\Test\TransformationTestCase;
 use Cloudinary\Transformation\Argument\Color;
 use Cloudinary\Transformation\AspectRatio;
 use Cloudinary\Transformation\AutoGravity;
@@ -25,12 +26,11 @@ use Cloudinary\Transformation\Resize;
 use Cloudinary\Transformation\ResizeMode;
 use Cloudinary\Transformation\Scale;
 use InvalidArgumentException;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Class ResizeTest
  */
-final class ResizeTest extends TestCase
+final class ResizeTest extends TransformationTestCase
 {
     public function testScale()
     {
@@ -237,6 +237,21 @@ final class ResizeTest extends TestCase
         self::assertEquals(
             'c_thumb,g_auto,h_200,w_100,z_0.5',
             (string)$thumb
+        );
+
+        self::assertStrEquals(
+            'c_auto,g_auto,h_200,w_100',
+            Crop::auto(100, 200, Gravity::auto())
+        );
+
+        self::assertStrEquals(
+            'c_auto,g_auto,h_200,w_100',
+            Crop::auto()->width(100)->height(200)->gravity(Gravity::auto())
+        );
+
+        self::assertStrEquals(
+            'ar_0.5,c_auto,g_auto',
+            Crop::auto()->gravity(Gravity::auto())->aspectRatio(0.5)
         );
     }
 

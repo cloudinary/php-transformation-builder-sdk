@@ -52,6 +52,24 @@ trait CropTrait
     }
 
     /**
+     * Automatically determines the best crop based on the gravity and specified dimensions.
+     *
+     * If the requested dimensions are smaller than the best crop, the result is downscaled.
+     * If the requested dimensions are larger than the original image, the result is upscaled.
+     * Use this mode in conjunction with the g (gravity) parameter.
+     *
+     * @param int|float|string|null $width   The required width of a transformed asset.
+     * @param int|float|null        $height  The required height of a transformed asset.
+     * @param Gravity               $gravity Which part of the original image to include.
+     *
+     * @return Crop
+     */
+    public static function auto($width = null, $height = null, $gravity = null)
+    {
+        return static::createCrop(CropMode::AUTO, $width, $height, $gravity);
+    }
+
+    /**
      * Creates Crop instance.
      *
      * @param mixed ...$args
