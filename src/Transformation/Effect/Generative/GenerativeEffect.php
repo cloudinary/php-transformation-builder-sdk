@@ -17,8 +17,9 @@ abstract class GenerativeEffect
 {
     const GENERATIVE_RECOLOR = 'gen_recolor';
     const GENERATIVE_REMOVE  = 'gen_remove';
-    const GENERATIVE_REPLACE  = 'gen_replace';
-    const GENERATIVE_RESTORE  = 'gen_restore';
+    const GENERATIVE_REPLACE = 'gen_replace';
+    const GENERATIVE_RESTORE = 'gen_restore';
+    const UPSCALE            = 'upscale';
 
     use GenerativeEffectTrait;
 }

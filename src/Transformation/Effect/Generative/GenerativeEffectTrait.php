@@ -74,4 +74,15 @@ trait GenerativeEffectTrait
     {
         return new GenerativeReplace($fromPrompt, $toPrompt, $preserveGeometry, $detectMultiple);
     }
+
+    /**
+     * Uses AI-based prediction to add fine detail while upscaling small images.
+     * This 'super-resolution' feature scales each dimension by four, multiplying the total number of pixels by 16.
+     *
+     * @return GenerativeEffectAction
+     */
+    public static function upscale()
+    {
+        return new GenerativeEffectAction(GenerativeEffect::UPSCALE);
+    }
 }
