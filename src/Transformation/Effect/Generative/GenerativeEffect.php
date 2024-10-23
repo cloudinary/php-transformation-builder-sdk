@@ -20,6 +20,7 @@ abstract class GenerativeEffect
     const GENERATIVE_REPLACE = 'gen_replace';
     const GENERATIVE_RESTORE = 'gen_restore';
     const UPSCALE            = 'upscale';
+    const ENHANCE            = 'enhance';
 
     use GenerativeEffectTrait;
 }

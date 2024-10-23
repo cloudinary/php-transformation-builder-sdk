@@ -102,4 +102,12 @@ final class GenerativeEffectTest extends TransformationTestCase
             (string)Effect::upscale()
         );
     }
+
+    public function testGenerativeEnhance()
+    {
+        self::assertStrEquals(
+            'e_enhance',
+            Effect::enhance()
+        );
+    }
 }
