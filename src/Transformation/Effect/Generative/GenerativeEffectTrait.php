@@ -85,4 +85,14 @@ trait GenerativeEffectTrait
     {
         return new GenerativeEffectAction(GenerativeEffect::UPSCALE);
     }
+
+    /**
+     * Uses AI to analyze an image and make adjustments to enhance the appeal of the image.
+     *
+     * @return GenerativeEffectAction
+     */
+    public static function enhance()
+    {
+        return new GenerativeEffectAction(GenerativeEffect::ENHANCE);
+    }
 }
