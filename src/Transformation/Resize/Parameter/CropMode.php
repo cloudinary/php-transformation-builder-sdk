@@ -126,6 +126,13 @@ class CropMode extends BaseQualifier
     const AUTO = 'auto';
 
     /**
+     * The AUTO_PAD crop mode tries to prevent a "bad crop" by first attempting to use the auto cropping mode,
+     * but adding some padding if the algorithm determines that more of the original image needs to be included in the
+     * final image.
+     */
+    const AUTO_PAD = 'auto_pad';
+
+    /**
      * The IMAGGA_CROP crop mode crops your image based on automatically calculated areas of interest within each
      * specific photo.
      *

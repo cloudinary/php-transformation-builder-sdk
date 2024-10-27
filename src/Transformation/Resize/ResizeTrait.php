@@ -23,5 +23,6 @@ trait ResizeTrait
     use FillTrait;
     use FillPadTrait;
     use CropTrait;
+    use CropPadTrait;
     use ImaggaTrait;
 }

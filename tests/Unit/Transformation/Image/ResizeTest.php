@@ -14,11 +14,14 @@ use Cloudinary\Test\TransformationTestCase;
 use Cloudinary\Transformation\Argument\Color;
 use Cloudinary\Transformation\AspectRatio;
 use Cloudinary\Transformation\AutoGravity;
+use Cloudinary\Transformation\Background;
 use Cloudinary\Transformation\CompassGravity;
 use Cloudinary\Transformation\CompassPosition;
 use Cloudinary\Transformation\Crop;
+use Cloudinary\Transformation\CropPad;
 use Cloudinary\Transformation\Fill;
 use Cloudinary\Transformation\FillPad;
+use Cloudinary\Transformation\FocusOn;
 use Cloudinary\Transformation\Gravity;
 use Cloudinary\Transformation\Pad;
 use Cloudinary\Transformation\Qualifier;
@@ -255,6 +258,31 @@ final class ResizeTest extends TransformationTestCase
         );
     }
 
+    public function testCropAutoPad()
+    {
+        self::assertStrEquals(
+            'c_auto_pad,g_auto,h_200,w_100',
+            CropPad::autoPad(100, 200)
+        );
+
+        self::assertStrEquals(
+            'c_auto_pad,g_auto,h_200,w_100,z_0.5',
+            CropPad::autoPad(100, 200, Gravity::auto())->zoom(0.5)
+        );
+
+        self::assertStrEquals(
+            'c_auto_pad,g_auto:dog,h_200,w_100',
+            CropPad::autoPad(100, 200, Gravity::auto()->autoFocus(FocusOn::dog()))
+        );
+
+        self::assertStrEquals(
+            'b_gen_fill,c_auto_pad,g_auto:dog,h_200,w_100',
+            CropPad::autoPad(100, 200, Gravity::auto()->autoFocus(FocusOn::dog()))->background(
+                Background::generativeFill()
+            )
+        );
+    }
+
     public function testResize()
     {
         /** @noinspection PhpUndefinedMethodInspection */
@@ -302,6 +330,11 @@ final class ResizeTest extends TransformationTestCase
         self::assertEquals(
             'c_crop,h_70,w_50,z_0.5',
             (string)Resize::crop(50, 70)->zoom(0.5)
+        );
+
+        self::assertStrEquals(
+            'b_gen_fill,c_auto_pad,g_auto:dog,h_200,w_100',
+            Resize::autoPad(100, 200, Gravity::auto()->autoFocus(FocusOn::dog()), Background::generativeFill())
         );
     }
 }
