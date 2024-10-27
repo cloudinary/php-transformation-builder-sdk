@@ -26,7 +26,7 @@ trait BackgroundTrait
      * The image background is visible when padding is added with one of the padding crop modes, when rounding corners,
      * when adding overlays, and with semi-transparent PNGs and GIFs.
      *
-     * @param Background|ColorValue|string $background The the background to set.
+     * @param Background|ColorValue|string $background The background to set.
      *
      * @return $this
      *
