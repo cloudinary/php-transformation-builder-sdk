@@ -141,7 +141,7 @@ class QualifierMultiValue extends BaseComponent
      *
      * @internal
      */
-    public function setValue(BaseComponent $value = null)
+    public function setValue(?BaseComponent $value = null)
     {
         return $this->setSimpleValue($value ? $value->getName() : null, $value);
     }
@@ -186,7 +186,7 @@ class QualifierMultiValue extends BaseComponent
      *
      * @internal
      */
-    public function setNamedValue(BaseComponent $value = null)
+    public function setNamedValue(?BaseComponent $value = null)
     {
         return $this->setSimpleNamedValue($value ? $value->getName() : null, $value);
     }
