@@ -62,7 +62,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function addQualifier(BaseComponent $qualifier = null)
+    public function addQualifier(?BaseComponent $qualifier = null)
     {
         ArrayUtils::addNonEmpty($this->qualifiers, $qualifier ? $qualifier->getFullName() : null, $qualifier);
 
