@@ -10,8 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Asset\DeliveryType;
-
 /**
  * Class XmpSource
  */

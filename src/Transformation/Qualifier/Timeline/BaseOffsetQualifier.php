@@ -41,7 +41,7 @@ abstract class BaseOffsetQualifier extends BaseQualifier
 
         // Ensure that trailing decimal(.0) part is not cropped when float is provided
         // e.g. float 1.0 should be returned as "1.0" and not "1" as it happens by default
-        if (is_float($value) && $value - (int)$value === 0) {
+        if (is_float($value) && $value - (int)$value == 0) {
             $value = sprintf('%.1f', $value);
         }
 

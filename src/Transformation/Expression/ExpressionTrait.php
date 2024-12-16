@@ -22,7 +22,7 @@ trait ExpressionTrait
      *
      * @param mixed $value The expression value.
      *
-     * @return self
+     * @return static
      */
     public function expression($value)
     {

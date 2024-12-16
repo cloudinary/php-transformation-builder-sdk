@@ -53,7 +53,7 @@ class VideoOverlay extends BasePositionalSourceContainer
      *
      * @return BasePositionalSourceContainer
      */
-    public function timeline(Timeline $timeline = null)
+    public function timeline(?Timeline $timeline = null)
     {
         $this->timeline = $timeline;
 

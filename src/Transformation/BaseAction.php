@@ -29,7 +29,7 @@ abstract class BaseAction extends BaseComponent
     protected $qualifiers = [];
 
     /**
-     * @var string MAIN_QUALIFIER Represents the main qualifier of the action. (some actions do not have main qualifier)
+     * @var ?string MAIN_QUALIFIER Represents the main qualifier of the action. (some actions do not have main qualifier)
      */
     const MAIN_QUALIFIER = null;
 
@@ -62,7 +62,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function addQualifier(BaseComponent $qualifier = null)
+    public function addQualifier(?BaseComponent $qualifier = null)
     {
         ArrayUtils::addNonEmpty($this->qualifiers, $qualifier ? $qualifier->getFullName() : null, $qualifier);
 

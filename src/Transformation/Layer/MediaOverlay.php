@@ -31,7 +31,7 @@ class MediaOverlay extends ImageOverlay
      *
      * @return MediaOverlay
      */
-    public function timeline(Timeline $timeline = null)
+    public function timeline(?Timeline $timeline = null)
     {
         $this->timeline = $timeline;
 

@@ -10,8 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Asset\Media;
-
 /**
  * Applies a complex deep learning neural network algorithm that extracts artistic styles from a source image
  * and applies them to the content of a target photograph.
@@ -27,7 +25,7 @@ class StyleTransfer extends SourceBasedEffectAction
     /**
      * StyleTransfer constructor.
      *
-     * @param String|Media $source        The public ID of the source artwork.
+     * @param String|mixed $source        The public ID of the source artwork.
      * @param int          $strength      Sets the strength of the style transfer.
      * @param bool         $preserveColor Determines whether the original colors of the target photo are kept.
      */

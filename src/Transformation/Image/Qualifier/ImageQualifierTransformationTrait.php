@@ -36,7 +36,7 @@ trait ImageQualifierTransformationTrait
      *
      * @param string $defaultImage Default image public ID
      *
-     * @return $this
+     * @return static
      */
     public function defaultImage($defaultImage)
     {
@@ -49,7 +49,7 @@ trait ImageQualifierTransformationTrait
      *
      * @param int|string $density The density in dpi.
      *
-     * @return Density
+     * @return static
      */
     public function density($density)
     {
@@ -61,7 +61,7 @@ trait ImageQualifierTransformationTrait
      *
      * @param string $prefix The style class name prefix.
      *
-     * @return Prefix
+     * @return static
      */
     public function prefix($prefix)
     {

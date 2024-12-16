@@ -10,7 +10,6 @@
 
 namespace Cloudinary\Transformation\Qualifier\Misc;
 
-use Cloudinary\Configuration\ResponsiveBreakpointsConfig;
 use Cloudinary\Transformation\Qualifier\BaseQualifier;
 use Cloudinary\TransformationUtils;
 
@@ -24,6 +23,9 @@ use Cloudinary\TransformationUtils;
 class BreakpointsJson extends BaseQualifier
 {
     const DEFAULT_BYTES_STEP = 20000;
+    const DEFAULT_MIN_WIDTH = 375;
+    const DEFAULT_MAX_WIDTH = 3840;
+    const DEFAULT_MAX_IMAGES = 5;
     /**
      * @var string $name The name of the qualifier. Actually width qualifier is used for this purpose.
      */
@@ -87,7 +89,7 @@ class BreakpointsJson extends BaseQualifier
      */
     public function minWidth($minWidth)
     {
-        $this->minWidth = $minWidth ?: ResponsiveBreakpointsConfig::DEFAULT_MIN_WIDTH;
+        $this->minWidth = $minWidth ?: self::DEFAULT_MIN_WIDTH;
 
         return $this;
     }
@@ -102,7 +104,7 @@ class BreakpointsJson extends BaseQualifier
      */
     public function maxWidth($maxWidth)
     {
-        $this->maxWidth = $maxWidth ?: ResponsiveBreakpointsConfig::DEFAULT_MAX_WIDTH;
+        $this->maxWidth = $maxWidth ?: self::DEFAULT_MAX_WIDTH;
 
         return $this;
     }
@@ -132,7 +134,7 @@ class BreakpointsJson extends BaseQualifier
      */
     public function maxImages($maxImages)
     {
-        $this->maxImages = $maxImages ?: ResponsiveBreakpointsConfig::DEFAULT_MAX_IMAGES;
+        $this->maxImages = $maxImages ?: self::DEFAULT_MAX_IMAGES;
 
         return $this;
     }
@@ -151,7 +153,7 @@ class BreakpointsJson extends BaseQualifier
     /**
      * Serializes to json.
      *
-     * @return mixed
+     * @return array[]
      */
     public function jsonSerialize()
     {

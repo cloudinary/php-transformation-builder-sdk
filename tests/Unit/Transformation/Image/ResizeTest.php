@@ -285,7 +285,6 @@ final class ResizeTest extends TransformationTestCase
 
     public function testResize()
     {
-        /** @noinspection PhpUndefinedMethodInspection */
         self::assertEquals(
             'c_scale,fl_ignore_aspect_ratio,g_liquid,h_200,w_100',
             (string)Resize::scale(100, 200)->aspectRatio(AspectRatio::ignoreInitialAspectRatio())->liquidRescaling()

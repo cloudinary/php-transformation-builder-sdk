@@ -46,7 +46,7 @@ class AutoGravity extends GravityQualifier
     /**
      * @param mixed $gravity The gravity to use.
      *
-     * @return string
+     * @return AutoGravityObject
      */
     public static function object($gravity)
     {

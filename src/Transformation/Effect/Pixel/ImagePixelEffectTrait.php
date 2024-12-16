@@ -10,7 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Asset\Media;
 use Cloudinary\Transformation\Argument\Color;
 
 /**
@@ -126,7 +125,7 @@ trait ImagePixelEffectTrait
      * Wherever an overlay image is transparent, the original is shown, and wherever an overlay is opaque, the
      * resulting image is transparent.
      *
-     * @param string|Media $source The public ID of the source.
+     * @param string|mixed $source The public ID of the source.
      *
      * @return CutOut
      *
