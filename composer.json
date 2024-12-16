@@ -34,8 +34,7 @@
     "friendsofphp/php-cs-fixer": "*",
     "ext-dom": "*",
     "ext-libxml": "*",
-    "ext-zip": "*",
-    "consolidation/robo": "~5"
+    "ext-zip": "*"
   },
   "autoload": {
     "classmap": [
