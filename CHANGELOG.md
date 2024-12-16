@@ -1,3 +1,17 @@
+2.0.0 / 2024-12-16
+==================
+
+⚠ BREAKING CHANGES
+------------------------------
+
+  * Drop support for PHP `5.6` and `7.x`
+
+New functionality and features
+------------------------------
+
+  * Add support for `autoPad` resize
+  * Add support for `enhance` effect
+
 1.5.0 / 2024-05-27
 ==================
 
