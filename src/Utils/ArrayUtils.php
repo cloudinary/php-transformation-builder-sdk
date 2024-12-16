@@ -38,9 +38,9 @@ class ArrayUtils
     /**
      * Joins associative array keys and values.
      *
-     * @param array  $array An array to join
-     * @param string $outer Outer delimiter (between pairs)
-     * @param string $inner Inner delimiter (between key and value), if not provided $outer is used
+     * @param array|mixed $array An array to join
+     * @param string      $outer Outer delimiter (between pairs)
+     * @param string      $inner Inner delimiter (between key and value), if not provided $outer is used
      *
      * @return string Resulting string
      */
@@ -73,12 +73,12 @@ class ArrayUtils
     /**
      * Safe version of ArrayUtils::implodeAssoc.
      *
-     * In addition escapes appearances of the delimiters inside strings.
+     * In addition, escapes appearances of the delimiters inside strings.
      *
-     * @param array  $array       An array to join
-     * @param string $outer       Outer delimiter (between pairs)
-     * @param string $inner       Inner delimiter (between key and value), if not provided $outer is used
-     * @param bool   $innerIsSafe Whether to omit escaping of the inner delimiter
+     * @param array|mixed $array       An array to join
+     * @param string      $outer       Outer delimiter (between pairs)
+     * @param string      $inner       Inner delimiter (between key and value), if not provided $outer is used
+     * @param bool        $innerIsSafe Whether to omit escaping of the inner delimiter
      *
      * @return string
      *

@@ -34,7 +34,7 @@ trait CornersTrait
     /**
      * Sets top-right corner radius.
      *
-     * @param int $radius Radius length in pixels
+     * @param int|null $radius Radius length in pixels
      *
      * @return static
      */
@@ -48,7 +48,7 @@ trait CornersTrait
     /**
      * Sets bottom-right corner radius.
      *
-     * @param int $radius Radius length in pixels
+     * @param int|null $radius Radius length in pixels
      *
      * @return static
      */
@@ -62,7 +62,7 @@ trait CornersTrait
     /**
      * Sets bottom-left corner radius.
      *
-     * @param int $radius Radius length in pixels
+     * @param int|null $radius Radius length in pixels
      *
      * @return static
      */

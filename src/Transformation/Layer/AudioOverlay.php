@@ -51,7 +51,7 @@ class AudioOverlay extends BaseSourceContainer
      *
      * @return AudioOverlay
      */
-    public function timeline(Timeline $timeline = null)
+    public function timeline(?Timeline $timeline = null)
     {
         $this->timeline = $timeline;
 

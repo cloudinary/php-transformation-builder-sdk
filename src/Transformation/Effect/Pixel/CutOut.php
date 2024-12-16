@@ -11,7 +11,6 @@
 namespace Cloudinary\Transformation;
 
 use Cloudinary\ArrayUtils;
-use Cloudinary\Asset\Media;
 
 /**
  * Trims pixels according to the transparency levels of a specified overlay image.
@@ -30,7 +29,7 @@ class CutOut extends SourceBasedEffectAction
     /**
      * CutOut constructor.
      *
-     * @param string|Media $source The public ID of the source.
+     * @param string|mixed $source The public ID of the source.
      */
     public function __construct($source)
     {

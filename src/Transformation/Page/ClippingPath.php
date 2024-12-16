@@ -31,7 +31,7 @@ class ClippingPath extends BasePageAction
      * @see Flag::clip
      * @see Flag::clipEvenOdd
      */
-    public function __construct($clippingPath, FlagQualifier $method = null)
+    public function __construct($clippingPath, ?FlagQualifier $method = null)
     {
         parent::__construct(ClassUtils::verifyInstance($clippingPath, PageQualifier::class));
 

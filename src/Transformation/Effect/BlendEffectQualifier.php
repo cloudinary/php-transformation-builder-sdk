@@ -24,7 +24,7 @@ class BlendEffectQualifier extends LimitedEffectQualifier
      *
      * @param int $blend The blend percentage to set.
      *
-     * @return BlendEffectQualifier
+     * @return static
      *
      * @internal
      */
