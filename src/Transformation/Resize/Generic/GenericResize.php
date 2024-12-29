@@ -30,7 +30,7 @@ class GenericResize extends BaseResizeAction
      *
      * @internal
      */
-    public function setOffsetValue($value)
+    public function setOffsetValue($value): static
     {
         if (! isset($this->qualifiers[CompassPosition::getName()])) {
             $this->addQualifier(new CompassPosition());

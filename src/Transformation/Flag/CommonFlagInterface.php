@@ -17,12 +17,12 @@ namespace Cloudinary\Transformation;
  */
 interface CommonFlagInterface
 {
-    const ATTACHMENT             = 'attachment';
-    const IGNORE_ASPECT_RATIO    = 'ignore_aspect_ratio';
-    const FORCE_ICC              = 'force_icc';
-    const FORCE_STRIP            = 'force_strip';
-    const GET_INFO               = 'getinfo';
-    const IMMUTABLE_CACHE        = 'immutable_cache';
-    const KEEP_ATTRIBUTION       = 'keep_attribution';
-    const KEEP_IPTC              = 'keep_iptc';
+    public const ATTACHMENT = 'attachment';
+    public const IGNORE_ASPECT_RATIO = 'ignore_aspect_ratio';
+    public const FORCE_ICC           = 'force_icc';
+    public const FORCE_STRIP  = 'force_strip';
+    public const GET_INFO    = 'getinfo';
+    public const IMMUTABLE_CACHE = 'immutable_cache';
+    public const KEEP_ATTRIBUTION = 'keep_attribution';
+    public const KEEP_IPTC        = 'keep_iptc';
 }

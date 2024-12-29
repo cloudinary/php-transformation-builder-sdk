@@ -21,5 +21,5 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class ListExpressionQualifierMultiValue extends ExpressionQualifierMultiValue
 {
-    const VALUE_DELIMITER = ';';
+    protected const VALUE_DELIMITER = ';';
 }

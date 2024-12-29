@@ -47,7 +47,7 @@ class Rotate extends BaseAction implements RotationDegreeInterface, RotationMode
      *
      * @param mixed $degree The degrees of the angle.
      */
-    public function setAngle(...$degree)
+    public function setAngle(...$degree): void
     {
         $this->addQualifier(Degree::byAngle(...$degree));
     }
@@ -57,11 +57,10 @@ class Rotate extends BaseAction implements RotationDegreeInterface, RotationMode
      *
      * @param mixed $degree The degree of the angle.
      *
-     * @return Rotate
      */
-    public static function createWithDegree(...$degree)
+    public static function createWithDegree(...$degree): static
     {
-        return new self(Angle::byAngle(...$degree));
+        return new static(Angle::byAngle(...$degree));
     }
 
     /**
@@ -69,10 +68,9 @@ class Rotate extends BaseAction implements RotationDegreeInterface, RotationMode
      *
      * @param mixed $mode The rotation mode.
      *
-     * @return Rotate
      */
-    public static function createWithMode(...$mode)
+    public static function createWithMode(...$mode): static
     {
-        return new self(Angle::mode(...$mode));
+        return new static(Angle::mode(...$mode));
     }
 }

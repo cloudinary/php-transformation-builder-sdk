@@ -21,9 +21,9 @@ class ThemeEffect extends EffectAction
     /**
      * Theme constructor.
      *
-     * @param string  $color            The target background color. Specify either the name of a color (e.g. black,
+     * @param string $color             The target background color. Specify either the name of a color (e.g. black,
      *                                  lightgray), or an RGB hex value (e.g. f0ebe6).
-     * @param integer $photoSensitivity The sensitivity to photographic elements of an image. A value of 0 treats the
+     * @param int    $photoSensitivity  The sensitivity to photographic elements of an image. A value of 0 treats the
      *                                  whole image as non-photographic. A value of 200 treats the whole image as
      *                                  photographic, so no theme change is applied. Range: 0 to 200. Default: 100.
      */
@@ -38,9 +38,8 @@ class ThemeEffect extends EffectAction
      * @param string $color The target background color. Specify either the name of a color (e.g. black, lightgray),
      *                      or an RGB hex value (e.g. f0ebe6).
      *
-     * @return ThemeEffect
      */
-    public function color($color)
+    public function color(string $color): static
     {
         $this->qualifiers[ThemeQualifier::getName()]->color($color);
 
@@ -54,9 +53,8 @@ class ThemeEffect extends EffectAction
      *                              image as non-photographic. A value of 200 treats the whole image as photographic,
      *                              so no theme change is applied. Range: 0 to 200. Default: 100.
      *
-     * @return ThemeEffect
      */
-    public function photoSensitivity($photoSensitivity)
+    public function photoSensitivity(int $photoSensitivity): static
     {
         $this->qualifiers[ThemeQualifier::getName()]->photosensitivity($photoSensitivity);
 

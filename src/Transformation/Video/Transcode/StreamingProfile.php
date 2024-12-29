@@ -23,20 +23,19 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class StreamingProfile extends BaseQualifier
 {
-    const SP_4K        = '4k';
-    const FULL_HD      = 'full_hd';
-    const HD           = 'hd';
-    const SD           = 'sd';
-    const FULL_HD_WIFI = 'full_hd_wifi';
-    const FULL_HD_LEAN = 'full_hd_lean';
-    const HD_LEAN      = 'hd_lean';
+    public const SP_4K = '4k';
+    public const FULL_HD = 'full_hd';
+    public const HD      = 'hd';
+    public const SD = 'sd';
+    public const FULL_HD_WIFI = 'full_hd_wifi';
+    public const FULL_HD_LEAN = 'full_hd_lean';
+    public const HD_LEAN      = 'hd_lean';
 
     /**
      * Streaming profile 4k.
      *
-     * @return string
      */
-    public static function sp4k()
+    public static function sp4k(): string
     {
         return self::SP_4K;
     }
@@ -44,9 +43,8 @@ class StreamingProfile extends BaseQualifier
     /**
      * Streaming profile full hd.
      *
-     * @return string
      */
-    public static function fullHd()
+    public static function fullHd(): string
     {
         return self::FULL_HD;
     }
@@ -54,9 +52,8 @@ class StreamingProfile extends BaseQualifier
     /**
      * Streaming profile hd.
      *
-     * @return string
      */
-    public static function hd()
+    public static function hd(): string
     {
         return self::HD;
     }
@@ -64,9 +61,8 @@ class StreamingProfile extends BaseQualifier
     /**
      * Streaming profile sd.
      *
-     * @return string
      */
-    public static function sd()
+    public static function sd(): string
     {
         return self::SD;
     }
@@ -74,9 +70,8 @@ class StreamingProfile extends BaseQualifier
     /**
      * Streaming profile full hd wifi.
      *
-     * @return string
      */
-    public static function fullHdWifi()
+    public static function fullHdWifi(): string
     {
         return self::FULL_HD_WIFI;
     }
@@ -84,9 +79,8 @@ class StreamingProfile extends BaseQualifier
     /**
      * Streaming profile full hd lean.
      *
-     * @return string
      */
-    public static function fullHdLean()
+    public static function fullHdLean(): string
     {
         return self::FULL_HD_LEAN;
     }
@@ -94,9 +88,8 @@ class StreamingProfile extends BaseQualifier
     /**
      * Streaming profile hd lean.
      *
-     * @return string
      */
-    public static function hdLean()
+    public static function hdLean(): string
     {
         return self::HD_LEAN;
     }

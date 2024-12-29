@@ -22,9 +22,8 @@ trait QualityTrait
      *
      * @param int|string $level The quality value. (Range 1 to 100)
      *
-     * @return static
      */
-    public static function level($level)
+    public static function level(int|string $level): static
     {
         return static::createQuality($level);
     }
@@ -32,11 +31,9 @@ trait QualityTrait
     /**
      * Quality auto.
      *
-     * @param $preset
      *
-     * @return static
      */
-    public static function auto($preset = null)
+    public static function auto($preset = null): static
     {
         return static::createQuality(QualityQualifier::AUTO, $preset);
     }
@@ -44,9 +41,8 @@ trait QualityTrait
     /**
      * Quality good.
      *
-     * @return static
      */
-    public static function autoGood()
+    public static function autoGood(): static
     {
         return static::auto(QualityQualifier::GOOD);
     }
@@ -54,9 +50,8 @@ trait QualityTrait
     /**
      * Quality best.
      *
-     * @return static
      */
-    public static function autoBest()
+    public static function autoBest(): static
     {
         return static::auto(QualityQualifier::BEST);
     }
@@ -64,9 +59,8 @@ trait QualityTrait
     /**
      * Quality eco.
      *
-     * @return static
      */
-    public static function autoEco()
+    public static function autoEco(): static
     {
         return static::auto(QualityQualifier::ECO);
     }
@@ -74,9 +68,8 @@ trait QualityTrait
     /**
      * Quality low.
      *
-     * @return static
      */
-    public static function autoLow()
+    public static function autoLow(): static
     {
         return static::auto(QualityQualifier::LOW);
     }
@@ -84,13 +77,12 @@ trait QualityTrait
     /**
      * Quality jpegmini.
      *
-     * @param int $level The quality level. Use the constants defined in the JpegMini class.
+     * @param int|null $level The quality level. Use the constants defined in the JpegMini class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\JpegMini
+     * @see JpegMini
      */
-    public static function jpegmini($level = null)
+    public static function jpegmini(?int $level = null): static
     {
         return static::createQuality(QualityQualifier::JPEG_MINI, $level);
     }
@@ -100,11 +92,10 @@ trait QualityTrait
      *
      * Alias for jpegmini(JpegMini::BEST)
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\JpegMini
+     * @see JpegMini
      */
-    public static function jpegminiBest()
+    public static function jpegminiBest(): static
     {
         return static::jpegmini(JpegMini::BEST);
     }
@@ -113,11 +104,10 @@ trait QualityTrait
      *
      * Alias for jpegmini(JpegMini::HIGH)
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\JpegMini
+     * @see JpegMini
      */
-    public static function jpegminiHigh()
+    public static function jpegminiHigh(): static
     {
         return static::jpegmini(JpegMini::HIGH);
     }
@@ -127,11 +117,10 @@ trait QualityTrait
      *
      * Alias for jpegmini(JpegMini::MEDIUM)
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\JpegMini
+     * @see JpegMini
      */
-    public static function jpegminiMedium()
+    public static function jpegminiMedium(): static
     {
         return static::jpegmini(JpegMini::MEDIUM);
     }
@@ -139,14 +128,12 @@ trait QualityTrait
     /**
      * Creates a new instance.
      *
-     * @param       $level
      * @param array $values
      *
-     * @return static
      *
      * @internal
      */
-    protected static function createQuality($level, ...$values)
+    protected static function createQuality($level, ...$values): static
     {
         return new static($level, ...$values);
     }

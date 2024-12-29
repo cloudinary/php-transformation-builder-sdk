@@ -22,21 +22,21 @@ namespace Cloudinary\Transformation\Expression;
  */
 class ArithmeticOperator extends BaseOperator
 {
-    const ADD      = 'add';
-    const SUBTRACT = 'sub';
-    const MULTIPLY = 'mul';
-    const DIVIDE   = 'div';
-    const MODULO   = 'mod';
-    const POWER    = 'pow';
+    public const ADD      = 'add';
+    public const SUBTRACT = 'sub';
+    public const MULTIPLY = 'mul';
+    public const DIVIDE = 'div';
+    public const MODULO = 'mod';
+    public const POWER = 'pow';
 
     /**
      * @var array $operators The supported arithmetic operators.
      */
-    protected static $operators;
+    protected static array $operators = [];
     /**
-     * @var array $friendlyRepresentations The user friendly representations of the arithmetic operators.
+     * @var array $friendlyRepresentations The user-friendly representations of the arithmetic operators.
      */
-    protected static $friendlyRepresentations = [
+    protected static array $friendlyRepresentations = [
         '+' => self::ADD,
         '-' => self::SUBTRACT,
         '*' => self::MULTIPLY,
@@ -50,9 +50,8 @@ class ArithmeticOperator extends BaseOperator
      *
      * '+'
      *
-     * @return ArithmeticOperator
      */
-    public static function add()
+    public static function add(): ArithmeticOperator
     {
         return new self(self::ADD);
     }
@@ -62,11 +61,9 @@ class ArithmeticOperator extends BaseOperator
      *
      * +
      *
-     * @return ArithmeticOperator
-     *
      * @see ArithmeticOperator::add
      */
-    public static function plus()
+    public static function plus(): ArithmeticOperator
     {
         return self::add();
     }
@@ -76,9 +73,8 @@ class ArithmeticOperator extends BaseOperator
      *
      * -
      *
-     * @return ArithmeticOperator
      */
-    public static function subtract()
+    public static function subtract(): ArithmeticOperator
     {
         return new self(self::SUBTRACT);
     }
@@ -88,11 +84,9 @@ class ArithmeticOperator extends BaseOperator
      *
      * -
      *
-     * @return ArithmeticOperator
-     *
      * @see ArithmeticOperator::subtract
      */
-    public static function minus()
+    public static function minus(): ArithmeticOperator
     {
         return self::subtract();
     }
@@ -102,11 +96,10 @@ class ArithmeticOperator extends BaseOperator
      *
      * *
      *
-     * @return ArithmeticOperator
      */
-    public static function multiply()
+    public static function multiply(): ArithmeticOperator
     {
-        return new static(static::MULTIPLY);
+        return new self(self::MULTIPLY);
     }
 
     /**
@@ -114,9 +107,8 @@ class ArithmeticOperator extends BaseOperator
      *
      * /
      *
-     * @return ArithmeticOperator
      */
-    public static function divide()
+    public static function divide(): ArithmeticOperator
     {
         return new self(self::DIVIDE);
     }
@@ -126,9 +118,8 @@ class ArithmeticOperator extends BaseOperator
      *
      * %
      *
-     * @return ArithmeticOperator
      */
-    public static function modulo()
+    public static function modulo(): ArithmeticOperator
     {
         return new self(self::MODULO);
     }
@@ -138,9 +129,8 @@ class ArithmeticOperator extends BaseOperator
      *
      * ^
      *
-     * @return ArithmeticOperator
      */
-    public static function power()
+    public static function power(): ArithmeticOperator
     {
         return new self(self::POWER);
     }

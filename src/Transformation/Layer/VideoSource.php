@@ -31,7 +31,6 @@ class VideoSource extends AssetBasedSource
     /**
      * VideoLayer constructor.
      *
-     * @param $source
      */
     public function __construct($source)
     {
@@ -43,11 +42,10 @@ class VideoSource extends AssetBasedSource
      *
      * Creates a new VideoTransformation if not initialized.
      *
-     * @return VideoTransformation
      *
      * @internal
      */
-    public function getTransformation()
+    public function getTransformation(): VideoTransformation
     {
         if (! isset($this->transformation)) {
             $this->transformation = new VideoTransformation();
@@ -59,11 +57,10 @@ class VideoSource extends AssetBasedSource
     /**
      * Getter for the layer qualifier.
      *
-     * @return VideoSourceQualifier
      *
      * @internal
      */
-    protected function getSourceQualifier()
+    protected function getSourceQualifier(): VideoSourceQualifier|BaseSourceQualifier
     {
         if (! isset($this->qualifiers['source'])) {
             $this->qualifiers['source'] = new VideoSourceQualifier(null);

@@ -20,9 +20,8 @@ trait ApplianceObjectGravityBuilderTrait
     /**
      * Gravity appliance.
      *
-     * @return string
      */
-    public static function appliance()
+    public static function appliance(): string
     {
         return ObjectGravity::APPLIANCE;
     }
@@ -30,9 +29,8 @@ trait ApplianceObjectGravityBuilderTrait
     /**
      * Gravity microwave.
      *
-     * @return string
      */
-    public static function microwave()
+    public static function microwave(): string
     {
         return ObjectGravity::MICROWAVE;
     }
@@ -40,9 +38,8 @@ trait ApplianceObjectGravityBuilderTrait
     /**
      * Gravity oven.
      *
-     * @return string
      */
-    public static function oven()
+    public static function oven(): string
     {
         return ObjectGravity::OVEN;
     }
@@ -50,9 +47,8 @@ trait ApplianceObjectGravityBuilderTrait
     /**
      * Gravity toaster.
      *
-     * @return string
      */
-    public static function toaster()
+    public static function toaster(): string
     {
         return ObjectGravity::TOASTER;
     }
@@ -60,9 +56,8 @@ trait ApplianceObjectGravityBuilderTrait
     /**
      * Gravity sink.
      *
-     * @return string
      */
-    public static function sink()
+    public static function sink(): string
     {
         return ObjectGravity::SINK;
     }
@@ -70,9 +65,8 @@ trait ApplianceObjectGravityBuilderTrait
     /**
      * Gravity refrigerator.
      *
-     * @return string
      */
-    public static function refrigerator()
+    public static function refrigerator(): string
     {
         return ObjectGravity::REFRIGERATOR;
     }

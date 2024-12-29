@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpClassConstantAccessedViaChildClassInspection */
+
 /**
  * This file is part of the Cloudinary PHP package.
  *
@@ -20,9 +21,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity accessory.
      *
-     * @return string
      */
-    public static function accessory()
+    public static function accessory(): string
     {
         return ObjectGravity::ACCESSORY;
     }
@@ -30,9 +30,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity frisbee.
      *
-     * @return string
      */
-    public static function frisbee()
+    public static function frisbee(): string
     {
         return ObjectGravity::FRISBEE;
     }
@@ -40,9 +39,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity skis.
      *
-     * @return string
      */
-    public static function skis()
+    public static function skis(): string
     {
         return ObjectGravity::SKIS;
     }
@@ -50,9 +48,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity snowboard.
      *
-     * @return string
      */
-    public static function snowboard()
+    public static function snowboard(): string
     {
         return ObjectGravity::SNOWBOARD;
     }
@@ -60,9 +57,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity sportsBall.
      *
-     * @return string
      */
-    public static function sportsBall()
+    public static function sportsBall(): string
     {
         return ObjectGravity::SPORTS_BALL;
     }
@@ -70,9 +66,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity kite.
      *
-     * @return string
      */
-    public static function kite()
+    public static function kite(): string
     {
         return ObjectGravity::KITE;
     }
@@ -80,9 +75,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity baseballBat.
      *
-     * @return string
      */
-    public static function baseballBat()
+    public static function baseballBat(): string
     {
         return ObjectGravity::BASEBALL_BAT;
     }
@@ -90,9 +84,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity baseballGlove.
      *
-     * @return string
      */
-    public static function baseballGlove()
+    public static function baseballGlove(): string
     {
         return ObjectGravity::BASEBALL_GLOVE;
     }
@@ -100,9 +93,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity skateboard.
      *
-     * @return string
      */
-    public static function skateboard()
+    public static function skateboard(): string
     {
         return ObjectGravity::SKATEBOARD;
     }
@@ -110,9 +102,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity surfboard.
      *
-     * @return string
      */
-    public static function surfboard()
+    public static function surfboard(): string
     {
         return ObjectGravity::SURFBOARD;
     }
@@ -120,9 +111,8 @@ trait AccessoryObjectGravityBuilderTrait
     /**
      * Gravity tennisracket.
      *
-     * @return string
      */
-    public static function tennisracket()
+    public static function tennisracket(): string
     {
         return ObjectGravity::TENNIS_RACKET;
     }

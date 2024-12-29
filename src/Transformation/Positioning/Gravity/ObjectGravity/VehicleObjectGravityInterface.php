@@ -18,13 +18,13 @@ namespace Cloudinary\Transformation;
 interface VehicleObjectGravityInterface
 {
     //Vehicle Category
-    const VEHICLE   = 'vehicle';
-    const BICYCLE   = 'bicycle';
-    const CAR       = 'car';
-    const MOTORBIKE = 'motorbike';
-    const AEROPLANE = 'aeroplane';
-    const BUS       = 'bus';
-    const TRAIN     = 'train';
-    const TRUCK     = 'truck';
-    const BOAT      = 'boat';
+    public const VEHICLE = 'vehicle';
+    public const BICYCLE = 'bicycle';
+    public const CAR     = 'car';
+    public const MOTORBIKE = 'motorbike';
+    public const AEROPLANE = 'aeroplane';
+    public const BUS       = 'bus';
+    public const TRAIN = 'train';
+    public const TRUCK = 'truck';
+    public const BOAT  = 'boat';
 }

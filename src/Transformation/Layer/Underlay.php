@@ -19,12 +19,7 @@ use Cloudinary\ClassUtils;
  */
 abstract class Underlay
 {
-    /**
-     * @param $source
-     *
-     * @return ImageOverlay
-     */
-    public static function source($source)
+    public static function source($source): ImageOverlay
     {
         return ClassUtils::forceInstance($source, ImageOverlay::class)->setStackPosition(LayerStackPosition::UNDERLAY);
     }

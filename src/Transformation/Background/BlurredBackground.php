@@ -24,15 +24,15 @@ class BlurredBackground extends Background
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'intensity', 'brightness']; // FIXME: first item should be named!
+    protected array $valueOrder = [0, 'intensity', 'brightness']; // FIXME: first item should be named!
 
     /**
      * BlurredBackground constructor.
      *
-     * @param int $intensity  The intensity of the blur.
-     * @param int $brightness The brightness of the background.
+     * @param int|null $intensity  The intensity of the blur.
+     * @param int|null $brightness The brightness of the background.
      */
-    public function __construct($intensity = null, $brightness = null)
+    public function __construct(?int $intensity = null, ?int $brightness = null)
     {
         parent::__construct('blurred');
 
@@ -44,11 +44,11 @@ class BlurredBackground extends Background
     /**
      * Sets the intensity of the blur.
      *
-     * @param int $intensity The intensity of the blur.
+     * @param ?int $intensity The intensity of the blur.
      *
      * @return $this
      */
-    public function intensity($intensity)
+    public function intensity(?int $intensity): static
     {
         $this->value->setSimpleValue('intensity', $intensity);
 
@@ -58,11 +58,11 @@ class BlurredBackground extends Background
     /**
      * Sets the brightness of the background.
      *
-     * @param int $brightness The brightness of the background.
+     * @param ?int $brightness The brightness of the background.
      *
      * @return $this
      */
-    public function brightness($brightness)
+    public function brightness(?int $brightness): static
     {
         $this->value->setSimpleValue('brightness', $brightness);
 

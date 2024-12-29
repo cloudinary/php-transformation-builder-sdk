@@ -28,7 +28,6 @@ class LutLayer extends AssetBasedSource implements AdjustmentInterface
     /**
      * LutLayer constructor.
      *
-     * @param $lut
      */
     public function __construct($lut)
     {
@@ -38,9 +37,8 @@ class LutLayer extends AssetBasedSource implements AdjustmentInterface
     /**
      * Gets the transformation.
      *
-     * @return Transformation
      */
-    public function getTransformation()
+    public function getTransformation(): Transformation
     {
         if (! isset($this->transformation)) {
             $this->transformation = new Transformation();
@@ -52,11 +50,10 @@ class LutLayer extends AssetBasedSource implements AdjustmentInterface
     /**
      * Gets the layer qualifier.
      *
-     * @return LutSourceQualifier
      *
      * @internal
      */
-    protected function getSourceQualifier()
+    protected function getSourceQualifier(): LutSourceQualifier
     {
         if (! isset($this->qualifiers['source'])) {
             $this->qualifiers['source'] = new LutSourceQualifier(null);

@@ -24,27 +24,26 @@ use Cloudinary\Transformation\RotationModeInterface;
  */
 class RotationMode extends QualifierMultiValue implements RotationModeInterface
 {
-    const VALUE_DELIMITER = '.';
+    protected const VALUE_DELIMITER = '.';
 
     use RotationModeTrait;
 
-    const AUTO_RIGHT      = 'auto_right';
-    const AUTO_LEFT       = 'auto_left';
-    const VERTICAL_FLIP   = 'vflip';
-    const HORIZONTAL_FLIP = 'hflip';
-    const IGNORE          = 'ignore';
+    public const AUTO_RIGHT = 'auto_right';
+    public const AUTO_LEFT  = 'auto_left';
+    public const VERTICAL_FLIP = 'vflip';
+    public const HORIZONTAL_FLIP = 'hflip';
+    public const IGNORE          = 'ignore';
 
     /**
      * Creates the instance.
      *
      * @param string|RotationMode|array $mode Given mode.
      *
-     * @return RotationMode
      *
      * @internal
      */
-    public static function createWithMode(...$mode)
+    public static function createWithMode(...$mode): static
     {
-        return new self(...$mode);
+        return new static(...$mode);
     }
 }

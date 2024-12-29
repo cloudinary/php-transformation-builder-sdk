@@ -18,11 +18,11 @@ class StrengthEffectAction extends EffectAction
     /**
      * Setter of the effect strength.
      *
-     * @param int $strength The strength to set.
+     * @param int|string|null $strength The strength to set.
      *
      * @return $this
      */
-    public function strength($strength)
+    public function strength(int|string|null $strength): static
     {
         $this->qualifiers[EffectQualifier::getName()]->strength($strength);
 

@@ -28,14 +28,13 @@ trait VideoQualifierTrait
      *                             uses a variable bitrate (VBR), with this value indicating the maximum bitrate.
      *                             The value can be an integer e.g. 120000, or a string supporting "k" and "m"
      *                             (kilobits and megabits respectively) e.g. 250k or 2m.
-     * @param null|string $type    The type of bitrate. If "constant" is specified, the video plays with a constant
+     * @param string|null $type    The type of bitrate. If "constant" is specified, the video plays with a constant
      *                             bitrate (CBR). Use the constant defined in the BitRate class.
      *
-     * @return BitRate
      *
-     * @see \Cloudinary\Transformation\BitRate
+     * @see BitRate
      */
-    public static function bitRate($bitRate, $type = null)
+    public static function bitRate(int|string $bitRate, ?string $type = null): BitRate
     {
         return new BitRate($bitRate, $type);
     }
@@ -44,12 +43,11 @@ trait VideoQualifierTrait
      * Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized) is
      * delivered with an expected FPS level (helps with sync to audio).
      *
-     * @param int|null $min The minimum frame rate.
-     * @param int|null $max The maximum frame rate.
+     * @param int|string|null $min The minimum frame rate.
+     * @param int|string|null $max The maximum frame rate.
      *
-     * @return Fps
      */
-    public static function fps($min = null, $max = null)
+    public static function fps(int|string|null $min = null, int|string|null $max = null): Fps
     {
         return new Fps($min, $max);
     }
@@ -61,9 +59,8 @@ trait VideoQualifierTrait
      * @param int|null $min The minimum frame rate.
      * @param int|null $max The maximum frame rate.
      *
-     * @return Fps
      */
-    public static function fpsRange($min = null, $max = null)
+    public static function fpsRange(?int $min = null, ?int $max = null): Fps
     {
         return static::fps($min, $max);
     }
@@ -71,11 +68,10 @@ trait VideoQualifierTrait
     /**
      * Sets the keyframe interval of the delivered video.
      *
-     * @param int $interval The keyframe interval in seconds.
+     * @param float|int|string $interval The keyframe interval in seconds.
      *
-     * @return KeyframeInterval
      */
-    public static function keyframeInterval($interval)
+    public static function keyframeInterval(float|int|string $interval): KeyframeInterval
     {
         return new KeyframeInterval($interval);
     }
@@ -89,12 +85,9 @@ trait VideoQualifierTrait
      *
      * @param string $streamingProfile The streaming profile.
      *
-     * @return StreamingProfile
-     *
-     * @see \Cloudinary\Api\Admin\StreamingProfilesTrait
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#predefined_streaming_profiles
      */
-    public static function streamingProfile($streamingProfile)
+    public static function streamingProfile(string $streamingProfile): StreamingProfile
     {
         return ClassUtils::verifyInstance($streamingProfile, StreamingProfile::class);
     }
@@ -112,9 +105,8 @@ trait VideoQualifierTrait
      *                          String - The number of seconds between each frame to sample from the original video.
      *                          e.g. 2.3s takes one frame every 2.3 seconds.
      *
-     * @return VideoSampling
      */
-    public static function videoSampling($value)
+    public static function videoSampling(int|string $value): VideoSampling
     {
         return new VideoSampling($value);
     }

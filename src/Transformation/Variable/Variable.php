@@ -27,7 +27,7 @@ use InvalidArgumentException;
  */
 class Variable extends GenericQualifier
 {
-    const VALUE_CLASS = VariableValue::class;
+    protected const VALUE_CLASS = VariableValue::class;
     const AS_FLOAT   = 'to_f';
     const AS_INTEGER = 'to_i';
 
@@ -37,9 +37,8 @@ class Variable extends GenericQualifier
      * @param string $name  The name of the variable.
      * @param mixed  $value The value of the variable.
      *
-     * @return Variable
      */
-    public static function set($name, $value)
+    public static function set(string $name, mixed $value): Variable
     {
         return new self($name, $value);
     }
@@ -50,9 +49,8 @@ class Variable extends GenericQualifier
      * @param string $name     The name of the variable.
      * @param mixed  $publicId The referenced asset public id.
      *
-     * @return Variable
      */
-    public static function setAssetReference($name, $publicId)
+    public static function setAssetReference(string $name, mixed $publicId): Variable
     {
         return new self($name, UVal::assetReference($publicId));
     }
@@ -63,9 +61,8 @@ class Variable extends GenericQualifier
      * @param string $name       The name of the variable.
      * @param mixed  $contextKey The context key.
      *
-     * @return Variable
      */
-    public static function setFromContext($name, $contextKey)
+    public static function setFromContext(string $name, mixed $contextKey): Variable
     {
         return new self($name, UVal::context($contextKey));
     }
@@ -76,9 +73,8 @@ class Variable extends GenericQualifier
      * @param string $name        The name of the variable.
      * @param mixed  $metadataKey The metadata key.
      *
-     * @return Variable
      */
-    public static function setFromMetadata($name, $metadataKey)
+    public static function setFromMetadata(string $name, mixed $metadataKey): Variable
     {
         return new self($name, UVal::metadata($metadataKey));
     }
@@ -90,7 +86,7 @@ class Variable extends GenericQualifier
      *
      * @return $this
      */
-    public function asFloat($asFloat = true)
+    public function asFloat(bool $asFloat = true): static
     {
         if ($asFloat) {
             $this->value->addValues(self::AS_FLOAT);
@@ -106,7 +102,7 @@ class Variable extends GenericQualifier
      *
      * @return $this
      */
-    public function asInteger($asInteger = true)
+    public function asInteger(bool $asInteger = true): static
     {
         if ($asInteger) {
             $this->value->addValues(self::AS_INTEGER);
@@ -118,19 +114,18 @@ class Variable extends GenericQualifier
     /**
      * Sets the variable name as the qualifier key.
      *
-     * @param string $name The name of the variable.
+     * @param string $genericKey The name of the variable.
      *
-     * @return Variable
      */
-    public function setKey($name)
+    public function setKey(string $genericKey): static
     {
-        $name = StringUtils::ensureStartsWith($name, '$');
+        $genericKey = StringUtils::ensureStartsWith($genericKey, '$');
 
-        if (empty($name) || ! self::isVariable($name)) {
+        if (empty($genericKey) || ! self::isVariable($genericKey)) {
             throw new InvalidArgumentException('Invalid variable name');
         }
 
-        parent::setKey($name);
+        parent::setKey($genericKey);
 
         return $this;
     }
@@ -140,9 +135,8 @@ class Variable extends GenericQualifier
      *
      * @param $value
      *
-     * @return static
      */
-    public function setQualifierValue(...$value)
+    public function setQualifierValue(...$value): static
     {
         if (count($value) === 1) {
             if (is_string($value[0])) {
@@ -161,9 +155,8 @@ class Variable extends GenericQualifier
     /**
      * Returns the variable name.
      *
-     * @return string
      */
-    public function getVariableName()
+    public function getVariableName(): string
     {
         return $this->genericKey;
     }
@@ -173,9 +166,8 @@ class Variable extends GenericQualifier
      *
      * @param string $candidate Variable name candidate.
      *
-     * @return bool
      */
-    public static function isVariable($candidate)
+    public static function isVariable(string $candidate): bool
     {
         return (boolean)preg_match('/^\$[a-zA-Z]\w*$/', $candidate);
     }
@@ -183,11 +175,9 @@ class Variable extends GenericQualifier
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
-        /** @noinspection IsEmptyFunctionUsageInspection */
         if (empty($this->getValue())) {
             return [];
         }

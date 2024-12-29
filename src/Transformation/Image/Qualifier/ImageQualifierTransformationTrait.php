@@ -22,11 +22,9 @@ trait ImageQualifierTransformationTrait
     /**
      * Sets the delay between frames of an animated image in milliseconds.
      *
-     * @param Delay|int $delay
      *
-     * @return static
      */
-    public function delay($delay)
+    public function delay(Delay|int $delay): static
     {
         return $this->addAction(ClassUtils::verifyInstance($delay, Delay::class));
     }
@@ -36,9 +34,8 @@ trait ImageQualifierTransformationTrait
      *
      * @param string $defaultImage Default image public ID
      *
-     * @return static
      */
-    public function defaultImage($defaultImage)
+    public function defaultImage(string $defaultImage): static
     {
         return $this->addAction(ClassUtils::verifyInstance($defaultImage, DefaultImage::class));
     }
@@ -49,9 +46,8 @@ trait ImageQualifierTransformationTrait
      *
      * @param int|string $density The density in dpi.
      *
-     * @return static
      */
-    public function density($density)
+    public function density(int|string $density): static
     {
         return $this->addAction(ClassUtils::verifyInstance($density, Density::class));
     }
@@ -61,9 +57,8 @@ trait ImageQualifierTransformationTrait
      *
      * @param string $prefix The style class name prefix.
      *
-     * @return static
      */
-    public function prefix($prefix)
+    public function prefix(string $prefix): static
     {
         return $this->addAction(ClassUtils::verifyInstance($prefix, Prefix::class));
     }

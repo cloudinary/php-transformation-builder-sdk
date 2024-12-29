@@ -18,11 +18,11 @@ namespace Cloudinary\Transformation;
 interface ElectronicObjectGravityInterface
 {
     //Electronic Category
-    const ELECTRONIC = 'electronic';
-    const TV_MONITOR = 'tvmonitor';
-    const LAPTOP     = 'laptop';
-    const MOUSE      = 'mouse';
-    const REMOTE     = 'remote';
-    const KEYBOARD   = 'keyboard';
-    const CELLPHONE  = 'cellphone';
+    public const ELECTRONIC = 'electronic';
+    public const TV_MONITOR = 'tvmonitor';
+    public const LAPTOP     = 'laptop';
+    public const MOUSE  = 'mouse';
+    public const REMOTE = 'remote';
+    public const KEYBOARD = 'keyboard';
+    public const CELLPHONE = 'cellphone';
 }

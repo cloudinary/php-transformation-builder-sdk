@@ -20,9 +20,8 @@ trait OutdoorObjectGravityBuilderTrait
     /**
      * Gravity outdoor.
      *
-     * @return string
      */
-    public static function outdoor()
+    public static function outdoor(): string
     {
         return ObjectGravity::OUTDOOR;
     }
@@ -30,9 +29,8 @@ trait OutdoorObjectGravityBuilderTrait
     /**
      * Gravity trafficLight.
      *
-     * @return string
      */
-    public static function trafficLight()
+    public static function trafficLight(): string
     {
         return ObjectGravity::TRAFFIC_LIGHT;
     }
@@ -40,9 +38,8 @@ trait OutdoorObjectGravityBuilderTrait
     /**
      * Gravity stopSign.
      *
-     * @return string
      */
-    public static function stopSign()
+    public static function stopSign(): string
     {
         return ObjectGravity::STOP_SIGN;
     }
@@ -50,9 +47,8 @@ trait OutdoorObjectGravityBuilderTrait
     /**
      * Gravity parkingMeter.
      *
-     * @return string
      */
-    public static function parkingMeter()
+    public static function parkingMeter(): string
     {
         return ObjectGravity::PARKING_METER;
     }
@@ -60,9 +56,8 @@ trait OutdoorObjectGravityBuilderTrait
     /**
      * Gravity fireHydrant.
      *
-     * @return string
      */
-    public static function fireHydrant()
+    public static function fireHydrant(): string
     {
         return ObjectGravity::FIRE_HYDRANT;
     }
@@ -70,9 +65,8 @@ trait OutdoorObjectGravityBuilderTrait
     /**
      * Gravity bench.
      *
-     * @return string
      */
-    public static function bench()
+    public static function bench(): string
     {
         return ObjectGravity::BENCH;
     }

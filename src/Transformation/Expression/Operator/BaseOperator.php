@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Transformation\Expression;
 
+use Cloudinary\ArrayUtils;
 use Cloudinary\ClassUtils;
 use UnexpectedValueException;
 
@@ -23,7 +24,11 @@ abstract class BaseOperator extends BaseExpressionComponent
     /**
      * @var string $operator The operator.
      */
-    protected $operator;
+    protected string $operator;
+
+    protected static array $operators = [];
+
+    protected static array $friendlyRepresentations = [];
 
     // These static properties are defined in corresponding derived classes, otherwise they will be shared among
     // derived classes
@@ -34,7 +39,6 @@ abstract class BaseOperator extends BaseExpressionComponent
     /**
      * BaseOperator constructor.
      *
-     * @param $operator
      */
     public function __construct($operator)
     {
@@ -46,9 +50,8 @@ abstract class BaseOperator extends BaseExpressionComponent
     /**
      * Gets supported operators.
      *
-     * @return array
      */
-    protected static function operators()
+    protected static function operators(): array
     {
         return self::getConstants(static::$operators);
     }
@@ -56,9 +59,8 @@ abstract class BaseOperator extends BaseExpressionComponent
     /**
      * Gets friendly representations.
      *
-     * @return array
      */
-    protected static function friendlyRepresentations()
+    protected static function friendlyRepresentations(): array
     {
         return static::$friendlyRepresentations;
     }
@@ -68,9 +70,9 @@ abstract class BaseOperator extends BaseExpressionComponent
      *
      * @param string $operator The operator to set.
      */
-    protected function setOperator($operator)
+    protected function setOperator(string $operator): void
     {
-        if (in_array($operator, self::operators(), false)) {
+        if (in_array($operator, static::operators())) {
             $this->operator = $operator;
 
             return;
@@ -78,7 +80,7 @@ abstract class BaseOperator extends BaseExpressionComponent
 
         $friendlyRepresentations = static::friendlyRepresentations();
 
-        if (isset($operator, $friendlyRepresentations)) {
+        if (array_key_exists($operator, $friendlyRepresentations)) {
             $this->operator = $friendlyRepresentations[$operator];
 
             return;
@@ -100,9 +102,8 @@ abstract class BaseOperator extends BaseExpressionComponent
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return ['operator' => $this->operator];
     }

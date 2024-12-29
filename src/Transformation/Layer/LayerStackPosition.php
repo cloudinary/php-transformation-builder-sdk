@@ -23,6 +23,6 @@ namespace Cloudinary\Transformation;
  */
 class LayerStackPosition
 {
-    const OVERLAY = 'overlay';
-    const UNDERLAY = 'underlay';
+    public const OVERLAY = 'overlay';
+    public const UNDERLAY = 'underlay';
 }

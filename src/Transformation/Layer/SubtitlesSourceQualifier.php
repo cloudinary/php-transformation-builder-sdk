@@ -21,12 +21,12 @@ class SubtitlesSourceQualifier extends BaseSourceQualifier
     /**
      * @var string $sourceType The type of the layer.
      */
-    protected $sourceType = 'subtitles';
+    protected string $sourceType = 'subtitles';
 
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = ['text_style', 'subtitles_id'];
+    protected array $valueOrder = ['text_style', 'subtitles_id'];
 
     use TextStyleTrait;
 
@@ -34,9 +34,9 @@ class SubtitlesSourceQualifier extends BaseSourceQualifier
      * SubtitlesLayerQualifier constructor.
      *
      * @param string|SourceValue|mixed $subtitlesId The public ID of the subtitles asset.
-     * @param TextStyle                $style       The text style of subtitles.
+     * @param array|TextStyle|null     $style       The text style of subtitles.
      */
-    public function __construct($subtitlesId, $style = null)
+    public function __construct($subtitlesId, array|TextStyle|null $style = null)
     {
         parent::__construct();
 
@@ -50,7 +50,7 @@ class SubtitlesSourceQualifier extends BaseSourceQualifier
      *
      * @return $this
      */
-    public function subtitlesId($subtitlesId)
+    public function subtitlesId(mixed $subtitlesId): static
     {
         $this->value->setSimpleValue('subtitles_id', ClassUtils::verifyInstance($subtitlesId, SourceValue::class));
 
@@ -60,11 +60,11 @@ class SubtitlesSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the text style of the subtitles.
      *
-     * @param array|TextStyle $style The style.
+     * @param array|TextStyle|null $style The style.
      *
      * @return $this
      */
-    public function textStyle($style)
+    public function textStyle(array|TextStyle|null $style): static
     {
         if (is_array($style)) {
             $style = TextStyle::fromParams($style);
@@ -78,11 +78,10 @@ class SubtitlesSourceQualifier extends BaseSourceQualifier
     /**
      * Gets the text style.
      *
-     * @return TextStyle
      */
-    protected function getStyle()
+    protected function getStyle(): TextStyle
     {
-        if (!$this->value->getSimpleValue('text_style')) {
+        if (! $this->value->getSimpleValue('text_style')) {
             $this->value->setValue(new TextStyle());
         }
 
@@ -95,14 +94,17 @@ class SubtitlesSourceQualifier extends BaseSourceQualifier
      * @param string      $styleName    The style name.
      * @param string      $value        The style.
      * @param bool        $named        Indicates whether the property is a named property.
-     * @param null|string $defaultValue The default value of the property. Used for omitting values that are default.
+     * @param string|null $defaultValue The default value of the property. Used for omitting values that are default.
      *
-     * @return static
      *
      * @internal
      */
-    public function setStyleProperty($styleName, $value, $named = false, $defaultValue = null)
-    {
+    public function setStyleProperty(
+        string $styleName,
+        string $value,
+        bool $named = false,
+        ?string $defaultValue = null
+    ): static {
         $this->getStyle()->setStyleProperty($styleName, $value, $named, $defaultValue);
 
         return $this;

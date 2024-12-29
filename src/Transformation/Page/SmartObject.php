@@ -22,7 +22,7 @@ namespace Cloudinary\Transformation;
  */
 class SmartObject extends BasePageAction
 {
-    const MAIN_QUALIFIER = SmartObjectQualifier::class;
+    protected const MAIN_QUALIFIER = SmartObjectQualifier::class;
 
     use PageLayerNameTrait;
     use PageLayerNamesTrait;

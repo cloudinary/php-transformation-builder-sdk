@@ -30,9 +30,8 @@ trait BackgroundQualifierTrait
      * @param array $value The background color.  Can be set as an RGB or RGBA hex triplet or quadruplet, a 3- or
      *                     4-digit RGB/RGBA hex, or a named color.
      *
-     * @return Background
      */
-    public static function background(...$value)
+    public static function background(...$value): Background
     {
         return new Background(...$value);
     }

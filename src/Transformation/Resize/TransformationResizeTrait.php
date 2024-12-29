@@ -24,9 +24,8 @@ trait TransformationResizeTrait
      *
      * @param BaseResizeAction $resize The resize action
      *
-     * @return static
      */
-    public function resize(BaseResizeAction $resize)
+    public function resize(BaseResizeAction $resize): static
     {
         return $this->addAction($resize);
     }
@@ -39,9 +38,8 @@ trait TransformationResizeTrait
      * @param int|float|null        $height      The required height of a transformed asset.
      * @param int|float|array       $aspectRatio Resizes the asset to a new aspect ratio.
      *
-     * @return static
      */
-    public function scale($width = null, $height = null, $aspectRatio = null)
+    public function scale($width = null, $height = null, $aspectRatio = null): static
     {
         return $this->resize(Scale::scale($width, $height, $aspectRatio));
     }
@@ -55,9 +53,8 @@ trait TransformationResizeTrait
      * @param int|float|X           $x       Horizontal position for custom-coordinates based cropping
      * @param int|float|Y           $y       Vertical position for custom-coordinates based cropping
      *
-     * @return static
      */
-    public function crop($width = null, $height = null, $gravity = null, $x = null, $y = null)
+    public function crop($width = null, $height = null, $gravity = null, $x = null, $y = null): static
     {
         return $this->resize(Crop::crop($width, $height, $gravity, $x, $y));
     }
@@ -74,9 +71,8 @@ trait TransformationResizeTrait
      * @param Gravity               $gravity Which part of the original image to include when the resulting image is
      *                                       smaller than the original or the proportions do not match.
      *
-     * @return static
      */
-    public function fill($width = null, $height = null, $gravity = null)
+    public function fill($width = null, $height = null, $gravity = null): static
     {
         return $this->resize(Fill::fill($width, $height, $gravity));
     }
@@ -88,9 +84,8 @@ trait TransformationResizeTrait
      * @param int|float|string|null $width  The required width of a transformed asset.
      * @param int|float|null        $height The required height of a transformed asset.
      *
-     * @return static
      */
-    public function genericResize($name, $width = null, $height = null)
+    public function genericResize($name, $width = null, $height = null): static
     {
         return $this->resize(GenericResize::generic($name, $width, $height));
     }

@@ -18,5 +18,5 @@ class EffectMode extends BaseArgument
     /**
      * @var string $name The name of the argument.
      */
-    protected static $name = 'mode';
+    protected static string $name = 'mode';
 }

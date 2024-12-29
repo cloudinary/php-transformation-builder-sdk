@@ -33,7 +33,7 @@ namespace Cloudinary\Transformation;
  */
 class LiquidRescaling extends GravityQualifier
 {
-    const LIQUID = 'liquid';
+    protected const LIQUID = 'liquid';
 
     /**
      * LiquidRescaling constructor.

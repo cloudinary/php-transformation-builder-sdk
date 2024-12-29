@@ -28,11 +28,10 @@ abstract class Extract
      *
      * @param Page|PageQualifier|int ...$pages
      *
-     * @return Page
      *
      * @internal
      */
-    public static function getPage(...$pages)
+    public static function getPage(...$pages): Page
     {
         return ClassUtils::forceVarArgsInstance($pages, Page::class);
     }
@@ -42,10 +41,9 @@ abstract class Extract
      *
      * @param Frame|PageQualifier|int ...$frames
      *
-     * @return Page
      */
-    public static function getFrame(...$frames)
+    public static function getFrame(...$frames): Page
     {
-        return static::getPage($frames);
+        return static::getPage(...$frames);
     }
 }

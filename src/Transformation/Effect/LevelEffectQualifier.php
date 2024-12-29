@@ -24,11 +24,10 @@ class LevelEffectQualifier extends LimitedEffectQualifier
      *
      * @param int $level The level to set.
      *
-     * @return LimitedEffectQualifier
      *
      * @internal
      */
-    public function level($level)
+    public function level(int $level): LimitedEffectQualifier
     {
         $this->setEffectValue($level);
 

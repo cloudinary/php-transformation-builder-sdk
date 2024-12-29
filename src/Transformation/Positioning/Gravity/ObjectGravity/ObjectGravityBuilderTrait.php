@@ -22,9 +22,8 @@ trait ObjectGravityBuilderTrait
      *
      * @param mixed ...$objects The names of the objects.
      *
-     * @return string
      */
-    public static function object(...$objects)
+    public static function object(...$objects): ObjectGravity
     {
         return new ObjectGravity(...$objects);
     }

@@ -38,9 +38,8 @@ class AnimatedFormat extends BaseAction
      *
      * @param string $format The file format.
      *
-     * @return AnimatedFormat
      */
-    public function format($format)
+    public function format(string $format): static
     {
         $this->qualifiers[FormatQualifier::getName()]->format($format);
 
@@ -52,11 +51,10 @@ class AnimatedFormat extends BaseAction
      *
      * @param bool $useLossy Indicates whether to use lossy compression.
      *
-     * @return AnimatedFormat
      *
      * @see Flag::lossy
      */
-    public function lossy($useLossy = true)
+    public function lossy(bool $useLossy = true): AnimatedFormat
     {
         return $this->setFlag(Flag::lossy(), $useLossy);
     }

@@ -20,9 +20,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity kitchen.
      *
-     * @return string
      */
-    public static function kitchen()
+    public static function kitchen(): string
     {
         return ObjectGravity::KITCHEN;
     }
@@ -30,9 +29,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity bottle.
      *
-     * @return string
      */
-    public static function bottle()
+    public static function bottle(): string
     {
         return ObjectGravity::BOTTLE;
     }
@@ -40,9 +38,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity wineGlass.
      *
-     * @return string
      */
-    public static function wineGlass()
+    public static function wineGlass(): string
     {
         return ObjectGravity::WINE_GLASS;
     }
@@ -50,9 +47,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity cup.
      *
-     * @return string
      */
-    public static function cup()
+    public static function cup(): string
     {
         return ObjectGravity::CUP;
     }
@@ -60,9 +56,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity fork.
      *
-     * @return string
      */
-    public static function fork()
+    public static function fork(): string
     {
         return ObjectGravity::FORK;
     }
@@ -70,9 +65,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity knife.
      *
-     * @return string
      */
-    public static function knife()
+    public static function knife(): string
     {
         return ObjectGravity::KNIFE;
     }
@@ -80,9 +74,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity spoon.
      *
-     * @return string
      */
-    public static function spoon()
+    public static function spoon(): string
     {
         return ObjectGravity::SPOON;
     }
@@ -90,9 +83,8 @@ trait KitchenObjectGravityBuilderTrait
     /**
      * Gravity bowl.
      *
-     * @return string
      */
-    public static function bowl()
+    public static function bowl(): string
     {
         return ObjectGravity::BOWL;
     }

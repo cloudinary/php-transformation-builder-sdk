@@ -12,8 +12,6 @@ namespace Cloudinary\Transformation;
 
 /**
  * Trait EffectTypeTrait
- *
- * @property array qualifiers The qualifiers of the action.
  */
 trait EffectActionTypeTrait
 {
@@ -24,7 +22,7 @@ trait EffectActionTypeTrait
      *
      * @return $this
      */
-    public function type($type)
+    public function type(string $type): static
     {
         $this->qualifiers[EffectQualifier::getName()]->type($type);
 

@@ -29,10 +29,8 @@ class Quality extends BaseAction
     /**
      * Quality constructor.
      *
-     * @param       $level
-     * @param mixed ...$values
      */
-    public function __construct($level, ...$values)
+    public function __construct(mixed $level, ...$values)
     {
         parent::__construct(new QualityQualifier($level, ...$values));
     }
@@ -41,11 +39,10 @@ class Quality extends BaseAction
      * When used together with automatic quality (q_auto):
      * allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
      *
-     * @return Quality
      *
      * @see Flag::anyFormat
      */
-    public function anyFormat()
+    public function anyFormat(): Quality
     {
         return $this->setFlag(Flag::anyFormat());
     }
@@ -53,27 +50,23 @@ class Quality extends BaseAction
     /**
      * Named Quality constructor.
      *
-     * @param int|string $level  The quality level.
-     * @param array      $values Additional arguments.
+     * @param mixed $level  The quality level.
+     * @param array $values Additional arguments.
      *
-     * @return Quality
      */
-    protected static function createQuality($level, ...$values)
+    protected static function createQuality(mixed $level, ...$values): Quality
     {
         return new self($level, ...$values);
     }
 
     /**
-     * Sets simple  value.
-     *
-     * @param string             $name
-     * @param BaseComponent|null $value
+     * Sets simple value.
      *
      * @return $this
      *
      * @internal
      */
-    protected function setSimpleValue($name, $value = null)
+    protected function setSimpleValue(string $name, mixed $value = null): static
     {
         $this->qualifiers[QualityQualifier::getName()]->setSimpleValue($name, $value);
 
@@ -83,14 +76,14 @@ class Quality extends BaseAction
     /**
      * Sets the simple named value of the quality qualifier.
      *
-     * @param string             $name  The named argument name
-     * @param BaseComponent|null $value The value
+     * @param string $name  The named argument name.
+     * @param mixed  $value The value.
      *
      * @return $this
      *
      * @internal
      */
-    protected function setSimpleNamedValue($name, $value = null)
+    protected function setSimpleNamedValue(string $name, mixed $value = null): static
     {
         $this->qualifiers[QualityQualifier::getName()]->setSimpleNamedValue($name, $value);
 

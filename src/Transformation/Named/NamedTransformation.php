@@ -20,15 +20,10 @@ class NamedTransformation extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 't';
+    protected static string $key = 't';
 
 
-    /**
-     * @param $transformationName
-     *
-     * @return static
-     */
-    public static function name($transformationName)
+    public static function name($transformationName): static
     {
         return new static($transformationName);
     }

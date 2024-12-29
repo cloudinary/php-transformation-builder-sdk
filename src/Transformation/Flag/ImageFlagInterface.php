@@ -15,21 +15,21 @@ namespace Cloudinary\Transformation;
  */
 interface ImageFlagInterface
 {
-    const ANIMATED              = 'animated';
-    const ANY_FORMAT            = 'any_format';
-    const ANIMATED_PNG          = 'apng';
-    const ANIMATED_WEBP         = 'awebp';
-    const CLIP                  = 'clip';
-    const CLIP_EVEN_ODD         = 'clip_evenodd';
-    const LOSSY                 = 'lossy';
-    const PRESERVE_TRANSPARENCY = 'preserve_transparency';
-    const PNG8                  = 'png8';
-    const PNG24                 = 'png24';
-    const PNG32                 = 'png32';
-    const PROGRESSIVE           = 'progressive';
-    const RASTERIZE             = 'rasterize';
-    const SANITIZE              = 'sanitize';
-    const STRIP_PROFILE         = 'strip_profile';
-    const TIFF8_LZW             = 'tiff8_lzw';
-    const IGNORE_MASK_CHANNELS  = 'ignore_mask_channels';
+    public const ANIMATED = 'animated';
+    public const ANY_FORMAT = 'any_format';
+    public const ANIMATED_PNG = 'apng';
+    public const ANIMATED_WEBP = 'awebp';
+    public const CLIP          = 'clip';
+    public const CLIP_EVEN_ODD = 'clip_evenodd';
+    public const LOSSY         = 'lossy';
+    public const PRESERVE_TRANSPARENCY = 'preserve_transparency';
+    public const PNG8                  = 'png8';
+    public const PNG24          = 'png24';
+    public const PNG32 = 'png32';
+    public const PROGRESSIVE = 'progressive';
+    public const RASTERIZE   = 'rasterize';
+    public const SANITIZE  = 'sanitize';
+    public const STRIP_PROFILE = 'strip_profile';
+    public const TIFF8_LZW     = 'tiff8_lzw';
+    public const IGNORE_MASK_CHANNELS = 'ignore_mask_channels';
 }

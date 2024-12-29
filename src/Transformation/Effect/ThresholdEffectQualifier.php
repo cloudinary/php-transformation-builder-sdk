@@ -24,11 +24,10 @@ class ThresholdEffectQualifier extends LimitedEffectQualifier
      *
      * @param int $threshold The threshold to set.
      *
-     * @return ThresholdEffectQualifier
      *
      * @internal
      */
-    public function threshold($threshold)
+    public function threshold(int $threshold): static
     {
         $this->setEffectValue($threshold);
 

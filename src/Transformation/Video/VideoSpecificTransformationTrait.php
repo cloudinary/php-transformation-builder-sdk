@@ -26,11 +26,10 @@ trait VideoSpecificTransformationTrait
      *
      * @param Timeline $range Specify the range of the video to leave.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#trimming_videos
      */
-    public function trim(Timeline $range)
+    public function trim(Timeline $range): static
     {
         return $this->addAction($range);
     }
@@ -40,11 +39,10 @@ trait VideoSpecificTransformationTrait
      *
      * @param int|string $radius The radius of the corners in pixels.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#rounding_corners_and_creating_circular_videos
      */
-    public function roundCorners($radius)
+    public function roundCorners(int|string $radius): static
     {
         return $this->addAction(ClassUtils::verifyInstance($radius, RoundCorners::class));
     }
@@ -52,16 +50,18 @@ trait VideoSpecificTransformationTrait
     /**
      * Adds another video, text, image as an overlay over the container video.
      *
-     * @param BaseSource|string $videoLayer The overlay.
-     * @param BasePosition|null $position   The position of the overlay.
-     * @param Timeline|null     $timeline   The timeline position of the overlay.
+     * @param string|BaseSourceContainer|BaseSource $videoLayer The overlay.
+     * @param BasePosition|null                     $position   The position of the overlay.
+     * @param Timeline|null                         $timeline   The timeline position of the overlay.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_video_overlays
      */
-    public function overlay($videoLayer, $position = null, $timeline = null)
-    {
+    public function overlay(
+        BaseSource|BaseSourceContainer|string $videoLayer,
+        ?BasePosition $position = null,
+        ?Timeline $timeline = null
+    ): static {
         return $this->addAction(
             ClassUtils::verifyInstance(
                 $videoLayer,
@@ -76,28 +76,29 @@ trait VideoSpecificTransformationTrait
     /**
      * Concatenates another video or image.
      *
-     * @param VideoSource|string $videoSource The source of the video to concatenate.
+     * @param string|Concatenate|BaseSource $videoLayer The source of the video/audio to concatenate.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos
      */
-    public function concatenate($videoSource)
+    public function concatenate(Concatenate|BaseSource|string $videoLayer): static
     {
-        return $this->addAction(ClassUtils::verifyInstance($videoSource, Concatenate::class));
+        return $this->addAction(ClassUtils::verifyInstance($videoLayer, Concatenate::class));
     }
 
     /**
      * Applies the video as a cutter for the main video.
      *
-     * @param VideoSource|string $videoLayer The cutter video layer.
+     * @param string|VideoSource $videoLayer The cutter video layer.
      * @param BasePosition|null  $position   The position of the cutter.
      * @param Timeline|null      $timeline   The timeline position of the cutter.
      *
-     * @return static
      */
-    public function cutter($videoLayer, $position = null, $timeline = null)
-    {
+    public function cutter(
+        string|VideoSource $videoLayer,
+        ?BasePosition $position = null,
+        ?Timeline $timeline = null
+    ): static {
         return $this->addAction(
             (new VideoOverlay($videoLayer, $position, $timeline))->cutter()
         );
@@ -108,9 +109,8 @@ trait VideoSpecificTransformationTrait
      *
      * @param string $subtitlesId The subtitles file public ID.
      *
-     * @return static
      */
-    public function addSubtitles($subtitlesId)
+    public function addSubtitles(string $subtitlesId): static
     {
         return $this->overlay(VideoSource::subtitles($subtitlesId));
     }
@@ -118,11 +118,10 @@ trait VideoSpecificTransformationTrait
     /**
      * Transcodes the video (or audio) to another format / adjusts encoding properties.
      *
-     * @param AudioCodec|VideoCodec|AudioFrequency|mixed $transcode The new format or encoding property.
+     * @param AudioCodec|AudioFrequency|ToAnimatedAction|VideoCodec|Fps $transcode The new format or encoding property.
      *
-     * @return static
      */
-    public function transcode($transcode)
+    public function transcode(AudioCodec|ToAnimatedAction|AudioFrequency|VideoCodec|Fps $transcode): static
     {
         return $this->addAction($transcode);
     }
@@ -131,12 +130,11 @@ trait VideoSpecificTransformationTrait
      * Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized)
      * is delivered with an expected fps level (helps with sync to audio).
      *
-     * @param float|int|string      $min The minimum frame rate.
+     * @param float|int|string|Fps  $min The minimum frame rate.
      * @param float|int|string|null $max The maximum frame rate.
      *
-     * @return static
      */
-    public function fps($min, $max = null)
+    public function fps(float|int|string|Fps $min, float|int|string|null $max = null): static
     {
         return $this->addAction(ClassUtils::verifyInstance($min, Fps::class, null, $max));
     }
@@ -144,11 +142,10 @@ trait VideoSpecificTransformationTrait
     /**
      * Explicitly sets the keyframe interval of the delivered video.
      *
-     * @param float $interval Positive float number in seconds.
+     * @param mixed $interval Positive float number in seconds.
      *
-     * @return static
      */
-    public function keyframeInterval($interval)
+    public function keyframeInterval(mixed $interval): static
     {
         return $this->addAction(ClassUtils::verifyInstance($interval, KeyframeInterval::class));
     }
@@ -156,16 +153,15 @@ trait VideoSpecificTransformationTrait
     /**
      * Controls the video bitrate.
      *
-     * @param int|string $bitRate  The number of bits used to represent the video data per second. By default the video
+     * @param int|string  $bitRate The number of bits used to represent the video data per second. By default the video
      *                             uses a variable bitrate (VBR), with this value indicating the maximum bitrate.
      *                             Can be an integer e.g. 120000, or a string supporting "k" and "m"
      *                             (kilobits and megabits respectively) e.g. 250k or 2m.
-     * @param string     $type     The type of bitrate. If "constant" is specified, the video plays with a constant
+     * @param string|null $type    The type of bitrate. If "constant" is specified, the video plays with a constant
      *                             bitrate (CBR). Use the constant defined in the BitRate class.
      *
-     * @return static
      */
-    public function bitRate($bitRate, $type = null)
+    public function bitRate(int|string $bitRate, ?string $type = null): static
     {
         return $this->addAction(ClassUtils::verifyInstance($bitRate, BitRate::class, null, $type));
     }
@@ -179,13 +175,11 @@ trait VideoSpecificTransformationTrait
      *
      * @param string $streamingProfile The streaming profile.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#predefined_streaming_profiles
      *
-     * @see \Cloudinary\Api\Admin\StreamingProfilesTrait
      */
-    public function streamingProfile($streamingProfile)
+    public function streamingProfile(string $streamingProfile): static
     {
         return $this->addAction(ClassUtils::verifyInstance($streamingProfile, StreamingProfile::class));
     }
@@ -203,9 +197,8 @@ trait VideoSpecificTransformationTrait
      *                          String - The number of seconds between each frame to sample from the original video.
      *                          e.g. 2.3s takes one frame every 2.3 seconds.
      *
-     * @return static
      */
-    public function videoSampling($value)
+    public function videoSampling(int|string $value): static
     {
         return $this->addAction(ClassUtils::verifyInstance($value, VideoSampling::class));
     }
@@ -215,9 +208,8 @@ trait VideoSpecificTransformationTrait
      *
      * @param mixed $videoEdit The video edit action.
      *
-     * @return static
      */
-    public function videoEdit($videoEdit)
+    public function videoEdit(mixed $videoEdit): static
     {
         return $this->addAction($videoEdit);
     }

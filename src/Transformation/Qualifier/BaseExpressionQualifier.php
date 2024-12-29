@@ -20,5 +20,5 @@ abstract class BaseExpressionQualifier extends BaseQualifier
     /**
      * @var string VALUE_CLASS The class of the qualifier value. Can be customized by derived classes.
      */
-    const VALUE_CLASS = ExpressionQualifierMultiValue::class;
+    protected const VALUE_CLASS = ExpressionQualifierMultiValue::class;
 }

@@ -27,46 +27,42 @@ class Gradient extends BaseComponent
     /**
      * Base the gradient fade effect on the predominant colors in the image.
      */
-    const PREDOMINANT_GRADIENT = 'predominant_gradient';
+    public const PREDOMINANT_GRADIENT = 'predominant_gradient';
 
     /**
      * Base the effect on the colors that contrast the predominant colors in the image.
      */
-    const PREDOMINANT_GRADIENT_CONTRAST = 'predominant_gradient_contrast';
+    public const PREDOMINANT_GRADIENT_CONTRAST = 'predominant_gradient_contrast';
 
     /**
      * Base the gradient fade effect on the predominant colors in the border pixels of the image.
      */
-    const BORDER_GRADIENT = 'border_gradient';
+    public const BORDER_GRADIENT = 'border_gradient';
 
     /**
      * Base the effect on the colors that contrast the predominant colors in the border pixels of the image.
      */
-    const BORDER_GRADIENT_CONTRAST = 'border_gradient_contrast';
+    public const BORDER_GRADIENT_CONTRAST = 'border_gradient_contrast';
 
     /**
      * @var string $type The type of gradient fade.
      */
-    protected $type;
+    protected string $type;
 
     /**
      * @var int $numberOfColors The number of predominant colors to use (2 or 4).
      */
-    protected $numberOfColors;
+    protected int $numberOfColors;
 
     /**
      * @var string $direction The direction of fade.
      */
-    protected $direction;
+    protected string $direction;
 
     /**
      * Gradient constructor.
-     *
-     * @param string $type
-     * @param int    $numberOfColors
-     * @param string $direction
      */
-    public function __construct($type = null, $numberOfColors = null, $direction = null)
+    public function __construct(?string $type = null, ?int $numberOfColors = null, ?string $direction = null)
     {
         parent::__construct();
 
@@ -80,9 +76,8 @@ class Gradient extends BaseComponent
      *
      * @param string $type The type of gradient fade.
      *
-     * @return Gradient
      */
-    public function type($type)
+    public function type(string $type): static
     {
         $this->type = $type;
 
@@ -94,9 +89,8 @@ class Gradient extends BaseComponent
      *
      * @param int $numberOfColors The number of predominant colors to use (2 or 4).
      *
-     * @return Gradient
      */
-    public function numberOfColors($numberOfColors)
+    public function numberOfColors(int $numberOfColors): static
     {
         $this->numberOfColors = $numberOfColors;
 
@@ -108,11 +102,10 @@ class Gradient extends BaseComponent
      *
      * @param string $direction The direction of fade.  Use the constants defined in the GradientDirection class.
      *
-     * @return Gradient
      *
-     * @see \Cloudinary\Transformation\Argument\GradientDirection
+     * @see GradientDirection
      */
-    public function direction($direction)
+    public function direction(string $direction): static
     {
         $this->direction = $direction;
 
@@ -134,10 +127,10 @@ class Gradient extends BaseComponent
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         // TODO: Implement jsonSerialize() method.
+        return [];
     }
 }

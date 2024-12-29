@@ -17,5 +17,5 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class KeyframeInterval extends BaseQualifier
 {
-    const VALUE_CLASS = PositiveFloatValue::class;
+    protected const VALUE_CLASS = PositiveFloatValue::class;
 }

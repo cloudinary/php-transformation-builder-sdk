@@ -15,27 +15,27 @@ namespace Cloudinary\Transformation;
  */
 class ArtisticFilter extends ValueEffectQualifier
 {
-    const AL_DENTE   = 'al_dente';
-    const ATHENA     = 'athena';
-    const AUDREY     = 'audrey';
-    const AURORA     = 'aurora';
-    const DAGUERRE   = 'daguerre';
-    const EUCALYPTUS = 'eucalyptus';
-    const FES        = 'fes';
-    const FROST      = 'frost';
-    const HAIRSPRAY  = 'hairspray';
-    const HOKUSAI    = 'hokusai';
-    const INCOGNITO  = 'incognito';
-    const LINEN      = 'linen';
-    const PEACOCK    = 'peacock';
-    const PRIMAVERA  = 'primavera';
-    const QUARTZ     = 'quartz';
-    const RED_ROCK   = 'red_rock';
-    const REFRESH    = 'refresh';
-    const SIZZLE     = 'sizzle';
-    const SONNET     = 'sonnet';
-    const UKULELE    = 'ukulele';
-    const ZORRO      = 'zorro';
+    public const AL_DENTE = 'al_dente';
+    public const ATHENA   = 'athena';
+    public const AUDREY = 'audrey';
+    public const AURORA = 'aurora';
+    public const DAGUERRE = 'daguerre';
+    public const EUCALYPTUS = 'eucalyptus';
+    public const FES        = 'fes';
+    public const FROST = 'frost';
+    public const HAIRSPRAY = 'hairspray';
+    public const HOKUSAI   = 'hokusai';
+    public const INCOGNITO = 'incognito';
+    public const LINEN     = 'linen';
+    public const PEACOCK = 'peacock';
+    public const PRIMAVERA = 'primavera';
+    public const QUARTZ    = 'quartz';
+    public const RED_ROCK = 'red_rock';
+    public const REFRESH  = 'refresh';
+    public const SIZZLE  = 'sizzle';
+    public const SONNET = 'sonnet';
+    public const UKULELE = 'ukulele';
+    public const ZORRO   = 'zorro';
 
     /**
      * ArtisticFilter constructor.
@@ -50,9 +50,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic Filter alDente.
      *
-     * @return ArtisticFilter
      */
-    public static function alDente()
+    public static function alDente(): ArtisticFilter
     {
         return new static(self::AL_DENTE);
     }
@@ -60,9 +59,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter athena.
      *
-     * @return ArtisticFilter
      */
-    public static function athena()
+    public static function athena(): ArtisticFilter
     {
         return new static(self::ATHENA);
     }
@@ -70,9 +68,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter audrey.
      *
-     * @return ArtisticFilter
      */
-    public static function audrey()
+    public static function audrey(): ArtisticFilter
     {
         return new static(self::AUDREY);
     }
@@ -80,9 +77,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter aurora.
      *
-     * @return ArtisticFilter
      */
-    public static function aurora()
+    public static function aurora(): ArtisticFilter
     {
         return new static(self::AURORA);
     }
@@ -90,9 +86,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter daguerre.
      *
-     * @return ArtisticFilter
      */
-    public static function daguerre()
+    public static function daguerre(): ArtisticFilter
     {
         return new static(self::DAGUERRE);
     }
@@ -100,9 +95,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter eucalyptus.
      *
-     * @return ArtisticFilter
      */
-    public static function eucalyptus()
+    public static function eucalyptus(): ArtisticFilter
     {
         return new static(self::EUCALYPTUS);
     }
@@ -110,9 +104,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter fes.
      *
-     * @return ArtisticFilter
      */
-    public static function fes()
+    public static function fes(): ArtisticFilter
     {
         return new static(self::FES);
     }
@@ -120,9 +113,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter frost.
      *
-     * @return ArtisticFilter
      */
-    public static function frost()
+    public static function frost(): ArtisticFilter
     {
         return new static(self::FROST);
     }
@@ -130,9 +122,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter hairspray.
      *
-     * @return ArtisticFilter
      */
-    public static function hairspray()
+    public static function hairspray(): ArtisticFilter
     {
         return new static(self::HAIRSPRAY);
     }
@@ -140,9 +131,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter hokusai.
      *
-     * @return ArtisticFilter
      */
-    public static function hokusai()
+    public static function hokusai(): ArtisticFilter
     {
         return new static(self::HOKUSAI);
     }
@@ -150,9 +140,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter incognito.
      *
-     * @return ArtisticFilter
      */
-    public static function incognito()
+    public static function incognito(): ArtisticFilter
     {
         return new static(self::INCOGNITO);
     }
@@ -160,9 +149,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter linen.
      *
-     * @return ArtisticFilter
      */
-    public static function linen()
+    public static function linen(): ArtisticFilter
     {
         return new static(self::LINEN);
     }
@@ -170,9 +158,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter peacock.
      *
-     * @return ArtisticFilter
      */
-    public static function peacock()
+    public static function peacock(): ArtisticFilter
     {
         return new static(self::PEACOCK);
     }
@@ -180,9 +167,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter primavera.
      *
-     * @return ArtisticFilter
      */
-    public static function primavera()
+    public static function primavera(): ArtisticFilter
     {
         return new static(self::PRIMAVERA);
     }
@@ -190,9 +176,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter quartz.
      *
-     * @return ArtisticFilter
      */
-    public static function quartz()
+    public static function quartz(): ArtisticFilter
     {
         return new static(self::QUARTZ);
     }
@@ -200,9 +185,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter redRock.
      *
-     * @return ArtisticFilter
      */
-    public static function redRock()
+    public static function redRock(): ArtisticFilter
     {
         return new static(self::RED_ROCK);
     }
@@ -210,9 +194,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter refresh.
      *
-     * @return ArtisticFilter
      */
-    public static function refresh()
+    public static function refresh(): ArtisticFilter
     {
         return new static(self::REFRESH);
     }
@@ -220,9 +203,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter sizzle.
      *
-     * @return ArtisticFilter
      */
-    public static function sizzle()
+    public static function sizzle(): ArtisticFilter
     {
         return new static(self::SIZZLE);
     }
@@ -230,9 +212,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter sonnet.
      *
-     * @return ArtisticFilter
      */
-    public static function sonnet()
+    public static function sonnet(): ArtisticFilter
     {
         return new static(self::SONNET);
     }
@@ -240,9 +221,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter ukulele.
      *
-     * @return ArtisticFilter
      */
-    public static function ukulele()
+    public static function ukulele(): ArtisticFilter
     {
         return new static(self::UKULELE);
     }
@@ -250,9 +230,8 @@ class ArtisticFilter extends ValueEffectQualifier
     /**
      * Artistic filter zorro.
      *
-     * @return ArtisticFilter
      */
-    public static function zorro()
+    public static function zorro(): ArtisticFilter
     {
         return new static(self::ZORRO);
     }

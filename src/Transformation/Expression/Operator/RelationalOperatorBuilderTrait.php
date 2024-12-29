@@ -20,9 +20,8 @@ trait RelationalOperatorBuilderTrait
     /**
      * Equals.
      *
-     * @return ExpressionOperator
      */
-    public function equal()
+    public function equal(): ExpressionOperator
     {
         return $this->buildExpression(RelationalOperator::equal());
     }
@@ -30,9 +29,8 @@ trait RelationalOperatorBuilderTrait
     /**
      * Does not equal.
      *
-     * @return ExpressionOperator
      */
-    public function notEqual()
+    public function notEqual(): ExpressionOperator
     {
         return $this->buildExpression(RelationalOperator::notEqual());
     }
@@ -40,9 +38,8 @@ trait RelationalOperatorBuilderTrait
     /**
      * Less than.
      *
-     * @return ExpressionOperator
      */
-    public function lessThan()
+    public function lessThan(): ExpressionOperator
     {
         return $this->buildExpression(RelationalOperator::lessThan());
     }
@@ -50,9 +47,8 @@ trait RelationalOperatorBuilderTrait
     /**
      * Greater than.
      *
-     * @return ExpressionOperator
      */
-    public function greaterThan()
+    public function greaterThan(): ExpressionOperator
     {
         return $this->buildExpression(RelationalOperator::greaterThan());
     }
@@ -60,9 +56,8 @@ trait RelationalOperatorBuilderTrait
     /**
      * Less than or equals.
      *
-     * @return ExpressionOperator
      */
-    public function lessThanOrEqual()
+    public function lessThanOrEqual(): ExpressionOperator
     {
         return $this->buildExpression(RelationalOperator::lessThanOrEqual());
     }
@@ -70,9 +65,8 @@ trait RelationalOperatorBuilderTrait
     /**
      * Greater than or equals.
      *
-     * @return ExpressionOperator
      */
-    public function greaterThanOrEqual()
+    public function greaterThanOrEqual(): ExpressionOperator
     {
         return $this->buildExpression(RelationalOperator::greaterThanOrEqual());
     }

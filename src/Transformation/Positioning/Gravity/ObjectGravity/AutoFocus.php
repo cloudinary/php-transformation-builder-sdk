@@ -19,12 +19,7 @@ use Cloudinary\ClassUtils;
  */
 abstract class AutoFocus
 {
-    /**
-     * @param mixed $object
-     *
-     * @return string
-     */
-    public static function focusOn($object)
+    public static function focusOn(mixed $object): string
     {
         return ClassUtils::verifyInstance($object, AutoGravityObject::class);
     }

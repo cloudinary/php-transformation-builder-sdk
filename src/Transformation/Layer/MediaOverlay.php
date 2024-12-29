@@ -22,32 +22,28 @@ class MediaOverlay extends ImageOverlay
     /**
      * @var Timeline $timeline The timeline position of the overlay.
      */
-    protected $timeline;
+    protected Timeline $timeline;
 
     /**
      * Sets the timeline position of the overlay.
      *
      * @param Timeline|null $timeline The timeline position of the overlay.
      *
-     * @return MediaOverlay
      */
-    public function timeline(?Timeline $timeline = null)
+    public function timeline(?Timeline $timeline = null): static
     {
         $this->timeline = $timeline;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $subActionQualifiers = parent::getSubActionQualifiers();
 
         $subActionQualifiers['additional'] = ArrayUtils::mergeNonEmpty(
             $subActionQualifiers['additional'],
-            $this->timeline? $this->timeline->getStringQualifiers(): []
+            !empty($this->timeline) ? $this->timeline->getStringQualifiers(): []
         );
 
         return $subActionQualifiers;

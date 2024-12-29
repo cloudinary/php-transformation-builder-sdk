@@ -23,7 +23,7 @@ use Cloudinary\TransformationUtils;
  */
 class Volume extends LimitedEffectQualifier
 {
-    const MUTE = 'mute';
+    public const MUTE = 'mute';
 
     /**
      * Volume constructor.
@@ -40,11 +40,9 @@ class Volume extends LimitedEffectQualifier
     /**
      * Named Volume constructor.
      *
-     * @param mixed $volume
      *
-     * @return Volume
      */
-    public static function volume($volume)
+    public static function volume(mixed $volume): Volume
     {
         return new self($volume);
     }
@@ -54,9 +52,8 @@ class Volume extends LimitedEffectQualifier
      *
      * @param int $dBOffset The offset in dB.
      *
-     * @return Volume
      */
-    public static function byDecibels($dBOffset)
+    public static function byDecibels(int $dBOffset): Volume
     {
         return new self(TransformationUtils::formatSigned($dBOffset) . 'dB');
     }
@@ -66,9 +63,8 @@ class Volume extends LimitedEffectQualifier
      *
      * @param int $level The percentage change of volume (Range: -100 to 400).
      *
-     * @return Volume
      */
-    public static function byPercent($level)
+    public static function byPercent(int $level): Volume
     {
         return new self($level);
     }
@@ -79,9 +75,8 @@ class Volume extends LimitedEffectQualifier
      * You can use this on the base video to deliver a video without sound, or with a video overlay
      * to ensure that only the sound from the base video plays.
      *
-     * @return Volume
      */
-    public static function mute()
+    public static function mute(): Volume
     {
         return new self(self::MUTE);
     }
@@ -89,11 +84,10 @@ class Volume extends LimitedEffectQualifier
     /**
      * Increases or decreases the volume by a percentage of the current volume.
      *
-     * @param int $value The percentage change of volume (Range: -100 to 400).
+     * @param int|string $value The percentage change of volume (Range: -100 to 400).
      *
-     * @return Volume
      */
-    protected function setVolume($value)
+    protected function setVolume(int|string $value): static
     {
         $this->value->setSimpleValue('volume', $value);
 

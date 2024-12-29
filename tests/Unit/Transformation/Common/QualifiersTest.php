@@ -32,7 +32,7 @@ final class QualifiersTest extends TestCase
      *
      * @return array
      */
-    public function colorConstantsDataProvider()
+    public function colorConstantsDataProvider(): array
     {
         $reflectionClass = new ReflectionClass(Color::class);
         $colors          = ($reflectionClass->getConstants());
@@ -60,7 +60,7 @@ final class QualifiersTest extends TestCase
      *
      * @param string $color
      */
-    public function testColorConstants($color)
+    public function testColorConstants(string $color)
     {
         self::assertEquals(
             $color,

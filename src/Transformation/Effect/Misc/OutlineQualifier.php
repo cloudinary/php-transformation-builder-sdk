@@ -16,7 +16,7 @@ namespace Cloudinary\Transformation;
  */
 class OutlineQualifier extends EffectQualifier
 {
-    protected $valueOrder = [0, 'mode', 'width', 'blur_level'];
+    protected array $valueOrder = [0, 'mode', 'width', 'blur_level'];
 
     public function __construct(...$values)
     {
@@ -26,11 +26,10 @@ class OutlineQualifier extends EffectQualifier
     /**
      * Sets the outline mode.
      *
-     * @param string $mode The outline mode.
+     * @param ?string $mode The outline mode.
      *
-     * @return OutlineQualifier
      */
-    public function mode($mode)
+    public function mode(?string $mode): static
     {
         $this->value->setSimpleValue('mode', $mode);
 
@@ -39,11 +38,10 @@ class OutlineQualifier extends EffectQualifier
     /**
      * Sets the outline width.
      *
-     * @param int|string $width The width in pixels.
+     * @param int|string|null $width The width in pixels.
      *
-     * @return OutlineQualifier
      */
-    public function width($width)
+    public function width(int|string|null $width): static
     {
         $this->value->setSimpleValue('width', $width);
 
@@ -53,11 +51,10 @@ class OutlineQualifier extends EffectQualifier
     /**
      * Sets the outline blur level.
      *
-     * @param int|string $blurLevel The level of blur.
+     * @param int|string|null $blurLevel The level of blur.
      *
-     * @return OutlineQualifier
      */
-    public function blurLevel($blurLevel)
+    public function blurLevel(int|string|null $blurLevel): static
     {
         $this->value->setSimpleValue('blur_level', $blurLevel);
 

@@ -10,8 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Transformation\Region;
-
 /**
  * Class RegionEffectAction
  */
@@ -22,16 +20,16 @@ class RegionEffectAction extends EffectAction
     /**
      * RegionEffectAction constructor.
      *
-     * @param string $effectName
-     * @param array  $range
-     * @param mixed  $strength
-     * @param Region $region
-     * @param mixed  ...$args
+     * @param string       $effectName
+     * @param array        $range
+     * @param mixed|null   $strength
+     * @param Region|null $region
+     * @param mixed        ...$args
      */
-    public function __construct($effectName, $range, $strength = null, $region = null, ...$args)
+    public function __construct($effectName, array $range, mixed $strength = null, ?Region $region = null, ...$args)
     {
         parent::__construct(
-            new LimitedEffectQualifier($effectName, $range, $strength),
+               new LimitedEffectQualifier($effectName, $range, $strength),
             ...$args
         );
 
@@ -41,13 +39,11 @@ class RegionEffectAction extends EffectAction
     /**
      * Internal setter for the point value.
      *
-     * @param mixed $value
-     *
-     * @return static
+     * @param mixed $value The value.
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue(mixed $value): static
     {
         if (! isset($this->qualifiers[Region::getName()])) {
             $this->addQualifier(new Region());
@@ -63,11 +59,9 @@ class RegionEffectAction extends EffectAction
      *
      * @param Region|mixed $value The dimensions.
      *
-     * @return static
-     *
      * @internal
      */
-    protected function setDimension($value)
+    protected function setDimension(mixed $value): static
     {
         if (! isset($this->qualifiers[Region::getName()])) {
             $this->addQualifier(new Region());

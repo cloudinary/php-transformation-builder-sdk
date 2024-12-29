@@ -20,9 +20,8 @@ trait ImageTransformationFlagTrait
     /**
      * Instruct Cloudinary to run a sanitizer on the image (relevant only for the SVG format).
      *
-     * @return static
      */
-    public function sanitize()
+    public function sanitize(): static
     {
         return $this->addFlag(Flag::sanitize());
     }

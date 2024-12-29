@@ -24,7 +24,7 @@ trait ColorToReplaceTrait
      *
      * @return $this
      */
-    public function colorToReplace($color)
+    public function colorToReplace(string $color): static
     {
         $this->addQualifier(ClassUtils::verifyInstance($color, ColorQualifier::class));
 

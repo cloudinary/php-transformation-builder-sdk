@@ -23,13 +23,12 @@ trait BackgroundColorTrait
     /**
      * Sets the color of the background.
      *
-     * @param Background|ColorValue|string $color The color of the background to set.
+     * @param string|Background|ColorValue|null $color The color of the background to set.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Background
+     * @see Background
      */
-    public function backgroundColor($color)
+    public function backgroundColor(Background|ColorValue|string|null $color): static
     {
         $this->addQualifier(ClassUtils::verifyInstance($color, Background::class));
 

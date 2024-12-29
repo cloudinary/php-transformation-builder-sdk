@@ -22,9 +22,8 @@ trait CornersTrait
      *
      * @param int $radius Radius length in pixels
      *
-     * @return static
      */
-    public function topLeft($radius)
+    public function topLeft(int $radius): static
     {
         $this->setSimpleValue('topLeft', $radius);
 
@@ -36,9 +35,8 @@ trait CornersTrait
      *
      * @param int|null $radius Radius length in pixels
      *
-     * @return static
      */
-    public function topRight($radius)
+    public function topRight(?int $radius): static
     {
         $this->setSimpleValue('topRight', $radius);
 
@@ -50,9 +48,8 @@ trait CornersTrait
      *
      * @param int|null $radius Radius length in pixels
      *
-     * @return static
      */
-    public function bottomRight($radius)
+    public function bottomRight(?int $radius): static
     {
         $this->setSimpleValue('bottomRight', $radius);
 
@@ -64,9 +61,8 @@ trait CornersTrait
      *
      * @param int|null $radius Radius length in pixels
      *
-     * @return static
      */
-    public function bottomLeft($radius)
+    public function bottomLeft(?int $radius): static
     {
         $this->setSimpleValue('bottomLeft', $radius);
 
@@ -78,9 +74,8 @@ trait CornersTrait
      *
      * @param int $radius Radius length in pixels
      *
-     * @return static
      */
-    public function setRadius($radius)
+    public function setRadius(int $radius): static
     {
         $this->topLeft($radius);
         $this->topRight(null);
@@ -96,9 +91,8 @@ trait CornersTrait
      * @param int $topLeftBottomRight Radius for top-left and bottom-right corners
      * @param int $topRightBottomLeft Radius for top-right and bottom-left corners
      *
-     * @return static
      */
-    public function setSymmetricRadius($topLeftBottomRight, $topRightBottomLeft)
+    public function setSymmetricRadius(int $topLeftBottomRight, int $topRightBottomLeft): static
     {
         $this->topLeft($topLeftBottomRight);
         $this->topRight($topRightBottomLeft);
@@ -115,9 +109,8 @@ trait CornersTrait
      * @param int $topRightBottomLeft Radius for top-right and bottom-left corners
      * @param int $bottomRight        Radius for bottom-right corner
      *
-     * @return static
      */
-    public function setPartiallySymmetricRadius($topLeft, $topRightBottomLeft, $bottomRight)
+    public function setPartiallySymmetricRadius(int $topLeft, int $topRightBottomLeft, int $bottomRight): static
     {
         $this->topLeft($topLeft);
         $this->topRight($topRightBottomLeft);

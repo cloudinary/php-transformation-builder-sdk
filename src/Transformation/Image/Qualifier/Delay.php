@@ -20,5 +20,5 @@ class Delay extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'dl';
+    protected static string $key = 'dl';
 }

@@ -24,14 +24,10 @@ trait CompassGravityTrait
      *
      * The compass direction represents a location in the image, for example, Gravity::northEast() represents the
      * top right corner.
-     *
-     * @param string $compassGravity
-     *
-     * @return static
-     *
+
      * @see Gravity::northEast
      */
-    public function gravity($compassGravity)
+    public function gravity(string|GravityQualifier|null $compassGravity): static
     {
         if (! $compassGravity instanceof GravityQualifier) {
             $compassGravity = new CompassGravity($compassGravity);

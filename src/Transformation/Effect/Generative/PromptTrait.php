@@ -3,7 +3,6 @@
 namespace Cloudinary\Transformation;
 
 use Cloudinary\ArrayUtils;
-use Cloudinary\TransformationUtils;
 
 /**
  * Trait DetectMultipleTrait
@@ -13,11 +12,11 @@ trait PromptTrait
     /**
      * Use natural language to describe what you want to affect in the image.
      *
-     * @param string|array $prompt A list of prompts.
+     * @param array|string|null $prompt A list of prompts.
      *
      * @return $this
      */
-    public function prompt($prompt)
+    public function prompt(array|string|null $prompt): static
     {
         $this->getMainQualifier()->getPropertiesValue()->setSimpleNamedValue(
             GenerativeEffectAction::PROMPT,

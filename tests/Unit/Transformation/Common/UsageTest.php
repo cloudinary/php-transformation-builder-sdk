@@ -192,7 +192,7 @@ final class UsageTest extends TransformationTestCase
      * @return array
      * @throws ReflectionException
      */
-    public function objectGravityDataProvider()
+    public function objectGravityDataProvider(): array
     {
         $classes = [
             AccessoryObjectGravityInterface::class,
@@ -227,7 +227,7 @@ final class UsageTest extends TransformationTestCase
      * @param string $value
      * @param string $method
      */
-    public function testObjectGravityMethods($value, $method)
+    public function testObjectGravityMethods(string $value, string $method)
     {
         self::assertEquals(
             "c_thumb,g_$value,h_5,w_8",
@@ -453,7 +453,7 @@ final class UsageTest extends TransformationTestCase
      *
      * @return string[][]
      */
-    public function formatDataProvider()
+    public function formatDataProvider(): array
     {
         return [
             [Format::AUTO, 'auto'],
@@ -506,7 +506,7 @@ final class UsageTest extends TransformationTestCase
      * @param string $format
      * @param string $method
      */
-    public function testFormat($format, $method)
+    public function testFormat(string $format, string $method)
     {
         self::assertEquals(
             'f_' . $format,

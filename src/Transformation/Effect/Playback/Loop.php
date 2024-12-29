@@ -33,7 +33,7 @@ class Loop extends EffectAction
      *
      * @return $this
      */
-    public function additionalIterations($additionalIterations)
+    public function additionalIterations(int $additionalIterations): static
     {
         $this->qualifiers[EffectQualifier::getName()]->setEffectValue($additionalIterations);
 

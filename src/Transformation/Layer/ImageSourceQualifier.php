@@ -11,6 +11,7 @@
 namespace Cloudinary\Transformation;
 
 use Cloudinary\ClassUtils;
+use Cloudinary\Transformation\Qualifier\BaseQualifier;
 
 /**
  * Class ImageSourceQualifier
@@ -22,7 +23,7 @@ class ImageSourceQualifier extends BaseSourceQualifier
     /**
      * @var string $sourceType The type of the layer.
      */
-    protected $sourceType;
+    protected string $sourceType;
 
     /**
      * ImageSourceQualifier constructor.
@@ -32,5 +33,25 @@ class ImageSourceQualifier extends BaseSourceQualifier
     public function __construct($source)
     {
         parent::__construct(ClassUtils::verifyInstance($source, SourceValue::class));
+    }
+
+    /**
+     * Sets the source of the layer.
+     *
+     * @param string|BaseSourceQualifier|QualifierMultiValue $source The source.
+     *
+     *
+     * @internal
+     *
+     */
+    public function setSource(BaseSourceQualifier|QualifierMultiValue|string $source): static
+    {
+        if ($source instanceof BaseQualifier) {
+            $source = $source->getValue();
+        }
+
+        $this->getValue()->setSimpleValue('source', $source);
+
+        return $this;
     }
 }

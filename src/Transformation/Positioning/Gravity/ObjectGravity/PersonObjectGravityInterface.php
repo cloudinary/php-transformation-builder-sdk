@@ -18,5 +18,5 @@ namespace Cloudinary\Transformation;
 interface PersonObjectGravityInterface
 {
     //Person Category
-    const PERSON = 'person';
+    public const PERSON = 'person';
 }

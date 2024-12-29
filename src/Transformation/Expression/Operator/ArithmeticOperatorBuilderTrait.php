@@ -19,50 +19,40 @@ trait ArithmeticOperatorBuilderTrait
 {
     /**
      * Add.
-     *
-     * @return ExpressionOperator
      */
-    public function add()
+    public function add(): ExpressionOperator
     {
         return $this->buildExpression(ArithmeticOperator::add());
     }
 
     /**
      * Subtract.
-     *
-     * @return ExpressionOperator
      */
-    public function subtract()
+    public function subtract(): ExpressionOperator
     {
         return $this->buildExpression(ArithmeticOperator::subtract());
     }
 
     /**
      * Multiply.
-     *
-     * @return ExpressionOperator
      */
-    public function multiply()
+    public function multiply(): ExpressionOperator
     {
         return $this->buildExpression(ArithmeticOperator::multiply());
     }
 
     /**
      * Divide.
-     *
-     * @return ExpressionOperator
      */
-    public function divide()
+    public function divide(): ExpressionOperator
     {
         return $this->buildExpression(ArithmeticOperator::divide());
     }
 
     /**
      * Modulo.
-     *
-     * @return ExpressionOperator
      */
-    public function modulo()
+    public function modulo(): ExpressionOperator
     {
         return $this->buildExpression(ArithmeticOperator::modulo());
     }

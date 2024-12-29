@@ -22,12 +22,11 @@ trait PageRangeTrait
     /**
      * Gets pages using the specified range.
      *
-     * @param int|string $start The start of the range.
-     * @param int|string $end   The end of the range.
+     * @param int|string      $start The start of the range.
+     * @param int|string|null $end   The end of the range.
      *
-     * @return static
      */
-    public function byRange($start, $end = null)
+    public function byRange(int|string $start, int|string|null $end = null): static
     {
         $this->add(new RangeArgument($start, $end));
 

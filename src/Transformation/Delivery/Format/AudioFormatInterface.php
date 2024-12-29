@@ -17,13 +17,13 @@ namespace Cloudinary\Transformation;
  */
 interface AudioFormatInterface
 {
-    const MP3  = 'mp3';
-    const AAC  = 'aac';
-    const M4A  = 'm4a';
-    const OGG  = 'ogg';
-    const WAV  = 'wav';
-    const AIFF = 'aiff';
-    const FLAC = 'flac';
-    const AMR  = 'amr';
-    const MIDI = 'midi';
+    public const MP3 = 'mp3';
+    public const AAC = 'aac';
+    public const M4A = 'm4a';
+    public const OGG = 'ogg';
+    public const WAV = 'wav';
+    public const AIFF = 'aiff';
+    public const FLAC = 'flac';
+    public const AMR  = 'amr';
+    public const MIDI = 'midi';
 }

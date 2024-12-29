@@ -20,9 +20,8 @@ trait PersonObjectGravityBuilderTrait
     /**
      * Gravity person.
      *
-     * @return string
      */
-    public static function person()
+    public static function person(): string
     {
         return ObjectGravity::PERSON;
     }

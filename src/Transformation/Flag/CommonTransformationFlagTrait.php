@@ -22,11 +22,10 @@ trait CommonTransformationFlagTrait
      *
      * @param string $filename The attachment's filename
      *
-     * @return static
      *
      * @see Flag::attachment
      */
-    public function attachment($filename = null)
+    public function attachment($filename = null): static
     {
         return $this->addAction(Flag::attachment($filename));
     }
@@ -34,11 +33,10 @@ trait CommonTransformationFlagTrait
     /**
      * Adds ICC color space metadata to the image, even when the original image doesn't contain any ICC data.
      *
-     * @return static
      *
      * @see Flag::forceIcc
      */
-    public function forceIcc()
+    public function forceIcc(): static
     {
         return $this->addAction(Flag::forceIcc());
     }
@@ -46,11 +44,10 @@ trait CommonTransformationFlagTrait
     /**
      * Instructs Cloudinary to clear all image meta-data (IPTC, Exif and XMP) while applying an incoming transformation.
      *
-     * @return static
      *
      * @see Flag::forceStrip
      */
-    public function forceStrip()
+    public function forceStrip(): static
     {
         return $this->addAction(Flag::forceStrip());
     }
@@ -58,11 +55,10 @@ trait CommonTransformationFlagTrait
     /**
      * Returns metadata of the input asset and of the transformed output asset in JSON instead of the transformed image.
      *
-     * @return static
      *
      * @see Flag::getInfo
      */
-    public function getInfo()
+    public function getInfo(): static
     {
         return $this->addAction(Flag::getInfo());
     }
@@ -70,11 +66,10 @@ trait CommonTransformationFlagTrait
     /**
      * Sets the cache-control to immutable for the asset.
      *
-     * @return static
      *
      * @see Flag::immutableCache
      */
-    public function immutableCache()
+    public function immutableCache(): static
     {
         return $this->addAction(Flag::immutableCache());
     }
@@ -82,11 +77,10 @@ trait CommonTransformationFlagTrait
     /**
      * Keeps the copyright related fields when stripping meta-data.
      *
-     * @return static
      *
      * @see Flag::keepAttribution
      */
-    public function keepAttribution()
+    public function keepAttribution(): static
     {
         return $this->addAction(Flag::keepAttribution());
     }
@@ -94,22 +88,20 @@ trait CommonTransformationFlagTrait
     /**
      * Keeps all meta-data.
      *
-     * @return static
      *
      * @see Flag::keepIptc
      */
-    public function keepIptc()
+    public function keepIptc(): static
     {
         return $this->addAction(Flag::keepIptc());
     }
 
     /**
      * Instructs Cloudinary to clear all ICC color profile data included with the image.
-     * @return static
      *
      * @see Flag::stripProfile
      */
-    public function stripProfile()
+    public function stripProfile(): static
     {
         return $this->addAction(Flag::stripProfile());
     }

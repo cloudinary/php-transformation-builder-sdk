@@ -17,23 +17,22 @@ use Cloudinary\Transformation\Qualifier\Dimensions\Dimensions;
  */
 class Region extends BaseAction
 {
-    const FACES   = "faces";
-    const GRAVITY = "gravity";
-    const CUSTOM  = "custom";
+    public const FACES = "faces";
+    public const GRAVITY = "gravity";
+    public const CUSTOM  = "custom";
 
     use RegionTrait;
     use PixelEffectRegionTrait;
 
     /**
      * Region constructor.
-     *
-     * @param int|string $x
-     * @param int|string $y
-     * @param int|string $width
-     * @param int|string $height
      */
-    public function __construct($x = null, $y = null, $width = null, $height = null)
-    {
+    public function __construct(
+        int|string|null $x = null,
+        int|string|null $y = null,
+        int|string|null $width = null,
+        int|string|null $height = null
+    ) {
         parent::__construct();
 
         $this->x($x)->y($y)->width($width)->height($height);
@@ -42,13 +41,11 @@ class Region extends BaseAction
     /**
      * Internal setter for the point value.
      *
-     * @param $value
      *
-     * @return static
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue($value): static
     {
         if (! isset($this->qualifiers[Point::getName()])) {
             $this->addQualifier(new Point());
@@ -62,13 +59,11 @@ class Region extends BaseAction
     /**
      * Internal setter for the dimensions.
      *
-     * @param $value
      *
-     * @return static
      *
      * @internal
      */
-    public function setDimension($value)
+    public function setDimension($value): static
     {
         if (! isset($this->qualifiers[Dimensions::getName()])) {
             $this->addQualifier(new Dimensions());
@@ -79,10 +74,7 @@ class Region extends BaseAction
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegionType()
+    public function getRegionType(): string
     {
         if (isset($this->qualifiers[GravityQualifier::getName()])) {
             $gravityQualifier = $this->qualifiers[GravityQualifier::getName()];

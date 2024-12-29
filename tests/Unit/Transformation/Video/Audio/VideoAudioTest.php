@@ -128,7 +128,7 @@ final class VideoAudioTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function exceptionsKeyframeIntervalDataProvider()
+    public function exceptionsKeyframeIntervalDataProvider(): array
     {
         return [
             [
@@ -156,7 +156,7 @@ final class VideoAudioTest extends TransformationTestCase
      * @param string $exceptionMessage
      * @param array  $args
      */
-    public function testExceptionsKeyframeInterval($exceptionClass, $exceptionMessage, $args)
+    public function testExceptionsKeyframeInterval(string $exceptionClass, string $exceptionMessage, array $args)
     {
         $this->expectException($exceptionClass);
         $this->expectExceptionMessage($exceptionMessage);

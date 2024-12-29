@@ -23,15 +23,15 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class BitRate extends BaseQualifier
 {
-    const CONSTANT = 'constant';
+    protected const CONSTANT = 'constant';
 
     /**
      * BitRate constructor.
      *
-     * @param int|string  $bitRate
-     * @param null|string $type
+     * @param int|string|null $bitRate The bitrate to set.
+     * @param string|null     $type    The type of bitrate.
      */
-    public function __construct($bitRate, $type = null)
+    public function __construct(int|string|null $bitRate, ?string $type = null)
     {
         parent::__construct();
 
@@ -41,12 +41,12 @@ class BitRate extends BaseQualifier
     /**
      * Sets the bitrate.
      *
-     * @param int|string $bitRate  The bitrate in bits per second. The value supports "k" and "m "for kilobits
+     * @param int|string|null $bitRate  The bitrate in bits per second. The value supports "k" and "m "for kilobits
      *                             and megabits respectively.
      *
      * @return $this
      */
-    public function bitRate($bitRate)
+    public function bitRate(int|string|null $bitRate): static
     {
         $this->value->setSimpleValue('bit_rate', $bitRate);
 
@@ -56,12 +56,12 @@ class BitRate extends BaseQualifier
     /**
      * The type of bitrate.
      *
-     * @param string $bitRateType  The type of bitrate. If "constant" is specified, the video plays with a constant
+     * @param ?string $bitRateType  The type of bitrate. If "constant" is specified, the video plays with a constant
      *                             bitrate (CBR).
      *
      * @return $this
      */
-    public function type($bitRateType)
+    public function type(?string $bitRateType): static
     {
         $this->value->setSimpleValue('bit_rate_type', $bitRateType);
 
@@ -73,7 +73,7 @@ class BitRate extends BaseQualifier
      *
      * @return $this
      */
-    public function constant()
+    public function constant(): static
     {
         $this->type(self::CONSTANT);
 

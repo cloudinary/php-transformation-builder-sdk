@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\ClassUtils;
 use Cloudinary\Transformation\Expression\BaseExpressionComponent;
 
 /**
@@ -23,18 +24,14 @@ class Conditional extends CommonTransformation
 {
     /**
      * Condition named constructor.
-     *
-     * @param BaseExpressionComponent|string $expression
-     *
-     * @param BaseAction|Transformation $action
-     *
-     * @return Conditional
      */
-    public static function ifCondition($expression, $action)
-    {
+    public static function ifCondition(
+        BaseExpressionComponent|Conditional|string $expression,
+        BaseAction|Transformation $action
+    ): Conditional {
         $ct = new static();
 
-        $ct->setIfCondition(new IfCondition($expression));
+        $ct->setIfCondition($expression);
         $ct->addAction($action);
 
         return $ct;
@@ -45,13 +42,12 @@ class Conditional extends CommonTransformation
      *
      * @see https://cloudinary.com/documentation/conditional_transformations
      *
-     * @param BaseExpressionComponent|string $expression The conditional expression
+     * @param string|BaseExpressionComponent $expression The conditional expression
      *
-     * @return static
      */
-    public function setIfCondition($expression)
+    public function setIfCondition(BaseExpressionComponent|string $expression): static
     {
-        return $this->addAction(new IfCondition($expression));
+        return $this->addAction(ClassUtils::forceInstance($expression, IfCondition::class));
     }
 
     /**
@@ -59,11 +55,9 @@ class Conditional extends CommonTransformation
      *
      * @see https://cloudinary.com/documentation/conditional_transformations
      *
-     * @param Action|Transformation $action
      *
-     * @return static
      */
-    public function otherwise($action)
+    public function otherwise(Transformation|Action $action): static
     {
         return $this->addAction(new IfElse())->addAction($action);
     }
@@ -73,9 +67,8 @@ class Conditional extends CommonTransformation
      *
      * @see https://cloudinary.com/documentation/conditional_transformations
      *
-     * @return static
      */
-    protected function endIfCondition()
+    protected function endIfCondition(): static
     {
         return $this->addAction(new EndIfCondition());
     }
@@ -83,11 +76,10 @@ class Conditional extends CommonTransformation
     /**
      * Serializes transformation to URL.
      *
-     * @param ImageTransformation|string|null $withTransformation Optional transformation to append.
+     * @param string|ImageTransformation|null $withTransformation Optional transformation to append.
      *
-     * @return string
      */
-    public function toUrl($withTransformation = null)
+    public function toUrl(ImageTransformation|string|null $withTransformation = null): string
     {
         $t = new Transformation();
 

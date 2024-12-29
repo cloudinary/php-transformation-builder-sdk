@@ -18,7 +18,7 @@ namespace Cloudinary\Transformation;
 interface ObjectGravityPriorityInterface
 {
     //Priority types
-    const FOCUS  = 'focus';
-    const CENTER = 'center';
-    const LARGE  = 'large';
+    public const FOCUS  = 'focus';
+    public const CENTER = 'center';
+    public const LARGE = 'large';
 }

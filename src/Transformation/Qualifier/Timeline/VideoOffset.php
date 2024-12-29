@@ -22,17 +22,16 @@ class VideoOffset extends BaseQualifier
     /**
      * @var int|float|string $startOffset The starting position of the part of the video to keep.
      */
-    protected $startOffset;
+    protected string|int|float $startOffset;
 
     /**
      * @var int|float|string $endOffset The end position of the part of the video to keep.
      */
-    protected $endOffset;
+    protected string|int|float $endOffset;
 
     /**
      * Offset constructor.
      *
-     * @param $rangeStr
      */
     public function __construct($rangeStr = null)
     {
@@ -57,7 +56,7 @@ class VideoOffset extends BaseQualifier
      *
      * @return $this
      */
-    public function startOffset($startOffset)
+    public function startOffset(mixed $startOffset): static
     {
         if (! $startOffset instanceof StartOffset) {
             $startOffset = new StartOffset($startOffset);
@@ -77,7 +76,7 @@ class VideoOffset extends BaseQualifier
      *
      * @return $this
      */
-    public function endOffset($endOffset)
+    public function endOffset(mixed $endOffset): static
     {
         if (! $endOffset instanceof EndOffset) {
             $endOffset = new EndOffset($endOffset);
@@ -95,7 +94,7 @@ class VideoOffset extends BaseQualifier
      *
      * @internal
      */
-    public function getStringQualifiers()
+    public function getStringQualifiers(): array
     {
         return ArrayUtils::safeFilter([$this->startOffset, (string)$this->endOffset]);
     }
@@ -113,10 +112,10 @@ class VideoOffset extends BaseQualifier
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         // TODO: Implement jsonSerialize() method.
+        return [];
     }
 }

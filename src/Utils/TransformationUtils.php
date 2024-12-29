@@ -21,11 +21,10 @@ class TransformationUtils
     /**
      * Converts a float value to the string representation.
      *
-     * @param mixed $value
      *
      * @return mixed|string
      */
-    public static function floatToString($value)
+    public static function floatToString(mixed $value): mixed
     {
         if (! is_float($value)) {
             return $value;
@@ -39,9 +38,8 @@ class TransformationUtils
 
         $locale = localeconv();
         $string = (string)$value;
-        $string = str_replace($locale['decimal_point'], '.', $string);
 
-        return $string;
+        return str_replace($locale['decimal_point'], '.', $string);
     }
 
     /**
@@ -49,9 +47,8 @@ class TransformationUtils
      *
      * @param mixed $value Candidate to convert. If not boolean, returned as is
      *
-     * @return string
      */
-    public static function boolToIntString($value)
+    public static function boolToIntString(mixed $value): ?string
     {
         return self::boolToString($value, '1', '0');
     }
@@ -60,9 +57,8 @@ class TransformationUtils
      *
      * @param mixed $value Candidate to convert. If not boolean, returned as is
      *
-     * @return string
      */
-    public static function boolToString($value, $trueString = 'true', $falseString = 'false')
+    public static function boolToString(mixed $value, $trueString = 'true', $falseString = 'false'): ?string
     {
         return is_bool($value) ? ($value ? $trueString : $falseString) : $value;
     }
@@ -73,9 +69,8 @@ class TransformationUtils
      *
      * @param int $bytes The input value to convert.
      *
-     * @return int
      */
-    public static function bytesToKB($bytes)
+    public static function bytesToKB(int $bytes): int
     {
         return (int)ceil($bytes / 1024);
     }
@@ -85,9 +80,8 @@ class TransformationUtils
      *
      * @param int $number The number to format
      *
-     * @return string
      */
-    public static function formatSigned($number)
+    public static function formatSigned(int $number): string
     {
         return $number > 0 ? "+$number" : (string)$number;
     }

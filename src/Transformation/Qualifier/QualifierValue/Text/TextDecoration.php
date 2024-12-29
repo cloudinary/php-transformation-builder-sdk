@@ -15,15 +15,14 @@ namespace Cloudinary\Transformation\Argument\Text;
  */
 class TextDecoration
 {
-    const UNDERLINE     = 'underline';
-    const STRIKETHROUGH = 'strikethrough';
+    public const UNDERLINE = 'underline';
+    public const STRIKETHROUGH = 'strikethrough';
 
     /**
      * Text decoration underline.
      *
-     * @return string
      */
-    public static function underline()
+    public static function underline(): string
     {
         return self::UNDERLINE;
     }
@@ -31,9 +30,8 @@ class TextDecoration
     /**
      * Text decoration strikethrough.
      *
-     * @return string
      */
-    public static function strikethrough()
+    public static function strikethrough(): string
     {
         return self::STRIKETHROUGH;
     }

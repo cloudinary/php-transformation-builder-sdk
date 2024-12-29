@@ -18,15 +18,12 @@ class Shear extends EffectQualifier
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'skew_x', 'skew_y'];
+    protected array $valueOrder = [0, 'skew_x', 'skew_y'];
 
     /**
      * Shear constructor.
-     *
-     * @param float $skewX
-     * @param float $skewY
      */
-    public function __construct($skewX = null, $skewY = null)
+    public function __construct(float|int|null  $skewX = null, float|int|null $skewY = null)
     {
         parent::__construct(ReshapeQualifier::SHEAR);
 
@@ -37,11 +34,10 @@ class Shear extends EffectQualifier
     /**
      * Sets the angle of skew on the x-axis.
      *
-     * @param float $value The angle of skew on the x-axis in degrees.
+     * @param float|int|null $value The angle of skew on the x-axis in degrees.
      *
-     * @return Shear
      */
-    public function skewX($value)
+    public function skewX(float|int|null $value): static
     {
         $this->value->setSimpleValue('skew_x', $value);
 
@@ -51,11 +47,10 @@ class Shear extends EffectQualifier
     /**
      * Sets the angle of skew on the y-axis.
      *
-     * @param float $value The angle of skew on the y-axis in degrees.
+     * @param float|int|null $value The angle of skew on the y-axis in degrees.
      *
-     * @return Shear
      */
-    public function skewY($value)
+    public function skewY(float|int|null $value): static
     {
         $this->value->setSimpleValue('skew_y', $value);
 

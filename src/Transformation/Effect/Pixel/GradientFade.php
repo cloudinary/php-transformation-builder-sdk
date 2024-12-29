@@ -35,13 +35,13 @@ class GradientFade extends StrengthEffectAction
     /**
      * Instructs the gradient fade to be applied symmetrically (to opposite edges of the image).
      */
-    const SYMMETRIC = 'symmetric';
+    public const SYMMETRIC = 'symmetric';
 
     /**
      * Instructs the gradient fade to be applied symmetrically (to opposite edges of the image) including
      * background padding.
      */
-    const SYMMETRIC_PAD = 'symmetric_pad';
+    public const SYMMETRIC_PAD = 'symmetric_pad';
 
     /**
      * GradientFade constructor.
@@ -57,9 +57,8 @@ class GradientFade extends StrengthEffectAction
     /**
      * Instructs the gradient fade to be applied symmetrically (to opposite edges of the image).
      *
-     * @return string
      */
-    public static function symmetric()
+    public static function symmetric(): string
     {
         return self::SYMMETRIC;
     }
@@ -68,9 +67,8 @@ class GradientFade extends StrengthEffectAction
      * Instructs the gradient fade to be applied symmetrically (to opposite edges of the image) including
      * background padding.
      *
-     * @return string
      */
-    public static function symmetricPad()
+    public static function symmetricPad(): string
     {
         return self::SYMMETRIC_PAD;
     }
@@ -78,11 +76,11 @@ class GradientFade extends StrengthEffectAction
     /**
      * Sets the horizontal start point (x).
      *
-     * @param int|float|string $x The value of the x dimension.
+     * @param float|int|string $x The value of the x dimension.
      *
      * @return $this
      */
-    public function horizontalStartPoint($x)
+    public function horizontalStartPoint(float|int|string $x): static
     {
         return $this->setPointValue(ClassUtils::verifyInstance($x, X::class));
     }
@@ -90,11 +88,11 @@ class GradientFade extends StrengthEffectAction
     /**
      * Sets the vertical start point (y).
      *
-     * @param int|float|string $y The value of the y dimension.
+     * @param float|int|string $y The value of the y dimension.
      *
      * @return $this
      */
-    public function verticalStartPoint($y)
+    public function verticalStartPoint(float|int|string $y): static
     {
         return $this->setPointValue(ClassUtils::verifyInstance($y, Y::class));
     }
@@ -102,13 +100,11 @@ class GradientFade extends StrengthEffectAction
     /**
      * Internal setter for the point value.
      *
-     * @param mixed $value
      *
-     * @return static
      *
      * @internal
      */
-    protected function setPointValue($value)
+    protected function setPointValue(mixed $value): static
     {
         if (! isset($this->qualifiers[Point::getName()])) {
             $this->addQualifier(new Point());

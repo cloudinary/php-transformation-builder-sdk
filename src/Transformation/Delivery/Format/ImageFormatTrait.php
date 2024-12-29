@@ -20,9 +20,8 @@ trait ImageFormatTrait
     /**
      * Image format jpg.
      *
-     * @return static
      */
-    public static function jpg()
+    public static function jpg(): static
     {
         return static::createFormat(Format::JPG);
     }
@@ -30,9 +29,8 @@ trait ImageFormatTrait
     /**
      * Image format jpc.
      *
-     * @return static
      */
-    public static function jpc()
+    public static function jpc(): static
     {
         return static::createFormat(Format::JPC);
     }
@@ -40,9 +38,8 @@ trait ImageFormatTrait
     /**
      * Image format jp2.
      *
-     * @return static
      */
-    public static function jp2()
+    public static function jp2(): static
     {
         return static::createFormat(Format::JP2);
     }
@@ -50,9 +47,8 @@ trait ImageFormatTrait
     /**
      * Image format wdp.
      *
-     * @return static
      */
-    public static function wdp()
+    public static function wdp(): static
     {
         return static::createFormat(Format::WDP);
     }
@@ -60,9 +56,8 @@ trait ImageFormatTrait
     /**
      * Image format png.
      *
-     * @return static
      */
-    public static function png()
+    public static function png(): static
     {
         return static::createFormat(Format::PNG);
     }
@@ -70,9 +65,8 @@ trait ImageFormatTrait
     /**
      * Image format gif.
      *
-     * @return static
      */
-    public static function gif()
+    public static function gif(): static
     {
         return static::createFormat(Format::GIF);
     }
@@ -80,9 +74,8 @@ trait ImageFormatTrait
     /**
      * Image format webp.
      *
-     * @return static
      */
-    public static function webp()
+    public static function webp(): static
     {
         return static::createFormat(Format::WEBP);
     }
@@ -90,9 +83,8 @@ trait ImageFormatTrait
     /**
      * Image format bmp.
      *
-     * @return static
      */
-    public static function bmp()
+    public static function bmp(): static
     {
         return static::createFormat(Format::BMP);
     }
@@ -100,9 +92,8 @@ trait ImageFormatTrait
     /**
      * Image format tiff.
      *
-     * @return static
      */
-    public static function tiff()
+    public static function tiff(): static
     {
         return static::createFormat(Format::TIFF);
     }
@@ -110,9 +101,8 @@ trait ImageFormatTrait
     /**
      * Image format ico.
      *
-     * @return static
      */
-    public static function ico()
+    public static function ico(): static
     {
         return static::createFormat(Format::ICO);
     }
@@ -120,9 +110,8 @@ trait ImageFormatTrait
     /**
      * Image format pdf.
      *
-     * @return static
      */
-    public static function pdf()
+    public static function pdf(): static
     {
         return static::createFormat(Format::PDF);
     }
@@ -130,9 +119,8 @@ trait ImageFormatTrait
     /**
      * Image format eps.
      *
-     * @return static
      */
-    public static function eps()
+    public static function eps(): static
     {
         return static::createFormat(Format::EPS);
     }
@@ -140,9 +128,8 @@ trait ImageFormatTrait
     /**
      * Image format psd.
      *
-     * @return static
      */
-    public static function psd()
+    public static function psd(): static
     {
         return static::createFormat(Format::PSD);
     }
@@ -150,9 +137,8 @@ trait ImageFormatTrait
     /**
      * Image format svg.
      *
-     * @return static
      */
-    public static function svg()
+    public static function svg(): static
     {
         return static::createFormat(Format::SVG);
     }
@@ -160,9 +146,8 @@ trait ImageFormatTrait
     /**
      * Image format ai.
      *
-     * @return static
      */
-    public static function ai()
+    public static function ai(): static
     {
         return static::createFormat(Format::AI);
     }
@@ -170,9 +155,8 @@ trait ImageFormatTrait
     /**
      * Image format djvu.
      *
-     * @return static
      */
-    public static function djvu()
+    public static function djvu(): static
     {
         return static::createFormat(Format::DJVU);
     }
@@ -180,9 +164,8 @@ trait ImageFormatTrait
     /**
      * Image format avif.
      *
-     * @return static
      */
-    public static function avif()
+    public static function avif(): static
     {
         return static::createFormat(Format::AVIF);
     }
@@ -190,9 +173,8 @@ trait ImageFormatTrait
     /**
      * Image format flif.
      *
-     * @return static
      */
-    public static function flif()
+    public static function flif(): static
     {
         return static::createFormat(Format::FLIF);
     }
@@ -200,9 +182,8 @@ trait ImageFormatTrait
     /**
      * Image format glb.
      *
-     * @return static
      */
-    public static function glb()
+    public static function glb(): static
     {
         return static::createFormat(Format::GLB);
     }
@@ -210,9 +191,8 @@ trait ImageFormatTrait
     /**
      * Image format usdz.
      *
-     * @return static
      */
-    public static function usdz()
+    public static function usdz(): static
     {
         return static::createFormat(Format::USDZ);
     }

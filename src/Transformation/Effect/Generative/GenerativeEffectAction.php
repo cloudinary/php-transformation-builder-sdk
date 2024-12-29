@@ -15,8 +15,8 @@ namespace Cloudinary\Transformation;
  */
 class GenerativeEffectAction extends EffectAction
 {
-    const MAIN_QUALIFIER = ListEffectQualifier::class;
+    protected const MAIN_QUALIFIER = ListEffectQualifier::class;
 
-    const MULTIPLE = 'multiple';
-    const PROMPT   = 'prompt';
+    protected const MULTIPLE = 'multiple';
+    public const PROMPT   = 'prompt';
 }

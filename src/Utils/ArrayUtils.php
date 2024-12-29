@@ -10,6 +10,8 @@
 
 namespace Cloudinary;
 
+use ArrayObject;
+
 /**
  * Class ArrayUtils
  *
@@ -25,7 +27,7 @@ class ArrayUtils
      *
      * @return array Resulting array
      */
-    public static function mapAssoc($callback, $array)
+    public static function mapAssoc(callable $callback, array $array): array
     {
         $r = [];
         foreach ($array as $key => $value) {
@@ -40,11 +42,11 @@ class ArrayUtils
      *
      * @param array|mixed $array An array to join
      * @param string      $outer Outer delimiter (between pairs)
-     * @param string      $inner Inner delimiter (between key and value), if not provided $outer is used
+     * @param string|null $inner Inner delimiter (between key and value), if not provided $outer is used
      *
-     * @return string Resulting string
+     * @return string|null Resulting string
      */
-    public static function implodeAssoc($array, $outer = '', $inner = null)
+    public static function implodeAssoc(mixed $array, string $outer = '', ?string $inner = null): ?string
     {
         if (! is_array($array)) {
             return $array === null ? null : (string)$array;
@@ -77,15 +79,18 @@ class ArrayUtils
      *
      * @param array|mixed $array       An array to join
      * @param string      $outer       Outer delimiter (between pairs)
-     * @param string      $inner       Inner delimiter (between key and value), if not provided $outer is used
+     * @param string|null $inner       Inner delimiter (between key and value), if not provided $outer is used
      * @param bool        $innerIsSafe Whether to omit escaping of the inner delimiter
      *
-     * @return string
      *
      * @see ArrayUtils::implodeAssoc
      */
-    public static function safeImplodeAssoc($array, $outer = '', $inner = null, $innerIsSafe = false)
-    {
+    public static function safeImplodeAssoc(
+        mixed $array,
+        string $outer = '',
+        ?string $inner = null,
+        bool $innerIsSafe = false
+    ): ?string {
         if (! is_array($array)) {
             return $array === null ? null : (string)$array;
         }
@@ -115,10 +120,6 @@ class ArrayUtils
      *
      * Strange signature comes from the built-in implode function that has a similar signature.
      *
-     * @param string $glue
-     * @param array  $pieces
-     * @param string $filterCallback
-     * @param int    $flag
      *
      * @return string The resulting string
      *
@@ -127,11 +128,11 @@ class ArrayUtils
      * @see          implode
      */
     public static function implodeFiltered(
-        $glue,
+        string $glue,
         array $pieces,
-        $filterCallback = __NAMESPACE__ . '\ArrayUtils::safeFilterFunc',
-        $flag = 0
-    ) {
+        string $filterCallback = __NAMESPACE__ . '\ArrayUtils::safeFilterFunc',
+        int $flag = 0
+    ): string {
         return self::safeImplode($glue, self::safeFilter($pieces, $filterCallback, $flag));
     }
 
@@ -140,12 +141,9 @@ class ArrayUtils
      *
      * In addition fixes serialisation of float values.
      *
-     * @param       $glue
-     * @param array $pieces
      *
-     * @return string
      */
-    public static function safeImplode($glue, array $pieces)
+    public static function safeImplode($glue, array $pieces): string
     {
         array_walk(
             $pieces,
@@ -160,19 +158,14 @@ class ArrayUtils
     /**
      * Implodes array values with escaping the glue character.
      *
-     * @param string $glue
-     * @param array  $pieces
      *
-     * @return string
      */
-    public static function escapedImplode($glue, array $pieces)
+    public static function escapedImplode(string $glue, array $pieces): string
     {
         return implode(
             $glue,
             array_map(
-                static function ($value) use ($glue) {
-                    return StringUtils::escapeUnsafeChars($value, $glue);
-                },
+                static fn($value) => StringUtils::escapeUnsafeChars($value, $glue),
                 $pieces
             )
         );
@@ -185,12 +178,11 @@ class ArrayUtils
      *
      * @param mixed|array $value The value to filter
      *
-     * @return int
      *
      * @see strlen
      * @see empty
      */
-    protected static function safeFilterFunc($value)
+    protected static function safeFilterFunc(mixed $value): bool|int
     {
         if (is_array($value)) {
             foreach ($value as $val) {
@@ -214,20 +206,17 @@ class ArrayUtils
      *
      * Uses "strlen" filter function by default, which treats non-null values (e.g. 0, false, etc) as non-empty.
      *
-     * @param array           $input
      * @param callback|string $callback
-     * @param int             $flag
      *
-     * @return array
      *
      * @see array_filter
      * @see strlen
      */
     public static function safeFilter(
         array $input,
-        $callback = __NAMESPACE__ . '\ArrayUtils::safeFilterFunc',
-        $flag = 0
-    ) {
+        callable|string $callback = __NAMESPACE__ . '\ArrayUtils::safeFilterFunc',
+        int $flag = 0
+    ): array {
         return array_filter($input, $callback, $flag);
     }
 
@@ -236,12 +225,11 @@ class ArrayUtils
      *
      * In case some of the missing/extra keys, the keys are sorted using alphabetic order. Ordered keys come first.
      *
-     * @param array $array      The associate array to order.
+     * @param ?array $array      The associate array to order.
      * @param array $orderArray The desired order of the keys.
      *
-     * @return array
      */
-    public static function sortByArray($array, $orderArray = [])
+    public static function sortByArray(?array $array, array $orderArray = []): ?array
     {
         if (! is_array($array)) {
             return $array;
@@ -255,13 +243,12 @@ class ArrayUtils
     /**
      * Commonly used util for building Cloudinary URL
      *
-     * @param array $urlParts
      *
      * @return string The resulting string
      *
      * @internal
      */
-    public static function implodeUrl(array $urlParts)
+    public static function implodeUrl(array $urlParts): string
     {
         return self::implodeFiltered('/', $urlParts);
     }
@@ -275,7 +262,7 @@ class ArrayUtils
      *
      * @internal
      */
-    public static function implodeActionQualifiers(...$qualifiers)
+    public static function implodeActionQualifiers(...$qualifiers): string
     {
         $serializedQualifiers = array_map('strval', $qualifiers);
 
@@ -293,7 +280,7 @@ class ArrayUtils
      *
      * @internal
      */
-    public static function implodeQualifierValues(...$qualifierValues)
+    public static function implodeQualifierValues(...$qualifierValues): string
     {
         return self::implodeFiltered(':', $qualifierValues);
     }
@@ -301,14 +288,13 @@ class ArrayUtils
     /**
      * Gets a key from an array if exists, otherwise returns default.
      *
-     * @param array            $array   The data array.
-     * @param string|int|array $key     The key. Can be a simple key(string|int), an index array that allows accessing
-     *                                  nested values
-     * @param mixed|null       $default The default value for the case when the key is not found.
+     * @param ArrayObject|array $array   The data array.
+     * @param int|array|string  $key     The key. Can be a simple key(string|int), an index array that allows accessing
+     *                                   nested values
+     * @param mixed|null        $default The default value for the case when the key is not found.
      *
-     * @return mixed
      */
-    public static function get($array, $key, $default = null)
+    public static function get(ArrayObject|array $array, int|array|string $key, mixed $default = null): mixed
     {
         if (is_array($key)) {
             $currLevel = &$array;
@@ -327,7 +313,7 @@ class ArrayUtils
             return $array[$key];
         }
 
-        if ($array instanceof \ArrayObject && $array->offsetExists($key)) {
+        if ($array instanceof ArrayObject && $array->offsetExists($key)) {
             return $array[$key];
         }
 
@@ -338,13 +324,12 @@ class ArrayUtils
      * Pops a key from an array if exists, otherwise returns default
      *
      * @param array            $array   Data array
-     * @param string|int|array $key     key can be a simple key(string|int) or an array that allows accessing nested
+     * @param int|array|string $key     key can be a simple key(string|int) or an array that allows accessing nested
      *                                  values
      * @param mixed|null       $default Default value for the case when key is not found
      *
-     * @return mixed
      */
-    public static function pop(&$array, $key, $default = null)
+    public static function pop(array &$array, int|array|string $key, mixed $default = null): mixed
     {
         $val = self::get($array, $key, $default);
         unset($array[$key]);
@@ -355,12 +340,12 @@ class ArrayUtils
     /**
      * Returns a subset of associative array whitelisted by an array of keys
      *
-     * @param array $array Source array (associative or not)
+     * @param ?array $array Source array (associative or not)
      * @param array $keys  Simple array of keys to keep
      *
-     * @return array Resulting array
+     * @return ?array Resulting array
      */
-    public static function whitelist($array, $keys)
+    public static function whitelist(?array $array, array $keys): ?array
     {
         // When providing non array(for example null), return it as is
         if (! is_array($array)) {
@@ -377,12 +362,12 @@ class ArrayUtils
     /**
      * Returns a subset of associative array with excluded keys specified by an array of keys
      *
-     * @param array $array           Source array (associative or not)
+     * @param ?array $array           Source array (associative or not)
      * @param array $blacklistedKeys Simple array of keys to be excluded
      *
-     * @return array Resulting array
+     * @return ?array Resulting array
      */
-    public static function blacklist($array, $blacklistedKeys)
+    public static function blacklist(?array $array, array $blacklistedKeys): ?array
     {
         // When providing non array (for example null), return it as is
         if (! is_array($array)) {
@@ -401,9 +386,8 @@ class ArrayUtils
      *
      * @param mixed $value The input value to wrap
      *
-     * @return array
      */
-    public static function build($value)
+    public static function build(mixed $value): array
     {
         if ($value === null) {
             return [];
@@ -425,17 +409,12 @@ class ArrayUtils
      *
      * @param bool  $onlyAssoc Set to true to flatten only associative arrays
      *
-     * @return null|string|array
      *
      * @see ArrayUtils::build
      */
-    public static function flatten($array, $onlyAssoc = false)
+    public static function flatten(mixed $array, bool $onlyAssoc = false): array|string|null
     {
-        if (empty($array) || ! is_array($array) || count($array) > 1) {
-            return $array;
-        }
-
-        if ($onlyAssoc && ! self::isAssoc($array[0])) {
+        if (empty($array) || ! is_array($array) || count($array) > 1 || $onlyAssoc && ! self::isAssoc($array[0])) {
             return $array;
         }
 
@@ -445,11 +424,11 @@ class ArrayUtils
     /**
      * Determines whether an array is associative or not
      *
-     * @param array $array Input array
+     * @param mixed $array Input array
      *
      * @return bool true if associative, otherwise false
      */
-    public static function isAssoc($array)
+    public static function isAssoc(mixed $array): bool
     {
         if (! is_array($array)) {
             return false;
@@ -469,7 +448,7 @@ class ArrayUtils
      *
      * @internal
      */
-    public static function prependAssoc(&$arr, $key, $val)
+    public static function prependAssoc(array &$arr, mixed $key, mixed $val): array
     {
         $arr       = array_reverse($arr, true);
         $arr[$key] = $val;
@@ -489,7 +468,7 @@ class ArrayUtils
      * @internal
      *
      */
-    public static function appendNonEmpty(&$arr, $val)
+    public static function appendNonEmpty(array &$arr, mixed $val): array
     {
         if (! empty($val)) {
             $arr [] = $val;
@@ -501,15 +480,15 @@ class ArrayUtils
     /**
      * Adds key-value pair to the associative array if the value is not empty
      *
-     * @param array      $arr The input array.
-     * @param string|int $key The key.
-     * @param mixed      $val The appended value.
+     * @param array           $arr The input array.
+     * @param int|string|null $key The key.
+     * @param mixed           $val The appended value.
      *
      * @return array The resulting array
      *
      * @internal
      */
-    public static function addNonEmpty(&$arr, $key, $val)
+    public static function addNonEmpty(array &$arr, int|string|null $key, mixed $val): array
     {
         if (! empty($val) || is_int($val) || is_float($val) || is_bool($val)) {
             $arr[$key] = $val;
@@ -521,17 +500,21 @@ class ArrayUtils
     /**
      * Adds key-value pair to the associative array where value is taken from source array using the same key.
      *
-     * @param array &$resultingArr The target array.
-     * @param mixed  $key          The key to add
-     * @param array  $sourceArray  The source array
-     * @param mixed  $defaultValue Fallback value, in case the key does not exist or is empty
+     * @param array &    $resultingArr The target array.
+     * @param mixed      $key          The key to add
+     * @param array      $sourceArray  The source array
+     * @param mixed|null $defaultValue Fallback value, in case the key does not exist or is empty
      *
      * @return array The resulting array
      *
      * @internal
      */
-    public static function addNonEmptyFromOther(&$resultingArr, $key, $sourceArray, $defaultValue = null)
-    {
+    public static function addNonEmptyFromOther(
+        array &$resultingArr,
+        mixed $key,
+        array $sourceArray,
+        mixed $defaultValue = null
+    ): array {
         return self::addNonEmpty($resultingArr, $key, self::get($sourceArray, $key, $defaultValue));
     }
 
@@ -545,7 +528,7 @@ class ArrayUtils
      * @internal
      *
      */
-    public static function mergeNonEmpty(...$arrays)
+    public static function mergeNonEmpty(...$arrays): array
     {
         $result = [];
 
@@ -570,13 +553,13 @@ class ArrayUtils
      * @return array The new array with the inserted key
      */
     public static function insertAt(
-        $array,
-        $searchKey,
-        $insertKey,
-        $insertValue,
-        $insertAfter = true,
-        $appendIfNotFound = true
-    ) {
+        array $array,
+        mixed $searchKey,
+        mixed $insertKey,
+        mixed $insertValue,
+        bool $insertAfter = true,
+        bool $appendIfNotFound = true
+    ): array {
         $result = [];
 
         foreach ($array as $key => $value) {
@@ -605,7 +588,7 @@ class ArrayUtils
      * @param mixed $key          The key.
      * @param mixed $defaultValue The default value.
      */
-    public static function setDefaultValue(array &$array, $key, $defaultValue)
+    public static function setDefaultValue(array &$array, mixed $key, mixed $defaultValue): void
     {
         if (! isset($array[$key]) || ! self::safeFilterFunc($array[$key])) {
             $array[$key] = $defaultValue;
@@ -621,7 +604,7 @@ class ArrayUtils
      *
      * @internal
      */
-    public static function convertToAssoc($array)
+    public static function convertToAssoc(array $array): array
     {
         $result = [];
         foreach ($array as $k => $v) {
@@ -642,7 +625,7 @@ class ArrayUtils
      *
      * @return array Recursive copy of the source array
      */
-    public static function deepCopy($array)
+    public static function deepCopy(array $array): array
     {
         if (! is_array($array)) {
             return $array;
@@ -665,11 +648,9 @@ class ArrayUtils
     /**
      * Indicates whether all parameters are non-empty
      *
-     * @param mixed ...$params
      *
-     * @return bool
      */
-    public static function all(...$params)
+    public static function all(...$params): bool
     {
         foreach ($params as $param) {
             if (empty($param)) {
@@ -681,16 +662,15 @@ class ArrayUtils
     }
 
     /**
-     * Case insensitive version of in_array
+     * Case-insensitive version of in_array
      *
      * @param mixed $needle   The searched value.
      * @param array $haystack The array.
      *
-     * @return bool
      */
-    public static function inArrayI($needle, $haystack)
+    public static function inArrayI(mixed $needle, array $haystack): bool
     {
-        return in_array(strtolower($needle), array_map('strtolower', $haystack), false);
+        return in_array(strtolower($needle), array_map('strtolower', $haystack));
     }
 
     /**
@@ -700,7 +680,7 @@ class ArrayUtils
      *
      * @param array &$array The input array to convert.
      */
-    public static function convertBoolToIntStrings(&$array)
+    public static function convertBoolToIntStrings(array &$array): void
     {
         array_walk(
             $array,

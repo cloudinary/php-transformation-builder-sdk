@@ -22,11 +22,11 @@ trait OffsetTrait
     /**
      * Sets the x offset.
      *
-     * @param int|float|string $x The x offset.
+     * @param float|int|string|null $x The x offset.
      *
      * @return $this
      */
-    public function offsetX($x)
+    public function offsetX(float|int|string|null $x): static
     {
         return $this->setOffsetValue(ClassUtils::verifyInstance($x, X::class));
     }
@@ -34,11 +34,11 @@ trait OffsetTrait
     /**
      * Sets the y offset.
      *
-     * @param int|float|string $y The y offset.
+     * @param float|int|string|null $y The y offset.
      *
      * @return $this
      */
-    public function offsetY($y)
+    public function offsetY(float|int|string|null $y): static
     {
         return $this->setOffsetValue(ClassUtils::verifyInstance($y, Y::class));
     }
@@ -46,12 +46,11 @@ trait OffsetTrait
     /**
      * Sets the x and y offset.
      *
-     * @param int|float|string $x The x offset.
-     * @param int|float|string $y The y offset.
+     * @param float|int|string|null $x The x offset.
+     * @param float|int|string|null $y The y offset.
      *
-     * @return static
      */
-    public function offset($x = null, $y = null)
+    public function offset(float|int|string|null $x = null, float|int|string|null $y = null): static
     {
         return $this->offsetX($x)->offsetY($y);
     }
@@ -59,9 +58,7 @@ trait OffsetTrait
     /**
      * @internal
      *
-     * @param $value
      *
-     * @return static
      */
-    abstract public function setOffsetValue($value);
+    abstract public function setOffsetValue($value): static;
 }

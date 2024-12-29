@@ -19,20 +19,16 @@ namespace Cloudinary\Transformation;
  *
  * @api
  */
-abstract class Frame
+abstract class Frame extends BasePageAction
 {
     use PageNumberTrait;
 
     /**
      * Internal named constructor.
      *
-     * @param $value
-     *
-     * @return PageQualifier
-     *
      * @internal
      */
-    public static function createWithPageQualifier(...$value)
+    public static function createWithPageQualifier(...$value): PageQualifier
     {
         return new PageQualifier(...$value);
     }

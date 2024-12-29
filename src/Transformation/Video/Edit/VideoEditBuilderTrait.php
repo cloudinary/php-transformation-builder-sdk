@@ -22,15 +22,14 @@ trait VideoEditBuilderTrait
     /**
      * Trims a video (and discards the rest).
      *
-     * @param mixed $startOffset
-     * @param mixed $endOffset
-     * @param mixed $duration
+     * @param mixed|null $startOffset
+     * @param mixed|null $endOffset
+     * @param mixed|null $duration
      *
-     * @return Timeline
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#trimming_videos
      */
-    public static function trim($startOffset = null, $endOffset = null, $duration = null)
+    public static function trim(mixed $startOffset = null, mixed $endOffset = null, mixed $duration = null): Timeline
     {
         return ClassUtils::forceVarArgsInstance([$startOffset, $endOffset, $duration], Timeline::class);
     }
@@ -38,13 +37,12 @@ trait VideoEditBuilderTrait
     /**
      * Concatenates another video or image.
      *
-     * @param VideoSource|string $videoSource The source to concatenate.
+     * @param string|VideoSource $videoSource The source to concatenate.
      *
-     * @return Concatenate
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos
      */
-    public static function concatenate($videoSource)
+    public static function concatenate(string|VideoSource $videoSource): Concatenate
     {
         return ClassUtils::verifyInstance($videoSource, Concatenate::class);
     }
@@ -53,11 +51,10 @@ trait VideoEditBuilderTrait
      * Generates an excerpt of the video based on Cloudinary's AI-powered preview algorithm, which identifies the
      * most interesting video chunks from a video and uses these to generate a video preview.
      *
-     * @param int $duration The duration of the excerpt in seconds (Server default: 5 seconds).
+     * @param int|null $duration The duration of the excerpt in seconds (Server default: 5 seconds).
      *
-     * @return Preview
      */
-    public static function preview($duration = null)
+    public static function preview(?int $duration = null): Preview
     {
         return ClassUtils::forceInstance($duration, Preview::class);
     }
@@ -69,11 +66,10 @@ trait VideoEditBuilderTrait
      *
      * @param int|Volume $level The percentage change of volume (Range: -100 to 400).
      *
-     * @return EffectAction
      *
-     * @see \Cloudinary\Transformation\Volume
+     * @see Volume
      */
-    public static function volume($level)
+    public static function volume(Volume|int $level): EffectAction
     {
         return EffectAction::fromEffectQualifier(ClassUtils::verifyInstance($level, Volume::class));
     }

@@ -18,5 +18,5 @@ class EffectType extends BaseArgument
     /**
      * @var string $name The name of the argument.
      */
-    protected static $name = 'type';
+    protected static string $name = 'type';
 }

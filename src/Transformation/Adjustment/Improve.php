@@ -26,15 +26,12 @@ class Improve extends BlendEffectQualifier
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'mode', 'value'];
+    protected array $valueOrder = [0, 'mode', 'value'];
 
     /**
      * Improve constructor.
-     *
-     * @param       $blend
-     * @param mixed $mode
      */
-    public function __construct($blend = null, $mode = null)
+    public function __construct(?int $blend = null, ?string $mode = null)
     {
         parent::__construct(Adjust::IMPROVE, EffectRange::PERCENT, $blend);
 
@@ -46,25 +43,23 @@ class Improve extends BlendEffectQualifier
      *
      * Use this mode to get better results on images with indoor lighting and shadows.
      *
-     * @param int $blend How much to blend the improved result with the original image, where 0 means only use the
+     * @param int|null $blend How much to blend the improved result with the original image, where 0 means only use the
      *                   original and 100 means only use the improved result.
      *
-     * @return Improve
      */
-    public static function indoor($blend = null)
+    public static function indoor(?int $blend = null): Improve
     {
         return new static($blend, ImproveMode::INDOOR);
     }
 
     /**
-     * Sets the improve effect to OUTDOOR mode.
+     * Sets the `improve` effect to OUTDOOR mode.
      *
-     * @param int $blend How much to blend the improved result with the original image, where 0 means only use the
+     * @param int|null $blend How much to blend the improved result with the original image, where 0 means only use the
      *                   original and 100 means only use the improved result.
      *
-     * @return Improve
      */
-    public static function outdoor($blend = null)
+    public static function outdoor(?int $blend = null): Improve
     {
         return new static($blend, ImproveMode::OUTDOOR);
     }

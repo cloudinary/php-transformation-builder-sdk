@@ -20,9 +20,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject airplane.
      *
-     * @return static
      */
-    public static function airplane()
+    public static function airplane(): static
     {
         return new static(ForegroundObject::AIRPLANE);
     }
@@ -30,9 +29,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject bus.
      *
-     * @return static
      */
-    public static function bus()
+    public static function bus(): static
     {
         return new static(ForegroundObject::BUS);
     }
@@ -40,9 +38,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject diningTable.
      *
-     * @return static
      */
-    public static function diningTable()
+    public static function diningTable(): static
     {
         return new static(ForegroundObject::DINING_TABLE);
     }
@@ -50,9 +47,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject sheep.
      *
-     * @return static
      */
-    public static function sheep()
+    public static function sheep(): static
     {
         return new static(ForegroundObject::SHEEP);
     }
@@ -60,9 +56,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject bicycle.
      *
-     * @return static
      */
-    public static function bicycle()
+    public static function bicycle(): static
     {
         return new static(ForegroundObject::BICYCLE);
     }
@@ -70,9 +65,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject car.
      *
-     * @return static
      */
-    public static function car()
+    public static function car(): static
     {
         return new static(ForegroundObject::CAR);
     }
@@ -80,9 +74,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject dog.
      *
-     * @return static
      */
-    public static function dog()
+    public static function dog(): static
     {
         return new static(ForegroundObject::DOG);
     }
@@ -90,9 +83,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject sofa.
      *
-     * @return static
      */
-    public static function sofa()
+    public static function sofa(): static
     {
         return new static(ForegroundObject::SOFA);
     }
@@ -100,9 +92,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject bird.
      *
-     * @return static
      */
-    public static function bird()
+    public static function bird(): static
     {
         return new static(ForegroundObject::BIRD);
     }
@@ -110,9 +101,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject cat.
      *
-     * @return static
      */
-    public static function cat()
+    public static function cat(): static
     {
         return new static(ForegroundObject::CAT);
     }
@@ -120,9 +110,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject horse.
      *
-     * @return static
      */
-    public static function horse()
+    public static function horse(): static
     {
         return new static(ForegroundObject::HORSE);
     }
@@ -130,9 +119,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject train.
      *
-     * @return static
      */
-    public static function train()
+    public static function train(): static
     {
         return new static(ForegroundObject::TRAIN);
     }
@@ -140,9 +128,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject boat.
      *
-     * @return static
      */
-    public static function boat()
+    public static function boat(): static
     {
         return new static(ForegroundObject::BOAT);
     }
@@ -150,9 +137,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject chair.
      *
-     * @return static
      */
-    public static function chair()
+    public static function chair(): static
     {
         return new static(ForegroundObject::CHAIR);
     }
@@ -160,9 +146,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject person.
      *
-     * @return static
      */
-    public static function person()
+    public static function person(): static
     {
         return new static(ForegroundObject::PERSON);
     }
@@ -170,9 +155,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject tv.
      *
-     * @return static
      */
-    public static function tv()
+    public static function tv(): static
     {
         return new static(ForegroundObject::TV);
     }
@@ -180,9 +164,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject bottle.
      *
-     * @return static
      */
-    public static function bottle()
+    public static function bottle(): static
     {
         return new static(ForegroundObject::BOTTLE);
     }
@@ -190,9 +173,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject cow.
      *
-     * @return static
      */
-    public static function cow()
+    public static function cow(): static
     {
         return new static(ForegroundObject::COW);
     }
@@ -200,9 +182,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject pottedPlant.
      *
-     * @return static
      */
-    public static function pottedPlant()
+    public static function pottedPlant(): static
     {
         return new static(ForegroundObject::POTTED_PLANT);
     }
@@ -210,9 +191,8 @@ trait ForegroundObjectTrait
     /**
      * ForegroundObject motorbike.
      *
-     * @return static
      */
-    public static function motorbike()
+    public static function motorbike(): static
     {
         return new static(ForegroundObject::MOTORBIKE);
     }

@@ -33,10 +33,10 @@ class Density extends BaseQualifier
     /**
      * @var string INITIAL_DENSITY Pre-normalized initial density of the original image.
      */
-    const INITIAL_DENSITY = 'idn';
+    public const INITIAL_DENSITY = 'idn';
 
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'dn';
+    protected static string $key = 'dn';
 }

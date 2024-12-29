@@ -24,7 +24,7 @@ class LimitedEffectQualifier extends ValueEffectQualifier
     /**
      * @var array $range The validation range.
      */
-    protected $range;
+    protected array $range;
 
     /**
      * LimitedEffectQualifier constructor.
@@ -53,7 +53,7 @@ class LimitedEffectQualifier extends ValueEffectQualifier
      *
      * @internal
      */
-    public function setValidRange($range)
+    public function setValidRange(array $range): static
     {
         $this->range = $range;
 
@@ -65,11 +65,10 @@ class LimitedEffectQualifier extends ValueEffectQualifier
      *
      * @param mixed $value The value to set.
      *
-     * @return LimitedEffectQualifier
      *
      * @internal
      */
-    public function setEffectValue($value)
+    public function setEffectValue(mixed $value): static
     {
         if (is_numeric($value) && ! empty($this->range) && ($value < $this->range[0] || $value > $this->range[1])) {
             throw new OutOfRangeException("Value must be in range: [{$this->range[0]}, {$this->range[1]}]");

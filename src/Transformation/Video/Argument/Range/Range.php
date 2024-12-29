@@ -19,42 +19,41 @@ use UnexpectedValueException;
  */
 class Range implements ComponentInterface
 {
-    const RANGE_RE = '/^(\d+\.)?\d+[%pP]?\.\.(\d+\.)?\d+[%pP]?$/';
+    protected const RANGE_RE = '/^(\d+\.)?\d+[%pP]?\.\.(\d+\.)?\d+[%pP]?$/';
 
     /**
      * @var int The start offset of the range.
      */
-    public $startOffset;
+    public mixed $startOffset = null;
 
     /**
      * @var int The end offset of the range.
      */
-    public $endOffset;
+    public mixed $endOffset = null;
 
     /**
      * Range constructor.
      *
-     * @param mixed $range
+     * @param mixed|null $range
      */
-    public function __construct($range = null)
+    public function __construct(mixed $range = null)
     {
         if ($range === null) {
             return;
         }
 
-        list($this->startOffset, $this->endOffset) = self::splitRange($range);
+        [$this->startOffset, $this->endOffset] = self::splitRange($range);
     }
 
     /**
      * Internal helper method for splitting the range string.
      *
-     * @param string|array $range The range to split.
+     * @param array|string $range The range to split.
      *
-     * @return array|null
      *
      * @internal
      */
-    private static function splitRange($range)
+    private static function splitRange(array|string $range): ?array
     {
         if (is_array($range) && count($range) === 2) {
             return $range;
@@ -79,11 +78,9 @@ class Range implements ComponentInterface
 
     /**
      * Serializes to json.
-     *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
-        // TODO: Implement jsonSerialize() method.
+        return [];
     }
 }

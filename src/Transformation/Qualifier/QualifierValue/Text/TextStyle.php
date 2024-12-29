@@ -18,20 +18,20 @@ use Cloudinary\Transformation\Argument\Text\TextStyleTrait;
  */
 class TextStyle extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '_';
+    protected const VALUE_DELIMITER = '_';
 
-    const DEFAULT_FONT_WEIGHT     = 'normal';
-    const DEFAULT_FONT_STYLE      = 'normal';
-    const DEFAULT_TEXT_DECORATION = 'none';
-    const DEFAULT_TEXT_ALIGNMENT  = null;
-    const DEFAULT_STROKE          = 'none';
+    public const DEFAULT_FONT_WEIGHT = 'normal';
+    public const DEFAULT_FONT_STYLE  = 'normal';
+    public const DEFAULT_TEXT_DECORATION = 'none';
+    public const DEFAULT_TEXT_ALIGNMENT  = null;
+    public const DEFAULT_STROKE         = 'none';
 
     use TextStyleTrait;
 
     /**
      * @var array $argumentOrder The order of the arguments.
      */
-    protected $argumentOrder = [
+    protected array $argumentOrder = [
         'font_family',
         'font_size',
         'font_weight',
@@ -44,10 +44,10 @@ class TextStyle extends QualifierMultiValue
     /**
      * TextStyle constructor
      *
-     * @param string    $fontFamily
-     * @param float|int $fontSize
+     * @param string|null    $fontFamily Font family
+     * @param float|int|null $fontSize   Font size
      */
-    public function __construct($fontFamily = null, $fontSize = null)
+    public function __construct(?string $fontFamily = null, float|int|null $fontSize = null)
     {
         parent::__construct();
 
@@ -60,9 +60,8 @@ class TextStyle extends QualifierMultiValue
      *
      * @param array $qualifiers The text style qualifiers.
      *
-     * @return TextStyle
      */
-    public static function fromParams($qualifiers)
+    public static function fromParams(array $qualifiers): TextStyle
     {
         $style = new self(ArrayUtils::get($qualifiers, 'font_family'), ArrayUtils::get($qualifiers, 'font_size'));
         $style->importQualifiers($qualifiers);
@@ -77,7 +76,7 @@ class TextStyle extends QualifierMultiValue
      *
      * @internal
      */
-    public function importQualifiers($qualifiers)
+    public function importQualifiers(array $qualifiers): void
     {
         $this->fontWeight(ArrayUtils::get($qualifiers, 'font_weight'));
         $this->fontStyle(ArrayUtils::get($qualifiers, 'font_style'));

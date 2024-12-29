@@ -20,5 +20,5 @@ class DefaultImage extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'd';
+    protected static string $key = 'd';
 }

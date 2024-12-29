@@ -17,29 +17,29 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class CornerRadius extends BaseQualifier
 {
-    const VALUE_CLASS = Corners::class;
+    protected const VALUE_CLASS = Corners::class;
 
     use CornerRadiusTrait;
     use CornersTrait;
 
-    const MAX = 'max';
+    public const MAX = 'max';
 
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'r';
+    protected static string $key = 'r';
 
     /**
      * Sets a simple unnamed value specified by name (for uniqueness) and the actual value.
      *
-     * @param string              $name  The name of the argument.
-     * @param BaseComponent|mixed $value The value of the argument.
+     * @param string     $name  The name of the argument.
+     * @param mixed|null $value The value of the argument.
      *
      * @return $this
      *
      * @internal
      */
-    public function setSimpleValue($name, $value = null)
+    public function setSimpleValue(string $name, mixed $value = null): static
     {
         $this->value->setSimpleValue($name, $value);
 

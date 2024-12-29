@@ -19,9 +19,9 @@ class ListEffectQualifier extends EffectQualifier
     /**
      * @var string VALUE_CLASS The class of the qualifier value. Can be customized by derived classes.
      */
-    const VALUE_CLASS = QualifierMultiValue::class;
+    protected const VALUE_CLASS = QualifierMultiValue::class;
 
-    const PROPERTIES = 'properties';
+    protected const PROPERTIES = 'properties';
 
     /**
      * ListEffectQualifier constructor.
@@ -36,10 +36,7 @@ class ListEffectQualifier extends EffectQualifier
         $this->getValue()->setSimpleValue(self::PROPERTIES, new ListQualifierMultiValue(...$values));
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPropertiesValue()
+    public function getPropertiesValue(): mixed
     {
         return parent::getValue()->getSimpleValue(self::PROPERTIES);
     }

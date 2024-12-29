@@ -24,9 +24,8 @@ abstract class Animated
     /**
      * Edits the animated image.
      *
-     * @return AnimatedEdit
      */
-    public static function edit()
+    public static function edit(): AnimatedEdit
     {
         return new AnimatedEdit();
     }

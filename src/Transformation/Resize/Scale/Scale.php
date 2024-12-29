@@ -26,9 +26,9 @@ class Scale extends BaseResizeAction
      *
      * @return $this
      *
-     * @see \Cloudinary\Transformation\LiquidRescaling
+     * @see LiquidRescaling
      */
-    public function liquidRescaling()
+    public function liquidRescaling(): static
     {
         /** @noinspection TypeUnsafeComparisonInspection */
         if ($this->qualifiers[CropMode::getName()]->getValue() != CropMode::SCALE) {

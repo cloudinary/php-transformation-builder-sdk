@@ -18,22 +18,21 @@ use Cloudinary\Transformation\Qualifier\BaseExpressionQualifier;
  */
 class AspectRatio extends BaseExpressionQualifier
 {
-    const MAX_VALUES = 2;
+    protected const MAX_VALUES = 2;
 
-    const AR_1X1         = '1:1';
-    const AR_5X4         = '5:4';
-    const AR_4X3         = '4:3';
-    const AR_3X2         = '3:2';
-    const AR_16X9        = '16:9';
-    const AR_3X1         = '3:1';
-    const IGNORE_INITIAL = "ignore_aspect_ratio";
+    public const AR_1X1 = '1:1';
+    public const AR_5X4 = '5:4';
+    public const AR_4X3 = '4:3';
+    public const AR_3X2  = '3:2';
+    public const AR_16X9 = '16:9';
+    public const AR_3X1         = '3:1';
+    public const IGNORE_INITIAL = "ignore_aspect_ratio";
 
     /**
      * Aspect ratio 1:1.
      *
-     * @return AspectRatio
      */
-    public static function ar1x1()
+    public static function ar1x1(): AspectRatio
     {
         return new self(self::AR_1X1);
     }
@@ -41,9 +40,8 @@ class AspectRatio extends BaseExpressionQualifier
     /**
      * Aspect ratio 5:4.
      *
-     * @return AspectRatio
      */
-    public static function ar5x4()
+    public static function ar5x4(): AspectRatio
     {
         return new self(self::AR_5X4);
     }
@@ -51,9 +49,8 @@ class AspectRatio extends BaseExpressionQualifier
     /**
      * Aspect ratio 4:3.
      *
-     * @return AspectRatio
      */
-    public static function ar4x3()
+    public static function ar4x3(): AspectRatio
     {
         return new self(self::AR_4X3);
     }
@@ -61,9 +58,8 @@ class AspectRatio extends BaseExpressionQualifier
     /**
      * Aspect ratio 3:2.
      *
-     * @return AspectRatio
      */
-    public static function ar3x2()
+    public static function ar3x2(): AspectRatio
     {
         return new self(self::AR_3X2);
     }
@@ -71,9 +67,8 @@ class AspectRatio extends BaseExpressionQualifier
     /**
      * Aspect ratio 16:9.
      *
-     * @return AspectRatio
      */
-    public static function ar16x9()
+    public static function ar16x9(): AspectRatio
     {
         return new self(self::AR_16X9);
     }
@@ -81,9 +76,8 @@ class AspectRatio extends BaseExpressionQualifier
     /**
      * Aspect ratio 3:1.
      *
-     * @return AspectRatio
      */
-    public static function ar3x1()
+    public static function ar3x1(): AspectRatio
     {
         return new self(self::AR_3X1);
     }
@@ -91,9 +85,8 @@ class AspectRatio extends BaseExpressionQualifier
     /**
      * Set to ignore initial aspect ratio.
      *
-     * @return AspectRatio
      */
-    public static function ignoreInitialAspectRatio()
+    public static function ignoreInitialAspectRatio(): AspectRatio
     {
         return new self(self::IGNORE_INITIAL);
     }

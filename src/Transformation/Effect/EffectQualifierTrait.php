@@ -23,9 +23,8 @@ trait EffectQualifierTrait
      * @param string $effectName The name of the effect.
      * @param mixed  ...$values  The effect values.
      *
-     * @return EffectQualifier
      */
-    public static function effect($effectName, ...$values)
+    public static function effect(string $effectName, ...$values): EffectQualifier
     {
         return new EffectQualifier($effectName, ...$values);
     }

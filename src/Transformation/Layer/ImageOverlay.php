@@ -21,18 +21,18 @@ class ImageOverlay extends BasePositionalSourceContainer
     use ImageSourceTrait;
 
     /**
-     * @var BlendMode $blendMode Layer blend mode.
+     * @var ?BlendMode $blendMode Layer blend mode.
      */
-    protected $blendMode;
+    protected ?BlendMode $blendMode;
 
     /**
-     * BaseLayerContainer constructor.
+     * ImageOverlay constructor.
      *
-     * @param BaseSource|string $source    The source.
-     * @param Position          $position  Layer position.
-     * @param string|BlendMode  $blendMode Layer blend mode.
+     * @param BaseSource|string     $source    The source.
+     * @param ?BasePosition         $position  Layer position.
+     * @param BlendMode|string|null $blendMode Layer blend mode.
      */
-    public function __construct($source = null, $position = null, $blendMode = null)
+    public function __construct($source = null, ?BasePosition $position = null, BlendMode|string|null $blendMode = null)
     {
         parent::__construct($source, $position);
         $this->blendMode($blendMode);
@@ -41,11 +41,10 @@ class ImageOverlay extends BasePositionalSourceContainer
     /**
      * Sets layer blend mode.
      *
-     * @param BlendMode $blendMode The blend mode.
+     * @param BlendMode|string|null $blendMode The blend mode.
      *
-     * @return static
      */
-    public function blendMode($blendMode = null)
+    public function blendMode(BlendMode|string|null $blendMode = null): static
     {
         $this->blendMode = ClassUtils::verifyInstance($blendMode, EffectQualifier::class, BlendMode::class);
 
@@ -55,11 +54,10 @@ class ImageOverlay extends BasePositionalSourceContainer
     /**
      * Sets the source.
      *
-     * @param BaseSource|string $source The source.
+     * @param BaseSource|string|null $source The source.
      *
-     * @return static
      */
-    public function source($source)
+    public function source(BaseSource|string|null $source): static
     {
         $this->source = ClassUtils::verifyInstance($source, BaseSource::class, ImageSource::class);
 
@@ -69,27 +67,23 @@ class ImageOverlay extends BasePositionalSourceContainer
     /**
      * Sets the position of the layer.
      *
-     * @param BasePosition $position The position.
+     * @param BasePosition|null $position The position.
      *
-     * @return static
      */
-    public function position($position = null)
+    public function position(?BasePosition $position = null): static
     {
         $this->position = ClassUtils::verifyInstance($position, BasePosition::class, AbsolutePosition::class);
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $subActionQualifiers = parent::getSubActionQualifiers();
 
         $subActionQualifiers['additional'] = ArrayUtils::mergeNonEmpty(
             $subActionQualifiers['additional'],
-            $this->blendMode? $this->blendMode->getStringQualifiers(): []
+            $this->blendMode ? $this->blendMode->getStringQualifiers() : []
         );
 
         return $subActionQualifiers;

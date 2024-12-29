@@ -21,16 +21,15 @@ namespace Cloudinary\Transformation\Codec;
  */
 class VideoCodecProfile
 {
-    const BASELINE = 'baseline';
-    const MAIN     = 'main';
-    const HIGH     = 'high';
+    public const BASELINE = 'baseline';
+    public const MAIN = 'main';
+    public const HIGH = 'high';
 
     /**
      * Video codec profile baseline.
      *
-     * @return string
      */
-    public static function baseline()
+    public static function baseline(): string
     {
         return self::BASELINE;
     }
@@ -38,9 +37,8 @@ class VideoCodecProfile
     /**
      * Video codec profile main.
      *
-     * @return string
      */
-    public static function main()
+    public static function main(): string
     {
         return self::MAIN;
     }
@@ -48,9 +46,8 @@ class VideoCodecProfile
     /**
      * Video codec profile high.
      *
-     * @return string
      */
-    public static function high()
+    public static function high(): string
     {
         return self::HIGH;
     }

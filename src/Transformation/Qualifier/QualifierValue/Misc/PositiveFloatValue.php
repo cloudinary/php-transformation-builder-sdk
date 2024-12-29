@@ -23,9 +23,8 @@ class PositiveFloatValue extends QualifierMultiValue
      *
      * @param array $arguments The qualifier.
      *
-     * @return static
      */
-    public function setArguments(...$arguments)
+    public function setArguments(...$arguments): static
     {
         if (count($arguments) > 1) {
             throw new InvalidArgumentException('No more than 1 argument is expected');

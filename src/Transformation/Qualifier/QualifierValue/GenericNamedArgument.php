@@ -18,16 +18,16 @@ class GenericNamedArgument extends BaseNamedArgument
     /**
      * GenericNamedArgument constructor.
      *
-     * @param        $name
-     * @param        $value
-     * @param string $nameValueDelimiter
-     * @param string $innerValueDelimiter
+     * @param string $name                The name of the argument.
+     * @param mixed  $value               The value of the argument.
+     * @param string $nameValueDelimiter  The delimiter between name and value.
+     * @param string $innerValueDelimiter Inner value delimiter.
      */
     public function __construct(
-        $name,
-        $value,
-        $nameValueDelimiter = self::ARG_NAME_VALUE_DELIMITER,
-        $innerValueDelimiter = self::ARG_INNER_VALUE_DELIMITER
+        string $name,
+        mixed $value,
+        string $nameValueDelimiter = self::ARG_NAME_VALUE_DELIMITER,
+        string $innerValueDelimiter = self::ARG_INNER_VALUE_DELIMITER
     ) {
         parent::__construct();
 
@@ -40,11 +40,9 @@ class GenericNamedArgument extends BaseNamedArgument
     /**
      * Sets the named argument value.
      *
-     * @param $value
      *
-     * @return static
      */
-    public function setValue($value)
+    public function setValue($value): static
     {
         $this->argMultiValue = $value;
 

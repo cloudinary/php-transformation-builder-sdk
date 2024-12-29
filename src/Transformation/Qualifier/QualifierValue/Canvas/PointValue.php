@@ -20,20 +20,20 @@ class PointValue extends BaseComponent
     /**
      * @var int|string $x The x dimension of the point.
      */
-    protected $x;
+    protected string|int $x;
 
     /**
      * @var int|string $y The y dimension of the point.
      */
-    protected $y;
+    protected string|int $y;
 
     /**
      * PointValue constructor.
      *
-     * @param int $x
-     * @param int $y
+     * @param int|null $x
+     * @param int|null $y
      */
-    public function __construct($x = null, $y = null)
+    public function __construct(?int $x = null, ?int $y = null)
     {
         parent::__construct();
 
@@ -43,11 +43,10 @@ class PointValue extends BaseComponent
     /**
      * Sets the x dimension of the point.
      *
-     * @param int $x The value of the x dimension.
+     * @param ?int $x The value of the x dimension.
      *
-     * @return PointValue
      */
-    public function x($x)
+    public function x(?int $x): static
     {
         $this->x = $x;
 
@@ -57,11 +56,10 @@ class PointValue extends BaseComponent
     /**
      * Sets the y dimension of the point.
      *
-     * @param int $y The value of the y dimension.
+     * @param ?int $y The value of the y dimension.
      *
-     * @return PointValue
      */
-    public function y($y)
+    public function y(?int $y): static
     {
         $this->y = $y;
 
@@ -81,13 +79,12 @@ class PointValue extends BaseComponent
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'x' => $this->x,
-            'y' => $this->y
+            'y' => $this->y,
         ];
     }
 }

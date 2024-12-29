@@ -19,136 +19,99 @@ use Cloudinary\ArrayUtils;
  */
 trait EffectActionTrait
 {
-    /**
-     * @param       $name
-     * @param mixed ...$args
-     *
-     * @return EffectAction
-     */
-    public static function named($name, ...$args)
+    public static function named($name, ...$args): EffectAction
     {
         return static::fromEffectQualifier(new EffectQualifier($name, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return EffectAction
      */
-    public static function valued($effectName, $value = null, ...$args)
+    public static function valued(string $effectName, mixed $value = null, ...$args): EffectAction
     {
         return static::fromEffectQualifier(new ValueEffectQualifier($effectName, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param array  $range
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return EffectAction
      */
-    public static function limited($effectName, $range, $value = null, ...$args)
+    public static function limited(string $effectName, array $range, mixed $value = null, ...$args): EffectAction
     {
         return static::fromEffectQualifier(new LimitedEffectQualifier($effectName, $range, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param array  $range
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return LevelEffectAction
      */
-    public static function withLevel($effectName, $range, $value = null, ...$args)
+    public static function withLevel(string $effectName, array $range, mixed $value = null, ...$args): LevelEffectAction
     {
         return new LevelEffectAction(new LevelEffectQualifier($effectName, $range, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param array  $range
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return StrengthEffectAction
      */
-    public static function withStrength($effectName, $range, $value = null, ...$args)
-    {
+    public static function withStrength(
+        string $effectName,
+        array $range,
+        mixed $value = null,
+        ...$args
+    ): StrengthEffectAction {
         return new StrengthEffectAction(new StrengthEffectQualifier($effectName, $range, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param array  $range
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return BlendEffectAction
      */
-    public static function withBlend($effectName, $range, $value = null, ...$args)
+    public static function withBlend(string $effectName, array $range, mixed $value = null, ...$args): BlendEffectAction
     {
         return new BlendEffectAction(new BlendEffectQualifier($effectName, $range, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param array  $range
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return ThresholdEffectAction
      */
-    public static function withThreshold($effectName, $range, $value = null, ...$args)
-    {
+    public static function withThreshold(
+        string $effectName,
+        array $range,
+        mixed $value = null,
+        ...$args
+    ): ThresholdEffectAction {
         return new ThresholdEffectAction(new ThresholdEffectQualifier($effectName, $range, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param mixed  $value
-     * @param mixed  ...$args
+     * @param mixed|null $value
      *
-     * @return DurationEffectAction
      */
-    public static function withDuration($effectName, $value = null, ...$args)
+    public static function withDuration(string $effectName, mixed $value = null, ...$args): DurationEffectAction
     {
         return new DurationEffectAction(new DurationEffectQualifier($effectName, $value, ...$args));
     }
 
     /**
-     * @param string $effectName
-     * @param array  $value
-     * @param mixed  ...$args
+     * @param array|null $value Effect value.
      *
-     * @return ToleranceEffectAction
      */
-    public static function withTolerance($effectName, $value = null, ...$args)
+    public static function withTolerance(string $effectName, ?array $value = null, ...$args): ToleranceEffectAction
     {
         return new ToleranceEffectAction(new ToleranceEffectQualifier($effectName, $value, ...$args));
     }
 
-    /**
-     * @param array $qualifiers
-     *
-     * @return EffectAction
-     */
-    public static function fromParams(array $qualifiers)
+    public static function fromParams(array $qualifiers): EffectAction
     {
         $effectName = ArrayUtils::pop($qualifiers, 0);
 
         return static::fromEffectQualifier(new EffectQualifier($effectName, ...$qualifiers));
     }
 
-    /**
-     * @param EffectQualifier $effectQualifier
-     *
-     * @return EffectAction
-     */
-    public static function fromEffectQualifier(EffectQualifier $effectQualifier)
+    public static function fromEffectQualifier(EffectQualifier $effectQualifier): EffectAction
     {
         return new EffectAction($effectQualifier);
     }

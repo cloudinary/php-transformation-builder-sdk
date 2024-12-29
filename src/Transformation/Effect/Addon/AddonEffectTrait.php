@@ -21,9 +21,8 @@ trait AddonEffectTrait
     /**
      * Applies Adobe Lightroom filter.
      *
-     * @return LightroomEffect
      */
-    public static function lightroom()
+    public static function lightroom(): LightroomEffect
     {
         return new LightroomEffect(new LightroomEffectQualifier());
     }

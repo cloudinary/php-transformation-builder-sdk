@@ -21,9 +21,8 @@ trait ResizeModeTrait
      * Modifies percentage-based width & height qualifiers of overlays and underlays (e.g., 1.0) to be relative to the
      * overlaid region. Currently regions are only defined when using gravity 'face', 'faces' or 'custom'.
      *
-     * @return FlagQualifier
      */
-    public static function regionRelative()
+    public static function regionRelative(): FlagQualifier
     {
         return new FlagQualifier(Flag::REGION_RELATIVE);
     }
@@ -32,9 +31,8 @@ trait ResizeModeTrait
      * Modifies percentage-based width & height qualifiers of overlays and underlays (e.g., 1.0) to be relative to the
      * containing image instead of the added layer.
      *
-     * @return FlagQualifier
      */
-    public static function relative()
+    public static function relative(): FlagQualifier
     {
         return new FlagQualifier(Flag::RELATIVE);
     }

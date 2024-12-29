@@ -15,11 +15,11 @@ namespace Cloudinary\Transformation;
  */
 interface VideoFlagInterface
 {
-    const STREAMING_ATTACHMENT = 'streaming_attachment';
-    const HLSV3                = 'hlsv3';
-    const KEEP_DAR             = 'keep_dar';
-    const NO_STREAM            = 'no_stream';
-    const MONO                 = 'mono';
-    const TRUNCATE_TS          = 'truncate_ts';
-    const WAVEFORM             = 'waveform';
+    public const STREAMING_ATTACHMENT = 'streaming_attachment';
+    public const HLSV3                = 'hlsv3';
+    public const KEEP_DAR      = 'keep_dar';
+    public const NO_STREAM = 'no_stream';
+    public const MONO      = 'mono';
+    public const TRUNCATE_TS = 'truncate_ts';
+    public const WAVEFORM    = 'waveform';
 }

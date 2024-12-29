@@ -24,11 +24,10 @@ class SquareSizeEffectQualifier extends LimitedEffectQualifier
      *
      * @param int $squareSize The square size to set.
      *
-     * @return SquareSizeEffectQualifier
      *
      * @internal
      */
-    public function squareSize($squareSize)
+    public function squareSize(int $squareSize): static
     {
         $this->setEffectValue($squareSize);
 

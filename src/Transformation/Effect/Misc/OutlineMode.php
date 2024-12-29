@@ -15,17 +15,16 @@ namespace Cloudinary\Transformation;
  */
 abstract class OutlineMode
 {
-    const INNER      = 'inner';
-    const INNER_FILL = 'inner_fill';
-    const OUTER      = 'outer';
-    const FILL       = 'fill';
+    public const INNER = 'inner';
+    public const INNER_FILL = 'inner_fill';
+    public const OUTER      = 'outer';
+    public const FILL  = 'fill';
 
     /**
      * Outline mode inner.
      *
-     * @return string
      */
-    public static function inner()
+    public static function inner(): string
     {
         return self::INNER;
     }
@@ -33,9 +32,8 @@ abstract class OutlineMode
     /**
      * Outline mode inner fill.
      *
-     * @return string
      */
-    public static function innerFill()
+    public static function innerFill(): string
     {
         return self::INNER_FILL;
     }
@@ -43,9 +41,8 @@ abstract class OutlineMode
     /**
      * Outline mode outer.
      *
-     * @return string
      */
-    public static function outer()
+    public static function outer(): string
     {
         return self::OUTER;
     }
@@ -53,9 +50,8 @@ abstract class OutlineMode
     /**
      * Outline mode fill.
      *
-     * @return string
      */
-    public static function fill()
+    public static function fill(): string
     {
         return self::FILL;
     }

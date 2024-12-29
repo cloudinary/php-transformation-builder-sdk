@@ -29,13 +29,12 @@ trait VideoFlagTrait
      *
      * Most standard video players successfully play fragmented video files without issue.
      *
-     * @param string $filename The attachment's filename
+     * @param string|null $filename The attachment's filename
      *
-     * @return FlagQualifier
      *
      * @see Flag::attachment
      */
-    public static function streamingAttachment($filename = null)
+    public static function streamingAttachment(?string $filename = null): FlagQualifier
     {
         return new FlagQualifier(self::STREAMING_ATTACHMENT, $filename);
     }
@@ -45,11 +44,10 @@ trait VideoFlagTrait
      *
      * Delivering in this format requires a private CDN configuration.
      *
-     * @return FlagQualifier
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#adaptive_bitrate_streaming_hls_and_mpeg_dash
      */
-    public static function hlsv3()
+    public static function hlsv3(): FlagQualifier
     {
         return new FlagQualifier(self::HLSV3);
     }
@@ -58,9 +56,8 @@ trait VideoFlagTrait
      * Keep the Display Aspect Ratio metadata of the uploaded video (if it’s different from the current video
      * dimensions).
      *
-     * @return FlagQualifier
      */
-    public static function keepDar()
+    public static function keepDar(): FlagQualifier
     {
         return new FlagQualifier(self::KEEP_DAR);
     }
@@ -68,9 +65,8 @@ trait VideoFlagTrait
     /**
      * Don't stream a video that is currently being generated on the fly. Wait until the video is fully generated.
      *
-     * @return FlagQualifier
      */
-    public static function noStream()
+    public static function noStream(): FlagQualifier
     {
         return new FlagQualifier(self::NO_STREAM);
     }
@@ -78,9 +74,8 @@ trait VideoFlagTrait
     /**
      * Convert the audio channel to mono
      *
-     * @return FlagQualifier
      */
-    public static function mono()
+    public static function mono(): FlagQualifier
     {
         return new FlagQualifier(self::MONO);
     }
@@ -89,9 +84,8 @@ trait VideoFlagTrait
      * Truncate (trim) a video file based on the start time defined in the metadata (relevant only where the metadata
      * includes a directive to play only a section of the video).
      *
-     * @return FlagQualifier
      */
-    public static function truncateTS()
+    public static function truncateTS(): FlagQualifier
     {
         return new FlagQualifier(self::TRUNCATE_TS);
     }
@@ -99,9 +93,8 @@ trait VideoFlagTrait
     /**
      * Create a waveform image (in the format specified by the file extension) from the audio or video file.
      *
-     * @return FlagQualifier
      */
-    public static function waveform()
+    public static function waveform(): FlagQualifier
     {
         return new FlagQualifier(self::WAVEFORM);
     }

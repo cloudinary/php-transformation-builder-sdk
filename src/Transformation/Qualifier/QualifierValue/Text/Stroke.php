@@ -20,18 +20,17 @@ class Stroke
     /**
      * Do not include an outline stroke. (Server default)
      */
-    const NONE = 'none';
+    public const NONE = 'none';
     /**
      * Include an outline stroke.
      */
-    const STROKE = 'stroke';
+    public const STROKE = 'stroke';
 
     /**
      * Do not include an outline stroke. (Server default)
      *
-     * @return string
      */
-    public static function none()
+    public static function none(): string
     {
         return self::NONE;
     }
@@ -39,9 +38,8 @@ class Stroke
     /**
      * Include an outline stroke.
      *
-     * @return string
      */
-    public static function stroke()
+    public static function stroke(): string
     {
         return self::STROKE;
     }
@@ -49,9 +47,8 @@ class Stroke
     /**
      * Include an outline stroke.
      *
-     * @return BorderQualifier
      */
-    public static function solid($width, $color)
+    public static function solid($width, $color): BorderQualifier
     {
         return (new BorderQualifier())->style('solid')->width($width)->color($color);
     }

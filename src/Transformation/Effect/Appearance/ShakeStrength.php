@@ -15,44 +15,40 @@ namespace Cloudinary\Transformation;
  */
 class ShakeStrength
 {
-    const PIXELS_16 = 16;
-    const PIXELS_32 = 32;
-    const PIXELS_48 = 48;
-    const PIXELS_64 = 64;
+    public const PIXELS_16 = 16;
+    public const PIXELS_32 = 32;
+    public const PIXELS_48 = 48;
+    public const PIXELS_64 = 64;
 
     /**
      * Shake strength 16.
      *
-     * @return int
      */
-    public static function pixels16()
+    public static function pixels16(): int
     {
         return self::PIXELS_16;
     }
     /**
      * Shake strength 32.
      *
-     * @return int
      */
-    public static function pixels32()
+    public static function pixels32(): int
     {
         return self::PIXELS_32;
     }
     /**
      * Shake strength 48.
      *
-     * @return int
      */
-    public static function pixels48()
+    public static function pixels48(): int
     {
         return self::PIXELS_48;
     }
     /**
      * Shake strength 64.
      *
-     * @return int
      */
-    public static function pixels64()
+    public static function pixels64(): int
     {
         return self::PIXELS_64;
     }

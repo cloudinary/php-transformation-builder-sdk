@@ -20,9 +20,8 @@ trait VideoCodecTrait
     /**
      * Auto video codec.
      *
-     * @return VideoCodec
      */
-    public static function auto()
+    public static function auto(): VideoCodec
     {
         return new VideoCodec(VideoCodec::AUTO);
     }
@@ -30,9 +29,8 @@ trait VideoCodecTrait
     /**
      * Video codec vp8.
      *
-     * @return VideoCodec
      */
-    public static function vp8()
+    public static function vp8(): VideoCodec
     {
         return new VideoCodec(VideoCodec::VP8);
     }
@@ -40,9 +38,8 @@ trait VideoCodecTrait
     /**
      * Video codec vp9.
      *
-     * @return VideoCodec
      */
-    public static function vp9()
+    public static function vp9(): VideoCodec
     {
         return new VideoCodec(VideoCodec::VP9);
     }
@@ -50,9 +47,8 @@ trait VideoCodecTrait
     /**
      * Video codec proRes (Apple ProRes 422 HQ).
      *
-     * @return VideoCodec
      */
-    public static function proRes()
+    public static function proRes(): VideoCodec
     {
         return new VideoCodec(VideoCodec::PRO_RES);
     }
@@ -60,12 +56,8 @@ trait VideoCodecTrait
     /**
      * Video codec h264.
      *
-     * @param string $profile
-     * @param string $level
-     *
-     * @return VideoCodec
      */
-    public static function h264($profile = null, $level = null)
+    public static function h264(?string $profile = null, ?string $level = null): VideoCodec
     {
         return (new VideoCodec(VideoCodec::H264))->profile($profile)->level($level);
     }
@@ -73,9 +65,8 @@ trait VideoCodecTrait
     /**
      * Video codec h265.
      *
-     * @return VideoCodec
      */
-    public static function h265()
+    public static function h265(): VideoCodec
     {
         return new VideoCodec(VideoCodec::H265);
     }
@@ -83,9 +74,8 @@ trait VideoCodecTrait
     /**
      * Video codec theora.
      *
-     * @return VideoCodec
      */
-    public static function theora()
+    public static function theora(): VideoCodec
     {
         return new VideoCodec(VideoCodec::THEORA);
     }

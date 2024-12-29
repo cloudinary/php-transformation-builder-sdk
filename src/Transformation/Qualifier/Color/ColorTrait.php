@@ -20,11 +20,11 @@ trait ColorTrait
     /**
      * Sets the color.
      *
-     * @param string $color The color.
+     * @param ?string $color The color.
      *
      * @return $this
      */
-    public function color($color)
+    public function color(?string $color): static
     {
         $this->addQualifier(ClassUtils::verifyInstance($color, ColorQualifier::class));
 

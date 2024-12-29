@@ -40,7 +40,7 @@ class Deshake extends EffectAction
      *
      * @return $this
      */
-    public function shakeStrength($shakeStrength)
+    public function shakeStrength(int $shakeStrength): static
     {
         $this->qualifiers[EffectQualifier::getName()]->setEffectValue($shakeStrength);
 

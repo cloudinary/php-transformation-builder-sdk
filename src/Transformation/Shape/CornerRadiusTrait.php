@@ -20,9 +20,8 @@ trait CornerRadiusTrait
     /**
      * Generates an asset with a circular crop using the 'max' radius value.
      *
-     * @return static
      */
-    public static function max()
+    public static function max(): static
     {
         return static::createWithRadius(CornerRadius::MAX);
     }
@@ -37,9 +36,8 @@ trait CornerRadiusTrait
      *
      * @param array $values
      *
-     * @return static
      */
-    public static function byRadius(...$values)
+    public static function byRadius(...$values): static
     {
         return static::createWithRadius(...$values);
     }
@@ -49,11 +47,10 @@ trait CornerRadiusTrait
      *
      * @param array $values
      *
-     * @return static
      *
      * @internal
      */
-    protected static function createWithRadius(...$values)
+    protected static function createWithRadius(...$values): CornerRadius|static
     {
         return new CornerRadius(...$values);
     }

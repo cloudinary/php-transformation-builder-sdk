@@ -17,10 +17,10 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class PageQualifier extends BaseQualifier
 {
-    const VALUE_CLASS = PageValue::class;
+    protected const VALUE_CLASS = PageValue::class;
 
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'pg';
+    protected static string $key = 'pg';
 }

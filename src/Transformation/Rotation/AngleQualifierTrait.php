@@ -22,9 +22,8 @@ trait AngleQualifierTrait
      *
      * @param int|string|array|mixed $degree The rotation degree and/or mode.
      *
-     * @return Angle
      */
-    public static function angle(...$degree)
+    public static function angle(...$degree): Angle
     {
         return new Angle(...$degree);
     }

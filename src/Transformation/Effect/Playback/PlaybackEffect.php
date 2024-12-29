@@ -15,13 +15,13 @@ namespace Cloudinary\Transformation;
  */
 abstract class PlaybackEffect
 {
-    const ACCELERATE = 'accelerate';
-    const LOOP       = 'loop';
-    const BOOMERANG  = 'boomerang';
-    const PREVIEW    = 'preview';
-    const REVERSE    = 'reverse';
-    const VOLUME     = 'volume';
-    const TRANSITION = 'transition';
+    public const ACCELERATE = 'accelerate';
+    public const LOOP       = 'loop';
+    public const BOOMERANG = 'boomerang';
+    public const PREVIEW   = 'preview';
+    public const REVERSE = 'reverse';
+    public const VOLUME  = 'volume';
+    public const TRANSITION = 'transition';
 
     use PlaybackEffectTrait;
 }

@@ -28,12 +28,12 @@ class ViesusCorrect extends EffectQualifier
     /**
      * Enhances the image without correcting for red eye.
      */
-    const NO_REDEYE = 'no_redeye';
+    public const NO_REDEYE = 'no_redeye';
 
     /**
      * Enhances the image and also applies saturation to the skin tones in the image.
      */
-    const SKIN_SATURATION = 'skin_saturation';
+    public const SKIN_SATURATION = 'skin_saturation';
 
     /**
      * ViesusCorrect constructor.
@@ -46,9 +46,8 @@ class ViesusCorrect extends EffectQualifier
     /**
      * Enhances the image without correcting for red eye.
      *
-     * @return ViesusCorrect
      */
-    public function noRedEye()
+    public function noRedEye(): static
     {
         $this->getValue()->setSimpleNamedValue('no', 'redeye');
 
@@ -58,12 +57,11 @@ class ViesusCorrect extends EffectQualifier
     /**
      * Enhances the image and also applies saturation to the skin tones in the image.
      *
-     * @param int $level    The enhancement level. A positive value boosts the saturation and a negative value
+     * @param int|null $level The enhancement level. A positive value boosts the saturation and a negative value
      *                      reduces the saturation. (Range: -100 to 100, Server default: 50).
      *
-     * @return ViesusCorrect
      */
-    public function skinSaturation($level = null)
+    public function skinSaturation(?int $level = null): static
     {
         if ($level) {
             $this->getValue()->setSimpleNamedValue(self::SKIN_SATURATION, $level);

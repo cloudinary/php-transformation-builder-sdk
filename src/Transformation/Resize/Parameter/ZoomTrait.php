@@ -23,9 +23,8 @@ trait ZoomTrait
      *
      * @param float $zoom The zoom factor. (Default: 1.0)
      *
-     * @return static
      */
-    public function zoom($zoom)
+    public function zoom(float $zoom): static
     {
         return $this->addQualifier(ClassUtils::verifyInstance($zoom, Zoom::class));
     }

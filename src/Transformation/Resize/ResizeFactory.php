@@ -20,24 +20,24 @@ class ResizeFactory
     /**
      * @var array $resizeTypes Supported types of the resize.
      */
-    private static $resizeTypes = ['Scale', 'Crop', 'Pad', 'Fill', 'FillPad', 'Imagga']; // TODO: load this dynamically
+    private static array $resizeTypes = ['Scale', 'Crop', 'Pad', 'Fill', 'FillPad', 'Imagga']; // TODO: load this dynamically
 
     /**
      * @var array $resizeModes Supported resize(crop) modes.
      */
-    private static $resizeModes;
+    private static array $resizeModes;
 
     /**
      * Populates resize (crop) modes.
      */
-    private static function populateModes()
+    private static function populateModes(): void
     {
         foreach (self::$resizeTypes as $type) {
             $typeClass = __NAMESPACE__ . "\\$type";
 
             $currTypeModes = get_class_methods($typeClass);
 
-            foreach ($currTypeModes as $currModeName => $currModeVal) {
+            foreach ($currTypeModes as $currModeVal) {
                 self::$resizeModes[$currModeVal] = $type;
             }
         }
@@ -46,13 +46,12 @@ class ResizeFactory
     /**
      * Creates a Resize instance from mode name.
      *
-     * @param CropMode|string $mode  The resize(crop) mode.
-     * @param mixed           $width Optional. Width.
-     * @param mixed           $height Optional. Height.
+     * @param string|CropMode $mode   The resize(crop) mode.
+     * @param mixed|null      $width  Optional. Width.
+     * @param mixed|null      $height Optional. Height.
      *
-     * @return BaseResizeAction
      */
-    public static function createResize($mode, $width = null, $height = null)
+    public static function createResize(CropMode|string $mode, mixed $width = null, mixed $height = null): BaseResizeAction
     {
         if (empty(self::$resizeModes)) {
             self::populateModes();

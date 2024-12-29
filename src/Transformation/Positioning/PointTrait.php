@@ -22,11 +22,11 @@ trait PointTrait
     /**
      * Sets the x dimension of the point.
      *
-     * @param int|float|string $x The value of the x dimension.
+     * @param float|int|string|null $x The value of the x dimension.
      *
      * @return $this
      */
-    public function x($x)
+    public function x(float|int|string|null $x): static
     {
         return $this->setPointValue(ClassUtils::verifyInstance($x, X::class));
     }
@@ -34,11 +34,11 @@ trait PointTrait
     /**
      * Sets the y dimension of the point.
      *
-     * @param int|float|string $y The value of the y dimension.
+     * @param float|int|string|null $y The value of the y dimension.
      *
      * @return $this
      */
-    public function y($y)
+    public function y(float|int|string|null $y): static
     {
         return $this->setPointValue(ClassUtils::verifyInstance($y, Y::class));
     }
@@ -46,12 +46,11 @@ trait PointTrait
     /**
      * Sets the x and y dimensions of the point.
      *
-     * @param int|float|string $x The value of the x dimension.
-     * @param int|float|string $y The value of the y dimension.
+     * @param float|int|string|null $x The value of the x dimension.
+     * @param float|int|string|null $y The value of the y dimension.
      *
-     * @return static
      */
-    public function point($x = null, $y = null)
+    public function point(float|int|string|null $x = null, float|int|string|null $y = null): static
     {
         return $this->x($x)->y($y);
     }
@@ -59,11 +58,9 @@ trait PointTrait
     /**
      * Internal setter for the point value.
      *
-     * @param mixed $value
      *
-     * @return static
      *
      * @internal
      */
-    abstract public function setPointValue($value);
+    abstract public function setPointValue(mixed $value): static;
 }

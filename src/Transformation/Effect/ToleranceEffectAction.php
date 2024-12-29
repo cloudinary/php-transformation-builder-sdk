@@ -22,7 +22,7 @@ class ToleranceEffectAction extends EffectAction
      *
      * @return $this
      */
-    public function tolerance($tolerance)
+    public function tolerance(int $tolerance): static
     {
         $this->qualifiers[EffectQualifier::getName()]->tolerance($tolerance);
 

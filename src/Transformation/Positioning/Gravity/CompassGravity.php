@@ -23,16 +23,16 @@ namespace Cloudinary\Transformation;
  */
 class CompassGravity extends GravityQualifier
 {
-    const VALUE_CLASS = Compass::class;
+    protected const VALUE_CLASS = Compass::class;
 
     use CompassGravityBuilderTrait;
 
     /**
      * CompassGravity constructor.
      *
-     * @param string $direction
+     * @param ?string $direction Compass direction.
      */
-    public function __construct($direction = null)
+    public function __construct(?string $direction = null)
     {
         parent::__construct();
 
@@ -42,11 +42,10 @@ class CompassGravity extends GravityQualifier
     /**
      * Sets the compass gravity direction.
      *
-     * @param string $direction The gravity direction. Use the constants defined in this class.
+     * @param ?string $direction The gravity direction. Use the constants defined in this class.
      *
-     * @return CompassGravity
      */
-    protected function direction($direction)
+    protected function direction(?string $direction): static
     {
         $this->setQualifierValue($direction);
 

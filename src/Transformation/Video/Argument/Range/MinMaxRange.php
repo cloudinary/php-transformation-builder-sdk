@@ -15,20 +15,17 @@ namespace Cloudinary\Transformation;
  */
 class MinMaxRange extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '-';
+    public const VALUE_DELIMITER = '-';
 
     /**
      * @var array $argumentOrder The order of the arguments.
      */
-    protected $argumentOrder = ['min', 'max'];
+    protected array $argumentOrder = ['min', 'max'];
 
     /**
      * MinMaxRange constructor.
-     *
-     * @param int $min
-     * @param int $max
      */
-    public function __construct($min, $max = null)
+    public function __construct(int|float|string|null $min, int|float|string|null $max = null)
     {
         parent::__construct();
 
@@ -39,11 +36,11 @@ class MinMaxRange extends QualifierMultiValue
     /**
      * Sets the minimum value.
      *
-     * @param int $min The minimum value.
+     * @param int|float|string|null $min The minimum value.
      *
      * @return $this
      */
-    public function min($min)
+    public function min(int|float|string|null $min): static
     {
         return $this->setSimpleValue('min', $min);
     }
@@ -51,11 +48,11 @@ class MinMaxRange extends QualifierMultiValue
     /**
      * Sets the maximum value.
      *
-     * @param int $max The maximum value.
+     * @param int|float|string|null $max The maximum value.
      *
      * @return $this
      */
-    public function max($max)
+    public function max(int|float|string|null $max): static
     {
         return $this->setSimpleValue('max', $max);
     }

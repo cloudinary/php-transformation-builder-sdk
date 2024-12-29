@@ -35,9 +35,8 @@ abstract class Effect
      * @param string $name    The effect name.
      * @param mixed  ...$args Optional effect arguments.
      *
-     * @return EffectAction
      */
-    public static function generic($name, ...$args)
+    public static function generic(string $name, ...$args): EffectAction
     {
         return EffectAction::named($name, ...$args);
     }
@@ -45,11 +44,10 @@ abstract class Effect
     /**
      * Creates effect from an array of qualifiers.
      *
-     * @param string|array $qualifiers The effect qualifiers.
+     * @param array|string $qualifiers The effect qualifiers.
      *
-     * @return EffectAction
      */
-    public static function fromParams($qualifiers)
+    public static function fromParams(array|string $qualifiers): EffectAction
     {
         return EffectAction::fromParams(ArrayUtils::build($qualifiers));
     }

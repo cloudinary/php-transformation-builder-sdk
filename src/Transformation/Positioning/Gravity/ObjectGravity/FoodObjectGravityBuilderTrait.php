@@ -20,9 +20,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity food.
      *
-     * @return string
      */
-    public static function food()
+    public static function food(): string
     {
         return ObjectGravity::FOOD;
     }
@@ -30,9 +29,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity banana.
      *
-     * @return string
      */
-    public static function banana()
+    public static function banana(): string
     {
         return ObjectGravity::BANANA;
     }
@@ -40,9 +38,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity apple.
      *
-     * @return string
      */
-    public static function apple()
+    public static function apple(): string
     {
         return ObjectGravity::APPLE;
     }
@@ -50,9 +47,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity sandwich.
      *
-     * @return string
      */
-    public static function sandwich()
+    public static function sandwich(): string
     {
         return ObjectGravity::SANDWICH;
     }
@@ -60,9 +56,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity orange.
      *
-     * @return string
      */
-    public static function orange()
+    public static function orange(): string
     {
         return ObjectGravity::ORANGE;
     }
@@ -70,9 +65,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity broccoli.
      *
-     * @return string
      */
-    public static function broccoli()
+    public static function broccoli(): string
     {
         return ObjectGravity::BROCCOLI;
     }
@@ -80,9 +74,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity carrot.
      *
-     * @return string
      */
-    public static function carrot()
+    public static function carrot(): string
     {
         return ObjectGravity::CARROT;
     }
@@ -90,9 +83,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity hotdog.
      *
-     * @return string
      */
-    public static function hotdog()
+    public static function hotdog(): string
     {
         return ObjectGravity::HOTDOG;
     }
@@ -100,9 +92,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity pizza.
      *
-     * @return string
      */
-    public static function pizza()
+    public static function pizza(): string
     {
         return ObjectGravity::PIZZA;
     }
@@ -110,9 +101,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity donut.
      *
-     * @return string
      */
-    public static function donut()
+    public static function donut(): string
     {
         return ObjectGravity::DONUT;
     }
@@ -120,9 +110,8 @@ trait FoodObjectGravityBuilderTrait
     /**
      * Gravity cake.
      *
-     * @return string
      */
-    public static function cake()
+    public static function cake(): string
     {
         return ObjectGravity::CAKE;
     }

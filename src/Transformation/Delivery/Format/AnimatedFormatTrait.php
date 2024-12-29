@@ -20,9 +20,8 @@ trait AnimatedFormatTrait
     /**
      * Animated image format webp.
      *
-     * @return static
      */
-    public static function webp()
+    public static function webp(): static
     {
         return static::createFormat(Format::WEBP)->setFlag(Flag::animatedWebP());
     }
@@ -30,9 +29,8 @@ trait AnimatedFormatTrait
     /**
      * Animated image format gif.
      *
-     * @return static
      */
-    public static function gif()
+    public static function gif(): static
     {
         return static::createFormat(Format::GIF);
     }
@@ -40,9 +38,8 @@ trait AnimatedFormatTrait
     /**
      * Animated image format png.
      *
-     * @return static
      */
-    public static function png()
+    public static function png(): static
     {
         return static::createFormat(Format::PNG)->setFlag(Flag::animatedPng());
     }
@@ -50,9 +47,8 @@ trait AnimatedFormatTrait
     /**
      * Animated image auto format.
      *
-     * @return static
      */
-    public static function auto()
+    public static function auto(): static
     {
         return static::createFormat(Format::AUTO);
     }
@@ -62,11 +58,10 @@ trait AnimatedFormatTrait
      *
      * @param string|array $format The format.
      *
-     * @return static
      *
      * @internal
      */
-    protected static function createFormat(...$format)
+    protected static function createFormat(...$format): static
     {
         return new static(...$format);
     }

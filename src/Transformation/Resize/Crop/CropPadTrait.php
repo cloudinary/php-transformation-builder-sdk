@@ -28,17 +28,20 @@ trait CropPadTrait
      *
      * Only supported in conjunction with Automatic cropping (Gravity::auto())
      *
-     * @param int|float|string|null        $width      The required width of a transformed asset.
-     * @param int|float|null               $height     The required height of a transformed asset.
-     * @param FocalGravity|string          $gravity    Specifies which part of the original image to include.
-     * @param Background|ColorValue|string $background The background color of the image.
+     * @param float|int|string|null             $width      The required width of a transformed asset.
+     * @param float|int|null                    $height     The required height of a transformed asset.
+     * @param string|AutoGravity|null           $gravity    Specifies which part of the original image to include.
+     * @param string|Background|ColorValue|null $background The background color of the image.
      *
-     * @return CropPad
      *
      * @see Gravity::auto
      */
-    public static function autoPad($width = null, $height = null, $gravity = null, $background = null)
-    {
+    public static function autoPad(
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        string|AutoGravity|null $gravity = null,
+        Background|ColorValue|string|null $background = null
+    ): CropPad {
         return new CropPad(CropMode::AUTO_PAD, $width, $height, $gravity, $background);
     }
 }

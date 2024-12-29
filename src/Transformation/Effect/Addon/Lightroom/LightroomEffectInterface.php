@@ -15,24 +15,24 @@ namespace Cloudinary\Transformation;
  */
 interface LightroomEffectInterface
 {
-    const CONTRAST              = 'contrast';
-    const SATURATION            = 'saturation';
-    const VIGNETTE_AMOUNT       = 'vignetteamount';
-    const VIBRANCE              = 'vibrance';
-    const HIGHLIGHTS            = 'highlights';
-    const SHADOWS               = 'shadows';
-    const WHITES                = 'whites';
-    const BLACKS                = 'blacks';
-    const CLARITY               = 'clarity';
-    const DEHAZE                = 'dehaze';
-    const TEXTURE               = 'texture';
-    const SHARPNESS             = 'sharpness';
-    const COLOR_NOISE_REDUCTION = 'colornoisereduction';
-    const NOISE_REDUCTION       = 'noisereduction';
-    const SHARPEN_DETAIL        = 'sharpendetail';
-    const SHARPEN_EDGE_MASKING  = 'sharpenedgemasking';
-    const EXPOSURE              = 'exposure';
-    const SHARPEN_RADIUS        = 'sharpenradius';
-    const WHITE_BALANCE         = 'whitebalance';
-    const XMP                   = 'xmp';
+    public const CONTRAST = 'contrast';
+    public const SATURATION = 'saturation';
+    public const VIGNETTE_AMOUNT = 'vignetteamount';
+    public const VIBRANCE        = 'vibrance';
+    public const HIGHLIGHTS = 'highlights';
+    public const SHADOWS    = 'shadows';
+    public const WHITES  = 'whites';
+    public const BLACKS = 'blacks';
+    public const CLARITY = 'clarity';
+    public const DEHAZE  = 'dehaze';
+    public const TEXTURE = 'texture';
+    public const SHARPNESS = 'sharpness';
+    public const COLOR_NOISE_REDUCTION = 'colornoisereduction';
+    public const NOISE_REDUCTION       = 'noisereduction';
+    public const SHARPEN_DETAIL  = 'sharpendetail';
+    public const SHARPEN_EDGE_MASKING = 'sharpenedgemasking';
+    public const EXPOSURE             = 'exposure';
+    public const SHARPEN_RADIUS = 'sharpenradius';
+    public const WHITE_BALANCE  = 'whitebalance';
+    public const XMP           = 'xmp';
 }

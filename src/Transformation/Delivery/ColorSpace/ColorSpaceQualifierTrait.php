@@ -24,12 +24,11 @@ trait ColorSpaceQualifierTrait
      *
      * @param string $colorSpace The color space.  Use the constants defined in the ColorSpace class.
      *
-     * @return ColorSpace
      *
-     * @see \Cloudinary\Transformation\ColorSpace
+     * @see ColorSpace
      *
      */
-    public static function colorSpace($colorSpace)
+    public static function colorSpace(string $colorSpace): ColorSpace
     {
         return new ColorSpace($colorSpace);
     }
@@ -44,11 +43,10 @@ trait ColorSpaceQualifierTrait
      * @param string $publicId The public ID (including the file extension) of the ICC profile that defines the
      *                         color space.
      *
-     * @return ColorSpace
      *
      * @see ColorSpace::icc
      */
-    public static function colorSpaceFromIcc($publicId)
+    public static function colorSpaceFromIcc(string $publicId): ColorSpace
     {
         return ColorSpace::icc($publicId);
     }

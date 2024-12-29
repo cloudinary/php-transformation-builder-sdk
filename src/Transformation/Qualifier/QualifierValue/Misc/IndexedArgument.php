@@ -17,5 +17,5 @@ use Cloudinary\Transformation\BaseArgument;
  */
 class IndexedArgument extends BaseArgument
 {
-    const ARG_INNER_VALUE_DELIMITER = '-';
+    public const ARG_INNER_VALUE_DELIMITER = '-';
 }

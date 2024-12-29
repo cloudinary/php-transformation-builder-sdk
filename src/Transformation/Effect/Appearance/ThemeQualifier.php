@@ -24,7 +24,7 @@ class ThemeQualifier extends EffectQualifier
 {
     const NAME = 'theme';
 
-    protected $valueOrder = [0, 'color', 'photosensitivity'];
+    protected array $valueOrder = [0, 'color', 'photosensitivity'];
 
     public function __construct($color, $photoSensitivity)
     {
@@ -37,12 +37,11 @@ class ThemeQualifier extends EffectQualifier
     /**
      * Sets the theme color.
      *
-     * @param string $color The target background color. Specify either the name of a color (e.g. black, lightgray),
+     * @param ?string $color The target background color. Specify either the name of a color (e.g. black, lightgray),
      *                      or an RGB hex value (e.g. f0ebe6).
      *
-     * @return ThemeQualifier
      */
-    public function color($color)
+    public function color(?string $color): static
     {
         $color = StringUtils::truncatePrefix((string)$color, '#');
         $this->value->setSimpleNamedValue('color', ClassUtils::verifyInstance($color, ColorValue::class));
@@ -53,13 +52,12 @@ class ThemeQualifier extends EffectQualifier
     /**
      * Sets the theme photosensitivity.
      *
-     * @param int $photoSensitivity The sensitivity to photographic elements of an image. A value of 0 treats the whole
+     * @param ?int $photoSensitivity The sensitivity to photographic elements of an image. A value of 0 treats the whole
      *                              image as non-photographic. A value of 200 treats the whole image as photographic,
      *                              so no theme change is applied. Range: 0 to 200. Default: 100.
      *
-     * @return ThemeQualifier
      */
-    public function photoSensitivity($photoSensitivity)
+    public function photoSensitivity(?int $photoSensitivity): static
     {
         $this->value->setSimpleNamedValue('photosensitivity', $photoSensitivity);
 

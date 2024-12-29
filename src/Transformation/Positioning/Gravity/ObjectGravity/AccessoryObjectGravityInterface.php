@@ -18,15 +18,15 @@ namespace Cloudinary\Transformation;
 interface AccessoryObjectGravityInterface
 {
     //Accessory Category
-    const ACCESSORY      = 'accessory';
-    const FRISBEE        = 'frisbee';
-    const SKIS           = 'skis';
-    const SNOWBOARD      = 'snowboard';
-    const SPORTS_BALL    = 'sportsball';
-    const KITE           = 'kite';
-    const BASEBALL_BAT   = 'baseballbat';
-    const BASEBALL_GLOVE = 'baseballglove';
-    const SKATEBOARD     = 'skateboard';
-    const SURFBOARD      = 'surfboard';
-    const TENNIS_RACKET  = 'tennisracket';
+    public const ACCESSORY = 'accessory';
+    public const FRISBEE   = 'frisbee';
+    public const SKIS    = 'skis';
+    public const SNOWBOARD = 'snowboard';
+    public const SPORTS_BALL = 'sportsball';
+    public const KITE        = 'kite';
+    public const BASEBALL_BAT = 'baseballbat';
+    public const BASEBALL_GLOVE = 'baseballglove';
+    public const SKATEBOARD     = 'skateboard';
+    public const SURFBOARD  = 'surfboard';
+    public const TENNIS_RACKET = 'tennisracket';
 }

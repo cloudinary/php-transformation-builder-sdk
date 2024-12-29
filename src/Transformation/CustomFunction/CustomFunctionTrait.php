@@ -26,13 +26,12 @@ trait CustomFunctionTrait
      *
      * @param string $source The public ID of the wasm file.
      *
-     * @return CustomFunction
      *
-     * @see \Cloudinary\Transformation\CustomFunction
+     * @see CustomFunction
      * @see https://cloudinary.com/documentation/custom_functions#webassembly_functions
      *
      */
-    public static function wasm($source)
+    public static function wasm(string $source): CustomFunction
     {
         return static::create($source, CustomFunction::WASM);
     }
@@ -44,13 +43,12 @@ trait CustomFunctionTrait
      *
      * @param string $source The URL of the remote function.
      *
-     * @return CustomFunction
      *
-     * @see \Cloudinary\Transformation\CustomFunction
+     * @see CustomFunction
      * @see https://cloudinary.com/documentation/custom_functions#remote_functions
      *
      */
-    public static function remote($source)
+    public static function remote(string $source): CustomFunction
     {
         return static::create($source, CustomFunction::REMOTE);
     }
@@ -60,12 +58,11 @@ trait CustomFunctionTrait
      *
      * @param array $values
      *
-     * @return CustomFunction
-     * @see \Cloudinary\Transformation\CustomFunction
+     * @see CustomFunction
      *
      * @internal
      */
-    protected static function create(...$values)
+    protected static function create(...$values): CustomFunction
     {
         return new CustomFunction(...$values);
     }
@@ -73,14 +70,13 @@ trait CustomFunctionTrait
     /**
      * Creates a new instance from an array of qualifiers.
      *
-     * @param array $qualifiers The qualifiers.
-     * @param bool  $isPre  Indicates whether the function is a pre-processing function. Default: false.
+     * @param array|string $qualifiers The qualifiers.
+     * @param bool         $isPre      Indicates whether the function is a pre-processing function. Default: false.
      *
-     * @return CustomFunction
-     * @see \Cloudinary\Transformation\CustomFunction
+     * @see CustomFunction
      *
      */
-    public static function fromParams($qualifiers, $isPre = false)
+    public static function fromParams(array|string $qualifiers, bool $isPre = false): CustomFunction
     {
         if (! is_array($qualifiers)) {
             return static::create($qualifiers, null, $isPre);

@@ -14,11 +14,11 @@ trait DetectMultipleTrait
      *
      * When used with multiple prompts, it’s always true even if not explicitly set.
      *
-     * @param bool $detectMultiple Whether to detect multiple objects.
+     * @param ?bool $detectMultiple Whether to detect multiple objects.
      *
      * @return $this
      */
-    public function detectMultiple($detectMultiple = true)
+    public function detectMultiple(?bool $detectMultiple = true): static
     {
         $this->getMainQualifier()->getPropertiesValue()->setSimpleNamedValue(
             GenerativeEffectAction::MULTIPLE,

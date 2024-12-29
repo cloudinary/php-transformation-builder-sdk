@@ -22,49 +22,49 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class CustomFunction extends BaseQualifier
 {
-    const VALUE_CLASS = CustomFunctionValue::class;
+    protected const VALUE_CLASS = CustomFunctionValue::class;
 
     use CustomFunctionTrait;
 
     /**
      * @var string $name Serialisation name.
      */
-    protected static $name = 'custom_function';
+    protected static string $name = 'custom_function';
 
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'fn';
+    protected static string $key = 'fn';
 
     /**
      * WASM.
      *
      * @var string
      */
-    const WASM = 'wasm';
+    public const WASM = 'wasm';
     /**
      * Remote.
      *
      * @var string
      */
-    const REMOTE = 'remote';
+    public const REMOTE = 'remote';
 
     /**
      * CustomFunction constructor.
      *
-     * @param string $source     Source of this custom function
-     * @param string $type       The type of custom function (CustomFunction::REMOTE or CustomFunction::WASM).
-     * @param bool   $preprocess Preprocess custom function. Only remote functions are supported for preprocess
+     * @param string      $source     Source of this custom function
+     * @param string|null $type       The type of custom function (CustomFunction::REMOTE or CustomFunction::WASM).
+     * @param bool|null   $preprocess Preprocess custom function. Only remote functions are supported for preprocess
      *
      * @see CustomFunction::REMOTE
      * @see CustomFunction::WASM
      */
-    public function __construct($source, $type = null, $preprocess = false)
+    public function __construct($source, ?string $type = null, ?bool $preprocess = false)
     {
         parent::__construct(
-            $type === self::REMOTE ? StringUtils::base64UrlEncode($source) : $source,
-            $type
+            $type === self::REMOTE ? StringUtils::base64UrlEncode($source) : $source, $type
         );
+
         $this->preprocess($preprocess);
     }
 
@@ -73,14 +73,13 @@ class CustomFunction extends BaseQualifier
      *
      * For more information about preprocessing custom functions see the documentation.
      *
-     * @param bool $preprocess Whether to defines the function as the remote preprocessing custom function.
+     * @param bool $preprocess Whether to define the function as the remote preprocessing custom function.
      *
-     * @return CustomFunction
      *
-     * @see \Cloudinary\Transformation\CustomFunction
+     * @see CustomFunction
      * @see https://cloudinary.com/documentation/custom_functions#preprocessing_custom_functions
      */
-    public function preprocess($preprocess = true)
+    public function preprocess(bool $preprocess = true): static
     {
         $this->getValue()->setSimpleValue('preprocess', $preprocess ? 'pre' : null);
 

@@ -25,11 +25,10 @@ class ClassUtils
      *
      * @param object $instance The instance object
      *
-     * @return string
      */
-    public static function getClassName($instance)
+    public static function getClassName(object $instance): string
     {
-        return self::getBaseName(get_class($instance));
+        return self::getBaseName($instance::class);
     }
 
     /**
@@ -39,9 +38,10 @@ class ClassUtils
      *
      * @return string class base name
      */
-    public static function getBaseName($className)
+    public static function getBaseName(string $className): string
     {
-        if ($pos = strrpos($className, '\\')) {
+        $pos = strrpos($className, '\\');
+        if ($pos) {
             return substr($className, $pos + 1);
         }
 
@@ -56,14 +56,14 @@ class ClassUtils
      *
      * @return array of class constants
      */
-    public static function getConstants($instance, $exclusions = [])
+    public static function getConstants(object|string $instance, array $exclusions = []): array
     {
         $constants = [];
 
         try {
             $reflectionClass = new ReflectionClass($instance);
             $constants       = array_values($reflectionClass->getConstants());
-        } catch (ReflectionException $e) {
+        } catch (ReflectionException) {
             //TODO: log it?
         }
 
@@ -81,16 +81,19 @@ class ClassUtils
      * If $notSureIfT is a string, then $t will be a new Transformation initialized with the value of $notSureIfT.
      * In case $notSureIfT is already an instance of CommonTransformation, it is returned as is.
      *
-     * @param mixed  $object              The value to verify
-     * @param string $baseClass           Base class name
-     * @param string $instanceClass       Instance class to create in case $object is not derivative of the $baseClass.
+     * @param mixed       $object         The value to verify
+     * @param string      $baseClass      Base class name
+     * @param string|null $instanceClass  Instance class to create in case $object is not derivative of the $baseClass.
      *                                    $baseClass is used in case it is not provided.
-     * @param array  $params              Additional parameters for the constructor
+     * @param array       $params         Additional parameters for the constructor
      *
-     * @return mixed
      */
-    public static function forceInstance($object, $baseClass, $instanceClass = null, ...$params)
-    {
+    public static function forceInstance(
+        mixed $object,
+        string $baseClass,
+        ?string $instanceClass = null,
+        ...$params
+    ): mixed {
         if (! $object instanceof $baseClass) {
             $instanceClass = $instanceClass ?: $baseClass;
             $object        = new $instanceClass($object, ...$params);
@@ -104,16 +107,19 @@ class ClassUtils
      *
      * @param object|mixed $object        The value to verify
      * @param string       $baseClass     Base class name
-     * @param string       $instanceClass Instance class to create in case $object is not derivative of the $baseClass.
+     * @param string|null  $instanceClass Instance class to create in case $object is not derivative of the $baseClass.
      *                                    $baseClass is used in case it is not provided.
      * @param array        $params        Additional parameters for the constructor
      *
-     * @return mixed
      *
      * @see ClassUtils::forceInstance
      */
-    public static function verifyInstance($object, $baseClass, $instanceClass = null, ...$params)
-    {
+    public static function verifyInstance(
+        mixed $object,
+        string $baseClass,
+        ?string $instanceClass = null,
+        ...$params
+    ): mixed {
         if ($object === null) { // no propagation of null objects
             return null;
         }
@@ -124,17 +130,18 @@ class ClassUtils
     /**
      * Variable arguments version of the ClassUtils::forceInstance.
      *
-     * @param array  $varArgs       Arguments to verify
-     * @param string $baseClass     Base class name
-     * @param string $instanceClass Instance class to create in case $object is not derivative of the $baseClass.
-     *                              $baseClass is used in case it is not provided.
+     * @param mixed       $varArgs       Arguments to verify
+     * @param string      $baseClass     Base class name
+     * @param string|null $instanceClass Instance class to create in case $object is not derivative of the $baseClass.
+     *                                   $baseClass is used in case it is not provided.
      *
-     * @return mixed
      *
      * @see ClassUtils::verifyInstance
      */
-    public static function forceVarArgsInstance(array $varArgs, $baseClass, $instanceClass = null)
+    public static function forceVarArgsInstance(mixed $varArgs, string $baseClass, ?string $instanceClass = null): mixed
     {
+        $varArgs = ArrayUtils::build($varArgs);
+
         // When passing array instead of varargs, unwrap it and proceed
         if (count($varArgs) === 1 && is_array($varArgs[0])) {
             $varArgs = $varArgs[0];
@@ -155,17 +162,19 @@ class ClassUtils
     /**
      * Variable arguments version of the ClassUtils::verifyInstance.
      *
-     * @param array  $varArgs       Arguments to verify
-     * @param string $baseClass     Base class name
-     * @param string $instanceClass Instance class to create in case $object is not derivative of the $baseClass.
-     *                              $baseClass is used in case it is not provided.
+     * @param mixed       $varArgs       Arguments to verify
+     * @param string      $baseClass     Base class name
+     * @param string|null $instanceClass Instance class to create in case $object is not derivative of the $baseClass.
+     *                                   $baseClass is used in case it is not provided.
      *
-     * @return mixed
      *
      * @see ClassUtils::verifyInstance
      */
-    public static function verifyVarArgsInstance(array $varArgs, $baseClass, $instanceClass = null)
-    {
+    public static function verifyVarArgsInstance(
+        mixed $varArgs,
+        string $baseClass,
+        ?string $instanceClass = null
+    ): mixed {
         // No args, nothing to verify
         if (empty($varArgs)) {
             return null;

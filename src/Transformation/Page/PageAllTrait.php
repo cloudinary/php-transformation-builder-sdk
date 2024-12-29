@@ -20,9 +20,8 @@ trait PageAllTrait
     /**
      * Gets all pages.
      *
-     * @return mixed
      */
-    public function all()
+    public function all(): Page
     {
         return $this->add('all');
     }

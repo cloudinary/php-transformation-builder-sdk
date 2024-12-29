@@ -34,7 +34,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function customFunctionDataProvider()
+    public function customFunctionDataProvider(): array
     {
         return [
             'Should support custom function from string'                       => [
@@ -69,7 +69,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function borderDataProvider()
+    public function borderDataProvider(): array
     {
         return [
             'Border as a string'                  => ['bo_1px_solid_blue', ['border' => '1px_solid_blue']],
@@ -86,7 +86,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function flagsDataProvider()
+    public function flagsDataProvider(): array
     {
         return [
             'Should support flags as a string'                => [
@@ -109,7 +109,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function effectDataProvider()
+    public function effectDataProvider(): array
     {
         return [
             'Should support an effect as a string'                 => [
@@ -136,7 +136,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function keyframeIntervalDataProvider()
+    public function keyframeIntervalDataProvider(): array
     {
         return [
             'Keyframe interval as a positive integer'          => ['ki_10.0', ['keyframe_interval' => 10]],
@@ -153,7 +153,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function audioDataProvider()
+    public function audioDataProvider(): array
     {
         return [
             'Audio codec as a string value' => ['ac_acc', ['audio_codec' => 'acc']],
@@ -168,7 +168,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function videoSamplingDataProvider()
+    public function videoSamplingDataProvider(): array
     {
         return [
             'Video sampling as an integer' => ['vs_20', ['video_sampling' => 20]],
@@ -181,7 +181,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function startOffsetDataProvider()
+    public function startOffsetDataProvider(): array
     {
         return [
             'Start offset as a float'                             => ['so_2.63', ['start_offset' => 2.63]],
@@ -197,7 +197,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function endOffsetDataProvider()
+    public function endOffsetDataProvider(): array
     {
         return [
             'End offset as a float'                             => ['eo_2.63', ['end_offset' => 2.63]],
@@ -212,7 +212,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function durationParameterDataProvider()
+    public function durationParameterDataProvider(): array
     {
         return [
             'Duration parameter as a float'                             => ['du_2.63', ['duration' => 2.63]],
@@ -227,7 +227,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function offsetDataProvider()
+    public function offsetDataProvider(): array
     {
         return [
             'Offset as a string separated by two points'                    => [
@@ -258,7 +258,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function operatorsDataProvider()
+    public function operatorsDataProvider(): array
     {
         return [
             'Should support and translate operators: ^, * and variables: initial_width, initial_height, crop' => [
@@ -298,7 +298,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function userVariableDataProvider()
+    public function userVariableDataProvider(): array
     {
         return [
             'Normalize expression should not convert user variables' => [
@@ -366,7 +366,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function gravityDataProvider()
+    public function gravityDataProvider(): array
     {
         return [
             'Should support gravity with x, y, radius, quality, prefix and opacity parameters' => [
@@ -401,7 +401,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function qualityDataProvider()
+    public function qualityDataProvider(): array
     {
         return [
             'Quality as an integer'     => [
@@ -428,7 +428,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function radiusDataProvider()
+    public function radiusDataProvider(): array
     {
         return [
             'Radius as an integer'                                           => ['r_10', ['radius' => 10]],
@@ -459,7 +459,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function transformationDataProvider()
+    public function transformationDataProvider(): array
     {
         return [
             'Should support a named transformation'              => ['t_blip', ['transformation' => 'blip']],
@@ -503,7 +503,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function backgroundDataProvider()
+    public function backgroundDataProvider(): array
     {
         return [
             'Should support a background as a constant'   => [
@@ -522,7 +522,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array[]
      */
-    public function generalQualifiersActionDataProvider()
+    public function generalQualifiersActionDataProvider(): array
     {
         return [
             'Should support size using width and height parameters'              => [
@@ -635,10 +635,10 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      * @dataProvider gravityDataProvider
      * @dataProvider backgroundDataProvider
      *
-     * @param $transformation
-     * @param $options
+     * @param string $transformation The transformation string to assert.
+     * @param array  $options The transformation options to test.
      */
-    public function testQualifiersAction($transformation, $options)
+    public function testQualifiersAction(string $transformation, array $options)
     {
         self::assertEquals($transformation, (string)new QualifiersAction($options));
     }
@@ -648,7 +648,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array
      */
-    public function layersQualifiersDataProvider()
+    public function layersQualifiersDataProvider(): array
     {
         return [
             'public_id'                           => [['public_id' => 'logo'], 'logo'],
@@ -658,7 +658,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
             'video'                               => [['resource_type' => 'video', 'public_id' => 'cat'], 'video:cat'],
             'fetch video'                         => [
                 ['resource_type' => 'video', 'url' => self::FETCH_VIDEO_URL],
-                'video:fetch:' . self::B64_FETCH_VIDEO_URL
+                'video:fetch:' . self::B64_FETCH_VIDEO_URL,
             ],
             'text'                                => [
                 ['public_id' => 'logo', 'text' => 'Hello World, Nice to meet you?'],
@@ -757,7 +757,7 @@ final class ActionFromQualifiersTest extends TransformationTestCase
      *
      * @return array
      */
-    public function layerQualifierFactoryExpectExceptionDataProvider()
+    public function layerQualifierFactoryExpectExceptionDataProvider(): array
     {
         return [
             'Underlay require a public id for non text for image layer'     => [

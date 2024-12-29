@@ -21,12 +21,12 @@ class EffectQualifier extends BaseExpressionQualifier
     /**
      * @var string $key Serialization key, force it here for derived classes usage
      */
-    protected static $key = 'e';
+    protected static string $key = 'e';
 
     /**
      * @var string $name Serialization name, force it here for derived classes usage
      */
-    protected static $name = 'effect';
+    protected static string $name = 'effect';
 
     /**
      * EffectQualifier constructor.
@@ -44,9 +44,8 @@ class EffectQualifier extends BaseExpressionQualifier
      *
      * @param string|EffectName $effectName The effect name.
      *
-     * @return EffectQualifier
      */
-    public function setEffectName($effectName)
+    public function setEffectName(EffectName|string $effectName): static
     {
         $this->getValue()->setSimpleValue(0, ClassUtils::verifyInstance($effectName, EffectName::class));
 

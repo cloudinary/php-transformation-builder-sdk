@@ -44,9 +44,8 @@ class StyleTransfer extends SourceBasedEffectAction
      *                              artwork are not transferred, so the result retains the original colors of the
      *                              target photo.
      *
-     * @return StyleTransfer
      */
-    public function preserveColor($preserveColor = true)
+    public function preserveColor(bool $preserveColor = true): static
     {
         $this->qualifiers[StyleTransferQualifier::getName()]->preserveColor($preserveColor);
 
@@ -60,9 +59,8 @@ class StyleTransfer extends SourceBasedEffectAction
      *                              highly influenced by the source artwork style. (Range: 0 to 100, Server default:
      *                              100)
      *
-     * @return StyleTransfer
      */
-    public function strength($strength)
+    public function strength(int $strength): static
     {
         $this->qualifiers[StyleTransferQualifier::getName()]->strength($strength);
 

@@ -20,9 +20,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity furniture.
      *
-     * @return string
      */
-    public static function furniture()
+    public static function furniture(): string
     {
         return ObjectGravity::FURNITURE;
     }
@@ -30,9 +29,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity chair.
      *
-     * @return string
      */
-    public static function chair()
+    public static function chair(): string
     {
         return ObjectGravity::CHAIR;
     }
@@ -40,9 +38,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity sofa.
      *
-     * @return string
      */
-    public static function sofa()
+    public static function sofa(): string
     {
         return ObjectGravity::SOFA;
     }
@@ -50,9 +47,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity pottedPlant.
      *
-     * @return string
      */
-    public static function pottedPlant()
+    public static function pottedPlant(): string
     {
         return ObjectGravity::POTTED_PLANT;
     }
@@ -60,9 +56,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity bed.
      *
-     * @return string
      */
-    public static function bed()
+    public static function bed(): string
     {
         return ObjectGravity::BED;
     }
@@ -70,9 +65,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity diningTable.
      *
-     * @return string
      */
-    public static function diningTable()
+    public static function diningTable(): string
     {
         return ObjectGravity::DINING_TABLE;
     }
@@ -80,9 +74,8 @@ trait FurnitureObjectGravityBuilderTrait
     /**
      * Gravity toilet.
      *
-     * @return string
      */
-    public static function toilet()
+    public static function toilet(): string
     {
         return ObjectGravity::TOILET;
     }

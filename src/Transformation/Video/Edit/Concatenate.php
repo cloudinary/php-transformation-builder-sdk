@@ -36,9 +36,8 @@ class Concatenate extends VideoOverlay
      *
      * @param mixed $source The video source.
      *
-     * @return VideoSource
      */
-    public static function videoSource($source)
+    public static function videoSource(mixed $source): VideoSource
     {
         return ClassUtils::verifyInstance($source, VideoSource::class);
     }
@@ -48,9 +47,8 @@ class Concatenate extends VideoOverlay
      *
      * @param mixed $source The audio source.
      *
-     * @return AudioSource
      */
-    public static function audioSource($source)
+    public static function audioSource(mixed $source): AudioSource
     {
         return ClassUtils::verifyInstance($source, AudioSource::class);
     }
@@ -60,9 +58,8 @@ class Concatenate extends VideoOverlay
      *
      * @param mixed $source The image source.
      *
-     * @return ImageSource
      */
-    public static function imageSource($source)
+    public static function imageSource(mixed $source): ImageSource
     {
         return ClassUtils::verifyInstance($source, ImageSource::class);
     }
@@ -71,11 +68,10 @@ class Concatenate extends VideoOverlay
     /**
      * Indicates whether to concatenate the video before the original video.
      *
-     * @param bool $prepend
      *
      * @return $this
      */
-    public function prepend($prepend = true)
+    public function prepend(bool $prepend = true): static
     {
         $timeline = Timeline::position(0);
         if (! $prepend) {
@@ -94,7 +90,7 @@ class Concatenate extends VideoOverlay
      *
      * @return $this
      */
-    public function transition($source)
+    public function transition(mixed $source): static
     {
         $this->source->addTransformation(ClassUtils::verifyInstance($source, Transition::class));
         // When using a transition video, splice flag should be omitted.
@@ -114,7 +110,7 @@ class Concatenate extends VideoOverlay
      *
      * @return $this
      */
-    public function duration($duration)
+    public function duration(mixed $duration): static
     {
         $this->source->addQualifier(ClassUtils::verifyInstance($duration, Duration::class));
 

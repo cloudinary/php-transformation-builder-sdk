@@ -24,12 +24,11 @@ trait ImaggaTrait
      *
      * @see https://cloudinary.com/documentation/imagga_crop_and_scale_addon
      *
-     * @param int|float|string|null $width       The required width of a transformed asset.
-     * @param int|float|null        $height      The required height of a transformed asset.
+     * @param float|int|string|null $width  The required width of a transformed asset.
+     * @param float|int|null        $height The required height of a transformed asset.
      *
-     * @return Imagga
      */
-    public static function imaggaCrop($width = null, $height = null)
+    public static function imaggaCrop(float|int|string|null $width = null, float|int|null $height = null): Imagga
     {
         return static::createImagga(CropMode::IMAGGA_CROP, $width, $height);
     }
@@ -39,24 +38,21 @@ trait ImaggaTrait
      *
      * @see https://cloudinary.com/documentation/imagga_crop_and_scale_addon
      *
-     * @param int|float|string|null $width       The required width of a transformed asset.
-     * @param int|float|null        $height      The required height of a transformed asset.
+     * @param float|int|string|null $width  The required width of a transformed asset.
+     * @param float|int|null        $height The required height of a transformed asset.
      *
-     * @return Imagga
      */
-    public static function imaggaScale($width = null, $height = null)
+    public static function imaggaScale(float|int|string|null $width = null, float|int|null $height = null): Imagga
     {
         return static::createImagga(CropMode::IMAGGA_SCALE, $width, $height);
     }
 
     /**
-     * @param mixed ...$args
      *
-     * @return Imagga
      *
      * @internal
      */
-    protected static function createImagga(...$args)
+    protected static function createImagga(...$args): Imagga
     {
         return new Imagga(...$args);
     }

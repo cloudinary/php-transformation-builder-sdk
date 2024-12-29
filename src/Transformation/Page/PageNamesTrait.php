@@ -22,9 +22,8 @@ trait PageNamesTrait
      *
      * @param string ...$names The names.
      *
-     * @return static
      */
-    public function byNames(...$names)
+    public function byNames(...$names): static
     {
         $this->add(new LayerName(...$names));
 

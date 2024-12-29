@@ -17,11 +17,11 @@ use Cloudinary\Transformation\Argument\BaseNamedArgument;
  */
 class SmartObjectName extends BaseNamedArgument
 {
-    const ARG_NAME_VALUE_DELIMITER  = ':';
-    const ARG_INNER_VALUE_DELIMITER = ';';
+    public const ARG_NAME_VALUE_DELIMITER = ':';
+    public const ARG_INNER_VALUE_DELIMITER = ';';
 
     /**
      * @var string $name The name.
      */
-    protected static $name = 'embedded';
+    protected static string $name = 'embedded';
 }

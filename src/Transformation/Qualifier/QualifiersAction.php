@@ -25,7 +25,7 @@ use Cloudinary\Transformation\Variable\Variable;
  */
 class QualifiersAction extends BaseAction
 {
-    const SIMPLE_QUALIFIERS = [
+    protected const SIMPLE_QUALIFIERS = [
         'aspect_ratio'      => null,
         'background'        => null,
         'crop'              => 'crop_mode',
@@ -59,7 +59,7 @@ class QualifiersAction extends BaseAction
         'video_sampling'    => null,
     ];
 
-    const COMPLEX_QUALIFIERS = [
+    protected const COMPLEX_QUALIFIERS = [
         'angle'               => null,
         'border'              => null,
         'custom_function'     => null,
@@ -75,7 +75,7 @@ class QualifiersAction extends BaseAction
         'video_codec'         => null,
     ];
 
-    const QUALIFIERS = self::COMPLEX_QUALIFIERS + self::SIMPLE_QUALIFIERS;
+    protected const QUALIFIERS = self::COMPLEX_QUALIFIERS + self::SIMPLE_QUALIFIERS;
 
     /**
      * Add qualifiers to the action.
@@ -84,7 +84,7 @@ class QualifiersAction extends BaseAction
      *
      * @return $this
      */
-    public function addQualifiers(...$qualifiers)
+    public function addQualifiers(...$qualifiers): static
     {
         $this->qualifiers = ArrayUtils::mergeNonEmpty($this->qualifiers, ...$qualifiers);
 
@@ -112,11 +112,10 @@ class QualifiersAction extends BaseAction
      *
      * @param array|BaseComponent $transformationAction The action to generate.
      *
-     * @return string
      */
-    protected function generateTransformationAction($transformationAction)
+    protected function generateTransformationAction(BaseComponent|array $transformationAction): string
     {
-        $options = is_array($transformationAction) || $this->isTransformationComponent(
+        $options = is_array($transformationAction) || QualifiersAction::isTransformationComponent(
             $transformationAction
         ) ? $transformationAction :
             ['transformation' => $transformationAction];
@@ -127,15 +126,15 @@ class QualifiersAction extends BaseAction
     /**
      * Generates transformation string using provided options.
      *
-     * @param string|array $options Transformation qualifiers and other options.
+     * @param array|string $options Transformation qualifiers and other options.
      *
      * Warning: $options are being destructively updated!
      *
      * @return string The resulting transformation string.
      */
-    protected function generateTransformationString($options)
+    protected function generateTransformationString(array|string $options): string
     {
-        if (is_string($options) || $this->isTransformationComponent($options)) {
+        if (is_string($options) || QualifiersAction::isTransformationComponent($options)) {
             return (string)$options;
         }
 
@@ -170,13 +169,12 @@ class QualifiersAction extends BaseAction
      *
      * @param array $options All options.
      *
-     * @return Action
      */
-    protected function collectQualifiers($options)
+    protected function collectQualifiers(array $options): Action
     {
         $size = ArrayUtils::pop($options, 'size');
         if ($size) {
-            list($options['width'], $options['height']) = explode('x', $size);
+            [$options['width'], $options['height']] = explode('x', $size);
         }
 
         $offset = new Range(ArrayUtils::pop($options, 'offset'));
@@ -196,12 +194,11 @@ class QualifiersAction extends BaseAction
     /**
      * Factory method for building qualifiers from their names and values.
      *
-     * @param string $qualifierName  The qualifier name.
-     * @param mixed  $qualifierValue The qualifier value.
+     * @param string|null $qualifierName  The qualifier name.
+     * @param mixed       $qualifierValue The qualifier value.
      *
-     * @return BaseQualifier|BaseAction
      */
-    protected function buildQualifier($qualifierName, $qualifierValue)
+    protected function buildQualifier(?string $qualifierName, mixed $qualifierValue): BaseAction|BaseQualifier|null
     {
         if (array_key_exists($qualifierName, self::SIMPLE_QUALIFIERS)) {
             $qualifierBuilderName = StringUtils::snakeCaseToCamelCase(
@@ -227,7 +224,7 @@ class QualifiersAction extends BaseAction
             case 'fps':
                 return Fps::fromParams($qualifierValue);
             case 'overlay':
-                return LayerQualifierFactory::fromParams($qualifierValue, LayerStackPosition::OVERLAY);
+                return LayerQualifierFactory::fromParams($qualifierValue);
             case 'transformation':
                 return Qualifier::namedTransformation(implode('.', ArrayUtils::build($qualifierValue)));
             case 'underlay':
@@ -249,7 +246,7 @@ class QualifiersAction extends BaseAction
      *
      * @return string Serialized variables
      */
-    protected function collectVariables(&$options)
+    protected function collectVariables(array $options): string
     {
         $variables = ArrayUtils::get($options, 'variables', []);
 
@@ -273,22 +270,24 @@ class QualifiersAction extends BaseAction
     }
 
     /**
-     * @param $candidate
+     * Checks whether the candidate is a transformation component.
      *
-     * @return bool
+     * @param mixed $candidate The candidate to check.
+     *
      */
-    private function isTransformationComponent($candidate)
+    private static function isTransformationComponent(mixed $candidate): bool
     {
         return $candidate instanceof BaseComponent;
     }
 
     /**
-     * @param $candidate
+     * Checks whether the candidate is transformation.
      *
-     * @return bool
+     * @param mixed $candidate The candidate to check.
+     *
      */
-    private function isTransformation($candidate)
+    private static function isTransformation(mixed $candidate): bool
     {
-        return is_array($candidate) || $this->isTransformationComponent($candidate);
+        return is_array($candidate) || QualifiersAction::isTransformationComponent($candidate);
     }
 }

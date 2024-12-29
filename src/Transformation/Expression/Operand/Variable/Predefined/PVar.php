@@ -24,30 +24,30 @@ use InvalidArgumentException;
 class PVar extends Expression
 {
     // Numeric variables
-    const WIDTH                = 'w';
-    const INITIAL_WIDTH        = 'iw';
-    const HEIGHT               = 'h';
-    const INITIAL_HEIGHT       = 'ih';
-    const ASPECT_RATIO         = 'ar';
-    const INITIAL_ASPECT_RATIO = 'iar';
-    const TRIMMED_ASPECT_RATIO = 'tar';
-    const PAGE_COUNT           = 'pc';
-    const DURATION             = 'du';
-    const INITIAL_DURATION     = 'idu';
-    const FACE_COUNT           = 'fc';
-    const ILLUSTRATION_SCORE   = 'ils';
-    const CURRENT_PAGE         = 'cp';
-    const PAGE_X               = 'px';
-    const PAGE_Y               = 'py';
+    public const WIDTH = 'w';
+    public const INITIAL_WIDTH = 'iw';
+    public const HEIGHT        = 'h';
+    public const INITIAL_HEIGHT = 'ih';
+    public const ASPECT_RATIO   = 'ar';
+    public const INITIAL_ASPECT_RATIO = 'iar';
+    public const TRIMMED_ASPECT_RATIO = 'tar';
+    public const PAGE_COUNT           = 'pc';
+    public const DURATION      = 'du';
+    public const INITIAL_DURATION = 'idu';
+    public const FACE_COUNT       = 'fc';
+    public const ILLUSTRATION_SCORE = 'ils';
+    public const CURRENT_PAGE       = 'cp';
+    public const PAGE_X       = 'px';
+    public const PAGE_Y = 'py';
 
     // String variables
-    const TAGS    = 'tags';
-    const CONTEXT = 'ctx';
+    public const TAGS = 'tags';
+    public const CONTEXT = 'ctx';
 
     /**
      * @var array The friendly representations of the predefined variables.
      */
-    protected static $friendlyRepresentations = [
+    protected static array $friendlyRepresentations = [
         'width'                => self::WIDTH,
         'height'               => self::HEIGHT,
         'initial_width'        => self::INITIAL_WIDTH,
@@ -82,11 +82,11 @@ class PVar extends Expression
     use PredefinedVariableTrait;
 
     /**
-     * @var array The predefined variables.
+     * @var ?array The predefined variables.
      *
      * Initialized lazily.
      */
-    protected static $predefinedVariables;
+    protected static ?array $predefinedVariables;
 
     /**
      * PVar constructor.
@@ -107,7 +107,7 @@ class PVar extends Expression
      *
      * @return array The predefined variables.
      */
-    public static function getPredefinedVariables()
+    public static function getPredefinedVariables(): array
     {
         return self::getConstants(self::$predefinedVariables);
     }
@@ -115,9 +115,8 @@ class PVar extends Expression
     /**
      * Gets a mapping of the friendly representations of the predefined variables.
      *
-     * @return array
      */
-    public static function getFriendlyRepresentations()
+    public static function getFriendlyRepresentations(): array
     {
         return self::$friendlyRepresentations;
     }
@@ -127,11 +126,10 @@ class PVar extends Expression
      *
      * @param mixed $candidate The predefined variable candidate.
      *
-     * @return bool
      */
-    protected static function isPredefinedVariable($candidate)
+    protected static function isPredefinedVariable(mixed $candidate): bool
     {
-        return in_array($candidate, self::getPredefinedVariables(), false);
+        return in_array($candidate, self::getPredefinedVariables());
     }
 
     /**
@@ -139,9 +137,8 @@ class PVar extends Expression
      *
      * @param string $predefinedVariableName The predefined variable name.
      *
-     * @return static
      */
-    protected static function pVar($predefinedVariableName)
+    protected static function pVar(string $predefinedVariableName): static
     {
         return new static($predefinedVariableName);
     }

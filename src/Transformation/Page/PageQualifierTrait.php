@@ -22,9 +22,8 @@ trait PageQualifierTrait
      *
      * @param int|string|array|mixed $page The page(s) to extract.
      *
-     * @return PageQualifier
      */
-    public static function page($page)
+    public static function page(mixed $page): PageQualifier
     {
         return new PageQualifier($page);
     }

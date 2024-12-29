@@ -20,9 +20,8 @@ trait VideoTransformationFlagTrait
     /**
      * Don't stream a video that is currently being generated on the fly. Wait until the video is fully generated.
      *
-     * @return static
      */
-    public function noStream()
+    public function noStream(): static
     {
         return $this->addAction(Flag::noStream());
     }
@@ -30,13 +29,12 @@ trait VideoTransformationFlagTrait
     /**
      * Causes the video download to begin immediately, streaming it as a fragmented video file.
      *
-     * @param string $filename The attachment's filename
+     * @param string|null $filename The attachment's filename
      *
-     * @return static
      *
      * @see Flag::streamingAttachment
      */
-    public function streamingAttachment($filename = null)
+    public function streamingAttachment(?string $filename = null): static
     {
         return $this->addAction(Flag::streamingAttachment($filename));
     }
@@ -44,11 +42,10 @@ trait VideoTransformationFlagTrait
     /**
      * Deliver an HLS adaptive bitrate streaming file as HLS v3 instead of the default version (HLS v4).
      *
-     * @return static
      *
      * @see Flag::hlsv3
      */
-    public function hlsv3()
+    public function hlsv3(): static
     {
         return $this->addAction(Flag::hlsv3());
     }
@@ -56,9 +53,8 @@ trait VideoTransformationFlagTrait
     /**
      * Keep the Display Aspect Ratio metadata of the uploaded video.
      *
-     * @return static
      */
-    public function keepDar()
+    public function keepDar(): static
     {
         return $this->addAction(Flag::keepDar());
     }
@@ -66,9 +62,8 @@ trait VideoTransformationFlagTrait
     /**
      * Convert the audio channel to mono.
      *
-     * @return static
      */
-    public function mono()
+    public function mono(): static
     {
         return $this->addAction(Flag::mono());
     }
@@ -76,9 +71,8 @@ trait VideoTransformationFlagTrait
     /**
      * Truncate (trim) a video file based on the start time defined in the metadata.
      *
-     * @return static
      */
-    public function truncateTS()
+    public function truncateTS(): static
     {
         return $this->addAction(Flag::truncateTS());
     }
@@ -86,9 +80,8 @@ trait VideoTransformationFlagTrait
     /**
      * Create a waveform image (in the format specified by the file extension) from the audio or video file.
      *
-     * @return static
      */
-    public function waveform()
+    public function waveform(): static
     {
         return $this->addAction(Flag::waveform());
     }

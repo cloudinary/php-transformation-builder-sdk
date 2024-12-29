@@ -25,11 +25,10 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      *
      * @see https://cloudinary.com/documentation/advanced_facial_attributes_detection_addon#face_detection_based_cropping
      */
-    public static function advancedFace(...$fallback)
+    public static function advancedFace(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::ADVANCED_FACE, ...$fallback);
     }
@@ -42,11 +41,10 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      *
      * @see https://cloudinary.com/documentation/advanced_facial_attributes_detection_addon#face_detection_based_cropping
      */
-    public static function advancedFaces(...$fallback)
+    public static function advancedFaces(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::ADVANCED_FACES, ...$fallback);
     }
@@ -59,11 +57,10 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      *
      * @see https://cloudinary.com/documentation/advanced_facial_attributes_detection_addon#eyes_detection_based_cropping
      */
-    public static function advancedEyes(...$fallback)
+    public static function advancedEyes(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::ADVANCED_EYES, ...$fallback);
     }
@@ -73,9 +70,8 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    public static function body(...$fallback)
+    public static function body(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::BODY, ...$fallback);
     }
@@ -85,9 +81,8 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    public static function face(...$fallback)
+    public static function face(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::FACE, ...$fallback);
     }
@@ -97,9 +92,8 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    public static function faces(...$fallback)
+    public static function faces(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::FACES, ...$fallback);
     }
@@ -109,9 +103,8 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    public static function noFaces(...$fallback)
+    public static function noFaces(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::NO_FACES, ...$fallback);
     }
@@ -124,9 +117,8 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    public static function custom(...$fallback)
+    public static function custom(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::CUSTOM, ...$fallback);
     }
@@ -137,9 +129,8 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    public static function customNoOverride(...$fallback)
+    public static function customNoOverride(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::CUSTOM_NO_OVERRIDE, ...$fallback);
     }
@@ -152,11 +143,10 @@ trait FocalGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return FocalGravity
      *
      * @see https://cloudinary.com/documentation/ocr_text_detection_and_extraction_addon
      */
-    public static function ocrText(...$fallback)
+    public static function ocrText(...$fallback): FocalGravity
     {
         return self::createWithFocalGravity(FocalGravity::OCR_TEXT, ...$fallback);
     }
@@ -164,13 +154,11 @@ trait FocalGravityBuilderTrait
     /**
      * Alias for Gravity::ocrText()
      *
-     * @param mixed ...$fallback
      *
-     * @return FocalGravity
      *
      * @see FocalGravity::ocrText
      */
-    public static function ocr(...$fallback)
+    public static function ocr(...$fallback): FocalGravity
     {
         return self::ocrText(...$fallback);
     }
@@ -181,9 +169,8 @@ trait FocalGravityBuilderTrait
      * @param string $gravity  The main gravity.
      * @param array  $fallback Fallback gravities.
      *
-     * @return FocalGravity
      */
-    protected static function createWithFocalGravity($gravity, ...$fallback)
+    protected static function createWithFocalGravity(string $gravity, ...$fallback): FocalGravity
     {
         return new FocalGravity($gravity, ...$fallback);
     }

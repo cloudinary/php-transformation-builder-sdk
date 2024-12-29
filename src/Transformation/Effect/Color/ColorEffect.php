@@ -16,14 +16,14 @@ namespace Cloudinary\Transformation;
 abstract class ColorEffect
 {
     // Image effects
-    const BLACKWHITE     = 'blackwhite';
-    const COLORIZE       = 'colorize';
-    const GRAYSCALE      = 'grayscale';
-    const NEGATE         = 'negate';
-    const SEPIA          = 'sepia';
+    public const BLACKWHITE = 'blackwhite';
+    public const COLORIZE   = 'colorize';
+    public const GRAYSCALE = 'grayscale';
+    public const NEGATE    = 'negate';
+    public const SEPIA  = 'sepia';
     // Accessibility
-    const ASSIST_COLOR_BLIND   = 'assist_colorblind';
-    const SIMULATE_COLOR_BLIND = 'simulate_colorblind';
+    public const ASSIST_COLOR_BLIND = 'assist_colorblind';
+    public const SIMULATE_COLOR_BLIND = 'simulate_colorblind';
 
     use ImageColorEffectTrait;
 }

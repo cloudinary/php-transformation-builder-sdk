@@ -20,11 +20,10 @@ trait FocalGravityTrait
     /**
      * Sets the focal gravity for resizing.
      *
-     * @param mixed $focalGravity
      *
      * @return $this
      */
-    public function gravity($focalGravity)
+    public function gravity(mixed $focalGravity): static
     {
         return $this->addQualifier(
             ClassUtils::verifyInstance($focalGravity, GravityQualifier::class, FocalGravity::class)

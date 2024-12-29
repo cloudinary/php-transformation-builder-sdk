@@ -32,7 +32,6 @@ class RoundCorners extends BaseAction
     /**
      * RoundCorners constructor.
      *
-     * @param mixed ...$qualifiers
      */
     public function __construct(...$qualifiers)
     {
@@ -42,26 +41,25 @@ class RoundCorners extends BaseAction
     /**
      * Sets the corner radius.
      *
-     * @param int|string|array|mixed $values The corner(s) radius.
+     * @param int|array|CornerRadius $radius The corner(s) radius.
      *
-     * @return static
      */
-    public function setRadius(...$values)
+    public function setRadius(int|array|CornerRadius $radius): static
     {
-        return $this->addQualifier(ClassUtils::verifyVarArgsInstance($values, CornerRadius::class));
+        return $this->addQualifier(ClassUtils::verifyVarArgsInstance($radius, CornerRadius::class));
     }
 
     /**
      * Sets a simple unnamed value specified by name (for uniqueness) and the actual value.
      *
-     * @param string              $name  The name of the argument.
-     * @param BaseComponent|mixed $value The value of the argument.
+     * @param string     $name  The name of the argument.
+     * @param mixed|null $value The value of the argument.
      *
      * @return $this
      *
      * @internal
      */
-    public function setSimpleValue($name, $value = null)
+    public function setSimpleValue(string $name, mixed $value = null): static
     {
         $this->qualifiers[CornerRadius::getName()]->setSimpleValue($name, $value);
 
@@ -73,11 +71,10 @@ class RoundCorners extends BaseAction
      *
      * @param int|string|array|mixed $radius The corner(s) radius.
      *
-     * @return static
      *
      * @internal
      */
-    protected static function createWithRadius(...$radius)
+    protected static function createWithRadius(...$radius): static
     {
         return new static(CornerRadius::byRadius(...$radius));
     }

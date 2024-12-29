@@ -24,11 +24,10 @@ trait LayeredImageTransformationTrait
      *
      * @param PageQualifier|string|int ...$pages
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/paged_and_layered_media#deliver_a_pdf_or_selected_pages_of_a_pdf
      */
-    public function extract(...$pages)
+    public function extract(...$pages): static
     {
         return $this->addAction(ClassUtils::verifyVarArgsInstance($pages, Page::class));
     }
@@ -38,11 +37,10 @@ trait LayeredImageTransformationTrait
      *
      * @param PageQualifier|string|int ...$pages
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/paged_and_layered_media#deliver_a_pdf_or_selected_pages_of_a_pdf
      */
-    public function psdTools(...$pages)
+    public function psdTools(...$pages): static
     {
         return $this->addAction(ClassUtils::verifyVarArgsInstance($pages, BasePageAction::class));
     }

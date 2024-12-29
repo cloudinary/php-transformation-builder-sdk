@@ -23,10 +23,10 @@ class TextFit extends BaseAction
     /**
      * TextFit constructor.
      *
-     * @param int|string|Expression $width  The width in pixels.
-     * @param int|string|Expression $height The height in pixels.
+     * @param int|string|Expression      $width  The width in pixels.
+     * @param int|string|Expression|null $height The height in pixels.
      */
-    public function __construct($width, $height = null)
+    public function __construct($width, Expression|int|string|null $height = null)
     {
         parent::__construct(CropMode::fit());
 
@@ -37,12 +37,12 @@ class TextFit extends BaseAction
     /**
      * TextFit named constructor.
      *
-     * @param int|string|Expression $width  The width in pixels.
-     * @param int|string|Expression $height The height in pixels.
+     * @param int|string|Expression      $width  The width in pixels.
+     * @param int|string|Expression|null $height The height in pixels.
      *
      * @return $this
      */
-    public static function size($width, $height = null)
+    public static function size(Expression|int|string $width, Expression|int|string|null $height = null): TextFit|static
     {
         return new TextFit($width, $height);
     }
@@ -52,9 +52,8 @@ class TextFit extends BaseAction
      *
      * @param int|string|Expression $width The width in pixels.
      *
-     * @return static
      */
-    public function width($width)
+    public function width(Expression|int|string $width): static
     {
         $this->setDimension(ClassUtils::verifyInstance($width, Width::class));
 
@@ -66,9 +65,8 @@ class TextFit extends BaseAction
      *
      * @param int|string|Expression $height The height in pixels.
      *
-     * @return static
      */
-    public function height($height)
+    public function height(Expression|int|string $height): static
     {
         $this->setDimension(ClassUtils::verifyInstance($height, Height::class));
 
@@ -78,13 +76,12 @@ class TextFit extends BaseAction
     /**
      * Internal setter for the dimensions.
      *
-     * @param mixed $value The dimension.
+     * @param mixed|null $value The dimension.
      *
-     * @return static
      *
      * @internal
      */
-    protected function setDimension($value = null)
+    protected function setDimension(mixed $value = null): static
     {
         $this->addQualifier($value);
 

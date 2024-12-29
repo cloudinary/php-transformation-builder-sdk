@@ -22,9 +22,8 @@ trait LogicalOperatorBuilderTrait
      *
      * '&&'
      *
-     * @return ExpressionOperator
      */
-    public function and_()
+    public function and_(): ExpressionOperator
     {
         return $this->buildExpression(LogicalOperator::andOperator());
     }
@@ -34,9 +33,8 @@ trait LogicalOperatorBuilderTrait
      *
      * '||'
      *
-     * @return ExpressionOperator
      */
-    public function or_()
+    public function or_(): ExpressionOperator
     {
         return $this->buildExpression(LogicalOperator::orOperator());
     }

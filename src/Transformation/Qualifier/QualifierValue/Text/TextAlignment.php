@@ -18,42 +18,41 @@ class TextAlignment
     /**
      * Align text to the left.
      */
-    const LEFT = 'left';
+    public const LEFT = 'left';
 
     /**
      * Align text to the center.
      */
-    const CENTER = 'center';
+    public const CENTER = 'center';
 
     /**
      * Align text to the right.
      */
-    const RIGHT = 'right';
+    public const RIGHT = 'right';
 
     /**
      * Align text to the right in a left-to-right language.
      * Align text to the left in a right-to-left language.
      */
-    const END = 'end';
+    public const END = 'end';
 
     /**
      * Align text to the left in a left-to-right language.
      * Align text to the right in a right-to-left language.
      */
-    const START = 'start';
+    public const START = 'start';
 
     /**
      * Space out words such that the first word on the line is along the left edge and the last word is along the
      * right edge.
      */
-    const JUSTIFY = 'justify';
+    public const JUSTIFY = 'justify';
 
     /**
      * Align text to the left.
      *
-     * @return string
      */
-    public static function left()
+    public static function left(): string
     {
         return self::LEFT;
     }
@@ -61,9 +60,8 @@ class TextAlignment
     /**
      * Align text to the center.
      *
-     * @return string
      */
-    public static function center()
+    public static function center(): string
     {
         return self::CENTER;
     }
@@ -71,9 +69,8 @@ class TextAlignment
     /**
      * Align text to the right.
      *
-     * @return string
      */
-    public static function right()
+    public static function right(): string
     {
         return self::RIGHT;
     }
@@ -82,9 +79,8 @@ class TextAlignment
      * Align text to the right in a left-to-right language.
      * Align text to the left in a right-to-left language.
      *
-     * @return string
      */
-    public static function end()
+    public static function end(): string
     {
         return self::END;
     }
@@ -93,9 +89,8 @@ class TextAlignment
      * Align text to the left in a left-to-right language.
      * Align text to the right in a right-to-left language.
      *
-     * @return string
      */
-    public static function start()
+    public static function start(): string
     {
         return self::START;
     }
@@ -104,9 +99,8 @@ class TextAlignment
      * Space out words such that the first word on the line is along the left edge and the last word is along the
      * right edge.
      *
-     * @return string
      */
-    public static function justify()
+    public static function justify(): string
     {
         return self::JUSTIFY;
     }

@@ -15,7 +15,7 @@ namespace Cloudinary\Transformation;
  */
 class Shadow extends StrengthEffectAction
 {
-    const SHADOW = 'shadow';
+    public const SHADOW = 'shadow';
 
     use ColorTrait;
     use OffsetTrait;
@@ -23,13 +23,17 @@ class Shadow extends StrengthEffectAction
     /**
      * Shadow constructor.
      *
-     * @param int              $strength
-     * @param float|int|string $offsetX
-     * @param float|int|string $offsetY
-     * @param string           $color
+     * @param int|null              $strength
+     * @param float|int|string|null $offsetX
+     * @param float|int|string|null $offsetY
+     * @param string|null           $color
      */
-    public function __construct($strength = null, $offsetX = null, $offsetY = null, $color = null)
-    {
+    public function __construct(
+        ?int $strength = null,
+        float|int|string|null $offsetX = null,
+        float|int|string|null $offsetY = null,
+        ?string $color = null
+    ) {
         parent::__construct(new StrengthEffectQualifier(self::SHADOW, EffectRange::PERCENT));
         $this->strength($strength);
         $this->offset($offsetX, $offsetY);
@@ -37,13 +41,11 @@ class Shadow extends StrengthEffectAction
     }
 
     /**
-     * @param $value
      *
-     * @return static
      * @internal
      *
      */
-    public function setOffsetValue($value)
+    public function setOffsetValue($value): static
     {
         $this->addQualifier($value);
 

@@ -22,21 +22,21 @@ class Timeline extends BaseQualifier
     /**
      * @var VideoOffset $offset Determines which part of a video to keep when it is trimmed.
      */
-    protected $offset;
+    protected VideoOffset $offset;
 
     /**
-     * @var Duration $duration The length of the part of the video to keep.
+     * @var ?Duration $duration The length of the part of the video to keep.
      */
-    protected $duration;
+    protected ?Duration $duration;
 
     /**
      * Region constructor.
      *
-     * @param mixed $startOffset
-     * @param mixed $endOffset
-     * @param mixed $duration
+     * @param mixed      $startOffset
+     * @param mixed|null $endOffset
+     * @param mixed|null $duration
      */
-    public function __construct($startOffset = null, $endOffset = null, $duration = null)
+    public function __construct($startOffset = null, mixed $endOffset = null, mixed $duration = null)
     {
         parent::__construct();
 
@@ -51,15 +51,15 @@ class Timeline extends BaseQualifier
      * representing the percentage of the video length (for example, "30%" or "30p").
      * For information and examples see 'Trimming videos' in the Video Transformations guide.
      *
-     * @param mixed $startOffset The starting position of the part of the video to keep.
-     * @param mixed $endOffset   The end position of the part of the video to keep.
-     * @param mixed $duration    The length of the part of the video to keep.
+     * @param mixed|null $startOffset The starting position of the part of the video to keep.
+     * @param mixed|null $endOffset   The end position of the part of the video to keep.
+     * @param mixed|null $duration    The length of the part of the video to keep.
      *
      * @return Timeline
      *
      * https://cloudinary.com/documentation/video_manipulation_and_delivery#trimming_videos
      */
-    public static function position($startOffset = null, $endOffset = null, $duration = null)
+    public static function position(mixed $startOffset = null, mixed $endOffset = null, mixed $duration = null): Timeline
     {
         return new self($startOffset, $endOffset, $duration);
     }
@@ -73,7 +73,7 @@ class Timeline extends BaseQualifier
      *
      * @return $this
      */
-    public function duration($duration)
+    public function duration(mixed $duration): static
     {
         $this->duration = ClassUtils::verifyInstance($duration, Duration::class);
 
@@ -83,11 +83,11 @@ class Timeline extends BaseQualifier
     /**
      * Sets the start and end points of the video to keep.
      *
-     * @param VideoOffset|string $offset The start and end points of the video.
+     * @param string|VideoOffset $offset The start and end points of the video.
      *
      * @return $this
      */
-    public function offset($offset)
+    public function offset(VideoOffset|string $offset): static
     {
         $this->offset = ClassUtils::verifyInstance($offset, VideoOffset::class);
 
@@ -103,7 +103,7 @@ class Timeline extends BaseQualifier
      *
      * @return $this
      */
-    public function startOffset($startOffset)
+    public function startOffset(mixed $startOffset): static
     {
         $this->offset->startOffset($startOffset);
 
@@ -119,7 +119,7 @@ class Timeline extends BaseQualifier
      *
      * @return $this
      */
-    public function endOffset($endOffset)
+    public function endOffset(mixed $endOffset): static
     {
         $this->offset->endOffset($endOffset);
 
@@ -129,7 +129,7 @@ class Timeline extends BaseQualifier
     /**
      * Specify data which should be serialized to JSON
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $arr = [];
 
@@ -150,7 +150,7 @@ class Timeline extends BaseQualifier
      *
      * @internal
      */
-    public function getStringQualifiers()
+    public function getStringQualifiers(): array
     {
         $flatQualifiers = [];
         foreach (ArrayUtils::safeFilter([$this->offset, $this->duration]) as $qualifier) {

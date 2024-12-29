@@ -13,7 +13,6 @@ namespace Cloudinary\Transformation\Qualifier;
 use Cloudinary\ArrayUtils;
 use Cloudinary\StringUtils;
 use Cloudinary\Transformation\BaseComponent;
-use Cloudinary\Transformation\Expression\ExpressionUtils;
 use Cloudinary\Transformation\QualifierMultiValue;
 
 /**
@@ -24,32 +23,32 @@ abstract class BaseQualifier extends BaseComponent
     /**
      * @var string VALUE_CLASS The class of the qualifier value. Can be customized by derived classes.
      */
-    const VALUE_CLASS = QualifierMultiValue::class;
+    protected const VALUE_CLASS = QualifierMultiValue::class;
 
     /**
      * @var string KEY_VALUE_DELIMITER The delimiter between the key and the value.
      */
-    const KEY_VALUE_DELIMITER = '_';
+    protected const KEY_VALUE_DELIMITER = '_';
 
     /**
-     * @var string Omit class suffix, example: QualityQualifier -> quality_qualifier -> quality -> q
+     * @var string[] Omit class suffix, example: QualityQualifier -> quality_qualifier -> quality -> q
      */
-    const CLASS_NAME_SUFFIX_EXCLUSIONS = ['qualifier'];
+    protected const CLASS_NAME_SUFFIX_EXCLUSIONS = ['qualifier'];
 
     /**
      * @var string $key Serialisation Key.
      */
-    protected static $key;
+    protected static string $key = "";
 
     /**
-     * @var QualifierMultiValue $value The value.
+     * @var mixed $value The value.
      */
-    protected $value;
+    protected mixed $value;
 
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = []; // FIXME: move to QualifierTraitMultiValue
+    protected array $valueOrder = []; // FIXME: move to QualifierTraitMultiValue
 
     /**
      * BaseQualifier constructor.
@@ -73,9 +72,8 @@ abstract class BaseQualifier extends BaseComponent
      *
      * @param mixed $value The value.
      *
-     * @return static
      */
-    public static function fromValue($value)
+    public static function fromValue(mixed $value): static
     {
         return new static($value);
     }
@@ -83,14 +81,12 @@ abstract class BaseQualifier extends BaseComponent
     /**
      * Collects values from BaseQualifiers.
      *
-     * @param array $values
      *
-     * @return array
      */
-    protected static function collectValues(array $values)
+    protected static function collectValues(array $values): array
     {
         foreach ($values as &$value) {
-            $value = ($value instanceof self) ? $value->getValue() : $value;
+            $value = $value instanceof self ? $value->getValue() : $value;
         }
 
         return $values;
@@ -99,11 +95,10 @@ abstract class BaseQualifier extends BaseComponent
     /**
      * Sets ((re)initializes) the qualifier value.
      *
-     * @param $value
+     * @param mixed ...$value The qualifier value(s).
      *
-     * @return static
      */
-    public function setQualifierValue(...$value)
+    public function setQualifierValue(...$value): static
     {
         $value = self::collectValues($value);
 
@@ -127,7 +122,7 @@ abstract class BaseQualifier extends BaseComponent
      *
      * @internal
      */
-    public function add(...$value)
+    public function add(...$value): static
     {
         $this->value->addValues(...$value);
 
@@ -137,11 +132,10 @@ abstract class BaseQualifier extends BaseComponent
     /**
      * Internal getter of the value.
      *
-     * @return QualifierMultiValue
      *
      * @internal
      */
-    public function getValue()
+    public function getValue(): QualifierMultiValue
     {
         return $this->value;
     }
@@ -149,11 +143,10 @@ abstract class BaseQualifier extends BaseComponent
     /**
      * Gets the qualifier key.
      *
-     * @return mixed
      *
      * @internal
      */
-    public static function getKey()
+    public static function getKey(): string
     {
         $key = static::$key;
 
@@ -167,9 +160,8 @@ abstract class BaseQualifier extends BaseComponent
     /**
      * Gets string representation of the qualifiers
      *
-     * @return array
      */
-    public function getStringQualifiers()
+    public function getStringQualifiers(): array
     {
         return [(string)$this];
     }
@@ -189,10 +181,8 @@ abstract class BaseQualifier extends BaseComponent
 
     /**
      * Serializes to json.
-     *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $value = ArrayUtils::flatten($this->value);
 

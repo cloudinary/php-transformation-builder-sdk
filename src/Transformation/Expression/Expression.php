@@ -32,9 +32,8 @@ class Expression extends BaseExpression
      *
      * @param string $expression Arithmetic expression
      *
-     * @return static
      */
-    public static function expression($expression)
+    public static function expression(string $expression): static
     {
         return new static($expression);
     }

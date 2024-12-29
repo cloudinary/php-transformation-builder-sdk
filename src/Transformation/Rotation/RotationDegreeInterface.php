@@ -20,9 +20,8 @@ interface RotationDegreeInterface
      *
      * @param int|array $degree Given degrees or mode.
      *
-     * @return self
      *
      * @internal
      */
-    public static function createWithDegree(...$degree);
+    public static function createWithDegree(...$degree): RotationDegreeInterface;
 }

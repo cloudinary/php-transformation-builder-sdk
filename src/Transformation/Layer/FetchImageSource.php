@@ -28,7 +28,7 @@ class FetchImageSource extends ImageSource
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource(BaseSourceQualifier|string $source): static
     {
 
         if ($source instanceof BaseSourceQualifier) {
@@ -46,11 +46,9 @@ class FetchImageSource extends ImageSource
     /**
      * Gets the layer qualifier.
      *
-     * @return ImageSourceQualifier
-     *
      * @internal
      */
-    protected function getSourceQualifier()
+    protected function getSourceQualifier(): FetchSourceQualifier|ImageSourceQualifier
     {
         if (! isset($this->qualifiers['source'])) {
             $this->qualifiers['source'] = new FetchSourceQualifier(null);

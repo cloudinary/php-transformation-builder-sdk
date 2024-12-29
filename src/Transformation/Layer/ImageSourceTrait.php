@@ -24,9 +24,8 @@ trait ImageSourceTrait
      *
      * @param string $publicId The public ID of the new image layer.
      *
-     * @return static|ImageSource
      */
-    public static function image($publicId)
+    public static function image(string $publicId): ImageSource|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($publicId, ImageSource::class));
     }
@@ -36,9 +35,8 @@ trait ImageSourceTrait
      *
      * @param string|null $fetchUrl The URL of the asset to fetch.
      *
-     * @return static|FetchImageSource
      */
-    public static function fetch($fetchUrl)
+    public static function fetch(?string $fetchUrl): FetchImageSource|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($fetchUrl, FetchImageSource::class));
     }
@@ -48,9 +46,8 @@ trait ImageSourceTrait
      *
      * @param string $lutId The public ID of the LUT file.
      *
-     * @return static|LutLayer
      */
-    public static function lut($lutId)
+    public static function lut(string $lutId): LutLayer|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($lutId, LutLayer::class));
     }
@@ -58,15 +55,14 @@ trait ImageSourceTrait
     /**
      * Adds a text layer.
      *
-     * @param string $text The text to display.
-     * @param string $style The text style.
-     * @param string $color The text color.
+     * @param string|null $text  The text to display.
+     * @param string|null $style The text style.
+     * @param string|null $color The text color.
      *
-     * @return static|TextSource
      *
-     * @see \Cloudinary\Transformation\TextSource
+     * @see TextSource
      */
-    public static function text($text = null, $style = null, $color = null)
+    public static function text(?string $text = null, ?string $style = null, ?string $color = null): TextSource|static
     {
         return static::createWithSource(new TextSource($text, $style, $color));
     }
@@ -74,11 +70,10 @@ trait ImageSourceTrait
     /**
      * Named constructor.
      *
-     * @param BaseSource|string $source The layer source.
+     * @param string|BaseSource $source The layer source.
      *
-     * @return static
      */
-    protected static function createWithSource($source)
+    protected static function createWithSource(BaseSource|string $source): BaseSource|string|static
     {
         return $source;
     }

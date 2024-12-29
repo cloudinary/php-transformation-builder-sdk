@@ -26,11 +26,10 @@ abstract class PsdTools
      *
      * @param PsdLayer|int ...$layers
      *
-     * @return PsdLayer
      *
      * @see https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image
      */
-    public static function getLayer(...$layers)
+    public static function getLayer(...$layers): PsdLayer
     {
         return ClassUtils::forceVarArgsInstance($layers, PsdLayer::class);
     }
@@ -40,9 +39,8 @@ abstract class PsdTools
      *
      * @param SmartObject|int ...$smartObjects
      *
-     * @return SmartObject
      */
-    public static function smartObject(...$smartObjects)
+    public static function smartObject(...$smartObjects): SmartObject
     {
         return ClassUtils::forceVarArgsInstance($smartObjects, SmartObject::class);
     }
@@ -50,11 +48,10 @@ abstract class PsdTools
     /**
      * Trims the pixels of a PSD image according to a Photoshop clipping path that is stored in the image's metadata.
      *
-     * @param int|string $clippingPath Number or the name of the clipping path.
+     * @param int|string|null $clippingPath Number or the name of the clipping path.
      *
-     * @return ClippingPath
      */
-    public static function clip($clippingPath = null)
+    public static function clip(int|string|null $clippingPath = null): ClippingPath
     {
         return ClassUtils::forceInstance($clippingPath, ClippingPath::class) ;
     }

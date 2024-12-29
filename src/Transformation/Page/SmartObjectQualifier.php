@@ -15,5 +15,5 @@ namespace Cloudinary\Transformation;
  */
 class SmartObjectQualifier extends PageQualifier
 {
-    const VALUE_CLASS = SmartObjectName::class;
+    protected const VALUE_CLASS = SmartObjectName::class;
 }

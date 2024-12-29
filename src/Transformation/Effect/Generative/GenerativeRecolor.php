@@ -21,17 +21,16 @@ class GenerativeRecolor extends GenerativeEffectAction
     use PromptTrait;
     use DetectMultipleTrait;
 
-    const TO_COLOR = 'to-color';
+    protected const TO_COLOR = 'to-color';
 
     /**
      * GenerativeRecolor constructor.
      *
      * @param string|array $prompt         Use natural language to describe what you want to affect in the image.
      * @param string       $toColor        The target color.
-     * @param bool         $detectMultiple Whether to detect all instances of the prompt in the image.
-     * @param mixed        ...$args
+     * @param bool|null    $detectMultiple Whether to detect all instances of the prompt in the image.
      */
-    public function __construct($prompt, $toColor, $detectMultiple = null, ...$args)
+    public function __construct($prompt, $toColor, ?bool $detectMultiple = null, ...$args)
     {
         parent::__construct(GenerativeEffect::GENERATIVE_RECOLOR, ...$args);
 
@@ -47,7 +46,7 @@ class GenerativeRecolor extends GenerativeEffectAction
      *
      * @return $this
      */
-    public function toColor($toColor)
+    public function toColor(ColorValue|string $toColor): static
     {
         $this->getMainQualifier()->getPropertiesValue()->setSimpleNamedValue(
             self::TO_COLOR,

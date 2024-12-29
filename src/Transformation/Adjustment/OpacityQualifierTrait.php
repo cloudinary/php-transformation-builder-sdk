@@ -23,9 +23,8 @@ trait OpacityQualifierTrait
      * @param int $level The level of opacity. 100 means opaque, while 0 is completely transparent
      *                   (Range: 0 to 100).
      *
-     * @return Opacity
      */
-    public static function opacity($level)
+    public static function opacity(int $level): Opacity
     {
         return new Opacity($level);
     }

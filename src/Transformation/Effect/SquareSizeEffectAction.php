@@ -22,7 +22,7 @@ class SquareSizeEffectAction extends EffectAction
      *
      * @return $this
      */
-    public function squareSize($squareSize)
+    public function squareSize(int $squareSize): static
     {
         $this->qualifiers[EffectQualifier::getName()]->squareSize($squareSize);
 

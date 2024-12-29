@@ -18,12 +18,12 @@ namespace Cloudinary\Transformation;
 interface KitchenObjectGravityInterface
 {
     //Kitchen Category
-    const KITCHEN    = 'kitchen';
-    const BOTTLE     = 'bottle';
-    const WINE_GLASS = 'wine_glass';
-    const CUP        = 'cup';
-    const FORK       = 'fork';
-    const KNIFE      = 'knife';
-    const SPOON      = 'spoon';
-    const BOWL       = 'bowl';
+    public const KITCHEN = 'kitchen';
+    public const BOTTLE  = 'bottle';
+    public const WINE_GLASS = 'wine_glass';
+    public const CUP        = 'cup';
+    public const FORK = 'fork';
+    public const KNIFE = 'knife';
+    public const SPOON = 'spoon';
+    public const BOWL  = 'bowl';
 }

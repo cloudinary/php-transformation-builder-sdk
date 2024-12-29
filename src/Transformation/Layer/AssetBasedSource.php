@@ -18,7 +18,6 @@ abstract class AssetBasedSource extends BaseSource
     /**
      * AssetBasedLayer constructor.
      *
-     * @param $asset
      */
     public function __construct($asset = null)
     {
@@ -34,7 +33,7 @@ abstract class AssetBasedSource extends BaseSource
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource(BaseSourceQualifier|string $source): static
     {
         if ($source instanceof BaseSourceQualifier) {
             $this->getSourceQualifier()->setQualifierValue($source->getValue());

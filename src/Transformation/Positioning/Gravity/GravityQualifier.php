@@ -20,5 +20,5 @@ class GravityQualifier extends BaseQualifier
     /**
      * @var string $name The name.
      */
-    protected static $name = 'gravity';
+    protected static string $name = 'gravity';
 }

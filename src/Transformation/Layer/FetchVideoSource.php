@@ -10,8 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\ClassUtils;
-
 /**
  * Defines how to manipulate a fetched video layer.
  *
@@ -26,7 +24,6 @@ class FetchVideoSource extends VideoSource
     /**
      * VideoLayer constructor.
      *
-     * @param $source
      */
     public function __construct($source)
     {
@@ -37,11 +34,11 @@ class FetchVideoSource extends VideoSource
     /**
      * Sets the source of the layer.
      *
-     * @param string|FetchSourceQualifier $source The source.
+     * @param string|BaseSourceQualifier $source The source.
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource(BaseSourceQualifier|string $source): static
     {
 
         if ($source instanceof FetchSourceQualifier) {
@@ -59,11 +56,10 @@ class FetchVideoSource extends VideoSource
     /**
      * Gets the layer qualifier.
      *
-     * @return FetchSourceQualifier
      *
      * @internal
      */
-    protected function getSourceQualifier()
+    protected function getSourceQualifier(): FetchSourceQualifier
     {
         if (! isset($this->qualifiers['source'])) {
             $this->qualifiers['source'] = (new FetchSourceQualifier(null))->assetType("video");

@@ -22,12 +22,12 @@ trait AbsolutePositionTrait
     /**
      * Sets the absolute position.
      *
-     * @param int|float|string $x The x dimension.
-     * @param int|float|string $y The y dimension.
+     * @param float|int|string|null $x The x dimension.
+     * @param float|int|string|null $y The y dimension.
      *
      * @return $this
      */
-    public function position($x = null, $y = null)
+    public function position(float|int|string|null $x = null, float|int|string|null $y = null): static
     {
         return $this->point($x, $y);
     }

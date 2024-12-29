@@ -25,11 +25,10 @@ trait CommonFlagTrait
      * will be used as the attachment filename (rather than the public_id) unless the discard_original_filename
      * qualifier was set during the file upload.
      *
-     * @param string $filename The attachment's filename
+     * @param string|null $filename The attachment's filename
      *
-     * @return FlagQualifier
      */
-    public static function attachment($filename = null)
+    public static function attachment(?string $filename = null): FlagQualifier
     {
         return new FlagQualifier(self::ATTACHMENT, $filename);
     }
@@ -38,9 +37,8 @@ trait CommonFlagTrait
      * Allows specifying only either width or height so the value of the second axis remains as is, and is not
      * recalculated to maintain the aspect ratio of the original image.
      *
-     * @return FlagQualifier
      */
-    public static function ignoreAspectRatio()
+    public static function ignoreAspectRatio(): FlagQualifier
     {
         return new FlagQualifier(self::IGNORE_ASPECT_RATIO);
     }
@@ -48,9 +46,8 @@ trait CommonFlagTrait
     /**
      * Adds ICC color space metadata to the image, even when the original image doesn't contain any ICC data.
      *
-     * @return FlagQualifier
      */
-    public static function forceIcc()
+    public static function forceIcc(): FlagQualifier
     {
         return new FlagQualifier(self::FORCE_ICC);
     }
@@ -58,9 +55,8 @@ trait CommonFlagTrait
     /**
      * Instructs Cloudinary to clear all image meta-data (IPTC, Exif and XMP) while applying an incoming transformation.
      *
-     * @return FlagQualifier
      */
-    public static function forceStrip()
+    public static function forceStrip(): FlagQualifier
     {
         return new FlagQualifier(self::FORCE_STRIP);
     }
@@ -70,9 +66,8 @@ trait CommonFlagTrait
      *
      * When used with g_auto, the metadata includes the proposed g_auto cropping coordinates.
      *
-     * @return FlagQualifier
      */
-    public static function getInfo()
+    public static function getInfo(): FlagQualifier
     {
         return new FlagQualifier(self::GET_INFO);
     }
@@ -83,9 +78,8 @@ trait CommonFlagTrait
      *
      * Currently supported only by Firefox.
      *
-     * @return FlagQualifier
      */
-    public static function immutableCache()
+    public static function immutableCache(): FlagQualifier
     {
         return new FlagQualifier(self::IMMUTABLE_CACHE);
     }
@@ -94,9 +88,8 @@ trait CommonFlagTrait
      * Keeps the copyright related fields when stripping meta-data. Without this flag, Cloudinary's default behavior is
      * to strip all meta-data when generating new image transformations.
      *
-     * @return FlagQualifier
      */
-    public static function keepAttribution()
+    public static function keepAttribution(): FlagQualifier
     {
         return new FlagQualifier(self::KEEP_ATTRIBUTION);
     }
@@ -107,9 +100,8 @@ trait CommonFlagTrait
      *
      * Note that this flag cannot be used in conjunction with the automatic quality transformation (q_auto).
      *
-     * @return FlagQualifier
      */
-    public static function keepIptc()
+    public static function keepIptc(): FlagQualifier
     {
         return new FlagQualifier(self::KEEP_IPTC);
     }
@@ -120,9 +112,8 @@ trait CommonFlagTrait
      * @param string $name    The flag name.
      * @param mixed  ...$args The flag value.
      *
-     * @return FlagQualifier
      */
-    public static function generic($name, ...$args)
+    public static function generic(string $name, ...$args): FlagQualifier
     {
         return new FlagQualifier($name, ...$args);
     }

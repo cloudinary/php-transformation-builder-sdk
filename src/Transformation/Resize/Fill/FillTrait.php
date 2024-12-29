@@ -24,15 +24,17 @@ trait FillTrait
      * requested aspect ratio is different than the original, cropping will occur on the dimension that exceeds the
      * requested size after scaling.
      *
-     * @param int|float|string|null $width   The required width of a transformed asset.
-     * @param int|float|null        $height  The required height of a transformed asset.
-     * @param Gravity               $gravity Which part of the original image to include when the resulting image is
+     * @param float|int|string|null $width   The required width of a transformed asset.
+     * @param float|int|null        $height  The required height of a transformed asset.
+     * @param GravityQualifier|null $gravity Which part of the original image to include when the resulting image is
      *                                       smaller than the original or the proportions do not match.
      *
-     * @return Fill
      */
-    public static function fill($width = null, $height = null, $gravity = null)
-    {
+    public static function fill(
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        ?GravityQualifier $gravity = null
+    ): Fill {
         return static::createFill(CropMode::FILL, $width, $height, $gravity);
     }
 
@@ -45,30 +47,30 @@ trait FillTrait
      *
      * This prevents upscaling.
      *
-     * @param int|float|string|null $width   The required width of a transformed asset.
-     * @param int|float|null        $height  The required height of a transformed asset.
-     * @param Gravity               $gravity Which part of the original image to include when the resulting image is
+     * @param float|int|string|null $width   The required width of a transformed asset.
+     * @param float|int|null        $height  The required height of a transformed asset.
+     * @param GravityQualifier|null $gravity Which part of the original image to include when the resulting image is
      *                                       smaller than the original or the proportions do not match.
      *
-     * @return Fill
      *
      * @see Fill::fill
      */
-    public static function limitFill($width = null, $height = null, $gravity = null)
-    {
+    public static function limitFill(
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        ?GravityQualifier $gravity = null
+    ): Fill {
         return static::createFill(CropMode::LIMIT_FILL, $width, $height, $gravity);
     }
 
     /**
      * Creates Fill instance.
      *
-     * @param mixed ...$args
      *
-     * @return Fill
      *
      * @internal
      */
-    protected static function createFill(...$args)
+    protected static function createFill(...$args): Fill
     {
         return new Fill(...$args);
     }

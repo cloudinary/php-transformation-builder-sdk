@@ -15,18 +15,17 @@ namespace Cloudinary\Transformation;
  */
 class PageValue extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = ';';
+    protected const VALUE_DELIMITER = ';';
 
     /**
      * Adds values.
      *
      * @param mixed $values The values to add.
      *
-     * @return static
      *
      * @internal
      */
-    public function addValues(...$values)
+    public function addValues(...$values): static
     {
         foreach ($values as $value) {
             $found = false;

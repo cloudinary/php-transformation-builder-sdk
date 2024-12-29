@@ -20,9 +20,8 @@ trait PositionFlagTrait
     /**
      * Tiles the added overlay over the entire image.
      *
-     * @return static
      */
-    public function tiled()
+    public function tiled(): static
     {
         return $this->setFlag(Flag::tiled());
     }
@@ -33,11 +32,10 @@ trait PositionFlagTrait
      *
      * @param bool $allowOverflow Indicates whether to allow overflow.
      *
-     * @return static
      *
      * @see Flag::noOverflow
      */
-    public function allowOverflow($allowOverflow = false)
+    public function allowOverflow(bool $allowOverflow = false): static
     {
         $this->setFlag(Flag::noOverflow(), !$allowOverflow);
 

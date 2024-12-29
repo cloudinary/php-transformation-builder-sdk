@@ -15,7 +15,7 @@ namespace Cloudinary\Transformation;
  */
 class BasePageAction extends BaseAction
 {
-    const MAIN_QUALIFIER = PageQualifier::class;
+    protected const MAIN_QUALIFIER = PageQualifier::class;
 
     /**
      * Adds values to the main qualifier value.
@@ -26,7 +26,7 @@ class BasePageAction extends BaseAction
      *
      * @internal
      */
-    public function add(...$values)
+    public function add(...$values): static
     {
         $this->getMainQualifier()->add(...$values);
 

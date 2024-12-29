@@ -22,13 +22,12 @@ class StrengthEffectQualifier extends LimitedEffectQualifier
     /**
      * Setter of the effect strength.
      *
-     * @param int $strength The strength to set.
+     * @param int|string|null $strength The strength to set.
      *
-     * @return StrengthEffectQualifier
      *
      * @internal
      */
-    public function strength($strength)
+    public function strength(int|string|null $strength): static
     {
         $this->setEffectValue($strength);
 

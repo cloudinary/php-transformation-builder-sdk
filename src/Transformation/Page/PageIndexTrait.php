@@ -22,9 +22,8 @@ trait PageIndexTrait
      *
      * @param int $index The index.
      *
-     * @return static
      */
-    public function byIndex($index)
+    public function byIndex(int $index): static
     {
         $this->add($index);
 

@@ -20,7 +20,7 @@ class EndIfCondition extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'if';
+    protected static string $key = 'if';
 
     /**
      * EndIf constructor.

@@ -26,7 +26,7 @@ trait ObjectGravityPriorityBuilderTrait
      *
      * @return $this
      */
-    public function focus($weight = null)
+    public function focus(?int $weight = null): static
     {
         return $this->priority(ObjectGravity::FOCUS, $weight);
     }
@@ -38,7 +38,7 @@ trait ObjectGravityPriorityBuilderTrait
      *
      * @return $this
      */
-    public function center($weight = null)
+    public function center(?int $weight = null): static
     {
         return $this->priority(ObjectGravity::CENTER, $weight);
     }
@@ -50,7 +50,7 @@ trait ObjectGravityPriorityBuilderTrait
      *
      * @return $this
      */
-    public function large($weight = null)
+    public function large(?int $weight = null): static
     {
         return $this->priority(ObjectGravity::LARGE, $weight);
     }
@@ -58,15 +58,10 @@ trait ObjectGravityPriorityBuilderTrait
     /**
      * Sets any priority to the specified weighting.
      *
-     * @param string $priorityName The name of the priority.
-     * @param int    $weight       The priority weighting.
+     * @param string|null $priorityName The name of the priority.
+     * @param int|null    $weight       The priority weighting.
      *
      * @return $this
      */
-    public function priority($priorityName = null, $weight = null)
-    {
-        $this->value->setSimpleNamedValue($priorityName, $weight);
-
-        return $this;
-    }
+    abstract public function priority(?string $priorityName = null, ?int $weight = null): static;
 }

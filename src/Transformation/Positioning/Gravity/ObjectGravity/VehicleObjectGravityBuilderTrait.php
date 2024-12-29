@@ -20,9 +20,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity vehicle.
      *
-     * @return string
      */
-    public static function vehicle()
+    public static function vehicle(): string
     {
         return ObjectGravity::VEHICLE;
     }
@@ -30,9 +29,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity bicycle.
      *
-     * @return string
      */
-    public static function bicycle()
+    public static function bicycle(): string
     {
         return ObjectGravity::BICYCLE;
     }
@@ -40,9 +38,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity car.
      *
-     * @return string
      */
-    public static function car()
+    public static function car(): string
     {
         return ObjectGravity::CAR;
     }
@@ -50,9 +47,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity motorbike.
      *
-     * @return string
      */
-    public static function motorbike()
+    public static function motorbike(): string
     {
         return ObjectGravity::MOTORBIKE;
     }
@@ -60,9 +56,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity aeroplane.
      *
-     * @return string
      */
-    public static function aeroplane()
+    public static function aeroplane(): string
     {
         return ObjectGravity::AEROPLANE;
     }
@@ -70,9 +65,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity bus.
      *
-     * @return string
      */
-    public static function bus()
+    public static function bus(): string
     {
         return ObjectGravity::BUS;
     }
@@ -80,9 +74,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity train.
      *
-     * @return string
      */
-    public static function train()
+    public static function train(): string
     {
         return ObjectGravity::TRAIN;
     }
@@ -90,9 +83,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity truck.
      *
-     * @return string
      */
-    public static function truck()
+    public static function truck(): string
     {
         return ObjectGravity::TRUCK;
     }
@@ -100,9 +92,8 @@ trait VehicleObjectGravityBuilderTrait
     /**
      * Gravity boat.
      *
-     * @return string
      */
-    public static function boat()
+    public static function boat(): string
     {
         return ObjectGravity::BOAT;
     }

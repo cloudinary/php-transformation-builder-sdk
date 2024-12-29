@@ -18,42 +18,49 @@ interface ImageTransformationInterface extends CommonTransformationInterface
     /**
      * Applies a filter or an effect on an image.
      *
-     * @param EffectQualifier|EffectAction $effect The effect to apply.
+     * @param EffectAction|EffectQualifier $effect The effect to apply.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\EffectAction
-     * @see \Cloudinary\Transformation\EffectQualifier
+     * @see EffectAction
+     * @see EffectQualifier
      */
-    public function effect($effect);
+    public function effect(EffectQualifier|EffectAction $effect): static;
 
     /**
      * Adds an overlay over the base image.
      *
-     * @param string                    $layer     The public ID of the image to overlay.
-     * @param Position|AbsolutePosition $position  The position of the overlay with respect to the base image.
-     * @param string                    $blendMode The blend mode. Use the constants defined in the BlendMode class.
+     * @param string                         $layer     The public ID of the image to overlay.
+     * @param AbsolutePosition|Position|null $position  The position of the overlay with respect to the base image.
+     * @param string|null                    $blendMode The blend mode. Use the constants defined in the BlendMode
+     *                                                  class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\ImageOverlay
-     * @see \Cloudinary\Transformation\BlendMode
+     * @see ImageOverlay
+     * @see BlendMode
      */
-    public function overlay($layer, $position = null, $blendMode = null);
+    public function overlay(
+        string $layer,
+        Position|AbsolutePosition|null $position = null,
+        ?string $blendMode = null
+    ): static;
 
     /**
      * Adds an underlay under the base image.
      *
-     * @param string                    $layer     The public ID of the image to underlay.
-     * @param Position|AbsolutePosition $position  The position of the underlay with respect to the base image.
-     * @param string                    $blendMode The blend mode. Use the constants defined in the BlendMode class.
+     * @param string                         $layer     The public ID of the image to underlay.
+     * @param AbsolutePosition|Position|null $position  The position of the underlay with respect to the base image.
+     * @param string|null                    $blendMode The blend mode. Use the constants defined in the BlendMode
+     *                                                  class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\OverlayOverlay
-     * @see \Cloudinary\Transformation\BlendMode
+     * @see OverlayOverlay
+     * @see BlendMode
      */
-    public function underlay($layer, $position = null, $blendMode = null);
+    public function underlay(
+        string $layer,
+        Position|AbsolutePosition|null $position = null,
+        ?string $blendMode = null
+    ): static;
 
     /**
      * Adds a border around the image.
@@ -61,9 +68,8 @@ interface ImageTransformationInterface extends CommonTransformationInterface
      * @param Border $border A Border object in which you set the width, style and color of the border.
      *                       See the Border class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Border
+     * @see Border
      */
-    public function border(Border $border);
+    public function border(Border $border): static;
 }

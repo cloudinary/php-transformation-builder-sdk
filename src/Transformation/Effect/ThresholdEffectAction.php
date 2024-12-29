@@ -22,7 +22,7 @@ class ThresholdEffectAction extends EffectAction
      *
      * @return $this
      */
-    public function threshold($threshold)
+    public function threshold(int $threshold): static
     {
         $this->qualifiers[EffectQualifier::getName()]->threshold($threshold);
 

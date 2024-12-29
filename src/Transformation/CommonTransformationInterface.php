@@ -22,57 +22,52 @@ interface CommonTransformationInterface extends ComponentInterface
      *
      * (Formerly known as fetch format).
      *
-     * @param Format|string $format The format in which to deliver the asset.
+     * @param string|Format $format The format in which to deliver the asset.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Format
+     * @see Format
      */
-    public function format($format);
+    public function format(Format|string $format): static;
 
     /**
      * Controls compression quality.
      *
      * Reducing the quality is a trade-off between visual quality and file size.
      *
-     * @param int|string|Quality $quality The quality value. (Range 1 to 100)
+     * @param Quality|int|float|string $quality The quality value. (Range 1 to 100)
      *
-     * @return static
      */
-    public function quality($quality);
+    public function quality(Quality|int|float|string $quality): static;
 
     /**
      * Applies a filter or an effect on an asset.
      *
-     * @param EffectQualifier|EffectAction $effect The effect to apply.
+     * @param EffectAction|EffectQualifier $effect The effect to apply.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\EffectAction
-     * @see \Cloudinary\Transformation\EffectQualifier
+     * @see EffectAction
+     * @see EffectQualifier
      */
-    public function effect($effect);
+    public function effect(EffectQualifier|EffectAction $effect): static;
 
     /**
      * Applies an adjustment effect on an asset.
      *
-     * @param EffectQualifier|EffectAction $adjustment The adjustment effect to apply.
+     * @param EffectAction|EffectQualifier $adjustment The adjustment effect to apply.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\EffectAction
-     * @see \Cloudinary\Transformation\EffectQualifier
+     * @see EffectAction
+     * @see EffectQualifier
      */
-    public function adjust($adjustment);
+    public function adjust(EffectQualifier|EffectAction $adjustment): static;
 
     /**
      * Applies a pre-defined transformation of the given name.
      *
      * @param string $transformationName The name of the transformation.
      *
-     * @return static
      */
-    public function namedTransformation($transformationName);
+    public function namedTransformation(string $transformationName): static;
 
     /**
      * Adds a generic qualifier as a separate action.
@@ -80,9 +75,8 @@ interface CommonTransformationInterface extends ComponentInterface
      * @param string      $shortName The generic qualifier name.
      * @param array|mixed $value     The generic qualifier value.
      *
-     * @return static
      */
-    public function addGenericQualifier($shortName, ...$value);
+    public function addGenericQualifier(string $shortName, ...$value): static;
 
     /**
      * Adds (chains) a transformation action.
@@ -90,9 +84,8 @@ interface CommonTransformationInterface extends ComponentInterface
      * @param BaseAction|BaseQualifier|mixed $action The transformation action to add.
      *                                               If BaseQualifier is provided, it is wrapped with action.
      *
-     * @return static
      */
-    public function addAction($action);
+    public function addAction(mixed $action): static;
 
     /**
      * Adds (appends) a transformation.
@@ -101,20 +94,18 @@ interface CommonTransformationInterface extends ComponentInterface
      *
      * @param CommonTransformation $transformation The transformation to add.
      *
-     * @return static
      */
-    public function addTransformation($transformation);
+    public function addTransformation(CommonTransformation $transformation): static;
 
     /**
      * Adds action defined as an array of qualifiers.
      *
      * @param array $qualifiers An associative array of qualifiers
      *
-     * @return static
      *
      * @see QualifiersAction
      */
-    public function addActionFromQualifiers($qualifiers);
+    public function addActionFromQualifiers(array $qualifiers): static;
 
     /**
      * Defines a new user variable.
@@ -122,27 +113,24 @@ interface CommonTransformationInterface extends ComponentInterface
      * @param string $name  The variable name
      * @param mixed  $value The variable value
      *
-     * @return static
      */
-    public function addVariable($name, $value);
+    public function addVariable(string $name, mixed $value): static;
 
     /**
      * Rotates the asset by the given angle.
      *
-     * @param string|int $angle The rotation angle.
+     * @param int|string $angle The rotation angle.
      *
-     * @return static
      */
-    public function rotate($angle);
+    public function rotate(int|string $angle): static;
 
     /**
      * Specifies a conditional transformation whose condition should be met before applying a transformation.
      *
      * @param Conditional $conditionalTransformation The conditional transformation.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/conditional_transformations
      */
-    public function conditional($conditionalTransformation);
+    public function conditional(Conditional $conditionalTransformation): static;
 }

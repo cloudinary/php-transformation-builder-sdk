@@ -20,10 +20,10 @@ class AbsolutePosition extends BasePosition
     /**
      * AbsolutePosition constructor.
      *
-     * @param mixed $x
-     * @param mixed $y
+     * @param mixed      $x
+     * @param mixed|null $y
      */
-    public function __construct($x = null, $y = null)
+    public function __construct($x = null, mixed $y = null)
     {
         parent::__construct();
 
@@ -33,13 +33,11 @@ class AbsolutePosition extends BasePosition
     /**
      * Internal setter for the point value.
      *
-     * @param mixed $value
      *
-     * @return static
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue(mixed $value): static
     {
         if (! isset($this->qualifiers[Point::getName()])) {
             $this->addQualifier(new Point());

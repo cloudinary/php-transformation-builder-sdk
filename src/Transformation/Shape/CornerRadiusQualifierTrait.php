@@ -22,11 +22,10 @@ trait CornerRadiusQualifierTrait
      *
      * @param array $value The radius of the corner(s). See CornerRadius class for details.
      *
-     * @return CornerRadius
      *
      * @see CornerRadius
      */
-    public static function cornerRadius(...$value)
+    public static function cornerRadius(...$value): CornerRadius
     {
         return new CornerRadius(...$value);
     }

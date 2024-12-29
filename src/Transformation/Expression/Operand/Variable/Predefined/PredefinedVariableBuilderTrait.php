@@ -20,9 +20,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The asset's current width.
      *
-     * @return Expression
      */
-    public function width()
+    public function width(): Expression
     {
         return $this->setRightOperand(PVar::WIDTH);
     }
@@ -30,9 +29,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The asset's initial width.
      *
-     * @return Expression
      */
-    public function initialWidth()
+    public function initialWidth(): Expression
     {
         return $this->setRightOperand(PVar::INITIAL_WIDTH);
     }
@@ -40,9 +38,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The asset's current height.
      *
-     * @return Expression
      */
-    public function height()
+    public function height(): Expression
     {
         return $this->setRightOperand(PVar::HEIGHT);
     }
@@ -50,9 +47,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The asset's initial height.
      *
-     * @return Expression
      */
-    public function initialHeight()
+    public function initialHeight(): Expression
     {
         return $this->setRightOperand(PVar::INITIAL_HEIGHT);
     }
@@ -60,9 +56,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The aspect ratio of the asset. The compared value can be either decimal (e.g., 1.5) or a ratio (e.g., 3:4)
      *
-     * @return Expression
      */
-    public function aspectRatio()
+    public function aspectRatio(): Expression
     {
         return $this->setRightOperand(PVar::ASPECT_RATIO);
     }
@@ -70,9 +65,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The initial aspect ratio of the asset.
      *
-     * @return Expression
      */
-    public function initialAspectRatio()
+    public function initialAspectRatio(): Expression
     {
         return $this->setRightOperand(PVar::INITIAL_ASPECT_RATIO);
     }
@@ -83,11 +77,10 @@ trait PredefinedVariableBuilderTrait
      *
      * The compared value can be either decimal (e.g., 1.5) or a ratio (e.g., 3:4).
      *
-     * @return Expression
      *
      * @see Effect::trim
      */
-    public function trimmedAspectRatio()
+    public function trimmedAspectRatio(): Expression
     {
         return $this->setRightOperand(PVar::TRIMMED_ASPECT_RATIO);
     }
@@ -95,9 +88,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The total number of pages in the image/document.
      *
-     * @return Expression
      */
-    public function pageCount()
+    public function pageCount(): Expression
     {
         return $this->setRightOperand(PVar::PAGE_COUNT);
     }
@@ -105,9 +97,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The total number of detected faces in the image.
      *
-     * @return Expression
      */
-    public function faceCount()
+    public function faceCount(): Expression
     {
         return $this->setRightOperand(PVar::FACE_COUNT);
     }
@@ -116,9 +107,8 @@ trait PredefinedVariableBuilderTrait
      * The likelihood that the image is an illustration (as opposed to a photo).
      * Supported values: 0 (photo) to 1 (illustration)
      *
-     * @return Expression
      */
-    public function illustrationScore()
+    public function illustrationScore(): Expression
     {
         return $this->setRightOperand(PVar::ILLUSTRATION_SCORE);
     }
@@ -126,9 +116,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The current page in the image/document.
      *
-     * @return Expression
      */
-    public function currentPage()
+    public function currentPage(): Expression
     {
         return $this->setRightOperand(PVar::CURRENT_PAGE);
     }
@@ -136,9 +125,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The page X.
      *
-     * @return Expression
      */
-    public function pageX()
+    public function pageX(): Expression
     {
         return $this->setRightOperand(PVar::PAGE_X);
     }
@@ -146,9 +134,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * The page Y.
      *
-     * @return Expression
      */
-    public function pageY()
+    public function pageY(): Expression
     {
         return $this->setRightOperand(PVar::PAGE_Y);
     }
@@ -161,12 +148,11 @@ trait PredefinedVariableBuilderTrait
      * Note: The syntax for this characteristic is slightly different:
      * if_!<string1:string2:stringN>!_in_tags, where the : delimiter denotes AND.
      *
-     * @return Expression
      *
      * @see Expression::in
      * @see Expression::notIn
      */
-    public function tags()
+    public function tags(): Expression
     {
         return $this->setRightOperand(PVar::TAGS);
     }
@@ -174,9 +160,8 @@ trait PredefinedVariableBuilderTrait
     /**
      * A context value assigned to an asset.
      *
-     * @return Expression
      */
-    public function context()
+    public function context(): Expression
     {
         return $this->setRightOperand(PVar::CONTEXT);
     }
@@ -186,9 +171,8 @@ trait PredefinedVariableBuilderTrait
      *
      * @param string $genericPredefinedVariable The name of the predefined variable
      *
-     * @return Expression
      */
-    public function generic($genericPredefinedVariable)
+    public function generic(string $genericPredefinedVariable): Expression
     {
         return $this->setRightOperand($genericPredefinedVariable);
     }

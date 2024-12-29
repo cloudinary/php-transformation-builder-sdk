@@ -20,13 +20,12 @@ trait TextStyleTrait
     /**
      * Sets the font family of the text.
      *
-     * @param string $fontFamily The font family. Use the constants defined in the FontFamily class.
+     * @param ?string $fontFamily The font family. Use the constants defined in the FontFamily class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\FontFamily
+     * @see FontFamily
      */
-    public function fontFamily($fontFamily)
+    public function fontFamily(?string $fontFamily): static
     {
         return $this->setStyleProperty('font_family', $fontFamily);
     }
@@ -34,11 +33,10 @@ trait TextStyleTrait
     /**
      * Sets the font size of the text.
      *
-     * @param int|float $fontSize The font size.
+     * @param float|int|null $fontSize The font size.
      *
-     * @return static
      */
-    public function fontSize($fontSize)
+    public function fontSize(float|int|null $fontSize): static
     {
         return $this->setStyleProperty('font_size', $fontSize);
     }
@@ -48,11 +46,10 @@ trait TextStyleTrait
      *
      * @param mixed $fontWeight The font weight. Use the constants defined in the FontWeight class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\FontWeight
+     * @see FontWeight
      */
-    public function fontWeight($fontWeight)
+    public function fontWeight(mixed $fontWeight): static
     {
         return $this->setStyleProperty('font_weight', $fontWeight, false, TextStyle::DEFAULT_FONT_WEIGHT);
     }
@@ -62,11 +59,10 @@ trait TextStyleTrait
      *
      * @param mixed $fontStyle The font style.  Use the constants defined in the FontStyle class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\FontStyle
+     * @see FontStyle
      */
-    public function fontStyle($fontStyle)
+    public function fontStyle(mixed $fontStyle): static
     {
         return $this->setStyleProperty('font_style', $fontStyle, false, TextStyle::DEFAULT_FONT_STYLE);
     }
@@ -76,11 +72,10 @@ trait TextStyleTrait
      *
      * @param mixed $textDecoration The text decoration.  Use the constants defined in the TextDecoration class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\TextDecoration
+     * @see TextDecoration
      */
-    public function textDecoration($textDecoration)
+    public function textDecoration(mixed $textDecoration): static
     {
         return $this->setStyleProperty('text_decoration', $textDecoration, false, TextStyle::DEFAULT_TEXT_DECORATION);
     }
@@ -90,11 +85,10 @@ trait TextStyleTrait
      *
      * @param mixed $textAlignment The alignment of the text. Use the constants defined in the TextAlignment class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\TextAlignment
+     * @see TextAlignment
      */
-    public function textAlignment($textAlignment)
+    public function textAlignment(mixed $textAlignment): static
     {
         return $this->setStyleProperty('text_alignment', $textAlignment, false, TextStyle::DEFAULT_TEXT_ALIGNMENT);
     }
@@ -102,13 +96,12 @@ trait TextStyleTrait
     /**
      * Sets whether to include an outline stroke.
      *
-     * @param mixed $stroke The stroke determiner. Use the constants defined in the Stroke class.
+     * @param mixed|string $stroke The stroke determiner. Use the constants defined in the Stroke class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\Stroke
+     * @see Stroke
      */
-    public function stroke($stroke = Stroke::STROKE)
+    public function stroke(mixed $stroke = Stroke::STROKE): static
     {
         return $this->setStyleProperty('stroke', $stroke, false, TextStyle::DEFAULT_STROKE);
     }
@@ -118,9 +111,8 @@ trait TextStyleTrait
      *
      * @param mixed $letterSpacing The spacing between the letters in pixels.  Can be positive or negative.
      *
-     * @return static
      */
-    public function letterSpacing($letterSpacing)
+    public function letterSpacing(mixed $letterSpacing): static
     {
         return $this->setStyleProperty('letter_spacing', $letterSpacing, true);
     }
@@ -130,9 +122,8 @@ trait TextStyleTrait
      *
      * @param mixed $lineSpacing The spacing between multiple lines in pixels.
      *
-     * @return static
      */
-    public function lineSpacing($lineSpacing)
+    public function lineSpacing(mixed $lineSpacing): static
     {
         return $this->setStyleProperty('line_spacing', $lineSpacing, true);
     }
@@ -143,11 +134,10 @@ trait TextStyleTrait
      * @param mixed $fontAntialias    The font antialiasing method.  Use the constants defined in the FontAntialias
      *                                class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\FontAntialias
+     * @see FontAntialias
      */
-    public function fontAntialias($fontAntialias)
+    public function fontAntialias(mixed $fontAntialias): static
     {
         return $this->setStyleProperty('antialias', $fontAntialias, true);
     }
@@ -157,11 +147,10 @@ trait TextStyleTrait
      *
      * @param mixed $fontHinting The type of font hinting. Use the constants defined in the FontHinting class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Argument\Text\FontHinting
+     * @see FontHinting
      */
-    public function fontHinting($fontHinting)
+    public function fontHinting(mixed $fontHinting): static
     {
         return $this->setStyleProperty('hinting', $fontHinting, true);
     }
@@ -170,16 +159,19 @@ trait TextStyleTrait
      * Internal setter for text style property.
      *
      * @param string      $styleName    The style name.
-     * @param string      $value        The style.
+     * @param ?string     $value        The style.
      * @param bool        $named        Indicates whether the property is a named property.
-     * @param null|string $defaultValue The default value of the property. Used for omitting values that are default.
+     * @param string|null $defaultValue The default value of the property. Used for omitting values that are default.
      *
-     * @return static
      *
      * @internal
      */
-    public function setStyleProperty($styleName, $value, $named = false, $defaultValue = null)
-    {
+    public function setStyleProperty(
+        string $styleName,
+        ?string $value,
+        bool $named = false,
+        ?string $defaultValue = null
+    ): static {
         if ($value === $defaultValue) {
             return $this;
         }

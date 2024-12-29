@@ -24,9 +24,8 @@ trait QualityBuilderTrait
      *
      * @param int $level The quality level. 1 is the lowest quality and 100 is the highest.
      *
-     * @return static
      */
-    public function quality($level)
+    public function quality(int $level): static
     {
         $this->setSimpleValue('level', $level);
 
@@ -36,15 +35,14 @@ trait QualityBuilderTrait
     /**
      * Adds an optional qualifier to control chroma subsampling
      *
-     * Chroma sub-sampling is a method of encoding images by implementing less resolution for chroma information
+     * Chroma subsampling is a method of encoding images by implementing less resolution for chroma information
      * (colors) than for luma information (luminance), taking advantage of the human visual system's lower acuity for
      * color differences than for luminance
      *
      * @param string $chromaSubSampling Chroma sub-sampling value
      *
-     * @return static
      */
-    public function chromaSubSampling($chromaSubSampling)
+    public function chromaSubSampling(string $chromaSubSampling): static
     {
         //TODO: Check valid value
         $this->setSimpleValue('chroma_sub_sampling', $chromaSubSampling);
@@ -59,9 +57,8 @@ trait QualityBuilderTrait
      *
      * @param int $quantization The quantization level. Is a % (1-100) setting.
      *
-     * @return static
      */
-    public function quantization($quantization)
+    public function quantization(int $quantization): static
     {
         //TODO: Check valid value
         $this->setSimpleNamedValue('qmax', $quantization);

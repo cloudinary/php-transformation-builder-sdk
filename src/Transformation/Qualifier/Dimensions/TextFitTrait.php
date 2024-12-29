@@ -22,12 +22,14 @@ trait TextFitTrait
      * Sets the text fit.
      *
      * @param int|string|Expression|TextFit $widthOrTextFit The width in pixels or the TextFit class.
-     * @param int|string|Expression         $height         The height in pixels.
+     * @param int|string|Expression|null    $height         The height in pixels.
      *
      * @return $this
      */
-    public function textFit($widthOrTextFit, $height = null)
-    {
+    public function textFit(
+        Expression|int|string|TextFit $widthOrTextFit,
+        Expression|int|string|null $height = null
+    ): static {
         $this->addQualifier(ClassUtils::verifyInstance($widthOrTextFit, TextFit::class, null, $height));
 
         return $this;

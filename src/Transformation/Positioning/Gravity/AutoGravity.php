@@ -23,22 +23,16 @@ namespace Cloudinary\Transformation;
  */
 class AutoGravity extends GravityQualifier
 {
-    const AUTO    = 'auto';
-    const CLASSIC = 'classic';
-    const SUBJECT = 'subject';
+    public const AUTO = 'auto';
+    public const CLASSIC = 'classic';
+    public const SUBJECT = 'subject';
 
-    /**
-     * @return string
-     */
-    public static function classic()
+    public static function classic(): string
     {
         return self::CLASSIC;
     }
 
-    /**
-     * @return string
-     */
-    public static function subject()
+    public static function subject(): string
     {
         return self::SUBJECT;
     }
@@ -46,9 +40,8 @@ class AutoGravity extends GravityQualifier
     /**
      * @param mixed $gravity The gravity to use.
      *
-     * @return AutoGravityObject
      */
-    public static function object($gravity)
+    public static function object(mixed $gravity): AutoGravityObject
     {
         return new AutoGravityObject($gravity);
     }
@@ -58,9 +51,8 @@ class AutoGravity extends GravityQualifier
      *
      * @param array|AutoGravity|ObjectGravity|string|mixed $fallbackGravities The fallback gravities.
      *
-     * @return AutoGravity
      */
-    public function autoFocus(...$fallbackGravities)
+    public function autoFocus(...$fallbackGravities): AutoGravity
     {
         return $this->add(...$fallbackGravities);
     }

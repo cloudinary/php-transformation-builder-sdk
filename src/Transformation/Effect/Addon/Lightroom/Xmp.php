@@ -18,11 +18,10 @@ abstract class Xmp
     /**
      * Created a new instance of the XmpSource class.
      *
-     * @param string $source The public id of the XMP file.
+     * @param mixed $source The public id of the XMP file.
      *
-     * @return XmpSourceValue
      */
-    public static function source($source)
+    public static function source(mixed $source): XmpSourceValue
     {
         return new XmpSourceValue($source);
     }

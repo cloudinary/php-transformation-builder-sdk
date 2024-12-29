@@ -22,11 +22,10 @@ trait VideoSourceTrait
     /**
      * Adds another video layer.
      *
-     * @param string $videoId The public ID of the new video layer.
+     * @param string|null $videoId The public ID of the new video layer.
      *
-     * @return static|VideoSource
      */
-    public static function video($videoId = null)
+    public static function video(?string $videoId = null): VideoSource|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($videoId, VideoSource::class));
     }
@@ -36,9 +35,8 @@ trait VideoSourceTrait
      *
      * @param string|null $fetchUrl The URL of the asset to fetch.
      *
-     * @return static|FetchVideoSource
      */
-    public static function fetchVideo($fetchUrl)
+    public static function fetchVideo(?string $fetchUrl): FetchVideoSource|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($fetchUrl, FetchVideoSource::class));
     }
@@ -46,11 +44,10 @@ trait VideoSourceTrait
     /**
      * Adds subtitles to a video.
      *
-     * @param string $subtitlesId The public ID of the subtitles file.
+     * @param string|null $subtitlesId The public ID of the subtitles file.
      *
-     * @return static|SubtitlesSource
      */
-    public static function subtitles($subtitlesId = null)
+    public static function subtitles(?string $subtitlesId = null): SubtitlesSource|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($subtitlesId, SubtitlesSource::class));
     }

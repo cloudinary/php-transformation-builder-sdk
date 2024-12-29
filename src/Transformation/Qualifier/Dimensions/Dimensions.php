@@ -24,11 +24,11 @@ class Dimensions extends BaseAction
     /**
      * Dimensions constructor.
      *
-     * @param int|string|Expression $width
-     * @param int|string|Expression $height
-     * @param mixed|AspectRatio     ...$aspectRatio
+     * @param int|string|Expression|null $width
+     * @param int|string|Expression|null $height
+     * @param mixed|AspectRatio          ...$aspectRatio
      */
-    public function __construct($width = null, $height = null, ...$aspectRatio)
+    public function __construct($width = null, Expression|int|string|null $height = null, ...$aspectRatio)
     {
         parent::__construct();
 
@@ -40,13 +40,12 @@ class Dimensions extends BaseAction
     /**
      * Internal setter for the dimensions.
      *
-     * @param Dimensions|mixed $value The dimensions.
+     * @param mixed|null $value The dimensions.
      *
-     * @return static
      *
      * @internal
      */
-    protected function setDimension($value = null)
+    protected function setDimension(mixed $value = null): static
     {
         $this->addQualifier($value);
 

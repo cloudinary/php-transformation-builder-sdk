@@ -18,12 +18,12 @@ namespace Cloudinary\Transformation;
 interface IndoorObjectGravityInterface
 {
     //Indoor Category
-    const INDOOR     = 'indoor';
-    const BOOK       = 'book';
-    const CLOCK      = 'clock';
-    const VASE       = 'vase';
-    const SCISSORS   = 'scissors';
-    const TEDDY_BEAR = 'teddy_bear';
-    const HAIR_DRIER = 'hair_drier';
-    const TOOTHBRUSH = 'toothbrush';
+    public const INDOOR = 'indoor';
+    public const BOOK   = 'book';
+    public const CLOCK = 'clock';
+    public const VASE  = 'vase';
+    public const SCISSORS = 'scissors';
+    public const TEDDY_BEAR = 'teddy_bear';
+    public const HAIR_DRIER = 'hair_drier';
+    public const TOOTHBRUSH = 'toothbrush';
 }

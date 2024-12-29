@@ -18,5 +18,5 @@ class StartOffset extends BaseOffsetQualifier
     /**
      * @var bool Indicates whether to allow value 'auto'.
      */
-    protected static $allowAuto = true;
+    protected static bool $allowAuto = true;
 }

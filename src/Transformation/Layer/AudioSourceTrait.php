@@ -22,11 +22,10 @@ trait AudioSourceTrait
     /**
      * Adds another audio layer.
      *
-     * @param string $audioId The public ID of the new audio layer.
+     * @param string|null $audioId The public ID of the new audio layer.
      *
-     * @return static|AudioSource
      */
-    public static function audio($audioId = null)
+    public static function audio(?string $audioId = null): AudioSource|static
     {
         return static::createWithSource(ClassUtils::verifyInstance($audioId, AudioSource::class));
     }

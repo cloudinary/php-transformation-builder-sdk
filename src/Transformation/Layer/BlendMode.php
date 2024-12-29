@@ -24,42 +24,41 @@ class BlendMode extends EffectQualifier
     /**
      * @var string $name Serialization name.
      */
-    protected static $name = 'blend_mode';
+    protected static string $name = 'blend_mode';
 
     /**
      * Each pixel of the image is made darker according to the pixel value of the overlaid image.
      */
-    const MULTIPLY     = 'multiply';
+    public const MULTIPLY = 'multiply';
 
     /**
      * Each pixel of the image is made brighter according to the pixel value of the overlaid image.
      */
-    const SCREEN       = 'screen';
+    public const SCREEN = 'screen';
 
     /**
      * Each pixel of the image is made darker or brighter according to the pixel value of the overlaid image.
      */
-    const OVERLAY      = 'overlay';
+    public const OVERLAY = 'overlay';
 
     /**
      * Each pixel of the image is 'cut-out' according to the non-transparent pixels of the overlaid
      * image.
      */
-    const MASK         = 'mask';
+    public const MASK = 'mask';
 
     /**
      * The overlay is slightly distorted to prevent easy removal.
      */
-    const ANTI_REMOVAL = 'anti_removal';
+    public const ANTI_REMOVAL = 'anti_removal';
 
     /**
      * Add an overlay image blended using the 'multiply' blend mode.
      *
      * In this mode, each pixel of the image is made darker according to the pixel value of the overlaid image.
      *
-     * @return BlendMode
      */
-    public static function multiply()
+    public static function multiply(): BlendMode
     {
         return new self(self::MULTIPLY);
     }
@@ -69,9 +68,8 @@ class BlendMode extends EffectQualifier
      *
      * In this mode, each pixel of the image is made brighter according to the pixel value of the overlaid image.
      *
-     * @return BlendMode
      */
-    public static function screen()
+    public static function screen(): BlendMode
     {
         return new self(self::SCREEN);
     }
@@ -82,9 +80,8 @@ class BlendMode extends EffectQualifier
      * In this mode, each pixel of the image is made darker or brighter according to the pixel value of the overlaid
      * image.
      *
-     * @return BlendMode
      */
-    public static function overlay()
+    public static function overlay(): BlendMode
     {
         return new self(self::OVERLAY);
     }
@@ -95,9 +92,8 @@ class BlendMode extends EffectQualifier
      * In this mode, each pixel of the image is 'cut-out' according to the non-transparent pixels of the overlaid
      * image.
      *
-     * @return BlendMode
      */
-    public static function mask()
+    public static function mask(): BlendMode
     {
         return new self(self::MASK);
     }
@@ -107,11 +103,10 @@ class BlendMode extends EffectQualifier
      *
      * In this mode, the overlay is slightly distorted to prevent easy removal.
      *
-     * @param int $level The level of distortion. (Range: 1 to 100, Server default: 50)
+     * @param int|null $level The level of distortion. (Range: 1 to 100, Server default: 50)
      *
-     * @return BlendMode
      */
-    public static function antiRemoval($level = null)
+    public static function antiRemoval(?int $level = null): BlendMode
     {
         return new self(self::ANTI_REMOVAL, $level);
     }

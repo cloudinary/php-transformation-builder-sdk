@@ -95,7 +95,7 @@ final class RotateTest extends TestCase
      *
      * @return array[]
      */
-    public function angleMethodsDataProvider()
+    public function angleMethodsDataProvider(): array
     {
         return [
             [
@@ -141,7 +141,7 @@ final class RotateTest extends TestCase
      * @param string $mode
      * @param string $method
      */
-    public function testAngleMethods($mode, $method)
+    public function testAngleMethods(string $mode, string $method)
     {
         self::assertEquals(
             "a_$mode",

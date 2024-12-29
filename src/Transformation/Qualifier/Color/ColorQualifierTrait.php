@@ -22,9 +22,8 @@ trait ColorQualifierTrait
      *
      * @param string $color The color.
      *
-     * @return ColorQualifier
      */
-    public static function color($color)
+    public static function color(string $color): ColorQualifier
     {
         return new ColorQualifier($color);
     }

@@ -15,26 +15,25 @@ namespace Cloudinary\Transformation\Argument\Text;
  */
 class FontWeight
 {
-    const THIN        = 'thin';
-    const EXTRA_LIGHT = 'extralight';
-    const LIGHT       = 'light';
-    const NORMAL      = 'normal';
-    const BOOK        = 'book';
-    const MEDIUM      = 'medium';
-    const DEMIBOLD    = 'demibold';
-    const SEMIBOLD    = 'semibold';
-    const BOLD        = 'bold';
-    const EXTRABOLD   = 'extrabold';
-    const ULTRABOLD   = 'ultrabold';
-    const BLACK       = 'black';
-    const HEAVY       = 'heavy';
+    public const THIN = 'thin';
+    public const EXTRA_LIGHT = 'extralight';
+    public const LIGHT       = 'light';
+    public const NORMAL = 'normal';
+    public const BOOK   = 'book';
+    public const MEDIUM = 'medium';
+    public const DEMIBOLD = 'demibold';
+    public const SEMIBOLD = 'semibold';
+    public const BOLD     = 'bold';
+    public const EXTRABOLD = 'extrabold';
+    public const ULTRABOLD = 'ultrabold';
+    public const BLACK     = 'black';
+    public const HEAVY = 'heavy';
 
     /**
      * Font weight thin.
      *
-     * @return string
      */
-    public static function thin()
+    public static function thin(): string
     {
         return self::THIN;
     }
@@ -42,9 +41,8 @@ class FontWeight
     /**
      * Font weight extraLight.
      *
-     * @return string
      */
-    public static function extraLight()
+    public static function extraLight(): string
     {
         return self::EXTRA_LIGHT;
     }
@@ -52,9 +50,8 @@ class FontWeight
     /**
      * Font weight light.
      *
-     * @return string
      */
-    public static function light()
+    public static function light(): string
     {
         return self::LIGHT;
     }
@@ -62,9 +59,8 @@ class FontWeight
     /**
      * Font weight normal.
      *
-     * @return string
      */
-    public static function normal()
+    public static function normal(): string
     {
         return self::NORMAL;
     }
@@ -72,9 +68,8 @@ class FontWeight
     /**
      * Font weight book.
      *
-     * @return string
      */
-    public static function book()
+    public static function book(): string
     {
         return self::BOOK;
     }
@@ -82,9 +77,8 @@ class FontWeight
     /**
      * Font weight medium.
      *
-     * @return string
      */
-    public static function medium()
+    public static function medium(): string
     {
         return self::MEDIUM;
     }
@@ -92,9 +86,8 @@ class FontWeight
     /**
      * Font weight demibold.
      *
-     * @return string
      */
-    public static function demibold()
+    public static function demibold(): string
     {
         return self::DEMIBOLD;
     }
@@ -102,9 +95,8 @@ class FontWeight
     /**
      * Font weight semibold.
      *
-     * @return string
      */
-    public static function semibold()
+    public static function semibold(): string
     {
         return self::SEMIBOLD;
     }
@@ -112,9 +104,8 @@ class FontWeight
     /**
      * Font weight bold.
      *
-     * @return string
      */
-    public static function bold()
+    public static function bold(): string
     {
         return self::BOLD;
     }
@@ -122,9 +113,8 @@ class FontWeight
     /**
      * Font weight extrabold.
      *
-     * @return string
      */
-    public static function extrabold()
+    public static function extrabold(): string
     {
         return self::EXTRABOLD;
     }
@@ -132,9 +122,8 @@ class FontWeight
     /**
      * Font weight ultrabold.
      *
-     * @return string
      */
-    public static function ultrabold()
+    public static function ultrabold(): string
     {
         return self::ULTRABOLD;
     }
@@ -142,9 +131,8 @@ class FontWeight
     /**
      * Font weight black.
      *
-     * @return string
      */
-    public static function black()
+    public static function black(): string
     {
         return self::BLACK;
     }
@@ -152,9 +140,8 @@ class FontWeight
     /**
      * Font weight heavy.
      *
-     * @return string
      */
-    public static function heavy()
+    public static function heavy(): string
     {
         return self::HEAVY;
     }

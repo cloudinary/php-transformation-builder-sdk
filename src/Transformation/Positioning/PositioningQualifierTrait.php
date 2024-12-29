@@ -22,9 +22,8 @@ trait PositioningQualifierTrait
      *
      * @param int $x The x position.
      *
-     * @return X
      */
-    public static function x($x)
+    public static function x(int $x): X
     {
         return new X($x);
     }
@@ -34,9 +33,8 @@ trait PositioningQualifierTrait
      *
      * @param int $y The y position.
      *
-     * @return Y
      */
-    public static function y($y)
+    public static function y(int $y): Y
     {
         return new Y($y);
     }

@@ -10,7 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Transformation\BaseComponent;
 use Cloudinary\Transformation\Qualifier\BaseExpressionQualifier;
 
 /**
@@ -25,47 +24,46 @@ class QualityQualifier extends BaseExpressionQualifier
      * Automatically calculate the optimal quality for an image: the smallest file size without affecting its
      * perceptual quality (same as GOOD).
      */
-    const AUTO = 'auto';
+    public const AUTO = 'auto';
 
     /**
      * Automatically calculate the optimal quality for an image: the smallest file size without affecting its
      * perceptual quality.
      */
-    const GOOD = 'good';
+    public const GOOD = 'good';
 
     /**
      * Automatically calculate the optimal quality for images using a less aggressive algorithm.
      */
-    const BEST = 'best';
+    public const BEST = 'best';
 
     /**
      * Automatically calculate the optimal quality for images using a more aggressive algorithm.
      */
-    const ECO = 'eco';
+    public const ECO = 'eco';
 
     /**
      * Automatically calculate the optimal quality for images using the most aggressive algorithm.
      */
-    const LOW = 'low';
+    public const LOW = 'low';
 
     /**
      *  Significantly reduces the size of photographs without affecting their perceptual quality.
      */
-    const JPEG_MINI = 'jpegmini';
+    public const JPEG_MINI = 'jpegmini';
 
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'preset']; // FIXME: first item should be named!
+    protected array $valueOrder = [0, 'preset']; // FIXME: first item should be named!
 
     /**
      * Quality constructor.
      *
-     * @param mixed               $strength
-     * @param mixed|BaseComponent $preset
-     * @param mixed               $values
+     * @param mixed|null $preset
+     * @param mixed      $values
      */
-    public function __construct($strength, $preset = null, ...$values)
+    public function __construct(mixed $strength, mixed $preset = null, ...$values)
     {
         parent::__construct($strength);
 
@@ -76,14 +74,14 @@ class QualityQualifier extends BaseExpressionQualifier
     /**
      * Sets a simple unnamed value specified by name (for uniqueness) and the actual value.
      *
-     * @param string              $name  The name of the argument.
-     * @param BaseComponent|mixed $value The value of the argument.
+     * @param string $name  The name of the argument.
+     * @param mixed  $value The value of the argument.
      *
      * @return $this
      *
      * @internal
      */
-    public function setSimpleValue($name, $value = null)
+    public function setSimpleValue(string $name, mixed $value = null): static
     {
         $this->value->setSimpleValue($name, $value);
 
@@ -93,14 +91,14 @@ class QualityQualifier extends BaseExpressionQualifier
     /**
      * Sets the simple named value of the quality qualifier.
      *
-     * @param string              $name  The named argument name.
-     * @param BaseComponent|mixed $value The value.
+     * @param string     $name  The named argument name.
+     * @param mixed|null $value The value.
      *
      * @return $this
      *
      * @internal
      */
-    public function setSimpleNamedValue($name, $value = null)
+    public function setSimpleNamedValue(string $name, mixed $value = null): static
     {
         $this->value->setSimpleNamedValue($name, $value);
 

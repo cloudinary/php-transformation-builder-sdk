@@ -15,9 +15,9 @@ namespace Cloudinary\Transformation;
  */
 class XmpSourceValue extends SourceValue
 {
-    const XMP = 'xmp';
+    public const XMP = 'xmp';
 
-    protected $argumentOrder = ['asset_type', 'delivery_type', 'source'];
+    protected array $argumentOrder = ['asset_type', 'delivery_type', 'source'];
 
     public function __construct(...$arguments)
     {
@@ -26,12 +26,7 @@ class XmpSourceValue extends SourceValue
         $this->setSimpleValue('asset_type', self::XMP);
     }
 
-    /**
-     * @param bool $set
-     *
-     * @return XmpSourceValue
-     */
-    public function authenticated($set = true)
+    public function authenticated(bool $set = true): XmpSourceValue
     {
         return $this->setSimpleValue('delivery_type', $set ? 'authenticated' : null);
     }

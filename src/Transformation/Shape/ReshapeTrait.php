@@ -27,13 +27,12 @@ trait ReshapeTrait
      *
      * @param array $args The new coordinates of the image's corners.
      *
-     * @see \Cloudinary\Transformation\Distort
+     * @see Distort
      *
-     * @return Distort
      *
      * @see https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects
      */
-    public static function distort(...$args)
+    public static function distort(...$args): Distort
     {
         return ClassUtils::verifyVarArgsInstance($args, Distort::class);
     }
@@ -47,11 +46,10 @@ trait ReshapeTrait
      *                                   frown). Negative values curve the image downwards (like a smile).
      *
      *
-     * @return EffectAction
      *
      * @see https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects
      */
-    public static function distortArc($degree)
+    public static function distortArc(mixed $degree): EffectAction
     {
         if ($degree instanceof EffectAction) {
             return $degree;
@@ -66,14 +64,13 @@ trait ReshapeTrait
      * Specify a color other than the color of the corner pixels using the colorOverride() method of the
      * \Cloudinary\Transformation\TrimEffect class.
      *
-     * @param int $tolerance The tolerance level for color similarity.  (Range: 0 to 100, Server default: 10)
+     * @param int|null $tolerance The tolerance level for color similarity.  (Range: 0 to 100, Server default: 10)
      *
-     * @return TrimEffect
      *
-     * @see \Cloudinary\Transformation\TrimEffect
+     * @see TrimEffect
      *
      */
-    public static function trim($tolerance = null)
+    public static function trim(?int $tolerance = null): TrimEffect
     {
         return ClassUtils::forceInstance($tolerance, TrimEffect::class);
     }
@@ -81,14 +78,13 @@ trait ReshapeTrait
     /**
      * Skews the image according to the two specified values in degrees.
      *
-     * @param float $skewX The angle of skew on the x-axis in degrees.
-     * @param float $skewY The angle of skew on the y-axis in degrees.
+     * @param float|int|null $skewX The angle of skew on the x-axis in degrees.
+     * @param float|int|null $skewY The angle of skew on the y-axis in degrees.
      *
-     * @return Shear
-     * @see \Cloudinary\Transformation\Shear
+     * @see Shear
      *
      */
-    public static function shear($skewX = null, $skewY = null)
+    public static function shear(float|int|null $skewX = null, float|int|null $skewY = null): Shear
     {
         return new Shear($skewX, $skewY);
     }
@@ -96,15 +92,16 @@ trait ReshapeTrait
     /**
      * Trims pixels according to the transparency levels of a given overlay image.
      *
-     * @param string|BaseSource         $source   The public ID of the image overlay.
-     * @param Position|AbsolutePosition $position The position of the overlay with respect to the base image.
+     * @param string|BaseSource              $source   The public ID of the image overlay.
+     * @param AbsolutePosition|Position|null $position The position of the overlay with respect to the base image.
      *
-     * @return CutByImage
      *
-     * @see \Cloudinary\Transformation\CutByImage
+     * @see CutByImage
      */
-    public static function cutByImage($source, $position = null)
-    {
+    public static function cutByImage(
+        BaseSource|string $source,
+        Position|AbsolutePosition|null $position = null
+    ): CutByImage {
         return new CutByImage($source, $position);
     }
 }

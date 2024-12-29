@@ -24,9 +24,8 @@ trait TransformationCustomFunctionTrait
      *
      * @param CustomFunction $customFunction The custom function source
      *
-     * @return static
      */
-    public function customFunction($customFunction)
+    public function customFunction($customFunction): static
     {
         return $this->addAction($customFunction);
     }

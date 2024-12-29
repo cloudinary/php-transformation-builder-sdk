@@ -25,16 +25,16 @@ class Compass extends QualifierMultiValue
 {
     use CompassGravityBuilderTrait;
 
-    const NORTH_WEST = 'north_west';
-    const NORTH      = 'north';
-    const NORTH_EAST = 'north_east';
-    const WEST       = 'west';
-    const CENTER     = 'center';
-    const EAST       = 'east';
-    const SOUTH_WEST = 'south_west';
-    const SOUTH      = 'south';
-    const SOUTH_EAST = 'south_east';
-    const XY_CENTER  = 'xy_center';
+    public const NORTH_WEST = 'north_west';
+    public const NORTH      = 'north';
+    public const NORTH_EAST = 'north_east';
+    public const WEST       = 'west';
+    public const CENTER = 'center';
+    public const EAST   = 'east';
+    public const SOUTH_WEST = 'south_west';
+    public const SOUTH      = 'south';
+    public const SOUTH_EAST = 'south_east';
+    public const XY_CENTER  = 'xy_center';
 
     /**
      * Compass constructor.
@@ -51,11 +51,10 @@ class Compass extends QualifierMultiValue
     /**
      * Sets the compass gravity direction.
      *
-     * @param string $direction The gravity direction. Use the constants defined in this class.
+     * @param ?string $direction The gravity direction. Use the constants defined in this class.
      *
-     * @return Compass
      */
-    protected function direction($direction)
+    protected function direction(?string $direction): static
     {
         $this->setSimpleValue('direction', $direction);
 

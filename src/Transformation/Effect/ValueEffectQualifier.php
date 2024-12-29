@@ -39,7 +39,7 @@ class ValueEffectQualifier extends EffectQualifier
      *
      * @internal
      */
-    public function setEffectValue($value)
+    public function setEffectValue(mixed $value): static
     {
         $this->value->setSimpleValue('value', $value);
 

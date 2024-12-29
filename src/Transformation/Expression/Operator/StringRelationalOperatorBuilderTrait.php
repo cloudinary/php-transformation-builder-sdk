@@ -20,9 +20,8 @@ trait StringRelationalOperatorBuilderTrait
     /**
      * Is in (a list of strings).
      *
-     * @return ExpressionOperator
      */
-    public function in()
+    public function in(): ExpressionOperator
     {
         return $this->buildExpression(StringRelationalOperator::in());
     }
@@ -30,9 +29,8 @@ trait StringRelationalOperatorBuilderTrait
     /**
      * Is not in (a list of strings).
      *
-     * @return ExpressionOperator
      */
-    public function notIn()
+    public function notIn(): ExpressionOperator
     {
         return $this->buildExpression(StringRelationalOperator::notIn());
     }

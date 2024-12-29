@@ -24,11 +24,10 @@ trait RegionEffectTrait
      *
      * @param mixed $value
      *
-     * @return static
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue($value): static
     {
         if (! isset($this->qualifiers[Region::getName()])) {
             $this->addQualifier(new Region());
@@ -44,11 +43,10 @@ trait RegionEffectTrait
      *
      * @param Region|mixed $value The dimensions.
      *
-     * @return static
      *
      * @internal
      */
-    protected function setDimension($value)
+    protected function setDimension($value): static
     {
         if (! isset($this->qualifiers[Region::getName()])) {
             $this->addQualifier(new Region());
@@ -69,7 +67,7 @@ trait RegionEffectTrait
      *
      * @internal
      */
-    public function getStringQualifiers()
+    public function getStringQualifiers(): array
     {
         $actionQualifiers = $this->qualifiers;
 

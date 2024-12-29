@@ -31,17 +31,17 @@ class ReplaceColor extends EffectQualifier
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'to_color', 'tolerance', 'from_color'];
+    protected array $valueOrder = [0, 'to_color', 'tolerance', 'from_color'];
 
     /**
      * ReplaceColor constructor.
      *
-     * @param string|ColorValue $toColor   The HTML name or RGB/A hex code of the target output color.
-     * @param int               $tolerance The tolerance threshold (a radius in the LAB color space) from the input
+     * @param string|ColorValue      $toColor   The HTML name or RGB/A hex code of the target output color.
+     * @param int                    $tolerance The tolerance threshold (a radius in the LAB color space) from the input
      *                                     color.
-     * @param string|ColorValue $fromColor The HTML name or RGB/A hex code of the base input color to map.
+     * @param string|ColorValue|null $fromColor The HTML name or RGB/A hex code of the base input color to map.
      */
-    public function __construct($toColor, $tolerance = null, $fromColor = null)
+    public function __construct($toColor, $tolerance = null, ColorValue|string|null $fromColor = null)
     {
         parent::__construct(Adjust::REPLACE_COLOR);
 
@@ -55,9 +55,8 @@ class ReplaceColor extends EffectQualifier
      *
      * @param string|ColorValue $to The HTML name or RGB/A hex code of the target output color.
      *
-     * @return ReplaceColor
      */
-    public function toColor($to)
+    public function toColor(ColorValue|string $to): static
     {
         // dirty hack to omit rgb: from hex colors
         $to = StringUtils::truncatePrefix((string)$to, '#');
@@ -69,15 +68,14 @@ class ReplaceColor extends EffectQualifier
     /**
      * Sets the tolerance threshold.
      *
-     * @param int $tolerance    The tolerance threshold (a radius in the LAB color space) from the input color,
+     * @param ?int $tolerance    The tolerance threshold (a radius in the LAB color space) from the input color,
      *                          representing the span of colors that should be replaced with a correspondingly adjusted
      *                          version of the target output color. Larger values result in replacing more colors
      *                          within the image. The more saturated the original input color, the more a change in
      *                          value will impact the result.
      *
-     * @return ReplaceColor
      */
-    public function tolerance($tolerance)
+    public function tolerance(?int $tolerance): static
     {
         $this->value->setSimpleValue('tolerance', $tolerance);
 
@@ -87,11 +85,10 @@ class ReplaceColor extends EffectQualifier
     /**
      * Sets the base input color to map.
      *
-     * @param string|ColorValue $fromColor The HTML name or RGB/A hex code of the base input color to map.
+     * @param string|ColorValue|null $fromColor The HTML name or RGB/A hex code of the base input color to map.
      *
-     * @return ReplaceColor
      */
-    public function fromColor($fromColor)
+    public function fromColor(ColorValue|string|null $fromColor): static
     {
         // dirty hack to omit rgb: from hex colors
         $fromColor = StringUtils::truncatePrefix((string)$fromColor, '#');

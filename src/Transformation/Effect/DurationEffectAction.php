@@ -22,7 +22,7 @@ class DurationEffectAction extends EffectAction
      *
      * @return $this
      */
-    public function duration($duration)
+    public function duration(int $duration): static
     {
         $this->qualifiers[EffectQualifier::getName()]->duration($duration);
 

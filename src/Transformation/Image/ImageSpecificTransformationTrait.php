@@ -28,17 +28,21 @@ trait ImageSpecificTransformationTrait
     /**
      * Adds an overlay over the base image.
      *
-     * @param string                    $layer     The public ID of the image to overlay.
-     * @param Position|AbsolutePosition $position  The position of the overlay with respect to the base image.
-     * @param string                    $blendMode The blend mode. Use the constants defined in the BlendMode class.
+     * @param string|BaseSource|BasePositionalSourceContainer $layer     The public ID of the image to overlay.
+     * @param BasePosition|null                               $position  The position of the overlay with respect to
+     *                                                                   the base image.
+     * @param string|null                                     $blendMode The blend mode. Use the constants defined in
+     *                                                                   the BlendMode class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\ImageOverlay
-     * @see \Cloudinary\Transformation\BlendMode
+     * @see ImageOverlay
+     * @see BlendMode
      */
-    public function overlay($layer, $position = null, $blendMode = null)
-    {
+    public function overlay(
+        string|BaseSource|BasePositionalSourceContainer $layer,
+        ?BasePosition $position = null,
+        ?string $blendMode = null
+    ): static {
         return $this->addAction(
             ClassUtils::verifyInstance(
                 $layer,
@@ -53,17 +57,22 @@ trait ImageSpecificTransformationTrait
     /**
      * Adds an underlay under the base image.
      *
-     * @param string                    $layer     The public ID of the image to underlay.
-     * @param Position|AbsolutePosition $position  The position of the underlay with respect to the base image.
-     * @param string                    $blendMode The blend mode. Use the constants defined in the BlendMode class.
+     * @param BaseSourceContainer|BaseSource|string|null $layer     The public ID of the image to underlay.
+     * @param BasePosition|null                          $position  The position of the underlay with respect to the
+     *                                                              base image.
+     * @param string|null                                $blendMode The blend mode. Use the constants defined in the
+     *                                                              BlendMode
+     *                                                              class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\OverlayOverlay
-     * @see \Cloudinary\Transformation\BlendMode
+     * @see OverlayOverlay
+     * @see BlendMode
      */
-    public function underlay($layer, $position = null, $blendMode = null)
-    {
+    public function underlay(
+        BaseSourceContainer|BaseSource|string|null $layer,
+        BasePosition|null $position = null,
+        ?string $blendMode = null
+    ): static {
         $underlay = ClassUtils::forceInstance($layer, ImageOverlay::class, null, $position, $blendMode);
         $underlay->setStackPosition(LayerStackPosition::UNDERLAY);
 
@@ -75,9 +84,8 @@ trait ImageSpecificTransformationTrait
      *
      * @param ReshapeQualifier|EffectAction|EffectQualifier|mixed $reshape The reshape to apply.
      *
-     * @return static
      */
-    public function reshape($reshape)
+    public function reshape(mixed $reshape): static
     {
         return $this->addAction($reshape);
     }
@@ -93,18 +101,21 @@ trait ImageSpecificTransformationTrait
      * corner according to $bottomRight.<br>
      * All qualifiers specified: Each corner is rounded accordingly.
      *
-     * @param int|string|CornerRadius $radiusOrTopLeft The radius in pixels of the top left corner or all the corners
-     *                                                 if no other corners are specified.
-     * @param int                     $topRight        The radius in pixels of the top right corner.
-     * @param int                     $bottomRight     The radius in pixels of the bottom right corner.
-     * @param int                     $bottomLeft      The radius in pixels of the bottom left corner.
+     * @param int|string|CornerRadius|RoundCorners $radiusOrTopLeft The radius in pixels of the top left corner or all
+     *                                                              the corners if no other corners are specified.
+     * @param int|null                             $topRight        The radius in pixels of the top right corner.
+     * @param int|null                             $bottomRight     The radius in pixels of the bottom right corner.
+     * @param int|null                             $bottomLeft      The radius in pixels of the bottom left corner.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\RoundCorners
+     * @see RoundCorners
      */
-    public function roundCorners($radiusOrTopLeft, $topRight = null, $bottomRight = null, $bottomLeft = null)
-    {
+    public function roundCorners(
+        int|string|CornerRadius|RoundCorners $radiusOrTopLeft,
+        ?int $topRight = null,
+        ?int $bottomRight = null,
+        ?int $bottomLeft = null
+    ): static {
         $qualifiers = ArrayUtils::safeFilter([$radiusOrTopLeft, $topRight, $bottomRight, $bottomLeft]);
 
         $roundCorners = ClassUtils::verifyVarArgsInstance($qualifiers, RoundCorners::class);
@@ -118,11 +129,10 @@ trait ImageSpecificTransformationTrait
      * @param Border $border A Border object in which you set the width, style and color of the border.
      *                       See the Border class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Border
+     * @see Border
      */
-    public function border(Border $border)
+    public function border(Border $border): static
     {
         return $this->addAction($border);
     }
@@ -130,13 +140,12 @@ trait ImageSpecificTransformationTrait
     /**
      * Sets the color of the background.
      *
-     * @param Background|ColorValue|string $color The color of the background to set.
+     * @param string|Background|ColorValue $color The color of the background to set.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Background
+     * @see Background
      */
-    public function backgroundColor($color)
+    public function backgroundColor(Background|ColorValue|string $color): static
     {
         return $this->addAction(ClassUtils::verifyInstance($color, Background::class));
     }
@@ -144,13 +153,12 @@ trait ImageSpecificTransformationTrait
     /**
      * Sets the image background.
      *
-     * @param Background|string $background The background to set.
+     * @param string|Background $background The background to set.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\Background
+     * @see Background
      */
-    public function background($background)
+    public function background(Background|string $background): static
     {
         return $this->addAction(ClassUtils::verifyInstance($background, Background::class));
     }
@@ -158,13 +166,12 @@ trait ImageSpecificTransformationTrait
     /**
      * Controls the color space used for the delivered image.
      *
-     * @param ColorSpace|string $colorSpace Use the constants defined in the ColorSpace class.
+     * @param string|ColorSpace $colorSpace Use the constants defined in the ColorSpace class.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\ColorSpace
+     * @see ColorSpace
      */
-    public function colorSpace($colorSpace)
+    public function colorSpace(string|ColorSpace $colorSpace): static
     {
         return $this->addAction(ClassUtils::verifyInstance($colorSpace, ColorSpace::class));
     }
@@ -172,12 +179,11 @@ trait ImageSpecificTransformationTrait
     /**
      * Prevents style class names collisions for sprite generation.
      *
-     * @param Prefix|string $prefix The style class name prefix.
+     * @param string $prefix The style class name prefix.
      *
      *
-     * @return static
      */
-    public function prefix($prefix)
+    public function prefix(string $prefix): static
     {
         return $this->addAction(ClassUtils::verifyInstance($prefix, Prefix::class));
     }
@@ -187,9 +193,8 @@ trait ImageSpecificTransformationTrait
      *
      * @param AnimatedEdit $animated Animated image action.
      *
-     * @return static
      */
-    public function animated($animated)
+    public function animated(AnimatedEdit $animated): static
     {
         return $this->addAction(ClassUtils::verifyInstance($animated, AnimatedEdit::class));
     }

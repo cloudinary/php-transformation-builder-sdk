@@ -24,9 +24,8 @@ trait LayerQualifierTrait
      *
      * @param string|mixed $source The source of the layer.
      *
-     * @return ImageSource
      */
-    public static function overlay($source)
+    public static function overlay(mixed $source): ImageSource
     {
         return ClassUtils::verifyInstance($source, BaseSource::class, ImageSource::class);
     }
@@ -36,9 +35,8 @@ trait LayerQualifierTrait
      *
      * @param string|mixed $source The source of the layer.
      *
-     * @return ImageSource
      */
-    public static function underlay($source)
+    public static function underlay(mixed $source): ImageSource
     {
         $layer = ClassUtils::verifyInstance($source, BaseSource::class, ImageSource::class);
 

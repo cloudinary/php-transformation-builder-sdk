@@ -25,14 +25,13 @@ trait MiscEffectTrait
      *
      * See the Image Transformations guide for examples of each of the filters.
      *
-     * @param string $filter The filter to apply. Use the constants defined in the ArtisticFilter class.
+     * @param string|ArtisticFilter $filter The filter to apply. Use the constants defined in the ArtisticFilter class.
      *
-     * @return mixed
      *
-     * @see \Cloudinary\Transformation\ArtisticFilter
+     * @see ArtisticFilter
      * @see https://cloudinary.com/documentation/image_transformations#available_filters
      */
-    public static function artisticFilter($filter)
+    public static function artisticFilter(string|ArtisticFilter $filter): mixed
     {
         return ClassUtils::verifyInstance($filter, ArtisticFilter::class);
     }
@@ -40,18 +39,17 @@ trait MiscEffectTrait
     /**
      * Applies a cartoon effect to an image.
      *
-     * @param float        $lineStrength   The thickness of the lines. (Range: 0 to 100, Server default: 50)
-     * @param float|string $colorReduction The decrease in the number of colors and corresponding saturation boost of
+     * @param mixed $lineStrength          The thickness of the lines. (Range: 0 to 100, Server default: 50)
+     * @param mixed $colorReduction        The decrease in the number of colors and corresponding saturation boost of
      *                                     the remaining colors. (Range: 0 to 100, Server default: automatically
      *                                     adjusts according to the line_strength value). Higher reduction values
      *                                     result in a less realistic look. Set $colorReduction to
      *                                     Cartoonify::BLACK_WHITE for a black and white cartoon effect.
      *
-     * @return Cartoonify
      *
-     * @see \Cloudinary\Transformation\Cartoonify
+     * @see Cartoonify
      */
-    public static function cartoonify($lineStrength = null, $colorReduction = null)
+    public static function cartoonify(mixed $lineStrength = null, mixed $colorReduction = null): Cartoonify
     {
         return new Cartoonify($lineStrength, $colorReduction);
     }
@@ -62,32 +60,35 @@ trait MiscEffectTrait
      *
      * For details, see the Neural Artwork Style Transfer add-on documentation.
      *
-     * @param string $source        The public ID of the source artwork.
-     * @param int    $strength      The strength of the style transfer. Higher numbers result in an output that is more
-     *                              highly influenced by the source artwork style. (Range: 0 to 100, Server default:
-     *                              100)
-     * @param bool   $preserveColor When true, style elements of the source artwork, such as brush style and texture,
-     *                              are transferred to the target photo, but the prominent colors from the source
-     *                              artwork are not transferred, so the result retains the original colors of the
-     *                              target photo.
+     * @param string    $source        The public ID of the source artwork.
+     * @param int|null  $strength      The strength of the style transfer. Higher numbers result in an output that is
+     *                                 more highly influenced by the source artwork style. (Range: 0 to 100, Server
+     *                                 default:
+     *                                 100)
+     * @param bool|null $preserveColor When true, style elements of the source artwork, such as brush style and
+     *                                 texture,
+     *                                 are transferred to the target photo, but the prominent colors from the source
+     *                                 artwork are not transferred, so the result retains the original colors of the
+     *                                 target photo.
      *
-     * @return EffectAction
      *
      * @see https://cloudinary.com/documentation/neural_artwork_style_transfer_addon
      */
-    public static function styleTransfer($source, $strength = null, $preserveColor = null)
-    {
+    public static function styleTransfer(
+        string $source,
+        ?int $strength = null,
+        ?bool $preserveColor = null
+    ): StyleTransfer|EffectAction {
         return new StyleTransfer($source, $strength, $preserveColor);
     }
 
     /**
      * Applies an oil painting effect to the image.
      *
-     * @param int $strength The strength of the effect. (Range: 0 to 100, Server default: 30)
+     * @param int|null $strength The strength of the effect. (Range: 0 to 100, Server default: 30)
      *
-     * @return StrengthEffectAction
      */
-    public static function oilPaint($strength = null)
+    public static function oilPaint(?int $strength = null): StrengthEffectAction
     {
         return EffectAction::withStrength(MiscEffect::OIL_PAINT, EffectRange::PERCENT, $strength);
     }
@@ -95,9 +96,8 @@ trait MiscEffectTrait
     /**
      * Removes red eyes in the image.
      *
-     * @return EffectAction
      */
-    public static function redEye()
+    public static function redEye(): EffectAction
     {
         return EffectAction::named(MiscEffect::RED_EYE);
     }
@@ -107,11 +107,10 @@ trait MiscEffectTrait
      *
      * For details, see the Advanced Facial Attribute Detection add-on documentation.
      *
-     * @return EffectAction
      *
      * @see https://cloudinary.com/documentation/advanced_facial_attributes_detection_addon
      */
-    public static function advancedRedEye()
+    public static function advancedRedEye(): EffectAction
     {
         return EffectAction::named(MiscEffect::ADVANCED_RED_EYE);
     }
@@ -127,22 +126,28 @@ trait MiscEffectTrait
      *  graphic effect.
      * * Large images are scaled down to 1000 pixels in the largest dimension before vectorization.
      *
-     * @param int   $colors    The number of colors. (Range: 2 to 30, Server default: 10)
-     * @param float $detail    The level of detail. Specify either a percentage of the original image (Range: 0.0 to
-     *                         1.0) or an absolute number of pixels (Range: 0 to 1000). (Server default: 300)
-     * @param float $despeckle The size of speckles to suppress. Specify either a percentage of the original image
-     *                         (Range: 0.0 to 1.0) or an absolute number of pixels (Range: 0 to 100, Server default: 2)
-     * @param int   $corners   The corner threshold.  Specify 100 for no smoothing (polygon corners), 0 for completely
-     *                         smooth corners. (Range: 0 to 100, Default: 25)
-     * @param int   $paths     The optimization value. Specify 100 for least optimization and the largest file.
-     *                         (Range: 0 to 100, Server default: 100).
+     * @param int|null   $colors    The number of colors. (Range: 2 to 30, Server default: 10)
+     * @param float|null $detail    The level of detail. Specify either a percentage of the original image (Range: 0.0
+     *                              to
+     *                              1.0) or an absolute number of pixels (Range: 0 to 1000). (Server default: 300)
+     * @param float|null $despeckle The size of speckles to suppress. Specify either a percentage of the original image
+     *                              (Range: 0.0 to 1.0) or an absolute number of pixels (Range: 0 to 100, Server
+     *                              default: 2)
+     * @param int|null   $corners   The corner threshold.  Specify 100 for no smoothing (polygon corners), 0 for
+     *                              completely smooth corners. (Range: 0 to 100, Default: 25)
+     * @param int|null   $paths     The optimization value. Specify 100 for least optimization and the largest file.
+     *                              (Range: 0 to 100, Server default: 100).
      *
-     * @return Vectorize
      *
-     * @see \Cloudinary\Transformation\Vectorize
+     * @see Vectorize
      */
-    public static function vectorize($colors = null, $detail = null, $despeckle = null, $corners = null, $paths = null)
-    {
+    public static function vectorize(
+        ?int $colors = null,
+        ?float $detail = null,
+        ?float $despeckle = null,
+        ?int $corners = null,
+        ?int $paths = null
+    ): Vectorize {
         return new Vectorize($colors, $detail, $despeckle, $corners, $paths);
     }
 
@@ -151,19 +156,18 @@ trait MiscEffectTrait
      *
      * For examples, see the Image Transformations guide.
      *
-     * @param string $mode      The type of outline effect. Use the constants defined in the Outline class.
-     *                          (Default: OutlineMode::INNER and OutlineMode::OUTER).
-     * @param int    $width     The thickness of the outline in pixels. (Range: 1 to 100, Server default: 5)
-     * @param int    $blurLevel The level of blur of the outline. (Range: 0 to 2000, Server default: 0)
+     * @param string|null $mode      The type of outline effect. Use the constants defined in the Outline class.
+     *                               (Default: OutlineMode::INNER and OutlineMode::OUTER).
+     * @param int|null    $width     The thickness of the outline in pixels. (Range: 1 to 100, Server default: 5)
+     * @param int|null    $blurLevel The level of blur of the outline. (Range: 0 to 2000, Server default: 0)
      *
-     * @return Outline
      *
-     * @see \Cloudinary\Transformation\Outline
-     * @see \Cloudinary\Transformation\OutlineMode
+     * @see Outline
+     * @see OutlineMode
      * @see https://cloudinary.com/documentation/image_transformations#outline_effects
      *
      */
-    public static function outline($mode = null, $width = null, $blurLevel = null)
+    public static function outline(?string $mode = null, ?int $width = null, ?int $blurLevel = null): Outline
     {
         return new Outline($mode, $width, $blurLevel);
     }
@@ -173,15 +177,14 @@ trait MiscEffectTrait
      *
      * The shadow is offset by the x and y values specified in the $position qualifier.
      *
-     * @param int        $strength The strength of the shadow. (Range: 0 to 100, Server default: 40)
-     * @param PointValue $position The position of the shadow. (Server default: bottom right)
-     * @param string     $color    The color of the shadow (Server default: gray)
+     * @param int|null        $strength The strength of the shadow. (Range: 0 to 100, Server default: 40)
+     * @param PointValue|null $position The position of the shadow. (Server default: bottom right)
+     * @param string|null     $color    The color of the shadow (Server default: gray)
      *
-     * @return Shadow
-     * @see \Cloudinary\Transformation\Shadow
+     * @see Shadow
      *
      */
-    public static function shadow($strength = null, $position = null, $color = null)
+    public static function shadow(?int $strength = null, ?PointValue $position = null, ?string $color = null): Shadow
     {
         return new Shadow($strength, $position, $color);
     }
@@ -189,15 +192,14 @@ trait MiscEffectTrait
     /**
      * Adds a natural looking shadow to an image.
      *
-     * @param int $azimuth   Value in range 0 - 360 (degrees).
-     * @param int $elevation Value in range 0 - 90 (degrees).
-     * @param int $spread    Value in range 0 -100.
+     * @param int|null $azimuth   Value in range 0 - 360 (degrees).
+     * @param int|null $elevation Value in range 0 - 90 (degrees).
+     * @param int|null $spread    Value in range 0 -100.
      *
-     * @return DropShadow
      *
-     * @see \Cloudinary\Transformation\DropShadow
+     * @see DropShadow
      */
-    public static function dropShadow($azimuth = null, $elevation = null, $spread = null)
+    public static function dropShadow(?int $azimuth = null, ?int $elevation = null, ?int $spread = null): DropShadow
     {
         return new DropShadow($azimuth, $elevation, $spread);
     }

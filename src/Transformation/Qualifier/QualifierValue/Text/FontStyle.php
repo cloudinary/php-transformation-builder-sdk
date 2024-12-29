@@ -15,15 +15,14 @@ namespace Cloudinary\Transformation\Argument\Text;
  */
 class FontStyle
 {
-    const NORMAL = 'normal';
-    const ITALIC = 'italic';
+    public const NORMAL = 'normal';
+    public const ITALIC = 'italic';
 
     /**
      * Font style normal.
      *
-     * @return string
      */
-    public static function normal()
+    public static function normal(): string
     {
         return self::NORMAL;
     }
@@ -31,9 +30,8 @@ class FontStyle
     /**
      * Font style italic.
      *
-     * @return string
      */
-    public static function italic()
+    public static function italic(): string
     {
         return self::ITALIC;
     }

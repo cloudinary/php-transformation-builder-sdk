@@ -18,10 +18,10 @@ namespace Cloudinary\Transformation;
 interface OutdoorObjectGravityInterface
 {
     //Outdoor Category
-    const OUTDOOR       = 'outdoor';
-    const TRAFFIC_LIGHT = 'traffic_light';
-    const STOP_SIGN     = 'stopsign';
-    const PARKING_METER = 'parkingmeter';
-    const FIRE_HYDRANT  = 'firehydrant';
-    const BENCH         = 'bench';
+    public const OUTDOOR = 'outdoor';
+    public const TRAFFIC_LIGHT = 'traffic_light';
+    public const STOP_SIGN     = 'stopsign';
+    public const PARKING_METER = 'parkingmeter';
+    public const FIRE_HYDRANT  = 'firehydrant';
+    public const BENCH        = 'bench';
 }

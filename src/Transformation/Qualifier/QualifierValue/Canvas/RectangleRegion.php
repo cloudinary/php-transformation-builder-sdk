@@ -10,8 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\ArrayUtils;
-
 /**
  * Class RectangleRegion
  */
@@ -25,7 +23,7 @@ class RectangleRegion extends FullListExpressionQualifierMultiValue
      * @param int $width  Width.
      * @param int $height Height.
      */
-    public function __construct($x, $y, $width, $height)
+    public function __construct($x, int $y, int $width, int $height)
     {
         parent::__construct();
 

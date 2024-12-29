@@ -24,20 +24,20 @@ class TextSourceQualifier extends BaseSourceQualifier
     /**
      * @var string $sourceType The type of the layer.
      */
-    protected $sourceType = 'text';
+    protected string $sourceType = 'text';
 
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = ['text_style', 'source_value', 'text'];
+    protected array $valueOrder = ['text_style', 'source_value', 'text'];
 
     /**
      * TextSourceQualifier constructor.
      *
-     * @param string|Text     $text  The text.
-     * @param array|TextStyle $style The text style.
+     * @param string|Text|null            $text  The text.
+     * @param array|string|TextStyle|null $style The text style.
      */
-    public function __construct($text = null, $style = null)
+    public function __construct(string|Text|null $text = null, array|string|TextStyle|null $style = null)
     {
         parent::__construct();
 
@@ -47,11 +47,11 @@ class TextSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the text.
      *
-     * @param string|Text $text The text.
+     * @param string|Text|null $text The text.
      *
      * @return $this
      */
-    public function text($text)
+    public function text(string|Text|null $text): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($text, Text::class));
 
@@ -61,11 +61,11 @@ class TextSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the text style.
      *
-     * @param array|TextStyle|string $style The text style.
+     * @param array|string|TextStyle|null $style The text style.
      *
      * @return $this
      */
-    public function textStyle($style)
+    public function textStyle(array|string|TextStyle|null $style): static
     {
         if (is_array($style)) {
             $style = TextStyle::fromParams($style);
@@ -79,11 +79,11 @@ class TextSourceQualifier extends BaseSourceQualifier
     /**
      * Text style can be set to a public ID of the text asset that contains style.
      *
-     * @param string|SourceValue $publicId The public ID of the text asset.
+     * @param SourceValue|string|null $publicId The public ID of the text asset.
      *
      * @return $this
      */
-    public function styleFromPublicId($publicId)
+    public function styleFromPublicId(SourceValue|string|null $publicId): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($publicId, SourceValue::class));
 
@@ -93,11 +93,10 @@ class TextSourceQualifier extends BaseSourceQualifier
     /**
      * Gets the text style.
      *
-     * @return TextStyle
      */
-    protected function getStyle()
+    protected function getStyle(): TextStyle
     {
-        if (!$this->value->getSimpleValue('text_style')) {
+        if (! $this->value->getSimpleValue('text_style')) {
             $this->value->setValue(new TextStyle());
         }
 
@@ -107,16 +106,20 @@ class TextSourceQualifier extends BaseSourceQualifier
     /**
      * Internal setter for text style property.
      *
-     * @param string $styleName The style name.
-     * @param string $value     The style.
-     * @param bool   $named     Indicates whether the property is a named property.
-     *
-     * @return static
-     *
+     * @param string  $styleName The style name.
+     * @param ?string $value     The style.
+     * @param bool    $named     Indicates whether the property is a named property.
+     * @param string|null $defaultValue The default value of the property. Used for omitting values that are default.
      * @internal
      */
-    public function setStyleProperty($styleName, $value, $named = false)
-    {
-        return $this->getStyle()->setStyleProperty($styleName, $value, $named);
+    public function setStyleProperty(
+        string $styleName,
+        ?string $value,
+        bool $named = false,
+        ?string $defaultValue = null
+    ): static {
+        $this->getStyle()->setStyleProperty($styleName, $value, $named, $defaultValue);
+
+        return $this;
     }
 }

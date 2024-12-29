@@ -20,11 +20,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter contrast.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function contrast($value)
+    public function contrast(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::CONTRAST, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -32,11 +30,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter saturation.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function saturation($value)
+    public function saturation(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::SATURATION, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -44,11 +40,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter vignetteAmount.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function vignetteAmount($value)
+    public function vignetteAmount(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::VIGNETTE_AMOUNT, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -56,11 +50,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter vibrance.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function vibrance($value)
+    public function vibrance(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::VIBRANCE, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -68,11 +60,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter highlights.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function highlights($value)
+    public function highlights(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::HIGHLIGHTS, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -80,11 +70,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter shadows.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function shadows($value)
+    public function shadows(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::SHADOWS, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -92,11 +80,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter whites.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function whites($value)
+    public function whites(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::WHITES, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -104,11 +90,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter blacks.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function blacks($value)
+    public function blacks(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::BLACKS, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -116,11 +100,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter clarity.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function clarity($value)
+    public function clarity(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::CLARITY, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -128,11 +110,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter dehaze.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function dehaze($value)
+    public function dehaze(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::DEHAZE, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -140,11 +120,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter texture .
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function texture($value)
+    public function texture(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::TEXTURE, $value, EffectRange::DEFAULT_RANGE);
     }
@@ -152,11 +130,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter sharpness.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function sharpness($value)
+    public function sharpness(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::SHARPNESS, $value, LightroomEffect::SHARPNESS_RANGE);
     }
@@ -164,11 +140,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter color noise reduction.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function colorNoiseReduction($value)
+    public function colorNoiseReduction(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::COLOR_NOISE_REDUCTION, $value, EffectRange::PERCENT);
     }
@@ -176,11 +150,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter noise reduction.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function noiseReduction($value)
+    public function noiseReduction(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::NOISE_REDUCTION, $value, EffectRange::PERCENT);
     }
@@ -188,12 +160,10 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter sharpen detail.
      *
-     * @param int $value
      *
-     * @return static
      */
 
-    public function sharpenDetail($value)
+    public function sharpenDetail(int $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::SHARPEN_DETAIL, $value, EffectRange::PERCENT);
     }
@@ -201,11 +171,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter sharpen edge masking.
      *
-     * @param int $value
      *
-     * @return static
      */
-    public function sharpenEdgeMasking($value)
+    public function sharpenEdgeMasking(int $value): static
     {
         return $this->addLightroomFilter(
             LightroomEffect::SHARPEN_EDGE_MASKING,
@@ -217,11 +185,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter exposure.
      *
-     * @param float $value
      *
-     * @return static
      */
-    public function exposure($value)
+    public function exposure(float $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::EXPOSURE, $value, LightroomEffect::EXPOSURE_RANGE);
     }
@@ -229,11 +195,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter sharpen radius.
      *
-     * @param float $value
      *
-     * @return static
      */
-    public function sharpenRadius($value)
+    public function sharpenRadius(float $value): static
     {
         return $this->addLightroomFilter(
             LightroomEffect::SHARPEN_RADIUS,
@@ -245,11 +209,9 @@ trait LightroomEffectTrait
     /**
      * Lightroom filter white balance.
      *
-     * @param string $value
      *
-     * @return static
      */
-    public function whiteBalance($value)
+    public function whiteBalance(string $value): static
     {
         return $this->addLightroomFilter(LightroomEffect::WHITE_BALANCE, $value);
     }
@@ -258,22 +220,21 @@ trait LightroomEffectTrait
     /**
      * Generic lightroom filter.
      *
-     * @param string $name
-     * @param mixed  $value
      *
-     * @return static
      */
-    public function genericFilter($name, $value)
+    public function genericFilter(string $name, mixed $value): static
     {
         return $this->addLightroomFilter($name, $value);
     }
 
     /**
-     * @param $name
-     * @param $value
-     * @param $range
+     * Adds Lightroom Filter
      *
-     * @return static
+     * @param ?string    $name  The name of the filter.
+     * @param mixed      $value The value of the filter.
+     * @param array|null $range The valid range of the value.
+     *
+     * @return $this
      */
-    abstract public function addLightroomFilter($name, $value, $range = null);
+    abstract public function addLightroomFilter(?string $name, mixed $value, ?array $range = null): static;
 }

@@ -15,24 +15,24 @@ namespace Cloudinary\Transformation;
  */
 class Corners extends ExpressionQualifierMultiValue
 {
-    const MAX_ARGUMENTS = 4;
+    public const MAX_ARGUMENTS = 4;
 
     use CornersTrait;
 
     /**
      * @var array $argumentOrder The order of the arguments.
      */
-    protected $argumentOrder = ['topLeft', 'topRight', 'bottomRight', 'bottomLeft'];
+    protected array $argumentOrder = ['topLeft', 'topRight', 'bottomRight', 'bottomLeft'];
 
     /**
      * Corners constructor.
      *
      * @param int|string|array $topLeft     Top-left corner radius.
-     * @param int              $topRight    Top-right corner radius.
-     * @param int              $bottomRight Bottom-right corner radius.
-     * @param int              $bottomLeft  Bottom-left corner radius.
+     * @param int|null         $topRight    Top-right corner radius.
+     * @param int|null         $bottomRight Bottom-right corner radius.
+     * @param int|null         $bottomLeft  Bottom-left corner radius.
      */
-    public function __construct($topLeft, $topRight = null, $bottomRight = null, $bottomLeft = null)
+    public function __construct($topLeft, ?int $topRight = null, ?int $bottomRight = null, ?int $bottomLeft = null)
     {
         if (is_array($topLeft)) {
             $corners = array_pad($topLeft, 4, null);

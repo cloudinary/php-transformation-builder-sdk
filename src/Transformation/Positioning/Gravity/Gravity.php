@@ -33,9 +33,8 @@ abstract class Gravity
      *
      * @param mixed ...$objects The names of the objects.
      *
-     * @return ObjectGravity
      */
-    public static function focusOn(...$objects)
+    public static function focusOn(...$objects): ObjectGravity
     {
         return new ObjectGravity(...$objects);
     }
