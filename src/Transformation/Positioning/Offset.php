@@ -20,10 +20,10 @@ class Offset extends BaseAction
     /**
      * Offset constructor.
      *
-     * @param float|int|string $x
-     * @param float|int|string $y
+     * @param float|int|string|null $x
+     * @param float|int|string|null $y
      */
-    public function __construct($x = null, $y = null)
+    public function __construct(float|int|string|null $x = null, float|int|string|null $y = null)
     {
         parent::__construct();
 
@@ -33,11 +33,9 @@ class Offset extends BaseAction
     /**
      * @internal
      *
-     * @param $value
      *
-     * @return static
      */
-    public function setOffsetValue($value)
+    public function setOffsetValue($value): static
     {
         return $this->addQualifier($value);
     }

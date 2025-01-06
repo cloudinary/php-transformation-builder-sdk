@@ -17,5 +17,5 @@ namespace Cloudinary\Transformation;
  */
 interface FormatInterface extends ImageFormatInterface, VideoFormatInterface, AudioFormatInterface
 {
-    const AUTO = 'auto';
+    public const AUTO = 'auto';
 }

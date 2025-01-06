@@ -15,12 +15,12 @@ namespace Cloudinary\Transformation;
  */
 abstract class GenerativeEffect
 {
-    const GENERATIVE_RECOLOR = 'gen_recolor';
-    const GENERATIVE_REMOVE  = 'gen_remove';
-    const GENERATIVE_REPLACE = 'gen_replace';
-    const GENERATIVE_RESTORE = 'gen_restore';
-    const UPSCALE            = 'upscale';
-    const ENHANCE            = 'enhance';
+    public const GENERATIVE_RECOLOR = 'gen_recolor';
+    public const GENERATIVE_REMOVE  = 'gen_remove';
+    public const GENERATIVE_REPLACE = 'gen_replace';
+    public const GENERATIVE_RESTORE = 'gen_restore';
+    public const UPSCALE            = 'upscale';
+    public const ENHANCE     = 'enhance';
 
     use GenerativeEffectTrait;
 }

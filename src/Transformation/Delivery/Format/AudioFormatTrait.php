@@ -20,9 +20,8 @@ trait AudioFormatTrait
     /**
      * Audio format mp3.
      *
-     * @return static
      */
-    public static function audioMp3()
+    public static function audioMp3(): static
     {
         return static::createFormat(Format::MP3);
     }
@@ -30,9 +29,8 @@ trait AudioFormatTrait
     /**
      * Audio format aac.
      *
-     * @return static
      */
-    public static function audioAac()
+    public static function audioAac(): static
     {
         return static::createFormat(Format::AAC);
     }
@@ -40,9 +38,8 @@ trait AudioFormatTrait
     /**
      * Audio format m4a.
      *
-     * @return static
      */
-    public static function audioM4a()
+    public static function audioM4a(): static
     {
         return static::createFormat(Format::M4A);
     }
@@ -50,9 +47,8 @@ trait AudioFormatTrait
     /**
      * Audio format ogg.
      *
-     * @return static
      */
-    public static function audioOgg()
+    public static function audioOgg(): static
     {
         return static::createFormat(Format::OGG);
     }
@@ -60,9 +56,8 @@ trait AudioFormatTrait
     /**
      * Audio format wav.
      *
-     * @return static
      */
-    public static function audioWav()
+    public static function audioWav(): static
     {
         return static::createFormat(Format::WAV);
     }
@@ -70,9 +65,8 @@ trait AudioFormatTrait
     /**
      * Audio format aiff.
      *
-     * @return static
      */
-    public static function audioAiff()
+    public static function audioAiff(): static
     {
         return static::createFormat(Format::AIFF);
     }
@@ -80,9 +74,8 @@ trait AudioFormatTrait
     /**
      * Audio format flac.
      *
-     * @return static
      */
-    public static function audioFlac()
+    public static function audioFlac(): static
     {
         return static::createFormat(Format::FLAC);
     }
@@ -90,9 +83,8 @@ trait AudioFormatTrait
     /**
      * Audio format amr.
      *
-     * @return static
      */
-    public static function audioAmr()
+    public static function audioAmr(): static
     {
         return static::createFormat(Format::AMR);
     }
@@ -100,9 +92,8 @@ trait AudioFormatTrait
     /**
      * Audio format midi.
      *
-     * @return static
      */
-    public static function audioMidi()
+    public static function audioMidi(): static
     {
         return static::createFormat(Format::MIDI);
     }

@@ -20,9 +20,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity animal.
      *
-     * @return string
      */
-    public static function animal()
+    public static function animal(): string
     {
         return ObjectGravity::ANIMAL;
     }
@@ -30,9 +29,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity bird.
      *
-     * @return string
      */
-    public static function bird()
+    public static function bird(): string
     {
         return ObjectGravity::BIRD;
     }
@@ -40,9 +38,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity cat.
      *
-     * @return string
      */
-    public static function cat()
+    public static function cat(): string
     {
         return ObjectGravity::CAT;
     }
@@ -50,9 +47,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity dog.
      *
-     * @return string
      */
-    public static function dog()
+    public static function dog(): string
     {
         return ObjectGravity::DOG;
     }
@@ -60,9 +56,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity horse.
      *
-     * @return string
      */
-    public static function horse()
+    public static function horse(): string
     {
         return ObjectGravity::HORSE;
     }
@@ -70,9 +65,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity sheep.
      *
-     * @return string
      */
-    public static function sheep()
+    public static function sheep(): string
     {
         return ObjectGravity::SHEEP;
     }
@@ -80,9 +74,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity cow.
      *
-     * @return string
      */
-    public static function cow()
+    public static function cow(): string
     {
         return ObjectGravity::COW;
     }
@@ -90,9 +83,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity elephant.
      *
-     * @return string
      */
-    public static function elephant()
+    public static function elephant(): string
     {
         return ObjectGravity::ELEPHANT;
     }
@@ -100,9 +92,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity bear.
      *
-     * @return string
      */
-    public static function bear()
+    public static function bear(): string
     {
         return ObjectGravity::BEAR;
     }
@@ -110,9 +101,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity zebra.
      *
-     * @return string
      */
-    public static function zebra()
+    public static function zebra(): string
     {
         return ObjectGravity::ZEBRA;
     }
@@ -120,9 +110,8 @@ trait AnimalObjectGravityBuilderTrait
     /**
      * Gravity giraffe.
      *
-     * @return string
      */
-    public static function giraffe()
+    public static function giraffe(): string
     {
         return ObjectGravity::GIRAFFE;
     }

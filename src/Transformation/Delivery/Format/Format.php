@@ -42,9 +42,8 @@ class Format extends BaseAction implements FormatInterface
      *
      * @param string $format The file format.
      *
-     * @return Format
      */
-    public function format($format)
+    public function format(string $format): static
     {
         $this->qualifiers[FormatQualifier::getName()]->format($format);
 
@@ -56,11 +55,10 @@ class Format extends BaseAction implements FormatInterface
      *
      * @param bool $useLossy Indicates whether to use lossy compression.
      *
-     * @return Format
      *
      * @see Flag::lossy
      */
-    public function lossy($useLossy = true)
+    public function lossy(bool $useLossy = true): Format
     {
         return $this->setFlag(Flag::lossy(), $useLossy);
     }
@@ -68,13 +66,12 @@ class Format extends BaseAction implements FormatInterface
     /**
      * Applicable only for JPG file format
      *
-     * @param string $mode The mode to determine a specific progressive outcome.
+     * @param string|null $mode The mode to determine a specific progressive outcome.
      *
-     * @return Format
      *
      * @see Flag::progressive
      */
-    public function progressive($mode = null)
+    public function progressive(?string $mode = null): Format
     {
         return $this->setFlag(Flag::progressive($mode));
     }
@@ -82,11 +79,10 @@ class Format extends BaseAction implements FormatInterface
     /**
      * Ensures that images with a transparency channel will be delivered in PNG format.
      *
-     * @return Format
      *
      * @see Flag::preserveTransparency
      */
-    public function preserveTransparency()
+    public function preserveTransparency(): Format
     {
         return $this->setFlag(Flag::preserveTransparency());
     }
@@ -94,11 +90,10 @@ class Format extends BaseAction implements FormatInterface
     /**
      * Ensures that an alpha channel is not applied to a TIFF image if it is a mask channel.
      *
-     * @return Format
      *
      * @see Flag::ignoreMaskChannels
      */
-    public function ignoreMaskChannels()
+    public function ignoreMaskChannels(): Format
     {
         return $this->setFlag(Flag::ignoreMaskChannels());
     }

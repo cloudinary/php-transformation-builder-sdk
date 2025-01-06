@@ -28,17 +28,20 @@ trait FillPadTrait
      *
      * Only supported in conjunction with Automatic cropping (Gravity::auto())
      *
-     * @param int|float|string|null $width      The required width of a transformed asset.
-     * @param int|float|null        $height     The required height of a transformed asset.
-     * @param FocalGravity|string   $gravity    Specifies which part of the original image to include.
-     * @param string|ColorValue     $background The background color of the image.
+     * @param float|int|string|null    $width      The required width of a transformed asset.
+     * @param float|int|null           $height     The required height of a transformed asset.
+     * @param string|FocalGravity|null $gravity    Specifies which part of the original image to include.
+     * @param string|ColorValue|null   $background The background color of the image.
      *
-     * @return FillPad
      *
      * @see Gravity::auto
      */
-    public static function fillPad($width = null, $height = null, $gravity = null, $background = null)
-    {
+    public static function fillPad(
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        string|FocalGravity|null $gravity = null,
+        ColorValue|string|null $background = null
+    ): FillPad {
         return new FillPad(CropMode::FILL_PAD, $width, $height, $gravity, $background);
     }
 }

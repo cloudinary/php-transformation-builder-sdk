@@ -18,12 +18,12 @@ use Cloudinary\StringUtils;
 class FetchSourceQualifier extends BaseSourceQualifier
 {
 
-    const VALUE_CLASS = RemoteSourceValue::class;
+    protected const VALUE_CLASS = RemoteSourceValue::class;
 
     /**
-     * @var string|RemoteSourceValue $sourceType The type of the layer.
+     * @var string $sourceType The type of the layer.
      */
-    protected $sourceType = 'fetch';
+    protected string $sourceType = 'fetch';
 
     /**
      * FetchLayerQualifier constructor.
@@ -40,14 +40,14 @@ class FetchSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the URL of the remote asset.
      *
-     * @param string|RemoteSourceValue $fetchUrl The URL of the asset.
+     * @param string|RemoteSourceValue|null $fetchUrl The URL of the asset.
      *
      * @return $this
      */
-    public function fetchUrl($fetchUrl)
+    public function fetchUrl(RemoteSourceValue|string|null $fetchUrl): static
     {
         if (StringUtils::contains($fetchUrl, ':fetch:')) {
-            list($this->assetType, $this->sourceType, $fetchUrl) = explode(':', $fetchUrl, 3);
+            [$this->assetType, $this->sourceType, $fetchUrl] = explode(':', $fetchUrl, 3);
         }
 
         $this->setQualifierValue(StringUtils::truncatePrefix($fetchUrl, 'fetch:'));

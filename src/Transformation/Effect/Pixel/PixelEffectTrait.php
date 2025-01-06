@@ -20,11 +20,10 @@ trait PixelEffectTrait
     /**
      * Applies a blurring filter to the asset.
      *
-     * @param int $strength The strength of the blur. (Range: 1 to 2000, Server default: 100)
+     * @param int|null $strength The strength of the blur. (Range: 1 to 2000, Server default: 100)
      *
-     * @return Blur
      */
-    public static function blur($strength = null)
+    public static function blur(?int $strength = null): Blur
     {
         return new Blur($strength);
     }
@@ -32,11 +31,10 @@ trait PixelEffectTrait
     /**
      * Applies a blurring filter to the faces detected on the asset.
      *
-     * @param int $strength The strength of the blur. (Range: 1 to 2000, Server default: 100)
+     * @param int|null $strength The strength of the blur. (Range: 1 to 2000, Server default: 100)
      *
-     * @return Blur
      */
-    public static function blurFaces($strength = null)
+    public static function blurFaces(?int $strength = null): Blur
     {
         return (new Blur($strength))->region(Region::faces());
     }
@@ -44,27 +42,30 @@ trait PixelEffectTrait
     /**
      * Applies a blurring filter to the region on the asset.
      *
-     * @param int|string $strength The strength of the blur. (Range: 1 to 2000, Server default: 100)
-     * @param int|string $x        X.
-     * @param int|string $y        Y.
-     * @param int|string $width    Width.
-     * @param int|string $height   Height.
+     * @param int|string|null $strength The strength of the blur. (Range: 1 to 2000, Server default: 100)
+     * @param int|string|null $x        X.
+     * @param int|string|null $y        Y.
+     * @param int|string|null $width    Width.
+     * @param int|string|null $height   Height.
      *
-     * @return Blur
      */
-    public static function blurRegion($strength = null, $x = null, $y = null, $width = null, $height = null)
-    {
+    public static function blurRegion(
+        int|string|null $strength = null,
+        int|string|null $x = null,
+        int|string|null $y = null,
+        int|string|null $width = null,
+        int|string|null $height = null
+    ): Blur {
         return (new Blur($strength))->region(Region::custom($x, $y, $width, $height));
     }
 
     /**
      * Applies a vignette effect.
      *
-     * @param int $strength The strength of the vignette. (Range: 0 to 100, Server default: 20)
+     * @param int|null $strength The strength of the vignette. (Range: 0 to 100, Server default: 20)
      *
-     * @return StrengthEffectAction
      */
-    public static function vignette($strength = null)
+    public static function vignette(?int $strength = null): StrengthEffectAction
     {
         return EffectAction::withStrength(PixelEffect::VIGNETTE, EffectRange::PERCENT, $strength);
     }

@@ -29,7 +29,6 @@ class AudioSource extends AssetBasedSource
     /**
      * AudioSource constructor.
      *
-     * @param $source
      */
     public function __construct($source)
     {
@@ -41,11 +40,10 @@ class AudioSource extends AssetBasedSource
      *
      * Creates a new VideoTransformation if not initialized.
      *
-     * @return VideoTransformation
      *
      * @internal
      */
-    public function getTransformation()
+    public function getTransformation(): VideoTransformation
     {
         if (! isset($this->transformation)) {
             $this->transformation = new VideoTransformation();
@@ -57,11 +55,10 @@ class AudioSource extends AssetBasedSource
     /**
      * Getter for the layer qualifier.
      *
-     * @return AudioSourceQualifier
      *
      * @internal
      */
-    protected function getSourceQualifier()
+    protected function getSourceQualifier(): AudioSourceQualifier
     {
         if (! isset($this->qualifiers['source'])) {
             $this->qualifiers['source'] = new AudioSourceQualifier(null);
@@ -74,11 +71,10 @@ class AudioSource extends AssetBasedSource
     /**
      * Named constructor.
      *
-     * @param BaseSource|string $source The layer source.
+     * @param string|BaseSource $source The layer source.
      *
-     * @return static
      */
-    protected static function createWithSource($source)
+    protected static function createWithSource(BaseSource|string $source): BaseSource|string|static
     {
         return $source;
     }

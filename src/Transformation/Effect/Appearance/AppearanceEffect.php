@@ -16,9 +16,9 @@ namespace Cloudinary\Transformation;
 abstract class AppearanceEffect
 {
     // Common effects
-    const DESHAKE = 'deshake';
-    const FADE    = 'fade';
-    const NOISE   = 'noise';
+    public const DESHAKE = 'deshake';
+    public const FADE    = 'fade';
+    public const NOISE = 'noise';
 
     use VideoAppearanceEffectTrait;
 }

@@ -23,10 +23,8 @@ trait AnimatedEditTrait
      * Controls the time delay between the frames of an animated image, in milliseconds.
      *
      * @param int $delay The delay in milliseconds
-     *
-     * @return AnimatedEdit
      */
-    public function delay($delay)
+    public function delay(int $delay): AnimatedEdit
     {
         return $this->addQualifier(ClassUtils::forceInstance($delay, Delay::class));
     }
@@ -38,11 +36,10 @@ trait AnimatedEditTrait
      *
      * You can also specify the loop effect without a numeric value to instruct it to loop the GIF infinitely.
      *
-     * @param int $additionalIterations The additional number of times to play the animated GIF.
+     * @param int|null $additionalIterations The additional number of times to play the animated GIF.
      *
-     * @return AnimatedEdit
      */
-    public function loop($additionalIterations = null)
+    public function loop(?int $additionalIterations = null): AnimatedEdit
     {
         return $this->addQualifier(ClassUtils::forceInstance($additionalIterations, Loop::class));
     }

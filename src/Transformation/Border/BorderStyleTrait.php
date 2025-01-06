@@ -20,12 +20,11 @@ trait BorderStyleTrait
     /**
      * Adds a border around the image.
      *
-     * @param int    $width The width in pixels.
-     * @param string $color The color of the border.
+     * @param int|null    $width The width in pixels.
+     * @param string|null $color The color of the border.
      *
-     * @return Border
      */
-    public static function solid($width = null, $color = null)
+    public static function solid(?int $width = null, ?string $color = null): Border
     {
         return (new Border())->style('solid')->width($width)->color($color);
     }

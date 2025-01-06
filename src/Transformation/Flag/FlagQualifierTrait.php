@@ -20,12 +20,11 @@ trait FlagQualifierTrait
     /**
      * Sets the flag.
      *
-     * @param string             $flagName The name of the flag.
-     * @param string|array|mixed $value    An optional value of the flag.
+     * @param string     $flagName The name of the flag.
+     * @param mixed|null $value    An optional value of the flag.
      *
-     * @return FlagQualifier
      */
-    public static function flag($flagName, $value = null)
+    public static function flag(string $flagName, mixed $value = null): FlagQualifier
     {
         return new FlagQualifier($flagName, $value);
     }

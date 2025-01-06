@@ -18,23 +18,23 @@ class DropShadow extends EffectAction
     /**
      * DropShadow constructor.
      *
-     * @param int $azimuth   Value in range 0 - 360 (degrees).
-     * @param int $elevation Value in range 0 - 90 (degrees).
-     * @param int $spread    Value in range 0 -100.
+     * @param int|null      $azimuth   Value in range 0 - 360 (degrees).
+     * @param int|null      $elevation Value in range 0 - 90 (degrees).
+     * @param int|null $spread    Value in range 0 -100.
      */
-    public function __construct($azimuth = null, $elevation = null, $spread = null)
+    public function __construct(?int $azimuth = null, ?int$elevation = null, ?int $spread = null)
     {
         parent::__construct(new DropShadowQualifier($azimuth, $elevation, $spread));
     }
 
     /**
-     * Sets the direction the light is coming from to cause the shadow effect. 
+     * Sets the direction the light is coming from to cause the shadow effect.
      *
-     * @param int $azimuth Value in range 0 - 360 (degrees).
+     * @param ?int $azimuth Value in range 0 - 360 (degrees).
      *
      * @return $this
      */
-    public function azimuth($azimuth)
+    public function azimuth(?int $azimuth): static
     {
         $this->getMainQualifier()->azimuth($azimuth);
 
@@ -44,11 +44,11 @@ class DropShadow extends EffectAction
     /**
      *  Sets the height of the light source above the 'ground' to cause the shadow effect.
      *
-     * @param int $elevation Value in range 0 - 90 (degrees).
+     * @param ?int $elevation Value in range 0 - 90 (degrees).
      *
      * @return $this
      */
-    public function elevation($elevation)
+    public function elevation(?int $elevation): static
     {
         $this->getMainQualifier()->elevation($elevation);
 
@@ -56,13 +56,13 @@ class DropShadow extends EffectAction
     }
 
     /**
-     * Sets the spread of the light source. A small number means 'point' light. A larger number means 'area' light. 
+     * Sets the spread of the light source. A small number means 'point' light. A larger number means 'area' light.
      *
-     * @param int $spread Value in range 0 -100.
+     * @param ?int $spread Value in range 0 -100.
      *
      * @return $this
      */
-    public function spread($spread)
+    public function spread(?int $spread): static
     {
         $this->getMainQualifier()->spread($spread);
 

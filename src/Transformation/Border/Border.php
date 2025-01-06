@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Cloudinary PHP package.
  *
@@ -24,18 +25,18 @@ use Cloudinary\ClassUtils;
  */
 class Border extends BaseAction
 {
-    const MAIN_QUALIFIER = BorderQualifier::class;
+    protected const MAIN_QUALIFIER = BorderQualifier::class;
 
     use BorderStyleTrait;
 
     /**
      * Sets the width of the border.
      *
-     * @param int|string $width The width in pixels.
+     * @param int|string|null $width The width in pixels.
      *
      * @return $this
      */
-    public function width($width)
+    public function width(int|string|null $width): static
     {
         $this->getMainQualifier()->width($width);
 
@@ -49,7 +50,7 @@ class Border extends BaseAction
      *
      * @return $this
      */
-    public function style($style)
+    public function style(string $style): static
     {
         $this->getMainQualifier()->style($style);
 
@@ -59,11 +60,11 @@ class Border extends BaseAction
     /**
      * Sets the color of the border.
      *
-     * @param string $color The color of the border.
+     * @param mixed $color The color of the border.
      *
      * @return $this
      */
-    public function color($color)
+    public function color(mixed $color): static
     {
         $this->getMainQualifier()->color($color);
 
@@ -81,18 +82,21 @@ class Border extends BaseAction
      * corner according to $bottomRight.<br>
      * All qualifiers specified: Each corner is rounded accordingly.
      *
-     * @param int|string|CornerRadius $radiusOrTopLeft The radius in pixels of the top left corner or all the corners
-     *                                                 if no other corners are specified.
-     * @param int                     $topRight        The radius in pixels of the top right corner.
-     * @param int                     $bottomRight     The radius in pixels of the bottom right corner.
-     * @param int                     $bottomLeft      The radius in pixels of the bottom left corner.
+     * @param int|string|CornerRadius|RoundCorners $radiusOrTopLeft The radius in pixels of the top left corner or all
+     *                                                              the corners if no other corners are specified.
+     * @param int|null                             $topRight        The radius in pixels of the top right corner.
+     * @param int|null                             $bottomRight     The radius in pixels of the bottom right corner.
+     * @param int|null                             $bottomLeft      The radius in pixels of the bottom left corner.
      *
-     * @return static
      *
-     * @see \Cloudinary\Transformation\RoundCorners
+     * @see RoundCorners
      */
-    public function roundCorners($radiusOrTopLeft, $topRight = null, $bottomRight = null, $bottomLeft = null)
-    {
+    public function roundCorners(
+        int|string|CornerRadius|RoundCorners $radiusOrTopLeft,
+        ?int $topRight = null,
+        ?int $bottomRight = null,
+        ?int $bottomLeft = null
+    ): static {
         $qualifiers = ArrayUtils::safeFilter([$radiusOrTopLeft, $topRight, $bottomRight, $bottomLeft]);
 
         return $this->addQualifier(ClassUtils::verifyVarArgsInstance($qualifiers, RoundCorners::class));

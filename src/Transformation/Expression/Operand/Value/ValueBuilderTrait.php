@@ -22,9 +22,8 @@ trait ValueBuilderTrait
      *
      * @param int $value The value.
      *
-     * @return Expression
      */
-    public function int($value)
+    public function int(int $value): Expression
     {
         return $this->setRightOperand(UVal::int($value));
     }
@@ -34,9 +33,8 @@ trait ValueBuilderTrait
      *
      * @param float $value The value.
      *
-     * @return Expression
      */
-    public function float($value)
+    public function float(float $value): Expression
     {
         return $this->setRightOperand(UVal::float($value));
     }
@@ -46,9 +44,8 @@ trait ValueBuilderTrait
      *
      * @param int|float|mixed $value The value.
      *
-     * @return Expression
      */
-    public function numeric($value)
+    public function numeric(mixed $value): Expression
     {
         return $this->setRightOperand(UVal::numeric($value));
     }
@@ -58,9 +55,8 @@ trait ValueBuilderTrait
      *
      * @param string $value The value.
      *
-     * @return Expression
      */
-    public function string($value)
+    public function string(string $value): Expression
     {
         return $this->setRightOperand(UVal::string($value));
     }
@@ -70,9 +66,8 @@ trait ValueBuilderTrait
      *
      * @param array $value The array value.
      *
-     * @return Expression
      */
-    public function stringArray($value)
+    public function stringArray(array $value): Expression
     {
         return $this->setRightOperand(UVal::stringArray($value));
     }
@@ -82,9 +77,8 @@ trait ValueBuilderTrait
      *
      * @param string $publicId The public ID of the file.
      *
-     * @return Expression
      */
-    public function assetReference($publicId)
+    public function assetReference(string $publicId): Expression
     {
         return $this->setRightOperand(UVal::assetReference($publicId));
     }

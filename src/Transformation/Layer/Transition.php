@@ -26,7 +26,6 @@ class Transition extends VideoSource
     /**
      * VideoTransitionSource constructor.
      *
-     * @param $source
      */
     public function __construct($source)
     {
@@ -38,11 +37,9 @@ class Transition extends VideoSource
     /**
      * Named constructor.
      *
-     * @param $source
      *
-     * @return Transition
      */
-    public static function videoSource($source)
+    public static function videoSource($source): Transition
     {
         return new self($source);
     }

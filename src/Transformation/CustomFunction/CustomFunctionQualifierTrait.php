@@ -20,17 +20,19 @@ trait CustomFunctionQualifierTrait
     /**
      * Injects a custom function into the image transformation pipeline.
      *
-     * @param string $source     Source of this custom function
-     * @param string $type       The type of custom function (CustomFunction::REMOTE or CustomFunction::WASM).
-     * @param bool   $preprocess Preprocess custom function. Only remote functions are supported for preprocess
+     * @param string      $source     Source of this custom function
+     * @param string|null $type       The type of custom function (CustomFunction::REMOTE or CustomFunction::WASM).
+     * @param bool        $preprocess Preprocess custom function. Only remote functions are supported for preprocess
      *
-     * @return CustomFunction
      *
      * @see CustomFunction::REMOTE
      * @see CustomFunction::WASM
      */
-    public static function customFunction($source, $type = null, $preprocess = false)
-    {
+    public static function customFunction(
+        string $source,
+        ?string $type = null,
+        bool $preprocess = false
+    ): CustomFunction {
         return new CustomFunction($source, $type, $preprocess);
     }
 }

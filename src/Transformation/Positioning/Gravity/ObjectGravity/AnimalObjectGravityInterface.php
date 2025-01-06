@@ -18,15 +18,15 @@ namespace Cloudinary\Transformation;
 interface AnimalObjectGravityInterface
 {
     //Animal Category
-    const ANIMAL   = 'animal';
-    const BIRD     = 'bird';
-    const CAT      = 'cat';
-    const DOG      = 'dog';
-    const HORSE    = 'horse';
-    const SHEEP    = 'sheep';
-    const COW      = 'cow';
-    const ELEPHANT = 'elephant';
-    const BEAR     = 'bear';
-    const ZEBRA    = 'zebra';
-    const GIRAFFE  = 'giraffe';
+    public const ANIMAL = 'animal';
+    public const BIRD   = 'bird';
+    public const CAT  = 'cat';
+    public const DOG = 'dog';
+    public const HORSE = 'horse';
+    public const SHEEP = 'sheep';
+    public const COW   = 'cow';
+    public const ELEPHANT = 'elephant';
+    public const BEAR     = 'bear';
+    public const ZEBRA = 'zebra';
+    public const GIRAFFE = 'giraffe';
 }

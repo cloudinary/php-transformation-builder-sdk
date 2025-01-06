@@ -26,11 +26,10 @@ trait FormatTrait
      *
      * @param string|array $format The format.
      *
-     * @return static
      *
      * @internal
      */
-    protected static function createFormat(...$format)
+    protected static function createFormat(...$format): static
     {
         return new static(...$format);
     }
@@ -38,9 +37,8 @@ trait FormatTrait
     /**
      * Auto format.
      *
-     * @return static
      */
-    public static function auto()
+    public static function auto(): static
     {
         return static::createFormat(FormatInterface::AUTO);
     }

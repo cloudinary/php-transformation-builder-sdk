@@ -18,5 +18,5 @@ class Duration extends BaseOffsetQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'du';
+    protected static string $key = 'du';
 }

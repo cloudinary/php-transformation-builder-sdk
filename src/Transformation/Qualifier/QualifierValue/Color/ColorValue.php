@@ -35,11 +35,11 @@ class ColorValue extends QualifierMultiValue
     /**
      * Sets the color.
      *
-     * @param string|ColorValue|QualifierMultiValue|BaseQualifier $color The color.
+     * @param string|BaseQualifier|ColorValue|QualifierMultiValue $color The color.
      *
      * @return $this
      */
-    public function color($color)
+    public function color(ColorValue|QualifierMultiValue|BaseQualifier|string $color): static
     {
         if ($color instanceof BaseQualifier) {
             $color = $color->getValue(); // for those who accidentally pass ColorQualifier instead of the value

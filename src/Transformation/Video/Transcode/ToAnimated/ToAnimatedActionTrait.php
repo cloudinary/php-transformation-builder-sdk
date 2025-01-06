@@ -32,9 +32,8 @@ trait ToAnimatedActionTrait
      *                          String - The number of seconds between each frame to sample from the original video.
      *                          e.g. 2.3s takes one frame every 2.3 seconds.
      *
-     * @return static
      */
-    public function sampling($value)
+    public function sampling(int|string $value): static
     {
         return $this->addQualifier(ClassUtils::verifyInstance($value, VideoSampling::class));
     }
@@ -42,15 +41,13 @@ trait ToAnimatedActionTrait
     /**
      * Sets the delay between frames of an animated image in milliseconds.
      *
-     * @param Delay|int $delay
      *
-     * @return static
      *
      * @deprecated use Animated::edit()->delay($delay) instead.
      *
      * @see AnimatedEdit
      */
-    public function delay($delay)
+    public function delay(Delay|int $delay): static
     {
         return $this->addQualifier(ClassUtils::verifyInstance($delay, Delay::class));
     }
@@ -58,11 +55,10 @@ trait ToAnimatedActionTrait
     /**
      * Sets the animated image format.
      *
-     * @param AnimatedFormat|string $format The format.
+     * @param string|AnimatedFormat $format The format.
      *
-     * @return static
      */
-    public function format($format)
+    public function format(AnimatedFormat|string $format): static
     {
         return $this->importAction(ClassUtils::verifyInstance($format, AnimatedFormat::class));
     }

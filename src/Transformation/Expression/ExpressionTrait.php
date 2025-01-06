@@ -22,9 +22,8 @@ trait ExpressionTrait
      *
      * @param mixed $value The expression value.
      *
-     * @return static
      */
-    public function expression($value)
+    public function expression(mixed $value): Expression
     {
         return $this->setRightOperand($value);
     }

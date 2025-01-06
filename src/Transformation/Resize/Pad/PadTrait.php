@@ -29,17 +29,16 @@ trait PadTrait
      * If the proportions of the original image do not match the given width and height,
      * padding is added to the image to reach the required size
      *
-     * @param int|float|string|null $width      The required width of a transformed asset.
-     * @param int|float|null        $height     The required height of a transformed asset.
-     * @param string|ColorValue     $background Sets the background color of the image.
+     * @param float|int|string|null $width      The required width of a transformed asset.
+     * @param float|int|null        $height     The required height of a transformed asset.
+     * @param mixed                 $background Sets the background color of the image.
      *
-     * @return Pad
      */
     public static function pad(
-        $width = null,
-        $height = null,
-        $background = null
-    ) {
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        mixed $background = null
+    ): Pad {
         return static::createPad(CropMode::PAD, $width, $height, $background);
     }
 
@@ -50,19 +49,18 @@ trait PadTrait
      *
      * This mode doesn't scale up the image if your requested dimensions are bigger than the original image's.
      *
-     * @param int|float|string|null $width      The required width of a transformed asset.
-     * @param int|float|null        $height     The required height of a transformed asset.
-     * @param string|ColorValue     $background Sets the background color of the image.
+     * @param float|int|string|null  $width      The required width of a transformed asset.
+     * @param float|int|null         $height     The required height of a transformed asset.
+     * @param string|ColorValue|null $background Sets the background color of the image.
      *
-     * @return Pad
      *
-     * @see \Cloudinary\Transformation\Pad::pad
+     * @see Pad::pad
      */
     public static function limitPad(
-        $width = null,
-        $height = null,
-        $background = null
-    ) {
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        ColorValue|string|null $background = null
+    ): Pad {
         return static::createPad(CropMode::LIMIT_PAD, $width, $height, $background);
     }
 
@@ -73,30 +71,27 @@ trait PadTrait
      *
      * This mode doesn't scale down the image if your requested dimensions are smaller than the original image's.
      *
-     * @param int|float|string|null $width      The required width of a transformed asset.
-     * @param int|float|null        $height     The required height of a transformed asset.
-     * @param string|ColorValue     $background Sets the background color of the image.
+     * @param float|int|string|null  $width      The required width of a transformed asset.
+     * @param float|int|null         $height     The required height of a transformed asset.
+     * @param string|ColorValue|null $background Sets the background color of the image.
      *
-     * @return Pad
      *
-     * @see \Cloudinary\Transformation\Pad::pad
+     * @see Pad::pad
      */
     public static function minimumPad(
-        $width = null,
-        $height = null,
-        $background = null
-    ) {
+        float|int|string|null $width = null,
+        float|int|null $height = null,
+        ColorValue|string|null $background = null
+    ): Pad {
         return static::createPad(CropMode::MINIMUM_PAD, $width, $height, $background);
     }
 
     /**
      * Creates Pad instance.
      *
-     * @param mixed ...$args
      *
-     * @return Pad
      */
-    protected static function createPad(...$args)
+    protected static function createPad(...$args): Pad
     {
         return new Pad(...$args);
     }
@@ -108,7 +103,7 @@ trait PadTrait
      *
      * @return $this
      */
-    public function position(BasePosition $position)
+    public function position(BasePosition $position): static
     {
         return $this->addQualifier($position);
     }
@@ -116,13 +111,12 @@ trait PadTrait
     /**
      * Internal setter for offset.
      *
-     * @param $value
      *
      * @return $this
      *
      * @internal
      */
-    public function setOffsetValue($value)
+    public function setOffsetValue($value): static
     {
         if (! isset($this->qualifiers[CompassPosition::getName()])) {
             $this->addQualifier(new CompassPosition());

@@ -35,12 +35,11 @@ class Background extends BaseQualifier
     /**
      * @var string $name The name.
      */
-    protected static $name = 'background';
+    protected static string $name = 'background';
 
     /**
      * Background constructor.
      *
-     * @param $color
      */
     public function __construct($color)
     {
@@ -52,10 +51,9 @@ class Background extends BaseQualifier
      *
      * @param string $color The color. Can be RGB, HEX, named color, etc.
      *
-     * @return Background
      *
      */
-    public static function color($color)
+    public static function color(string $color): Background
     {
         return new self($color);
     }
@@ -63,13 +61,12 @@ class Background extends BaseQualifier
     /**
      * Applies blurred background (Relevant only for videos).
      *
-     * @param int $intensity  The intensity of the blur.
-     * @param int $brightness The brightness of the background.
+     * @param int|null $intensity  The intensity of the blur.
+     * @param int|null $brightness The brightness of the background.
      *
-     * @return BlurredBackground
      *
      */
-    public static function blurred($intensity = null, $brightness = null)
+    public static function blurred(?int $intensity = null, ?int $brightness = null): BlurredBackground
     {
         return new BlurredBackground($intensity, $brightness);
     }
@@ -77,13 +74,12 @@ class Background extends BaseQualifier
     /**
      * Applies background color automatically.
      *
-     * @param string $autoBackground The type of the background color. See AutoBackground class.
+     * @param string|null $autoBackground The type of the background color. See AutoBackground class.
      *
-     * @return AutoBackground
      *
      * @see AutoBackground
      */
-    public static function auto($autoBackground = null)
+    public static function auto(?string $autoBackground = null): AutoBackground
     {
         return ClassUtils::forceInstance($autoBackground, AutoBackground::class);
     }
@@ -91,13 +87,14 @@ class Background extends BaseQualifier
     /**
      * Applies generative AI background.
      *
-     * @param string|array $prompt           Use natural language to describe what generate in the image.
-     * @param bool         $ignoreForeground Whether to take foreground elements into account.
+     * @param array|string|null $prompt           Use natural language to describe what generate in the image.
+     * @param bool|null         $ignoreForeground Whether to take foreground elements into account.
      *
-     * @return GenerativeFillBackground
      */
-    public static function generativeFill($prompt = null, $ignoreForeground = null)
-    {
+    public static function generativeFill(
+        array|string|null $prompt = null,
+        ?bool $ignoreForeground = null
+    ): GenerativeFillBackground {
         return new GenerativeFillBackground($prompt, $ignoreForeground);
     }
 }

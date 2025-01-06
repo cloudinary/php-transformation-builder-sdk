@@ -27,8 +27,6 @@ interface ComponentInterface extends JsonSerializable
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize();
+    public function jsonSerialize(): array;
 }

@@ -24,9 +24,8 @@ trait FormatQualifierTrait
      *
      * @param string $format The file format.
      *
-     * @return FormatQualifier
      */
-    public static function format($format)
+    public static function format(string $format): FormatQualifier
     {
         return ClassUtils::verifyInstance($format, FormatQualifier::class);
     }

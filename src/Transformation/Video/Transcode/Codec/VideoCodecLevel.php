@@ -21,21 +21,20 @@ namespace Cloudinary\Transformation\Codec;
  */
 class VideoCodecLevel
 {
-    const VCL_30 = '3.0';
-    const VCL_31 = '3.1';
-    const VCL_40 = '4.0';
-    const VCL_41 = '4.1';
-    const VCL_42 = '4.2';
-    const VCL_50 = '5.0';
-    const VCL_51 = '5.1';
-    const VCL_52 = '5.2';
+    public const VCL_30 = '3.0';
+    public const VCL_31 = '3.1';
+    public const VCL_40 = '4.0';
+    public const VCL_41 = '4.1';
+    public const VCL_42 = '4.2';
+    public const VCL_50 = '5.0';
+    public const VCL_51 = '5.1';
+    public const VCL_52 = '5.2';
 
     /**
      * Video codec level 3.0.
      *
-     * @return string
      */
-    public static function vcl30()
+    public static function vcl30(): string
     {
         return self::VCL_30;
     }
@@ -43,9 +42,8 @@ class VideoCodecLevel
     /**
      * Video codec level 3.1.
      *
-     * @return string
      */
-    public static function vcl31()
+    public static function vcl31(): string
     {
         return self::VCL_31;
     }
@@ -53,9 +51,8 @@ class VideoCodecLevel
     /**
      * Video codec level 4.0.
      *
-     * @return string
      */
-    public static function vcl40()
+    public static function vcl40(): string
     {
         return self::VCL_40;
     }
@@ -63,9 +60,8 @@ class VideoCodecLevel
     /**
      * Video codec level 4.1.
      *
-     * @return string
      */
-    public static function vcl41()
+    public static function vcl41(): string
     {
         return self::VCL_41;
     }
@@ -73,9 +69,8 @@ class VideoCodecLevel
     /**
      * Video codec level 4.2.
      *
-     * @return string
      */
-    public static function vcl42()
+    public static function vcl42(): string
     {
         return self::VCL_42;
     }
@@ -83,9 +78,8 @@ class VideoCodecLevel
     /**
      * Video codec level 5.0.
      *
-     * @return string
      */
-    public static function vcl50()
+    public static function vcl50(): string
     {
         return self::VCL_50;
     }
@@ -93,9 +87,8 @@ class VideoCodecLevel
     /**
      * Video codec level 5.1.
      *
-     * @return string
      */
-    public static function vcl51()
+    public static function vcl51(): string
     {
         return self::VCL_51;
     }
@@ -103,9 +96,8 @@ class VideoCodecLevel
     /**
      * Video codec level 5.2.
      *
-     * @return string
      */
-    public static function vcl52()
+    public static function vcl52(): string
     {
         return self::VCL_52;
     }

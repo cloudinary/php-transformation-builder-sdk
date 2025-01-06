@@ -20,32 +20,32 @@ class ExpressionComponent extends BaseExpressionComponent
     /**
      * @var string EXPRESSION_DELIMITER The delimiter between expression components.
      */
-    const EXPRESSION_DELIMITER = '_';
+    protected const EXPRESSION_DELIMITER = '_';
 
     /**
      * @var mixed $leftOperand The left operand.
      */
-    protected $leftOperand;
+    protected mixed $leftOperand;
 
     /**
-     * @var string $operator The operator
+     * @var BaseOperator|string|null $operator The operator
      */
-    protected $operator;
+    protected BaseOperator|string|null $operator;
 
     /**
      * @var mixed The right operand.
      */
-    protected $rightOperand;
+    protected mixed $rightOperand;
 
     /**
      * ExpressionComponent constructor.
      *
-     * @param $leftOperand
-     * @param $operator
-     * @param $rightOperand
      */
-    public function __construct($leftOperand, $operator = null, $rightOperand = null)
-    {
+    public function __construct(
+        mixed $leftOperand,
+        BaseOperator|string|null $operator = null,
+        mixed $rightOperand = null
+    ) {
         parent::__construct();
 
         $this->leftOperand = $leftOperand;
@@ -56,9 +56,9 @@ class ExpressionComponent extends BaseExpressionComponent
     /**
      * Sets the expression operator.
      *
-     * @param string $operator The operator
+     * @param BaseOperator|string|null $operator The operator
      */
-    public function setOperator($operator)
+    public function setOperator(BaseOperator|string|null $operator): void
     {
         $this->operator = $operator;
     }
@@ -66,9 +66,8 @@ class ExpressionComponent extends BaseExpressionComponent
     /**
      * Sets the right operand.
      *
-     * @param $rightOperand
      */
-    public function setRightOperand($rightOperand)
+    public function setRightOperand(mixed $rightOperand): void
     {
         $this->rightOperand = $rightOperand;
     }
@@ -88,10 +87,8 @@ class ExpressionComponent extends BaseExpressionComponent
 
     /**
      * Serializes to json.
-     *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'left_operand' => $this->leftOperand,

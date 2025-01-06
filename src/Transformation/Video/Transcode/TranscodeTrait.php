@@ -22,13 +22,12 @@ trait TranscodeTrait
     /**
      * Controls the video codec.
      *
-     * @param VideoCodec|string $codec The video codec.
+     * @param string|VideoCodec $codec The video codec.
      *
-     * @return BitRate
      *
-     * @see \Cloudinary\Transformation\BitRate
+     * @see BitRate
      */
-    public static function videoCodec($codec)
+    public static function videoCodec(string|VideoCodec $codec): BitRate
     {
         return ClassUtils::verifyInstance($codec, VideoCodec::class);
     }
@@ -36,13 +35,11 @@ trait TranscodeTrait
     /**
      * Converts a video to animated image.
      *
-     * @param $animatedImageFormat
      *
-     * @return ToAnimatedAction
      *
-     * @see \Cloudinary\Transformation\BitRate
+     * @see BitRate
      */
-    public static function toAnimated($animatedImageFormat = null)
+    public static function toAnimated($animatedImageFormat = null): ToAnimatedAction
     {
         return ClassUtils::forceInstance($animatedImageFormat, ToAnimatedAction::class);
     }

@@ -22,12 +22,11 @@ trait PlaybackEffectTrait
     /**
      * Changes the speed of the video playback.
      *
-     * @param int $rate  The percentage change of speed. Positive numbers speed up the playback, negative numbers
+     * @param int|null $rate The percentage change of speed. Positive numbers speed up the playback, negative numbers
      *                   slow down the playback (Range: -50 to 100, Server default: 0).
      *
-     * @return Accelerate
      */
-    public static function accelerate($rate = null)
+    public static function accelerate(?int $rate = null): Accelerate
     {
         return new Accelerate($rate);
     }
@@ -39,11 +38,10 @@ trait PlaybackEffectTrait
      * to deliver a classic (short, repeating) boomerang clip.
      * For details and examples, see 'Create a boomerang video clip' in the Video Transformations guide.
      *
-     * @return EffectAction
      *
      * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#create_a_boomerang_video_clip
      */
-    public static function boomerang()
+    public static function boomerang(): EffectAction
     {
         return EffectAction::named(PlaybackEffect::BOOMERANG);
     }
@@ -55,11 +53,10 @@ trait PlaybackEffectTrait
      *
      * For animated images (GIF), see Animated::edit()->loop().
      *
-     * @param int $additionalIterations The additional number of times to play the video.
+     * @param int|null $additionalIterations The additional number of times to play the video.
      *
-     * @return Loop
      */
-    public static function loop($additionalIterations = null)
+    public static function loop(?int $additionalIterations = null): Loop
     {
         return new Loop($additionalIterations);
     }
@@ -67,9 +64,8 @@ trait PlaybackEffectTrait
     /**
      * Plays the video or audio file in reverse.
      *
-     * @return EffectAction
      */
-    public static function reverse()
+    public static function reverse(): EffectAction
     {
         return EffectAction::named(PlaybackEffect::REVERSE);
     }
@@ -81,11 +77,10 @@ trait PlaybackEffectTrait
      *
      * @param int|Volume $level The percentage change of volume (Range: -100 to 400).
      *
-     * @return EffectAction
      *
-     * @see \Cloudinary\Transformation\Volume
+     * @see Volume
      */
-    public static function volume($level)
+    public static function volume(Volume|int $level): EffectAction
     {
         return EffectAction::fromEffectQualifier(ClassUtils::verifyInstance($level, Volume::class));
     }
@@ -93,9 +88,8 @@ trait PlaybackEffectTrait
     /**
      * Indicates that the video overlay is to be used as a transition between the base and second video.
      *
-     * @return EffectAction
      */
-    public static function transition()
+    public static function transition(): EffectAction
     {
         return  EffectAction::named(PlaybackEffect::TRANSITION);
     }

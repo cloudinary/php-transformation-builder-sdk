@@ -24,9 +24,8 @@ trait BorderQualifierTrait
      *                     `solid` is supported for style. Colors can be set as an RGB or RGBA hex triplet or
      *                     quadruplet, a 3- or 4-digit RGB/RGBA hex, or a named color.
      *
-     * @return BorderQualifier
      */
-    public static function border(...$value)
+    public static function border(...$value): BorderQualifier
     {
         return new BorderQualifier(...$value);
     }

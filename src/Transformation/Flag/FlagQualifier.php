@@ -22,20 +22,20 @@ class FlagQualifier extends BaseQualifier
     /**
      * @var string The flag qualifier key
      */
-    protected static $key = 'fl';
+    protected static string $key = 'fl';
 
     /**
      * @var string $flagName The name of the flag.
      */
-    protected $flagName;
+    protected string $flagName;
 
     /**
      * FlagQualifier constructor.
      *
-     * @param string             $flagName The name of the flag.
-     * @param string|array|mixed $value    An optional value of the flag.
+     * @param string     $flagName The name of the flag.
+     * @param mixed|null $value    An optional value of the flag.
      */
-    public function __construct($flagName, $value = null)
+    public function __construct($flagName, mixed $value = null)
     {
         parent::__construct();
 
@@ -46,11 +46,10 @@ class FlagQualifier extends BaseQualifier
     /**
      * Gets the name of the flag.
      *
-     * @return string
      *
      * @internal
      */
-    public function getFlagName()
+    public function getFlagName(): string
     {
         return $this->flagName;
     }
@@ -60,9 +59,8 @@ class FlagQualifier extends BaseQualifier
      *
      * @param string $flagName The name.
      *
-     * @return FlagQualifier
      */
-    public function setFlagName($flagName)
+    public function setFlagName(string $flagName): static
     {
         $this->flagName = $flagName;
 
@@ -88,9 +86,8 @@ class FlagQualifier extends BaseQualifier
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $res = [];
         if ($this->flagName) {

@@ -22,16 +22,16 @@ use Cloudinary\ArrayUtils;
 abstract class BaseSourceContainer extends BaseAction
 {
     /**
-     * @var BaseSource $source The source of the layer.
+     * @var ?BaseSource $source The source of the layer.
      */
-    protected $source;
+    protected ?BaseSource $source;
 
     /**
      * BaseSourceContainer constructor.
      *
-     * @param BaseSource|string $source   The source.
+     * @param BaseSource|string|null $source   The source.
      */
-    public function __construct($source = null)
+    public function __construct(BaseSource|string|null $source = null)
     {
         parent::__construct();
 
@@ -41,11 +41,10 @@ abstract class BaseSourceContainer extends BaseAction
     /**
      * Sets the source.
      *
-     * @param BaseSource $source The source.
+     * @param BaseSource|string|null $source The source.
      *
-     * @return static
      */
-    abstract public function source($source);
+    abstract public function source(BaseSource|string|null $source): static;
 
     /**
      * Sets stack position of the source.
@@ -54,7 +53,7 @@ abstract class BaseSourceContainer extends BaseAction
      *
      * @return $this
      */
-    public function setStackPosition($stackPosition)
+    public function setStackPosition(string $stackPosition): static
     {
         $this->source->setStackPosition($stackPosition);
 
@@ -80,7 +79,7 @@ abstract class BaseSourceContainer extends BaseAction
      *
      * @internal
      */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $sourceQualifiers     = $this->source ? $this->source->getStringQualifiers() : [];
         $sourceTransformation = $this->source ? $this->source->getTransformation() : null;
@@ -114,9 +113,8 @@ abstract class BaseSourceContainer extends BaseAction
     /**
      * Serializes to json.
      *
-     * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'source'   => $this->source,

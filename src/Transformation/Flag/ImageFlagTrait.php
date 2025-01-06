@@ -27,9 +27,8 @@ trait ImageFlagTrait
      * Note: When delivering a video in GIF format, it is delivered as an animated GIF by default and this flag is not
      * necessary. To deliver a single frame of a video in GIF format, use the page qualifier.
      *
-     * @return FlagQualifier
      */
-    public static function animated()
+    public static function animated(): FlagQualifier
     {
         return new FlagQualifier(self::ANIMATED);
     }
@@ -38,9 +37,8 @@ trait ImageFlagTrait
      * When used together with automatic quality (q_auto):
      * allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
      *
-     * @return FlagQualifier
      */
-    public static function anyFormat()
+    public static function anyFormat(): FlagQualifier
     {
         return new FlagQualifier(self::ANY_FORMAT);
     }
@@ -51,9 +49,8 @@ trait ImageFlagTrait
      *
      * Note that animated PNGs are not supported in all browsers and versions.
      *
-     * @return FlagQualifier
      */
-    public static function animatedPng()
+    public static function animatedPng(): FlagQualifier
     {
         return new FlagQualifier(self::ANIMATED_PNG);
     }
@@ -64,9 +61,8 @@ trait ImageFlagTrait
      *
      * Note that animated WebPs are not supported in all browsers and versions.
      *
-     * @return FlagQualifier
      */
-    public static function animatedWebP()
+    public static function animatedWebP(): FlagQualifier
     {
         return new FlagQualifier(self::ANIMATED_WEBP);
     }
@@ -75,9 +71,8 @@ trait ImageFlagTrait
      * Trims pixels according to a clipping path included in the original image
      * (e.g., manually created using PhotoShop).
      *
-     * @return FlagQualifier
      */
-    public static function clip()
+    public static function clip(): FlagQualifier
     {
         return new FlagQualifier(self::CLIP);
     }
@@ -86,9 +81,8 @@ trait ImageFlagTrait
      * Trims pixels according to a clipping path included in the original image (e.g., manually created using PhotoShop)
      * using an evenodd clipping rule.
      *
-     * @return FlagQualifier
      */
-    public static function clipEvenOdd()
+    public static function clipEvenOdd(): FlagQualifier
     {
         return new FlagQualifier(self::CLIP_EVEN_ODD);
     }
@@ -100,9 +94,8 @@ trait ImageFlagTrait
      * image in PNG format (as requested) unless there is no transparency channel - in which case deliver in JPEG
      * format.
      *
-     * @return FlagQualifier
      */
-    public static function lossy()
+    public static function lossy(): FlagQualifier
     {
         return new FlagQualifier(self::LOSSY);
     }
@@ -111,9 +104,8 @@ trait ImageFlagTrait
      * When used with automatic fetch_format (f_auto): ensures that images with a transparency channel will be
      * delivered in PNG format.
      *
-     * @return FlagQualifier
      */
-    public static function preserveTransparency()
+    public static function preserveTransparency(): FlagQualifier
     {
         return new FlagQualifier(self::PRESERVE_TRANSPARENCY);
     }
@@ -121,9 +113,8 @@ trait ImageFlagTrait
     /**
      * Generate PNG images in the PNG8 format.
      *
-     * @return FlagQualifier
      */
-    public static function png8()
+    public static function png8(): FlagQualifier
     {
         return new FlagQualifier(self::PNG8);
     }
@@ -131,9 +122,8 @@ trait ImageFlagTrait
     /**
      * Generates PNG images in the PNG24 format.
      *
-     * @return FlagQualifier
      */
-    public static function png24()
+    public static function png24(): FlagQualifier
     {
         return new FlagQualifier(self::PNG24);
     }
@@ -141,9 +131,8 @@ trait ImageFlagTrait
     /**
      * Generates PNG images in the PNG32 format.
      *
-     * @return FlagQualifier
      */
-    public static function png32()
+    public static function png32(): FlagQualifier
     {
         return new FlagQualifier(self::PNG32);
     }
@@ -154,7 +143,7 @@ trait ImageFlagTrait
      * This format allows the browser to quickly show a low-quality rendering of the image until the full-quality
      * image is loaded.
      *
-     * @param string $mode The mode to determine a specific progressive outcome as follows:
+     * @param string|null $mode      The mode to determine a specific progressive outcome as follows:
      *                     * semi  - A smart optimization of the decoding time, compression level and progressive
      *                               rendering (less iterations). This is the default mode when using q_auto.
      *                     * steep - Delivers a preview very quickly, and in a single later phase improves the image to
@@ -162,11 +151,10 @@ trait ImageFlagTrait
      *                     * none  - Use this to deliver a non-progressive image. This is the default mode when setting
      *                               a specific value for quality.
      *
-     * @return FlagQualifier
      *@see Progressive
      *
      */
-    public static function progressive($mode = null)
+    public static function progressive(?string $mode = null): FlagQualifier
     {
         return new FlagQualifier(self::PROGRESSIVE, $mode);
     }
@@ -175,9 +163,8 @@ trait ImageFlagTrait
      * Reduces the image to one flat pixelated layer (as opposed to the default vector based graphic) in order to enable
      * PDF resizing and overlay manipulations.
      *
-     * @return FlagQualifier
      */
-    public static function rasterize()
+    public static function rasterize(): FlagQualifier
     {
         return new FlagQualifier(self::RASTERIZE);
     }
@@ -185,9 +172,8 @@ trait ImageFlagTrait
     /**
      * Instructs Cloudinary to run a sanitizer on the image (relevant only for the SVG format).
      *
-     * @return FlagQualifier
      */
-    public static function sanitize()
+    public static function sanitize(): FlagQualifier
     {
         return new FlagQualifier(self::SANITIZE);
     }
@@ -195,9 +181,8 @@ trait ImageFlagTrait
     /**
      * Instructs Cloudinary to clear all ICC color profile data included with the image.
      *
-     * @return FlagQualifier
      */
-    public static function stripProfile()
+    public static function stripProfile(): FlagQualifier
     {
         return new FlagQualifier(self::STRIP_PROFILE);
     }
@@ -205,9 +190,8 @@ trait ImageFlagTrait
     /**
      * Generates TIFF images using LZW compression and in the TIFF8 format.
      *
-     * @return FlagQualifier
      */
-    public static function tiff8Lzw()
+    public static function tiff8Lzw(): FlagQualifier
     {
         return new FlagQualifier(self::TIFF8_LZW);
     }
@@ -217,9 +201,8 @@ trait ImageFlagTrait
      *
      * @see https://cloudinary.com/documentation/transformation_reference#fl_ignore_mask_channels
      *
-     * @return FlagQualifier
      */
-    public static function ignoreMaskChannels()
+    public static function ignoreMaskChannels(): FlagQualifier
     {
         return new FlagQualifier(self::IGNORE_MASK_CHANNELS);
     }

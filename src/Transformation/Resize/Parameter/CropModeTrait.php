@@ -21,9 +21,8 @@ trait CropModeTrait
      *
      * All original parts are visible but might be stretched or shrunk.
      *
-     * @return CropMode
      */
-    public static function scale()
+    public static function scale(): CropMode
     {
         return new CropMode(CropMode::SCALE);
     }
@@ -34,9 +33,8 @@ trait CropModeTrait
      *
      * The original aspect ratio is retained and all of the original asset is visible.
      *
-     * @return CropMode
      */
-    public static function fit()
+    public static function fit(): CropMode
     {
         return new CropMode(CropMode::FIT);
     }
@@ -47,9 +45,8 @@ trait CropModeTrait
      *
      * The asset is scaled down, the original aspect ratio is retained and all of the original asset is visible.
      *
-     * @return CropMode
      */
-    public static function limitFit()
+    public static function limitFit(): CropMode
     {
         return new CropMode(CropMode::LIMIT_FIT);
     }
@@ -60,9 +57,8 @@ trait CropModeTrait
      *
      * The asset is scaled up, the original aspect ratio is retained and all of the original asset is visible.
      *
-     * @return CropMode
      */
-    public static function minimumFit()
+    public static function minimumFit(): CropMode
     {
         return new CropMode(CropMode::MINIMUM_FIT);
     }
@@ -73,9 +69,8 @@ trait CropModeTrait
      * If the proportions of the original asset do not match the given width and height, padding is added to the asset
      * to reach the required size.
      *
-     * @return CropMode
      */
-    public static function pad()
+    public static function pad(): CropMode
     {
         return new CropMode(CropMode::PAD);
     }
@@ -87,9 +82,8 @@ trait CropModeTrait
      * The asset is scaled down.  If the proportions of the original asset do not match the given width and height,
      * padding is added to the asset to reach the required size.
      *
-     * @return CropMode
      */
-    public static function limitPad()
+    public static function limitPad(): CropMode
     {
         return new CropMode(CropMode::LIMIT_PAD);
     }
@@ -101,9 +95,8 @@ trait CropModeTrait
      * The asset is scaled up.  If the proportions of the original asset do not match the given width and height,
      * padding is added to the asset to reach the required size.
      *
-     * @return CropMode
      */
-    public static function minimumPad()
+    public static function minimumPad(): CropMode
     {
         return new CropMode(CropMode::MINIMUM_PAD);
     }
@@ -115,9 +108,8 @@ trait CropModeTrait
      * aspect ratio is different than the original, cropping will occur on the dimension that exceeds the requested
      * size after scaling.
      *
-     * @return CropMode
      */
-    public static function fill()
+    public static function fill(): CropMode
     {
         return new CropMode(CropMode::FILL);
     }
@@ -130,9 +122,8 @@ trait CropModeTrait
      * that exceeds the request is cropped. If the original dimensions are both smaller than the requested size, it is
      * not resized at all.
      *
-     * @return CropMode
      */
-    public static function limitFill()
+    public static function limitFill(): CropMode
     {
         return new CropMode(CropMode::LIMIT_FILL);
     }
@@ -143,9 +134,8 @@ trait CropModeTrait
      *
      * Only supported in conjunction with automatic cropping (g_auto).
      *
-     * @return CropMode
      */
-    public static function fillPad()
+    public static function fillPad(): CropMode
     {
         return new CropMode(CropMode::FILL_PAD);
     }
@@ -155,9 +145,8 @@ trait CropModeTrait
      *
      * The original proportions are retained and so is the size of the graphics.
      *
-     * @return CropMode
      */
-    public static function crop()
+    public static function crop(): CropMode
     {
         return new CropMode(CropMode::CROP);
     }
@@ -165,9 +154,8 @@ trait CropModeTrait
     /**
      * Generates a thumbnail using face detection in combination with the 'face' or 'faces' gravity.
      *
-     * @return CropMode
      */
-    public static function thumbnail()
+    public static function thumbnail(): CropMode
     {
         return new CropMode(CropMode::THUMBNAIL);
     }
@@ -177,11 +165,10 @@ trait CropModeTrait
      *
      * For details, see the Imagga Crop and Scale add-on documentation.
      *
-     * @return CropMode
      *
      * @see https://cloudinary.com/documentation/imagga_crop_and_scale_addon#smartly_crop_images
      */
-    public static function imaggaCrop()
+    public static function imaggaCrop(): CropMode
     {
         return new CropMode(CropMode::IMAGGA_CROP);
     }
@@ -191,11 +178,10 @@ trait CropModeTrait
      *
      * For details, see the Imagga Crop and Scale add-on documentation.
      *
-     * @return CropMode
      *
      * @see https://cloudinary.com/documentation/imagga_crop_and_scale_addon#smartly_scale_images
      */
-    public static function imaggaScale()
+    public static function imaggaScale(): CropMode
     {
         return new CropMode(CropMode::IMAGGA_SCALE);
     }
@@ -203,11 +189,9 @@ trait CropModeTrait
     /**
      * For future compatibility.
      *
-     * @param $cropModeName
      *
-     * @return CropMode
      */
-    public static function generic($cropModeName)
+    public static function generic($cropModeName): CropMode
     {
         return new CropMode($cropModeName);
     }

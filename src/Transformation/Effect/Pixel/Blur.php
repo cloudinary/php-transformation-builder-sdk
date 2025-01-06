@@ -15,14 +15,12 @@ namespace Cloudinary\Transformation;
  */
 class Blur extends StrengthEffectAction
 {
-    const REGION = PixelEffect::BLUR_REGION;
-    const FACES  = PixelEffect::BLUR_FACES;
+    public const REGION = PixelEffect::BLUR_REGION;
+    public const FACES  = PixelEffect::BLUR_FACES;
 
     /**
      * Pixelate constructor.
      *
-     * @param       $strength
-     * @param mixed ...$args
      */
     public function __construct($strength, ...$args)
     {

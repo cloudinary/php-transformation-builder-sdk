@@ -22,11 +22,10 @@ trait CommonAdjustmentTrait
     /**
      * Adjusts the brightness.
      *
-     * @param int $level The level of brightness (Range: -99 to 100, Server default: 80)
+     * @param int|null $level The level of brightness (Range: -99 to 100, Server default: 80)
      *
-     * @return LevelEffectAction
      */
-    public static function brightness($level = null)
+    public static function brightness(?int $level = null): LevelEffectAction
     {
         return EffectAction::withLevel(Adjust::BRIGHTNESS, EffectRange::BRIGHTNESS, $level);
     }
@@ -34,11 +33,10 @@ trait CommonAdjustmentTrait
     /**
      * Adjusts the contrast.
      *
-     * @param int $level The level of contrast (Range: -100 to 100, Server default: 0)
+     * @param int|null $level The level of contrast (Range: -100 to 100, Server default: 0)
      *
-     * @return LevelEffectAction
      */
-    public static function contrast($level = null)
+    public static function contrast(?int $level = null): LevelEffectAction
     {
         return EffectAction::withLevel(Adjust::CONTRAST, EffectRange::DEFAULT_RANGE, $level);
     }
@@ -46,11 +44,10 @@ trait CommonAdjustmentTrait
     /**
      * Adjusts the color saturation.
      *
-     * @param int $level The level of color saturation (Range: -100 to 100, Server default: 80).
+     * @param int|null $level The level of color saturation (Range: -100 to 100, Server default: 80).
      *
-     * @return LevelEffectAction
      */
-    public static function saturation($level = null)
+    public static function saturation(?int $level = null): LevelEffectAction
     {
         return EffectAction::withLevel(Adjust::SATURATION, EffectRange::DEFAULT_RANGE, $level);
     }
@@ -58,11 +55,10 @@ trait CommonAdjustmentTrait
     /**
      * Adjusts the gamma level.
      *
-     * @param int $level The level of gamma (Range: -50 to 150, Server default: 0).
+     * @param int|null $level The level of gamma (Range: -50 to 150, Server default: 0).
      *
-     * @return LevelEffectAction
      */
-    public static function gamma($level = null)
+    public static function gamma(?int $level = null): LevelEffectAction
     {
         return EffectAction::withLevel(Adjust::GAMMA, EffectRange::SHIFTED_RANGE, $level);
     }
@@ -72,11 +68,10 @@ trait CommonAdjustmentTrait
      *
      * @see https://cloudinary.com/documentation/image_transformations#applying_3d_luts_to_images
      *
-     * @param string $lutId The 3D LUT file id
+     * @param string|null $lutId The 3D LUT file id
      *
-     * @return LutLayer
      */
-    public static function by3dLut($lutId = null)
+    public static function by3dLut(?string $lutId = null): LutLayer
     {
         return ClassUtils::verifyInstance($lutId, LutLayer::class);
     }
@@ -87,12 +82,11 @@ trait CommonAdjustmentTrait
      * This is a generic way to apply an effect.  For example, you could set $name to "gamma" and $args to 50, and this
      * would have the same effect as calling gamma(50).
      *
-     * @param string $name The effect name.
+     * @param string $name    The effect name.
      * @param mixed  ...$args The qualifiers of the effect.
      *
-     * @return EffectAction
      */
-    public static function generic($name, ...$args)
+    public static function generic(string $name, ...$args): EffectAction
     {
         return EffectAction::named($name, ...$args);
     }

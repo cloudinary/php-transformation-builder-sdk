@@ -67,7 +67,7 @@ final class ExpressionTest extends TestCase
         $re = new ExpressionComponent(
             PVar::initialAspectRatio(),
             RelationalOperator::LessThanOrEqual(),
-            UVal::float(17)
+            UVal::int(17)
         );
 
         self::assertEquals('iar_lte_17', (string)$re);
@@ -164,9 +164,9 @@ final class ExpressionTest extends TestCase
      * @dataProvider normalizationDataProvider
      *
      * @param mixed       $input          Value to normalize
-     * @param null|string $expectedOutput Expected normalized output
+     * @param string|null $expectedOutput Expected normalized output
      */
-    public function testExpressionNormalization($input, $expectedOutput)
+    public function testExpressionNormalization(mixed $input, ?string $expectedOutput)
     {
         $actual = ExpressionUtils::normalize($input);
         self::assertEquals($expectedOutput, $actual);
@@ -177,7 +177,7 @@ final class ExpressionTest extends TestCase
      *
      * @return array[]
      */
-    public static function normalizationDataProvider()
+    public static function normalizationDataProvider(): array
     {
         return [
             'null is not affected' => [null, null],

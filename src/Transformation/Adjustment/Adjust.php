@@ -18,33 +18,33 @@ namespace Cloudinary\Transformation;
 abstract class Adjust
 {
     // Common adjustments
-    const BRIGHTNESS = 'brightness';
-    const CONTRAST   = 'contrast';
-    const SATURATION = 'saturation';
-    const GAMMA      = 'gamma';
+    public const BRIGHTNESS = 'brightness';
+    public const CONTRAST   = 'contrast';
+    public const SATURATION = 'saturation';
+    public const GAMMA      = 'gamma';
 
     // Image adjustments
-    const RED            = 'red';
-    const GREEN          = 'green';
-    const BLUE           = 'blue';
-    const BRIGHTNESS_HSB = 'brightness_hsb';
-    const HUE            = 'hue';
-    const TINT           = 'tint';
-    const REPLACE_COLOR  = 'replace_color';
-    const RECOLOR        = 'recolor';
+    public const RED = 'red';
+    public const GREEN = 'green';
+    public const BLUE  = 'blue';
+    public const BRIGHTNESS_HSB = 'brightness_hsb';
+    public const HUE            = 'hue';
+    public const TINT    = 'tint';
+    public const REPLACE_COLOR = 'replace_color';
+    public const RECOLOR       = 'recolor';
 
-    const AUTO_BRIGHTNESS = 'auto_brightness';
-    const AUTO_COLOR      = 'auto_color';
-    const AUTO_CONTRAST   = 'auto_contrast';
-    const FILL_LIGHT      = 'fill_light';
-    const IMPROVE         = 'improve';
-    const VIBRANCE        = 'vibrance';
-    const VIESUS_CORRECT  = 'viesus_correct';
+    public const AUTO_BRIGHTNESS = 'auto_brightness';
+    public const AUTO_COLOR      = 'auto_color';
+    public const AUTO_CONTRAST = 'auto_contrast';
+    public const FILL_LIGHT    = 'fill_light';
+    public const IMPROVE    = 'improve';
+    public const VIBRANCE = 'vibrance';
+    public const VIESUS_CORRECT = 'viesus_correct';
 
-    const SHARPEN          = 'sharpen';
-    const UNSHARP_MASK     = 'unsharp_mask';
+    public const SHARPEN = 'sharpen';
+    public const UNSHARP_MASK = 'unsharp_mask';
 
-    const OPACITY_THRESHOLD = 'opacity_threshold';
+    public const OPACITY_THRESHOLD = 'opacity_threshold';
 
     use CommonAdjustmentTrait;
     use ImageAdjustmentTrait;

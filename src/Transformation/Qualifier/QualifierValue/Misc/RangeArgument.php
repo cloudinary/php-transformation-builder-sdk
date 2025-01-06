@@ -17,15 +17,15 @@ use Cloudinary\Transformation\BaseArgument;
  */
 class RangeArgument extends BaseArgument
 {
-    const ARG_INNER_VALUE_DELIMITER = '-';
+    public const ARG_INNER_VALUE_DELIMITER = '-';
 
     /**
      * RangeArgument constructor.
      *
-     * @param int|string $start The start of the range.
-     * @param int|string $end   The end of the range.
+     * @param int|string      $start The start of the range.
+     * @param int|string|null $end   The end of the range.
      */
-    public function __construct($start, $end = null)
+    public function __construct($start, int|string|null $end = null)
     {
         parent::__construct($start, $end);
     }

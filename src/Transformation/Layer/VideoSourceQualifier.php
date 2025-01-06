@@ -18,14 +18,13 @@ use Cloudinary\ClassUtils;
 class VideoSourceQualifier extends BaseSourceQualifier
 {
     /**
-     * @var string $assetType The asset type of the layer.
+     * @var ?string $assetType The asset type of the layer.
      */
-    protected $assetType = 'video';
+    protected ?string $assetType = 'video';
 
     /**
      * VideoSourceQualifier constructor.
      *
-     * @param $source
      */
     public function __construct($source)
     {
@@ -37,11 +36,11 @@ class VideoSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the video source.
      *
-     * @param SourceValue|string $source The video source.
+     * @param string|SourceValue|null $source The video source.
      *
      * @return $this
      */
-    public function video($source)
+    public function video(SourceValue|string|null $source): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($source, SourceValue::class));
 

@@ -20,9 +20,8 @@ trait RotationModeTrait
     /**
      * Rotate image 90 degrees clockwise only if the requested aspect ratio does not match the image's aspect ratio.
      *
-     * @return static
      */
-    public static function autoRight()
+    public static function autoRight(): static
     {
         return static::createWithMode(RotationMode::AUTO_RIGHT);
     }
@@ -31,9 +30,8 @@ trait RotationModeTrait
      * Rotate image 90 degrees counterclockwise only if the requested aspect ratio does not match the image's aspect
      * ratio.
      *
-     * @return static
      */
-    public static function autoLeft()
+    public static function autoLeft(): static
     {
         return static::createWithMode(RotationMode::AUTO_LEFT);
     }
@@ -41,9 +39,8 @@ trait RotationModeTrait
     /**
      * Vertical mirror flip of the image.
      *
-     * @return static
      */
-    public static function verticalFlip()
+    public static function verticalFlip(): static
     {
         return static::createWithMode(RotationMode::VERTICAL_FLIP);
     }
@@ -51,9 +48,8 @@ trait RotationModeTrait
     /**
      * Horizontal mirror flip of the image.
      *
-     * @return static
      */
-    public static function horizontalFlip()
+    public static function horizontalFlip(): static
     {
         return static::createWithMode(RotationMode::HORIZONTAL_FLIP);
     }
@@ -62,9 +58,8 @@ trait RotationModeTrait
      * By default, the image is automatically rotated according to the EXIF data stored by the camera when the image
      * was taken. Set the angle to 'ignore' if you do not want the image to be automatically rotated.
      *
-     * @return static
      */
-    public static function ignore()
+    public static function ignore(): static
     {
         return static::createWithMode(RotationMode::IGNORE);
     }
@@ -74,9 +69,8 @@ trait RotationModeTrait
      *
      * @param string|RotationMode|array $mode Given rotation mode.
      *
-     * @return static
      */
-    public static function mode(...$mode)
+    public static function mode(...$mode): static
     {
         return static::createWithMode(...$mode);
     }

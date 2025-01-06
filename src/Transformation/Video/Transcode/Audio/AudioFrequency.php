@@ -23,32 +23,31 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class AudioFrequency extends BaseQualifier
 {
-    const FREQ8000   = 8000;
-    const FREQ11025  = 11025;
-    const FREQ16000  = 16000;
-    const FREQ22050  = 22050;
-    const FREQ32000  = 32000;
-    const FREQ37800  = 37800;
-    const FREQ44056  = 44056;
-    const FREQ44100  = 44100;
-    const FREQ47250  = 47250;
-    const FREQ48000  = 48000;
-    const FREQ88200  = 88200;
-    const FREQ96000  = 96000;
-    const FREQ176400 = 176400;
-    const FREQ192000 = 192000;
+    public const FREQ8000 = 8000;
+    public const FREQ11025 = 11025;
+    public const FREQ16000 = 16000;
+    public const FREQ22050 = 22050;
+    public const FREQ32000 = 32000;
+    public const FREQ37800 = 37800;
+    public const FREQ44056 = 44056;
+    public const FREQ44100 = 44100;
+    public const FREQ47250 = 47250;
+    public const FREQ48000 = 48000;
+    public const FREQ88200 = 88200;
+    public const FREQ96000 = 96000;
+    public const FREQ176400 = 176400;
+    public const FREQ192000 = 192000;
 
     /*
      * Initial audio frequency
      */
-    const IAF = 'iaf';
+    public const IAF = 'iaf';
 
     /**
      * Audio Frequency 8000.
      *
-     * @return AudioFrequency
      */
-    public static function freq8000()
+    public static function freq8000(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ8000);
     }
@@ -56,9 +55,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 11025.
      *
-     * @return AudioFrequency
      */
-    public static function freq11025()
+    public static function freq11025(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ11025);
     }
@@ -66,9 +64,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 16000.
      *
-     * @return AudioFrequency
      */
-    public static function freq16000()
+    public static function freq16000(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ16000);
     }
@@ -76,9 +73,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 22050.
      *
-     * @return AudioFrequency
      */
-    public static function freq22050()
+    public static function freq22050(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ22050);
     }
@@ -86,9 +82,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 32000.
      *
-     * @return AudioFrequency
      */
-    public static function freq32000()
+    public static function freq32000(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ32000);
     }
@@ -96,9 +91,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 37800.
      *
-     * @return AudioFrequency
      */
-    public static function freq37800()
+    public static function freq37800(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ37800);
     }
@@ -106,9 +100,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 44056.
      *
-     * @return AudioFrequency
      */
-    public static function freq44056()
+    public static function freq44056(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ44056);
     }
@@ -116,9 +109,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 44100.
      *
-     * @return AudioFrequency
      */
-    public static function freq44100()
+    public static function freq44100(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ44100);
     }
@@ -126,9 +118,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 47250.
      *
-     * @return AudioFrequency
      */
-    public static function freq47250()
+    public static function freq47250(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ47250);
     }
@@ -136,9 +127,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 48000.
      *
-     * @return AudioFrequency
      */
-    public static function freq48000()
+    public static function freq48000(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ48000);
     }
@@ -146,9 +136,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 88200.
      *
-     * @return AudioFrequency
      */
-    public static function freq88200()
+    public static function freq88200(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ88200);
     }
@@ -156,9 +145,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 96000.
      *
-     * @return AudioFrequency
      */
-    public static function freq96000()
+    public static function freq96000(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ96000);
     }
@@ -166,9 +154,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 176400.
      *
-     * @return AudioFrequency
      */
-    public static function freq176400()
+    public static function freq176400(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ176400);
     }
@@ -176,9 +163,8 @@ class AudioFrequency extends BaseQualifier
     /**
      * Audio Frequency 192000.
      *
-     * @return AudioFrequency
      */
-    public static function freq192000()
+    public static function freq192000(): AudioFrequency
     {
         return self::createAudioFrequency(self::FREQ192000);
     }
@@ -187,9 +173,8 @@ class AudioFrequency extends BaseQualifier
      * Retain the original audio frequency of the video.
      * This applies when using vc_auto where the audio frequency defaults to 48kHz.
      *
-     * @return AudioFrequency
      */
-    public static function iaf()
+    public static function iaf(): AudioFrequency
     {
         return self::createAudioFrequency(self::IAF);
     }
@@ -199,9 +184,8 @@ class AudioFrequency extends BaseQualifier
      *
      * @param int|string $qualifier The audio frequency.
      *
-     * @return AudioFrequency
      */
-    protected static function createAudioFrequency($qualifier)
+    protected static function createAudioFrequency(int|string $qualifier): AudioFrequency
     {
         return new self($qualifier);
     }

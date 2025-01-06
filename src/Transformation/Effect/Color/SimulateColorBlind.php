@@ -18,37 +18,37 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: deuteranopia (Server default).
      */
-    const DEUTERANOPIA = 'deuteranopia';
+    public const DEUTERANOPIA = 'deuteranopia';
 
     /**
      * Color blind condition: protanopia.
      */
-    const PROTANOPIA = 'protanopia';
+    public const PROTANOPIA = 'protanopia';
 
     /**
      * Color blind condition: tritanopia.
      */
-    const TRITANOPIA = 'tritanopia';
+    public const TRITANOPIA = 'tritanopia';
 
     /**
      * Color blind condition: tritanomaly.
      */
-    const TRITANOMALY = 'tritanomaly';
+    public const TRITANOMALY = 'tritanomaly';
 
     /**
      * Color blind condition: deuteranomaly.
      */
-    const DEUTERANOMALY = 'deuteranomaly';
+    public const DEUTERANOMALY = 'deuteranomaly';
 
     /**
      * Color blind condition: cone_monochromacy.
      */
-    const CONE_MONOCHROMACY = 'cone_monochromacy';
+    public const CONE_MONOCHROMACY = 'cone_monochromacy';
 
     /**
      * Color blind condition: rod_monochromacy.
      */
-    const ROD_MONOCHROMACY = 'rod_monochromacy';
+    public const ROD_MONOCHROMACY = 'rod_monochromacy';
 
     /**
      * SimulateColorBlind constructor.
@@ -67,9 +67,8 @@ class SimulateColorBlind extends ValueEffectQualifier
      *
      * @param string $condition The color blind condition to simulate
      *
-     * @return SimulateColorBlind
      */
-    public function condition($condition)
+    public function condition(string $condition): static
     {
         $this->setEffectValue($condition);
 
@@ -79,9 +78,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: deuteranopia (Server default).
      *
-     * @return string
      */
-    public static function deuteranopia()
+    public static function deuteranopia(): string
     {
         return self::DEUTERANOPIA;
     }
@@ -89,9 +87,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: protanopia.
      *
-     * @return string
      */
-    public static function protanopia()
+    public static function protanopia(): string
     {
         return self::PROTANOPIA;
     }
@@ -99,9 +96,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: tritanopia
      *
-     * @return string
      */
-    public static function tritanopia()
+    public static function tritanopia(): string
     {
         return self::TRITANOPIA;
     }
@@ -109,9 +105,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: tritanomaly
      *
-     * @return string
      */
-    public static function tritanomaly()
+    public static function tritanomaly(): string
     {
         return self::TRITANOMALY;
     }
@@ -119,9 +114,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: deuteranomaly
      *
-     * @return string
      */
-    public static function deuteranomaly()
+    public static function deuteranomaly(): string
     {
         return self::DEUTERANOMALY;
     }
@@ -129,9 +123,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: cone monochromacy
      *
-     * @return string
      */
-    public static function coneMonochromacy()
+    public static function coneMonochromacy(): string
     {
         return self::CONE_MONOCHROMACY;
     }
@@ -139,9 +132,8 @@ class SimulateColorBlind extends ValueEffectQualifier
     /**
      * Color blind condition: rod monochromacy
      *
-     * @return string
      */
-    public static function rodMonochromacy()
+    public static function rodMonochromacy(): string
     {
         return self::ROD_MONOCHROMACY;
     }

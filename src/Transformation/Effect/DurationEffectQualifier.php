@@ -22,7 +22,7 @@ class DurationEffectQualifier extends ValueEffectQualifier
     /**
      * @var bool Indicates whether to inverse the provided value.
      */
-    protected $inverseValue = false;
+    protected bool $inverseValue = false;
 
     /**
      * DurationEffectQualifier constructor.
@@ -47,13 +47,12 @@ class DurationEffectQualifier extends ValueEffectQualifier
     /**
      * Setter of the effect duration.
      *
-     * @param int $duration The duration to set.
+     * @param ?int $duration The duration to set.
      *
-     * @return DurationEffectQualifier
      *
      * @internal
      */
-    public function duration($duration)
+    public function duration(?int $duration): static
     {
         if ($this->inverseValue && is_int($duration) && $duration > 0) {
             $duration = -$duration;

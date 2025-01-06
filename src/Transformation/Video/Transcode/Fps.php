@@ -27,20 +27,17 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class Fps extends BaseQualifier
 {
-    const VALUE_CLASS = MinMaxRange::class;
+    protected const VALUE_CLASS = MinMaxRange::class;
 
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'fps';
+    protected static string $key = 'fps';
 
     /**
      * FPS constructor.
-     *
-     * @param mixed $min
-     * @param mixed $max
      */
-    public function __construct($min = null, $max = null)
+    public function __construct($min = null, mixed $max = null)
     {
         parent::__construct($min, $max);
     }
@@ -48,11 +45,11 @@ class Fps extends BaseQualifier
     /**
      * Sets the minimum frame rate.
      *
-     * @param int $min The minimum frame rate in frames per second.
+     * @param int|float|string|null $min The minimum frame rate in frames per second.
      *
      * @return $this
      */
-    public function min($min)
+    public function min(int|float|string|null $min): static
     {
         $this->value->min($min);
 
@@ -62,11 +59,11 @@ class Fps extends BaseQualifier
     /**
      * Sets the maximum frame rate.
      *
-     * @param int $max The maximum frame rate in frames per second.
+     * @param int|float|string|null $max The maximum frame rate in frames per second.
      *
      * @return $this
      */
-    public function max($max)
+    public function max(int|float|string|null $max): static
     {
         $this->value->max($max);
 
@@ -76,14 +73,13 @@ class Fps extends BaseQualifier
     /**
      * Creates a new instance using provided qualifiers array.
      *
-     * @param string|array $qualifiers The qualifiers.
+     * @param array|string $qualifiers The qualifiers.
      *
-     * @return Fps
      */
-    public static function fromParams($qualifiers)
+    public static function fromParams(array|string $qualifiers): Fps
     {
         $qualifiers = ArrayUtils::build($qualifiers);
 
-        return (new static(...$qualifiers));
+        return new static(...$qualifiers);
     }
 }

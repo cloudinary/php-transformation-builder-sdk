@@ -26,13 +26,13 @@ trait BackgroundTrait
      * The image background is visible when padding is added with one of the padding crop modes, when rounding corners,
      * when adding overlays, and with semi-transparent PNGs and GIFs.
      *
-     * @param Background|ColorValue|string $background The background to set.
+     * @param Background|ColorValue|string|null $background The background to set.
      *
      * @return $this
      *
      * @see Background
      */
-    public function background($background)
+    public function background(Background|ColorValue|string|null $background): static
     {
         $this->addQualifier(ClassUtils::verifyInstance($background, Background::class));
 

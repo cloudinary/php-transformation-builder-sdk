@@ -11,6 +11,7 @@
 namespace Cloudinary\Transformation;
 
 use Cloudinary\ArrayUtils;
+use Cloudinary\ClassUtils;
 use Cloudinary\Transformation\Qualifier\BaseQualifier;
 
 /**
@@ -23,7 +24,7 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
     /**
      * @var array $actions The components (actions) of the transformation.
      */
-    protected $actions = [];
+    protected array $actions = [];
 
     /**
      * CommonTransformation constructor.
@@ -52,11 +53,9 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
     /**
      * Transformation named constructor.
      *
-     * @param $transformation
      *
-     * @return static
      */
-    public static function generic($transformation)
+    public static function generic($transformation): static
     {
         return new static($transformation);
     }
@@ -66,9 +65,8 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
      *
      * @param array $qualifiers An array of transformation qualifiers.
      *
-     * @return static
      */
-    public static function fromParams($qualifiers)
+    public static function fromParams(array $qualifiers): static
     {
         return (new static())->addActionFromQualifiers($qualifiers);
     }
@@ -79,9 +77,8 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
      * @param BaseAction|BaseQualifier|mixed $action The transformation action to add.
      *                                               If BaseQualifier is provided, it is wrapped with action.
      *
-     * @return static
      */
-    public function addAction($action)
+    public function addAction(mixed $action): static
     {
         if ($action instanceof BaseQualifier) {
             $action = new Action($action);
@@ -97,17 +94,12 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
      *
      * Appended transformation is nested.
      *
-     * @param CommonTransformation|string $transformation The transformation to add.
+     * @param CommonTransformation|string|null $transformation The transformation to add.
      *
-     * @return static
      */
-    public function addTransformation($transformation)
+    public function addTransformation(CommonTransformation|string|null $transformation): static
     {
-        if (! $transformation instanceof self) {
-            $transformation = new CommonTransformation($transformation);
-        }
-
-        $this->actions[] = $transformation;
+        $this->actions[] = ClassUtils::forceInstance($transformation, CommonTransformation::class);
 
         return $this;
     }
@@ -123,11 +115,10 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
     /**
      * Serializes transformation to URL.
      *
-     * @param ImageTransformation|string|null $withTransformation Optional transformation to append.
+     * @param string|ImageTransformation|null $withTransformation Optional transformation to append.
      *
-     * @return string
      */
-    public function toUrl($withTransformation = null)
+    public function toUrl(ImageTransformation|string|null $withTransformation = null): string
     {
         if ($withTransformation === null) {
             return ArrayUtils::implodeUrl($this->actions);
@@ -156,9 +147,8 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         // TODO: Implement jsonSerialize() method.
         return ['name' => $this->getFullName(), 'actions' => $this->actions];

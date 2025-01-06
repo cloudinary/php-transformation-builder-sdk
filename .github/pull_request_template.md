@@ -26,4 +26,4 @@ include, for example:
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
-- [ ] I ran the full test suite before pushing the changes and all of the tests pass.
+- [ ] I ran the full test suite before pushing the changes and all the tests pass.

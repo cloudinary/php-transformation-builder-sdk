@@ -18,39 +18,38 @@ class FontAntialias
     /**
      * Use a bi-level alpha mask.
      */
-    const NONE = 'none';
+    public const NONE = 'none';
 
     /**
      * Perform single-color antialiasing. For example, using shades of gray for black text on a white background.
      */
-    const GRAY = 'gray';
+    public const GRAY = 'gray';
 
     /**
      * Perform antialiasing by taking advantage of the order of subpixel elements on devices such as LCD panels.
      */
-    const SUBPIXEL = 'subpixel';
+    public const SUBPIXEL = 'subpixel';
 
     /**
      * Some antialiasing is performed, but speed is prioritized over quality.
      */
-    const FAST = 'fast';
+    public const FAST = 'fast';
 
     /**
      * Antialiasing that balances quality and performance.
      */
-    const GOOD = 'good';
+    public const GOOD = 'good';
 
     /**
      * Renders at the highest quality, sacrificing speed if necessary.
      */
-    const BEST = 'best';
+    public const BEST = 'best';
 
     /**
      * Use a bi-level alpha mask.
      *
-     * @return string
      */
-    public static function none()
+    public static function none(): string
     {
         return self::NONE;
     }
@@ -58,9 +57,8 @@ class FontAntialias
     /**
      * Perform single-color antialiasing. For example, using shades of gray for black text on a white background.
      *
-     * @return string
      */
-    public static function gray()
+    public static function gray(): string
     {
         return self::GRAY;
     }
@@ -68,9 +66,8 @@ class FontAntialias
     /**
      * Perform antialiasing by taking advantage of the order of subpixel elements on devices such as LCD panels.
      *
-     * @return string
      */
-    public static function subpixel()
+    public static function subpixel(): string
     {
         return self::SUBPIXEL;
     }
@@ -78,9 +75,8 @@ class FontAntialias
     /**
      * Some antialiasing is performed, but speed is prioritized over quality.
      *
-     * @return string
      */
-    public static function fast()
+    public static function fast(): string
     {
         return self::FAST;
     }
@@ -88,9 +84,8 @@ class FontAntialias
     /**
      * Antialiasing that balances quality and performance.
      *
-     * @return string
      */
-    public static function good()
+    public static function good(): string
     {
         return self::GOOD;
     }
@@ -98,9 +93,8 @@ class FontAntialias
     /**
      * Renders at the highest quality, sacrificing speed if necessary.
      *
-     * @return string
      */
-    public static function best()
+    public static function best(): string
     {
         return self::BEST;
     }

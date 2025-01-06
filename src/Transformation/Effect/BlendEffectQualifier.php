@@ -24,11 +24,10 @@ class BlendEffectQualifier extends LimitedEffectQualifier
      *
      * @param int $blend The blend percentage to set.
      *
-     * @return static
      *
      * @internal
      */
-    public function blend($blend)
+    public function blend(int $blend): static
     {
         $this->setEffectValue($blend);
 

@@ -48,14 +48,13 @@ class CutOut extends SourceBasedEffectAction
      *
      * Note that e_cut_out comes with l_logo in the same sub-action.
      *
-     * @return array
      *
      * @see BasePositionalSourceContainer::getSubActionQualifiers
      */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $sourceQualifiers     = $this->source ? $this->source->getStringQualifiers() : [];
-        $sourceTransformation = $this->source ? $this->source->getTransformation() : null;
+        $sourceTransformation = $this->source?->getTransformation();
         $positionQualifiers   = $this->position ? $this->position->getStringQualifiers() : [];
         $additionalQualifiers = $this->getStringQualifiers();
 

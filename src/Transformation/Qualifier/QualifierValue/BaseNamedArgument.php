@@ -18,28 +18,28 @@ use Cloudinary\Transformation\BaseComponent;
  */
 abstract class BaseNamedArgument extends BaseComponent
 {
-    const ARG_NAME_VALUE_DELIMITER  = '_';
-    const ARG_INNER_VALUE_DELIMITER = ':';
+    public const ARG_NAME_VALUE_DELIMITER = '_';
+    public const ARG_INNER_VALUE_DELIMITER = ':';
 
     /**
      * @var string $argName The name of the argument.
      */
-    protected $argName;
+    protected string $argName;
 
     /**
-     * @var array $argMultiValue The value of the argument.
+     * @var mixed $argMultiValue The value of the argument.
      */
-    protected $argMultiValue = [];
+    protected mixed $argMultiValue = [];
 
     /**
      * @var string $nameValueDelimiter Run-time settable name-value delimiter.
      */
-    protected $nameValueDelimiter;
+    protected string $nameValueDelimiter;
 
     /**
      * @var string $innerValueDelimiter Run-time settable inner value delimiter.
      */
-    protected $innerValueDelimiter;
+    protected string $innerValueDelimiter;
 
     /**
      * BaseNamedArgument constructor.
@@ -50,16 +50,18 @@ abstract class BaseNamedArgument extends BaseComponent
     {
         parent::__construct();
 
+        $this->nameValueDelimiter = static::ARG_NAME_VALUE_DELIMITER;
+        $this->innerValueDelimiter = static::ARG_INNER_VALUE_DELIMITER;
+
         $this->addValues(...$value);
     }
 
 
     /**
-     * @param mixed ...$value
      *
      * @return $this
      */
-    public function addValues(...$values)
+    public function addValues(...$values): static
     {
         $this->argMultiValue = array_merge($this->argMultiValue, $values);
 
@@ -69,9 +71,8 @@ abstract class BaseNamedArgument extends BaseComponent
     /**
      * Gets the multi value of the argument.
      *
-     * @return array
      */
-    public function getMultiValue()
+    public function getMultiValue(): array
     {
         return $this->argMultiValue;
     }
@@ -98,9 +99,8 @@ abstract class BaseNamedArgument extends BaseComponent
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return ['name' => $this->getArgName(), 'value' => ArrayUtils::flatten($this->argMultiValue)];
     }
@@ -108,13 +108,16 @@ abstract class BaseNamedArgument extends BaseComponent
     /**
      * Gets the argument name.
      *
-     * @return string
      *
      * @internal
      */
 
-    protected function getArgName()
+    protected function getArgName(): string
     {
-        return $this->argName ?: $this->getFullName();
+        if (!isset($this->argName)){
+            $this->argName = $this->getFullName();
+        }
+
+        return $this->argName;
     }
 }

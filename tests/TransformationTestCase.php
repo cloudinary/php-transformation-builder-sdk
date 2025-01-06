@@ -49,7 +49,7 @@ abstract class TransformationTestCase extends TestCase
      * @param mixed  $actual
      * @param string $message
      */
-    public static function assertStrEquals($expected, $actual, $message = '')
+    public static function assertStrEquals(mixed $expected, mixed $actual, string $message = ''): void
     {
         self::assertEquals((string)$expected, (string)$actual, $message);
     }
@@ -67,11 +67,11 @@ abstract class TransformationTestCase extends TestCase
      */
     protected static function generateDataProvider(
         $array,
-        $prefixValue = '',
-        $suffixValue = '',
-        $prefixMethod = '',
-        $suffixMethod = ''
-    ) {
+        string $prefixValue = '',
+        string $suffixValue = '',
+        string $prefixMethod = '',
+        string $suffixMethod = ''
+    ): array {
         return array_map(
             static function ($value) use ($prefixValue, $suffixValue, $prefixMethod, $suffixMethod) {
                 return [

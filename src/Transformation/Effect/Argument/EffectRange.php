@@ -17,16 +17,16 @@ namespace Cloudinary\Transformation;
  */
 class EffectRange
 {
-    const PERCENT          = [0, 100];
-    const POSITIVE_PERCENT = [1, 100];
-    const EXTENDED_PERCENT = [-50, 100];
-    const AUDIO_VOLUME     = [-100, 400];
-    const ANGLE            = [-360, 360];
-    const PIXEL            = [1, 2000];
-    const PIXEL_REGION     = [1, 200];
-    const DEFAULT_RANGE    = [-100, 100];
-    const SHIFTED_RANGE    = [-50, 150];
-    const BRIGHTNESS       = [-99, 100];
-    const DESHAKE          = [0, 64]; //FIXME: set predefined values
-    const ORDERED_DITHER   = [0, 18];
+    public const PERCENT = [0, 100];
+    public const POSITIVE_PERCENT = [1, 100];
+    public const EXTENDED_PERCENT = [-50, 100];
+    public const AUDIO_VOLUME     = [-100, 400];
+    public const ANGLE        = [-360, 360];
+    public const PIXEL = [1, 2000];
+    public const PIXEL_REGION = [1, 200];
+    public const DEFAULT_RANGE = [-100, 100];
+    public const SHIFTED_RANGE = [-50, 150];
+    public const BRIGHTNESS    = [-99, 100];
+    public const DESHAKE    = [0, 64]; //FIXME: set predefined values
+    public const ORDERED_DITHER = [0, 18];
 }

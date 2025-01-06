@@ -22,31 +22,31 @@ class ExpressionUtils
     /**
      * @var array $OPERATORS A list of supported operators (arithmetic, logical, relational).
      */
-    private static $OPERATORS;
+    private static array $OPERATORS;
 
     /**
      * @var array $PREDEFINED_VARIABLES A list of supported predefined variables.
      */
-    private static $PREDEFINED_VARIABLES;
+    private static array $PREDEFINED_VARIABLES;
 
     /**
      * @var string $IF_REPLACE_RE Operators and predefined variables serialisation regular expression.
      *
      * @see ExpressionUtils::lazyInit
      */
-    private static $IF_REPLACE_RE;
+    private static string $IF_REPLACE_RE;
 
     /**
      * Normalizes expression from user representation to URL form.
      *
      * @param mixed $expression The expression to normalize.
      *
-     * @return string The normalized expression.
+     * @return ?string The normalized expression.
      *
      * @uses translateIf()
      *
      */
-    public static function normalize($expression)
+    public static function normalize(mixed $expression): ?string
     {
         if ($expression === null || self::isLiteral($expression)) {
             return $expression;
@@ -60,15 +60,11 @@ class ExpressionUtils
 
         $expression = preg_replace('/[ _]+/', '_', $expression);
 
-        $expression = preg_replace_callback(
+        return preg_replace_callback(
             self::$IF_REPLACE_RE,
-            static function (array $source) {
-                return self::translateIf($source);
-            },
+            static fn(array $source) => self::translateIf($source),
             $expression
         );
-
-        return $expression;
     }
 
     /**
@@ -76,7 +72,7 @@ class ExpressionUtils
      *
      * @see ExpressionUtils::$IF_REPLACE_RE
      */
-    private static function lazyInit()
+    private static function lazyInit(): void
     {
         if (! empty(self::$IF_REPLACE_RE)) {
             return; //initialized last, if initialized, all the rest is OK
@@ -104,11 +100,10 @@ class ExpressionUtils
      *
      * @param array $source The source to translate.
      *
-     * @return mixed
      *
      * @see normalize()
      */
-    protected static function translateIf($source)
+    protected static function translateIf(array $source): mixed
     {
         if (isset(self::$OPERATORS[$source[0]])) {
             return self::$OPERATORS[$source[0]];
@@ -126,9 +121,8 @@ class ExpressionUtils
      *
      * @param string $expression The expression
      *
-     * @return bool
      */
-    protected static function isLiteral($expression)
+    protected static function isLiteral(string $expression): bool
     {
         return (boolean)preg_match('/^!.+!$/', $expression);
     }

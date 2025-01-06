@@ -24,25 +24,24 @@ use Cloudinary\Transformation\RotationDegreeInterface;
  */
 class Degree extends ExpressionQualifierMultiValue implements RotationDegreeInterface
 {
-    const VALUE_DELIMITER = '.';
+    protected const VALUE_DELIMITER = '.';
 
     use AngleTrait;
 
-    const DEG_90  = '90';
-    const DEG_180 = '180';
-    const DEG_270 = '270';
+    public const DEG_90  = '90';
+    public const DEG_180 = '180';
+    public const DEG_270 = '270';
 
     /**
      * Creates the instance.
      *
      * @param int|array $degree Given degrees or mode.
      *
-     * @return Degree
      *
      * @internal
      */
-    public static function createWithDegree(...$degree)
+    public static function createWithDegree(...$degree): static
     {
-        return new self(...$degree);
+        return new static(...$degree);
     }
 }

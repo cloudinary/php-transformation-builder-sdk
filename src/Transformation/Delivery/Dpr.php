@@ -22,14 +22,11 @@ class Dpr extends BaseExpressionQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'dpr';
+    protected static string $key = 'dpr';
 
-    const AUTO = 'auto';
+    public const AUTO = 'auto';
 
-    /**
-     * @return static
-     */
-    public static function auto()
+    public static function auto(): static
     {
         return new static(static::AUTO);
     }

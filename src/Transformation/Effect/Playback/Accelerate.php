@@ -37,7 +37,7 @@ class Accelerate extends EffectAction
      *
      * @return $this
      */
-    public function rate($rate)
+    public function rate(int $rate): static
     {
         $this->qualifiers[EffectQualifier::getName()]->setEffectValue($rate);
 

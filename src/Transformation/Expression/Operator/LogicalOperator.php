@@ -28,11 +28,11 @@ class LogicalOperator extends BaseOperator
     /**
      * @var array $operators The supported logical operators.
      */
-    protected static $operators;
+    protected static array $operators = [];
     /**
-     * @var array $friendlyRepresentations The user friendly representations of the logical operators.
+     * @var array $friendlyRepresentations The user-friendly representations of the logical operators.
      */
-    protected static $friendlyRepresentations = [
+    protected static array $friendlyRepresentations = [
         '&&' => self::AND_OPERATOR,
         '||' => self::OR_OPERATOR,
     ];
@@ -40,9 +40,8 @@ class LogicalOperator extends BaseOperator
     /**
      * And.
      *
-     * @return LogicalOperator
      */
-    public static function andOperator()
+    public static function andOperator(): LogicalOperator
     {
         return new static(self::AND_OPERATOR);
     }
@@ -50,9 +49,8 @@ class LogicalOperator extends BaseOperator
     /**
      * Or.
      *
-     * @return LogicalOperator
      */
-    public static function orOperator()
+    public static function orOperator(): LogicalOperator
     {
         return new static(self::OR_OPERATOR);
     }

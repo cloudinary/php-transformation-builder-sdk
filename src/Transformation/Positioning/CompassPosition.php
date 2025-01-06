@@ -20,12 +20,15 @@ class CompassPosition extends BasePosition
     /**
      * CompassPosition constructor.
      *
-     * @param string           $gravity
-     * @param float|int|string $x Offset x
-     * @param float|int|string $y Offset y
+     * @param mixed                 $gravity The gravity.
+     * @param float|int|string|null $x       Offset x.
+     * @param float|int|string|null $y       Offset y.
      */
-    public function __construct($gravity = null, $x = null, $y = null)
-    {
+    public function __construct(
+        mixed $gravity = null,
+        float|int|string|null $x = null,
+        float|int|string|null $y = null
+    ) {
         parent::__construct();
 
         $this->gravity($gravity);
@@ -35,11 +38,9 @@ class CompassPosition extends BasePosition
     /**
      * @internal
      *
-     * @param $value
      *
-     * @return static
      */
-    public function setOffsetValue($value)
+    public function setOffsetValue($value): static
     {
         if (! isset($this->qualifiers[Offset::getName()])) {
             $this->addQualifier(new Offset());

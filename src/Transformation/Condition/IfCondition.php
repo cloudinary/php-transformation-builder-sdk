@@ -22,12 +22,12 @@ class IfCondition extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'if';
+    protected static string $key = 'if';
 
     /**
      * IfCondition constructor.
      *
-     * @param BaseExpressionComponent|string $expression
+     * @param BaseExpressionComponent|string|null $expression
      */
     public function __construct($expression)
     {

@@ -416,7 +416,7 @@ final class EffectTest extends TransformationTestCase
 
         self::assertEquals(
             'e_gradient_fade:symmetric',
-            (string)Effect::gradientFade(GradientFade::symmetric())
+            (string)Effect::gradientFade(null, GradientFade::symmetric())
         );
 
         self::assertEquals(
@@ -502,7 +502,7 @@ final class EffectTest extends TransformationTestCase
      *
      * @return array
      */
-    public function artisticFilterDataProvider()
+    public function artisticFilterDataProvider(): array
     {
         return [
             ['al_dente', 'alDente'],
@@ -537,7 +537,7 @@ final class EffectTest extends TransformationTestCase
      * @param string $filter
      * @param string $method
      */
-    public function testArtisticFilter($filter, $method)
+    public function testArtisticFilter(string $filter, string $method)
     {
         self::assertEquals(
             'e_art:' . $filter,

@@ -25,20 +25,16 @@ use Cloudinary\ClassUtils;
 class AudioOverlay extends BaseSourceContainer
 {
     /**
-     * @var Timeline $timeline The timeline position of the overlay.
+     * @var ?Timeline $timeline The timeline position of the overlay.
      */
-    protected $timeline;
+    protected ?Timeline $timeline;
 
     /**
      * BaseLayerContainer constructor.
      *
      * @param BaseSource|string $source
-     * @param Timeline|null     $timeline
      */
-    public function __construct(
-        $source = null,
-        $timeline = null
-    ) {
+    public function __construct($source = null, ?Timeline $timeline = null) {
         parent::__construct($source);
 
         $this->timeline($timeline);
@@ -49,9 +45,8 @@ class AudioOverlay extends BaseSourceContainer
      *
      * @param Timeline|null $timeline The timeline position of the overlay.
      *
-     * @return AudioOverlay
      */
-    public function timeline(?Timeline $timeline = null)
+    public function timeline(?Timeline $timeline = null): static
     {
         $this->timeline = $timeline;
 
@@ -63,7 +58,7 @@ class AudioOverlay extends BaseSourceContainer
      *
      * @return $this
      */
-    protected function concatenate()
+    protected function concatenate(): static
     {
         $this->source->setFlag(LayerFlag::splice());
 
@@ -73,21 +68,17 @@ class AudioOverlay extends BaseSourceContainer
     /**
      * Sets the source.
      *
-     * @param BaseSource $source The source.
+     * @param BaseSource|string|null $source The source.
      *
-     * @return static
      */
-    public function source($source)
+    public function source(BaseSource|string|null $source): static
     {
         $this->source = ClassUtils::verifyInstance($source, BaseSource::class, AudioSource::class);
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $subActionQualifiers = parent::getSubActionQualifiers();
 

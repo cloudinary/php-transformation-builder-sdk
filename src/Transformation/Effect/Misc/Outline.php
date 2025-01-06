@@ -18,9 +18,6 @@ class Outline extends ColoredEffectAction
     /**
      * Outline constructor.
      *
-     * @param $mode
-     * @param $width
-     * @param $blurLevel
      */
     public function __construct($mode = null, $width = null, $blurLevel = null)
     {
@@ -34,11 +31,10 @@ class Outline extends ColoredEffectAction
     /**
      * Sets the outline mode.
      *
-     * @param int|string $mode The outline mode.
+     * @param int|string|null $mode The outline mode.
      *
-     * @return Outline
      */
-    public function mode($mode)
+    public function mode(int|string|null $mode): static
     {
         $this->qualifiers[OutlineQualifier::getName()]->mode($mode);
 
@@ -48,11 +44,10 @@ class Outline extends ColoredEffectAction
     /**
      * Sets the outline width.
      *
-     * @param int|string $width The width in pixels.
+     * @param int|string|null $width The width in pixels.
      *
-     * @return Outline
      */
-    public function width($width)
+    public function width(int|string|null $width): static
     {
         $this->qualifiers[OutlineQualifier::getName()]->width($width);
 
@@ -62,11 +57,10 @@ class Outline extends ColoredEffectAction
     /**
      * Sets the outline blur level.
      *
-     * @param int|string $blurLevel The level of blur.
+     * @param int|string|null $blurLevel The level of blur.
      *
-     * @return Outline
      */
-    public function blurLevel($blurLevel)
+    public function blurLevel(int|string|null $blurLevel): static
     {
         $this->qualifiers[OutlineQualifier::getName()]->blurLevel($blurLevel);
 

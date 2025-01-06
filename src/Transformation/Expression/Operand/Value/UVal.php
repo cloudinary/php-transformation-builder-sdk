@@ -32,9 +32,8 @@ class UVal extends Expression
      *
      * @param int $value The int value.
      *
-     * @return Expression
      */
-    public static function int($value)
+    public static function int(int $value): Expression|UVal
     {
         return self::uVal($value);
     }
@@ -44,9 +43,8 @@ class UVal extends Expression
      *
      * @param float $value The float value.
      *
-     * @return self
      */
-    public static function float($value)
+    public static function float(float $value): UVal
     {
         return self::uVal($value);
     }
@@ -56,9 +54,8 @@ class UVal extends Expression
      *
      * @param mixed $value The numeric value. Can be used for aspect ratio, for example "16:9", etc.
      *
-     * @return self
      */
-    public static function numeric($value)
+    public static function numeric(mixed $value): UVal
     {
         return self::uVal($value);
     }
@@ -68,9 +65,8 @@ class UVal extends Expression
      *
      * @param string $value The string value
      *
-     * @return self
      */
-    public static function string($value)
+    public static function string(string $value): UVal
     {
         return self::uVal(StringUtils::ensureWrappedWith($value, self::STRING_MARKER));
     }
@@ -80,9 +76,8 @@ class UVal extends Expression
      *
      * @param array $array The array of strings.
      *
-     * @return self
      */
-    public static function stringArray($array)
+    public static function stringArray(array $array): UVal
     {
         return self::string(implode(self::STRING_ARR_DELIM, $array));
     }
@@ -92,9 +87,8 @@ class UVal extends Expression
      *
      * @param string $publicId The public ID of the file.
      *
-     * @return self
      */
-    public static function assetReference($publicId)
+    public static function assetReference(string $publicId): UVal
     {
         $publicId = StringUtils::ensureWrappedWith($publicId, self::STRING_MARKER);
 
@@ -106,9 +100,8 @@ class UVal extends Expression
      *
      * @param string $contextKey The context key.
      *
-     * @return self
      */
-    public static function context($contextKey)
+    public static function context(string $contextKey): UVal
     {
         $contextKey = StringUtils::ensureWrappedWith($contextKey, self::STRING_MARKER);
 
@@ -120,9 +113,8 @@ class UVal extends Expression
      *
      * @param string $metadataKey The structured metadata key.
      *
-     * @return self
      */
-    public static function metadata($metadataKey)
+    public static function metadata(string $metadataKey): UVal
     {
         $metadataKey = StringUtils::ensureWrappedWith($metadataKey, self::STRING_MARKER);
 
@@ -134,9 +126,8 @@ class UVal extends Expression
      *
      * @param mixed $value The value.
      *
-     * @return self
      */
-    public static function uVal($value)
+    public static function uVal(mixed $value): UVal
     {
         return new self($value);
     }

@@ -10,6 +10,8 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\ClassUtils;
+
 /**
  * Trait CompassGravityTrait
  *
@@ -18,13 +20,12 @@ namespace Cloudinary\Transformation;
 trait CompassGravityBuilderTrait
 {
     /**
-     * North west corner (top left).
+     * North-west corner (top left).
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function northWest(...$args)
+    public static function northWest(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::NORTH_WEST, ...$args);
     }
@@ -34,21 +35,19 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function north(...$args)
+    public static function north(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::NORTH, ...$args);
     }
 
     /**
-     * North east corner (top right).
+     * North-east corner (top right).
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function northEast(...$args)
+    public static function northEast(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::NORTH_EAST, ...$args);
     }
@@ -58,9 +57,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function west(...$args)
+    public static function west(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::WEST, ...$args);
     }
@@ -70,9 +68,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function center(...$args)
+    public static function center(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::CENTER, ...$args);
     }
@@ -82,9 +79,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function east(...$args)
+    public static function east(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::EAST, ...$args);
     }
@@ -94,9 +90,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function southWest(...$args)
+    public static function southWest(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::SOUTH_WEST, ...$args);
     }
@@ -106,9 +101,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function south(...$args)
+    public static function south(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::SOUTH, ...$args);
     }
@@ -118,9 +112,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function southEast(...$args)
+    public static function southEast(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::SOUTH_EAST, ...$args);
     }
@@ -130,9 +123,8 @@ trait CompassGravityBuilderTrait
      *
      * @param array $args Additional arguments.
      *
-     * @return CompassGravity|CompassPosition
      */
-    public static function xyCenter(...$args)
+    public static function xyCenter(...$args): CompassGravity|CompassPosition
     {
         return static::createWithCompassGravity(Compass::XY_CENTER, ...$args);
     }
@@ -140,12 +132,11 @@ trait CompassGravityBuilderTrait
     /**
      * Creates a new instance of the CompassGravity class.
      *
-     * @param string $direction The gravity direction.
-     * @param array  $args      Additional arguments.
+     * @param string|CompassGravity $direction The gravity direction.
+     * @param array                 $args      Additional arguments.
      *
-     * @return CompassGravity
      */
-    public static function compass($direction, ...$args)
+    public static function compass(string|CompassGravity $direction, ...$args): CompassGravity
     {
         return static::createWithCompassGravity($direction, ...$args);
     }
@@ -153,13 +144,12 @@ trait CompassGravityBuilderTrait
     /**
      * Creates a new instance of the CompassGravity class.
      *
-     * @param string $direction The gravity direction.
-     * @param array  $args      Additional arguments.
+     * @param string|CompassGravity $direction The gravity direction.
+     * @param array                 $args      Additional arguments.
      *
-     * @return CompassGravity
      */
-    protected static function createWithCompassGravity($direction, ...$args)
+    protected static function createWithCompassGravity(string|CompassGravity $direction, ...$args): CompassGravity
     {
-        return new CompassGravity($direction);
+        return ClassUtils::forceInstance($direction, CompassGravity::class, null, $args);
     }
 }

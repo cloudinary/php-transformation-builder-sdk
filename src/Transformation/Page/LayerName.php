@@ -17,11 +17,11 @@ use Cloudinary\Transformation\Argument\BaseNamedArgument;
  */
 class LayerName extends BaseNamedArgument
 {
-    const ARG_NAME_VALUE_DELIMITER  = ':';
-    const ARG_INNER_VALUE_DELIMITER = ';';
+    public const ARG_NAME_VALUE_DELIMITER = ':';
+    public const ARG_INNER_VALUE_DELIMITER = ';';
 
     /**
      * @var string The name of the argument.
      */
-    protected static $name = 'name';
+    protected static string $name = 'name';
 }

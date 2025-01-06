@@ -15,23 +15,25 @@ namespace Cloudinary\Transformation;
  */
 class LightroomEffect extends EffectAction implements LightroomEffectInterface
 {
-    const     LIGHTROOM = 'lightroom';
+    public const LIGHTROOM = 'lightroom';
 
-    const     SHARPNESS_RANGE            = [0, 150];
-    const     SHARPEN_EDGE_MASKING_RANGE = [0, 10];
-    const     EXPOSURE_RANGE             = [-5.0, 5.0];
-    const     SHARPEN_RADIUS_RANGE       = [0.5, 3.0];
+    public const SHARPNESS_RANGE            = [0, 150];
+    public const SHARPEN_EDGE_MASKING_RANGE = [0, 10];
+    public const EXPOSURE_RANGE             = [-5.0, 5.0];
+    public const SHARPEN_RADIUS_RANGE       = [0.5, 3.0];
 
     use LightroomEffectTrait;
 
     /**
-     * @param $name
-     * @param $value
-     * @param $range
+     * Adds Lightroom Filter
      *
-     * @return static
+     * @param ?string $name  The name of the filter.
+     * @param mixed   $value The value of the filter.
+     * @param ?array  $range The valid range of the value.
+     *
+     * @return $this
      */
-    protected function addLightroomFilter($name, $value, $range = null)
+    protected function addLightroomFilter(?string $name, mixed $value, ?array $range = null): static
     {
         $this->qualifiers[EffectQualifier::getName()]->addLightroomFilter($name, $value, $range);
 
@@ -41,12 +43,10 @@ class LightroomEffect extends EffectAction implements LightroomEffectInterface
     /**
      * Lightroom XMP file.
      *
-     * @param string $source The XMP file source (public ID).
-     * @param string $value
+     * @param mixed $source The XMP file source (public ID).
      *
-     * @return static
      */
-    public function xmp($source)
+    public function xmp(mixed $source): static
     {
         $this->qualifiers[EffectQualifier::getName()]->xmp($source);
 

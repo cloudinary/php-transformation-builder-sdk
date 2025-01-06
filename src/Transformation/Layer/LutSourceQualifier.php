@@ -20,12 +20,11 @@ class LutSourceQualifier extends BaseSourceQualifier
     /**
      * @var string $sourceType The type of the layer.
      */
-    protected $sourceType = 'lut';
+    protected string $sourceType = 'lut';
 
     /**
      * LutLayerQualifier constructor.
      *
-     * @param $lutId
      */
     public function __construct($lutId)
     {
@@ -37,11 +36,11 @@ class LutSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the lut source.
      *
-     * @param string|SourceValue $lutId The public ID of the LUT asset.
+     * @param string|SourceValue|null $lutId The public ID of the LUT asset.
      *
      * @return $this
      */
-    public function lut($lutId)
+    public function lut(SourceValue|string|null $lutId): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($lutId, SourceValue::class));
 

@@ -20,9 +20,8 @@ trait AngleTrait
     /**
      * Rotate image 90 degrees clockwise.
      *
-     * @return static
      */
-    public static function deg90()
+    public static function deg90(): static
     {
         return static::createWithDegree(Degree::DEG_90);
     }
@@ -30,9 +29,8 @@ trait AngleTrait
     /**
      * Rotate image 180 degrees.
      *
-     * @return static
      */
-    public static function deg180()
+    public static function deg180(): static
     {
         return static::createWithDegree(Degree::DEG_180);
     }
@@ -40,9 +38,8 @@ trait AngleTrait
     /**
      * Rotate image 90 degrees counterclockwise.
      *
-     * @return static
      */
-    public static function deg270()
+    public static function deg270(): static
     {
         return static::createWithDegree(Degree::DEG_270);
     }
@@ -52,9 +49,8 @@ trait AngleTrait
      *
      * @param int|array $degree Given degrees. (Range: 0 to 360, Default: 0).
      *
-     * @return static
      */
-    public static function byAngle(...$degree)
+    public static function byAngle(...$degree): static
     {
         return static::createWithDegree(...$degree);
     }

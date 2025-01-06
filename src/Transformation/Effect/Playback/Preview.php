@@ -24,9 +24,9 @@ class Preview extends EffectAction
      *
      * @param mixed|object $duration
      * @param mixed        $maximumSegments
-     * @param mixed        $minimumSegmentDuration
+     * @param mixed|null   $minimumSegmentDuration
      */
-    public function __construct($duration = null, $maximumSegments = null, $minimumSegmentDuration = null)
+    public function __construct($duration = null, $maximumSegments = null, mixed $minimumSegmentDuration = null)
     {
         parent::__construct(PlaybackEffect::PREVIEW);
 
@@ -38,21 +38,15 @@ class Preview extends EffectAction
     /**
      * @param mixed|object $duration
      *
-     * @return Preview
      */
-    public function duration($duration)
+    public function duration(mixed $duration): static
     {
         $this->getMainQualifier()->add(ClassUtils::verifyInstance($duration, PreviewDuration::class));
 
         return $this;
     }
 
-    /**
-     * @param $maximumSegments
-     *
-     * @return Preview
-     */
-    public function maximumSegments($maximumSegments)
+    public function maximumSegments($maximumSegments): static
     {
         if ($maximumSegments) {
             $this->getMainQualifier()->add(new GenericNamedArgument('max_seg', $maximumSegments));
@@ -61,12 +55,7 @@ class Preview extends EffectAction
         return $this;
     }
 
-    /**
-     * @param $minimumSegmentDuration
-     *
-     * @return Preview
-     */
-    public function minimumSegmentDuration($minimumSegmentDuration)
+    public function minimumSegmentDuration($minimumSegmentDuration): static
     {
         if ($minimumSegmentDuration) {
             $this->getMainQualifier()->add(new GenericNamedArgument('min_seg_dur', $minimumSegmentDuration));

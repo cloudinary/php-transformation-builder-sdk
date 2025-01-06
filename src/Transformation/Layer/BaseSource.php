@@ -21,16 +21,15 @@ abstract class BaseSource extends BaseAction
     /**
      * @var CommonTransformation $transformation Transformation of the source.
      */
-    protected $transformation;
+    protected CommonTransformation $transformation;
 
     /**
      * Sets layer transformation.
      *
      * @param CommonTransformation $t The transformation to set.
      *
-     * @return static
      */
-    public function transformation(CommonTransformation $t)
+    public function transformation(CommonTransformation $t): static
     {
         $this->transformation = clone $t;
 
@@ -44,7 +43,7 @@ abstract class BaseSource extends BaseAction
      *
      * @return $this
      */
-    public function setStackPosition($position)
+    public function setStackPosition(string $position): static
     {
         $this->qualifiers['source']->setStackPosition($position);
 
@@ -57,9 +56,8 @@ abstract class BaseSource extends BaseAction
      * @param BaseAction|BaseQualifier|mixed $action The transformation action to add.
      *                                               If BaseQualifier is provided, it is wrapped with action.
      *
-     * @return static
      */
-    public function addAction($action)
+    public function addAction(mixed $action): static
     {
         $this->getTransformation()->addAction($action);
 
@@ -69,11 +67,10 @@ abstract class BaseSource extends BaseAction
     /**
      * Adds a flag as a separate action.
      *
-     * @param FlagQualifier|string $flag The flag to add.
+     * @param string|FlagQualifier $flag The flag to add.
      *
-     * @return static
      */
-    public function addFlag($flag)
+    public function addFlag(FlagQualifier|string $flag): static
     {
         $this->getTransformation()->addFlag($flag);
 
@@ -86,11 +83,10 @@ abstract class BaseSource extends BaseAction
      *
      * Appended transformation is nested.
      *
-     * @param CommonTransformation $transformation The transformation to add.
+     * @param CommonTransformation|BaseAction $transformation The transformation to add.
      *
-     * @return static
      */
-    public function addTransformation($transformation)
+    public function addTransformation(CommonTransformation|BaseAction $transformation): static
     {
         $this->getTransformation()->addTransformation($transformation);
 
@@ -111,10 +107,8 @@ abstract class BaseSource extends BaseAction
 
     /**
      * Serializes to json.
-     *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'source'         => $this::getName(),
@@ -125,18 +119,17 @@ abstract class BaseSource extends BaseAction
     /**
      * Gets the transformation.
      *
-     * @return Transformation
      *
      * @internal
      */
-    abstract public function getTransformation();
+    abstract public function getTransformation(): CommonTransformation;
 
     /**
      * Gets the layer qualifier.
      *
-     * @return BaseSourceQualifier
      *
      * @internal
      */
-    abstract protected function getSourceQualifier();
+    abstract protected function getSourceQualifier(
+    ): BaseSourceQualifier|ImageSourceQualifier|VideoSourceQualifier|FetchSourceQualifier;
 }

@@ -18,14 +18,13 @@ namespace Cloudinary\Transformation\Expression;
 abstract class BaseExpression extends BaseExpressionComponent
 {
     /**
-     * @var ExpressionComponent $exprValue The expression value.
+     * @var ExpressionComponent|string|null  $exprValue The expression value.
      */
-    protected $exprValue;
+    protected ExpressionComponent|string|null $exprValue;
 
     /**
      * ExpressionComponent constructor.
      *
-     * @param $exprUserVariableName
      */
     public function __construct($exprUserVariableName)
     {
@@ -37,11 +36,10 @@ abstract class BaseExpression extends BaseExpressionComponent
     /**
      * Internal expression builder.
      *
-     * @param mixed $operator The operator to use for building the expression.
+     * @param ArithmeticOperator|string|null $operator The operator to use for building the expression.
      *
-     * @return ExpressionOperator
      */
-    protected function buildExpression($operator)
+    protected function buildExpression(ArithmeticOperator|string|null $operator): ExpressionOperator
     {
         return new ExpressionOperator(new ExpressionComponent($this->exprValue, $operator));
     }
@@ -49,11 +47,9 @@ abstract class BaseExpression extends BaseExpressionComponent
     /**
      * Sets the right operand.
      *
-     * @param $rightOperand
      *
-     * @return Expression
      */
-    protected function setRightOperand($rightOperand)
+    protected function setRightOperand($rightOperand): Expression
     {
         $this->exprValue->setRightOperand($rightOperand);
 
@@ -74,9 +70,8 @@ abstract class BaseExpression extends BaseExpressionComponent
     /**
      * Serializes to JSON.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->exprValue->jsonSerialize();
     }

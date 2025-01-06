@@ -31,7 +31,6 @@ class SubtitlesSource extends AssetBasedSource
     /**
      * SubtitlesLayer constructor.
      *
-     * @param $subtitlesId
      */
     public function __construct($subtitlesId)
     {
@@ -41,9 +40,8 @@ class SubtitlesSource extends AssetBasedSource
     /**
      * Gets the transformation.
      *
-     * @return VideoTransformation
      */
-    public function getTransformation()
+    public function getTransformation(): VideoTransformation
     {
         if (! isset($this->transformation)) {
             $this->transformation = new VideoTransformation();
@@ -59,7 +57,7 @@ class SubtitlesSource extends AssetBasedSource
      *
      * @return $this
      */
-    public function textStyle($style)
+    public function textStyle(array|TextStyle $style): static
     {
         $this->getSourceQualifier()->textStyle($style);
 
@@ -73,13 +71,15 @@ class SubtitlesSource extends AssetBasedSource
      * @param string $value     The style.
      * @param bool   $named     Indicates whether the property is a named property.
      *
-     * @return static
-     *
      * @internal
      */
-    protected function setStyleProperty($styleName, $value, $named = false)
-    {
-        $this->getSourceQualifier()->setStyleProperty($styleName, $value, $named);
+    protected function setStyleProperty(
+        string $styleName,
+        string $value,
+        bool $named = false,
+        ?string $defaultValue = null
+    ): static {
+        $this->getSourceQualifier()->setStyleProperty($styleName, $value, $named, $defaultValue);
 
         return $this;
     }
@@ -87,11 +87,10 @@ class SubtitlesSource extends AssetBasedSource
     /**
      * Gets the layer qualifier.
      *
-     * @return SubtitlesSourceQualifier
      *
      * @internal
      */
-    protected function getSourceQualifier()
+    protected function getSourceQualifier(): SubtitlesSourceQualifier
     {
         if (! isset($this->qualifiers['source'])) {
             $this->qualifiers['source'] = new SubtitlesSourceQualifier(null);

@@ -33,13 +33,15 @@ class LightroomEffectQualifier extends ValueEffectQualifier
     }
 
     /**
-     * @param $name
-     * @param $value
-     * @param $range
+     * Adds Lightroom Filter
      *
-     * @return static
+     * @param ?string    $name  The name of the filter.
+     * @param mixed      $value The value of the filter.
+     * @param array|null $range The valid range of the value.
+     *
+     * @return $this
      */
-    public function addLightroomFilter($name, $value, $range = null)
+    public function addLightroomFilter(?string $name, mixed $value, ?array $range = null): static
     {
         return $this->add(new LimitedGenericNamedArgument($name, $value, $range));
     }
@@ -47,11 +49,10 @@ class LightroomEffectQualifier extends ValueEffectQualifier
     /**
      * Lightroom XMP file.
      *
-     * @param string $source The XMP file source (public ID).
+     * @param XmpSourceValue|string|null $source The XMP file source (public ID).
      *
-     * @return static
      */
-    public function xmp($source)
+    public function xmp(XmpSourceValue|string|null $source): static
     {
         return $this->setEffectValue(ClassUtils::verifyInstance($source, XmpSourceValue::class));
     }

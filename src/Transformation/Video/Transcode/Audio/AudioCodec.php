@@ -25,29 +25,28 @@ class AudioCodec extends BaseQualifier
     /**
      * Removes the audio channel.
      */
-    const NONE   = 'none';
+    public const NONE = 'none';
 
     /**
      * Sets the audio codec to aac (mp4 or flv only).
      */
-    const AAC    = 'aac';
+    public const AAC = 'aac';
 
     /**
      * Sets the audio codec to vorbis (ogv or webm only).
      */
-    const VORBIS = 'vorbis';
+    public const VORBIS = 'vorbis';
 
     /**
      * Sets the audio codec to mp3 (mp4 or flv only).
      */
-    const MP3    = 'mp3';
+    public const MP3 = 'mp3';
 
     /**
      * Removes the audio channel
      *
-     * @return AudioCodec
      */
-    public static function none()
+    public static function none(): AudioCodec
     {
         return new static(static::NONE);
     }
@@ -55,9 +54,8 @@ class AudioCodec extends BaseQualifier
     /**
      * mp4 or flv only
      *
-     * @return AudioCodec
      */
-    public static function aac()
+    public static function aac(): AudioCodec
     {
         return new static(static::AAC);
     }
@@ -65,9 +63,8 @@ class AudioCodec extends BaseQualifier
     /**
      * ogv or webm only
      *
-     * @return AudioCodec
      */
-    public static function vorbis()
+    public static function vorbis(): AudioCodec
     {
         return new static(static::VORBIS);
     }
@@ -75,9 +72,8 @@ class AudioCodec extends BaseQualifier
     /**
      * mp4 or flv only
      *
-     * @return AudioCodec
      */
-    public static function mp3()
+    public static function mp3(): AudioCodec
     {
         return new static(static::MP3);
     }

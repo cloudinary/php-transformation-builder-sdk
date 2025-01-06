@@ -22,11 +22,10 @@ trait ResizeQualifierTrait
      *
      * @param string $cropModeName The crop mode.  Use the constants defined in the CropMode class.
      *
-     * @return CropMode
      *
-     * @see \Cloudinary\Transformation\CropMode
+     * @see CropMode
      */
-    public static function cropMode($cropModeName)
+    public static function cropMode(string $cropModeName): CropMode
     {
         return new CropMode($cropModeName);
     }
@@ -37,9 +36,8 @@ trait ResizeQualifierTrait
      *
      * @param float $zoom The zoom factor. (Default: 1.0)
      *
-     * @return Zoom
      */
-    public static function zoom($zoom)
+    public static function zoom(float $zoom): Zoom
     {
         return new Zoom($zoom);
     }

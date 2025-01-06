@@ -24,15 +24,13 @@ class LayerQualifierFactory
      *
      * Overlay properties can come as array or as string.
      *
-     * @param string|array $layerQualifiers
      * @param string       $layerStackPosition Supported values: LayerStackPosition::OVERLAY,
      *                                         LayerStackPosition::UNDERLAY
      *
-     * @return BaseSourceQualifier
      *
      * @see LayerStackPosition::OVERLAY
      */
-    public static function fromParams($layerQualifiers, $layerStackPosition = LayerStackPosition::OVERLAY)
+    public static function fromParams(array|string $layerQualifiers, string $layerStackPosition = LayerStackPosition::OVERLAY): BaseSourceQualifier
     {
         return self::handleQualifierValue($layerQualifiers)->setStackPosition($layerStackPosition);
     }
@@ -40,11 +38,10 @@ class LayerQualifierFactory
     /**
      * Handles layer qualifier value.
      *
-     * @param string|array $layerQualifiers The layer qualifiers.
+     * @param array|string $layerQualifiers The layer qualifiers.
      *
-     * @return BaseSourceQualifier
      */
-    protected static function handleQualifierValue($layerQualifiers)
+    protected static function handleQualifierValue(array|string $layerQualifiers): FetchSourceQualifier|ImageSourceQualifier|BaseSourceQualifier|LutSourceQualifier|VideoSourceQualifier|SubtitlesSourceQualifier
     {
         // Handle layer params
         if (is_array($layerQualifiers)) {

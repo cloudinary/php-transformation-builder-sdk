@@ -18,21 +18,19 @@ use Cloudinary\Transformation\Argument\ColorValue;
  */
 class BorderValue extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '_';
+    protected const VALUE_DELIMITER = '_';
 
     /**
      * @var array $argumentOrder The order of the arguments.
      */
-    protected $argumentOrder = ['width', 'style', 'color'];
+    protected array $argumentOrder = ['width', 'style', 'color'];
 
     /**
      * BorderValue constructor.
      *
-     * @param string     $color
-     * @param int|string $width
-     * @param string     $style
+     * @param string          $color
      */
-    public function __construct($color = null, $width = null, $style = null)
+    public function __construct(mixed $color = null, int|string|null $width = null, ?string $style = null)
     {
         parent::__construct();
 
@@ -44,11 +42,11 @@ class BorderValue extends QualifierMultiValue
     /**
      * Sets the style of the border.
      *
-     * @param string $style The border style.  Currently only "solid" is supported.
+     * @param string|null $style The border style.  Currently only "solid" is supported.
      *
      * @return $this
      */
-    public function style($style)
+    public function style(?string $style): static
     {
         return $this->setSimpleValue('style', $style);
     }
@@ -56,11 +54,11 @@ class BorderValue extends QualifierMultiValue
     /**
      * Sets the width of the border.
      *
-     * @param int|string $width The width of the border in pixels.
+     * @param int|string|null $width The width of the border in pixels.
      *
      * @return $this
      */
-    public function width($width)
+    public function width(int|string|null $width): static
     {
         return $this->setSimpleValue('width', $width && is_numeric($width) ? "{$width}px" : $width);
     }
@@ -68,13 +66,13 @@ class BorderValue extends QualifierMultiValue
     /**
      * Sets the color of the border.
      *
-     * @param string $color The border color.
+     * @param mixed $color The border color.
      *
      * @return $this
      *
      * @see Color
      */
-    public function color($color)
+    public function color(mixed $color): static
     {
         return $this->setSimpleValue('$color', ClassUtils::verifyInstance($color, ColorValue::class));
     }

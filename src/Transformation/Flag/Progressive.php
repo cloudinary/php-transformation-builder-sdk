@@ -18,31 +18,30 @@ class Progressive
     /**
      * Default mode.
      */
-    const PROGRESSIVE = '';
+    public const PROGRESSIVE = '';
 
     /**
      * A smart optimization of the decoding time, compression level and progressive rendering (less iterations).
      * This is the default mode when using q_auto.
      */
-    const SEMI = 'semi';
+    public const SEMI = 'semi';
 
     /**
      *  Delivers a preview very quickly, and in a single later phase improves the image to the required resolution.
      */
-    const STEEP = 'steep';
+    public const STEEP = 'steep';
 
     /**
      *  Use this to deliver a non-progressive image. This is the default mode when setting a specific value for quality.
      */
-    const NONE = 'none';
+    public const NONE = 'none';
 
 
     /**
      * Default mode.
      *
-     * @return string
      */
-    public static function progressive()
+    public static function progressive(): string
     {
         return self::PROGRESSIVE;
     }
@@ -51,9 +50,8 @@ class Progressive
      * A smart optimization of the decoding time, compression level and progressive rendering (less iterations).
      * This is the default mode when using q_auto.
      *
-     * @return string
      */
-    public static function semi()
+    public static function semi(): string
     {
         return self::SEMI;
     }
@@ -61,9 +59,8 @@ class Progressive
     /**
      * Delivers a preview very quickly, and in a single later phase improves the image to the required resolution.
      *
-     * @return string
      */
-    public static function steep()
+    public static function steep(): string
     {
         return self::STEEP;
     }
@@ -71,9 +68,8 @@ class Progressive
     /**
      * Use this to deliver a non-progressive image. This is the default mode when setting a specific value for quality.
      *
-     * @return string
      */
-    public static function none()
+    public static function none(): string
     {
         return self::NONE;
     }

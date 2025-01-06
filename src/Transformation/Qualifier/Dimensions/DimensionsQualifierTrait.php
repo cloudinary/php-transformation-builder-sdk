@@ -24,14 +24,13 @@ trait DimensionsQualifierTrait
     /**
      * Sets the width of the asset.
      *
-     * @param int|float $width The width in pixels (if an integer is specified) or as a percentage (if a float is
-     *                         specified).
+     * @param float|int|string|null $width The width in pixels (if an integer is specified) or as a percentage
+     *                                     (if a float is specified).
      *
-     * @return Width
      *
-     * @see \Cloudinary\Transformation\Qualifier\Dimensions\Width
+     * @see Width
      */
-    public static function width($width)
+    public static function width(float|int|string|null $width): Width
     {
         return new Width($width);
     }
@@ -39,14 +38,13 @@ trait DimensionsQualifierTrait
     /**
      * Sets the height of the asset.
      *
-     * @param int|float $height The height in pixels (if an integer is specified) or as a percentage (if a float is
-     *                         specified).
+     * @param float|int|string|null $height The height in pixels (if an integer is specified) or as a percentage
+     *                                      (if a float is specified).
      *
-     * @return Height
      *
-     * @see \Cloudinary\Transformation\Qualifier\Dimensions\Height
+     * @see Height
      */
-    public static function height($height)
+    public static function height(float|int|string|null $height): Height
     {
         return new Height($height);
     }
@@ -56,11 +54,10 @@ trait DimensionsQualifierTrait
      *
      * @param float|array $aspectRatio The new aspect ratio, specified as a percentage or ratio.
      *
-     * @return AspectRatio
      *
      * @see \Cloudinary\Transformation\Qualifier\Dimensions\AspectRatio
      */
-    public static function aspectRatio(...$aspectRatio)
+    public static function aspectRatio(...$aspectRatio): AspectRatio
     {
         return new AspectRatio(...$aspectRatio);
     }
@@ -70,11 +67,10 @@ trait DimensionsQualifierTrait
      *
      * @param float $dpr The device pixel ratio.
      *
-     * @return Dpr
      *
-     * @see \Cloudinary\Transformation\Qualifier\Dimensions\Dpr
+     * @see Dpr
      */
-    public static function dpr($dpr)
+    public static function dpr(float $dpr): Dpr
     {
         return new Dpr($dpr);
     }

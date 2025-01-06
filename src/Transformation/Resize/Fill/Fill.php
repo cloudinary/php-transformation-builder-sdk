@@ -10,7 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Transformation\CropMode;
 use Cloudinary\Transformation\Expression\Expression;
 
 /**
@@ -28,9 +27,9 @@ class Fill extends BaseResizeAction
      * @param string|CropMode       $cropMode
      * @param int|string|Expression $width
      * @param int|string|Expression $height
-     * @param mixed                 $gravity
+     * @param mixed|null            $gravity
      */
-    public function __construct($cropMode, $width = null, $height = null, $gravity = null)
+    public function __construct($cropMode, $width = null, $height = null, mixed $gravity = null)
     {
         parent::__construct($cropMode, $width, $height);
 
@@ -41,13 +40,12 @@ class Fill extends BaseResizeAction
     /**
      * Internal setter for offset.
      *
-     * @param $value
      *
      * @return $this
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue(mixed $value): static
     {
         if (! isset($this->qualifiers[Point::getName()])) {
             $this->addQualifier(new Point());

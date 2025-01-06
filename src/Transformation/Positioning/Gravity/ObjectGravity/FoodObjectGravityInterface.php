@@ -18,15 +18,15 @@ namespace Cloudinary\Transformation;
 interface FoodObjectGravityInterface
 {
     //Food Category
-    const FOOD     = 'food';
-    const BANANA   = 'banana';
-    const APPLE    = 'apple';
-    const SANDWICH = 'sandwich';
-    const ORANGE   = 'orange';
-    const BROCCOLI = 'broccoli';
-    const CARROT   = 'carrot';
-    const HOTDOG   = 'hotdog';
-    const PIZZA    = 'pizza';
-    const DONUT    = 'donut';
-    const CAKE     = 'cake';
+    public const FOOD = 'food';
+    public const BANANA = 'banana';
+    public const APPLE  = 'apple';
+    public const SANDWICH = 'sandwich';
+    public const ORANGE   = 'orange';
+    public const BROCCOLI = 'broccoli';
+    public const CARROT   = 'carrot';
+    public const HOTDOG = 'hotdog';
+    public const PIZZA  = 'pizza';
+    public const DONUT = 'donut';
+    public const CAKE  = 'cake';
 }

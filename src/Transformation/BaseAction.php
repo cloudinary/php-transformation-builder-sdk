@@ -26,27 +26,26 @@ abstract class BaseAction extends BaseComponent
     /**
      * @var array $qualifiers The components (qualifiers/parameters) of the action.
      */
-    protected $qualifiers = [];
+    protected array $qualifiers = [];
 
     /**
-     * @var ?string MAIN_QUALIFIER Represents the main qualifier of the action. (some actions do not have main qualifier)
+     * @var ?string MAIN_QUALIFIER Represents the main qualifier of the action. (some actions don't have main qualifier)
      */
-    const MAIN_QUALIFIER = null;
+    protected const MAIN_QUALIFIER = null;
 
     /**
      * @var array $flags The flags of the action.
      */
-    protected $flags = [];
+    protected array $flags = [];
 
     /**
-     * @var string $genericAction The generic (raw) action.
+     * @var ?string $genericAction The generic (raw) action.
      */
-    protected $genericAction;
+    protected ?string $genericAction = null;
 
     /**
      * Action constructor.
      *
-     * @param mixed ...$qualifiers
      */
     public function __construct(...$qualifiers)
     {
@@ -62,9 +61,9 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function addQualifier(?BaseComponent $qualifier = null)
+    public function addQualifier(?BaseComponent $qualifier = null): static
     {
-        ArrayUtils::addNonEmpty($this->qualifiers, $qualifier ? $qualifier->getFullName() : null, $qualifier);
+        ArrayUtils::addNonEmpty($this->qualifiers, $qualifier?->getFullName(), $qualifier);
 
         return $this;
     }
@@ -76,7 +75,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function addQualifiers(...$qualifiers)
+    public function addQualifiers(...$qualifiers): static
     {
         if (count($qualifiers) < 1) {
             return $this;
@@ -100,11 +99,10 @@ abstract class BaseAction extends BaseComponent
     /**
      * Adds (sets) generic (raw) action.
      *
-     * @param string $action The generic action string.
+     * @param ?string $action The generic action string.
      *
-     * @return static
      */
-    public function setGenericAction($action)
+    public function setGenericAction(?string $action): static
     {
         if (StringUtils::contains($action, '/')) {
             throw new InvalidArgumentException('A single generic action must be supplied');
@@ -124,7 +122,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function setFlag(FlagQualifier $flag, $set = true)
+    public function setFlag(?FlagQualifier $flag, bool $set = true): static
     {
         if ($set === false) {
             return $this->unsetFlag($flag);
@@ -142,7 +140,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function unsetFlag(FlagQualifier $flag)
+    public function unsetFlag(FlagQualifier $flag): static
     {
         unset($this->flags[$flag->getFlagName()]);
 
@@ -156,7 +154,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @return $this
      */
-    public function importAction($action)
+    public function importAction(?BaseAction $action): static
     {
         if ($action === null) {
             return $this;
@@ -170,10 +168,8 @@ abstract class BaseAction extends BaseComponent
 
     /**
      * Serializes to json.
-     *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $jsonArray = [];
 
@@ -197,7 +193,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @internal
      */
-    public function getStringQualifiers()
+    public function getStringQualifiers(): array
     {
         $flatQualifiers = [];
         foreach ($this->qualifiers as $qualifier) {
@@ -226,7 +222,7 @@ abstract class BaseAction extends BaseComponent
      *
      * @internal
      */
-    protected function getMainQualifier()
+    protected function getMainQualifier(): BaseQualifier
     {
         $mainQualifierClassName = static::MAIN_QUALIFIER;
         $mainQualifierKey       = $mainQualifierClassName::getName();
@@ -242,9 +238,8 @@ abstract class BaseAction extends BaseComponent
      *
      * @param array $flags The flags to serialize
      *
-     * @return string
      */
-    protected static function serializeFlags($flags)
+    protected static function serializeFlags(array $flags): string
     {
         return ArrayUtils::implodeActionQualifiers(...array_values($flags));
     }
@@ -256,12 +251,10 @@ abstract class BaseAction extends BaseComponent
      *
      * @return array Serialized qualifiers.
      */
-    protected static function jsonSerializeQualifiers($qualifiers)
+    protected static function jsonSerializeQualifiers(array $qualifiers): array
     {
         $result = array_map(
-            static function ($qualifier) {
-                return JsonUtils::jsonSerialize($qualifier);
-            },
+            static fn($qualifier) => JsonUtils::jsonSerialize($qualifier),
             array_values($qualifiers)
         );
 

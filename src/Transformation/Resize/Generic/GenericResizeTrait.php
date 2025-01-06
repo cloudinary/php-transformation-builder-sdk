@@ -20,30 +20,27 @@ trait GenericResizeTrait
     /**
      * Generic resize builder.
      *
-     * @param string                $resizeName Provide future (not supported in the current version) resize name.
-     * @param int|float|string|null $width      The required width of a transformed asset.
-     * @param int|float|null        $height     The required height of a transformed asset.
+     * @param string $resizeName Provide future (not supported in the current version) resize name.
+     * @param mixed  $width      The required width of a transformed asset.
+     * @param mixed  $height     The required height of a transformed asset.
      *
-     * @return static
      */
     public static function generic(
-        $resizeName,
-        $width = null,
-        $height = null
-    ) {
+        string $resizeName,
+        mixed $width = null,
+        mixed $height = null
+    ): static {
         return static::createGenericResize($resizeName, $width, $height);
     }
 
     /**
      * Creates GenericResize instance.
      *
-     * @param mixed ...$args
      *
-     * @return static
      *
      * @internal
      */
-    protected static function createGenericResize(...$args)
+    protected static function createGenericResize(...$args): static
     {
         return new static(...$args);
     }

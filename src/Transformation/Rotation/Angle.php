@@ -22,7 +22,7 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class Angle extends BaseQualifier implements RotationDegreeInterface, RotationModeInterface
 {
-    const VALUE_CLASS = Degree::class;
+    protected const VALUE_CLASS = Degree::class;
 
     use AngleTrait;
     use RotationModeTrait;
@@ -32,19 +32,17 @@ class Angle extends BaseQualifier implements RotationDegreeInterface, RotationMo
      *
      * @param int|string|array $degree The rotation angle degree.
      */
-    public function setAngle(...$degree)
+    public function setAngle(...$degree): void
     {
         $this->setQualifierValue(Degree::byAngle(...$degree));
     }
 
     /**
-     * @param $value
-     *
-     * @return Angle
+     *  Creates a new instance using provided qualifier.
      */
-    public static function fromParams($value)
+    public static function fromParams(mixed $value): static
     {
-        return new self(...ArrayUtils::build($value));
+        return new static(...ArrayUtils::build($value));
     }
 
     /**
@@ -52,13 +50,12 @@ class Angle extends BaseQualifier implements RotationDegreeInterface, RotationMo
      *
      * @param int|array $degree Given degrees or mode.
      *
-     * @return Angle
      *
      * @internal
      */
-    public static function createWithDegree(...$degree)
+    public static function createWithDegree(...$degree): static
     {
-        return new self(...$degree);
+        return new static(...$degree);
     }
 
     /**
@@ -66,12 +63,11 @@ class Angle extends BaseQualifier implements RotationDegreeInterface, RotationMo
      *
      * @param string|RotationMode|array $mode Given mode.
      *
-     * @return Angle
      *
      * @internal
      */
-    public static function createWithMode(...$mode)
+    public static function createWithMode(...$mode): static
     {
-        return new self(...$mode);
+        return new static(...$mode);
     }
 }

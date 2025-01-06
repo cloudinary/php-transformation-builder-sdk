@@ -24,11 +24,10 @@ class ToleranceEffectQualifier extends LimitedEffectQualifier
      *
      * @param int $tolerance The level of tolerance to set.
      *
-     * @return LimitedEffectQualifier
      *
      * @internal
      */
-    public function tolerance($tolerance)
+    public function tolerance(int $tolerance): LimitedEffectQualifier
     {
         $this->setEffectValue($tolerance);
 

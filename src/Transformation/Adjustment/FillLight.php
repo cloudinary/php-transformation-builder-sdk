@@ -20,7 +20,7 @@ class FillLight extends BlendEffectQualifier
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'value', 'bias'];
+    protected array $valueOrder = [0, 'value', 'bias'];
 
     /**
      * FillLight constructor.
@@ -40,11 +40,10 @@ class FillLight extends BlendEffectQualifier
     /**
      * Sets the bias.
      *
-     * @param int $bias The bias to apply to the fill light effect (Range: -100 to 100, Server default: 0).
+     * @param ?int $bias The bias to apply to the fill light effect (Range: -100 to 100, Server default: 0).
      *
-     * @return FillLight
      */
-    public function bias($bias)
+    public function bias(?int $bias): static
     {
         $this->getValue()->setSimpleValue('bias', $bias);
 

@@ -13,29 +13,32 @@ namespace Cloudinary\Transformation;
 /**
  * Class Cartoonify
  *
- * @see \Cloudinary\Transformation\MiscEffectTrait::cartoonify()
+ * @see MiscEffectTrait::cartoonify
  */
 class Cartoonify extends LimitedEffectQualifier
 {
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'line_strength', 'color_reduction'];
+    protected array $valueOrder = [0, 'line_strength', 'color_reduction'];
 
     /**
      * Use for $colorReduction to achieve a black and white cartoon effect.
      */
-    const BLACK_WHITE = 'bw';
+    public const BLACK_WHITE = 'bw';
 
     /**
      * Trim constructor.
      *
-     * @param float        $lineStrength
-     * @param float|string $colorReduction
-     * @param array        $args
+     * @param float|int|string|null $lineStrength
+     * @param float|int|string|null $colorReduction
+     * @param array                 $args
      */
-    public function __construct($lineStrength = null, $colorReduction = null, ...$args)
-    {
+    public function __construct(
+        float|int|string|null $lineStrength = null,
+        float|int|string|null $colorReduction = null,
+        ...$args
+    ) {
         parent::__construct(MiscEffect::CARTOONIFY, EffectRange::PERCENT, ...$args);
 
         $this->lineStrength($lineStrength);
@@ -45,11 +48,10 @@ class Cartoonify extends LimitedEffectQualifier
     /**
      * Sets the thickness of the lines.
      *
-     * @param float $lineStrength The thickness of the lines. (Range: 0 to 100, Server default: 50)
+     * @param float|int|string|null $lineStrength The thickness of the lines. (Range: 0 to 100, Server default: 50)
      *
-     * @return Cartoonify
      */
-    public function lineStrength($lineStrength)
+    public function lineStrength(float|int|string|null $lineStrength): static
     {
         $this->value->setSimpleValue('line_strength', $lineStrength);
 
@@ -59,14 +61,13 @@ class Cartoonify extends LimitedEffectQualifier
     /**
      * Sets the decrease in the number of colors and corresponding saturation boost of the remaining colors.
      *
-     * @param float|string $colorReduction The decrease in the number of colors and corresponding saturation boost of
-     *                                     the remaining colors. (Range: 0 to 100). Higher reduction values
-     *                                     result in a less realistic look. Set $colorReduction to
-     *                                     Cartoonify::BLACK_WHITE for a black and white cartoon effect.
+     * @param float|int|string|null $colorReduction The decrease in the number of colors and corresponding saturation
+     *                                              boost of the remaining colors. (Range: 0 to 100). Higher reduction
+     *                                              values result in a less realistic look. Set $colorReduction to
+     *                                              Cartoonify::BLACK_WHITE for a black and white cartoon effect.
      *
-     * @return Cartoonify
      */
-    public function colorReductionLevel($colorReduction)
+    public function colorReductionLevel(float|int|string|null $colorReduction): static
     {
         $this->value->setSimpleValue('color_reduction', $colorReduction);
 
@@ -76,9 +77,8 @@ class Cartoonify extends LimitedEffectQualifier
     /**
      * Creates a black and white cartoon effect.
      *
-     * @return Cartoonify
      */
-    public function blackWhite()
+    public function blackWhite(): static
     {
         return $this->colorReductionLevel(self::BLACK_WHITE);
     }

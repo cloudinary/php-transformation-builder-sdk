@@ -20,7 +20,7 @@ class Operator extends BaseOperator
     /**
      * @var array $operatorTypes The supported operator types.
      */
-    private static $operatorTypes = [
+    private static array $operatorTypes = [
         ArithmeticOperator::class,
         LogicalOperator::class,
         RelationalOperator::class,
@@ -30,18 +30,18 @@ class Operator extends BaseOperator
     /**
      * @var array $operators The supported operators.
      */
-    protected static $operators = [];
+    protected static array $operators = [];
     /**
-     * @var array $friendlyRepresentations The user friendly representations of the operators.
+     * @var array $friendlyRepresentations The user-friendly representations of the operators.
      */
-    protected static $friendlyRepresentations = [];
+    protected static array $friendlyRepresentations = [];
 
     /**
      * Gets all supported operators.
      *
      * @return array The supported operators.
      */
-    public static function operators()
+    public static function operators(): array
     {
         if (! empty(self::$operators)) {
             return self::$operators;
@@ -57,9 +57,8 @@ class Operator extends BaseOperator
     /**
      * Gets user friendly representations of the operators.
      *
-     * @return array
      */
-    public static function friendlyRepresentations()
+    public static function friendlyRepresentations(): array
     {
         if (! empty(self::$friendlyRepresentations)) {
             return self::$friendlyRepresentations;

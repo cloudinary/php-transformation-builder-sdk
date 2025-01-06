@@ -20,11 +20,10 @@ trait LayerSourceTrait
     /**
      * Sets the source of the layer.
      *
-     * @param string|SourceValue|BaseSourceQualifier $source The source.
+     * @param string|BaseSourceQualifier|SourceValue $source The source.
      *
-     * @return static
      */
-    public function source($source)
+    public function source(SourceValue|BaseSourceQualifier|string $source): static
     {
         return $this->setSource($source);
     }
@@ -32,14 +31,13 @@ trait LayerSourceTrait
     /**
      * Sets the source of the layer.
      *
-     * @param string|QualifierMultiValue|BaseSourceQualifier $source The source.
+     * @param string|BaseSourceQualifier|QualifierMultiValue $source The source.
      *
-     * @return static
      *
      * @internal
      *
      */
-    public function setSource($source)
+    public function setSource(BaseSourceQualifier|QualifierMultiValue|string $source): static
     {
         if ($source instanceof BaseQualifier) {
             $source = $source->getValue();

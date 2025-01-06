@@ -18,11 +18,11 @@ namespace Cloudinary\Transformation;
 interface FurnitureObjectGravityInterface
 {
     //Furniture Category
-    const FURNITURE    = 'furniture';
-    const CHAIR        = 'chair';
-    const SOFA         = 'sofa';
-    const POTTED_PLANT = 'pottedplant';
-    const BED          = 'bed';
-    const DINING_TABLE = 'diningtable';
-    const TOILET       = 'toilet';
+    public const FURNITURE = 'furniture';
+    public const CHAIR     = 'chair';
+    public const SOFA  = 'sofa';
+    public const POTTED_PLANT = 'pottedplant';
+    public const BED          = 'bed';
+    public const DINING_TABLE = 'diningtable';
+    public const TOILET       = 'toilet';
 }

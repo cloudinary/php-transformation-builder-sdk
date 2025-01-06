@@ -22,5 +22,5 @@ class PreviewDuration extends BaseNamedArgument
     /**
      * @var string The name of the argument.
      */
-    protected static $name = 'duration';
+    protected static string $name = 'duration';
 }

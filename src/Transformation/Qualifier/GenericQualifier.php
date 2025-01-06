@@ -20,13 +20,11 @@ class GenericQualifier extends BaseQualifier
     /**
      * @var string $genericKey User provided generic key instead of static class key
      */
-    protected $genericKey;
+    protected string $genericKey;
 
     /**
      * GenericQualifier constructor.
      *
-     * @param       $genericKey
-     * @param mixed ...$value
      */
     public function __construct($genericKey, ...$value)
     {
@@ -42,7 +40,7 @@ class GenericQualifier extends BaseQualifier
      *
      * @return $this
      */
-    public function setKey($genericKey)
+    public function setKey(string $genericKey): static
     {
         $this->genericKey = $genericKey;
 
@@ -52,9 +50,8 @@ class GenericQualifier extends BaseQualifier
     /**
      * Gets qualifier full name.
      *
-     * @return string
      */
-    public function getFullName()
+    public function getFullName(): string
     {
         return ArrayUtils::implodeFiltered('_', [parent::getFullName(), $this->genericKey]);
     }

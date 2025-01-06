@@ -15,8 +15,8 @@ namespace Cloudinary\Transformation;
  */
 class SourceValue extends QualifierMultiValue
 {
-    const UNSAFE_DELIMITER = '/';
-    const SAFE_DELIMITER   = ':';
+    protected const UNSAFE_DELIMITER = '/';
+    protected const SAFE_DELIMITER   = ':';
 
     use LayerSourceTrait;
 

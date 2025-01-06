@@ -11,6 +11,7 @@
 namespace Cloudinary\Transformation;
 
 use Cloudinary\ClassUtils;
+use Cloudinary\Transformation\Expression\BaseExpressionComponent;
 use Cloudinary\Transformation\Qualifier\GenericQualifier;
 use Cloudinary\Transformation\Variable\Variable;
 
@@ -29,11 +30,9 @@ trait CommonTransformationTrait
     /**
      * Applies a filter or an effect on an asset.
      *
-     * @param EffectQualifier|EffectAction $effect
      *
-     * @return static
      */
-    public function effect($effect)
+    public function effect(EffectQualifier|EffectAction $effect): static
     {
         return $this->addAction($effect);
     }
@@ -41,11 +40,9 @@ trait CommonTransformationTrait
     /**
      * Applies adjustment effect on an asset.
      *
-     * @param EffectQualifier|EffectAction|AdjustmentInterface $adjustment
      *
-     * @return static
      */
-    public function adjust($adjustment)
+    public function adjust(EffectQualifier|EffectAction|Opacity|LutLayer $adjustment): static
     {
         return $this->addAction($adjustment);
     }
@@ -53,11 +50,9 @@ trait CommonTransformationTrait
     /**
      * Applies a pre-defined named transformation of the given name.
      *
-     * @param string|NamedTransformation $transformationName
      *
-     * @return static
      */
-    public function namedTransformation($transformationName)
+    public function namedTransformation(string $transformationName): static
     {
         return $this->addAction(ClassUtils::verifyInstance($transformationName, NamedTransformation::class));
     }
@@ -68,9 +63,8 @@ trait CommonTransformationTrait
      * @param string      $shortName The generic qualifier name.
      * @param array|mixed $value     The generic qualifier value.
      *
-     * @return static
      */
-    public function addGenericQualifier($shortName, ...$value)
+    public function addGenericQualifier(string $shortName, ...$value): static
     {
         return $this->addAction(new GenericQualifier($shortName, ...$value));
     }
@@ -80,11 +74,10 @@ trait CommonTransformationTrait
      *
      * @param array $qualifiers An associative array of qualifiers
      *
-     * @return static
      *
      * @see QualifiersAction
      */
-    public function addActionFromQualifiers($qualifiers)
+    public function addActionFromQualifiers(array $qualifiers): static
     {
         return $this->addAction(new QualifiersAction($qualifiers));
     }
@@ -92,11 +85,10 @@ trait CommonTransformationTrait
     /**
      * Adds a flag as a separate action.
      *
-     * @param FlagQualifier|string $flag The flag to add.
+     * @param string|FlagQualifier $flag The flag to add.
      *
-     * @return static
      */
-    public function addFlag($flag)
+    public function addFlag(FlagQualifier|string $flag): static
     {
         return $this->addAction(ClassUtils::verifyInstance($flag, FlagQualifier::class));
     }
@@ -104,12 +96,11 @@ trait CommonTransformationTrait
     /**
      * Defines an new user variable.
      *
-     * @param string|Variable $name  The variable name or the Variable instance.
-     * @param mixed           $value The variable value.
+     * @param Variable|string|null $name  The variable name or the Variable instance.
+     * @param mixed|null           $value The variable value.
      *
-     * @return static
      */
-    public function addVariable($name, $value = null)
+    public function addVariable(Variable|string|null $name, mixed $value = null): static
     {
         return $this->addAction(ClassUtils::verifyInstance($name, Variable::class, null, $value));
     }
@@ -117,11 +108,10 @@ trait CommonTransformationTrait
     /**
      * Rotates the asset by the given angle.
      *
-     * @param string|int $angle The rotation angle.
+     * @param int|string|Rotate $angle The rotation angle.
      *
-     * @return static
      */
-    public function rotate($angle)
+    public function rotate(int|string|Rotate $angle): static
     {
         return $this->addAction(ClassUtils::verifyInstance($angle, Rotate::class));
     }
@@ -129,13 +119,12 @@ trait CommonTransformationTrait
     /**
      * Specifies a conditional transformation whose condition should be met before applying a transformation.
      *
-     * @param Conditional $conditionalTransformation The conditional transformation.
+     * @param Conditional|BaseExpressionComponent $conditionalTransformation The conditional transformation.
      *
-     * @return static
      *
      * @see https://cloudinary.com/documentation/conditional_transformations
      */
-    public function conditional($conditionalTransformation)
+    public function conditional(Conditional|BaseExpressionComponent $conditionalTransformation): static
     {
         return $this->addTransformation(ClassUtils::verifyInstance($conditionalTransformation, Conditional::class));
     }

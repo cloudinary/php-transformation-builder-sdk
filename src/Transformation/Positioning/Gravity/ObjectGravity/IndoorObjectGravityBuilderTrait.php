@@ -20,9 +20,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity indoor.
      *
-     * @return string
      */
-    public static function indoor()
+    public static function indoor(): string
     {
         return ObjectGravity::INDOOR;
     }
@@ -30,9 +29,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity book.
      *
-     * @return string
      */
-    public static function book()
+    public static function book(): string
     {
         return ObjectGravity::BOOK;
     }
@@ -40,9 +38,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity clock.
      *
-     * @return string
      */
-    public static function clock()
+    public static function clock(): string
     {
         return ObjectGravity::CLOCK;
     }
@@ -50,9 +47,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity vase.
      *
-     * @return string
      */
-    public static function vase()
+    public static function vase(): string
     {
         return ObjectGravity::VASE;
     }
@@ -60,9 +56,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity scissors.
      *
-     * @return string
      */
-    public static function scissors()
+    public static function scissors(): string
     {
         return ObjectGravity::SCISSORS;
     }
@@ -70,9 +65,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity teddyBear.
      *
-     * @return string
      */
-    public static function teddyBear()
+    public static function teddyBear(): string
     {
         return ObjectGravity::TEDDY_BEAR;
     }
@@ -80,9 +74,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity hairDrier.
      *
-     * @return string
      */
-    public static function hairDrier()
+    public static function hairDrier(): string
     {
         return ObjectGravity::HAIR_DRIER;
     }
@@ -90,9 +83,8 @@ trait IndoorObjectGravityBuilderTrait
     /**
      * Gravity toothbrush.
      *
-     * @return string
      */
-    public static function toothbrush()
+    public static function toothbrush(): string
     {
         return ObjectGravity::TOOTHBRUSH;
     }

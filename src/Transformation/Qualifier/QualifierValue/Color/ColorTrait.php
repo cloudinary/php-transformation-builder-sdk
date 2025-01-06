@@ -22,9 +22,8 @@ trait ColorTrait
     /**
      * Color snow.
      *
-     * @return static
      */
-    public static function snow()
+    public static function snow(): static
     {
         return new static(Color::SNOW);
     }
@@ -32,9 +31,8 @@ trait ColorTrait
     /**
      * Color snow1.
      *
-     * @return static
      */
-    public static function snow1()
+    public static function snow1(): static
     {
         return new static(Color::SNOW1);
     }
@@ -42,9 +40,8 @@ trait ColorTrait
     /**
      * Color snow2.
      *
-     * @return static
      */
-    public static function snow2()
+    public static function snow2(): static
     {
         return new static(Color::SNOW2);
     }
@@ -52,9 +49,8 @@ trait ColorTrait
     /**
      * Color rosybrown1.
      *
-     * @return static
      */
-    public static function rosybrown1()
+    public static function rosybrown1(): static
     {
         return new static(Color::ROSYBROWN1);
     }
@@ -62,9 +58,8 @@ trait ColorTrait
     /**
      * Color rosybrown2.
      *
-     * @return static
      */
-    public static function rosybrown2()
+    public static function rosybrown2(): static
     {
         return new static(Color::ROSYBROWN2);
     }
@@ -72,9 +67,8 @@ trait ColorTrait
     /**
      * Color snow3.
      *
-     * @return static
      */
-    public static function snow3()
+    public static function snow3(): static
     {
         return new static(Color::SNOW3);
     }
@@ -82,9 +76,8 @@ trait ColorTrait
     /**
      * Color lightcoral.
      *
-     * @return static
      */
-    public static function lightcoral()
+    public static function lightcoral(): static
     {
         return new static(Color::LIGHTCORAL);
     }
@@ -92,9 +85,8 @@ trait ColorTrait
     /**
      * Color indianred1.
      *
-     * @return static
      */
-    public static function indianred1()
+    public static function indianred1(): static
     {
         return new static(Color::INDIANRED1);
     }
@@ -102,9 +94,8 @@ trait ColorTrait
     /**
      * Color rosybrown3.
      *
-     * @return static
      */
-    public static function rosybrown3()
+    public static function rosybrown3(): static
     {
         return new static(Color::ROSYBROWN3);
     }
@@ -112,9 +103,8 @@ trait ColorTrait
     /**
      * Color indianred2.
      *
-     * @return static
      */
-    public static function indianred2()
+    public static function indianred2(): static
     {
         return new static(Color::INDIANRED2);
     }
@@ -122,9 +112,8 @@ trait ColorTrait
     /**
      * Color rosybrown.
      *
-     * @return static
      */
-    public static function rosybrown()
+    public static function rosybrown(): static
     {
         return new static(Color::ROSYBROWN);
     }
@@ -132,9 +121,8 @@ trait ColorTrait
     /**
      * Color brown1.
      *
-     * @return static
      */
-    public static function brown1()
+    public static function brown1(): static
     {
         return new static(Color::BROWN1);
     }
@@ -142,9 +130,8 @@ trait ColorTrait
     /**
      * Color firebrick1.
      *
-     * @return static
      */
-    public static function firebrick1()
+    public static function firebrick1(): static
     {
         return new static(Color::FIREBRICK1);
     }
@@ -152,9 +139,8 @@ trait ColorTrait
     /**
      * Color brown2.
      *
-     * @return static
      */
-    public static function brown2()
+    public static function brown2(): static
     {
         return new static(Color::BROWN2);
     }
@@ -162,9 +148,8 @@ trait ColorTrait
     /**
      * Color indianred.
      *
-     * @return static
      */
-    public static function indianred()
+    public static function indianred(): static
     {
         return new static(Color::INDIANRED);
     }
@@ -172,9 +157,8 @@ trait ColorTrait
     /**
      * Color indianred3.
      *
-     * @return static
      */
-    public static function indianred3()
+    public static function indianred3(): static
     {
         return new static(Color::INDIANRED3);
     }
@@ -182,9 +166,8 @@ trait ColorTrait
     /**
      * Color firebrick2.
      *
-     * @return static
      */
-    public static function firebrick2()
+    public static function firebrick2(): static
     {
         return new static(Color::FIREBRICK2);
     }
@@ -192,9 +175,8 @@ trait ColorTrait
     /**
      * Color snow4.
      *
-     * @return static
      */
-    public static function snow4()
+    public static function snow4(): static
     {
         return new static(Color::SNOW4);
     }
@@ -202,9 +184,8 @@ trait ColorTrait
     /**
      * Color brown3.
      *
-     * @return static
      */
-    public static function brown3()
+    public static function brown3(): static
     {
         return new static(Color::BROWN3);
     }
@@ -212,9 +193,8 @@ trait ColorTrait
     /**
      * Color red.
      *
-     * @return static
      */
-    public static function red()
+    public static function red(): static
     {
         return new static(Color::RED);
     }
@@ -222,9 +202,8 @@ trait ColorTrait
     /**
      * Color red1.
      *
-     * @return static
      */
-    public static function red1()
+    public static function red1(): static
     {
         return new static(Color::RED1);
     }
@@ -232,9 +211,8 @@ trait ColorTrait
     /**
      * Color rosybrown4.
      *
-     * @return static
      */
-    public static function rosybrown4()
+    public static function rosybrown4(): static
     {
         return new static(Color::ROSYBROWN4);
     }
@@ -242,9 +220,8 @@ trait ColorTrait
     /**
      * Color firebrick3.
      *
-     * @return static
      */
-    public static function firebrick3()
+    public static function firebrick3(): static
     {
         return new static(Color::FIREBRICK3);
     }
@@ -252,9 +229,8 @@ trait ColorTrait
     /**
      * Color red2.
      *
-     * @return static
      */
-    public static function red2()
+    public static function red2(): static
     {
         return new static(Color::RED2);
     }
@@ -262,9 +238,8 @@ trait ColorTrait
     /**
      * Color firebrick.
      *
-     * @return static
      */
-    public static function firebrick()
+    public static function firebrick(): static
     {
         return new static(Color::FIREBRICK);
     }
@@ -272,9 +247,8 @@ trait ColorTrait
     /**
      * Color brown.
      *
-     * @return static
      */
-    public static function brown()
+    public static function brown(): static
     {
         return new static(Color::BROWN);
     }
@@ -282,9 +256,8 @@ trait ColorTrait
     /**
      * Color red3.
      *
-     * @return static
      */
-    public static function red3()
+    public static function red3(): static
     {
         return new static(Color::RED3);
     }
@@ -292,9 +265,8 @@ trait ColorTrait
     /**
      * Color indianred4.
      *
-     * @return static
      */
-    public static function indianred4()
+    public static function indianred4(): static
     {
         return new static(Color::INDIANRED4);
     }
@@ -302,9 +274,8 @@ trait ColorTrait
     /**
      * Color brown4.
      *
-     * @return static
      */
-    public static function brown4()
+    public static function brown4(): static
     {
         return new static(Color::BROWN4);
     }
@@ -312,9 +283,8 @@ trait ColorTrait
     /**
      * Color firebrick4.
      *
-     * @return static
      */
-    public static function firebrick4()
+    public static function firebrick4(): static
     {
         return new static(Color::FIREBRICK4);
     }
@@ -322,9 +292,8 @@ trait ColorTrait
     /**
      * Color darkred.
      *
-     * @return static
      */
-    public static function darkred()
+    public static function darkred(): static
     {
         return new static(Color::DARKRED);
     }
@@ -332,9 +301,8 @@ trait ColorTrait
     /**
      * Color red4.
      *
-     * @return static
      */
-    public static function red4()
+    public static function red4(): static
     {
         return new static(Color::RED4);
     }
@@ -342,9 +310,8 @@ trait ColorTrait
     /**
      * Color lightpink1.
      *
-     * @return static
      */
-    public static function lightpink1()
+    public static function lightpink1(): static
     {
         return new static(Color::LIGHTPINK1);
     }
@@ -352,9 +319,8 @@ trait ColorTrait
     /**
      * Color lightpink3.
      *
-     * @return static
      */
-    public static function lightpink3()
+    public static function lightpink3(): static
     {
         return new static(Color::LIGHTPINK3);
     }
@@ -362,9 +328,8 @@ trait ColorTrait
     /**
      * Color lightpink4.
      *
-     * @return static
      */
-    public static function lightpink4()
+    public static function lightpink4(): static
     {
         return new static(Color::LIGHTPINK4);
     }
@@ -372,9 +337,8 @@ trait ColorTrait
     /**
      * Color lightpink2.
      *
-     * @return static
      */
-    public static function lightpink2()
+    public static function lightpink2(): static
     {
         return new static(Color::LIGHTPINK2);
     }
@@ -382,9 +346,8 @@ trait ColorTrait
     /**
      * Color lightpink.
      *
-     * @return static
      */
-    public static function lightpink()
+    public static function lightpink(): static
     {
         return new static(Color::LIGHTPINK);
     }
@@ -392,9 +355,8 @@ trait ColorTrait
     /**
      * Color pink.
      *
-     * @return static
      */
-    public static function pink()
+    public static function pink(): static
     {
         return new static(Color::PINK);
     }
@@ -402,9 +364,8 @@ trait ColorTrait
     /**
      * Color crimson.
      *
-     * @return static
      */
-    public static function crimson()
+    public static function crimson(): static
     {
         return new static(Color::CRIMSON);
     }
@@ -412,9 +373,8 @@ trait ColorTrait
     /**
      * Color pink1.
      *
-     * @return static
      */
-    public static function pink1()
+    public static function pink1(): static
     {
         return new static(Color::PINK1);
     }
@@ -422,9 +382,8 @@ trait ColorTrait
     /**
      * Color pink2.
      *
-     * @return static
      */
-    public static function pink2()
+    public static function pink2(): static
     {
         return new static(Color::PINK2);
     }
@@ -432,9 +391,8 @@ trait ColorTrait
     /**
      * Color pink3.
      *
-     * @return static
      */
-    public static function pink3()
+    public static function pink3(): static
     {
         return new static(Color::PINK3);
     }
@@ -442,9 +400,8 @@ trait ColorTrait
     /**
      * Color pink4.
      *
-     * @return static
      */
-    public static function pink4()
+    public static function pink4(): static
     {
         return new static(Color::PINK4);
     }
@@ -452,9 +409,8 @@ trait ColorTrait
     /**
      * Color palevioletred4.
      *
-     * @return static
      */
-    public static function palevioletred4()
+    public static function palevioletred4(): static
     {
         return new static(Color::PALEVIOLETRED4);
     }
@@ -462,9 +418,8 @@ trait ColorTrait
     /**
      * Color palevioletred.
      *
-     * @return static
      */
-    public static function palevioletred()
+    public static function palevioletred(): static
     {
         return new static(Color::PALEVIOLETRED);
     }
@@ -472,9 +427,8 @@ trait ColorTrait
     /**
      * Color palevioletred2.
      *
-     * @return static
      */
-    public static function palevioletred2()
+    public static function palevioletred2(): static
     {
         return new static(Color::PALEVIOLETRED2);
     }
@@ -482,9 +436,8 @@ trait ColorTrait
     /**
      * Color palevioletred1.
      *
-     * @return static
      */
-    public static function palevioletred1()
+    public static function palevioletred1(): static
     {
         return new static(Color::PALEVIOLETRED1);
     }
@@ -492,9 +445,8 @@ trait ColorTrait
     /**
      * Color palevioletred3.
      *
-     * @return static
      */
-    public static function palevioletred3()
+    public static function palevioletred3(): static
     {
         return new static(Color::PALEVIOLETRED3);
     }
@@ -502,9 +454,8 @@ trait ColorTrait
     /**
      * Color lavenderblush.
      *
-     * @return static
      */
-    public static function lavenderblush()
+    public static function lavenderblush(): static
     {
         return new static(Color::LAVENDERBLUSH);
     }
@@ -512,9 +463,8 @@ trait ColorTrait
     /**
      * Color lavenderblush1.
      *
-     * @return static
      */
-    public static function lavenderblush1()
+    public static function lavenderblush1(): static
     {
         return new static(Color::LAVENDERBLUSH1);
     }
@@ -522,9 +472,8 @@ trait ColorTrait
     /**
      * Color lavenderblush3.
      *
-     * @return static
      */
-    public static function lavenderblush3()
+    public static function lavenderblush3(): static
     {
         return new static(Color::LAVENDERBLUSH3);
     }
@@ -532,9 +481,8 @@ trait ColorTrait
     /**
      * Color lavenderblush2.
      *
-     * @return static
      */
-    public static function lavenderblush2()
+    public static function lavenderblush2(): static
     {
         return new static(Color::LAVENDERBLUSH2);
     }
@@ -542,9 +490,8 @@ trait ColorTrait
     /**
      * Color lavenderblush4.
      *
-     * @return static
      */
-    public static function lavenderblush4()
+    public static function lavenderblush4(): static
     {
         return new static(Color::LAVENDERBLUSH4);
     }
@@ -552,9 +499,8 @@ trait ColorTrait
     /**
      * Color maroon.
      *
-     * @return static
      */
-    public static function maroon()
+    public static function maroon(): static
     {
         return new static(Color::MAROON);
     }
@@ -562,9 +508,8 @@ trait ColorTrait
     /**
      * Color hotpink3.
      *
-     * @return static
      */
-    public static function hotpink3()
+    public static function hotpink3(): static
     {
         return new static(Color::HOTPINK3);
     }
@@ -572,9 +517,8 @@ trait ColorTrait
     /**
      * Color violetred3.
      *
-     * @return static
      */
-    public static function violetred3()
+    public static function violetred3(): static
     {
         return new static(Color::VIOLETRED3);
     }
@@ -582,9 +526,8 @@ trait ColorTrait
     /**
      * Color violetred1.
      *
-     * @return static
      */
-    public static function violetred1()
+    public static function violetred1(): static
     {
         return new static(Color::VIOLETRED1);
     }
@@ -592,9 +535,8 @@ trait ColorTrait
     /**
      * Color violetred2.
      *
-     * @return static
      */
-    public static function violetred2()
+    public static function violetred2(): static
     {
         return new static(Color::VIOLETRED2);
     }
@@ -602,9 +544,8 @@ trait ColorTrait
     /**
      * Color violetred4.
      *
-     * @return static
      */
-    public static function violetred4()
+    public static function violetred4(): static
     {
         return new static(Color::VIOLETRED4);
     }
@@ -612,9 +553,8 @@ trait ColorTrait
     /**
      * Color hotpink2.
      *
-     * @return static
      */
-    public static function hotpink2()
+    public static function hotpink2(): static
     {
         return new static(Color::HOTPINK2);
     }
@@ -622,9 +562,8 @@ trait ColorTrait
     /**
      * Color hotpink1.
      *
-     * @return static
      */
-    public static function hotpink1()
+    public static function hotpink1(): static
     {
         return new static(Color::HOTPINK1);
     }
@@ -632,9 +571,8 @@ trait ColorTrait
     /**
      * Color hotpink4.
      *
-     * @return static
      */
-    public static function hotpink4()
+    public static function hotpink4(): static
     {
         return new static(Color::HOTPINK4);
     }
@@ -642,9 +580,8 @@ trait ColorTrait
     /**
      * Color hotpink.
      *
-     * @return static
      */
-    public static function hotpink()
+    public static function hotpink(): static
     {
         return new static(Color::HOTPINK);
     }
@@ -652,9 +589,8 @@ trait ColorTrait
     /**
      * Color deeppink.
      *
-     * @return static
      */
-    public static function deeppink()
+    public static function deeppink(): static
     {
         return new static(Color::DEEPPINK);
     }
@@ -662,9 +598,8 @@ trait ColorTrait
     /**
      * Color deeppink1.
      *
-     * @return static
      */
-    public static function deeppink1()
+    public static function deeppink1(): static
     {
         return new static(Color::DEEPPINK1);
     }
@@ -672,9 +607,8 @@ trait ColorTrait
     /**
      * Color deeppink2.
      *
-     * @return static
      */
-    public static function deeppink2()
+    public static function deeppink2(): static
     {
         return new static(Color::DEEPPINK2);
     }
@@ -682,9 +616,8 @@ trait ColorTrait
     /**
      * Color deeppink3.
      *
-     * @return static
      */
-    public static function deeppink3()
+    public static function deeppink3(): static
     {
         return new static(Color::DEEPPINK3);
     }
@@ -692,9 +625,8 @@ trait ColorTrait
     /**
      * Color deeppink4.
      *
-     * @return static
      */
-    public static function deeppink4()
+    public static function deeppink4(): static
     {
         return new static(Color::DEEPPINK4);
     }
@@ -702,9 +634,8 @@ trait ColorTrait
     /**
      * Color maroon1.
      *
-     * @return static
      */
-    public static function maroon1()
+    public static function maroon1(): static
     {
         return new static(Color::MAROON1);
     }
@@ -712,9 +643,8 @@ trait ColorTrait
     /**
      * Color maroon2.
      *
-     * @return static
      */
-    public static function maroon2()
+    public static function maroon2(): static
     {
         return new static(Color::MAROON2);
     }
@@ -722,9 +652,8 @@ trait ColorTrait
     /**
      * Color maroon3.
      *
-     * @return static
      */
-    public static function maroon3()
+    public static function maroon3(): static
     {
         return new static(Color::MAROON3);
     }
@@ -732,9 +661,8 @@ trait ColorTrait
     /**
      * Color maroon4.
      *
-     * @return static
      */
-    public static function maroon4()
+    public static function maroon4(): static
     {
         return new static(Color::MAROON4);
     }
@@ -742,9 +670,8 @@ trait ColorTrait
     /**
      * Color mediumvioletred.
      *
-     * @return static
      */
-    public static function mediumvioletred()
+    public static function mediumvioletred(): static
     {
         return new static(Color::MEDIUMVIOLETRED);
     }
@@ -752,9 +679,8 @@ trait ColorTrait
     /**
      * Color violetred.
      *
-     * @return static
      */
-    public static function violetred()
+    public static function violetred(): static
     {
         return new static(Color::VIOLETRED);
     }
@@ -762,9 +688,8 @@ trait ColorTrait
     /**
      * Color orchid2.
      *
-     * @return static
      */
-    public static function orchid2()
+    public static function orchid2(): static
     {
         return new static(Color::ORCHID2);
     }
@@ -772,9 +697,8 @@ trait ColorTrait
     /**
      * Color orchid.
      *
-     * @return static
      */
-    public static function orchid()
+    public static function orchid(): static
     {
         return new static(Color::ORCHID);
     }
@@ -782,9 +706,8 @@ trait ColorTrait
     /**
      * Color orchid1.
      *
-     * @return static
      */
-    public static function orchid1()
+    public static function orchid1(): static
     {
         return new static(Color::ORCHID1);
     }
@@ -792,9 +715,8 @@ trait ColorTrait
     /**
      * Color orchid3.
      *
-     * @return static
      */
-    public static function orchid3()
+    public static function orchid3(): static
     {
         return new static(Color::ORCHID3);
     }
@@ -802,9 +724,8 @@ trait ColorTrait
     /**
      * Color orchid4.
      *
-     * @return static
      */
-    public static function orchid4()
+    public static function orchid4(): static
     {
         return new static(Color::ORCHID4);
     }
@@ -812,9 +733,8 @@ trait ColorTrait
     /**
      * Color thistle1.
      *
-     * @return static
      */
-    public static function thistle1()
+    public static function thistle1(): static
     {
         return new static(Color::THISTLE1);
     }
@@ -822,9 +742,8 @@ trait ColorTrait
     /**
      * Color thistle2.
      *
-     * @return static
      */
-    public static function thistle2()
+    public static function thistle2(): static
     {
         return new static(Color::THISTLE2);
     }
@@ -832,9 +751,8 @@ trait ColorTrait
     /**
      * Color plum1.
      *
-     * @return static
      */
-    public static function plum1()
+    public static function plum1(): static
     {
         return new static(Color::PLUM1);
     }
@@ -842,9 +760,8 @@ trait ColorTrait
     /**
      * Color plum2.
      *
-     * @return static
      */
-    public static function plum2()
+    public static function plum2(): static
     {
         return new static(Color::PLUM2);
     }
@@ -852,9 +769,8 @@ trait ColorTrait
     /**
      * Color thistle.
      *
-     * @return static
      */
-    public static function thistle()
+    public static function thistle(): static
     {
         return new static(Color::THISTLE);
     }
@@ -862,9 +778,8 @@ trait ColorTrait
     /**
      * Color thistle3.
      *
-     * @return static
      */
-    public static function thistle3()
+    public static function thistle3(): static
     {
         return new static(Color::THISTLE3);
     }
@@ -872,9 +787,8 @@ trait ColorTrait
     /**
      * Color plum.
      *
-     * @return static
      */
-    public static function plum()
+    public static function plum(): static
     {
         return new static(Color::PLUM);
     }
@@ -882,9 +796,8 @@ trait ColorTrait
     /**
      * Color violet.
      *
-     * @return static
      */
-    public static function violet()
+    public static function violet(): static
     {
         return new static(Color::VIOLET);
     }
@@ -892,9 +805,8 @@ trait ColorTrait
     /**
      * Color plum3.
      *
-     * @return static
      */
-    public static function plum3()
+    public static function plum3(): static
     {
         return new static(Color::PLUM3);
     }
@@ -902,9 +814,8 @@ trait ColorTrait
     /**
      * Color thistle4.
      *
-     * @return static
      */
-    public static function thistle4()
+    public static function thistle4(): static
     {
         return new static(Color::THISTLE4);
     }
@@ -912,9 +823,8 @@ trait ColorTrait
     /**
      * Color fuchsia.
      *
-     * @return static
      */
-    public static function fuchsia()
+    public static function fuchsia(): static
     {
         return new static(Color::FUCHSIA);
     }
@@ -922,9 +832,8 @@ trait ColorTrait
     /**
      * Color magenta.
      *
-     * @return static
      */
-    public static function magenta()
+    public static function magenta(): static
     {
         return new static(Color::MAGENTA);
     }
@@ -932,9 +841,8 @@ trait ColorTrait
     /**
      * Color magenta1.
      *
-     * @return static
      */
-    public static function magenta1()
+    public static function magenta1(): static
     {
         return new static(Color::MAGENTA1);
     }
@@ -942,9 +850,8 @@ trait ColorTrait
     /**
      * Color plum4.
      *
-     * @return static
      */
-    public static function plum4()
+    public static function plum4(): static
     {
         return new static(Color::PLUM4);
     }
@@ -952,9 +859,8 @@ trait ColorTrait
     /**
      * Color magenta2.
      *
-     * @return static
      */
-    public static function magenta2()
+    public static function magenta2(): static
     {
         return new static(Color::MAGENTA2);
     }
@@ -962,9 +868,8 @@ trait ColorTrait
     /**
      * Color magenta3.
      *
-     * @return static
      */
-    public static function magenta3()
+    public static function magenta3(): static
     {
         return new static(Color::MAGENTA3);
     }
@@ -972,9 +877,8 @@ trait ColorTrait
     /**
      * Color darkmagenta.
      *
-     * @return static
      */
-    public static function darkmagenta()
+    public static function darkmagenta(): static
     {
         return new static(Color::DARKMAGENTA);
     }
@@ -982,9 +886,8 @@ trait ColorTrait
     /**
      * Color magenta4.
      *
-     * @return static
      */
-    public static function magenta4()
+    public static function magenta4(): static
     {
         return new static(Color::MAGENTA4);
     }
@@ -992,9 +895,8 @@ trait ColorTrait
     /**
      * Color purple.
      *
-     * @return static
      */
-    public static function purple()
+    public static function purple(): static
     {
         return new static(Color::PURPLE);
     }
@@ -1002,9 +904,8 @@ trait ColorTrait
     /**
      * Color mediumorchid.
      *
-     * @return static
      */
-    public static function mediumorchid()
+    public static function mediumorchid(): static
     {
         return new static(Color::MEDIUMORCHID);
     }
@@ -1012,9 +913,8 @@ trait ColorTrait
     /**
      * Color mediumorchid1.
      *
-     * @return static
      */
-    public static function mediumorchid1()
+    public static function mediumorchid1(): static
     {
         return new static(Color::MEDIUMORCHID1);
     }
@@ -1022,9 +922,8 @@ trait ColorTrait
     /**
      * Color mediumorchid2.
      *
-     * @return static
      */
-    public static function mediumorchid2()
+    public static function mediumorchid2(): static
     {
         return new static(Color::MEDIUMORCHID2);
     }
@@ -1032,9 +931,8 @@ trait ColorTrait
     /**
      * Color mediumorchid3.
      *
-     * @return static
      */
-    public static function mediumorchid3()
+    public static function mediumorchid3(): static
     {
         return new static(Color::MEDIUMORCHID3);
     }
@@ -1042,9 +940,8 @@ trait ColorTrait
     /**
      * Color mediumorchid4.
      *
-     * @return static
      */
-    public static function mediumorchid4()
+    public static function mediumorchid4(): static
     {
         return new static(Color::MEDIUMORCHID4);
     }
@@ -1052,9 +949,8 @@ trait ColorTrait
     /**
      * Color darkviolet.
      *
-     * @return static
      */
-    public static function darkviolet()
+    public static function darkviolet(): static
     {
         return new static(Color::DARKVIOLET);
     }
@@ -1062,9 +958,8 @@ trait ColorTrait
     /**
      * Color darkorchid.
      *
-     * @return static
      */
-    public static function darkorchid()
+    public static function darkorchid(): static
     {
         return new static(Color::DARKORCHID);
     }
@@ -1072,9 +967,8 @@ trait ColorTrait
     /**
      * Color darkorchid1.
      *
-     * @return static
      */
-    public static function darkorchid1()
+    public static function darkorchid1(): static
     {
         return new static(Color::DARKORCHID1);
     }
@@ -1082,9 +976,8 @@ trait ColorTrait
     /**
      * Color darkorchid3.
      *
-     * @return static
      */
-    public static function darkorchid3()
+    public static function darkorchid3(): static
     {
         return new static(Color::DARKORCHID3);
     }
@@ -1092,9 +985,8 @@ trait ColorTrait
     /**
      * Color darkorchid2.
      *
-     * @return static
      */
-    public static function darkorchid2()
+    public static function darkorchid2(): static
     {
         return new static(Color::DARKORCHID2);
     }
@@ -1102,9 +994,8 @@ trait ColorTrait
     /**
      * Color darkorchid4.
      *
-     * @return static
      */
-    public static function darkorchid4()
+    public static function darkorchid4(): static
     {
         return new static(Color::DARKORCHID4);
     }
@@ -1112,9 +1003,8 @@ trait ColorTrait
     /**
      * Color indigo.
      *
-     * @return static
      */
-    public static function indigo()
+    public static function indigo(): static
     {
         return new static(Color::INDIGO);
     }
@@ -1122,9 +1012,8 @@ trait ColorTrait
     /**
      * Color blueviolet.
      *
-     * @return static
      */
-    public static function blueviolet()
+    public static function blueviolet(): static
     {
         return new static(Color::BLUEVIOLET);
     }
@@ -1132,9 +1021,8 @@ trait ColorTrait
     /**
      * Color purple2.
      *
-     * @return static
      */
-    public static function purple2()
+    public static function purple2(): static
     {
         return new static(Color::PURPLE2);
     }
@@ -1142,9 +1030,8 @@ trait ColorTrait
     /**
      * Color purple3.
      *
-     * @return static
      */
-    public static function purple3()
+    public static function purple3(): static
     {
         return new static(Color::PURPLE3);
     }
@@ -1152,9 +1039,8 @@ trait ColorTrait
     /**
      * Color purple4.
      *
-     * @return static
      */
-    public static function purple4()
+    public static function purple4(): static
     {
         return new static(Color::PURPLE4);
     }
@@ -1162,9 +1048,8 @@ trait ColorTrait
     /**
      * Color purple1.
      *
-     * @return static
      */
-    public static function purple1()
+    public static function purple1(): static
     {
         return new static(Color::PURPLE1);
     }
@@ -1172,9 +1057,8 @@ trait ColorTrait
     /**
      * Color mediumpurple.
      *
-     * @return static
      */
-    public static function mediumpurple()
+    public static function mediumpurple(): static
     {
         return new static(Color::MEDIUMPURPLE);
     }
@@ -1182,9 +1066,8 @@ trait ColorTrait
     /**
      * Color mediumpurple1.
      *
-     * @return static
      */
-    public static function mediumpurple1()
+    public static function mediumpurple1(): static
     {
         return new static(Color::MEDIUMPURPLE1);
     }
@@ -1192,9 +1075,8 @@ trait ColorTrait
     /**
      * Color mediumpurple2.
      *
-     * @return static
      */
-    public static function mediumpurple2()
+    public static function mediumpurple2(): static
     {
         return new static(Color::MEDIUMPURPLE2);
     }
@@ -1202,9 +1084,8 @@ trait ColorTrait
     /**
      * Color mediumpurple3.
      *
-     * @return static
      */
-    public static function mediumpurple3()
+    public static function mediumpurple3(): static
     {
         return new static(Color::MEDIUMPURPLE3);
     }
@@ -1212,9 +1093,8 @@ trait ColorTrait
     /**
      * Color mediumpurple4.
      *
-     * @return static
      */
-    public static function mediumpurple4()
+    public static function mediumpurple4(): static
     {
         return new static(Color::MEDIUMPURPLE4);
     }
@@ -1222,9 +1102,8 @@ trait ColorTrait
     /**
      * Color darkslateblue.
      *
-     * @return static
      */
-    public static function darkslateblue()
+    public static function darkslateblue(): static
     {
         return new static(Color::DARKSLATEBLUE);
     }
@@ -1232,9 +1111,8 @@ trait ColorTrait
     /**
      * Color lightslateblue.
      *
-     * @return static
      */
-    public static function lightslateblue()
+    public static function lightslateblue(): static
     {
         return new static(Color::LIGHTSLATEBLUE);
     }
@@ -1242,9 +1120,8 @@ trait ColorTrait
     /**
      * Color mediumslateblue.
      *
-     * @return static
      */
-    public static function mediumslateblue()
+    public static function mediumslateblue(): static
     {
         return new static(Color::MEDIUMSLATEBLUE);
     }
@@ -1252,9 +1129,8 @@ trait ColorTrait
     /**
      * Color slateblue.
      *
-     * @return static
      */
-    public static function slateblue()
+    public static function slateblue(): static
     {
         return new static(Color::SLATEBLUE);
     }
@@ -1262,9 +1138,8 @@ trait ColorTrait
     /**
      * Color slateblue1.
      *
-     * @return static
      */
-    public static function slateblue1()
+    public static function slateblue1(): static
     {
         return new static(Color::SLATEBLUE1);
     }
@@ -1272,9 +1147,8 @@ trait ColorTrait
     /**
      * Color slateblue2.
      *
-     * @return static
      */
-    public static function slateblue2()
+    public static function slateblue2(): static
     {
         return new static(Color::SLATEBLUE2);
     }
@@ -1282,9 +1156,8 @@ trait ColorTrait
     /**
      * Color slateblue3.
      *
-     * @return static
      */
-    public static function slateblue3()
+    public static function slateblue3(): static
     {
         return new static(Color::SLATEBLUE3);
     }
@@ -1292,9 +1165,8 @@ trait ColorTrait
     /**
      * Color slateblue4.
      *
-     * @return static
      */
-    public static function slateblue4()
+    public static function slateblue4(): static
     {
         return new static(Color::SLATEBLUE4);
     }
@@ -1302,9 +1174,8 @@ trait ColorTrait
     /**
      * Color ghostwhite.
      *
-     * @return static
      */
-    public static function ghostwhite()
+    public static function ghostwhite(): static
     {
         return new static(Color::GHOSTWHITE);
     }
@@ -1312,9 +1183,8 @@ trait ColorTrait
     /**
      * Color lavender.
      *
-     * @return static
      */
-    public static function lavender()
+    public static function lavender(): static
     {
         return new static(Color::LAVENDER);
     }
@@ -1322,9 +1192,8 @@ trait ColorTrait
     /**
      * Color blue.
      *
-     * @return static
      */
-    public static function blue()
+    public static function blue(): static
     {
         return new static(Color::BLUE);
     }
@@ -1332,9 +1201,8 @@ trait ColorTrait
     /**
      * Color blue1.
      *
-     * @return static
      */
-    public static function blue1()
+    public static function blue1(): static
     {
         return new static(Color::BLUE1);
     }
@@ -1342,9 +1210,8 @@ trait ColorTrait
     /**
      * Color blue2.
      *
-     * @return static
      */
-    public static function blue2()
+    public static function blue2(): static
     {
         return new static(Color::BLUE2);
     }
@@ -1352,9 +1219,8 @@ trait ColorTrait
     /**
      * Color blue3.
      *
-     * @return static
      */
-    public static function blue3()
+    public static function blue3(): static
     {
         return new static(Color::BLUE3);
     }
@@ -1362,9 +1228,8 @@ trait ColorTrait
     /**
      * Color mediumblue.
      *
-     * @return static
      */
-    public static function mediumblue()
+    public static function mediumblue(): static
     {
         return new static(Color::MEDIUMBLUE);
     }
@@ -1372,9 +1237,8 @@ trait ColorTrait
     /**
      * Color blue4.
      *
-     * @return static
      */
-    public static function blue4()
+    public static function blue4(): static
     {
         return new static(Color::BLUE4);
     }
@@ -1382,9 +1246,8 @@ trait ColorTrait
     /**
      * Color darkblue.
      *
-     * @return static
      */
-    public static function darkblue()
+    public static function darkblue(): static
     {
         return new static(Color::DARKBLUE);
     }
@@ -1392,9 +1255,8 @@ trait ColorTrait
     /**
      * Color midnightblue.
      *
-     * @return static
      */
-    public static function midnightblue()
+    public static function midnightblue(): static
     {
         return new static(Color::MIDNIGHTBLUE);
     }
@@ -1402,9 +1264,8 @@ trait ColorTrait
     /**
      * Color navy.
      *
-     * @return static
      */
-    public static function navy()
+    public static function navy(): static
     {
         return new static(Color::NAVY);
     }
@@ -1412,9 +1273,8 @@ trait ColorTrait
     /**
      * Color navyblue.
      *
-     * @return static
      */
-    public static function navyblue()
+    public static function navyblue(): static
     {
         return new static(Color::NAVYBLUE);
     }
@@ -1422,9 +1282,8 @@ trait ColorTrait
     /**
      * Color royalblue.
      *
-     * @return static
      */
-    public static function royalblue()
+    public static function royalblue(): static
     {
         return new static(Color::ROYALBLUE);
     }
@@ -1432,9 +1291,8 @@ trait ColorTrait
     /**
      * Color royalblue1.
      *
-     * @return static
      */
-    public static function royalblue1()
+    public static function royalblue1(): static
     {
         return new static(Color::ROYALBLUE1);
     }
@@ -1442,9 +1300,8 @@ trait ColorTrait
     /**
      * Color royalblue2.
      *
-     * @return static
      */
-    public static function royalblue2()
+    public static function royalblue2(): static
     {
         return new static(Color::ROYALBLUE2);
     }
@@ -1452,9 +1309,8 @@ trait ColorTrait
     /**
      * Color royalblue3.
      *
-     * @return static
      */
-    public static function royalblue3()
+    public static function royalblue3(): static
     {
         return new static(Color::ROYALBLUE3);
     }
@@ -1462,9 +1318,8 @@ trait ColorTrait
     /**
      * Color royalblue4.
      *
-     * @return static
      */
-    public static function royalblue4()
+    public static function royalblue4(): static
     {
         return new static(Color::ROYALBLUE4);
     }
@@ -1472,9 +1327,8 @@ trait ColorTrait
     /**
      * Color cornflowerblue.
      *
-     * @return static
      */
-    public static function cornflowerblue()
+    public static function cornflowerblue(): static
     {
         return new static(Color::CORNFLOWERBLUE);
     }
@@ -1482,9 +1336,8 @@ trait ColorTrait
     /**
      * Color lightsteelblue.
      *
-     * @return static
      */
-    public static function lightsteelblue()
+    public static function lightsteelblue(): static
     {
         return new static(Color::LIGHTSTEELBLUE);
     }
@@ -1492,9 +1345,8 @@ trait ColorTrait
     /**
      * Color lightsteelblue1.
      *
-     * @return static
      */
-    public static function lightsteelblue1()
+    public static function lightsteelblue1(): static
     {
         return new static(Color::LIGHTSTEELBLUE1);
     }
@@ -1502,9 +1354,8 @@ trait ColorTrait
     /**
      * Color lightsteelblue2.
      *
-     * @return static
      */
-    public static function lightsteelblue2()
+    public static function lightsteelblue2(): static
     {
         return new static(Color::LIGHTSTEELBLUE2);
     }
@@ -1512,9 +1363,8 @@ trait ColorTrait
     /**
      * Color lightsteelblue3.
      *
-     * @return static
      */
-    public static function lightsteelblue3()
+    public static function lightsteelblue3(): static
     {
         return new static(Color::LIGHTSTEELBLUE3);
     }
@@ -1522,9 +1372,8 @@ trait ColorTrait
     /**
      * Color lightsteelblue4.
      *
-     * @return static
      */
-    public static function lightsteelblue4()
+    public static function lightsteelblue4(): static
     {
         return new static(Color::LIGHTSTEELBLUE4);
     }
@@ -1532,9 +1381,8 @@ trait ColorTrait
     /**
      * Color slategray4.
      *
-     * @return static
      */
-    public static function slategray4()
+    public static function slategray4(): static
     {
         return new static(Color::SLATEGRAY4);
     }
@@ -1542,9 +1390,8 @@ trait ColorTrait
     /**
      * Color slategray1.
      *
-     * @return static
      */
-    public static function slategray1()
+    public static function slategray1(): static
     {
         return new static(Color::SLATEGRAY1);
     }
@@ -1552,9 +1399,8 @@ trait ColorTrait
     /**
      * Color slategray2.
      *
-     * @return static
      */
-    public static function slategray2()
+    public static function slategray2(): static
     {
         return new static(Color::SLATEGRAY2);
     }
@@ -1562,9 +1408,8 @@ trait ColorTrait
     /**
      * Color slategray3.
      *
-     * @return static
      */
-    public static function slategray3()
+    public static function slategray3(): static
     {
         return new static(Color::SLATEGRAY3);
     }
@@ -1572,9 +1417,8 @@ trait ColorTrait
     /**
      * Color lightslategray.
      *
-     * @return static
      */
-    public static function lightslategray()
+    public static function lightslategray(): static
     {
         return new static(Color::LIGHTSLATEGRAY);
     }
@@ -1582,9 +1426,8 @@ trait ColorTrait
     /**
      * Color lightslategrey.
      *
-     * @return static
      */
-    public static function lightslategrey()
+    public static function lightslategrey(): static
     {
         return new static(Color::LIGHTSLATEGREY);
     }
@@ -1592,9 +1435,8 @@ trait ColorTrait
     /**
      * Color slategray.
      *
-     * @return static
      */
-    public static function slategray()
+    public static function slategray(): static
     {
         return new static(Color::SLATEGRAY);
     }
@@ -1602,9 +1444,8 @@ trait ColorTrait
     /**
      * Color slategrey.
      *
-     * @return static
      */
-    public static function slategrey()
+    public static function slategrey(): static
     {
         return new static(Color::SLATEGREY);
     }
@@ -1612,9 +1453,8 @@ trait ColorTrait
     /**
      * Color dodgerblue.
      *
-     * @return static
      */
-    public static function dodgerblue()
+    public static function dodgerblue(): static
     {
         return new static(Color::DODGERBLUE);
     }
@@ -1622,9 +1462,8 @@ trait ColorTrait
     /**
      * Color dodgerblue1.
      *
-     * @return static
      */
-    public static function dodgerblue1()
+    public static function dodgerblue1(): static
     {
         return new static(Color::DODGERBLUE1);
     }
@@ -1632,9 +1471,8 @@ trait ColorTrait
     /**
      * Color dodgerblue2.
      *
-     * @return static
      */
-    public static function dodgerblue2()
+    public static function dodgerblue2(): static
     {
         return new static(Color::DODGERBLUE2);
     }
@@ -1642,9 +1480,8 @@ trait ColorTrait
     /**
      * Color dodgerblue4.
      *
-     * @return static
      */
-    public static function dodgerblue4()
+    public static function dodgerblue4(): static
     {
         return new static(Color::DODGERBLUE4);
     }
@@ -1652,9 +1489,8 @@ trait ColorTrait
     /**
      * Color dodgerblue3.
      *
-     * @return static
      */
-    public static function dodgerblue3()
+    public static function dodgerblue3(): static
     {
         return new static(Color::DODGERBLUE3);
     }
@@ -1662,9 +1498,8 @@ trait ColorTrait
     /**
      * Color aliceblue.
      *
-     * @return static
      */
-    public static function aliceblue()
+    public static function aliceblue(): static
     {
         return new static(Color::ALICEBLUE);
     }
@@ -1672,9 +1507,8 @@ trait ColorTrait
     /**
      * Color steelblue4.
      *
-     * @return static
      */
-    public static function steelblue4()
+    public static function steelblue4(): static
     {
         return new static(Color::STEELBLUE4);
     }
@@ -1682,9 +1516,8 @@ trait ColorTrait
     /**
      * Color steelblue.
      *
-     * @return static
      */
-    public static function steelblue()
+    public static function steelblue(): static
     {
         return new static(Color::STEELBLUE);
     }
@@ -1692,9 +1525,8 @@ trait ColorTrait
     /**
      * Color steelblue1.
      *
-     * @return static
      */
-    public static function steelblue1()
+    public static function steelblue1(): static
     {
         return new static(Color::STEELBLUE1);
     }
@@ -1702,9 +1534,8 @@ trait ColorTrait
     /**
      * Color steelblue2.
      *
-     * @return static
      */
-    public static function steelblue2()
+    public static function steelblue2(): static
     {
         return new static(Color::STEELBLUE2);
     }
@@ -1712,9 +1543,8 @@ trait ColorTrait
     /**
      * Color steelblue3.
      *
-     * @return static
      */
-    public static function steelblue3()
+    public static function steelblue3(): static
     {
         return new static(Color::STEELBLUE3);
     }
@@ -1722,9 +1552,8 @@ trait ColorTrait
     /**
      * Color skyblue4.
      *
-     * @return static
      */
-    public static function skyblue4()
+    public static function skyblue4(): static
     {
         return new static(Color::SKYBLUE4);
     }
@@ -1732,9 +1561,8 @@ trait ColorTrait
     /**
      * Color skyblue1.
      *
-     * @return static
      */
-    public static function skyblue1()
+    public static function skyblue1(): static
     {
         return new static(Color::SKYBLUE1);
     }
@@ -1742,9 +1570,8 @@ trait ColorTrait
     /**
      * Color skyblue2.
      *
-     * @return static
      */
-    public static function skyblue2()
+    public static function skyblue2(): static
     {
         return new static(Color::SKYBLUE2);
     }
@@ -1752,9 +1579,8 @@ trait ColorTrait
     /**
      * Color skyblue3.
      *
-     * @return static
      */
-    public static function skyblue3()
+    public static function skyblue3(): static
     {
         return new static(Color::SKYBLUE3);
     }
@@ -1762,9 +1588,8 @@ trait ColorTrait
     /**
      * Color lightskyblue.
      *
-     * @return static
      */
-    public static function lightskyblue()
+    public static function lightskyblue(): static
     {
         return new static(Color::LIGHTSKYBLUE);
     }
@@ -1772,9 +1597,8 @@ trait ColorTrait
     /**
      * Color lightskyblue4.
      *
-     * @return static
      */
-    public static function lightskyblue4()
+    public static function lightskyblue4(): static
     {
         return new static(Color::LIGHTSKYBLUE4);
     }
@@ -1782,9 +1606,8 @@ trait ColorTrait
     /**
      * Color lightskyblue1.
      *
-     * @return static
      */
-    public static function lightskyblue1()
+    public static function lightskyblue1(): static
     {
         return new static(Color::LIGHTSKYBLUE1);
     }
@@ -1792,9 +1615,8 @@ trait ColorTrait
     /**
      * Color lightskyblue2.
      *
-     * @return static
      */
-    public static function lightskyblue2()
+    public static function lightskyblue2(): static
     {
         return new static(Color::LIGHTSKYBLUE2);
     }
@@ -1802,9 +1624,8 @@ trait ColorTrait
     /**
      * Color lightskyblue3.
      *
-     * @return static
      */
-    public static function lightskyblue3()
+    public static function lightskyblue3(): static
     {
         return new static(Color::LIGHTSKYBLUE3);
     }
@@ -1812,9 +1633,8 @@ trait ColorTrait
     /**
      * Color skyblue.
      *
-     * @return static
      */
-    public static function skyblue()
+    public static function skyblue(): static
     {
         return new static(Color::SKYBLUE);
     }
@@ -1822,9 +1642,8 @@ trait ColorTrait
     /**
      * Color lightblue3.
      *
-     * @return static
      */
-    public static function lightblue3()
+    public static function lightblue3(): static
     {
         return new static(Color::LIGHTBLUE3);
     }
@@ -1832,9 +1651,8 @@ trait ColorTrait
     /**
      * Color deepskyblue.
      *
-     * @return static
      */
-    public static function deepskyblue()
+    public static function deepskyblue(): static
     {
         return new static(Color::DEEPSKYBLUE);
     }
@@ -1842,9 +1660,8 @@ trait ColorTrait
     /**
      * Color deepskyblue1.
      *
-     * @return static
      */
-    public static function deepskyblue1()
+    public static function deepskyblue1(): static
     {
         return new static(Color::DEEPSKYBLUE1);
     }
@@ -1852,9 +1669,8 @@ trait ColorTrait
     /**
      * Color deepskyblue2.
      *
-     * @return static
      */
-    public static function deepskyblue2()
+    public static function deepskyblue2(): static
     {
         return new static(Color::DEEPSKYBLUE2);
     }
@@ -1862,9 +1678,8 @@ trait ColorTrait
     /**
      * Color deepskyblue4.
      *
-     * @return static
      */
-    public static function deepskyblue4()
+    public static function deepskyblue4(): static
     {
         return new static(Color::DEEPSKYBLUE4);
     }
@@ -1872,9 +1687,8 @@ trait ColorTrait
     /**
      * Color deepskyblue3.
      *
-     * @return static
      */
-    public static function deepskyblue3()
+    public static function deepskyblue3(): static
     {
         return new static(Color::DEEPSKYBLUE3);
     }
@@ -1882,9 +1696,8 @@ trait ColorTrait
     /**
      * Color lightblue1.
      *
-     * @return static
      */
-    public static function lightblue1()
+    public static function lightblue1(): static
     {
         return new static(Color::LIGHTBLUE1);
     }
@@ -1892,9 +1705,8 @@ trait ColorTrait
     /**
      * Color lightblue2.
      *
-     * @return static
      */
-    public static function lightblue2()
+    public static function lightblue2(): static
     {
         return new static(Color::LIGHTBLUE2);
     }
@@ -1902,9 +1714,8 @@ trait ColorTrait
     /**
      * Color lightblue.
      *
-     * @return static
      */
-    public static function lightblue()
+    public static function lightblue(): static
     {
         return new static(Color::LIGHTBLUE);
     }
@@ -1912,9 +1723,8 @@ trait ColorTrait
     /**
      * Color lightblue4.
      *
-     * @return static
      */
-    public static function lightblue4()
+    public static function lightblue4(): static
     {
         return new static(Color::LIGHTBLUE4);
     }
@@ -1922,9 +1732,8 @@ trait ColorTrait
     /**
      * Color powderblue.
      *
-     * @return static
      */
-    public static function powderblue()
+    public static function powderblue(): static
     {
         return new static(Color::POWDERBLUE);
     }
@@ -1932,9 +1741,8 @@ trait ColorTrait
     /**
      * Color cadetblue1.
      *
-     * @return static
      */
-    public static function cadetblue1()
+    public static function cadetblue1(): static
     {
         return new static(Color::CADETBLUE1);
     }
@@ -1942,9 +1750,8 @@ trait ColorTrait
     /**
      * Color cadetblue2.
      *
-     * @return static
      */
-    public static function cadetblue2()
+    public static function cadetblue2(): static
     {
         return new static(Color::CADETBLUE2);
     }
@@ -1952,9 +1759,8 @@ trait ColorTrait
     /**
      * Color cadetblue3.
      *
-     * @return static
      */
-    public static function cadetblue3()
+    public static function cadetblue3(): static
     {
         return new static(Color::CADETBLUE3);
     }
@@ -1962,9 +1768,8 @@ trait ColorTrait
     /**
      * Color cadetblue4.
      *
-     * @return static
      */
-    public static function cadetblue4()
+    public static function cadetblue4(): static
     {
         return new static(Color::CADETBLUE4);
     }
@@ -1972,9 +1777,8 @@ trait ColorTrait
     /**
      * Color turquoise1.
      *
-     * @return static
      */
-    public static function turquoise1()
+    public static function turquoise1(): static
     {
         return new static(Color::TURQUOISE1);
     }
@@ -1982,9 +1786,8 @@ trait ColorTrait
     /**
      * Color turquoise2.
      *
-     * @return static
      */
-    public static function turquoise2()
+    public static function turquoise2(): static
     {
         return new static(Color::TURQUOISE2);
     }
@@ -1992,9 +1795,8 @@ trait ColorTrait
     /**
      * Color turquoise3.
      *
-     * @return static
      */
-    public static function turquoise3()
+    public static function turquoise3(): static
     {
         return new static(Color::TURQUOISE3);
     }
@@ -2002,9 +1804,8 @@ trait ColorTrait
     /**
      * Color turquoise4.
      *
-     * @return static
      */
-    public static function turquoise4()
+    public static function turquoise4(): static
     {
         return new static(Color::TURQUOISE4);
     }
@@ -2012,9 +1813,8 @@ trait ColorTrait
     /**
      * Color cadetblue.
      *
-     * @return static
      */
-    public static function cadetblue()
+    public static function cadetblue(): static
     {
         return new static(Color::CADETBLUE);
     }
@@ -2022,9 +1822,8 @@ trait ColorTrait
     /**
      * Color darkturquoise.
      *
-     * @return static
      */
-    public static function darkturquoise()
+    public static function darkturquoise(): static
     {
         return new static(Color::DARKTURQUOISE);
     }
@@ -2032,9 +1831,8 @@ trait ColorTrait
     /**
      * Color azure.
      *
-     * @return static
      */
-    public static function azure()
+    public static function azure(): static
     {
         return new static(Color::AZURE);
     }
@@ -2042,9 +1840,8 @@ trait ColorTrait
     /**
      * Color azure1.
      *
-     * @return static
      */
-    public static function azure1()
+    public static function azure1(): static
     {
         return new static(Color::AZURE1);
     }
@@ -2052,9 +1849,8 @@ trait ColorTrait
     /**
      * Color lightcyan1.
      *
-     * @return static
      */
-    public static function lightcyan1()
+    public static function lightcyan1(): static
     {
         return new static(Color::LIGHTCYAN1);
     }
@@ -2062,9 +1858,8 @@ trait ColorTrait
     /**
      * Color lightcyan.
      *
-     * @return static
      */
-    public static function lightcyan()
+    public static function lightcyan(): static
     {
         return new static(Color::LIGHTCYAN);
     }
@@ -2072,9 +1867,8 @@ trait ColorTrait
     /**
      * Color azure2.
      *
-     * @return static
      */
-    public static function azure2()
+    public static function azure2(): static
     {
         return new static(Color::AZURE2);
     }
@@ -2082,9 +1876,8 @@ trait ColorTrait
     /**
      * Color lightcyan2.
      *
-     * @return static
      */
-    public static function lightcyan2()
+    public static function lightcyan2(): static
     {
         return new static(Color::LIGHTCYAN2);
     }
@@ -2092,9 +1885,8 @@ trait ColorTrait
     /**
      * Color paleturquoise1.
      *
-     * @return static
      */
-    public static function paleturquoise1()
+    public static function paleturquoise1(): static
     {
         return new static(Color::PALETURQUOISE1);
     }
@@ -2102,9 +1894,8 @@ trait ColorTrait
     /**
      * Color paleturquoise.
      *
-     * @return static
      */
-    public static function paleturquoise()
+    public static function paleturquoise(): static
     {
         return new static(Color::PALETURQUOISE);
     }
@@ -2112,9 +1903,8 @@ trait ColorTrait
     /**
      * Color paleturquoise2.
      *
-     * @return static
      */
-    public static function paleturquoise2()
+    public static function paleturquoise2(): static
     {
         return new static(Color::PALETURQUOISE2);
     }
@@ -2122,9 +1912,8 @@ trait ColorTrait
     /**
      * Color darkslategray1.
      *
-     * @return static
      */
-    public static function darkslategray1()
+    public static function darkslategray1(): static
     {
         return new static(Color::DARKSLATEGRAY1);
     }
@@ -2132,9 +1921,8 @@ trait ColorTrait
     /**
      * Color azure3.
      *
-     * @return static
      */
-    public static function azure3()
+    public static function azure3(): static
     {
         return new static(Color::AZURE3);
     }
@@ -2142,9 +1930,8 @@ trait ColorTrait
     /**
      * Color lightcyan3.
      *
-     * @return static
      */
-    public static function lightcyan3()
+    public static function lightcyan3(): static
     {
         return new static(Color::LIGHTCYAN3);
     }
@@ -2152,9 +1939,8 @@ trait ColorTrait
     /**
      * Color darkslategray2.
      *
-     * @return static
      */
-    public static function darkslategray2()
+    public static function darkslategray2(): static
     {
         return new static(Color::DARKSLATEGRAY2);
     }
@@ -2162,9 +1948,8 @@ trait ColorTrait
     /**
      * Color paleturquoise3.
      *
-     * @return static
      */
-    public static function paleturquoise3()
+    public static function paleturquoise3(): static
     {
         return new static(Color::PALETURQUOISE3);
     }
@@ -2172,9 +1957,8 @@ trait ColorTrait
     /**
      * Color darkslategray3.
      *
-     * @return static
      */
-    public static function darkslategray3()
+    public static function darkslategray3(): static
     {
         return new static(Color::DARKSLATEGRAY3);
     }
@@ -2182,9 +1966,8 @@ trait ColorTrait
     /**
      * Color azure4.
      *
-     * @return static
      */
-    public static function azure4()
+    public static function azure4(): static
     {
         return new static(Color::AZURE4);
     }
@@ -2192,9 +1975,8 @@ trait ColorTrait
     /**
      * Color lightcyan4.
      *
-     * @return static
      */
-    public static function lightcyan4()
+    public static function lightcyan4(): static
     {
         return new static(Color::LIGHTCYAN4);
     }
@@ -2202,9 +1984,8 @@ trait ColorTrait
     /**
      * Color aqua.
      *
-     * @return static
      */
-    public static function aqua()
+    public static function aqua(): static
     {
         return new static(Color::AQUA);
     }
@@ -2212,9 +1993,8 @@ trait ColorTrait
     /**
      * Color cyan.
      *
-     * @return static
      */
-    public static function cyan()
+    public static function cyan(): static
     {
         return new static(Color::CYAN);
     }
@@ -2222,9 +2002,8 @@ trait ColorTrait
     /**
      * Color cyan1.
      *
-     * @return static
      */
-    public static function cyan1()
+    public static function cyan1(): static
     {
         return new static(Color::CYAN1);
     }
@@ -2232,9 +2011,8 @@ trait ColorTrait
     /**
      * Color paleturquoise4.
      *
-     * @return static
      */
-    public static function paleturquoise4()
+    public static function paleturquoise4(): static
     {
         return new static(Color::PALETURQUOISE4);
     }
@@ -2242,9 +2020,8 @@ trait ColorTrait
     /**
      * Color cyan2.
      *
-     * @return static
      */
-    public static function cyan2()
+    public static function cyan2(): static
     {
         return new static(Color::CYAN2);
     }
@@ -2252,9 +2029,8 @@ trait ColorTrait
     /**
      * Color darkslategray4.
      *
-     * @return static
      */
-    public static function darkslategray4()
+    public static function darkslategray4(): static
     {
         return new static(Color::DARKSLATEGRAY4);
     }
@@ -2262,9 +2038,8 @@ trait ColorTrait
     /**
      * Color cyan3.
      *
-     * @return static
      */
-    public static function cyan3()
+    public static function cyan3(): static
     {
         return new static(Color::CYAN3);
     }
@@ -2272,9 +2047,8 @@ trait ColorTrait
     /**
      * Color cyan4.
      *
-     * @return static
      */
-    public static function cyan4()
+    public static function cyan4(): static
     {
         return new static(Color::CYAN4);
     }
@@ -2282,9 +2056,8 @@ trait ColorTrait
     /**
      * Color darkcyan.
      *
-     * @return static
      */
-    public static function darkcyan()
+    public static function darkcyan(): static
     {
         return new static(Color::DARKCYAN);
     }
@@ -2292,9 +2065,8 @@ trait ColorTrait
     /**
      * Color teal.
      *
-     * @return static
      */
-    public static function teal()
+    public static function teal(): static
     {
         return new static(Color::TEAL);
     }
@@ -2302,9 +2074,8 @@ trait ColorTrait
     /**
      * Color darkslategray.
      *
-     * @return static
      */
-    public static function darkslategray()
+    public static function darkslategray(): static
     {
         return new static(Color::DARKSLATEGRAY);
     }
@@ -2312,9 +2083,8 @@ trait ColorTrait
     /**
      * Color darkslategrey.
      *
-     * @return static
      */
-    public static function darkslategrey()
+    public static function darkslategrey(): static
     {
         return new static(Color::DARKSLATEGREY);
     }
@@ -2322,9 +2092,8 @@ trait ColorTrait
     /**
      * Color mediumturquoise.
      *
-     * @return static
      */
-    public static function mediumturquoise()
+    public static function mediumturquoise(): static
     {
         return new static(Color::MEDIUMTURQUOISE);
     }
@@ -2332,9 +2101,8 @@ trait ColorTrait
     /**
      * Color lightseagreen.
      *
-     * @return static
      */
-    public static function lightseagreen()
+    public static function lightseagreen(): static
     {
         return new static(Color::LIGHTSEAGREEN);
     }
@@ -2342,9 +2110,8 @@ trait ColorTrait
     /**
      * Color turquoise.
      *
-     * @return static
      */
-    public static function turquoise()
+    public static function turquoise(): static
     {
         return new static(Color::TURQUOISE);
     }
@@ -2352,9 +2119,8 @@ trait ColorTrait
     /**
      * Color aquamarine4.
      *
-     * @return static
      */
-    public static function aquamarine4()
+    public static function aquamarine4(): static
     {
         return new static(Color::AQUAMARINE4);
     }
@@ -2362,9 +2128,8 @@ trait ColorTrait
     /**
      * Color aquamarine.
      *
-     * @return static
      */
-    public static function aquamarine()
+    public static function aquamarine(): static
     {
         return new static(Color::AQUAMARINE);
     }
@@ -2372,9 +2137,8 @@ trait ColorTrait
     /**
      * Color aquamarine1.
      *
-     * @return static
      */
-    public static function aquamarine1()
+    public static function aquamarine1(): static
     {
         return new static(Color::AQUAMARINE1);
     }
@@ -2382,9 +2146,8 @@ trait ColorTrait
     /**
      * Color aquamarine2.
      *
-     * @return static
      */
-    public static function aquamarine2()
+    public static function aquamarine2(): static
     {
         return new static(Color::AQUAMARINE2);
     }
@@ -2392,9 +2155,8 @@ trait ColorTrait
     /**
      * Color aquamarine3.
      *
-     * @return static
      */
-    public static function aquamarine3()
+    public static function aquamarine3(): static
     {
         return new static(Color::AQUAMARINE3);
     }
@@ -2402,9 +2164,8 @@ trait ColorTrait
     /**
      * Color mediumaquamarine.
      *
-     * @return static
      */
-    public static function mediumaquamarine()
+    public static function mediumaquamarine(): static
     {
         return new static(Color::MEDIUMAQUAMARINE);
     }
@@ -2412,9 +2173,8 @@ trait ColorTrait
     /**
      * Color mediumspringgreen.
      *
-     * @return static
      */
-    public static function mediumspringgreen()
+    public static function mediumspringgreen(): static
     {
         return new static(Color::MEDIUMSPRINGGREEN);
     }
@@ -2422,9 +2182,8 @@ trait ColorTrait
     /**
      * Color mintcream.
      *
-     * @return static
      */
-    public static function mintcream()
+    public static function mintcream(): static
     {
         return new static(Color::MINTCREAM);
     }
@@ -2432,9 +2191,8 @@ trait ColorTrait
     /**
      * Color springgreen.
      *
-     * @return static
      */
-    public static function springgreen()
+    public static function springgreen(): static
     {
         return new static(Color::SPRINGGREEN);
     }
@@ -2442,9 +2200,8 @@ trait ColorTrait
     /**
      * Color springgreen1.
      *
-     * @return static
      */
-    public static function springgreen1()
+    public static function springgreen1(): static
     {
         return new static(Color::SPRINGGREEN1);
     }
@@ -2452,9 +2209,8 @@ trait ColorTrait
     /**
      * Color springgreen2.
      *
-     * @return static
      */
-    public static function springgreen2()
+    public static function springgreen2(): static
     {
         return new static(Color::SPRINGGREEN2);
     }
@@ -2462,9 +2218,8 @@ trait ColorTrait
     /**
      * Color springgreen3.
      *
-     * @return static
      */
-    public static function springgreen3()
+    public static function springgreen3(): static
     {
         return new static(Color::SPRINGGREEN3);
     }
@@ -2472,9 +2227,8 @@ trait ColorTrait
     /**
      * Color springgreen4.
      *
-     * @return static
      */
-    public static function springgreen4()
+    public static function springgreen4(): static
     {
         return new static(Color::SPRINGGREEN4);
     }
@@ -2482,9 +2236,8 @@ trait ColorTrait
     /**
      * Color mediumseagreen.
      *
-     * @return static
      */
-    public static function mediumseagreen()
+    public static function mediumseagreen(): static
     {
         return new static(Color::MEDIUMSEAGREEN);
     }
@@ -2492,9 +2245,8 @@ trait ColorTrait
     /**
      * Color seagreen.
      *
-     * @return static
      */
-    public static function seagreen()
+    public static function seagreen(): static
     {
         return new static(Color::SEAGREEN);
     }
@@ -2502,9 +2254,8 @@ trait ColorTrait
     /**
      * Color seagreen3.
      *
-     * @return static
      */
-    public static function seagreen3()
+    public static function seagreen3(): static
     {
         return new static(Color::SEAGREEN3);
     }
@@ -2512,9 +2263,8 @@ trait ColorTrait
     /**
      * Color seagreen1.
      *
-     * @return static
      */
-    public static function seagreen1()
+    public static function seagreen1(): static
     {
         return new static(Color::SEAGREEN1);
     }
@@ -2522,9 +2272,8 @@ trait ColorTrait
     /**
      * Color seagreen4.
      *
-     * @return static
      */
-    public static function seagreen4()
+    public static function seagreen4(): static
     {
         return new static(Color::SEAGREEN4);
     }
@@ -2532,9 +2281,8 @@ trait ColorTrait
     /**
      * Color seagreen2.
      *
-     * @return static
      */
-    public static function seagreen2()
+    public static function seagreen2(): static
     {
         return new static(Color::SEAGREEN2);
     }
@@ -2542,9 +2290,8 @@ trait ColorTrait
     /**
      * Color mediumforestgreen.
      *
-     * @return static
      */
-    public static function mediumforestgreen()
+    public static function mediumforestgreen(): static
     {
         return new static(Color::MEDIUMFORESTGREEN);
     }
@@ -2552,9 +2299,8 @@ trait ColorTrait
     /**
      * Color honeydew.
      *
-     * @return static
      */
-    public static function honeydew()
+    public static function honeydew(): static
     {
         return new static(Color::HONEYDEW);
     }
@@ -2562,9 +2308,8 @@ trait ColorTrait
     /**
      * Color honeydew1.
      *
-     * @return static
      */
-    public static function honeydew1()
+    public static function honeydew1(): static
     {
         return new static(Color::HONEYDEW1);
     }
@@ -2572,9 +2317,8 @@ trait ColorTrait
     /**
      * Color honeydew2.
      *
-     * @return static
      */
-    public static function honeydew2()
+    public static function honeydew2(): static
     {
         return new static(Color::HONEYDEW2);
     }
@@ -2582,9 +2326,8 @@ trait ColorTrait
     /**
      * Color darkseagreen1.
      *
-     * @return static
      */
-    public static function darkseagreen1()
+    public static function darkseagreen1(): static
     {
         return new static(Color::DARKSEAGREEN1);
     }
@@ -2592,9 +2335,8 @@ trait ColorTrait
     /**
      * Color darkseagreen2.
      *
-     * @return static
      */
-    public static function darkseagreen2()
+    public static function darkseagreen2(): static
     {
         return new static(Color::DARKSEAGREEN2);
     }
@@ -2602,9 +2344,8 @@ trait ColorTrait
     /**
      * Color palegreen1.
      *
-     * @return static
      */
-    public static function palegreen1()
+    public static function palegreen1(): static
     {
         return new static(Color::PALEGREEN1);
     }
@@ -2612,9 +2353,8 @@ trait ColorTrait
     /**
      * Color palegreen.
      *
-     * @return static
      */
-    public static function palegreen()
+    public static function palegreen(): static
     {
         return new static(Color::PALEGREEN);
     }
@@ -2622,9 +2362,8 @@ trait ColorTrait
     /**
      * Color honeydew3.
      *
-     * @return static
      */
-    public static function honeydew3()
+    public static function honeydew3(): static
     {
         return new static(Color::HONEYDEW3);
     }
@@ -2632,9 +2371,8 @@ trait ColorTrait
     /**
      * Color lightgreen.
      *
-     * @return static
      */
-    public static function lightgreen()
+    public static function lightgreen(): static
     {
         return new static(Color::LIGHTGREEN);
     }
@@ -2642,9 +2380,8 @@ trait ColorTrait
     /**
      * Color palegreen2.
      *
-     * @return static
      */
-    public static function palegreen2()
+    public static function palegreen2(): static
     {
         return new static(Color::PALEGREEN2);
     }
@@ -2652,9 +2389,8 @@ trait ColorTrait
     /**
      * Color darkseagreen3.
      *
-     * @return static
      */
-    public static function darkseagreen3()
+    public static function darkseagreen3(): static
     {
         return new static(Color::DARKSEAGREEN3);
     }
@@ -2662,9 +2398,8 @@ trait ColorTrait
     /**
      * Color darkseagreen.
      *
-     * @return static
      */
-    public static function darkseagreen()
+    public static function darkseagreen(): static
     {
         return new static(Color::DARKSEAGREEN);
     }
@@ -2672,9 +2407,8 @@ trait ColorTrait
     /**
      * Color palegreen3.
      *
-     * @return static
      */
-    public static function palegreen3()
+    public static function palegreen3(): static
     {
         return new static(Color::PALEGREEN3);
     }
@@ -2682,9 +2416,8 @@ trait ColorTrait
     /**
      * Color honeydew4.
      *
-     * @return static
      */
-    public static function honeydew4()
+    public static function honeydew4(): static
     {
         return new static(Color::HONEYDEW4);
     }
@@ -2692,9 +2425,8 @@ trait ColorTrait
     /**
      * Color green1.
      *
-     * @return static
      */
-    public static function green1()
+    public static function green1(): static
     {
         return new static(Color::GREEN1);
     }
@@ -2702,9 +2434,8 @@ trait ColorTrait
     /**
      * Color lime.
      *
-     * @return static
      */
-    public static function lime()
+    public static function lime(): static
     {
         return new static(Color::LIME);
     }
@@ -2712,9 +2443,8 @@ trait ColorTrait
     /**
      * Color limegreen.
      *
-     * @return static
      */
-    public static function limegreen()
+    public static function limegreen(): static
     {
         return new static(Color::LIMEGREEN);
     }
@@ -2722,9 +2452,8 @@ trait ColorTrait
     /**
      * Color darkseagreen4.
      *
-     * @return static
      */
-    public static function darkseagreen4()
+    public static function darkseagreen4(): static
     {
         return new static(Color::DARKSEAGREEN4);
     }
@@ -2732,9 +2461,8 @@ trait ColorTrait
     /**
      * Color green2.
      *
-     * @return static
      */
-    public static function green2()
+    public static function green2(): static
     {
         return new static(Color::GREEN2);
     }
@@ -2742,9 +2470,8 @@ trait ColorTrait
     /**
      * Color palegreen4.
      *
-     * @return static
      */
-    public static function palegreen4()
+    public static function palegreen4(): static
     {
         return new static(Color::PALEGREEN4);
     }
@@ -2752,9 +2479,8 @@ trait ColorTrait
     /**
      * Color green3.
      *
-     * @return static
      */
-    public static function green3()
+    public static function green3(): static
     {
         return new static(Color::GREEN3);
     }
@@ -2762,9 +2488,8 @@ trait ColorTrait
     /**
      * Color forestgreen.
      *
-     * @return static
      */
-    public static function forestgreen()
+    public static function forestgreen(): static
     {
         return new static(Color::FORESTGREEN);
     }
@@ -2772,9 +2497,8 @@ trait ColorTrait
     /**
      * Color green4.
      *
-     * @return static
      */
-    public static function green4()
+    public static function green4(): static
     {
         return new static(Color::GREEN4);
     }
@@ -2782,9 +2506,8 @@ trait ColorTrait
     /**
      * Color green.
      *
-     * @return static
      */
-    public static function green()
+    public static function green(): static
     {
         return new static(Color::GREEN);
     }
@@ -2792,9 +2515,8 @@ trait ColorTrait
     /**
      * Color darkgreen.
      *
-     * @return static
      */
-    public static function darkgreen()
+    public static function darkgreen(): static
     {
         return new static(Color::DARKGREEN);
     }
@@ -2802,9 +2524,8 @@ trait ColorTrait
     /**
      * Color lawngreen.
      *
-     * @return static
      */
-    public static function lawngreen()
+    public static function lawngreen(): static
     {
         return new static(Color::LAWNGREEN);
     }
@@ -2812,9 +2533,8 @@ trait ColorTrait
     /**
      * Color chartreuse.
      *
-     * @return static
      */
-    public static function chartreuse()
+    public static function chartreuse(): static
     {
         return new static(Color::CHARTREUSE);
     }
@@ -2822,9 +2542,8 @@ trait ColorTrait
     /**
      * Color chartreuse1.
      *
-     * @return static
      */
-    public static function chartreuse1()
+    public static function chartreuse1(): static
     {
         return new static(Color::CHARTREUSE1);
     }
@@ -2832,9 +2551,8 @@ trait ColorTrait
     /**
      * Color chartreuse2.
      *
-     * @return static
      */
-    public static function chartreuse2()
+    public static function chartreuse2(): static
     {
         return new static(Color::CHARTREUSE2);
     }
@@ -2842,9 +2560,8 @@ trait ColorTrait
     /**
      * Color chartreuse3.
      *
-     * @return static
      */
-    public static function chartreuse3()
+    public static function chartreuse3(): static
     {
         return new static(Color::CHARTREUSE3);
     }
@@ -2852,9 +2569,8 @@ trait ColorTrait
     /**
      * Color chartreuse4.
      *
-     * @return static
      */
-    public static function chartreuse4()
+    public static function chartreuse4(): static
     {
         return new static(Color::CHARTREUSE4);
     }
@@ -2862,9 +2578,8 @@ trait ColorTrait
     /**
      * Color greenyellow.
      *
-     * @return static
      */
-    public static function greenyellow()
+    public static function greenyellow(): static
     {
         return new static(Color::GREENYELLOW);
     }
@@ -2872,9 +2587,8 @@ trait ColorTrait
     /**
      * Color darkolivegreen3.
      *
-     * @return static
      */
-    public static function darkolivegreen3()
+    public static function darkolivegreen3(): static
     {
         return new static(Color::DARKOLIVEGREEN3);
     }
@@ -2882,9 +2596,8 @@ trait ColorTrait
     /**
      * Color darkolivegreen1.
      *
-     * @return static
      */
-    public static function darkolivegreen1()
+    public static function darkolivegreen1(): static
     {
         return new static(Color::DARKOLIVEGREEN1);
     }
@@ -2892,9 +2605,8 @@ trait ColorTrait
     /**
      * Color darkolivegreen2.
      *
-     * @return static
      */
-    public static function darkolivegreen2()
+    public static function darkolivegreen2(): static
     {
         return new static(Color::DARKOLIVEGREEN2);
     }
@@ -2902,9 +2614,8 @@ trait ColorTrait
     /**
      * Color darkolivegreen4.
      *
-     * @return static
      */
-    public static function darkolivegreen4()
+    public static function darkolivegreen4(): static
     {
         return new static(Color::DARKOLIVEGREEN4);
     }
@@ -2912,9 +2623,8 @@ trait ColorTrait
     /**
      * Color darkolivegreen.
      *
-     * @return static
      */
-    public static function darkolivegreen()
+    public static function darkolivegreen(): static
     {
         return new static(Color::DARKOLIVEGREEN);
     }
@@ -2922,9 +2632,8 @@ trait ColorTrait
     /**
      * Color olivedrab.
      *
-     * @return static
      */
-    public static function olivedrab()
+    public static function olivedrab(): static
     {
         return new static(Color::OLIVEDRAB);
     }
@@ -2932,9 +2641,8 @@ trait ColorTrait
     /**
      * Color olivedrab1.
      *
-     * @return static
      */
-    public static function olivedrab1()
+    public static function olivedrab1(): static
     {
         return new static(Color::OLIVEDRAB1);
     }
@@ -2942,9 +2650,8 @@ trait ColorTrait
     /**
      * Color olivedrab2.
      *
-     * @return static
      */
-    public static function olivedrab2()
+    public static function olivedrab2(): static
     {
         return new static(Color::OLIVEDRAB2);
     }
@@ -2952,9 +2659,8 @@ trait ColorTrait
     /**
      * Color olivedrab3.
      *
-     * @return static
      */
-    public static function olivedrab3()
+    public static function olivedrab3(): static
     {
         return new static(Color::OLIVEDRAB3);
     }
@@ -2962,9 +2668,8 @@ trait ColorTrait
     /**
      * Color yellowgreen.
      *
-     * @return static
      */
-    public static function yellowgreen()
+    public static function yellowgreen(): static
     {
         return new static(Color::YELLOWGREEN);
     }
@@ -2972,9 +2677,8 @@ trait ColorTrait
     /**
      * Color olivedrab4.
      *
-     * @return static
      */
-    public static function olivedrab4()
+    public static function olivedrab4(): static
     {
         return new static(Color::OLIVEDRAB4);
     }
@@ -2982,9 +2686,8 @@ trait ColorTrait
     /**
      * Color ivory.
      *
-     * @return static
      */
-    public static function ivory()
+    public static function ivory(): static
     {
         return new static(Color::IVORY);
     }
@@ -2992,9 +2695,8 @@ trait ColorTrait
     /**
      * Color ivory1.
      *
-     * @return static
      */
-    public static function ivory1()
+    public static function ivory1(): static
     {
         return new static(Color::IVORY1);
     }
@@ -3002,9 +2704,8 @@ trait ColorTrait
     /**
      * Color lightyellow.
      *
-     * @return static
      */
-    public static function lightyellow()
+    public static function lightyellow(): static
     {
         return new static(Color::LIGHTYELLOW);
     }
@@ -3012,9 +2713,8 @@ trait ColorTrait
     /**
      * Color lightyellow1.
      *
-     * @return static
      */
-    public static function lightyellow1()
+    public static function lightyellow1(): static
     {
         return new static(Color::LIGHTYELLOW1);
     }
@@ -3022,9 +2722,8 @@ trait ColorTrait
     /**
      * Color beige.
      *
-     * @return static
      */
-    public static function beige()
+    public static function beige(): static
     {
         return new static(Color::BEIGE);
     }
@@ -3032,9 +2731,8 @@ trait ColorTrait
     /**
      * Color ivory2.
      *
-     * @return static
      */
-    public static function ivory2()
+    public static function ivory2(): static
     {
         return new static(Color::IVORY2);
     }
@@ -3042,9 +2740,8 @@ trait ColorTrait
     /**
      * Color lightgoldenrodyellow.
      *
-     * @return static
      */
-    public static function lightgoldenrodyellow()
+    public static function lightgoldenrodyellow(): static
     {
         return new static(Color::LIGHTGOLDENRODYELLOW);
     }
@@ -3052,9 +2749,8 @@ trait ColorTrait
     /**
      * Color lightyellow2.
      *
-     * @return static
      */
-    public static function lightyellow2()
+    public static function lightyellow2(): static
     {
         return new static(Color::LIGHTYELLOW2);
     }
@@ -3062,9 +2758,8 @@ trait ColorTrait
     /**
      * Color ivory3.
      *
-     * @return static
      */
-    public static function ivory3()
+    public static function ivory3(): static
     {
         return new static(Color::IVORY3);
     }
@@ -3072,9 +2767,8 @@ trait ColorTrait
     /**
      * Color lightyellow3.
      *
-     * @return static
      */
-    public static function lightyellow3()
+    public static function lightyellow3(): static
     {
         return new static(Color::LIGHTYELLOW3);
     }
@@ -3082,9 +2776,8 @@ trait ColorTrait
     /**
      * Color ivory4.
      *
-     * @return static
      */
-    public static function ivory4()
+    public static function ivory4(): static
     {
         return new static(Color::IVORY4);
     }
@@ -3092,9 +2785,8 @@ trait ColorTrait
     /**
      * Color lightyellow4.
      *
-     * @return static
      */
-    public static function lightyellow4()
+    public static function lightyellow4(): static
     {
         return new static(Color::LIGHTYELLOW4);
     }
@@ -3102,9 +2794,8 @@ trait ColorTrait
     /**
      * Color yellow.
      *
-     * @return static
      */
-    public static function yellow()
+    public static function yellow(): static
     {
         return new static(Color::YELLOW);
     }
@@ -3112,9 +2803,8 @@ trait ColorTrait
     /**
      * Color yellow1.
      *
-     * @return static
      */
-    public static function yellow1()
+    public static function yellow1(): static
     {
         return new static(Color::YELLOW1);
     }
@@ -3122,9 +2812,8 @@ trait ColorTrait
     /**
      * Color yellow2.
      *
-     * @return static
      */
-    public static function yellow2()
+    public static function yellow2(): static
     {
         return new static(Color::YELLOW2);
     }
@@ -3132,9 +2821,8 @@ trait ColorTrait
     /**
      * Color yellow3.
      *
-     * @return static
      */
-    public static function yellow3()
+    public static function yellow3(): static
     {
         return new static(Color::YELLOW3);
     }
@@ -3142,9 +2830,8 @@ trait ColorTrait
     /**
      * Color yellow4.
      *
-     * @return static
      */
-    public static function yellow4()
+    public static function yellow4(): static
     {
         return new static(Color::YELLOW4);
     }
@@ -3152,9 +2839,8 @@ trait ColorTrait
     /**
      * Color olive.
      *
-     * @return static
      */
-    public static function olive()
+    public static function olive(): static
     {
         return new static(Color::OLIVE);
     }
@@ -3162,9 +2848,8 @@ trait ColorTrait
     /**
      * Color darkkhaki.
      *
-     * @return static
      */
-    public static function darkkhaki()
+    public static function darkkhaki(): static
     {
         return new static(Color::DARKKHAKI);
     }
@@ -3172,9 +2857,8 @@ trait ColorTrait
     /**
      * Color khaki2.
      *
-     * @return static
      */
-    public static function khaki2()
+    public static function khaki2(): static
     {
         return new static(Color::KHAKI2);
     }
@@ -3182,9 +2866,8 @@ trait ColorTrait
     /**
      * Color lemonchiffon4.
      *
-     * @return static
      */
-    public static function lemonchiffon4()
+    public static function lemonchiffon4(): static
     {
         return new static(Color::LEMONCHIFFON4);
     }
@@ -3192,9 +2875,8 @@ trait ColorTrait
     /**
      * Color khaki1.
      *
-     * @return static
      */
-    public static function khaki1()
+    public static function khaki1(): static
     {
         return new static(Color::KHAKI1);
     }
@@ -3202,9 +2884,8 @@ trait ColorTrait
     /**
      * Color khaki3.
      *
-     * @return static
      */
-    public static function khaki3()
+    public static function khaki3(): static
     {
         return new static(Color::KHAKI3);
     }
@@ -3212,9 +2893,8 @@ trait ColorTrait
     /**
      * Color khaki4.
      *
-     * @return static
      */
-    public static function khaki4()
+    public static function khaki4(): static
     {
         return new static(Color::KHAKI4);
     }
@@ -3222,9 +2902,8 @@ trait ColorTrait
     /**
      * Color palegoldenrod.
      *
-     * @return static
      */
-    public static function palegoldenrod()
+    public static function palegoldenrod(): static
     {
         return new static(Color::PALEGOLDENROD);
     }
@@ -3232,9 +2911,8 @@ trait ColorTrait
     /**
      * Color lemonchiffon.
      *
-     * @return static
      */
-    public static function lemonchiffon()
+    public static function lemonchiffon(): static
     {
         return new static(Color::LEMONCHIFFON);
     }
@@ -3242,9 +2920,8 @@ trait ColorTrait
     /**
      * Color lemonchiffon1.
      *
-     * @return static
      */
-    public static function lemonchiffon1()
+    public static function lemonchiffon1(): static
     {
         return new static(Color::LEMONCHIFFON1);
     }
@@ -3252,9 +2929,8 @@ trait ColorTrait
     /**
      * Color khaki.
      *
-     * @return static
      */
-    public static function khaki()
+    public static function khaki(): static
     {
         return new static(Color::KHAKI);
     }
@@ -3262,9 +2938,8 @@ trait ColorTrait
     /**
      * Color lemonchiffon3.
      *
-     * @return static
      */
-    public static function lemonchiffon3()
+    public static function lemonchiffon3(): static
     {
         return new static(Color::LEMONCHIFFON3);
     }
@@ -3272,9 +2947,8 @@ trait ColorTrait
     /**
      * Color lemonchiffon2.
      *
-     * @return static
      */
-    public static function lemonchiffon2()
+    public static function lemonchiffon2(): static
     {
         return new static(Color::LEMONCHIFFON2);
     }
@@ -3282,9 +2956,8 @@ trait ColorTrait
     /**
      * Color mediumgoldenrod.
      *
-     * @return static
      */
-    public static function mediumgoldenrod()
+    public static function mediumgoldenrod(): static
     {
         return new static(Color::MEDIUMGOLDENROD);
     }
@@ -3292,9 +2965,8 @@ trait ColorTrait
     /**
      * Color cornsilk4.
      *
-     * @return static
      */
-    public static function cornsilk4()
+    public static function cornsilk4(): static
     {
         return new static(Color::CORNSILK4);
     }
@@ -3302,9 +2974,8 @@ trait ColorTrait
     /**
      * Color gold.
      *
-     * @return static
      */
-    public static function gold()
+    public static function gold(): static
     {
         return new static(Color::GOLD);
     }
@@ -3312,9 +2983,8 @@ trait ColorTrait
     /**
      * Color gold1.
      *
-     * @return static
      */
-    public static function gold1()
+    public static function gold1(): static
     {
         return new static(Color::GOLD1);
     }
@@ -3322,9 +2992,8 @@ trait ColorTrait
     /**
      * Color gold2.
      *
-     * @return static
      */
-    public static function gold2()
+    public static function gold2(): static
     {
         return new static(Color::GOLD2);
     }
@@ -3332,9 +3001,8 @@ trait ColorTrait
     /**
      * Color gold3.
      *
-     * @return static
      */
-    public static function gold3()
+    public static function gold3(): static
     {
         return new static(Color::GOLD3);
     }
@@ -3342,9 +3010,8 @@ trait ColorTrait
     /**
      * Color gold4.
      *
-     * @return static
      */
-    public static function gold4()
+    public static function gold4(): static
     {
         return new static(Color::GOLD4);
     }
@@ -3352,9 +3019,8 @@ trait ColorTrait
     /**
      * Color lightgoldenrod.
      *
-     * @return static
      */
-    public static function lightgoldenrod()
+    public static function lightgoldenrod(): static
     {
         return new static(Color::LIGHTGOLDENROD);
     }
@@ -3362,9 +3028,8 @@ trait ColorTrait
     /**
      * Color lightgoldenrod4.
      *
-     * @return static
      */
-    public static function lightgoldenrod4()
+    public static function lightgoldenrod4(): static
     {
         return new static(Color::LIGHTGOLDENROD4);
     }
@@ -3372,9 +3037,8 @@ trait ColorTrait
     /**
      * Color lightgoldenrod1.
      *
-     * @return static
      */
-    public static function lightgoldenrod1()
+    public static function lightgoldenrod1(): static
     {
         return new static(Color::LIGHTGOLDENROD1);
     }
@@ -3382,9 +3046,8 @@ trait ColorTrait
     /**
      * Color lightgoldenrod3.
      *
-     * @return static
      */
-    public static function lightgoldenrod3()
+    public static function lightgoldenrod3(): static
     {
         return new static(Color::LIGHTGOLDENROD3);
     }
@@ -3392,9 +3055,8 @@ trait ColorTrait
     /**
      * Color lightgoldenrod2.
      *
-     * @return static
      */
-    public static function lightgoldenrod2()
+    public static function lightgoldenrod2(): static
     {
         return new static(Color::LIGHTGOLDENROD2);
     }
@@ -3402,9 +3064,8 @@ trait ColorTrait
     /**
      * Color cornsilk3.
      *
-     * @return static
      */
-    public static function cornsilk3()
+    public static function cornsilk3(): static
     {
         return new static(Color::CORNSILK3);
     }
@@ -3412,9 +3073,8 @@ trait ColorTrait
     /**
      * Color cornsilk2.
      *
-     * @return static
      */
-    public static function cornsilk2()
+    public static function cornsilk2(): static
     {
         return new static(Color::CORNSILK2);
     }
@@ -3422,9 +3082,8 @@ trait ColorTrait
     /**
      * Color cornsilk.
      *
-     * @return static
      */
-    public static function cornsilk()
+    public static function cornsilk(): static
     {
         return new static(Color::CORNSILK);
     }
@@ -3432,9 +3091,8 @@ trait ColorTrait
     /**
      * Color cornsilk1.
      *
-     * @return static
      */
-    public static function cornsilk1()
+    public static function cornsilk1(): static
     {
         return new static(Color::CORNSILK1);
     }
@@ -3442,9 +3100,8 @@ trait ColorTrait
     /**
      * Color goldenrod.
      *
-     * @return static
      */
-    public static function goldenrod()
+    public static function goldenrod(): static
     {
         return new static(Color::GOLDENROD);
     }
@@ -3452,9 +3109,8 @@ trait ColorTrait
     /**
      * Color goldenrod1.
      *
-     * @return static
      */
-    public static function goldenrod1()
+    public static function goldenrod1(): static
     {
         return new static(Color::GOLDENROD1);
     }
@@ -3462,9 +3118,8 @@ trait ColorTrait
     /**
      * Color goldenrod2.
      *
-     * @return static
      */
-    public static function goldenrod2()
+    public static function goldenrod2(): static
     {
         return new static(Color::GOLDENROD2);
     }
@@ -3472,9 +3127,8 @@ trait ColorTrait
     /**
      * Color goldenrod3.
      *
-     * @return static
      */
-    public static function goldenrod3()
+    public static function goldenrod3(): static
     {
         return new static(Color::GOLDENROD3);
     }
@@ -3482,9 +3136,8 @@ trait ColorTrait
     /**
      * Color goldenrod4.
      *
-     * @return static
      */
-    public static function goldenrod4()
+    public static function goldenrod4(): static
     {
         return new static(Color::GOLDENROD4);
     }
@@ -3492,9 +3145,8 @@ trait ColorTrait
     /**
      * Color darkgoldenrod.
      *
-     * @return static
      */
-    public static function darkgoldenrod()
+    public static function darkgoldenrod(): static
     {
         return new static(Color::DARKGOLDENROD);
     }
@@ -3502,9 +3154,8 @@ trait ColorTrait
     /**
      * Color darkgoldenrod1.
      *
-     * @return static
      */
-    public static function darkgoldenrod1()
+    public static function darkgoldenrod1(): static
     {
         return new static(Color::DARKGOLDENROD1);
     }
@@ -3512,9 +3163,8 @@ trait ColorTrait
     /**
      * Color darkgoldenrod2.
      *
-     * @return static
      */
-    public static function darkgoldenrod2()
+    public static function darkgoldenrod2(): static
     {
         return new static(Color::DARKGOLDENROD2);
     }
@@ -3522,9 +3172,8 @@ trait ColorTrait
     /**
      * Color darkgoldenrod3.
      *
-     * @return static
      */
-    public static function darkgoldenrod3()
+    public static function darkgoldenrod3(): static
     {
         return new static(Color::DARKGOLDENROD3);
     }
@@ -3532,9 +3181,8 @@ trait ColorTrait
     /**
      * Color darkgoldenrod4.
      *
-     * @return static
      */
-    public static function darkgoldenrod4()
+    public static function darkgoldenrod4(): static
     {
         return new static(Color::DARKGOLDENROD4);
     }
@@ -3542,9 +3190,8 @@ trait ColorTrait
     /**
      * Color floralwhite.
      *
-     * @return static
      */
-    public static function floralwhite()
+    public static function floralwhite(): static
     {
         return new static(Color::FLORALWHITE);
     }
@@ -3552,9 +3199,8 @@ trait ColorTrait
     /**
      * Color wheat2.
      *
-     * @return static
      */
-    public static function wheat2()
+    public static function wheat2(): static
     {
         return new static(Color::WHEAT2);
     }
@@ -3562,9 +3208,8 @@ trait ColorTrait
     /**
      * Color oldlace.
      *
-     * @return static
      */
-    public static function oldlace()
+    public static function oldlace(): static
     {
         return new static(Color::OLDLACE);
     }
@@ -3572,9 +3217,8 @@ trait ColorTrait
     /**
      * Color wheat.
      *
-     * @return static
      */
-    public static function wheat()
+    public static function wheat(): static
     {
         return new static(Color::WHEAT);
     }
@@ -3582,9 +3226,8 @@ trait ColorTrait
     /**
      * Color wheat1.
      *
-     * @return static
      */
-    public static function wheat1()
+    public static function wheat1(): static
     {
         return new static(Color::WHEAT1);
     }
@@ -3592,9 +3235,8 @@ trait ColorTrait
     /**
      * Color wheat3.
      *
-     * @return static
      */
-    public static function wheat3()
+    public static function wheat3(): static
     {
         return new static(Color::WHEAT3);
     }
@@ -3602,9 +3244,8 @@ trait ColorTrait
     /**
      * Color orange.
      *
-     * @return static
      */
-    public static function orange()
+    public static function orange(): static
     {
         return new static(Color::ORANGE);
     }
@@ -3612,9 +3253,8 @@ trait ColorTrait
     /**
      * Color orange1.
      *
-     * @return static
      */
-    public static function orange1()
+    public static function orange1(): static
     {
         return new static(Color::ORANGE1);
     }
@@ -3622,9 +3262,8 @@ trait ColorTrait
     /**
      * Color orange2.
      *
-     * @return static
      */
-    public static function orange2()
+    public static function orange2(): static
     {
         return new static(Color::ORANGE2);
     }
@@ -3632,9 +3271,8 @@ trait ColorTrait
     /**
      * Color orange3.
      *
-     * @return static
      */
-    public static function orange3()
+    public static function orange3(): static
     {
         return new static(Color::ORANGE3);
     }
@@ -3642,9 +3280,8 @@ trait ColorTrait
     /**
      * Color orange4.
      *
-     * @return static
      */
-    public static function orange4()
+    public static function orange4(): static
     {
         return new static(Color::ORANGE4);
     }
@@ -3652,9 +3289,8 @@ trait ColorTrait
     /**
      * Color wheat4.
      *
-     * @return static
      */
-    public static function wheat4()
+    public static function wheat4(): static
     {
         return new static(Color::WHEAT4);
     }
@@ -3662,9 +3298,8 @@ trait ColorTrait
     /**
      * Color moccasin.
      *
-     * @return static
      */
-    public static function moccasin()
+    public static function moccasin(): static
     {
         return new static(Color::MOCCASIN);
     }
@@ -3672,9 +3307,8 @@ trait ColorTrait
     /**
      * Color papayawhip.
      *
-     * @return static
      */
-    public static function papayawhip()
+    public static function papayawhip(): static
     {
         return new static(Color::PAPAYAWHIP);
     }
@@ -3682,9 +3316,8 @@ trait ColorTrait
     /**
      * Color navajowhite3.
      *
-     * @return static
      */
-    public static function navajowhite3()
+    public static function navajowhite3(): static
     {
         return new static(Color::NAVAJOWHITE3);
     }
@@ -3692,9 +3325,8 @@ trait ColorTrait
     /**
      * Color blanchedalmond.
      *
-     * @return static
      */
-    public static function blanchedalmond()
+    public static function blanchedalmond(): static
     {
         return new static(Color::BLANCHEDALMOND);
     }
@@ -3702,9 +3334,8 @@ trait ColorTrait
     /**
      * Color navajowhite.
      *
-     * @return static
      */
-    public static function navajowhite()
+    public static function navajowhite(): static
     {
         return new static(Color::NAVAJOWHITE);
     }
@@ -3712,9 +3343,8 @@ trait ColorTrait
     /**
      * Color navajowhite1.
      *
-     * @return static
      */
-    public static function navajowhite1()
+    public static function navajowhite1(): static
     {
         return new static(Color::NAVAJOWHITE1);
     }
@@ -3722,9 +3352,8 @@ trait ColorTrait
     /**
      * Color navajowhite2.
      *
-     * @return static
      */
-    public static function navajowhite2()
+    public static function navajowhite2(): static
     {
         return new static(Color::NAVAJOWHITE2);
     }
@@ -3732,9 +3361,8 @@ trait ColorTrait
     /**
      * Color navajowhite4.
      *
-     * @return static
      */
-    public static function navajowhite4()
+    public static function navajowhite4(): static
     {
         return new static(Color::NAVAJOWHITE4);
     }
@@ -3742,9 +3370,8 @@ trait ColorTrait
     /**
      * Color antiquewhite4.
      *
-     * @return static
      */
-    public static function antiquewhite4()
+    public static function antiquewhite4(): static
     {
         return new static(Color::ANTIQUEWHITE4);
     }
@@ -3752,9 +3379,8 @@ trait ColorTrait
     /**
      * Color antiquewhite.
      *
-     * @return static
      */
-    public static function antiquewhite()
+    public static function antiquewhite(): static
     {
         return new static(Color::ANTIQUEWHITE);
     }
@@ -3762,9 +3388,8 @@ trait ColorTrait
     /**
      * Color tan.
      *
-     * @return static
      */
-    public static function tan()
+    public static function tan(): static
     {
         return new static(Color::TAN);
     }
@@ -3772,9 +3397,8 @@ trait ColorTrait
     /**
      * Color bisque4.
      *
-     * @return static
      */
-    public static function bisque4()
+    public static function bisque4(): static
     {
         return new static(Color::BISQUE4);
     }
@@ -3782,9 +3406,8 @@ trait ColorTrait
     /**
      * Color burlywood.
      *
-     * @return static
      */
-    public static function burlywood()
+    public static function burlywood(): static
     {
         return new static(Color::BURLYWOOD);
     }
@@ -3792,9 +3415,8 @@ trait ColorTrait
     /**
      * Color antiquewhite2.
      *
-     * @return static
      */
-    public static function antiquewhite2()
+    public static function antiquewhite2(): static
     {
         return new static(Color::ANTIQUEWHITE2);
     }
@@ -3802,9 +3424,8 @@ trait ColorTrait
     /**
      * Color burlywood1.
      *
-     * @return static
      */
-    public static function burlywood1()
+    public static function burlywood1(): static
     {
         return new static(Color::BURLYWOOD1);
     }
@@ -3812,9 +3433,8 @@ trait ColorTrait
     /**
      * Color burlywood3.
      *
-     * @return static
      */
-    public static function burlywood3()
+    public static function burlywood3(): static
     {
         return new static(Color::BURLYWOOD3);
     }
@@ -3822,9 +3442,8 @@ trait ColorTrait
     /**
      * Color burlywood2.
      *
-     * @return static
      */
-    public static function burlywood2()
+    public static function burlywood2(): static
     {
         return new static(Color::BURLYWOOD2);
     }
@@ -3832,9 +3451,8 @@ trait ColorTrait
     /**
      * Color antiquewhite1.
      *
-     * @return static
      */
-    public static function antiquewhite1()
+    public static function antiquewhite1(): static
     {
         return new static(Color::ANTIQUEWHITE1);
     }
@@ -3842,9 +3460,8 @@ trait ColorTrait
     /**
      * Color burlywood4.
      *
-     * @return static
      */
-    public static function burlywood4()
+    public static function burlywood4(): static
     {
         return new static(Color::BURLYWOOD4);
     }
@@ -3852,9 +3469,8 @@ trait ColorTrait
     /**
      * Color antiquewhite3.
      *
-     * @return static
      */
-    public static function antiquewhite3()
+    public static function antiquewhite3(): static
     {
         return new static(Color::ANTIQUEWHITE3);
     }
@@ -3862,9 +3478,8 @@ trait ColorTrait
     /**
      * Color darkorange.
      *
-     * @return static
      */
-    public static function darkorange()
+    public static function darkorange(): static
     {
         return new static(Color::DARKORANGE);
     }
@@ -3872,9 +3487,8 @@ trait ColorTrait
     /**
      * Color bisque2.
      *
-     * @return static
      */
-    public static function bisque2()
+    public static function bisque2(): static
     {
         return new static(Color::BISQUE2);
     }
@@ -3882,9 +3496,8 @@ trait ColorTrait
     /**
      * Color bisque.
      *
-     * @return static
      */
-    public static function bisque()
+    public static function bisque(): static
     {
         return new static(Color::BISQUE);
     }
@@ -3892,9 +3505,8 @@ trait ColorTrait
     /**
      * Color bisque1.
      *
-     * @return static
      */
-    public static function bisque1()
+    public static function bisque1(): static
     {
         return new static(Color::BISQUE1);
     }
@@ -3902,9 +3514,8 @@ trait ColorTrait
     /**
      * Color bisque3.
      *
-     * @return static
      */
-    public static function bisque3()
+    public static function bisque3(): static
     {
         return new static(Color::BISQUE3);
     }
@@ -3912,9 +3523,8 @@ trait ColorTrait
     /**
      * Color darkorange1.
      *
-     * @return static
      */
-    public static function darkorange1()
+    public static function darkorange1(): static
     {
         return new static(Color::DARKORANGE1);
     }
@@ -3922,9 +3532,8 @@ trait ColorTrait
     /**
      * Color linen.
      *
-     * @return static
      */
-    public static function linen()
+    public static function linen(): static
     {
         return new static(Color::LINEN);
     }
@@ -3932,9 +3541,8 @@ trait ColorTrait
     /**
      * Color darkorange2.
      *
-     * @return static
      */
-    public static function darkorange2()
+    public static function darkorange2(): static
     {
         return new static(Color::DARKORANGE2);
     }
@@ -3942,9 +3550,8 @@ trait ColorTrait
     /**
      * Color darkorange3.
      *
-     * @return static
      */
-    public static function darkorange3()
+    public static function darkorange3(): static
     {
         return new static(Color::DARKORANGE3);
     }
@@ -3952,9 +3559,8 @@ trait ColorTrait
     /**
      * Color darkorange4.
      *
-     * @return static
      */
-    public static function darkorange4()
+    public static function darkorange4(): static
     {
         return new static(Color::DARKORANGE4);
     }
@@ -3962,9 +3568,8 @@ trait ColorTrait
     /**
      * Color peru.
      *
-     * @return static
      */
-    public static function peru()
+    public static function peru(): static
     {
         return new static(Color::PERU);
     }
@@ -3972,9 +3577,8 @@ trait ColorTrait
     /**
      * Color tan1.
      *
-     * @return static
      */
-    public static function tan1()
+    public static function tan1(): static
     {
         return new static(Color::TAN1);
     }
@@ -3982,9 +3586,8 @@ trait ColorTrait
     /**
      * Color tan2.
      *
-     * @return static
      */
-    public static function tan2()
+    public static function tan2(): static
     {
         return new static(Color::TAN2);
     }
@@ -3992,9 +3595,8 @@ trait ColorTrait
     /**
      * Color tan3.
      *
-     * @return static
      */
-    public static function tan3()
+    public static function tan3(): static
     {
         return new static(Color::TAN3);
     }
@@ -4002,9 +3604,8 @@ trait ColorTrait
     /**
      * Color tan4.
      *
-     * @return static
      */
-    public static function tan4()
+    public static function tan4(): static
     {
         return new static(Color::TAN4);
     }
@@ -4012,9 +3613,8 @@ trait ColorTrait
     /**
      * Color peachpuff.
      *
-     * @return static
      */
-    public static function peachpuff()
+    public static function peachpuff(): static
     {
         return new static(Color::PEACHPUFF);
     }
@@ -4022,9 +3622,8 @@ trait ColorTrait
     /**
      * Color peachpuff1.
      *
-     * @return static
      */
-    public static function peachpuff1()
+    public static function peachpuff1(): static
     {
         return new static(Color::PEACHPUFF1);
     }
@@ -4032,9 +3631,8 @@ trait ColorTrait
     /**
      * Color peachpuff4.
      *
-     * @return static
      */
-    public static function peachpuff4()
+    public static function peachpuff4(): static
     {
         return new static(Color::PEACHPUFF4);
     }
@@ -4042,9 +3640,8 @@ trait ColorTrait
     /**
      * Color peachpuff2.
      *
-     * @return static
      */
-    public static function peachpuff2()
+    public static function peachpuff2(): static
     {
         return new static(Color::PEACHPUFF2);
     }
@@ -4052,9 +3649,8 @@ trait ColorTrait
     /**
      * Color peachpuff3.
      *
-     * @return static
      */
-    public static function peachpuff3()
+    public static function peachpuff3(): static
     {
         return new static(Color::PEACHPUFF3);
     }
@@ -4062,9 +3658,8 @@ trait ColorTrait
     /**
      * Color sandybrown.
      *
-     * @return static
      */
-    public static function sandybrown()
+    public static function sandybrown(): static
     {
         return new static(Color::SANDYBROWN);
     }
@@ -4072,9 +3667,8 @@ trait ColorTrait
     /**
      * Color seashell4.
      *
-     * @return static
      */
-    public static function seashell4()
+    public static function seashell4(): static
     {
         return new static(Color::SEASHELL4);
     }
@@ -4082,9 +3676,8 @@ trait ColorTrait
     /**
      * Color seashell2.
      *
-     * @return static
      */
-    public static function seashell2()
+    public static function seashell2(): static
     {
         return new static(Color::SEASHELL2);
     }
@@ -4092,9 +3685,8 @@ trait ColorTrait
     /**
      * Color seashell3.
      *
-     * @return static
      */
-    public static function seashell3()
+    public static function seashell3(): static
     {
         return new static(Color::SEASHELL3);
     }
@@ -4102,9 +3694,8 @@ trait ColorTrait
     /**
      * Color chocolate.
      *
-     * @return static
      */
-    public static function chocolate()
+    public static function chocolate(): static
     {
         return new static(Color::CHOCOLATE);
     }
@@ -4112,9 +3703,8 @@ trait ColorTrait
     /**
      * Color chocolate1.
      *
-     * @return static
      */
-    public static function chocolate1()
+    public static function chocolate1(): static
     {
         return new static(Color::CHOCOLATE1);
     }
@@ -4122,9 +3712,8 @@ trait ColorTrait
     /**
      * Color chocolate2.
      *
-     * @return static
      */
-    public static function chocolate2()
+    public static function chocolate2(): static
     {
         return new static(Color::CHOCOLATE2);
     }
@@ -4132,9 +3721,8 @@ trait ColorTrait
     /**
      * Color chocolate3.
      *
-     * @return static
      */
-    public static function chocolate3()
+    public static function chocolate3(): static
     {
         return new static(Color::CHOCOLATE3);
     }
@@ -4142,9 +3730,8 @@ trait ColorTrait
     /**
      * Color chocolate4.
      *
-     * @return static
      */
-    public static function chocolate4()
+    public static function chocolate4(): static
     {
         return new static(Color::CHOCOLATE4);
     }
@@ -4152,9 +3739,8 @@ trait ColorTrait
     /**
      * Color saddlebrown.
      *
-     * @return static
      */
-    public static function saddlebrown()
+    public static function saddlebrown(): static
     {
         return new static(Color::SADDLEBROWN);
     }
@@ -4162,9 +3748,8 @@ trait ColorTrait
     /**
      * Color seashell.
      *
-     * @return static
      */
-    public static function seashell()
+    public static function seashell(): static
     {
         return new static(Color::SEASHELL);
     }
@@ -4172,9 +3757,8 @@ trait ColorTrait
     /**
      * Color seashell1.
      *
-     * @return static
      */
-    public static function seashell1()
+    public static function seashell1(): static
     {
         return new static(Color::SEASHELL1);
     }
@@ -4182,9 +3766,8 @@ trait ColorTrait
     /**
      * Color sienna4.
      *
-     * @return static
      */
-    public static function sienna4()
+    public static function sienna4(): static
     {
         return new static(Color::SIENNA4);
     }
@@ -4192,9 +3775,8 @@ trait ColorTrait
     /**
      * Color sienna.
      *
-     * @return static
      */
-    public static function sienna()
+    public static function sienna(): static
     {
         return new static(Color::SIENNA);
     }
@@ -4202,9 +3784,8 @@ trait ColorTrait
     /**
      * Color sienna1.
      *
-     * @return static
      */
-    public static function sienna1()
+    public static function sienna1(): static
     {
         return new static(Color::SIENNA1);
     }
@@ -4212,9 +3793,8 @@ trait ColorTrait
     /**
      * Color sienna2.
      *
-     * @return static
      */
-    public static function sienna2()
+    public static function sienna2(): static
     {
         return new static(Color::SIENNA2);
     }
@@ -4222,9 +3802,8 @@ trait ColorTrait
     /**
      * Color sienna3.
      *
-     * @return static
      */
-    public static function sienna3()
+    public static function sienna3(): static
     {
         return new static(Color::SIENNA3);
     }
@@ -4232,9 +3811,8 @@ trait ColorTrait
     /**
      * Color lightsalmon3.
      *
-     * @return static
      */
-    public static function lightsalmon3()
+    public static function lightsalmon3(): static
     {
         return new static(Color::LIGHTSALMON3);
     }
@@ -4242,9 +3820,8 @@ trait ColorTrait
     /**
      * Color lightsalmon.
      *
-     * @return static
      */
-    public static function lightsalmon()
+    public static function lightsalmon(): static
     {
         return new static(Color::LIGHTSALMON);
     }
@@ -4252,9 +3829,8 @@ trait ColorTrait
     /**
      * Color lightsalmon1.
      *
-     * @return static
      */
-    public static function lightsalmon1()
+    public static function lightsalmon1(): static
     {
         return new static(Color::LIGHTSALMON1);
     }
@@ -4262,9 +3838,8 @@ trait ColorTrait
     /**
      * Color lightsalmon4.
      *
-     * @return static
      */
-    public static function lightsalmon4()
+    public static function lightsalmon4(): static
     {
         return new static(Color::LIGHTSALMON4);
     }
@@ -4272,9 +3847,8 @@ trait ColorTrait
     /**
      * Color lightsalmon2.
      *
-     * @return static
      */
-    public static function lightsalmon2()
+    public static function lightsalmon2(): static
     {
         return new static(Color::LIGHTSALMON2);
     }
@@ -4282,9 +3856,8 @@ trait ColorTrait
     /**
      * Color coral.
      *
-     * @return static
      */
-    public static function coral()
+    public static function coral(): static
     {
         return new static(Color::CORAL);
     }
@@ -4292,9 +3865,8 @@ trait ColorTrait
     /**
      * Color orangered.
      *
-     * @return static
      */
-    public static function orangered()
+    public static function orangered(): static
     {
         return new static(Color::ORANGERED);
     }
@@ -4302,9 +3874,8 @@ trait ColorTrait
     /**
      * Color orangered1.
      *
-     * @return static
      */
-    public static function orangered1()
+    public static function orangered1(): static
     {
         return new static(Color::ORANGERED1);
     }
@@ -4312,9 +3883,8 @@ trait ColorTrait
     /**
      * Color orangered2.
      *
-     * @return static
      */
-    public static function orangered2()
+    public static function orangered2(): static
     {
         return new static(Color::ORANGERED2);
     }
@@ -4322,9 +3892,8 @@ trait ColorTrait
     /**
      * Color orangered3.
      *
-     * @return static
      */
-    public static function orangered3()
+    public static function orangered3(): static
     {
         return new static(Color::ORANGERED3);
     }
@@ -4332,9 +3901,8 @@ trait ColorTrait
     /**
      * Color orangered4.
      *
-     * @return static
      */
-    public static function orangered4()
+    public static function orangered4(): static
     {
         return new static(Color::ORANGERED4);
     }
@@ -4342,9 +3910,8 @@ trait ColorTrait
     /**
      * Color darksalmon.
      *
-     * @return static
      */
-    public static function darksalmon()
+    public static function darksalmon(): static
     {
         return new static(Color::DARKSALMON);
     }
@@ -4352,9 +3919,8 @@ trait ColorTrait
     /**
      * Color salmon1.
      *
-     * @return static
      */
-    public static function salmon1()
+    public static function salmon1(): static
     {
         return new static(Color::SALMON1);
     }
@@ -4362,9 +3928,8 @@ trait ColorTrait
     /**
      * Color salmon2.
      *
-     * @return static
      */
-    public static function salmon2()
+    public static function salmon2(): static
     {
         return new static(Color::SALMON2);
     }
@@ -4372,9 +3937,8 @@ trait ColorTrait
     /**
      * Color salmon3.
      *
-     * @return static
      */
-    public static function salmon3()
+    public static function salmon3(): static
     {
         return new static(Color::SALMON3);
     }
@@ -4382,9 +3946,8 @@ trait ColorTrait
     /**
      * Color salmon4.
      *
-     * @return static
      */
-    public static function salmon4()
+    public static function salmon4(): static
     {
         return new static(Color::SALMON4);
     }
@@ -4392,9 +3955,8 @@ trait ColorTrait
     /**
      * Color coral1.
      *
-     * @return static
      */
-    public static function coral1()
+    public static function coral1(): static
     {
         return new static(Color::CORAL1);
     }
@@ -4402,9 +3964,8 @@ trait ColorTrait
     /**
      * Color coral2.
      *
-     * @return static
      */
-    public static function coral2()
+    public static function coral2(): static
     {
         return new static(Color::CORAL2);
     }
@@ -4412,9 +3973,8 @@ trait ColorTrait
     /**
      * Color coral3.
      *
-     * @return static
      */
-    public static function coral3()
+    public static function coral3(): static
     {
         return new static(Color::CORAL3);
     }
@@ -4422,9 +3982,8 @@ trait ColorTrait
     /**
      * Color coral4.
      *
-     * @return static
      */
-    public static function coral4()
+    public static function coral4(): static
     {
         return new static(Color::CORAL4);
     }
@@ -4432,9 +3991,8 @@ trait ColorTrait
     /**
      * Color tomato4.
      *
-     * @return static
      */
-    public static function tomato4()
+    public static function tomato4(): static
     {
         return new static(Color::TOMATO4);
     }
@@ -4442,9 +4000,8 @@ trait ColorTrait
     /**
      * Color tomato.
      *
-     * @return static
      */
-    public static function tomato()
+    public static function tomato(): static
     {
         return new static(Color::TOMATO);
     }
@@ -4452,9 +4009,8 @@ trait ColorTrait
     /**
      * Color tomato1.
      *
-     * @return static
      */
-    public static function tomato1()
+    public static function tomato1(): static
     {
         return new static(Color::TOMATO1);
     }
@@ -4462,9 +4018,8 @@ trait ColorTrait
     /**
      * Color tomato2.
      *
-     * @return static
      */
-    public static function tomato2()
+    public static function tomato2(): static
     {
         return new static(Color::TOMATO2);
     }
@@ -4472,9 +4027,8 @@ trait ColorTrait
     /**
      * Color tomato3.
      *
-     * @return static
      */
-    public static function tomato3()
+    public static function tomato3(): static
     {
         return new static(Color::TOMATO3);
     }
@@ -4482,9 +4036,8 @@ trait ColorTrait
     /**
      * Color mistyrose4.
      *
-     * @return static
      */
-    public static function mistyrose4()
+    public static function mistyrose4(): static
     {
         return new static(Color::MISTYROSE4);
     }
@@ -4492,9 +4045,8 @@ trait ColorTrait
     /**
      * Color mistyrose2.
      *
-     * @return static
      */
-    public static function mistyrose2()
+    public static function mistyrose2(): static
     {
         return new static(Color::MISTYROSE2);
     }
@@ -4502,9 +4054,8 @@ trait ColorTrait
     /**
      * Color mistyrose.
      *
-     * @return static
      */
-    public static function mistyrose()
+    public static function mistyrose(): static
     {
         return new static(Color::MISTYROSE);
     }
@@ -4512,9 +4063,8 @@ trait ColorTrait
     /**
      * Color mistyrose1.
      *
-     * @return static
      */
-    public static function mistyrose1()
+    public static function mistyrose1(): static
     {
         return new static(Color::MISTYROSE1);
     }
@@ -4522,9 +4072,8 @@ trait ColorTrait
     /**
      * Color salmon.
      *
-     * @return static
      */
-    public static function salmon()
+    public static function salmon(): static
     {
         return new static(Color::SALMON);
     }
@@ -4532,9 +4081,8 @@ trait ColorTrait
     /**
      * Color mistyrose3.
      *
-     * @return static
      */
-    public static function mistyrose3()
+    public static function mistyrose3(): static
     {
         return new static(Color::MISTYROSE3);
     }
@@ -4542,9 +4090,8 @@ trait ColorTrait
     /**
      * Color white.
      *
-     * @return static
      */
-    public static function white()
+    public static function white(): static
     {
         return new static(Color::WHITE);
     }
@@ -4552,9 +4099,8 @@ trait ColorTrait
     /**
      * Color gray100.
      *
-     * @return static
      */
-    public static function gray100()
+    public static function gray100(): static
     {
         return new static(Color::GRAY100);
     }
@@ -4562,9 +4108,8 @@ trait ColorTrait
     /**
      * Color grey100.
      *
-     * @return static
      */
-    public static function grey100()
+    public static function grey100(): static
     {
         return new static(Color::GREY100);
     }
@@ -4572,9 +4117,8 @@ trait ColorTrait
     /**
      * Color gray99.
      *
-     * @return static
      */
-    public static function gray99()
+    public static function gray99(): static
     {
         return new static(Color::GRAY99);
     }
@@ -4582,9 +4126,8 @@ trait ColorTrait
     /**
      * Color grey99.
      *
-     * @return static
      */
-    public static function grey99()
+    public static function grey99(): static
     {
         return new static(Color::GREY99);
     }
@@ -4592,9 +4135,8 @@ trait ColorTrait
     /**
      * Color gray98.
      *
-     * @return static
      */
-    public static function gray98()
+    public static function gray98(): static
     {
         return new static(Color::GRAY98);
     }
@@ -4602,9 +4144,8 @@ trait ColorTrait
     /**
      * Color grey98.
      *
-     * @return static
      */
-    public static function grey98()
+    public static function grey98(): static
     {
         return new static(Color::GREY98);
     }
@@ -4612,9 +4153,8 @@ trait ColorTrait
     /**
      * Color gray97.
      *
-     * @return static
      */
-    public static function gray97()
+    public static function gray97(): static
     {
         return new static(Color::GRAY97);
     }
@@ -4622,9 +4162,8 @@ trait ColorTrait
     /**
      * Color grey97.
      *
-     * @return static
      */
-    public static function grey97()
+    public static function grey97(): static
     {
         return new static(Color::GREY97);
     }
@@ -4632,9 +4171,8 @@ trait ColorTrait
     /**
      * Color gray96.
      *
-     * @return static
      */
-    public static function gray96()
+    public static function gray96(): static
     {
         return new static(Color::GRAY96);
     }
@@ -4642,9 +4180,8 @@ trait ColorTrait
     /**
      * Color grey96.
      *
-     * @return static
      */
-    public static function grey96()
+    public static function grey96(): static
     {
         return new static(Color::GREY96);
     }
@@ -4652,9 +4189,8 @@ trait ColorTrait
     /**
      * Color whitesmoke.
      *
-     * @return static
      */
-    public static function whitesmoke()
+    public static function whitesmoke(): static
     {
         return new static(Color::WHITESMOKE);
     }
@@ -4662,9 +4198,8 @@ trait ColorTrait
     /**
      * Color gray95.
      *
-     * @return static
      */
-    public static function gray95()
+    public static function gray95(): static
     {
         return new static(Color::GRAY95);
     }
@@ -4672,9 +4207,8 @@ trait ColorTrait
     /**
      * Color grey95.
      *
-     * @return static
      */
-    public static function grey95()
+    public static function grey95(): static
     {
         return new static(Color::GREY95);
     }
@@ -4682,9 +4216,8 @@ trait ColorTrait
     /**
      * Color gray94.
      *
-     * @return static
      */
-    public static function gray94()
+    public static function gray94(): static
     {
         return new static(Color::GRAY94);
     }
@@ -4692,9 +4225,8 @@ trait ColorTrait
     /**
      * Color grey94.
      *
-     * @return static
      */
-    public static function grey94()
+    public static function grey94(): static
     {
         return new static(Color::GREY94);
     }
@@ -4702,9 +4234,8 @@ trait ColorTrait
     /**
      * Color gray93.
      *
-     * @return static
      */
-    public static function gray93()
+    public static function gray93(): static
     {
         return new static(Color::GRAY93);
     }
@@ -4712,9 +4243,8 @@ trait ColorTrait
     /**
      * Color grey93.
      *
-     * @return static
      */
-    public static function grey93()
+    public static function grey93(): static
     {
         return new static(Color::GREY93);
     }
@@ -4722,9 +4252,8 @@ trait ColorTrait
     /**
      * Color gray92.
      *
-     * @return static
      */
-    public static function gray92()
+    public static function gray92(): static
     {
         return new static(Color::GRAY92);
     }
@@ -4732,9 +4261,8 @@ trait ColorTrait
     /**
      * Color grey92.
      *
-     * @return static
      */
-    public static function grey92()
+    public static function grey92(): static
     {
         return new static(Color::GREY92);
     }
@@ -4742,9 +4270,8 @@ trait ColorTrait
     /**
      * Color gray91.
      *
-     * @return static
      */
-    public static function gray91()
+    public static function gray91(): static
     {
         return new static(Color::GRAY91);
     }
@@ -4752,9 +4279,8 @@ trait ColorTrait
     /**
      * Color grey91.
      *
-     * @return static
      */
-    public static function grey91()
+    public static function grey91(): static
     {
         return new static(Color::GREY91);
     }
@@ -4762,9 +4288,8 @@ trait ColorTrait
     /**
      * Color gray90.
      *
-     * @return static
      */
-    public static function gray90()
+    public static function gray90(): static
     {
         return new static(Color::GRAY90);
     }
@@ -4772,9 +4297,8 @@ trait ColorTrait
     /**
      * Color grey90.
      *
-     * @return static
      */
-    public static function grey90()
+    public static function grey90(): static
     {
         return new static(Color::GREY90);
     }
@@ -4782,9 +4306,8 @@ trait ColorTrait
     /**
      * Color gray89.
      *
-     * @return static
      */
-    public static function gray89()
+    public static function gray89(): static
     {
         return new static(Color::GRAY89);
     }
@@ -4792,9 +4315,8 @@ trait ColorTrait
     /**
      * Color grey89.
      *
-     * @return static
      */
-    public static function grey89()
+    public static function grey89(): static
     {
         return new static(Color::GREY89);
     }
@@ -4802,9 +4324,8 @@ trait ColorTrait
     /**
      * Color gray88.
      *
-     * @return static
      */
-    public static function gray88()
+    public static function gray88(): static
     {
         return new static(Color::GRAY88);
     }
@@ -4812,9 +4333,8 @@ trait ColorTrait
     /**
      * Color grey88.
      *
-     * @return static
      */
-    public static function grey88()
+    public static function grey88(): static
     {
         return new static(Color::GREY88);
     }
@@ -4822,9 +4342,8 @@ trait ColorTrait
     /**
      * Color gray87.
      *
-     * @return static
      */
-    public static function gray87()
+    public static function gray87(): static
     {
         return new static(Color::GRAY87);
     }
@@ -4832,9 +4351,8 @@ trait ColorTrait
     /**
      * Color grey87.
      *
-     * @return static
      */
-    public static function grey87()
+    public static function grey87(): static
     {
         return new static(Color::GREY87);
     }
@@ -4842,9 +4360,8 @@ trait ColorTrait
     /**
      * Color gainsboro.
      *
-     * @return static
      */
-    public static function gainsboro()
+    public static function gainsboro(): static
     {
         return new static(Color::GAINSBORO);
     }
@@ -4852,9 +4369,8 @@ trait ColorTrait
     /**
      * Color gray86.
      *
-     * @return static
      */
-    public static function gray86()
+    public static function gray86(): static
     {
         return new static(Color::GRAY86);
     }
@@ -4862,9 +4378,8 @@ trait ColorTrait
     /**
      * Color grey86.
      *
-     * @return static
      */
-    public static function grey86()
+    public static function grey86(): static
     {
         return new static(Color::GREY86);
     }
@@ -4872,9 +4387,8 @@ trait ColorTrait
     /**
      * Color gray85.
      *
-     * @return static
      */
-    public static function gray85()
+    public static function gray85(): static
     {
         return new static(Color::GRAY85);
     }
@@ -4882,9 +4396,8 @@ trait ColorTrait
     /**
      * Color grey85.
      *
-     * @return static
      */
-    public static function grey85()
+    public static function grey85(): static
     {
         return new static(Color::GREY85);
     }
@@ -4892,9 +4405,8 @@ trait ColorTrait
     /**
      * Color gray84.
      *
-     * @return static
      */
-    public static function gray84()
+    public static function gray84(): static
     {
         return new static(Color::GRAY84);
     }
@@ -4902,9 +4414,8 @@ trait ColorTrait
     /**
      * Color grey84.
      *
-     * @return static
      */
-    public static function grey84()
+    public static function grey84(): static
     {
         return new static(Color::GREY84);
     }
@@ -4912,9 +4423,8 @@ trait ColorTrait
     /**
      * Color gray83.
      *
-     * @return static
      */
-    public static function gray83()
+    public static function gray83(): static
     {
         return new static(Color::GRAY83);
     }
@@ -4922,9 +4432,8 @@ trait ColorTrait
     /**
      * Color grey83.
      *
-     * @return static
      */
-    public static function grey83()
+    public static function grey83(): static
     {
         return new static(Color::GREY83);
     }
@@ -4932,9 +4441,8 @@ trait ColorTrait
     /**
      * Color lightgray.
      *
-     * @return static
      */
-    public static function lightgray()
+    public static function lightgray(): static
     {
         return new static(Color::LIGHTGRAY);
     }
@@ -4942,9 +4450,8 @@ trait ColorTrait
     /**
      * Color lightgrey.
      *
-     * @return static
      */
-    public static function lightgrey()
+    public static function lightgrey(): static
     {
         return new static(Color::LIGHTGREY);
     }
@@ -4952,9 +4459,8 @@ trait ColorTrait
     /**
      * Color gray82.
      *
-     * @return static
      */
-    public static function gray82()
+    public static function gray82(): static
     {
         return new static(Color::GRAY82);
     }
@@ -4962,9 +4468,8 @@ trait ColorTrait
     /**
      * Color grey82.
      *
-     * @return static
      */
-    public static function grey82()
+    public static function grey82(): static
     {
         return new static(Color::GREY82);
     }
@@ -4972,9 +4477,8 @@ trait ColorTrait
     /**
      * Color gray81.
      *
-     * @return static
      */
-    public static function gray81()
+    public static function gray81(): static
     {
         return new static(Color::GRAY81);
     }
@@ -4982,9 +4486,8 @@ trait ColorTrait
     /**
      * Color grey81.
      *
-     * @return static
      */
-    public static function grey81()
+    public static function grey81(): static
     {
         return new static(Color::GREY81);
     }
@@ -4992,9 +4495,8 @@ trait ColorTrait
     /**
      * Color gray80.
      *
-     * @return static
      */
-    public static function gray80()
+    public static function gray80(): static
     {
         return new static(Color::GRAY80);
     }
@@ -5002,9 +4504,8 @@ trait ColorTrait
     /**
      * Color grey80.
      *
-     * @return static
      */
-    public static function grey80()
+    public static function grey80(): static
     {
         return new static(Color::GREY80);
     }
@@ -5012,9 +4513,8 @@ trait ColorTrait
     /**
      * Color gray79.
      *
-     * @return static
      */
-    public static function gray79()
+    public static function gray79(): static
     {
         return new static(Color::GRAY79);
     }
@@ -5022,9 +4522,8 @@ trait ColorTrait
     /**
      * Color grey79.
      *
-     * @return static
      */
-    public static function grey79()
+    public static function grey79(): static
     {
         return new static(Color::GREY79);
     }
@@ -5032,9 +4531,8 @@ trait ColorTrait
     /**
      * Color gray78.
      *
-     * @return static
      */
-    public static function gray78()
+    public static function gray78(): static
     {
         return new static(Color::GRAY78);
     }
@@ -5042,9 +4540,8 @@ trait ColorTrait
     /**
      * Color grey78.
      *
-     * @return static
      */
-    public static function grey78()
+    public static function grey78(): static
     {
         return new static(Color::GREY78);
     }
@@ -5052,9 +4549,8 @@ trait ColorTrait
     /**
      * Color gray77.
      *
-     * @return static
      */
-    public static function gray77()
+    public static function gray77(): static
     {
         return new static(Color::GRAY77);
     }
@@ -5062,9 +4558,8 @@ trait ColorTrait
     /**
      * Color grey77.
      *
-     * @return static
      */
-    public static function grey77()
+    public static function grey77(): static
     {
         return new static(Color::GREY77);
     }
@@ -5072,9 +4567,8 @@ trait ColorTrait
     /**
      * Color gray76.
      *
-     * @return static
      */
-    public static function gray76()
+    public static function gray76(): static
     {
         return new static(Color::GRAY76);
     }
@@ -5082,9 +4576,8 @@ trait ColorTrait
     /**
      * Color grey76.
      *
-     * @return static
      */
-    public static function grey76()
+    public static function grey76(): static
     {
         return new static(Color::GREY76);
     }
@@ -5092,9 +4585,8 @@ trait ColorTrait
     /**
      * Color silver.
      *
-     * @return static
      */
-    public static function silver()
+    public static function silver(): static
     {
         return new static(Color::SILVER);
     }
@@ -5102,9 +4594,8 @@ trait ColorTrait
     /**
      * Color gray75.
      *
-     * @return static
      */
-    public static function gray75()
+    public static function gray75(): static
     {
         return new static(Color::GRAY75);
     }
@@ -5112,9 +4603,8 @@ trait ColorTrait
     /**
      * Color grey75.
      *
-     * @return static
      */
-    public static function grey75()
+    public static function grey75(): static
     {
         return new static(Color::GREY75);
     }
@@ -5122,9 +4612,8 @@ trait ColorTrait
     /**
      * Color gray74.
      *
-     * @return static
      */
-    public static function gray74()
+    public static function gray74(): static
     {
         return new static(Color::GRAY74);
     }
@@ -5132,9 +4621,8 @@ trait ColorTrait
     /**
      * Color grey74.
      *
-     * @return static
      */
-    public static function grey74()
+    public static function grey74(): static
     {
         return new static(Color::GREY74);
     }
@@ -5142,9 +4630,8 @@ trait ColorTrait
     /**
      * Color gray73.
      *
-     * @return static
      */
-    public static function gray73()
+    public static function gray73(): static
     {
         return new static(Color::GRAY73);
     }
@@ -5152,9 +4639,8 @@ trait ColorTrait
     /**
      * Color grey73.
      *
-     * @return static
      */
-    public static function grey73()
+    public static function grey73(): static
     {
         return new static(Color::GREY73);
     }
@@ -5162,9 +4648,8 @@ trait ColorTrait
     /**
      * Color gray72.
      *
-     * @return static
      */
-    public static function gray72()
+    public static function gray72(): static
     {
         return new static(Color::GRAY72);
     }
@@ -5172,9 +4657,8 @@ trait ColorTrait
     /**
      * Color grey72.
      *
-     * @return static
      */
-    public static function grey72()
+    public static function grey72(): static
     {
         return new static(Color::GREY72);
     }
@@ -5182,9 +4666,8 @@ trait ColorTrait
     /**
      * Color gray71.
      *
-     * @return static
      */
-    public static function gray71()
+    public static function gray71(): static
     {
         return new static(Color::GRAY71);
     }
@@ -5192,9 +4675,8 @@ trait ColorTrait
     /**
      * Color grey71.
      *
-     * @return static
      */
-    public static function grey71()
+    public static function grey71(): static
     {
         return new static(Color::GREY71);
     }
@@ -5202,9 +4684,8 @@ trait ColorTrait
     /**
      * Color gray70.
      *
-     * @return static
      */
-    public static function gray70()
+    public static function gray70(): static
     {
         return new static(Color::GRAY70);
     }
@@ -5212,9 +4693,8 @@ trait ColorTrait
     /**
      * Color grey70.
      *
-     * @return static
      */
-    public static function grey70()
+    public static function grey70(): static
     {
         return new static(Color::GREY70);
     }
@@ -5222,9 +4702,8 @@ trait ColorTrait
     /**
      * Color gray69.
      *
-     * @return static
      */
-    public static function gray69()
+    public static function gray69(): static
     {
         return new static(Color::GRAY69);
     }
@@ -5232,9 +4711,8 @@ trait ColorTrait
     /**
      * Color grey69.
      *
-     * @return static
      */
-    public static function grey69()
+    public static function grey69(): static
     {
         return new static(Color::GREY69);
     }
@@ -5242,9 +4720,8 @@ trait ColorTrait
     /**
      * Color gray68.
      *
-     * @return static
      */
-    public static function gray68()
+    public static function gray68(): static
     {
         return new static(Color::GRAY68);
     }
@@ -5252,9 +4729,8 @@ trait ColorTrait
     /**
      * Color grey68.
      *
-     * @return static
      */
-    public static function grey68()
+    public static function grey68(): static
     {
         return new static(Color::GREY68);
     }
@@ -5262,9 +4738,8 @@ trait ColorTrait
     /**
      * Color gray67.
      *
-     * @return static
      */
-    public static function gray67()
+    public static function gray67(): static
     {
         return new static(Color::GRAY67);
     }
@@ -5272,9 +4747,8 @@ trait ColorTrait
     /**
      * Color grey67.
      *
-     * @return static
      */
-    public static function grey67()
+    public static function grey67(): static
     {
         return new static(Color::GREY67);
     }
@@ -5282,9 +4756,8 @@ trait ColorTrait
     /**
      * Color darkgray.
      *
-     * @return static
      */
-    public static function darkgray()
+    public static function darkgray(): static
     {
         return new static(Color::DARKGRAY);
     }
@@ -5292,9 +4765,8 @@ trait ColorTrait
     /**
      * Color darkgrey.
      *
-     * @return static
      */
-    public static function darkgrey()
+    public static function darkgrey(): static
     {
         return new static(Color::DARKGREY);
     }
@@ -5302,9 +4774,8 @@ trait ColorTrait
     /**
      * Color gray66.
      *
-     * @return static
      */
-    public static function gray66()
+    public static function gray66(): static
     {
         return new static(Color::GRAY66);
     }
@@ -5312,9 +4783,8 @@ trait ColorTrait
     /**
      * Color grey66.
      *
-     * @return static
      */
-    public static function grey66()
+    public static function grey66(): static
     {
         return new static(Color::GREY66);
     }
@@ -5322,9 +4792,8 @@ trait ColorTrait
     /**
      * Color gray65.
      *
-     * @return static
      */
-    public static function gray65()
+    public static function gray65(): static
     {
         return new static(Color::GRAY65);
     }
@@ -5332,9 +4801,8 @@ trait ColorTrait
     /**
      * Color grey65.
      *
-     * @return static
      */
-    public static function grey65()
+    public static function grey65(): static
     {
         return new static(Color::GREY65);
     }
@@ -5342,9 +4810,8 @@ trait ColorTrait
     /**
      * Color gray64.
      *
-     * @return static
      */
-    public static function gray64()
+    public static function gray64(): static
     {
         return new static(Color::GRAY64);
     }
@@ -5352,9 +4819,8 @@ trait ColorTrait
     /**
      * Color grey64.
      *
-     * @return static
      */
-    public static function grey64()
+    public static function grey64(): static
     {
         return new static(Color::GREY64);
     }
@@ -5362,9 +4828,8 @@ trait ColorTrait
     /**
      * Color gray63.
      *
-     * @return static
      */
-    public static function gray63()
+    public static function gray63(): static
     {
         return new static(Color::GRAY63);
     }
@@ -5372,9 +4837,8 @@ trait ColorTrait
     /**
      * Color grey63.
      *
-     * @return static
      */
-    public static function grey63()
+    public static function grey63(): static
     {
         return new static(Color::GREY63);
     }
@@ -5382,9 +4846,8 @@ trait ColorTrait
     /**
      * Color gray62.
      *
-     * @return static
      */
-    public static function gray62()
+    public static function gray62(): static
     {
         return new static(Color::GRAY62);
     }
@@ -5392,9 +4855,8 @@ trait ColorTrait
     /**
      * Color grey62.
      *
-     * @return static
      */
-    public static function grey62()
+    public static function grey62(): static
     {
         return new static(Color::GREY62);
     }
@@ -5402,9 +4864,8 @@ trait ColorTrait
     /**
      * Color gray61.
      *
-     * @return static
      */
-    public static function gray61()
+    public static function gray61(): static
     {
         return new static(Color::GRAY61);
     }
@@ -5412,9 +4873,8 @@ trait ColorTrait
     /**
      * Color grey61.
      *
-     * @return static
      */
-    public static function grey61()
+    public static function grey61(): static
     {
         return new static(Color::GREY61);
     }
@@ -5422,9 +4882,8 @@ trait ColorTrait
     /**
      * Color gray60.
      *
-     * @return static
      */
-    public static function gray60()
+    public static function gray60(): static
     {
         return new static(Color::GRAY60);
     }
@@ -5432,9 +4891,8 @@ trait ColorTrait
     /**
      * Color grey60.
      *
-     * @return static
      */
-    public static function grey60()
+    public static function grey60(): static
     {
         return new static(Color::GREY60);
     }
@@ -5442,9 +4900,8 @@ trait ColorTrait
     /**
      * Color gray59.
      *
-     * @return static
      */
-    public static function gray59()
+    public static function gray59(): static
     {
         return new static(Color::GRAY59);
     }
@@ -5452,9 +4909,8 @@ trait ColorTrait
     /**
      * Color grey59.
      *
-     * @return static
      */
-    public static function grey59()
+    public static function grey59(): static
     {
         return new static(Color::GREY59);
     }
@@ -5462,9 +4918,8 @@ trait ColorTrait
     /**
      * Color gray58.
      *
-     * @return static
      */
-    public static function gray58()
+    public static function gray58(): static
     {
         return new static(Color::GRAY58);
     }
@@ -5472,9 +4927,8 @@ trait ColorTrait
     /**
      * Color grey58.
      *
-     * @return static
      */
-    public static function grey58()
+    public static function grey58(): static
     {
         return new static(Color::GREY58);
     }
@@ -5482,9 +4936,8 @@ trait ColorTrait
     /**
      * Color gray57.
      *
-     * @return static
      */
-    public static function gray57()
+    public static function gray57(): static
     {
         return new static(Color::GRAY57);
     }
@@ -5492,9 +4945,8 @@ trait ColorTrait
     /**
      * Color grey57.
      *
-     * @return static
      */
-    public static function grey57()
+    public static function grey57(): static
     {
         return new static(Color::GREY57);
     }
@@ -5502,9 +4954,8 @@ trait ColorTrait
     /**
      * Color gray56.
      *
-     * @return static
      */
-    public static function gray56()
+    public static function gray56(): static
     {
         return new static(Color::GRAY56);
     }
@@ -5512,9 +4963,8 @@ trait ColorTrait
     /**
      * Color grey56.
      *
-     * @return static
      */
-    public static function grey56()
+    public static function grey56(): static
     {
         return new static(Color::GREY56);
     }
@@ -5522,9 +4972,8 @@ trait ColorTrait
     /**
      * Color gray55.
      *
-     * @return static
      */
-    public static function gray55()
+    public static function gray55(): static
     {
         return new static(Color::GRAY55);
     }
@@ -5532,9 +4981,8 @@ trait ColorTrait
     /**
      * Color grey55.
      *
-     * @return static
      */
-    public static function grey55()
+    public static function grey55(): static
     {
         return new static(Color::GREY55);
     }
@@ -5542,9 +4990,8 @@ trait ColorTrait
     /**
      * Color gray54.
      *
-     * @return static
      */
-    public static function gray54()
+    public static function gray54(): static
     {
         return new static(Color::GRAY54);
     }
@@ -5552,9 +4999,8 @@ trait ColorTrait
     /**
      * Color grey54.
      *
-     * @return static
      */
-    public static function grey54()
+    public static function grey54(): static
     {
         return new static(Color::GREY54);
     }
@@ -5562,9 +5008,8 @@ trait ColorTrait
     /**
      * Color gray53.
      *
-     * @return static
      */
-    public static function gray53()
+    public static function gray53(): static
     {
         return new static(Color::GRAY53);
     }
@@ -5572,9 +5017,8 @@ trait ColorTrait
     /**
      * Color grey53.
      *
-     * @return static
      */
-    public static function grey53()
+    public static function grey53(): static
     {
         return new static(Color::GREY53);
     }
@@ -5582,9 +5026,8 @@ trait ColorTrait
     /**
      * Color gray52.
      *
-     * @return static
      */
-    public static function gray52()
+    public static function gray52(): static
     {
         return new static(Color::GRAY52);
     }
@@ -5592,9 +5035,8 @@ trait ColorTrait
     /**
      * Color grey52.
      *
-     * @return static
      */
-    public static function grey52()
+    public static function grey52(): static
     {
         return new static(Color::GREY52);
     }
@@ -5602,9 +5044,8 @@ trait ColorTrait
     /**
      * Color gray51.
      *
-     * @return static
      */
-    public static function gray51()
+    public static function gray51(): static
     {
         return new static(Color::GRAY51);
     }
@@ -5612,9 +5053,8 @@ trait ColorTrait
     /**
      * Color grey51.
      *
-     * @return static
      */
-    public static function grey51()
+    public static function grey51(): static
     {
         return new static(Color::GREY51);
     }
@@ -5622,9 +5062,8 @@ trait ColorTrait
     /**
      * Color fractal.
      *
-     * @return static
      */
-    public static function fractal()
+    public static function fractal(): static
     {
         return new static(Color::FRACTAL);
     }
@@ -5632,9 +5071,8 @@ trait ColorTrait
     /**
      * Color gray50.
      *
-     * @return static
      */
-    public static function gray50()
+    public static function gray50(): static
     {
         return new static(Color::GRAY50);
     }
@@ -5642,9 +5080,8 @@ trait ColorTrait
     /**
      * Color grey50.
      *
-     * @return static
      */
-    public static function grey50()
+    public static function grey50(): static
     {
         return new static(Color::GREY50);
     }
@@ -5652,9 +5089,8 @@ trait ColorTrait
     /**
      * Color gray.
      *
-     * @return static
      */
-    public static function gray()
+    public static function gray(): static
     {
         return new static(Color::GRAY);
     }
@@ -5662,9 +5098,8 @@ trait ColorTrait
     /**
      * Color grey.
      *
-     * @return static
      */
-    public static function grey()
+    public static function grey(): static
     {
         return new static(Color::GREY);
     }
@@ -5672,9 +5107,8 @@ trait ColorTrait
     /**
      * Color gray49.
      *
-     * @return static
      */
-    public static function gray49()
+    public static function gray49(): static
     {
         return new static(Color::GRAY49);
     }
@@ -5682,9 +5116,8 @@ trait ColorTrait
     /**
      * Color grey49.
      *
-     * @return static
      */
-    public static function grey49()
+    public static function grey49(): static
     {
         return new static(Color::GREY49);
     }
@@ -5692,9 +5125,8 @@ trait ColorTrait
     /**
      * Color gray48.
      *
-     * @return static
      */
-    public static function gray48()
+    public static function gray48(): static
     {
         return new static(Color::GRAY48);
     }
@@ -5702,9 +5134,8 @@ trait ColorTrait
     /**
      * Color grey48.
      *
-     * @return static
      */
-    public static function grey48()
+    public static function grey48(): static
     {
         return new static(Color::GREY48);
     }
@@ -5712,9 +5143,8 @@ trait ColorTrait
     /**
      * Color gray47.
      *
-     * @return static
      */
-    public static function gray47()
+    public static function gray47(): static
     {
         return new static(Color::GRAY47);
     }
@@ -5722,9 +5152,8 @@ trait ColorTrait
     /**
      * Color grey47.
      *
-     * @return static
      */
-    public static function grey47()
+    public static function grey47(): static
     {
         return new static(Color::GREY47);
     }
@@ -5732,9 +5161,8 @@ trait ColorTrait
     /**
      * Color gray46.
      *
-     * @return static
      */
-    public static function gray46()
+    public static function gray46(): static
     {
         return new static(Color::GRAY46);
     }
@@ -5742,9 +5170,8 @@ trait ColorTrait
     /**
      * Color grey46.
      *
-     * @return static
      */
-    public static function grey46()
+    public static function grey46(): static
     {
         return new static(Color::GREY46);
     }
@@ -5752,9 +5179,8 @@ trait ColorTrait
     /**
      * Color gray45.
      *
-     * @return static
      */
-    public static function gray45()
+    public static function gray45(): static
     {
         return new static(Color::GRAY45);
     }
@@ -5762,9 +5188,8 @@ trait ColorTrait
     /**
      * Color grey45.
      *
-     * @return static
      */
-    public static function grey45()
+    public static function grey45(): static
     {
         return new static(Color::GREY45);
     }
@@ -5772,9 +5197,8 @@ trait ColorTrait
     /**
      * Color gray44.
      *
-     * @return static
      */
-    public static function gray44()
+    public static function gray44(): static
     {
         return new static(Color::GRAY44);
     }
@@ -5782,9 +5206,8 @@ trait ColorTrait
     /**
      * Color grey44.
      *
-     * @return static
      */
-    public static function grey44()
+    public static function grey44(): static
     {
         return new static(Color::GREY44);
     }
@@ -5792,9 +5215,8 @@ trait ColorTrait
     /**
      * Color gray43.
      *
-     * @return static
      */
-    public static function gray43()
+    public static function gray43(): static
     {
         return new static(Color::GRAY43);
     }
@@ -5802,9 +5224,8 @@ trait ColorTrait
     /**
      * Color grey43.
      *
-     * @return static
      */
-    public static function grey43()
+    public static function grey43(): static
     {
         return new static(Color::GREY43);
     }
@@ -5812,9 +5233,8 @@ trait ColorTrait
     /**
      * Color gray42.
      *
-     * @return static
      */
-    public static function gray42()
+    public static function gray42(): static
     {
         return new static(Color::GRAY42);
     }
@@ -5822,9 +5242,8 @@ trait ColorTrait
     /**
      * Color grey42.
      *
-     * @return static
      */
-    public static function grey42()
+    public static function grey42(): static
     {
         return new static(Color::GREY42);
     }
@@ -5832,9 +5251,8 @@ trait ColorTrait
     /**
      * Color dimgray.
      *
-     * @return static
      */
-    public static function dimgray()
+    public static function dimgray(): static
     {
         return new static(Color::DIMGRAY);
     }
@@ -5842,9 +5260,8 @@ trait ColorTrait
     /**
      * Color dimgrey.
      *
-     * @return static
      */
-    public static function dimgrey()
+    public static function dimgrey(): static
     {
         return new static(Color::DIMGREY);
     }
@@ -5852,9 +5269,8 @@ trait ColorTrait
     /**
      * Color gray41.
      *
-     * @return static
      */
-    public static function gray41()
+    public static function gray41(): static
     {
         return new static(Color::GRAY41);
     }
@@ -5862,9 +5278,8 @@ trait ColorTrait
     /**
      * Color grey41.
      *
-     * @return static
      */
-    public static function grey41()
+    public static function grey41(): static
     {
         return new static(Color::GREY41);
     }
@@ -5872,9 +5287,8 @@ trait ColorTrait
     /**
      * Color gray40.
      *
-     * @return static
      */
-    public static function gray40()
+    public static function gray40(): static
     {
         return new static(Color::GRAY40);
     }
@@ -5882,9 +5296,8 @@ trait ColorTrait
     /**
      * Color grey40.
      *
-     * @return static
      */
-    public static function grey40()
+    public static function grey40(): static
     {
         return new static(Color::GREY40);
     }
@@ -5892,9 +5305,8 @@ trait ColorTrait
     /**
      * Color gray39.
      *
-     * @return static
      */
-    public static function gray39()
+    public static function gray39(): static
     {
         return new static(Color::GRAY39);
     }
@@ -5902,9 +5314,8 @@ trait ColorTrait
     /**
      * Color grey39.
      *
-     * @return static
      */
-    public static function grey39()
+    public static function grey39(): static
     {
         return new static(Color::GREY39);
     }
@@ -5912,9 +5323,8 @@ trait ColorTrait
     /**
      * Color gray38.
      *
-     * @return static
      */
-    public static function gray38()
+    public static function gray38(): static
     {
         return new static(Color::GRAY38);
     }
@@ -5922,9 +5332,8 @@ trait ColorTrait
     /**
      * Color grey38.
      *
-     * @return static
      */
-    public static function grey38()
+    public static function grey38(): static
     {
         return new static(Color::GREY38);
     }
@@ -5932,9 +5341,8 @@ trait ColorTrait
     /**
      * Color gray37.
      *
-     * @return static
      */
-    public static function gray37()
+    public static function gray37(): static
     {
         return new static(Color::GRAY37);
     }
@@ -5942,9 +5350,8 @@ trait ColorTrait
     /**
      * Color grey37.
      *
-     * @return static
      */
-    public static function grey37()
+    public static function grey37(): static
     {
         return new static(Color::GREY37);
     }
@@ -5952,9 +5359,8 @@ trait ColorTrait
     /**
      * Color gray36.
      *
-     * @return static
      */
-    public static function gray36()
+    public static function gray36(): static
     {
         return new static(Color::GRAY36);
     }
@@ -5962,9 +5368,8 @@ trait ColorTrait
     /**
      * Color grey36.
      *
-     * @return static
      */
-    public static function grey36()
+    public static function grey36(): static
     {
         return new static(Color::GREY36);
     }
@@ -5972,9 +5377,8 @@ trait ColorTrait
     /**
      * Color gray35.
      *
-     * @return static
      */
-    public static function gray35()
+    public static function gray35(): static
     {
         return new static(Color::GRAY35);
     }
@@ -5982,9 +5386,8 @@ trait ColorTrait
     /**
      * Color grey35.
      *
-     * @return static
      */
-    public static function grey35()
+    public static function grey35(): static
     {
         return new static(Color::GREY35);
     }
@@ -5992,9 +5395,8 @@ trait ColorTrait
     /**
      * Color gray34.
      *
-     * @return static
      */
-    public static function gray34()
+    public static function gray34(): static
     {
         return new static(Color::GRAY34);
     }
@@ -6002,9 +5404,8 @@ trait ColorTrait
     /**
      * Color grey34.
      *
-     * @return static
      */
-    public static function grey34()
+    public static function grey34(): static
     {
         return new static(Color::GREY34);
     }
@@ -6012,9 +5413,8 @@ trait ColorTrait
     /**
      * Color gray33.
      *
-     * @return static
      */
-    public static function gray33()
+    public static function gray33(): static
     {
         return new static(Color::GRAY33);
     }
@@ -6022,9 +5422,8 @@ trait ColorTrait
     /**
      * Color grey33.
      *
-     * @return static
      */
-    public static function grey33()
+    public static function grey33(): static
     {
         return new static(Color::GREY33);
     }
@@ -6032,9 +5431,8 @@ trait ColorTrait
     /**
      * Color gray32.
      *
-     * @return static
      */
-    public static function gray32()
+    public static function gray32(): static
     {
         return new static(Color::GRAY32);
     }
@@ -6042,9 +5440,8 @@ trait ColorTrait
     /**
      * Color grey32.
      *
-     * @return static
      */
-    public static function grey32()
+    public static function grey32(): static
     {
         return new static(Color::GREY32);
     }
@@ -6052,9 +5449,8 @@ trait ColorTrait
     /**
      * Color gray31.
      *
-     * @return static
      */
-    public static function gray31()
+    public static function gray31(): static
     {
         return new static(Color::GRAY31);
     }
@@ -6062,9 +5458,8 @@ trait ColorTrait
     /**
      * Color grey31.
      *
-     * @return static
      */
-    public static function grey31()
+    public static function grey31(): static
     {
         return new static(Color::GREY31);
     }
@@ -6072,9 +5467,8 @@ trait ColorTrait
     /**
      * Color gray30.
      *
-     * @return static
      */
-    public static function gray30()
+    public static function gray30(): static
     {
         return new static(Color::GRAY30);
     }
@@ -6082,9 +5476,8 @@ trait ColorTrait
     /**
      * Color grey30.
      *
-     * @return static
      */
-    public static function grey30()
+    public static function grey30(): static
     {
         return new static(Color::GREY30);
     }
@@ -6092,9 +5485,8 @@ trait ColorTrait
     /**
      * Color gray29.
      *
-     * @return static
      */
-    public static function gray29()
+    public static function gray29(): static
     {
         return new static(Color::GRAY29);
     }
@@ -6102,9 +5494,8 @@ trait ColorTrait
     /**
      * Color grey29.
      *
-     * @return static
      */
-    public static function grey29()
+    public static function grey29(): static
     {
         return new static(Color::GREY29);
     }
@@ -6112,9 +5503,8 @@ trait ColorTrait
     /**
      * Color gray28.
      *
-     * @return static
      */
-    public static function gray28()
+    public static function gray28(): static
     {
         return new static(Color::GRAY28);
     }
@@ -6122,9 +5512,8 @@ trait ColorTrait
     /**
      * Color grey28.
      *
-     * @return static
      */
-    public static function grey28()
+    public static function grey28(): static
     {
         return new static(Color::GREY28);
     }
@@ -6132,9 +5521,8 @@ trait ColorTrait
     /**
      * Color gray27.
      *
-     * @return static
      */
-    public static function gray27()
+    public static function gray27(): static
     {
         return new static(Color::GRAY27);
     }
@@ -6142,9 +5530,8 @@ trait ColorTrait
     /**
      * Color grey27.
      *
-     * @return static
      */
-    public static function grey27()
+    public static function grey27(): static
     {
         return new static(Color::GREY27);
     }
@@ -6152,9 +5539,8 @@ trait ColorTrait
     /**
      * Color gray26.
      *
-     * @return static
      */
-    public static function gray26()
+    public static function gray26(): static
     {
         return new static(Color::GRAY26);
     }
@@ -6162,9 +5548,8 @@ trait ColorTrait
     /**
      * Color grey26.
      *
-     * @return static
      */
-    public static function grey26()
+    public static function grey26(): static
     {
         return new static(Color::GREY26);
     }
@@ -6172,9 +5557,8 @@ trait ColorTrait
     /**
      * Color gray25.
      *
-     * @return static
      */
-    public static function gray25()
+    public static function gray25(): static
     {
         return new static(Color::GRAY25);
     }
@@ -6182,9 +5566,8 @@ trait ColorTrait
     /**
      * Color grey25.
      *
-     * @return static
      */
-    public static function grey25()
+    public static function grey25(): static
     {
         return new static(Color::GREY25);
     }
@@ -6192,9 +5575,8 @@ trait ColorTrait
     /**
      * Color gray24.
      *
-     * @return static
      */
-    public static function gray24()
+    public static function gray24(): static
     {
         return new static(Color::GRAY24);
     }
@@ -6202,9 +5584,8 @@ trait ColorTrait
     /**
      * Color grey24.
      *
-     * @return static
      */
-    public static function grey24()
+    public static function grey24(): static
     {
         return new static(Color::GREY24);
     }
@@ -6212,9 +5593,8 @@ trait ColorTrait
     /**
      * Color gray23.
      *
-     * @return static
      */
-    public static function gray23()
+    public static function gray23(): static
     {
         return new static(Color::GRAY23);
     }
@@ -6222,9 +5602,8 @@ trait ColorTrait
     /**
      * Color grey23.
      *
-     * @return static
      */
-    public static function grey23()
+    public static function grey23(): static
     {
         return new static(Color::GREY23);
     }
@@ -6232,9 +5611,8 @@ trait ColorTrait
     /**
      * Color gray22.
      *
-     * @return static
      */
-    public static function gray22()
+    public static function gray22(): static
     {
         return new static(Color::GRAY22);
     }
@@ -6242,9 +5620,8 @@ trait ColorTrait
     /**
      * Color grey22.
      *
-     * @return static
      */
-    public static function grey22()
+    public static function grey22(): static
     {
         return new static(Color::GREY22);
     }
@@ -6252,9 +5629,8 @@ trait ColorTrait
     /**
      * Color gray21.
      *
-     * @return static
      */
-    public static function gray21()
+    public static function gray21(): static
     {
         return new static(Color::GRAY21);
     }
@@ -6262,9 +5638,8 @@ trait ColorTrait
     /**
      * Color grey21.
      *
-     * @return static
      */
-    public static function grey21()
+    public static function grey21(): static
     {
         return new static(Color::GREY21);
     }
@@ -6272,9 +5647,8 @@ trait ColorTrait
     /**
      * Color gray20.
      *
-     * @return static
      */
-    public static function gray20()
+    public static function gray20(): static
     {
         return new static(Color::GRAY20);
     }
@@ -6282,9 +5656,8 @@ trait ColorTrait
     /**
      * Color grey20.
      *
-     * @return static
      */
-    public static function grey20()
+    public static function grey20(): static
     {
         return new static(Color::GREY20);
     }
@@ -6292,9 +5665,8 @@ trait ColorTrait
     /**
      * Color gray19.
      *
-     * @return static
      */
-    public static function gray19()
+    public static function gray19(): static
     {
         return new static(Color::GRAY19);
     }
@@ -6302,9 +5674,8 @@ trait ColorTrait
     /**
      * Color grey19.
      *
-     * @return static
      */
-    public static function grey19()
+    public static function grey19(): static
     {
         return new static(Color::GREY19);
     }
@@ -6312,9 +5683,8 @@ trait ColorTrait
     /**
      * Color gray18.
      *
-     * @return static
      */
-    public static function gray18()
+    public static function gray18(): static
     {
         return new static(Color::GRAY18);
     }
@@ -6322,9 +5692,8 @@ trait ColorTrait
     /**
      * Color grey18.
      *
-     * @return static
      */
-    public static function grey18()
+    public static function grey18(): static
     {
         return new static(Color::GREY18);
     }
@@ -6332,9 +5701,8 @@ trait ColorTrait
     /**
      * Color gray17.
      *
-     * @return static
      */
-    public static function gray17()
+    public static function gray17(): static
     {
         return new static(Color::GRAY17);
     }
@@ -6342,9 +5710,8 @@ trait ColorTrait
     /**
      * Color grey17.
      *
-     * @return static
      */
-    public static function grey17()
+    public static function grey17(): static
     {
         return new static(Color::GREY17);
     }
@@ -6352,9 +5719,8 @@ trait ColorTrait
     /**
      * Color gray16.
      *
-     * @return static
      */
-    public static function gray16()
+    public static function gray16(): static
     {
         return new static(Color::GRAY16);
     }
@@ -6362,9 +5728,8 @@ trait ColorTrait
     /**
      * Color grey16.
      *
-     * @return static
      */
-    public static function grey16()
+    public static function grey16(): static
     {
         return new static(Color::GREY16);
     }
@@ -6372,9 +5737,8 @@ trait ColorTrait
     /**
      * Color gray15.
      *
-     * @return static
      */
-    public static function gray15()
+    public static function gray15(): static
     {
         return new static(Color::GRAY15);
     }
@@ -6382,9 +5746,8 @@ trait ColorTrait
     /**
      * Color grey15.
      *
-     * @return static
      */
-    public static function grey15()
+    public static function grey15(): static
     {
         return new static(Color::GREY15);
     }
@@ -6392,9 +5755,8 @@ trait ColorTrait
     /**
      * Color gray14.
      *
-     * @return static
      */
-    public static function gray14()
+    public static function gray14(): static
     {
         return new static(Color::GRAY14);
     }
@@ -6402,9 +5764,8 @@ trait ColorTrait
     /**
      * Color grey14.
      *
-     * @return static
      */
-    public static function grey14()
+    public static function grey14(): static
     {
         return new static(Color::GREY14);
     }
@@ -6412,9 +5773,8 @@ trait ColorTrait
     /**
      * Color gray13.
      *
-     * @return static
      */
-    public static function gray13()
+    public static function gray13(): static
     {
         return new static(Color::GRAY13);
     }
@@ -6422,9 +5782,8 @@ trait ColorTrait
     /**
      * Color grey13.
      *
-     * @return static
      */
-    public static function grey13()
+    public static function grey13(): static
     {
         return new static(Color::GREY13);
     }
@@ -6432,9 +5791,8 @@ trait ColorTrait
     /**
      * Color gray12.
      *
-     * @return static
      */
-    public static function gray12()
+    public static function gray12(): static
     {
         return new static(Color::GRAY12);
     }
@@ -6442,9 +5800,8 @@ trait ColorTrait
     /**
      * Color grey12.
      *
-     * @return static
      */
-    public static function grey12()
+    public static function grey12(): static
     {
         return new static(Color::GREY12);
     }
@@ -6452,9 +5809,8 @@ trait ColorTrait
     /**
      * Color gray11.
      *
-     * @return static
      */
-    public static function gray11()
+    public static function gray11(): static
     {
         return new static(Color::GRAY11);
     }
@@ -6462,9 +5818,8 @@ trait ColorTrait
     /**
      * Color grey11.
      *
-     * @return static
      */
-    public static function grey11()
+    public static function grey11(): static
     {
         return new static(Color::GREY11);
     }
@@ -6472,9 +5827,8 @@ trait ColorTrait
     /**
      * Color gray10.
      *
-     * @return static
      */
-    public static function gray10()
+    public static function gray10(): static
     {
         return new static(Color::GRAY10);
     }
@@ -6482,9 +5836,8 @@ trait ColorTrait
     /**
      * Color grey10.
      *
-     * @return static
      */
-    public static function grey10()
+    public static function grey10(): static
     {
         return new static(Color::GREY10);
     }
@@ -6492,9 +5845,8 @@ trait ColorTrait
     /**
      * Color gray9.
      *
-     * @return static
      */
-    public static function gray9()
+    public static function gray9(): static
     {
         return new static(Color::GRAY9);
     }
@@ -6502,9 +5854,8 @@ trait ColorTrait
     /**
      * Color grey9.
      *
-     * @return static
      */
-    public static function grey9()
+    public static function grey9(): static
     {
         return new static(Color::GREY9);
     }
@@ -6512,9 +5863,8 @@ trait ColorTrait
     /**
      * Color gray8.
      *
-     * @return static
      */
-    public static function gray8()
+    public static function gray8(): static
     {
         return new static(Color::GRAY8);
     }
@@ -6522,9 +5872,8 @@ trait ColorTrait
     /**
      * Color grey8.
      *
-     * @return static
      */
-    public static function grey8()
+    public static function grey8(): static
     {
         return new static(Color::GREY8);
     }
@@ -6532,9 +5881,8 @@ trait ColorTrait
     /**
      * Color gray7.
      *
-     * @return static
      */
-    public static function gray7()
+    public static function gray7(): static
     {
         return new static(Color::GRAY7);
     }
@@ -6542,9 +5890,8 @@ trait ColorTrait
     /**
      * Color grey7.
      *
-     * @return static
      */
-    public static function grey7()
+    public static function grey7(): static
     {
         return new static(Color::GREY7);
     }
@@ -6552,9 +5899,8 @@ trait ColorTrait
     /**
      * Color gray6.
      *
-     * @return static
      */
-    public static function gray6()
+    public static function gray6(): static
     {
         return new static(Color::GRAY6);
     }
@@ -6562,9 +5908,8 @@ trait ColorTrait
     /**
      * Color grey6.
      *
-     * @return static
      */
-    public static function grey6()
+    public static function grey6(): static
     {
         return new static(Color::GREY6);
     }
@@ -6572,9 +5917,8 @@ trait ColorTrait
     /**
      * Color gray5.
      *
-     * @return static
      */
-    public static function gray5()
+    public static function gray5(): static
     {
         return new static(Color::GRAY5);
     }
@@ -6582,9 +5926,8 @@ trait ColorTrait
     /**
      * Color grey5.
      *
-     * @return static
      */
-    public static function grey5()
+    public static function grey5(): static
     {
         return new static(Color::GREY5);
     }
@@ -6592,9 +5935,8 @@ trait ColorTrait
     /**
      * Color gray4.
      *
-     * @return static
      */
-    public static function gray4()
+    public static function gray4(): static
     {
         return new static(Color::GRAY4);
     }
@@ -6602,9 +5944,8 @@ trait ColorTrait
     /**
      * Color grey4.
      *
-     * @return static
      */
-    public static function grey4()
+    public static function grey4(): static
     {
         return new static(Color::GREY4);
     }
@@ -6612,9 +5953,8 @@ trait ColorTrait
     /**
      * Color gray3.
      *
-     * @return static
      */
-    public static function gray3()
+    public static function gray3(): static
     {
         return new static(Color::GRAY3);
     }
@@ -6622,9 +5962,8 @@ trait ColorTrait
     /**
      * Color grey3.
      *
-     * @return static
      */
-    public static function grey3()
+    public static function grey3(): static
     {
         return new static(Color::GREY3);
     }
@@ -6632,9 +5971,8 @@ trait ColorTrait
     /**
      * Color gray2.
      *
-     * @return static
      */
-    public static function gray2()
+    public static function gray2(): static
     {
         return new static(Color::GRAY2);
     }
@@ -6642,9 +5980,8 @@ trait ColorTrait
     /**
      * Color grey2.
      *
-     * @return static
      */
-    public static function grey2()
+    public static function grey2(): static
     {
         return new static(Color::GREY2);
     }
@@ -6652,9 +5989,8 @@ trait ColorTrait
     /**
      * Color gray1.
      *
-     * @return static
      */
-    public static function gray1()
+    public static function gray1(): static
     {
         return new static(Color::GRAY1);
     }
@@ -6662,9 +5998,8 @@ trait ColorTrait
     /**
      * Color grey1.
      *
-     * @return static
      */
-    public static function grey1()
+    public static function grey1(): static
     {
         return new static(Color::GREY1);
     }
@@ -6672,9 +6007,8 @@ trait ColorTrait
     /**
      * Color black.
      *
-     * @return static
      */
-    public static function black()
+    public static function black(): static
     {
         return new static(Color::BLACK);
     }
@@ -6682,9 +6016,8 @@ trait ColorTrait
     /**
      * Color gray0.
      *
-     * @return static
      */
-    public static function gray0()
+    public static function gray0(): static
     {
         return new static(Color::GRAY0);
     }
@@ -6692,9 +6025,8 @@ trait ColorTrait
     /**
      * Color grey0.
      *
-     * @return static
      */
-    public static function grey0()
+    public static function grey0(): static
     {
         return new static(Color::GREY0);
     }
@@ -6702,9 +6034,8 @@ trait ColorTrait
     /**
      * Color opaque.
      *
-     * @return static
      */
-    public static function opaque()
+    public static function opaque(): static
     {
         return new static(Color::OPAQUE);
     }
@@ -6712,9 +6043,8 @@ trait ColorTrait
     /**
      * Color none.
      *
-     * @return static
      */
-    public static function none()
+    public static function none(): static
     {
         return new static(Color::NONE);
     }
@@ -6722,9 +6052,8 @@ trait ColorTrait
     /**
      * Color transparent.
      *
-     * @return static
      */
-    public static function transparent()
+    public static function transparent(): static
     {
         return new static(Color::TRANSPARENT);
     }
@@ -6734,9 +6063,8 @@ trait ColorTrait
      *
      * @param string $hexColor The hexadecimal color.
      *
-     * @return static
      */
-    public static function rgb($hexColor)
+    public static function rgb(string $hexColor): static
     {
         return new static(StringUtils::ensureStartsWith($hexColor, '#'));
     }

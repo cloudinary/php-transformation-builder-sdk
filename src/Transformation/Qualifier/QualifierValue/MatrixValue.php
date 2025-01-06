@@ -17,7 +17,7 @@ use Cloudinary\ArrayUtils;
  */
 class MatrixValue extends BaseArgument
 {
-    protected static $name = "matrix";
+    protected static string $name = "matrix";
 
     public function __construct(...$value)
     {

@@ -20,42 +20,22 @@ use Cloudinary\ClassUtils;
  */
 abstract class Overlay
 {
-    /**
-     * @param $source
-     *
-     * @return MediaOverlay
-     */
-    public static function source($source)
+    public static function source($source): MediaOverlay
     {
         return ClassUtils::verifyInstance($source, BaseSourceContainer::class, MediaOverlay::class);
     }
 
-    /**
-     * @param $source
-     *
-     * @return ImageOverlay
-     */
-    public static function imageSource($source)
+    public static function imageSource($source): ImageOverlay
     {
         return ClassUtils::verifyInstance($source, BasePositionalSourceContainer::class, ImageOverlay::class);
     }
 
-    /**
-     * @param $source
-     *
-     * @return VideoOverlay
-     */
-    public static function videoSource($source)
+    public static function videoSource($source): VideoOverlay
     {
         return ClassUtils::verifyInstance($source, BasePositionalSourceContainer::class, VideoOverlay::class);
     }
 
-    /**
-     * @param $source
-     *
-     * @return AudioOverlay
-     */
-    public static function audioSource($source)
+    public static function audioSource($source): AudioOverlay
     {
         return ClassUtils::verifyInstance($source, BaseSourceContainer::class, AudioOverlay::class);
     }

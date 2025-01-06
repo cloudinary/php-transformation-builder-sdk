@@ -20,17 +20,13 @@ class Distort extends EffectQualifier
     /**
      * DistortArc constructor.
      *
-     * @param PointValue|array|int|string $topLeft
-     * @param PointValue|array|int|string $topRight
-     * @param PointValue|array|int|string $bottomRight
-     * @param PointValue|array|int|string $bottomLeft
-     * @param mixed                       ...$args Additional arguments
+     * @param mixed ...$args Additional arguments
      */
     public function __construct(
-        $topLeft = null,
-        $topRight = null,
-        $bottomRight = null,
-        $bottomLeft = null,
+        int|array|string|PointValue|null $topLeft = null,
+        int|array|string|PointValue|null $topRight = null,
+        int|array|string|PointValue|null $bottomRight = null,
+        int|array|string|PointValue|null $bottomLeft = null,
         ...$args
     ) {
         parent::__construct(ReshapeQualifier::DISTORT);

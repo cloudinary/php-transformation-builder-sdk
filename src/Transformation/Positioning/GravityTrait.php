@@ -24,7 +24,7 @@ trait GravityTrait
      *
      * @return $this
      */
-    public function gravity($gravity)
+    public function gravity(mixed $gravity): static
     {
         return $this->addQualifier(ClassUtils::verifyInstance($gravity, GravityQualifier::class));
     }

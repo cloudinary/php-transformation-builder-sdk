@@ -26,18 +26,18 @@ class VideoCodec extends BaseQualifier
 {
     use VideoCodecTrait;
 
-    const AUTO    = 'auto';
-    const VP9     = 'vp9';
-    const VP8     = 'vp8';
-    const PRO_RES = 'prores'; // Apple ProRes 422 HQ
-    const H264    = 'h264';
-    const H265    = 'h265';
-    const THEORA  = 'theora';
+    public const AUTO = 'auto';
+    public const VP9  = 'vp9';
+    public const VP8 = 'vp8';
+    public const PRO_RES = 'prores'; // Apple ProRes 422 HQ
+    public const H264    = 'h264';
+    public const H265    = 'h265';
+    public const THEORA  = 'theora';
 
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = ['codec', 'profile', 'level'];
+    protected array $valueOrder = ['codec', 'profile', 'level'];
 
     /**
      * VideoCodec constructor.
@@ -58,7 +58,7 @@ class VideoCodec extends BaseQualifier
      *
      * @return $this
      */
-    public function codec($codec)
+    public function codec(string $codec): static
     {
         $this->value->setSimpleValue('codec', $codec);
 
@@ -68,13 +68,13 @@ class VideoCodec extends BaseQualifier
     /**
      * Sets codec profile.
      *
-     * @param string $profile The profile. Use the constants defined in the VideoCodecProfile class.
+     * @param string|null $profile The profile. Use the constants defined in the VideoCodecProfile class.
      *
      * @return $this
      *
      * @see VideoCodecProfile
      */
-    public function profile($profile)
+    public function profile(?string $profile): static
     {
         $this->value->setSimpleValue('profile', $profile);
 
@@ -84,13 +84,14 @@ class VideoCodec extends BaseQualifier
     /**
      * Sets codec level.
      *
-     * @param string $level The codec level. Use the constants defined in the VideoCodecLevel class.
+     * @param string|null $level The codec level. Use the constants defined in the VideoCodecLevel class.
+     *
      *
      * @return $this
      *
      * @see VideoCodecLevel
      */
-    public function level($level)
+    public function level(?string $level): static
     {
         $this->value->setSimpleValue('level', $level);
 
@@ -100,11 +101,10 @@ class VideoCodec extends BaseQualifier
     /**
      * Creates a new VideoCodec instance from an array of qualifiers.
      *
-     * @param array $qualifiers The video codec qualifiers.
+     * @param array|string $qualifiers The video codec qualifiers.
      *
-     * @return VideoCodec
      */
-    public static function fromParams($qualifiers)
+    public static function fromParams(array|string $qualifiers): VideoCodec
     {
         if (is_array($qualifiers)) {
             $codec   = ArrayUtils::get($qualifiers, 'codec');

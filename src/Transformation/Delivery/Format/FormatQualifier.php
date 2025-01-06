@@ -24,9 +24,8 @@ class FormatQualifier extends BaseQualifier implements FormatInterface
      *
      * @param string $format The file format.
      *
-     * @return static
      */
-    public function format($format)
+    public function format(string $format): static
     {
         $this->setQualifierValue($format);
 

@@ -17,26 +17,26 @@ namespace Cloudinary\Transformation\Expression;
  */
 class RelationalOperator extends BaseOperator
 {
-    const EQUAL                 = 'eq';
-    const NOT_EQUAL             = 'ne';
-    const LESS_THAN             = 'lt';
-    const GREATER_THAN          = 'gt';
-    const LESS_THAN_OR_EQUAL    = 'lte';
-    const GREATER_THAN_OR_EQUAL = 'gte';
+    public const EQUAL = 'eq';
+    public const NOT_EQUAL = 'ne';
+    public const LESS_THAN = 'lt';
+    public const GREATER_THAN = 'gt';
+    public const LESS_THAN_OR_EQUAL = 'lte';
+    public const GREATER_THAN_OR_EQUAL = 'gte';
 
     /**
      * The supported relational operators.
      *
      * @var array $operators
      */
-    protected static $operators;
+    protected static array $operators = [];
 
     /**
-     * The user friendly representations of the relational operators.
+     * The user-friendly representations of the relational operators.
      *
      * @var array $friendlyRepresentations
      */
-    protected static $friendlyRepresentations = [
+    protected static array $friendlyRepresentations = [
         '='  => self::EQUAL,
         '!=' => self::NOT_EQUAL,
         '<'  => self::LESS_THAN,
@@ -48,9 +48,8 @@ class RelationalOperator extends BaseOperator
     /**
      * Equals.
      *
-     * @return RelationalOperator
      */
-    public static function equal()
+    public static function equal(): RelationalOperator
     {
         return new static(self::EQUAL);
     }
@@ -58,9 +57,8 @@ class RelationalOperator extends BaseOperator
     /**
      * Does not equal.
      *
-     * @return RelationalOperator
      */
-    public static function notEqual()
+    public static function notEqual(): RelationalOperator
     {
         return new static(self::NOT_EQUAL);
     }
@@ -68,9 +66,8 @@ class RelationalOperator extends BaseOperator
     /**
      * Less than.
      *
-     * @return RelationalOperator
      */
-    public static function lessThan()
+    public static function lessThan(): RelationalOperator
     {
         return new static(static::LESS_THAN);
     }
@@ -78,9 +75,8 @@ class RelationalOperator extends BaseOperator
     /**
      * Greater than.
      *
-     * @return RelationalOperator
      */
-    public static function greaterThan()
+    public static function greaterThan(): RelationalOperator
     {
         return new static(self::GREATER_THAN);
     }
@@ -88,9 +84,8 @@ class RelationalOperator extends BaseOperator
     /**
      * Less than or equals.
      *
-     * @return RelationalOperator
      */
-    public static function lessThanOrEqual()
+    public static function lessThanOrEqual(): RelationalOperator
     {
         return new static(self::LESS_THAN_OR_EQUAL);
     }
@@ -98,9 +93,8 @@ class RelationalOperator extends BaseOperator
     /**
      * Greater than or equals.
      *
-     * @return RelationalOperator
      */
-    public static function greaterThanOrEqual()
+    public static function greaterThanOrEqual(): RelationalOperator
     {
         return new static(self::GREATER_THAN_OR_EQUAL);
     }

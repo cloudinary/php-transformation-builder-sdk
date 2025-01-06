@@ -20,10 +20,10 @@ class Point extends BaseAction
     /**
      * Point constructor.
      *
-     * @param float|int|string $x
-     * @param float|int|string $y
+     * @param float|int|string      $x
+     * @param float|int|string|null $y
      */
-    public function __construct($x = null, $y = null)
+    public function __construct(float|int|string|null $x = null, float|int|string|null $y = null)
     {
         parent::__construct();
 
@@ -33,13 +33,11 @@ class Point extends BaseAction
     /**
      * Internal setter for the point value.
      *
-     * @param mixed $value
      *
-     * @return static
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue(mixed $value): static
     {
         return $this->addQualifier($value);
     }

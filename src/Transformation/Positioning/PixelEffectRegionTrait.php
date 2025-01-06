@@ -18,9 +18,8 @@ trait PixelEffectRegionTrait
     /**
      * Sets the faces region.
      *
-     * @return Region
      */
-    public static function faces()
+    public static function faces(): Region
     {
         return (new Region())->gravity(Gravity::faces());
     }
@@ -28,9 +27,8 @@ trait PixelEffectRegionTrait
     /**
      * Sets the OCR region.
      *
-     * @return Region
      */
-    public static function ocr()
+    public static function ocr(): Region
     {
         return (new Region())->gravity(Gravity::ocr());
     }
@@ -38,30 +36,37 @@ trait PixelEffectRegionTrait
     /**
      * Sets the custom region.
      *
-     * @param int|string $x
-     * @param int|string $y
-     * @param int|string $width
-     * @param int|string $height
+     * @param int|string|null $x
+     * @param int|string|null $y
+     * @param int|string|null $width
+     * @param int|string|null $height
      *
      * @return Region
      */
-    public static function custom($x = null, $y = null, $width = null, $height = null)
-    {
+    public static function custom(
+        int|string|null $x = null,
+        int|string|null $y = null,
+        int|string|null $width = null,
+        int|string|null $height = null
+    ): Region {
         return new Region($x, $y, $width, $height);
     }
 
     /**
      * Returns the rectangle region.
      *
-     * @param int $x      X.
-     * @param int $y      Y.
-     * @param int $width  Width.
-     * @param int $height Height.
+     * @param int|null $x      X.
+     * @param int|null $y      Y.
+     * @param int|null $width  Width.
+     * @param int|null $height Height.
      *
-     * @return RectangleRegion
      */
-    public static function rectangle($x = null, $y = null, $width = null, $height = null)
-    {
+    public static function rectangle(
+        ?int $x = null,
+        ?int $y = null,
+        ?int $width = null,
+        ?int $height = null
+    ): RectangleRegion {
         return new RectangleRegion($x, $y, $width, $height);
     }
 }

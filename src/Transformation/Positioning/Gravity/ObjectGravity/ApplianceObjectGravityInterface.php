@@ -18,10 +18,10 @@ namespace Cloudinary\Transformation;
 interface ApplianceObjectGravityInterface
 {
     //Appliance Category
-    const APPLIANCE    = 'appliance';
-    const MICROWAVE    = 'microwave';
-    const OVEN         = 'oven';
-    const TOASTER      = 'toaster';
-    const SINK         = 'sink';
-    const REFRIGERATOR = 'refrigerator';
+    public const APPLIANCE = 'appliance';
+    public const MICROWAVE = 'microwave';
+    public const OVEN      = 'oven';
+    public const TOASTER = 'toaster';
+    public const SINK    = 'sink';
+    public const REFRIGERATOR = 'refrigerator';
 }

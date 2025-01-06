@@ -22,11 +22,10 @@ trait AudioQualifierTrait
      *
      * @param string $audioCodec The audio codec or "none".  Use the constants defined in the AudioCodec class.
      *
-     * @return AudioCodec
      *
-     * @see \Cloudinary\Transformation\AudioCodec
+     * @see AudioCodec
      */
-    public static function audioCodec($audioCodec)
+    public static function audioCodec(string $audioCodec): AudioCodec
     {
         return new AudioCodec($audioCodec);
     }
@@ -36,11 +35,10 @@ trait AudioQualifierTrait
      *
      * @param string $audioFrequency The audio frequency.  Use the constants defined in the AudioFrequency class.
      *
-     * @return AudioFrequency
      *
-     * @see \Cloudinary\Transformation\AudioFrequency
+     * @see AudioFrequency
      */
-    public static function audioFrequency($audioFrequency)
+    public static function audioFrequency(string $audioFrequency): AudioFrequency
     {
         return new AudioFrequency($audioFrequency);
     }

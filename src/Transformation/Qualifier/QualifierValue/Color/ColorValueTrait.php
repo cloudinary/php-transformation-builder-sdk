@@ -27,7 +27,7 @@ trait ColorValueTrait
      *
      * @return $this
      */
-    public function color($color)
+    public function color(string $color): static
     {
         $this->setQualifierValue(ClassUtils::verifyInstance($color, ColorValue::class));
 

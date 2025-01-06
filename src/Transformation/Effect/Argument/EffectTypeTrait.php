@@ -26,7 +26,7 @@ trait EffectTypeTrait
      *
      * @return $this
      */
-    public function type($type)
+    public function type(mixed $type): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($type, EffectType::class));
 

@@ -22,15 +22,14 @@ trait QualityQualifierTrait
      *
      * Reducing the quality is a trade-off between visual quality and file size.
      *
-     * @param int         $level  The level of the quality. (Range 1 to 100)
-     * @param null|string $preset A set level of automatic quality.  Use the constants defined in the QualityQualifier
-     *                            class.
+     * @param mixed       $level      The level of the quality. (Range 1 to 100)
+     * @param string|null $preset     A set level of automatic quality.  Use the constants defined in the
+     *                                QualityQualifier class.
      *
-     * @return QualityQualifier
      *
-     * @see \Cloudinary\Transformation\QualityQualifier
+     * @see QualityQualifier
      */
-    public static function quality($level, $preset = null)
+    public static function quality(mixed $level, ?string $preset = null): QualityQualifier
     {
         return new QualityQualifier($level, $preset);
     }

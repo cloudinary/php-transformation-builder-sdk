@@ -18,16 +18,16 @@ class CustomFunctionValue extends QualifierMultiValue
     /**
      * @var array $argumentOrder The order of the arguments.
      */
-    protected $argumentOrder = ['preprocess', 'type', 'source'];
+    protected array $argumentOrder = ['preprocess', 'type', 'source'];
 
     /**
      * CustomFunctionValue constructor.
      *
-     * @param mixed $source
-     * @param mixed $type
-     * @param mixed $preprocess
+     * @param mixed      $source
+     * @param mixed|null $type
+     * @param mixed|null $preprocess
      */
-    public function __construct($source = null, $type = null, $preprocess = null)
+    public function __construct($source = null, mixed $type = null, mixed $preprocess = null)
     {
         parent::__construct();
 

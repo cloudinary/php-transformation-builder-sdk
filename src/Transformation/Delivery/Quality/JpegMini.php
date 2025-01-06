@@ -17,7 +17,7 @@ namespace Cloudinary\Transformation;
  */
 class JpegMini
 {
-    const BEST = 0;
-    const HIGH = 1;
-    const MEDIUM = 2;
+    public const BEST = 0;
+    public const HIGH = 1;
+    public const MEDIUM = 2;
 }

@@ -21,15 +21,15 @@ namespace Cloudinary\Transformation;
  */
 class Palette extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '_';
-    const MIN_ARGUMENTS   = 1;
+    protected const VALUE_DELIMITER = '_';
+    public const MIN_ARGUMENTS   = 1;
 
     /**
      * Adds colors to the palette.
      *
      * @param array $colors The colors. Can be RGB, HEX, named color, etc
      */
-    public function colors(...$colors)
+    public function colors(...$colors): void
     {
         $this->addValues(...$colors);
     }

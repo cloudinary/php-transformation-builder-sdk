@@ -26,9 +26,8 @@ trait TimelineQualifierTrait
      *                           float representing the time in seconds or a string representing the percentage of the
      *                           video length (for example, "30%" or "30p").
      *
-     * @return StartOffset
      */
-    public static function startOffset($startOffset)
+    public static function startOffset(mixed $startOffset): StartOffset
     {
         return ClassUtils::verifyInstance($startOffset, StartOffset::class);
     }
@@ -40,9 +39,8 @@ trait TimelineQualifierTrait
      *                         float representing the time in seconds or a string representing the percentage of the
      *                         video length (for example, "30%" or "30p").
      *
-     * @return EndOffset
      */
-    public static function endOffset($endOffset)
+    public static function endOffset(mixed $endOffset): EndOffset
     {
         return ClassUtils::verifyInstance($endOffset, EndOffset::class);
     }
@@ -54,9 +52,8 @@ trait TimelineQualifierTrait
      *                        representing the time in seconds or a string representing the percentage of the
      *                        video length (for example, "30%" or "30p").
      *
-     * @return Duration
      */
-    public static function duration($duration)
+    public static function duration(mixed $duration): Duration
     {
         return ClassUtils::verifyInstance($duration, Duration::class);
     }

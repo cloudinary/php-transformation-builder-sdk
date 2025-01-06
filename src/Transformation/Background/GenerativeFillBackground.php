@@ -24,24 +24,24 @@ use Cloudinary\TransformationUtils;
  */
 class GenerativeFillBackground extends Background
 {
-    const GEN_FILL = 'gen_fill';
+    public const GEN_FILL = 'gen_fill';
 
-    const IGNORE_FOREGROUND = 'ignore-foreground';
+    public const IGNORE_FOREGROUND = 'ignore-foreground';
 
-    const PROPERTIES = 'properties';
+    public const PROPERTIES = 'properties';
 
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, self::PROPERTIES];
+    protected array $valueOrder = [0, self::PROPERTIES];
 
     /**
      * GenerativeFillBackground constructor.
      *
-     * @param string|array $prompt           Use natural language to describe what generate in the image.
-     * @param bool         $ignoreForeground Whether to take foreground elements into account.
+     * @param string|array|null $prompt           Use natural language to describe what generate in the image.
+     * @param bool|null         $ignoreForeground Whether to take foreground elements into account.
      */
-    public function __construct($prompt = null, $ignoreForeground = null)
+    public function __construct(string|array|null $prompt = null, ?bool $ignoreForeground = null)
     {
         parent::__construct(self::GEN_FILL);
 
@@ -54,11 +54,11 @@ class GenerativeFillBackground extends Background
     /**
      * Use natural language to describe what you want to affect in the image.
      *
-     * @param string|array $prompt A list of prompts.
+     * @param array|string|null $prompt A list of prompts.
      *
      * @return $this
      */
-    public function prompt($prompt)
+    public function prompt(array|string|null $prompt): static
     {
         $this->value->getSimpleValue(self::PROPERTIES)->setSimpleNamedValue(
             GenerativeEffectAction::PROMPT,
@@ -71,11 +71,11 @@ class GenerativeFillBackground extends Background
     /**
      * Whether to take foreground elements into account.
      *
-     * @param bool $ignoreForeground Whether to take foreground elements into account.
+     * @param ?bool $ignoreForeground Whether to take foreground elements into account.
      *
      * @return $this
      */
-    public function ignoreForeground($ignoreForeground = true)
+    public function ignoreForeground(?bool $ignoreForeground = true): static
     {
         $this->value->getSimpleValue(self::PROPERTIES)->setSimpleNamedValue(
             self::IGNORE_FOREGROUND,

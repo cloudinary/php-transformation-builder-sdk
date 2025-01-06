@@ -52,9 +52,8 @@ abstract class Qualifier
      * @param string $genericKey The name of any qualifier.
      * @param mixed  ...$value   The value of the qualifier.
      *
-     * @return GenericQualifier
      */
-    public static function generic($genericKey, ...$value)
+    public static function generic(string $genericKey, ...$value): GenericQualifier
     {
         return new GenericQualifier($genericKey, ...$value);
     }

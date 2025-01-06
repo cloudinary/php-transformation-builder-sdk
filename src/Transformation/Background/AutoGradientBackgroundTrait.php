@@ -23,9 +23,8 @@ trait AutoGradientBackgroundTrait
      * @param int|string $gradientColors    The number of gradient colors to select. Possible values: 2 or 4. Default: 2
      * @param string     $gradientDirection The direction. Use the constants defined in the GradientDirection class.
      *
-     * @return AutoGradientBackground
      */
-    public static function borderGradient($gradientColors = null, $gradientDirection = null)
+    public static function borderGradient($gradientColors = null, $gradientDirection = null): AutoGradientBackground
     {
         return new AutoGradientBackground(AutoGradientBackground::BORDER_GRADIENT, $gradientColors, $gradientDirection);
     }
@@ -36,10 +35,11 @@ trait AutoGradientBackgroundTrait
      * @param int|string $gradientColors    The number of gradient colors to select. Possible values: 2 or 4. Default: 2
      * @param string     $gradientDirection The direction. Use the constants defined in the GradientDirection class.
      *
-     * @return AutoGradientBackground
      */
-    public static function predominantGradient($gradientColors = null, $gradientDirection = null)
-    {
+    public static function predominantGradient(
+        $gradientColors = null,
+        $gradientDirection = null
+    ): AutoGradientBackground {
         return new AutoGradientBackground(
             AutoGradientBackground::PREDOMINANT_GRADIENT,
             $gradientColors,

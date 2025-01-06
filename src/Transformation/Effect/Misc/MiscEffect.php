@@ -15,13 +15,13 @@ namespace Cloudinary\Transformation;
  */
 abstract class MiscEffect
 {
-    const ARTISTIC_FILTER  = 'art';
-    const STYLE_TRANSFER   = 'style_transfer';
-    const CARTOONIFY       = 'cartoonify';
-    const OIL_PAINT        = 'oil_paint';
-    const RED_EYE          = 'redeye';
-    const ADVANCED_RED_EYE = 'adv_redeye';
-    const VECTORIZE        = 'vectorize';
-    const OUTLINE          = 'outline';
-    const DROP_SHADOW      = 'dropshadow';
+    public const ARTISTIC_FILTER = 'art';
+    public const STYLE_TRANSFER  = 'style_transfer';
+    public const CARTOONIFY     = 'cartoonify';
+    public const OIL_PAINT  = 'oil_paint';
+    public const RED_EYE   = 'redeye';
+    public const ADVANCED_RED_EYE = 'adv_redeye';
+    public const VECTORIZE        = 'vectorize';
+    public const OUTLINE   = 'outline';
+    public const DROP_SHADOW = 'dropshadow';
 }

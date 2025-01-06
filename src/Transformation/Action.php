@@ -20,11 +20,10 @@ class Action extends BaseAction
     /**
      * Action named constructor.
      *
-     * @param string $genericActionString
+     * @param string|null $genericActionString Generic action as a string.
      *
-     * @return BaseAction
      */
-    public static function generic($genericActionString = null)
+    public static function generic(?string $genericActionString = null): BaseAction
     {
         return (new static())->setGenericAction($genericActionString);
     }

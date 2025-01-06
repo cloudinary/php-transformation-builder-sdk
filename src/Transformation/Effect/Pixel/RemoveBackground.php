@@ -30,8 +30,8 @@ use Cloudinary\Transformation\Argument\ColorValue;
  */
 class RemoveBackground extends EffectAction
 {
-    const SCREEN          = 'screen';
-    const COLOR_TO_REMOVE = 'color_to_remove';
+    protected const SCREEN          = 'screen';
+    protected const COLOR_TO_REMOVE = 'color_to_remove';
 
     /**
      * RemoveBackground constructor.
@@ -57,9 +57,8 @@ class RemoveBackground extends EffectAction
      *
      * @param bool $screen Whether to use "screen" mode.
      *
-     * @return RemoveBackground
      */
-    public function screen($screen = true)
+    public function screen(bool $screen = true): static
     {
         if ($screen) {
             $this->getMainQualifier()->getValue()->setSimpleValue(self::SCREEN, self::SCREEN);
@@ -71,11 +70,10 @@ class RemoveBackground extends EffectAction
     /**
      * Overrides the algorithm's choice of background color.
      *
-     * @param string|Color $colorToRemove The background color as an RGB/A hex code.
+     * @param string|Color|null $colorToRemove The background color as an RGB/A hex code.
      *
-     * @return RemoveBackground
      */
-    public function colorToRemove($colorToRemove)
+    public function colorToRemove(Color|string|null $colorToRemove): static
     {
         if ($colorToRemove) {
             // dirty hack to omit rgb: from hex colors

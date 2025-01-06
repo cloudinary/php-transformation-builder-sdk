@@ -22,9 +22,8 @@ interface RotationModeInterface
      *
      * @param string|RotationMode|array $mode Given mode.
      *
-     * @return self
      *
      * @internal
      */
-    public static function createWithMode(...$mode);
+    public static function createWithMode(...$mode): RotationModeInterface;
 }

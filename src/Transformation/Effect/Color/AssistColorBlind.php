@@ -17,7 +17,7 @@ namespace Cloudinary\Transformation;
  */
 class AssistColorBlind extends LimitedEffectQualifier
 {
-    const X_RAY = 'xray';
+    public const X_RAY = 'xray';
 
     /**
      * AssistColorBlind constructor.
@@ -36,9 +36,8 @@ class AssistColorBlind extends LimitedEffectQualifier
      *
      * @param int $strength The strength of the stripes.  (Range: 1 to 100, Server default: 10)
      *
-     * @return AssistColorBlind
      */
-    public function stripesStrength($strength)
+    public function stripesStrength(int $strength): static
     {
         return $this->setAssistType($strength);
     }
@@ -47,9 +46,8 @@ class AssistColorBlind extends LimitedEffectQualifier
      * Replaces problematic colors with colors that look the same to people with and
      * without common colorblind conditions.
      *
-     * @return AssistColorBlind
      */
-    public function xRay()
+    public function xRay(): static
     {
         return $this->setAssistType(self::X_RAY);
     }
@@ -57,13 +55,9 @@ class AssistColorBlind extends LimitedEffectQualifier
     /**
      * Sets the type of the assistance.
      *
-     * @param string $type
-     *
-     * @return AssistColorBlind
-     *
      * @internal
      */
-    protected function setAssistType($type)
+    protected function setAssistType(?string $type): static
     {
         $this->value->setSimpleValue('assist_type', $type);
 

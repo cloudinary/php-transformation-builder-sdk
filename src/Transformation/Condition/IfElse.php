@@ -20,7 +20,7 @@ class IfElse extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'if';
+    protected static string $key = 'if';
 
     /**
      * IfElse constructor.

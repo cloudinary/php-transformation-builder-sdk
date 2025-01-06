@@ -25,13 +25,12 @@ class JsonUtils
      *
      * @param string $string The input string.
      *
-     * @return bool
      */
-    public static function isJsonString($string)
+    public static function isJsonString(string $string): bool
     {
-        return (is_string($string)
-                && is_array(json_decode($string, true)) //TODO: improve performance
-                && (json_last_error() === JSON_ERROR_NONE));
+        return is_string($string)
+               && is_array(json_decode($string, true)) //TODO: improve performance
+               && json_last_error() === JSON_ERROR_NONE;
     }
 
     /**
@@ -42,13 +41,12 @@ class JsonUtils
      * @param int   $depth   Maximum depth.
      * @param int   $options Additional options.
      *
-     * @return mixed
      *
      * @throws InvalidArgumentException
      *
      * @see json_decode
      */
-    public static function decode($json, $assoc = true, $depth = 512, $options = 0)
+    public static function decode(mixed $json, bool $assoc = true, int $depth = 512, int $options = 0): mixed
     {
         if (is_array($json)) { // Already a json array, skip decoding.
             return $json;
@@ -69,7 +67,6 @@ class JsonUtils
      * @param mixed $value   The value to encode.
      * @param int   $options Additional options.
      *
-     * @param int   $depth
      *
      * @return false|string
      *
@@ -77,7 +74,7 @@ class JsonUtils
      *
      * @see json_encode
      */
-    public static function encode($value, $options = 0, $depth = 512)
+    public static function encode(mixed $value, int $options = 0, int $depth = 512): bool|string
     {
         $result = json_encode($value, $options, $depth);
 
@@ -93,11 +90,10 @@ class JsonUtils
      *
      * @param JsonSerializable|mixed $jsonSerializable The serializable to serialize.
      *
-     * @return mixed
      *
-     * @see \JsonSerializable::jsonSerialize
+     * @see JsonSerializable::jsonSerialize
      */
-    public static function jsonSerialize($jsonSerializable)
+    public static function jsonSerialize(mixed $jsonSerializable): mixed
     {
         if ($jsonSerializable === null) {
             return [];

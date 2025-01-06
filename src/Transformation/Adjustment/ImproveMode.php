@@ -23,19 +23,18 @@ class ImproveMode
     /**
      * INDOOR mode. Use this mode to get better results on images with indoor lighting and shadows.
      */
-    const INDOOR = 'indoor';
+    public const INDOOR = 'indoor';
 
     /**
      * OUTDOOR mode (Server default).
      */
-    const OUTDOOR = 'outdoor';
+    public const OUTDOOR = 'outdoor';
 
     /**
      * INDOOR mode. Use this mode to get better results on images with indoor lighting and shadows.
      *
-     * @return string
      */
-    public static function indoor()
+    public static function indoor(): string
     {
         return self::INDOOR;
     }
@@ -43,9 +42,8 @@ class ImproveMode
     /**
      * OUTDOOR mode (Server default).
      *
-     * @return string
      */
-    public static function outdoor()
+    public static function outdoor(): string
     {
         return self::OUTDOOR;
     }

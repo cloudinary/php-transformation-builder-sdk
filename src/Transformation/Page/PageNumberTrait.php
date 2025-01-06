@@ -20,11 +20,10 @@ trait PageNumberTrait
     /**
      * Gets the page using the specified number.
      *
-     * @param int $number The number.
+     * @param int|string|null $number The number.
      *
-     * @return static
      */
-    public function byNumber($number)
+    public function byNumber(int|string|null $number): static
     {
         $this->add($number);
 

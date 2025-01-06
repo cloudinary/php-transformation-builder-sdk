@@ -17,30 +17,35 @@ class VectorizeValue extends QualifierMultiValue
 {
     use VectorizeTrait;
 
-    const COLORS    = 'colors';
-    const DETAIL    = 'detail';
-    const DESPECKLE = 'despeckle';
-    const PATHS     = 'paths';
-    const CORNERS   = 'corners';
+    public const COLORS = 'colors';
+    public const DETAIL = 'detail';
+    public const DESPECKLE = 'despeckle';
+    public const PATHS     = 'paths';
+    public const CORNERS = 'corners';
 
-    const KEY_VALUE_DELIMITER = ':';
+    public const KEY_VALUE_DELIMITER = ':';
 
-    const COLOR_RANGE            = [2, 30];
-    const DETAIL_RANGE           = [0, 1000];
-    const PATHS_RANGE            = [0, 100];
-    const CORNER_THRESHOLD_RANGE = [0, 100];
+    public const COLOR_RANGE = [2, 30];
+    public const DETAIL_RANGE = [0, 1000];
+    public const PATHS_RANGE  = [0, 100];
+    public const CORNER_THRESHOLD_RANGE = [0, 100];
 
     /**
      * VectorizeValue constructor.
      *
-     * @param int   $colors
-     * @param float $detail
-     * @param float $despeckle
-     * @param int   $paths
-     * @param int   $corners
+     * @param int|null   $colors
+     * @param float|null $detail
+     * @param float|null $despeckle
+     * @param int|null   $paths
+     * @param int|null   $corners
      */
-    public function __construct($colors = null, $detail = null, $despeckle = null, $paths = null, $corners = null)
-    {
+    public function __construct(
+        ?int $colors = null,
+        ?float $detail = null,
+        ?float $despeckle = null,
+        ?int $paths = null,
+        ?int $corners = null
+    ) {
         parent::__construct(MiscEffect::VECTORIZE);
 
         $this->numOfColors($colors);

@@ -20,7 +20,7 @@ class GradientFadeQualifier extends StrengthEffectQualifier
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'type', 'strength'];
+    protected array $valueOrder = [0, 'type', 'strength'];
 
     /**
      * GradientFade constructor.

@@ -22,9 +22,8 @@ trait ImageQualifierTrait
      *
      * @param string $defaultImage Default image public ID
      *
-     * @return DefaultImage
      */
-    public static function defaultImage($defaultImage)
+    public static function defaultImage(string $defaultImage): DefaultImage
     {
         return new DefaultImage($defaultImage);
     }
@@ -34,9 +33,8 @@ trait ImageQualifierTrait
      *
      * @param int $delay The delay in milliseconds
      *
-     * @return Delay
      */
-    public static function delay($delay)
+    public static function delay(int $delay): Delay
     {
         return new Delay($delay);
     }
@@ -45,11 +43,10 @@ trait ImageQualifierTrait
      * Controls the density to use when delivering an image or when converting a vector file such as a PDF or EPS
      * document to a web image delivery format.
      *
-     * @param int|string $density The density in dpi.
+     * @param int|float|string $density The density in dpi.
      *
-     * @return Density
      */
-    public static function density($density)
+    public static function density(int|float|string $density): Density
     {
         return new Density($density);
     }
@@ -59,9 +56,8 @@ trait ImageQualifierTrait
      *
      * @param string $prefix The style class name prefix.
      *
-     * @return Prefix
      */
-    public static function prefix($prefix)
+    public static function prefix(string $prefix): Prefix
     {
         return new Prefix($prefix);
     }

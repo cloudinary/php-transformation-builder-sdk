@@ -18,7 +18,7 @@ class Page extends BasePageAction
     /**
      * @var string MAIN_PARAMETER Represents the main qualifier of the action. (some actions do not have main qualifier)
      */
-    const MAIN_QUALIFIER = PageQualifier::class;
+    protected const MAIN_QUALIFIER = PageQualifier::class;
 
     use PageNumberTrait;
     use PageRangeTrait;

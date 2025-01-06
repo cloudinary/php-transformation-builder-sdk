@@ -25,9 +25,8 @@ trait LayerFlagTrait
      * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the
      * resulting image is transparent.
      *
-     * @return FlagQualifier
      */
-    public static function cutter()
+    public static function cutter(): FlagQualifier
     {
         return new FlagQualifier(self::CUTTER);
     }
@@ -36,9 +35,8 @@ trait LayerFlagTrait
      * Applies all chained transformations, until a transformation component that includes this flag, on the last added
      * overlay or underlay instead of applying on the containing image.
      *
-     * @return FlagQualifier
      */
-    public static function layerApply()
+    public static function layerApply(): FlagQualifier
     {
         return new FlagQualifier(self::LAYER_APPLY);
     }
@@ -47,9 +45,8 @@ trait LayerFlagTrait
      * Replaces the first image embedded in a PDF with the image stipulated as an overlay,
      * instead of adding it as another overlay.
      *
-     * @return FlagQualifier
      */
-    public static function replaceImage()
+    public static function replaceImage(): FlagQualifier
     {
         return new FlagQualifier(self::REPLACE_IMAGE);
     }
@@ -58,9 +55,8 @@ trait LayerFlagTrait
      * Splices the video stipulated as an overlay on to the end of the container video instead of adding it as an
      * overlay.
      *
-     * @return FlagQualifier
      */
-    public static function splice()
+    public static function splice(): FlagQualifier
     {
         return new FlagQualifier(self::SPLICE);
     }
@@ -69,9 +65,8 @@ trait LayerFlagTrait
      * Prevents Cloudinary from extending the image canvas beyond the original dimensions when overlaying text and
      * other images.
      *
-     * @return FlagQualifier
      */
-    public static function noOverflow()
+    public static function noOverflow(): FlagQualifier
     {
         return new FlagQualifier(self::NO_OVERFLOW);
     }
@@ -80,9 +75,8 @@ trait LayerFlagTrait
      * By default, text overlays are trimmed tightly to the text with no excess padding. This flag adds a small amount
      * of padding around the text overlay string.
      *
-     * @return FlagQualifier
      */
-    public static function textNoTrim()
+    public static function textNoTrim(): FlagQualifier
     {
         return new FlagQualifier(self::TEXT_NO_TRIM);
     }
@@ -90,9 +84,8 @@ trait LayerFlagTrait
     /**
      * Returns an error if the text overlay exceeds the image boundaries.
      *
-     * @return FlagQualifier
      */
-    public static function textDisallowOverflow()
+    public static function textDisallowOverflow(): FlagQualifier
     {
         return new FlagQualifier(self::TEXT_DISALLOW_OVERFLOW);
     }
@@ -100,9 +93,8 @@ trait LayerFlagTrait
     /**
      * Tiles the added overlay over the entire image.
      *
-     * @return FlagQualifier
      */
-    public static function tiled()
+    public static function tiled(): FlagQualifier
     {
         return new FlagQualifier(self::TILED);
     }

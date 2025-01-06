@@ -15,13 +15,13 @@ namespace Cloudinary\Transformation;
  */
 abstract class WhiteBalance
 {
-    const AS_SHOT     = 'as shot';
-    const AUTO        = 'auto';
-    const CLOUDY      = 'cloudy';
-    const CUSTOM      = 'custom';
-    const DAYLIGHT    = 'daylight';
-    const FLASH       = 'flash';
-    const FLUORESCENT = 'fluorescent';
-    const SHADE       = 'shade';
-    const TUNGSTEN    = 'tungsten';
+    public const AS_SHOT = 'as shot';
+    public const AUTO = 'auto';
+    public const CLOUDY  = 'cloudy';
+    public const CUSTOM = 'custom';
+    public const DAYLIGHT = 'daylight';
+    public const FLASH    = 'flash';
+    public const FLUORESCENT = 'fluorescent';
+    public const SHADE       = 'shade';
+    public const TUNGSTEN = 'tungsten';
 }

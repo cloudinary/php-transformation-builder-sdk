@@ -17,18 +17,18 @@ namespace Cloudinary\Transformation;
  */
 interface FocalGravityInterface
 {
-    const ADVANCED_FACE      = 'adv_face';
-    const ADV_FACE           = 'adv_face';
-    const ADVANCED_FACES     = 'adv_faces';
-    const ADV_FACES          = 'adv_faces';
-    const ADVANCED_EYES      = 'adv_eyes';
-    const ADV_EYES           = 'adv_eyes';
-    const BODY               = 'body';
-    const FACE               = 'face';
-    const FACES              = 'faces';
-    const NO_FACES           = 'no_faces';
-    const CUSTOM             = 'custom';
-    const CUSTOM_NO_OVERRIDE = 'custom_no_override';
-    const OCR_TEXT           = 'ocr_text';
-    const NONE               = 'none';
+    public const ADVANCED_FACE  = 'adv_face';
+    public const ADV_FACE = 'adv_face';
+    public const ADVANCED_FACES = 'adv_faces';
+    public const ADV_FACES      = 'adv_faces';
+    public const ADVANCED_EYES = 'adv_eyes';
+    public const ADV_EYES      = 'adv_eyes';
+    public const BODY     = 'body';
+    public const FACE = 'face';
+    public const FACES = 'faces';
+    public const NO_FACES = 'no_faces';
+    public const CUSTOM   = 'custom';
+    public const CUSTOM_NO_OVERRIDE = 'custom_no_override';
+    public const OCR_TEXT           = 'ocr_text';
+    public const NONE        = 'none';
 }

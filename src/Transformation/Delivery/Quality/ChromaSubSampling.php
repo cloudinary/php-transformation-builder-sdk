@@ -15,20 +15,19 @@ namespace Cloudinary\Transformation;
  */
 class ChromaSubSampling
 {
-    const CHROMA_444 = '444';
-    const CHROMA_422 = '422';
-    const CHROMA_421 = '421';
-    const CHROMA_411 = '411';
-    const CHROMA_420 = '420';
-    const CHROMA_410 = '410';
-    const CHROMA_311 = '311';
+    public const CHROMA_444 = '444';
+    public const CHROMA_422 = '422';
+    public const CHROMA_421 = '421';
+    public const CHROMA_411 = '411';
+    public const CHROMA_420 = '420';
+    public const CHROMA_410 = '410';
+    public const CHROMA_311 = '311';
 
     /**
      * Chroma subsampling 4:4:4.
      *
-     * @return string
      */
-    public static function chroma444()
+    public static function chroma444(): string
     {
         return self::CHROMA_444;
     }
@@ -36,9 +35,8 @@ class ChromaSubSampling
     /**
      * Chroma subsampling 4:2:2.
      *
-     * @return string
      */
-    public static function chroma422()
+    public static function chroma422(): string
     {
         return self::CHROMA_422;
     }
@@ -46,9 +44,8 @@ class ChromaSubSampling
     /**
      * Chroma subsampling 4:2:1.
      *
-     * @return string
      */
-    public static function chroma421()
+    public static function chroma421(): string
     {
         return self::CHROMA_421;
     }
@@ -56,9 +53,8 @@ class ChromaSubSampling
     /**
      * Chroma subsampling 4:1:1.
      *
-     * @return string
      */
-    public static function chroma411()
+    public static function chroma411(): string
     {
         return self::CHROMA_411;
     }
@@ -66,9 +62,8 @@ class ChromaSubSampling
     /**
      * Chroma subsampling 4:2:0.
      *
-     * @return string
      */
-    public static function chroma420()
+    public static function chroma420(): string
     {
         return self::CHROMA_420;
     }
@@ -76,9 +71,8 @@ class ChromaSubSampling
     /**
      * Chroma subsampling 4:1:0.
      *
-     * @return string
      */
-    public static function chroma410()
+    public static function chroma410(): string
     {
         return self::CHROMA_410;
     }
@@ -86,9 +80,8 @@ class ChromaSubSampling
     /**
      * Chroma subsampling 3:1:1.
      *
-     * @return string
      */
-    public static function chroma311()
+    public static function chroma311(): string
     {
         return self::CHROMA_311;
     }

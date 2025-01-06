@@ -26,12 +26,11 @@ class Position extends BasePosition
     /**
      * Absolute position on the canvas.
      *
-     * @param int|float|string $x The x coordinate.
-     * @param int|float|string $y The y coordinate.
+     * @param float|int|string|null $x The x coordinate.
+     * @param float|int|string|null $y The y coordinate.
      *
-     * @return AbsolutePosition
      */
-    public static function absolute($x = null, $y = null)
+    public static function absolute(float|int|string|null $x = null, float|int|string|null $y = null): AbsolutePosition
     {
         return new AbsolutePosition($x, $y);
     }
@@ -39,15 +38,14 @@ class Position extends BasePosition
     /**
      * Named constructor.
      *
-     * @param string|CompassGravity $direction The compass gravity..
+     * @param string $direction The compass gravity..
      *
-     * @param array                 $args      Additional arguments.
+     * @param array  $args      Additional arguments.
      *
-     * @return CompassPosition
      *
      * @internal
      */
-    protected static function createWithCompassGravity($direction, ...$args)
+    protected static function createWithCompassGravity(string $direction, ...$args): CompassPosition
     {
         return new CompassPosition($direction, ...$args);
     }
@@ -55,26 +53,23 @@ class Position extends BasePosition
     /**
      * Named constructor.
      *
-     * @param string|FocalGravity $gravity  The focal gravity.
-     * @param array               $fallback Fallback gravities.
+     * @param string $gravity  The focal gravity.
+     * @param array  $fallback Fallback gravities.
      *
-     * @return FocalPosition
      *
      * @internal
      */
-    protected static function createWithFocalGravity($gravity, ...$fallback)
+    protected static function createWithFocalGravity(string $gravity, ...$fallback): FocalPosition
     {
         return new FocalPosition($gravity);
     }
 
     /**
-     * @param $value
      *
-     * @return static
      * @internal
      *
      */
-    public function setOffsetValue($value)
+    public function setOffsetValue($value): static
     {
         if (! isset($this->qualifiers[Offset::getName()])) {
             $this->addQualifier(new Offset());
@@ -88,13 +83,11 @@ class Position extends BasePosition
     /**
      * Internal setter for the point value.
      *
-     * @param mixed $value
      *
-     * @return static
      *
      * @internal
      */
-    public function setPointValue($value)
+    public function setPointValue(mixed $value): static
     {
         if (! isset($this->qualifiers[AbsolutePosition::getName()])) {
             $this->addQualifier(self::absolute());

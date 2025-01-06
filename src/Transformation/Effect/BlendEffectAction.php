@@ -22,7 +22,7 @@ class BlendEffectAction extends EffectAction
      *
      * @return $this
      */
-    public function blend($blend)
+    public function blend(int $blend): static
     {
         $this->qualifiers[EffectQualifier::getName()]->blend($blend);
 

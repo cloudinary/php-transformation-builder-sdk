@@ -18,16 +18,16 @@ use Cloudinary\Transformation\QualifierMultiValue;
  */
 class Text extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '_';
+    protected const VALUE_DELIMITER = '_';
 
     use TextTrait;
 
     /**
      * Text constructor
      *
-     * @param string $text
+     * @param string|null $text The text.
      */
-    public function __construct($text = null)
+    public function __construct(?string $text = null)
     {
         parent::__construct();
 

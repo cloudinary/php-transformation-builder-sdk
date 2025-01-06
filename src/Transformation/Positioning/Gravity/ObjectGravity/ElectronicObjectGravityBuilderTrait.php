@@ -20,9 +20,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity electronic.
      *
-     * @return string
      */
-    public static function electronic()
+    public static function electronic(): string
     {
         return ObjectGravity::ELECTRONIC;
     }
@@ -30,9 +29,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity tvMonitor.
      *
-     * @return string
      */
-    public static function tvMonitor()
+    public static function tvMonitor(): string
     {
         return ObjectGravity::TV_MONITOR;
     }
@@ -40,9 +38,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity laptop.
      *
-     * @return string
      */
-    public static function laptop()
+    public static function laptop(): string
     {
         return ObjectGravity::LAPTOP;
     }
@@ -50,9 +47,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity mouse.
      *
-     * @return string
      */
-    public static function mouse()
+    public static function mouse(): string
     {
         return ObjectGravity::MOUSE;
     }
@@ -60,9 +56,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity remote.
      *
-     * @return string
      */
-    public static function remote()
+    public static function remote(): string
     {
         return ObjectGravity::REMOTE;
     }
@@ -70,9 +65,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity keyboard.
      *
-     * @return string
      */
-    public static function keyboard()
+    public static function keyboard(): string
     {
         return ObjectGravity::KEYBOARD;
     }
@@ -80,9 +74,8 @@ trait ElectronicObjectGravityBuilderTrait
     /**
      * Gravity cellphone.
      *
-     * @return string
      */
-    public static function cellphone()
+    public static function cellphone(): string
     {
         return ObjectGravity::CELLPHONE;
     }

@@ -19,12 +19,12 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class AutoGravityObject extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '_';
+    protected const VALUE_DELIMITER = '_';
 
     /**
      * @var array $argumentOrder The order of the arguments.
      */
-    protected $argumentOrder = ['gravity', 'avoid', 'weight'];
+    protected array $argumentOrder = ['gravity', 'avoid', 'weight'];
 
     /**
      * AutoGravityObject constructor.
@@ -41,11 +41,10 @@ class AutoGravityObject extends QualifierMultiValue
     /**
      * Sets the object gravity.
      *
-     * @param $gravity
      *
      * @return $this
      */
-    public function gravity($gravity)
+    public function gravity($gravity): static
     {
         if ($gravity instanceof BaseQualifier) {
             $gravity = $gravity->getValue();
@@ -59,7 +58,7 @@ class AutoGravityObject extends QualifierMultiValue
      *
      * @return $this
      */
-    public function avoid()
+    public function avoid(): static
     {
         return $this->setSimpleValue('avoid', 'avoid');
     }
@@ -71,7 +70,7 @@ class AutoGravityObject extends QualifierMultiValue
      *
      * @return $this
      */
-    public function weight($weight)
+    public function weight(int $weight): static
     {
         return $this->setSimpleValue('weight', $weight);
     }

@@ -17,25 +17,34 @@ namespace Cloudinary\Transformation;
  */
 class Vectorize extends EffectQualifier
 {
-    const VALUE_CLASS = VectorizeValue::class;
+    protected const VALUE_CLASS = VectorizeValue::class;
 
     use VectorizeTrait;
 
     /**
      * Vectorize constructor.
      *
-     * @param int   $colors    The number of colors. (Range: 2 to 30, Server default: 10)
-     * @param float $detail    The level of detail. Specify either a percentage of the original image (Range: 0.0 to
-     *                         1.0) or an absolute number of pixels (Range: 0 to 1000). (Server default: 300)
-     * @param float $despeckle The size of speckles to suppress. Specify either a percentage of the original image
-     *                         (Range: 0.0 to 1.0) or an absolute number of pixels (Range: 0 to 100, Server default: 2)
-     * @param int   $corners   The corner threshold.  Specify 100 for no smoothing (polygon corners), 0 for completely
-     *                         smooth corners. (Range: 0 to 100, Default: 25)
-     * @param int   $paths     The optimization value. Specify 100 for least optimization and the largest file.
-     *                         (Range: 0 to 100, Server default: 100).
+     * @param ?int           $colors    The number of colors. (Range: 2 to 30, Server default: 10)
+     * @param ?float         $detail    The level of detail. Specify either a percentage of the original image (Range:
+     *                                  0.0 to
+     *                                  1.0) or an absolute number of pixels (Range: 0 to 1000). (Server default: 300)
+     * @param int|float|null $despeckle The size of speckles to suppress. Specify either a percentage of the original
+     *                                  image
+     *                                  (Range: 0.0 to 1.0) or an absolute number of pixels (Range: 0 to 100, Server
+     *                                  default: 2)
+     * @param int|null       $corners   The corner threshold.  Specify 100 for no smoothing (polygon corners), 0 for
+     *                                  completely smooth corners. (Range: 0 to 100, Default: 25)
+     * @param int|null       $paths     The optimization value. Specify 100 for least optimization and the largest
+     *                                  file.
+     *                                  (Range: 0 to 100, Server default: 100).
      */
-    public function __construct($colors = null, $detail = null, $despeckle = null, $corners = null, $paths = null)
-    {
+    public function __construct(
+        ?int $colors = null,
+        ?float $detail = null,
+        int|float|null $despeckle = null,
+        ?int $corners = null,
+        ?int $paths = null
+    ) {
         parent::__construct(null);
 
         $this->numOfColors($colors);
@@ -55,7 +64,7 @@ class Vectorize extends EffectQualifier
      *
      * @internal
      */
-    protected function setSimpleNamedValue($name, $value)
+    protected function setSimpleNamedValue(string $name, mixed $value): static
     {
         $this->value->setSimpleNamedValue($name, $value);
 

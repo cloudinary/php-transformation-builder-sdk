@@ -17,26 +17,26 @@ namespace Cloudinary\Transformation;
  */
 class ForegroundObject extends BaseArgument
 {
-    const AIRPLANE     = 'airplane';
-    const BUS          = 'bus';
-    const DINING_TABLE = 'dining_table';
-    const SHEEP        = 'sheep';
-    const BICYCLE      = 'bicycle';
-    const CAR          = 'car';
-    const DOG          = 'dog';
-    const SOFA         = 'sofa';
-    const BIRD         = 'bird';
-    const CAT          = 'cat';
-    const HORSE        = 'horse';
-    const TRAIN        = 'train';
-    const BOAT         = 'boat';
-    const CHAIR        = 'chair';
-    const PERSON       = 'person';
-    const TV           = 'tv';
-    const BOTTLE       = 'bottle';
-    const COW          = 'cow';
-    const POTTED_PLANT = 'potted_plant';
-    const MOTORBIKE    = 'motorbike';
+    public const AIRPLANE = 'airplane';
+    public const BUS      = 'bus';
+    public const DINING_TABLE = 'dining_table';
+    public const SHEEP        = 'sheep';
+    public const BICYCLE = 'bicycle';
+    public const CAR     = 'car';
+    public const DOG = 'dog';
+    public const SOFA = 'sofa';
+    public const BIRD = 'bird';
+    public const CAT  = 'cat';
+    public const HORSE = 'horse';
+    public const TRAIN = 'train';
+    public const BOAT  = 'boat';
+    public const CHAIR = 'chair';
+    public const PERSON = 'person';
+    public const TV     = 'tv';
+    public const BOTTLE = 'bottle';
+    public const COW    = 'cow';
+    public const POTTED_PLANT = 'potted_plant';
+    public const MOTORBIKE    = 'motorbike';
 
     use ForegroundObjectTrait;
 }

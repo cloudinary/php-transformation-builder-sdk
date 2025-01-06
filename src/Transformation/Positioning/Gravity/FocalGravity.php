@@ -28,7 +28,6 @@ class FocalGravity extends GravityQualifier implements FocalGravityInterface
     /**
      * FocalGravity constructor.
      *
-     * @param       $focalGravity
      * @param array $fallBacks
      */
     public function __construct($focalGravity, ...$fallBacks)
@@ -41,14 +40,13 @@ class FocalGravity extends GravityQualifier implements FocalGravityInterface
     /**
      * Sets the gravity.
      *
-     * @param FocalGravity|string $focalGravity The gravity.
+     * @param string|FocalGravity $focalGravity The gravity.
      * @param array               $fallBacks    Fallback gravities.
      *
-     * @return FocalGravity
      *
      * @internal
      */
-    protected function setGravity($focalGravity, ...$fallBacks)
+    protected function setGravity(string|FocalGravity $focalGravity, ...$fallBacks): static
     {
         $this->setQualifierValue($focalGravity, ...$fallBacks);
 
@@ -60,11 +58,10 @@ class FocalGravity extends GravityQualifier implements FocalGravityInterface
      *
      * @param array $fallBacks The fallback gravities.
      *
-     * @return FocalGravity
      *
      * @internal
      */
-    protected function addFallBacks(...$fallBacks)
+    protected function addFallBacks(...$fallBacks): static
     {
         $this->value->addValues(...$fallBacks);
 

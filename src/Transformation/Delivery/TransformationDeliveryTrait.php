@@ -27,9 +27,8 @@ trait TransformationDeliveryTrait
      *
      * @param mixed $delivery The delivery action to apply.
      *
-     * @return static
      */
-    public function delivery($delivery)
+    public function delivery($delivery): static
     {
         return $this->addAction($delivery);
     }
@@ -39,11 +38,9 @@ trait TransformationDeliveryTrait
      *
      * (Formerly known as fetch format)
      *
-     * @param Format|string $format
      *
-     * @return static
      */
-    public function format($format)
+    public function format(Format|string $format): static
     {
         return $this->addAction(ClassUtils::verifyInstance($format, Format::class));
     }
@@ -54,11 +51,9 @@ trait TransformationDeliveryTrait
      *
      * Reducing the quality is a trade-off between visual quality and file size.
      *
-     * @param int|string|Quality $quality
      *
-     * @return static
      */
-    public function quality($quality)
+    public function quality(Quality|int|float|string $quality): static
     {
         return $this->addAction(ClassUtils::verifyInstance($quality, Quality::class));
     }
@@ -68,9 +63,8 @@ trait TransformationDeliveryTrait
      *
      * @param float|string $dpr Any positive float value.
      *
-     * @return static
      */
-    public function dpr($dpr)
+    public function dpr($dpr): static
     {
         return $this->addAction(ClassUtils::verifyInstance($dpr, Dpr::class));
     }

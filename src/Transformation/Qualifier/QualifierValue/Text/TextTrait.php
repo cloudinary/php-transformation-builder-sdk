@@ -18,11 +18,10 @@ trait TextTrait
     /**
      * Sets the text.
      *
-     * @param string $text The text.
+     * @param ?string $text The text.
      *
-     * @return static
      */
-    public function text($text)
+    public function text(?string $text): static
     {
         return $this->setText($text);
     }
@@ -30,11 +29,9 @@ trait TextTrait
     /**
      * @internal
      *
-     * @param $text
      *
-     * @return static
      */
-    public function setText($text)
+    public function setText($text): static
     {
         return $this->setSimpleValue('text', $text);
     }

@@ -22,7 +22,7 @@ class LevelEffectAction extends EffectAction
      *
      * @return $this
      */
-    public function level($level)
+    public function level(int $level): static
     {
         $this->qualifiers[EffectQualifier::getName()]->level($level);
 

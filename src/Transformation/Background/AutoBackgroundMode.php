@@ -21,12 +21,12 @@ namespace Cloudinary\Transformation;
  */
 class AutoBackgroundMode extends QualifierMultiValue
 {
-    const VALUE_DELIMITER = '_';
+    protected const VALUE_DELIMITER = '_';
 
-    const TYPE     = 'type';
-    const CONTRAST = 'contrast';
+    public const TYPE     = 'type';
+    public const CONTRAST = 'contrast';
 
-    protected $argumentOrder = [self::TYPE, self::CONTRAST];
+    protected array $argumentOrder = [self::TYPE, self::CONTRAST];
 
     /**
      * AutoBackgroundMode constructor.
@@ -43,11 +43,10 @@ class AutoBackgroundMode extends QualifierMultiValue
     /**
      * Determines which color is automatically chosen for the background.
      *
-     * @param string $type Use the constants defined in this class.
+     * @param ?string $type Use the constants defined in this class.
      *
-     * @return AutoBackgroundMode
      */
-    public function type($type)
+    public function type(?string $type): static
     {
         $this->setSimpleValue(self::TYPE, $type);
 
@@ -57,9 +56,8 @@ class AutoBackgroundMode extends QualifierMultiValue
     /**
      * Inverse the color.
      *
-     * @return AutoBackgroundMode
      */
-    public function contrast()
+    public function contrast(): AutoBackgroundMode
     {
         return $this->setSimpleValue(self::CONTRAST, self::CONTRAST);
     }

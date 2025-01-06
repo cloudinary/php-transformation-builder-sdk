@@ -26,7 +26,7 @@ trait EffectModeTrait
      *
      * @return $this
      */
-    public function mode($mode)
+    public function mode(mixed $mode): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($mode, EffectMode::class));
 

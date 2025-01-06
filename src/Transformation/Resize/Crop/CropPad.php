@@ -33,7 +33,7 @@ class CropPad extends Crop
      * @param mixed                        $gravity
      * @param string|Background|ColorValue $background
      */
-    public function __construct($cropMode, $width = null, $height = null, $gravity = null, $background = null)
+    public function __construct($cropMode, $width = null, $height = null, mixed $gravity = null, $background = null)
     {
         if ($gravity === null) {
             $gravity = Gravity::auto();
@@ -47,11 +47,10 @@ class CropPad extends Crop
     /**
      * Sets the gravity to use when using the FILL_PAD crop mode.
      *
-     * @param $autoGravity
      *
      * @return $this
      */
-    public function gravity($autoGravity)
+    public function gravity(mixed $autoGravity): static
     {
         if (! $autoGravity instanceof AutoGravity) {
             throw new InvalidArgumentException('CropPad only supports Auto Gravity');

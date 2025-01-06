@@ -44,14 +44,21 @@ class ObjectGravity extends GravityQualifier implements ObjectGravityInterface
      *
      * @param AutoGravity|ObjectGravity|string|mixed $fallbackGravity The fallback gravity.
      *
-     * @return ObjectGravity
      */
-    public function fallbackGravity($fallbackGravity)
+    public function fallbackGravity(mixed $fallbackGravity): ObjectGravity
     {
         if ($fallbackGravity instanceof BaseQualifier) {
             $fallbackGravity = $fallbackGravity->getValue();
         }
 
         return $this->add($fallbackGravity);
+    }
+
+
+    public function priority(?string $priorityName = null, ?int $weight = null): static
+    {
+       $this->value->setSimpleNamedValue($priorityName, $weight);
+
+       return $this;
     }
 }

@@ -27,12 +27,11 @@ class ColorQualifier extends BaseQualifier
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'co';
+    protected static string $key = 'co';
 
     /**
      * Color constructor.
      *
-     * @param $color
      */
     public function __construct($color)
     {

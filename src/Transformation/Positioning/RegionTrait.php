@@ -28,7 +28,7 @@ trait RegionTrait
      *
      * @return $this
      */
-    public function region($region)
+    public function region(Region $region): static
     {
         return $this->addQualifier($region);
     }

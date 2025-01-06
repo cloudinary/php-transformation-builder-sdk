@@ -26,25 +26,25 @@ class CropMode extends BaseQualifier
     /**
      * @var string $name The name of the CropMode qualifier.
      */
-    protected static $name = 'crop_mode';
+    protected static string $name = 'crop_mode';
 
     /**
      * @var string $key The key of the CropMode qualifier.
      */
-    protected static $key = 'c';
+    protected static string $key = 'c';
 
     /**
      * The SCALE crop mode changes the size of the asset exactly to the given width and height without necessarily
      * retaining the original aspect ratio. All original parts are visible but might be stretched or shrunk.
      */
-    const SCALE = 'scale';
+    public const SCALE = 'scale';
 
     /**
      * The FIT crop mode resizes the asset so that it takes up as much space as possible within a bounding box defined
      * by the given width and height qualifiers. The original aspect ratio is retained and all of the original asset
      * is visible.
      */
-    const FIT = 'fit';
+    public const FIT = 'fit';
 
     /**
      * The LIMIT_FIT crop mode resizes the asset so that it takes up as much space as possible within a bounding box
@@ -52,7 +52,7 @@ class CropMode extends BaseQualifier
      * (width and height). The asset is scaled down, the original aspect ratio is retained and all of the original
      * asset is visible.
      */
-    const LIMIT_FIT = 'limit';
+    public const LIMIT_FIT = 'limit';
 
     /**
      * The MINIMUM_FIT crop mode resizes the asset so that it takes up as much space as possible within a bounding box
@@ -60,14 +60,14 @@ class CropMode extends BaseQualifier
      * minimum (width and height). The asset is scaled up, the original aspect ratio is retained and all of the
      * original asset is visible.
      */
-    const MINIMUM_FIT = 'mfit';
+    public const MINIMUM_FIT = 'mfit';
 
     /**
      * The PAD crop mode resizes the asset to fill the given width and height while retaining the original aspect ratio.
      * If the proportions of the original asset do not match the given width and height, padding is added to the asset
      * to reach the required size.
      */
-    const PAD = 'pad';
+    public const PAD = 'pad';
 
     /**
      * The LIMIT_PAD crop mode resizes the asset to fill the given width and height while retaining the original aspect
@@ -75,7 +75,7 @@ class CropMode extends BaseQualifier
      * down.  If the proportions of the original asset do not match the given width and height, padding is added to the
      * asset to reach the required size.
      */
-    const LIMIT_PAD = 'lpad';
+    public const LIMIT_PAD = 'lpad';
 
     /**
      * The MINIMUM_PAD crop mode resizes the asset to fill the given width and height while retaining the original
@@ -83,7 +83,7 @@ class CropMode extends BaseQualifier
      * scaled up.  If the proportions of the original asset do not match the given width and height, padding is added
      * to the asset to reach the required size.
      */
-    const MINIMUM_PAD = 'mpad';
+    public const MINIMUM_PAD = 'mpad';
 
     /**
      * The FILL crop mode creates an asset with the exact given width and height without distorting the asset. This
@@ -91,7 +91,7 @@ class CropMode extends BaseQualifier
      * ratio is different than the original, cropping will occur on the dimension that exceeds the requested size after
      * scaling.
      */
-    const FILL = 'fill';
+    public const FILL = 'fill';
 
     /**
      * The LIMIT_FILL crop mode creates an asset with the exact given width and height without distorting the asset,
@@ -99,38 +99,38 @@ class CropMode extends BaseQualifier
      * the given width and height without distorting the asset, and then the dimension that exceeds the request is
      * cropped. If the original dimensions are both smaller than the requested size, it is not resized at all.
      */
-    const LIMIT_FILL = 'lfill';
+    public const LIMIT_FILL = 'lfill';
 
     /**
      * The FILL_PAD crop mode tries to prevent a "bad crop" by first attempting to use the fill mode, but adds padding
      * if it is determined that more of the original asset needs to be included in the final asset. Only supported in
      * conjunction with automatic cropping (g_auto).
      */
-    const FILL_PAD = 'fill_pad';
+    public const FILL_PAD = 'fill_pad';
 
     /**
      * The CROP crop mode extracts a given width and height out of the original asset. The original proportions are
      * retained and so is the size of the graphics.
      */
-    const CROP = 'crop';
+    public const CROP = 'crop';
 
     /**
      * The THUMBNAIL crop mode generates a thumbnail using face detection in combination with the 'face' or 'faces'
      * gravity.
      */
-    const THUMBNAIL = 'thumb';
+    public const THUMBNAIL = 'thumb';
 
     /**
      * The AUTO crop mode automatically determines the best crop based on the gravity and specified dimensions.
      */
-    const AUTO = 'auto';
+    public const AUTO = 'auto';
 
     /**
      * The AUTO_PAD crop mode tries to prevent a "bad crop" by first attempting to use the auto cropping mode,
      * but adding some padding if the algorithm determines that more of the original image needs to be included in the
      * final image.
      */
-    const AUTO_PAD = 'auto_pad';
+    public const AUTO_PAD = 'auto_pad';
 
     /**
      * The IMAGGA_CROP crop mode crops your image based on automatically calculated areas of interest within each
@@ -138,7 +138,7 @@ class CropMode extends BaseQualifier
      *
      * @see https://cloudinary.com/documentation/imagga_crop_and_scale_addon#smartly_crop_images
      */
-    const IMAGGA_CROP = 'imagga_crop';
+    public const IMAGGA_CROP = 'imagga_crop';
 
     /**
      * The IMAGGA_SCALE crop mode scales your image based on automatically calculated areas of interest within each
@@ -146,5 +146,5 @@ class CropMode extends BaseQualifier
      *
      * @see https://cloudinary.com/documentation/imagga_crop_and_scale_addon#smartly_scale_images
      */
-    const IMAGGA_SCALE = 'imagga_scale';
+    public const IMAGGA_SCALE = 'imagga_scale';
 }

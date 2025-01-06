@@ -21,13 +21,12 @@ trait ScaleTrait
      * Change the size of the image exactly to the given width and height without necessarily retaining the original
      * aspect ratio: all original image parts are visible but might be stretched or shrunk.
      *
-     * @param int|float|string|null $width       The required width of a transformed asset.
-     * @param int|float|null        $height      The required height of a transformed asset.
-     * @param int|float|array       $aspectRatio Resizes the asset to a new aspect ratio.
+     * @param mixed $width       The required width of a transformed asset.
+     * @param mixed $height      The required height of a transformed asset.
+     * @param mixed $aspectRatio Resizes the asset to a new aspect ratio.
      *
-     * @return Scale
      */
-    public static function scale($width = null, $height = null, $aspectRatio = null)
+    public static function scale(mixed $width = null, mixed $height = null, mixed $aspectRatio = null): Scale
     {
         return static::createScale(CropMode::SCALE, $width, $height, $aspectRatio);
     }
@@ -36,14 +35,16 @@ trait ScaleTrait
      * The image is resized so that it takes up as much space as possible within a bounding box defined by the given
      * width and height qualifiers. The original aspect ratio is retained and all of the original image is visible.
      *
-     * @param int|float|string|null $width       The required width of a transformed asset.
-     * @param int|float|null        $height      The required height of a transformed asset.
-     * @param int|float|array       $aspectRatio Resizes the asset to a new aspect ratio.
+     * @param mixed $width       The required width of a transformed asset.
+     * @param mixed $height      The required height of a transformed asset.
+     * @param mixed $aspectRatio Resizes the asset to a new aspect ratio.
      *
-     * @return Scale
      */
-    public static function fit($width = null, $height = null, $aspectRatio = null)
-    {
+    public static function fit(
+        mixed $width = null,
+        mixed $height = null,
+        mixed $aspectRatio = null
+    ): Scale {
         return static::createScale(CropMode::FIT, $width, $height, $aspectRatio);
     }
 
@@ -53,16 +54,18 @@ trait ScaleTrait
      * box defined by the given width and height qualifiers. The original aspect ratio is retained and all of the
      * original image is visible.
      *
-     * @param int|float|string $width       The required width of a transformed asset.
-     * @param int|float        $height      The required height of a transformed asset.
-     * @param int|float|array  $aspectRatio Resizes the asset to a new aspect ratio.
+     * @param mixed $width       The required width of a transformed asset.
+     * @param mixed $height      The required height of a transformed asset.
+     * @param mixed $aspectRatio Resizes the asset to a new aspect ratio.
      *
-     * @return Scale
      *
      * @see Scale::fit
      */
-    public static function limitFit($width = null, $height = null, $aspectRatio = null)
-    {
+    public static function limitFit(
+        mixed $width = null,
+        mixed $height = null,
+        mixed $aspectRatio = null
+    ): Scale {
         return static::createScale(CropMode::LIMIT_FIT, $width, $height, $aspectRatio);
     }
 
@@ -72,27 +75,27 @@ trait ScaleTrait
      * box defined by the given width and height qualifiers. The original aspect ratio is retained and all of the
      * original image is visible.
      *
-     * @param int|float|string|null $width       The required width of a transformed asset.
-     * @param int|float|null        $height      The required height of a transformed asset.
-     * @param int|float|array       $aspectRatio Resizes the asset to a new aspect ratio.
+     * @param mixed $width       The required width of a transformed asset.
+     * @param mixed $height      The required height of a transformed asset.
+     * @param mixed $aspectRatio Resizes the asset to a new aspect ratio.
      *
-     * @return Scale
      *
      * @see Scale::fit
      */
-    public static function minimumFit($width = null, $height = null, $aspectRatio = null)
-    {
+    public static function minimumFit(
+        mixed $width = null,
+        mixed $height = null,
+        mixed $aspectRatio = null
+    ): Scale {
         return static::createScale(CropMode::MINIMUM_FIT, $width, $height, $aspectRatio);
     }
 
     /**
-     * @param mixed ...$args
      *
-     * @return Scale
      *
      * @internal
      */
-    protected static function createScale(...$args)
+    protected static function createScale(...$args): Scale
     {
         return new Scale(...$args);
     }

@@ -16,8 +16,8 @@ namespace Cloudinary\Transformation\Argument\Text;
 class FontFamily
 {
     // TODO: Populate the most common/supported fonts
-    const ARIAL      = 'Arial';
-    const VERDANA    = 'Verdana';
-    const IMPACT     = 'Impact';
-    const PARISIENNE = 'Parisienne';
+    public const ARIAL = 'Arial';
+    public const VERDANA = 'Verdana';
+    public const IMPACT  = 'Impact';
+    public const PARISIENNE = 'Parisienne';
 }

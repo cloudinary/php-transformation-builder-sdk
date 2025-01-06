@@ -22,41 +22,40 @@ class ColorSpace extends BaseQualifier
     /**
      * Render the image in the sRGB color space.
      */
-    const SRGB = 'srgb';
+    public const SRGB = 'srgb';
 
     /**
      * Render the image using Facebook's truncated sRGB color space.
      */
-    const TINY_SRGB = 'tinysrgb';
+    public const TINY_SRGB = 'tinysrgb';
 
     /**
      * Render the image in the CMYK color space.
      */
-    const CMYK = 'cmyk';
+    public const CMYK = 'cmyk';
 
     /**
      * If the original image uses the CMYK color space, convert it to sRGB.
      */
-    const NO_CMYK = 'no_cmyk';
+    public const NO_CMYK = 'no_cmyk';
 
     /**
      * Retain the CMYK color space when generating derived images.
      */
-    const KEEP_CMYK = 'keep_cmyk';
+    public const KEEP_CMYK = 'keep_cmyk';
 
     /**
      * Render the image using the specified color space (ICC) file.  The ICC file must be
      * uploaded to your cloud as a raw, authenticated file. Specify the ICC file using the icc method of the
      * this class.
      */
-    const ICC = 'icc';
+    public const ICC = 'icc';
 
     /**
      * Render the image in the sRGB color space.
      *
-     * @return ColorSpace
      */
-    public static function srgb()
+    public static function srgb(): ColorSpace
     {
         return new self(self::SRGB);
     }
@@ -64,9 +63,8 @@ class ColorSpace extends BaseQualifier
     /**
      * Render the image using Facebook's truncated sRGB color space.
      *
-     * @return ColorSpace
      */
-    public static function tinysrgb()
+    public static function tinysrgb(): ColorSpace
     {
         return new self(self::TINY_SRGB);
     }
@@ -74,9 +72,8 @@ class ColorSpace extends BaseQualifier
     /**
      * Render the image in the CMYK color space.
      *
-     * @return ColorSpace
      */
-    public static function cmyk()
+    public static function cmyk(): ColorSpace
     {
         return new self(self::CMYK);
     }
@@ -84,9 +81,8 @@ class ColorSpace extends BaseQualifier
     /**
      * If the original image uses the CMYK color space, convert it to sRGB.
      *
-     * @return ColorSpace
      */
-    public static function noCmyk()
+    public static function noCmyk(): ColorSpace
     {
         return new self(self::NO_CMYK);
     }
@@ -94,9 +90,8 @@ class ColorSpace extends BaseQualifier
     /**
      * Retain the CMYK color space when generating derived images.
      *
-     * @return ColorSpace
      */
-    public static function keepCmyk()
+    public static function keepCmyk(): ColorSpace
     {
         return new self(self::KEEP_CMYK);
     }
@@ -109,10 +104,9 @@ class ColorSpace extends BaseQualifier
      * @param string $publicId The public ID (including the file extension) of the ICC profile that defines the
      *                         color space.
      *
-     * @return ColorSpace
      *
      */
-    public static function icc($publicId)
+    public static function icc(string $publicId): ColorSpace
     {
         return new self(self::ICC, $publicId);
     }

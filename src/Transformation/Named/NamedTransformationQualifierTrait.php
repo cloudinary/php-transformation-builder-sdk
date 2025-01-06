@@ -22,11 +22,10 @@ trait NamedTransformationQualifierTrait
      *
      * @param string $transformationName The name of the transformation.
      *
-     * @return NamedTransformation
      *
-     * @see \Cloudinary\Transformation\NamedTransformation
+     * @see NamedTransformation
      */
-    public static function namedTransformation($transformationName)
+    public static function namedTransformation(string $transformationName): NamedTransformation
     {
         return new NamedTransformation($transformationName);
     }

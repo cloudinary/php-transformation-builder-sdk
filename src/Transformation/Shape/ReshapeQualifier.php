@@ -15,8 +15,8 @@ namespace Cloudinary\Transformation;
  */
 class ReshapeQualifier extends EffectQualifier
 {
-    const DISTORT     = 'distort';
-    const DISTORT_ARC = 'distort:arc';
-    const TRIM        = 'trim';
-    const SHEAR       = 'shear';
+    public const DISTORT = 'distort';
+    public const DISTORT_ARC = 'distort:arc';
+    public const TRIM        = 'trim';
+    public const SHEAR = 'shear';
 }

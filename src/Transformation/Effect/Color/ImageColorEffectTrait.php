@@ -20,11 +20,10 @@ trait ImageColorEffectTrait
     /**
      * Converts the image to black and white.
      *
-     * @param int $threshold The balance between black (100) and white (0).  (Range: 0 to 100, Server default: 50)
+     * @param int|null $threshold The balance between black (100) and white (0).  (Range: 0 to 100, Server default: 50)
      *
-     * @return ThresholdEffectAction
      */
-    public static function blackWhite($threshold = null)
+    public static function blackWhite(?int $threshold = null): ThresholdEffectAction
     {
         return EffectAction::withThreshold(ColorEffect::BLACKWHITE, EffectRange::PERCENT, $threshold);
     }
@@ -32,13 +31,12 @@ trait ImageColorEffectTrait
     /**
      * Colorizes the image.
      *
-     * @param int    $level The strength of the color. (Range: 0 to 100, Server default: 100)
-     * @param string $color The color to use for colorization.  Specify HTML name or RGB hex code.
+     * @param int|null    $level The strength of the color. (Range: 0 to 100, Server default: 100)
+     * @param string|null $color The color to use for colorization.  Specify HTML name or RGB hex code.
      *                      (Server default: gray)
      *
-     * @return Colorize
      */
-    public static function colorize($level = null, $color = null)
+    public static function colorize(?int $level = null, ?string $color = null): Colorize
     {
         return (new Colorize(new LevelEffectQualifier(ColorEffect::COLORIZE, EffectRange::PERCENT, $level)))
             ->color($color);
@@ -47,9 +45,8 @@ trait ImageColorEffectTrait
     /**
      * Converts the image to gray-scale (multiple shades of gray).
      *
-     * @return EffectAction
      */
-    public static function grayscale()
+    public static function grayscale(): EffectAction
     {
         return EffectAction::named(ColorEffect::GRAYSCALE);
     }
@@ -57,9 +54,8 @@ trait ImageColorEffectTrait
     /**
      * Negates the image colors (negative).
      *
-     * @return EffectAction
      */
-    public static function negate()
+    public static function negate(): EffectAction
     {
         return EffectAction::named(ColorEffect::NEGATE);
     }
@@ -67,11 +63,10 @@ trait ImageColorEffectTrait
     /**
      * Changes the color scheme of the image to sepia.
      *
-     * @param int $level The level of sepia to apply. (Range: 1 to 100, Server default: 80)
+     * @param int|null $level The level of sepia to apply. (Range: 1 to 100, Server default: 80)
      *
-     * @return LevelEffectAction
      */
-    public static function sepia($level = null)
+    public static function sepia(?int $level = null): LevelEffectAction
     {
         return EffectAction::withLevel(ColorEffect::SEPIA, EffectRange::PERCENT, $level);
     }
@@ -82,31 +77,29 @@ trait ImageColorEffectTrait
      *
      * You can replace colors using the xRay() method of the \Cloudinary\Transformation\AssistColorBlind class.
      *
-     * @param int $strength The strength of the stripes.  (Range: 1 to 100, Server default: 10)
+     * @param int|null $strength The strength of the stripes.  (Range: 1 to 100, Server default: 10)
      *
-     * @return AssistColorBlind
      *
-     * @see \Cloudinary\Transformation\AssistColorBlind
+     * @see AssistColorBlind
      *
      */
-    public static function assistColorBlind($strength = null)
+    public static function assistColorBlind(?int $strength = null): AssistColorBlind
     {
         return new AssistColorBlind($strength);
     }
 
     /**
-     * Simulates the way an image would appear to someone with the specified color blind condition.
+     * Simulates the way an image would appear to someone with the specified color-blind condition.
      *
-     * For a list of supported color blind conditions see the \Cloudinary\Transformation\SimulateColorBlind class.
+     * For a list of supported color-blind conditions see the \Cloudinary\Transformation\SimulateColorBlind class.
      *
-     * @param string $condition The color blind condition. Use the constants defined in the SimulateColorBlind class.
+     * @param string|null $condition The color-blind condition. Use the constants defined in the SimulateColorBlind class.
      *
-     * @return SimulateColorBlind
      *
-     * @see \Cloudinary\Transformation\SimulateColorBlind
+     * @see SimulateColorBlind
      *
      */
-    public static function simulateColorBlind($condition = null)
+    public static function simulateColorBlind(?string $condition = null): SimulateColorBlind
     {
         return new SimulateColorBlind($condition);
     }

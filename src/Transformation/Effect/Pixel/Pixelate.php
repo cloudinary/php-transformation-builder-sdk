@@ -15,14 +15,12 @@ namespace Cloudinary\Transformation;
  */
 class Pixelate extends SquareSizeEffectAction
 {
-    const REGION = PixelEffect::PIXELATE_REGION;
-    const FACES  = PixelEffect::PIXELATE_FACES;
+    public const REGION = PixelEffect::PIXELATE_REGION;
+    public const FACES  = PixelEffect::PIXELATE_FACES;
 
     /**
      * Pixelate constructor.
      *
-     * @param       $squareSize
-     * @param mixed ...$args
      */
     public function __construct($squareSize, ...$args)
     {

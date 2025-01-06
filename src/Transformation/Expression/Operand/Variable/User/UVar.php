@@ -45,9 +45,8 @@ class UVar extends Expression
      *
      * @param string $userVariableName The user variable name.
      *
-     * @return UVar
      */
-    public static function uVar($userVariableName)
+    public static function uVar(string $userVariableName): UVar
     {
         return new self($userVariableName);
     }

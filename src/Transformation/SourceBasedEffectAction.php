@@ -23,23 +23,23 @@ use Cloudinary\ClassUtils;
 abstract class SourceBasedEffectAction extends EffectAction
 {
     /**
-     * @var BaseSource $source The source of the layer.
+     * @var ?BaseSource $source The source of the layer.
      */
-    protected $source;
+    protected ?BaseSource $source;
 
     /**
-     * @var Position $position Layer position.
+     * @var ?BasePosition $position Layer position.
      */
-    protected $position;
+    protected ?BasePosition $position;
 
     /**
      * BaseLayerContainer constructor.
      *
      * @param EffectQualifier|string $effect   The effect name.
-     * @param BaseSource|string      $source   The source.
-     * @param Position               $position Layer position.
+     * @param BaseSource|string|null $source   The source.
+     * @param BasePosition|null          $position Layer position.
      */
-    public function __construct($effect, $source = null, $position = null)
+    public function __construct($effect, BaseSource|string|null $source = null, ?BasePosition $position = null)
     {
         parent::__construct($effect);
 
@@ -50,11 +50,10 @@ abstract class SourceBasedEffectAction extends EffectAction
     /**
      * Sets the source.
      *
-     * @param BaseSource|string $source The source.
+     * @param BaseSource|string|null $source The source.
      *
-     * @return static
      */
-    public function source($source)
+    public function source(BaseSource|string|null $source): static
     {
         $this->source = ClassUtils::verifyInstance($source, BaseSource::class, ImageSource::class);
 
@@ -64,11 +63,10 @@ abstract class SourceBasedEffectAction extends EffectAction
     /**
      * Sets the position of the layer.
      *
-     * @param BasePosition $position The position.
+     * @param BasePosition|null $position The position.
      *
-     * @return static
      */
-    public function position($position = null)
+    public function position(?BasePosition $position = null): static
     {
         $this->position = ClassUtils::verifyInstance($position, BasePosition::class, AbsolutePosition::class);
 
@@ -94,10 +92,10 @@ abstract class SourceBasedEffectAction extends EffectAction
      *
      * @internal
      */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $sourceQualifiers     = $this->source ? $this->source->getStringQualifiers() : [];
-        $sourceTransformation = $this->source ? $this->source->getTransformation() : null;
+        $sourceTransformation = $this->source?->getTransformation();
         $positionQualifiers   = $this->position ? $this->position->getStringQualifiers() : [];
         $additionalQualifiers = $this->getStringQualifiers();
 
@@ -120,18 +118,16 @@ abstract class SourceBasedEffectAction extends EffectAction
         $subActions = $this->getSubActionQualifiers();
 
         return ArrayUtils::implodeUrl([
-            ArrayUtils::implodeActionQualifiers(...$subActions['source']),
-            $subActions['transformation'],
-            ArrayUtils::implodeActionQualifiers(...$subActions['additional']),
-        ]);
+                                          ArrayUtils::implodeActionQualifiers(...$subActions['source']),
+                                          $subActions['transformation'],
+                                          ArrayUtils::implodeActionQualifiers(...$subActions['additional']),
+                                      ]);
     }
 
     /**
      * Serializes to json.
-     *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'source'   => $this->source,

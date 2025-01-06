@@ -24,11 +24,10 @@ trait DimensionsTrait
     /**
      * Sets the width of the asset.
      *
-     * @param int|string|Expression $width The width in pixels.
+     * @param mixed $width The width in pixels.
      *
-     * @return static
      */
-    public function width($width)
+    public function width(mixed $width): static
     {
         $this->setDimension(ClassUtils::verifyInstance($width, Width::class));
 
@@ -40,9 +39,8 @@ trait DimensionsTrait
      *
      * @param int|string|Expression $height The height in pixels.
      *
-     * @return static
      */
-    public function height($height)
+    public function height(mixed $height): static
     {
         $this->setDimension(ClassUtils::verifyInstance($height, Height::class));
 
@@ -56,9 +54,9 @@ trait DimensionsTrait
      *
      * @return $this
      */
-    public function size($size)
+    public function size(string $size): static
     {
-        list($width, $height) = explode('x', $size);
+        [$width, $height] = explode('x', $size);
 
         $this->width($width)->height($height);
 
@@ -70,9 +68,8 @@ trait DimensionsTrait
      *
      * @param float|array|AspectRatio $aspectRatio The new aspect ratio, specified as a percentage or ratio.
      *
-     * @return static
      */
-    public function aspectRatio(...$aspectRatio)
+    public function aspectRatio(...$aspectRatio): static
     {
         $this->setDimension(ClassUtils::verifyVarArgsInstance($aspectRatio, AspectRatio::class));
 
@@ -82,9 +79,7 @@ trait DimensionsTrait
     /**
      * Internal setter for the dimensions.
      *
-     * @param mixed $value
      *
-     * @return static
      */
-    abstract protected function setDimension($value);
+    abstract protected function setDimension(mixed $value): static;
 }

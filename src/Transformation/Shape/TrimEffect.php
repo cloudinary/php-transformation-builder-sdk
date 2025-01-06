@@ -18,19 +18,18 @@ use Cloudinary\Transformation\Argument\ColorValue;
  *
  * @api
  *
- * @see \Cloudinary\Transformation\ReshapeTrait::trim()
+ * @see ReshapeTrait::trim
  */
 class TrimEffect extends LimitedEffectQualifier
 {
     /**
      * @var array $valueOrder The order of the values.
      */
-    protected $valueOrder = [0, 'color_similarity', 'color_override'];
+    protected array $valueOrder = [0, 'color_similarity', 'color_override'];
 
     /**
      * Trim constructor.
      *
-     * @param      $colorSimilarity
      */
     public function __construct($colorSimilarity = null)
     {
@@ -44,9 +43,8 @@ class TrimEffect extends LimitedEffectQualifier
      *
      * @param int $colorSimilarity The tolerance level for color similarity.  (Range: 0 to 100, Server default: 10)
      *
-     * @return TrimEffect
      */
-    public function colorSimilarity($colorSimilarity)
+    public function colorSimilarity(int $colorSimilarity): static
     {
         $this->value->setSimpleValue('color_similarity', $colorSimilarity);
 
@@ -59,9 +57,8 @@ class TrimEffect extends LimitedEffectQualifier
      *
      * @param string $colorOverride The color to trim as a named color or an RGB/A hex code.
      *
-     * @return TrimEffect
      */
-    public function colorOverride($colorOverride)
+    public function colorOverride(string $colorOverride): static
     {
         $this->value->setSimpleValue('color_override', ClassUtils::verifyInstance($colorOverride, ColorValue::class));
 

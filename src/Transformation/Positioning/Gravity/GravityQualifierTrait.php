@@ -26,9 +26,8 @@ trait GravityQualifierTrait
      * @param mixed $gravity The area of the image.  Use the constants defined in any of the classes that extend
      *                        GravityQualifier, such as CompassGravity or ObjectGravity.
      *
-     * @return GravityQualifier
      */
-    public static function gravity($gravity)
+    public static function gravity(mixed $gravity): GravityQualifier
     {
         return ClassUtils::verifyInstance($gravity, GravityQualifier::class);
     }

@@ -11,8 +11,6 @@
 namespace Cloudinary\Transformation;
 
 use Cloudinary\ArrayUtils;
-use Cloudinary\StringUtils;
-use Cloudinary\Transformation\Argument\ColorValue;
 use Cloudinary\TransformationUtils;
 
 /**
@@ -23,20 +21,24 @@ class GenerativeRemove extends GenerativeEffectAction
     use PromptTrait;
     use DetectMultipleTrait;
 
-    const REGION        = 'region';
-    const REMOVE_SHADOW = 'remove-shadow';
+    protected const REGION        = 'region';
+    protected const REMOVE_SHADOW = 'remove-shadow';
 
     /**
      * GenerativeRemove constructor.
      *
      * @param string|array $prompt         Use natural language to describe what you want to affect in the image.
      * @param string|array $region         Remove items from the specified region(s).
-     * @param bool         $detectMultiple Whether to detect all instances of the prompt in the image.
-     * @param bool         $removeShadow   Whether to remove shadows and reflections.
-     * @param mixed        ...$args
+     * @param bool|null    $detectMultiple Whether to detect all instances of the prompt in the image.
+     * @param bool|null    $removeShadow   Whether to remove shadows and reflections.
      */
-    public function __construct($prompt = null, $region = null, $detectMultiple = null, $removeShadow = null, ...$args)
-    {
+    public function __construct(
+        $prompt = null,
+        $region = null,
+        ?bool $detectMultiple = null,
+        ?bool $removeShadow = null,
+        ...$args
+    ) {
         parent::__construct(GenerativeEffect::GENERATIVE_REMOVE, ...$args);
 
         $this->prompt($prompt);
@@ -52,7 +54,7 @@ class GenerativeRemove extends GenerativeEffectAction
      *
      * @return $this
      */
-    public function region(...$region)
+    public function region(...$region): static
     {
         $this->getMainQualifier()->getPropertiesValue()->setSimpleNamedValue(
             self::REGION,
@@ -67,11 +69,11 @@ class GenerativeRemove extends GenerativeEffectAction
     /**
      * Whether to remove the shadow in addition to the object(s).
      *
-     * @param bool $removeShadow Whether to remove shadow.
+     * @param ?bool $removeShadow Whether to remove shadow.
      *
      * @return $this
      */
-    public function removeShadow($removeShadow = true)
+    public function removeShadow(?bool $removeShadow = true): static
     {
         $this->getMainQualifier()->getPropertiesValue()->setSimpleNamedValue(
             self::REMOVE_SHADOW,

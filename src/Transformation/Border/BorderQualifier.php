@@ -27,23 +27,23 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  */
 class BorderQualifier extends BaseQualifier
 {
-    const VALUE_CLASS = BorderValue::class;
+    protected const VALUE_CLASS = BorderValue::class;
 
     /**
      * @var string $key Serialization key.
      */
-    protected static $key = 'bo';
+    protected static string $key = 'bo';
 
     use BorderStyleTrait;
 
     /**
      * Sets the width of the border.
      *
-     * @param int|string $width The width in pixels.
+     * @param int|string|null $width The width in pixels.
      *
      * @return $this
      */
-    public function width($width)
+    public function width(int|string|null $width): static
     {
         $this->value->width($width);
 
@@ -57,7 +57,7 @@ class BorderQualifier extends BaseQualifier
      *
      * @return $this
      */
-    public function style($style)
+    public function style(string $style): static
     {
         $this->value->style($style);
 
@@ -67,11 +67,11 @@ class BorderQualifier extends BaseQualifier
     /**
      * Sets the color of the border.
      *
-     * @param string $color The color of the border.
+     * @param mixed $color The color of the border.
      *
      * @return $this
      */
-    public function color($color)
+    public function color(mixed $color): static
     {
         $this->value->color($color);
 
@@ -81,11 +81,10 @@ class BorderQualifier extends BaseQualifier
     /**
      * Creates a new instance using provided qualifiers array.
      *
-     * @param string|array $border The qualifiers of border.
+     * @param array|string $border The qualifiers of border.
      *
-     * @return BorderQualifier
      */
-    public static function fromParams($border)
+    public static function fromParams(array|string $border): BorderQualifier
     {
         if (is_array($border)) {
             $borderWidth = ArrayUtils::get($border, 'width', 2);

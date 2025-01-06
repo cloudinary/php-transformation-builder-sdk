@@ -20,12 +20,11 @@ class AudioSourceQualifier extends BaseSourceQualifier
     /**
      * @var string $sourceType The type of the layer.
      */
-    protected $sourceType = 'audio';
+    protected string $sourceType = 'audio';
 
     /**
      * AudioSourceQualifier constructor.
      *
-     * @param $source
      */
     public function __construct($source)
     {
@@ -37,11 +36,11 @@ class AudioSourceQualifier extends BaseSourceQualifier
     /**
      * Sets the audio source.
      *
-     * @param SourceValue|string $source The audio source.
+     * @param string|SourceValue|null $source The audio source.
      *
      * @return $this
      */
-    public function audio($source)
+    public function audio(SourceValue|string|null $source): static
     {
         $this->value->setValue(ClassUtils::verifyInstance($source, SourceValue::class));
 

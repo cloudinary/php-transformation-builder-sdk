@@ -18,29 +18,28 @@ class FontHinting
     /**
      * Do not hint outlines.
      */
-    const NONE = 'none';
+    public const NONE = 'none';
 
     /**
      * Hint outlines slightly to improve contrast while retaining good fidelity to the original shapes.
      */
-    const SLIGHT = 'slight';
+    public const SLIGHT = 'slight';
 
     /**
      * Hint outlines with medium strength, providing a compromise between fidelity to the original shapes and contrast.
      */
-    const MEDIUM = 'medium';
+    public const MEDIUM = 'medium';
 
     /**
      * Hint outlines to the maximize contrast.
      */
-    const FULL = 'full';
+    public const FULL = 'full';
 
     /**
      * Do not hint outlines.
      *
-     * @return string
      */
-    public static function none()
+    public static function none(): string
     {
         return self::NONE;
     }
@@ -48,9 +47,8 @@ class FontHinting
     /**
      * Hint outlines slightly to improve contrast while retaining good fidelity to the original shapes.
      *
-     * @return string
      */
-    public static function slight()
+    public static function slight(): string
     {
         return self::SLIGHT;
     }
@@ -58,9 +56,8 @@ class FontHinting
     /**
      * Hint outlines with medium strength, providing a compromise between fidelity to the original shapes and contrast.
      *
-     * @return string
      */
-    public static function medium()
+    public static function medium(): string
     {
         return self::MEDIUM;
     }
@@ -68,9 +65,8 @@ class FontHinting
     /**
      * Hint outlines to the maximize contrast.
      *
-     * @return string
      */
-    public static function full()
+    public static function full(): string
     {
         return self::FULL;
     }

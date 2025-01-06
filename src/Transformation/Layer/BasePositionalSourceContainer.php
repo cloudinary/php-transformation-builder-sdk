@@ -23,17 +23,17 @@ abstract class BasePositionalSourceContainer extends BaseSourceContainer
 {
 
     /**
-     * @var Position $position Layer position.
+     * @var ?BasePosition $position Layer position.
      */
-    protected $position;
+    protected ?BasePosition $position;
 
     /**
      * BaseLayerContainer constructor.
      *
-     * @param BaseSource|string $source   The source.
-     * @param Position          $position Layer position.
+     * @param BaseSource|string|null $source   The source.
+     * @param BasePosition|null      $position Layer position.
      */
-    public function __construct($source = null, $position = null)
+    public function __construct(BaseSource|string|null $source = null, ?BasePosition $position = null)
     {
         parent::__construct();
 
@@ -44,11 +44,10 @@ abstract class BasePositionalSourceContainer extends BaseSourceContainer
     /**
      * Sets the source position.
      *
-     * @param Position $position The Position of the layer.
+     * @param Position|null $position The Position of the layer.
      *
-     * @return static
      */
-    abstract public function position($position = null);
+    abstract public function position(?BasePosition $position = null): static;
 
     /**
      * Collects source based action grouped by sub-actions.
@@ -69,7 +68,7 @@ abstract class BasePositionalSourceContainer extends BaseSourceContainer
      *
      * @internal
      */
-    protected function getSubActionQualifiers()
+    protected function getSubActionQualifiers(): array
     {
         $subActionQualifiers = parent::getSubActionQualifiers();
 
@@ -84,9 +83,8 @@ abstract class BasePositionalSourceContainer extends BaseSourceContainer
     /**
      * Serializes to json.
      *
-     * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $result = parent::jsonSerialize();
 

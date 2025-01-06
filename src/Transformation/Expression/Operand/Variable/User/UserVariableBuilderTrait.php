@@ -22,9 +22,8 @@ trait UserVariableBuilderTrait
      *
      * @param string $variableName The user variable name.
      *
-     * @return Expression
      */
-    public function uVar($variableName)
+    public function uVar(string $variableName): Expression
     {
         return $this->setRightOperand(UVar::uVar($variableName));
     }

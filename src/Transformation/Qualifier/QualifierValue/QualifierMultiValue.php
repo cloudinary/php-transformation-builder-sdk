@@ -26,42 +26,42 @@ class QualifierMultiValue extends BaseComponent
     /**
      * @var string VALUE_DELIMITER Serialisation delimiter in case value is an array.
      */
-    const VALUE_DELIMITER = ':';
+    protected const VALUE_DELIMITER = ':';
 
     /**
      * @var string KEY_VALUE_DELIMITER Serialisation delimiter between the key and the value.
      */
-    const KEY_VALUE_DELIMITER = '_';
+    protected const KEY_VALUE_DELIMITER = '_';
 
     /**
      * @var int MIN_ARGUMENTS Minimum number of arguments required for the qualifier. 0 == all optional.
      */
-    const MIN_ARGUMENTS = 0;
+    public const MIN_ARGUMENTS = 0;
 
     /**
      * @var int MAX_ARGUMENTS Maximum number of arguments allowed for the qualifier. 0 == unlimited.
      */
-    const MAX_ARGUMENTS = 0;
+    public const MAX_ARGUMENTS = 0;
 
     /**
      * @var array Array of validators to run during construction.
      */
-    protected $validators = [];
+    protected array $validators = [];
 
     /**
      * @var array $argumentOrder Used for serialisation order .Can be defined in the derived class.
      */
-    protected $argumentOrder = [];
+    protected array $argumentOrder = [];
 
     /**
      * @var array $arguments The arguments (unnamed).
      */
-    protected $arguments = [];
+    protected array $arguments = [];
 
     /**
      * @var array $arguments The named arguments.
      */
-    protected $namedArguments = [];
+    protected array $namedArguments = [];
 
     /**
      * QualifierMultiValue constructor.
@@ -80,11 +80,10 @@ class QualifierMultiValue extends BaseComponent
      *
      * @param mixed $arguments The arguments to set.
      *
-     * @return static
      *
      * @internal
      */
-    public function setArguments(...$arguments)
+    public function setArguments(...$arguments): static
     {
         $arguments = ArrayUtils::flatten($arguments, true);
 
@@ -121,11 +120,10 @@ class QualifierMultiValue extends BaseComponent
      *
      * @param mixed $values The values to add.
      *
-     * @return static
      *
      * @internal
      */
-    public function addValues(...$values)
+    public function addValues(...$values): static
     {
         $this->arguments = array_merge($this->arguments, $values);
 
@@ -141,22 +139,22 @@ class QualifierMultiValue extends BaseComponent
      *
      * @internal
      */
-    public function setValue(?BaseComponent $value = null)
+    public function setValue(?BaseComponent $value = null): static
     {
-        return $this->setSimpleValue($value ? $value->getName() : null, $value);
+        return $this->setSimpleValue($value?->getName(), $value);
     }
 
     /**
      * Sets a simple unnamed value specified by name(for uniqueness) and the actual value.
      *
-     * @param string              $name  The name of the argument.
-     * @param BaseComponent|mixed $value The value of the argument.
+     * @param string|null $name  The name of the argument.
+     * @param mixed|null  $value The value of the argument.
      *
      * @return $this
      *
      * @internal
      */
-    public function setSimpleValue($name, $value = null)
+    public function setSimpleValue(?string $name, mixed $value = null): static
     {
         ArrayUtils::addNonEmpty($this->arguments, $name, $value);
 
@@ -168,11 +166,10 @@ class QualifierMultiValue extends BaseComponent
      *
      * @param string $name The name of the argument.
      *
-     * @return mixed
      *
      * @internal
      */
-    public function getSimpleValue($name)
+    public function getSimpleValue(string $name): mixed
     {
         return ArrayUtils::get($this->arguments, $name);
     }
@@ -180,13 +177,13 @@ class QualifierMultiValue extends BaseComponent
     /**
      * Sets a named value.
      *
-     * @param BaseComponent|mixed $value The value to set.
+     * @param BaseComponent|null $value The value to set.
      *
      * @return $this
      *
      * @internal
      */
-    public function setNamedValue(?BaseComponent $value = null)
+    public function setNamedValue(?BaseComponent $value = null): static
     {
         return $this->setSimpleNamedValue($value ? $value->getName() : null, $value);
     }
@@ -200,7 +197,7 @@ class QualifierMultiValue extends BaseComponent
      *
      * @internal
      */
-    public function setNamedValues(BaseComponent ...$values)
+    public function setNamedValues(BaseComponent ...$values): static
     {
         foreach ($values as $index => $value) {
             if ($index === 0) {
@@ -216,14 +213,14 @@ class QualifierMultiValue extends BaseComponent
     /**
      * Sets a simple named value specified by name (for uniqueness) and the actual value.
      *
-     * @param string              $name  The name of the argument.
-     * @param BaseComponent|mixed $value The value of the argument.
+     * @param string     $name  The name of the argument.
+     * @param mixed|null $value The value of the argument.
      *
      * @return $this
      *
      * @internal
      */
-    public function setSimpleNamedValue($name, $value = null)
+    public function setSimpleNamedValue(string $name, mixed $value = null): static
     {
         ArrayUtils::addNonEmpty($this->namedArguments, $name, $value);
 
@@ -239,7 +236,7 @@ class QualifierMultiValue extends BaseComponent
      *
      * @internal
      */
-    public function setArgumentOrder($argumentOrder)
+    public function setArgumentOrder(array $argumentOrder): static
     {
         if (! empty($argumentOrder)) {
             $this->argumentOrder = $argumentOrder;
@@ -277,9 +274,8 @@ class QualifierMultiValue extends BaseComponent
     /**
      * Serializes to json.
      *
-     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return ArrayUtils::flatten(
             ArrayUtils::safeFilter(ArrayUtils::mergeNonEmpty($this->arguments, $this->namedArguments))

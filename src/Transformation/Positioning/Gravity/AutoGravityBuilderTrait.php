@@ -24,9 +24,8 @@ trait AutoGravityBuilderTrait
      *
      * @param mixed ...$fallback Fallback gravities.
      *
-     * @return AutoGravity
      */
-    public static function auto(...$fallback)
+    public static function auto(...$fallback): AutoGravity
     {
         return self::createWithAutoGravity(AutoGravity::AUTO, ...$fallback);
     }
@@ -34,13 +33,11 @@ trait AutoGravityBuilderTrait
     /**
      * Alias for Gravity::auto()
      *
-     * @param mixed ...$fallback
      *
-     * @return AutoGravity
      *
      * @see AutoGravity::auto
      */
-    public static function autoGravity(...$fallback)
+    public static function autoGravity(...$fallback): AutoGravity
     {
         return self::auto(...$fallback);
     }
@@ -51,9 +48,8 @@ trait AutoGravityBuilderTrait
      * @param string $gravity  The main gravity.
      * @param array  $fallback Fallback gravities.
      *
-     * @return AutoGravity
      */
-    protected static function createWithAutoGravity($gravity, ...$fallback)
+    protected static function createWithAutoGravity(string $gravity, ...$fallback): AutoGravity
     {
         return new AutoGravity($gravity, ...$fallback);
     }

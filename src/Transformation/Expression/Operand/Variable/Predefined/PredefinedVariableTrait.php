@@ -20,9 +20,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable width.
      *
-     * @return static
      */
-    public static function width()
+    public static function width(): static
     {
         return static::pVar(static::WIDTH);
     }
@@ -30,9 +29,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable initialWidth.
      *
-     * @return static
      */
-    public static function initialWidth()
+    public static function initialWidth(): static
     {
         return static::pVar(static::INITIAL_WIDTH);
     }
@@ -40,9 +38,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable height.
      *
-     * @return static
      */
-    public static function height()
+    public static function height(): static
     {
         return static::pVar(static::HEIGHT);
     }
@@ -50,9 +47,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable initialHeight.
      *
-     * @return static
      */
-    public static function initialHeight()
+    public static function initialHeight(): static
     {
         return static::pVar(static::INITIAL_HEIGHT);
     }
@@ -60,9 +56,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable aspectRatio.
      *
-     * @return static
      */
-    public static function aspectRatio()
+    public static function aspectRatio(): static
     {
         return static::pVar(static::ASPECT_RATIO);
     }
@@ -70,9 +65,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable initialAspectRatio.
      *
-     * @return static
      */
-    public static function initialAspectRatio()
+    public static function initialAspectRatio(): static
     {
         return static::pVar(static::INITIAL_ASPECT_RATIO);
     }
@@ -80,9 +74,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable trimmedAspectRatio.
      *
-     * @return static
      */
-    public static function trimmedAspectRatio()
+    public static function trimmedAspectRatio(): static
     {
         return static::pVar(static::TRIMMED_ASPECT_RATIO);
     }
@@ -90,9 +83,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable pageCount.
      *
-     * @return static
      */
-    public static function pageCount()
+    public static function pageCount(): static
     {
         return static::pVar(static::PAGE_COUNT);
     }
@@ -100,9 +92,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable duration.
      *
-     * @return static
      */
-    public static function duration()
+    public static function duration(): static
     {
         return static::pVar(static::DURATION);
     }
@@ -110,9 +101,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable initialDuration.
      *
-     * @return static
      */
-    public static function initialDuration()
+    public static function initialDuration(): static
     {
         return static::pVar(static::INITIAL_DURATION);
     }
@@ -120,9 +110,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable faceCount.
      *
-     * @return static
      */
-    public static function faceCount()
+    public static function faceCount(): static
     {
         return static::pVar(static::FACE_COUNT);
     }
@@ -130,9 +119,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable illustrationScore.
      *
-     * @return static
      */
-    public static function illustrationScore()
+    public static function illustrationScore(): static
     {
         return static::pVar(static::ILLUSTRATION_SCORE);
     }
@@ -140,9 +128,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable currentPage.
      *
-     * @return static
      */
-    public static function currentPage()
+    public static function currentPage(): static
     {
         return static::pVar(static::CURRENT_PAGE);
     }
@@ -150,9 +137,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable pageX.
      *
-     * @return static
      */
-    public static function pageX()
+    public static function pageX(): static
     {
         return static::pVar(static::PAGE_X);
     }
@@ -160,9 +146,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable pageY.
      *
-     * @return static
      */
-    public static function pageY()
+    public static function pageY(): static
     {
         return static::pVar(static::PAGE_Y);
     }
@@ -170,9 +155,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable tags.
      *
-     * @return static
      */
-    public static function tags()
+    public static function tags(): static
     {
         return static::pVar(static::TAGS);
     }
@@ -180,9 +164,8 @@ trait PredefinedVariableTrait
     /**
      * Predefined variable context.
      *
-     * @return static
      */
-    public static function context()
+    public static function context(): static
     {
         return static::pVar(static::CONTEXT);
     }
