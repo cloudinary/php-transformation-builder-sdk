@@ -34,9 +34,9 @@ trait TransformationResizeTrait
      * Change the size of the image exactly to the given width and height without necessarily retaining the original
      * aspect ratio: all original image parts are visible but might be stretched or shrunk.
      *
-     * @param int|float|string|null $width       The required width of a transformed asset.
-     * @param int|float|null        $height      The required height of a transformed asset.
-     * @param int|float|array       $aspectRatio Resizes the asset to a new aspect ratio.
+     * @param mixed $width       The required width of a transformed asset.
+     * @param mixed $height      The required height of a transformed asset.
+     * @param mixed $aspectRatio Resizes the asset to a new aspect ratio.
      *
      */
     public function scale($width = null, $height = null, $aspectRatio = null): static
@@ -47,11 +47,11 @@ trait TransformationResizeTrait
     /**
      * Extracts a region of the given width and height out of the original image.
      *
-     * @param int|float|string|null $width   The required width of a transformed asset.
-     * @param int|float|null        $height  The required height of a transformed asset.
-     * @param Gravity               $gravity Which part of the original image to include.
-     * @param int|float|X           $x       Horizontal position for custom-coordinates based cropping
-     * @param int|float|Y           $y       Vertical position for custom-coordinates based cropping
+     * @param mixed                   $width   The required width of a transformed asset.
+     * @param mixed                   $height  The required height of a transformed asset.
+     * @param GravityQualifier|string $gravity Which part of the original image to include.
+     * @param int|float|string|X      $x       Horizontal position for custom-coordinates based cropping
+     * @param int|float|string|Y      $y       Vertical position for custom-coordinates based cropping
      *
      */
     public function crop($width = null, $height = null, $gravity = null, $x = null, $y = null): static
@@ -66,10 +66,10 @@ trait TransformationResizeTrait
      * requested aspect ratio is different than the original, cropping will occur on the dimension that exceeds the
      * requested size after scaling.
      *
-     * @param int|float|string|null $width   The required width of a transformed asset.
-     * @param int|float|null        $height  The required height of a transformed asset.
-     * @param Gravity               $gravity Which part of the original image to include when the resulting image is
-     *                                       smaller than the original or the proportions do not match.
+     * @param mixed                   $width   The required width of a transformed asset.
+     * @param mixed                   $height  The required height of a transformed asset.
+     * @param GravityQualifier|string $gravity Which part of the original image to include when the resulting image is
+     *                                         smaller than the original or the proportions do not match.
      *
      */
     public function fill($width = null, $height = null, $gravity = null): static
@@ -80,9 +80,9 @@ trait TransformationResizeTrait
     /**
      * Custom resize builder.
      *
-     * @param string                $name   Provide future (not supported in the current version) resize name
-     * @param int|float|string|null $width  The required width of a transformed asset.
-     * @param int|float|null        $height The required height of a transformed asset.
+     * @param string $name   Provide future (not supported in the current version) resize name
+     * @param mixed  $width  The required width of a transformed asset.
+     * @param mixed  $height The required height of a transformed asset.
      *
      */
     public function genericResize($name, $width = null, $height = null): static
