@@ -14,7 +14,7 @@ return new Sami(
         'theme'                => 'cloudinary',
         'template_dirs'        => [$docsDir . 'themes'],
         'title'                => 'Cloudinary PHP Transformation Builder',
-        'version'              => '2.1.0',
+        'version'              => '2.1.1',
         'build_dir'            => $docsDir . 'build',
         'cache_dir'            => $docsDir . 'cache',
         'default_opened_level' => 2,
