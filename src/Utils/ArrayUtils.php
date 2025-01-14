@@ -22,12 +22,12 @@ class ArrayUtils
     /**
      * Applies the callback to the elements of the given associative array
      *
-     * @param callable $callback The callback function
-     * @param array    $array    An array to run through the callback function.
+     * @param callable                              $callback The callback function
+     * @param ArrayObject<int|string, mixed>|array $array    An array to run through the callback function.
      *
      * @return array Resulting array
      */
-    public static function mapAssoc(callable $callback, array $array): array
+    public static function mapAssoc(callable $callback, ArrayObject|array $array): array
     {
         $r = [];
         foreach ($array as $key => $value) {
@@ -128,29 +128,32 @@ class ArrayUtils
      * @see          implode
      */
     public static function implodeFiltered(
-        string $glue,
-        array $pieces,
-        string $filterCallback = __NAMESPACE__ . '\ArrayUtils::safeFilterFunc',
+        array|string $glue,
+        array|null $pieces,
+        callable|null $filterCallback = null,
         int $flag = 0
     ): string {
+        $filterCallback ??= fn($value) => ArrayUtils::safeFilterFunc($value);
+
         return self::safeImplode($glue, self::safeFilter($pieces, $filterCallback, $flag));
     }
 
     /**
      * Safe version of implode.
      *
-     * In addition fixes serialisation of float values.
-     *
+     * In addition, fixes serialisation of float values.
      *
      */
-    public static function safeImplode($glue, array $pieces): string
+    public static function safeImplode(array|string $glue, array|null $pieces): string
     {
-        array_walk(
-            $pieces,
-            static function (&$value) {
-                $value = TransformationUtils::floatToString($value);
-            }
-        );
+        if (! is_null($pieces)) {
+            array_walk(
+                $pieces,
+                static function (&$value) {
+                    $value = TransformationUtils::floatToString($value);
+                }
+            );
+        }
 
         return implode($glue, $pieces);
     }
@@ -158,10 +161,13 @@ class ArrayUtils
     /**
      * Implodes array values with escaping the glue character.
      *
-     *
      */
-    public static function escapedImplode(string $glue, array $pieces): string
+    public static function escapedImplode(string|array $glue, array|null $pieces): string
     {
+        if (is_null($pieces)) {
+            return '';
+        }
+
         return implode(
             $glue,
             array_map(
@@ -206,18 +212,17 @@ class ArrayUtils
      *
      * Uses "strlen" filter function by default, which treats non-null values (e.g. 0, false, etc) as non-empty.
      *
-     * @param callback|string $callback
-     *
-     *
      * @see array_filter
      * @see strlen
      */
     public static function safeFilter(
-        array $input,
-        callable|string $callback = __NAMESPACE__ . '\ArrayUtils::safeFilterFunc',
+        ?array $input,
+        callable|null $callback = null,
         int $flag = 0
-    ): array {
-        return array_filter($input, $callback, $flag);
+    ): ?array {
+        $callback ??= fn($value) => ArrayUtils::safeFilterFunc($value);
+
+        return is_null($input) ? $input : array_filter($input, $callback, $flag);
     }
 
     /**
@@ -226,7 +231,7 @@ class ArrayUtils
      * In case some of the missing/extra keys, the keys are sorted using alphabetic order. Ordered keys come first.
      *
      * @param ?array $array      The associate array to order.
-     * @param array $orderArray The desired order of the keys.
+     * @param array  $orderArray The desired order of the keys.
      *
      */
     public static function sortByArray(?array $array, array $orderArray = []): ?array
@@ -256,15 +261,16 @@ class ArrayUtils
     /**
      * Commonly used util for building transformation URL
      *
-     * @param array $qualifiers
-     *
      * @return string The resulting string
      *
      * @internal
      */
-    public static function implodeActionQualifiers(...$qualifiers): string
+    public static function implodeActionQualifiers(mixed ...$qualifiers): string
     {
-        $serializedQualifiers = array_map('strval', $qualifiers);
+        $serializedQualifiers = [];
+        foreach ($qualifiers as $item) {
+            $serializedQualifiers[] = (string)$item;
+        }
 
         sort($serializedQualifiers);
 
@@ -288,13 +294,13 @@ class ArrayUtils
     /**
      * Gets a key from an array if exists, otherwise returns default.
      *
-     * @param ArrayObject|array $array   The data array.
-     * @param int|array|string  $key     The key. Can be a simple key(string|int), an index array that allows accessing
+     * @param mixed            $array    The data array.
+     * @param int|array|string $key      The key. Can be a simple key(string|int), an index array that allows accessing
      *                                   nested values
-     * @param mixed|null        $default The default value for the case when the key is not found.
+     * @param mixed|null       $default  The default value for the case when the key is not found.
      *
      */
-    public static function get(ArrayObject|array $array, int|array|string $key, mixed $default = null): mixed
+    public static function get(mixed $array, int|array|string $key, mixed $default = null): mixed
     {
         if (is_array($key)) {
             $currLevel = &$array;
@@ -323,13 +329,12 @@ class ArrayUtils
     /**
      * Pops a key from an array if exists, otherwise returns default
      *
-     * @param array            $array   Data array
-     * @param int|array|string $key     key can be a simple key(string|int) or an array that allows accessing nested
-     *                                  values
-     * @param mixed|null       $default Default value for the case when key is not found
+     * @param array      $array   Data array
+     * @param int|string $key     A simple key(string|int)
+     * @param mixed|null $default Default value for the case when key is not found
      *
      */
-    public static function pop(array &$array, int|array|string $key, mixed $default = null): mixed
+    public static function pop(array &$array, int|string $key, mixed $default = null): mixed
     {
         $val = self::get($array, $key, $default);
         unset($array[$key]);
@@ -341,7 +346,7 @@ class ArrayUtils
      * Returns a subset of associative array whitelisted by an array of keys
      *
      * @param ?array $array Source array (associative or not)
-     * @param array $keys  Simple array of keys to keep
+     * @param array  $keys  Simple array of keys to keep
      *
      * @return ?array Resulting array
      */
@@ -363,7 +368,7 @@ class ArrayUtils
      * Returns a subset of associative array with excluded keys specified by an array of keys
      *
      * @param ?array $array           Source array (associative or not)
-     * @param array $blacklistedKeys Simple array of keys to be excluded
+     * @param array  $blacklistedKeys Simple array of keys to be excluded
      *
      * @return ?array Resulting array
      */
@@ -500,10 +505,11 @@ class ArrayUtils
     /**
      * Adds key-value pair to the associative array where value is taken from source array using the same key.
      *
-     * @param array &    $resultingArr The target array.
-     * @param mixed      $key          The key to add
-     * @param array      $sourceArray  The source array
-     * @param mixed|null $defaultValue Fallback value, in case the key does not exist or is empty
+     * @param array &                              $resultingArr The target array.
+     * @param mixed                                $key          The key to add
+     * @param array|ArrayObject<int|string, mixed> $sourceArray  The source array
+     * @param mixed|null                           $defaultValue Fallback value, in case the key does not exist or is
+     *                                                           empty
      *
      * @return array The resulting array
      *
@@ -512,7 +518,7 @@ class ArrayUtils
     public static function addNonEmptyFromOther(
         array &$resultingArr,
         mixed $key,
-        array $sourceArray,
+        array|ArrayObject $sourceArray,
         mixed $defaultValue = null
     ): array {
         return self::addNonEmpty($resultingArr, $key, self::get($sourceArray, $key, $defaultValue));
@@ -533,7 +539,12 @@ class ArrayUtils
         $result = [];
 
         foreach ($arrays as $array) {
-            $result = array_merge($result, self::safeFilter($array));
+            if (! empty($array)) {
+                $filtered = self::safeFilter($array);
+                if ($filtered) {
+                    $result = array_merge($result, $filtered);
+                }
+            }
         }
 
         return $result;
@@ -621,11 +632,11 @@ class ArrayUtils
     /**
      * Helper function for making a recursive array copy while cloning objects on the way.
      *
-     * @param array $array Source array
+     * @param mixed $array Source array
      *
-     * @return array Recursive copy of the source array
+     * @return mixed Recursive copy of the source array
      */
-    public static function deepCopy(array $array): array
+    public static function deepCopy(mixed $array): mixed
     {
         if (! is_array($array)) {
             return $array;
@@ -647,10 +658,8 @@ class ArrayUtils
 
     /**
      * Indicates whether all parameters are non-empty
-     *
-     *
      */
-    public static function all(...$params): bool
+    public static function all(array ...$params): bool
     {
         foreach ($params as $param) {
             if (empty($param)) {

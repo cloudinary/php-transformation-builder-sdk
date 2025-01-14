@@ -75,7 +75,7 @@ class QualifiersAction extends BaseAction
         'video_codec'         => null,
     ];
 
-    protected const QUALIFIERS = self::COMPLEX_QUALIFIERS + self::SIMPLE_QUALIFIERS;
+    public const QUALIFIERS = self::COMPLEX_QUALIFIERS + self::SIMPLE_QUALIFIERS;
 
     /**
      * Add qualifiers to the action.

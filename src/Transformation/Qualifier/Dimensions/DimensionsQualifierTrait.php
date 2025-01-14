@@ -10,6 +10,7 @@
 
 namespace Cloudinary\Transformation;
 
+use Cloudinary\ClassUtils;
 use Cloudinary\Transformation\Qualifier\Dimensions\Dpr;
 use Cloudinary\Transformation\Qualifier\Dimensions\Height;
 use Cloudinary\Transformation\Qualifier\Dimensions\Width;
@@ -70,8 +71,8 @@ trait DimensionsQualifierTrait
      *
      * @see Dpr
      */
-    public static function dpr(float $dpr): Dpr
+    public static function dpr(int|float|string|Dpr $dpr): Dpr
     {
-        return new Dpr($dpr);
+        return ClassUtils::verifyInstance($dpr, Dpr::class);
     }
 }

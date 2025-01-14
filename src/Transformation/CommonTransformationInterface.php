@@ -22,22 +22,22 @@ interface CommonTransformationInterface extends ComponentInterface
      *
      * (Formerly known as fetch format).
      *
-     * @param string|Format $format The format in which to deliver the asset.
+     * @param Format|string|null $format The format in which to deliver the asset.
      *
      *
      * @see Format
      */
-    public function format(Format|string $format): static;
+    public function format(Format|string|null $format): static;
 
     /**
      * Controls compression quality.
      *
      * Reducing the quality is a trade-off between visual quality and file size.
      *
-     * @param Quality|int|float|string $quality The quality value. (Range 1 to 100)
+     * @param Quality|int|float|string|null  $quality The quality value. (Range 1 to 100)
      *
      */
-    public function quality(Quality|int|float|string $quality): static;
+    public function quality(Quality|int|float|string|null $quality): static;
 
     /**
      * Applies a filter or an effect on an asset.

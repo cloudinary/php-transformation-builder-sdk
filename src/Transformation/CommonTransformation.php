@@ -94,10 +94,10 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
      *
      * Appended transformation is nested.
      *
-     * @param CommonTransformation|string|null $transformation The transformation to add.
+     * @param mixed $transformation The transformation to add.
      *
      */
-    public function addTransformation(CommonTransformation|string|null $transformation): static
+    public function addTransformation(mixed $transformation): static
     {
         $this->actions[] = ClassUtils::forceInstance($transformation, CommonTransformation::class);
 
