@@ -40,7 +40,7 @@ trait TransformationDeliveryTrait
      *
      *
      */
-    public function format(Format|string $format): static
+    public function format(Format|string|null $format): static
     {
         return $this->addAction(ClassUtils::verifyInstance($format, Format::class));
     }
@@ -53,7 +53,7 @@ trait TransformationDeliveryTrait
      *
      *
      */
-    public function quality(Quality|int|float|string $quality): static
+    public function quality(Quality|int|float|string|null $quality): static
     {
         return $this->addAction(ClassUtils::verifyInstance($quality, Quality::class));
     }

@@ -51,8 +51,8 @@ class ClassUtils
     /**
      * Gets class constants.
      *
-     * @param object|string $instance   The instance object.
-     * @param array         $exclusions The list of constants to exclude.
+     * @param object|class-string $instance   The instance object.
+     * @param array               $exclusions The list of constants to exclude.
      *
      * @return array of class constants
      */

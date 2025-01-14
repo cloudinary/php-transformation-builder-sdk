@@ -23,10 +23,10 @@ class JsonUtils
     /**
      * Determines whether the input is a valid JSON string.
      *
-     * @param string $string The input string.
+     * @param mixed $string The input string.
      *
      */
-    public static function isJsonString(string $string): bool
+    public static function isJsonString(mixed $string): bool
     {
         return is_string($string)
                && is_array(json_decode($string, true)) //TODO: improve performance
@@ -52,7 +52,7 @@ class JsonUtils
             return $json;
         }
 
-        $result = json_decode($json, $assoc, $depth, $options);
+        $result = json_decode($json, $assoc, max(1, $depth), $options);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new InvalidArgumentException('JsonException : ' . json_last_error_msg());
@@ -76,7 +76,7 @@ class JsonUtils
      */
     public static function encode(mixed $value, int $options = 0, int $depth = 512): bool|string
     {
-        $result = json_encode($value, $options, $depth);
+        $result = json_encode($value, $options, max(1, $depth));
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new InvalidArgumentException('JsonException : ' . json_last_error_msg());

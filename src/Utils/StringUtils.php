@@ -28,7 +28,13 @@ class StringUtils
      */
     public static function camelCaseToSnakeCase(string $input, string $separator = '_'): string
     {
-        return strtolower(preg_replace('/(?<!^)[A-Z]/', $separator . '$0', $input));
+        $val = preg_replace('/(?<!^)[A-Z]/', $separator . '$0', $input);
+
+        if (is_null($val)) {
+            return $input;
+        }
+
+        return strtolower($val);
     }
 
     /**
@@ -48,17 +54,19 @@ class StringUtils
      *
      * Example: my_input_string -> mis; color_space -> cs;
      *
-     * @param string $input      The input string.
-     * @param array  $exclusions The list of words to omit from acronym. Useful for internal names.
-     * @param string $delimiter  The delimiter between words.
+     * @param string           $input      The input string.
+     * @param array            $exclusions The list of words to omit from acronym. Useful for internal names.
+     * @param non-empty-string $delimiter  The delimiter between words.
      *
      */
     public static function toAcronym(string $input, array $exclusions = [], string $delimiter = '_'): string
     {
         $acronym = '';
-
-        foreach (ArrayUtils::safeFilter(ArrayUtils::blacklist(explode($delimiter, $input), $exclusions)) as $word) {
-            $acronym .= $word[0];
+        $parts = ArrayUtils::safeFilter(ArrayUtils::blacklist(explode($delimiter, $input), $exclusions));
+        if (! empty($parts)) {
+            foreach ($parts as $word) {
+                $acronym .= $word[0];
+            }
         }
 
         return $acronym;
@@ -112,7 +120,7 @@ class StringUtils
      * Determines whether $haystack contains $needle.
      *
      * @param ?string $haystack The string to search in.
-     * @param string $needle   The string to search for.
+     * @param string  $needle   The string to search for.
      *
      */
     public static function contains(?string $haystack, string $needle): bool
@@ -128,13 +136,13 @@ class StringUtils
      * Truncates prefix from the string.
      *
      * @param ?string $string The input string.
-     * @param string $prefix Prefix to truncate.
+     * @param string  $prefix Prefix to truncate.
      *
      * @return ?string The resulting string.
      */
     public static function truncatePrefix(?string $string, string $prefix): ?string
     {
-        if (self::startsWith($string, $prefix)) {
+        if (is_string($string) && self::startsWith($string, $prefix)) {
             return substr($string, strlen($prefix));
         }
 
@@ -152,16 +160,19 @@ class StringUtils
      * @param int    $maxLength Maximum string length.
      *
      */
-    public static function truncateMiddle(string $string, int $maxLength = self::MAX_STRING_LENGTH, string $glue = '...'): string
-    {
+    public static function truncateMiddle(
+        string $string,
+        int $maxLength = self::MAX_STRING_LENGTH,
+        string $glue = '...'
+    ): string {
         // Early exit if no truncation necessary
         if (strlen($string) <= $maxLength) {
             return $string;
         }
 
-        $numRightChars = ceil($maxLength / 2);
+        $numRightChars = (int)ceil($maxLength / 2);
 
-        $numLeftChars = floor($maxLength / 2);
+        $numLeftChars = (int)floor($maxLength / 2);
         $glue         = substr($glue, 0, $numLeftChars); // Pathological case, when glue is longer than a half
         $numLeftChars -= strlen($glue);
 
@@ -216,9 +227,8 @@ class StringUtils
      * @param string       $string      The input string.
      * @param array|string $unsafeChars The list of the characters to escape.
      *
-     * @return string|string[]|null
      */
-    public static function escapeUnsafeChars(string $string, array|string $unsafeChars): array|string|null
+    public static function escapeUnsafeChars(string $string, array|string $unsafeChars): string|null
     {
         if (empty($unsafeChars)) {
             return $string;
@@ -250,13 +260,13 @@ class StringUtils
     /**
      * Wrapper around parse_str, returns query parameters.
      *
-     * @param string $query The query string.
+     * @param ?string $query The query string.
      *
      * @return array Query parameters.
      *
      * @see parse_str
      */
-    public static function parseQueryString(string $query): array
+    public static function parseQueryString(?string $query): array
     {
         $params = [];
         if (! empty($query)) {

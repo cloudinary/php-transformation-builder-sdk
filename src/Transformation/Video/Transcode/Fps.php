@@ -21,7 +21,7 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  * href=https://cloudinary.com/documentation/video_transformation_reference#video_settings
  * target="_blank">Video settings</a>
  *
- * @property MinMaxRange value
+ * @property MinMaxRange $value
  *
  * @api
  */
