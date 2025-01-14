@@ -1,3 +1,13 @@
+2.1.0 / 2025-01-14
+==================
+
+New functionality and features
+------------------------------
+
+  * Add PHP type declarations
+    * ⚠ While unlikely, this change could potentially alter behavior in certain cases and may require minor adjustments 
+    to your code. Please report any unexpected issues encountered.
+
 2.0.0 / 2024-12-16
 ==================
 
