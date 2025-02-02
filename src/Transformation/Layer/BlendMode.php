@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines the mode of blending to use when overlaying an image.
  *
  * **Learn more**:
- * <a href="https://cloudinary.com/documentation/image_transformations#overlay_blending_effects" target="_blank">
+ * <a href="https://cloudinary.com/documentation/effects_and_artistic_enhancements#blending_and_masking_layers" target="_blank">
  * Overlay blending effects</a>
  *
  * @api
