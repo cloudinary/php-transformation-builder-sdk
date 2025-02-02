@@ -20,9 +20,9 @@ use Cloudinary\Transformation\Argument\RotationModeTrait;
  * its orientation or available metadata.
  *
  * **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#rotating_images
+ * <a href=https://cloudinary.com/documentation/effects_and_artistic_enhancements#rotating_images
  * target="_blank">Rotating images</a> |
- * <a href=https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos
+ * <a href=https://cloudinary.com/documentation/video_effects_and_enhancements#rotating_videos
  * target="_blank">Rotating videos</a>
  *
  *

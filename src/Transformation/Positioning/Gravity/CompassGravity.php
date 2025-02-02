@@ -14,9 +14,9 @@ namespace Cloudinary\Transformation;
  * Defines the gravity based on directional values from a compass.
  *
  * **Learn more**:
- * <a href="https://cloudinary.com/documentation/image_transformations#control_gravity" target="_blank">
+ * <a href="https://cloudinary.com/documentation/resizing_and_cropping#control_gravity" target="_blank">
  * Control gravity for images</a> |
- * <a href="https://cloudinary.com/documentation/image_transformations#control_gravity" target="_blank">
+ * <a href="https://cloudinary.com/documentation/video_resizing_and_cropping#control_gravity" target="_blank">
  * Control gravity for videos</a>
  *
  * @api

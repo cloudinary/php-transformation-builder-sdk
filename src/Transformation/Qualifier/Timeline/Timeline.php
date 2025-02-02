@@ -57,7 +57,7 @@ class Timeline extends BaseQualifier
      *
      * @return Timeline
      *
-     * https://cloudinary.com/documentation/video_manipulation_and_delivery#trimming_videos
+     * https://cloudinary.com/documentation/video_trimming_and_concatenating#trimming_videos
      */
     public static function position(mixed $startOffset = null, mixed $endOffset = null, mixed $duration = null): Timeline
     {

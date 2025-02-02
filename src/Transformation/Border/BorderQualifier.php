@@ -18,7 +18,7 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  * Adds a solid border around an image or video.
  *
  * **Learn more**:
- * <a href="https://cloudinary.com/documentation/image_transformations#adding_image_borders" target="_blank">
+ * <a href="https://cloudinary.com/documentation/effects_and_artistic_enhancements#borders" target="_blank">
  * Adding image borders</a>
  *
  * @property BorderValue $value

@@ -14,9 +14,9 @@ namespace Cloudinary\Transformation;
  * Defines the asset to use as the layered file in an overlay or underlay.
  *
  *  **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#image_and_text_overlays
+ * <a href=https://cloudinary.com/documentation/layers#layer_transformation_syntax
  * target="_blank">Applying layers to images</a> |
- * <a href=https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_image_overlays
+ * <a href=https://cloudinary.com/documentation/video_layers#image_overlays
  * target="_blank">Applying layers to videos</a>
  *
  * @api

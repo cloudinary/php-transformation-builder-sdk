@@ -16,7 +16,7 @@ namespace Cloudinary\Transformation;
  * **Learn more**:
  * <a href=https://cloudinary.com/documentation/image_optimization#how_to_optimize_image_quality
  * target="_blank">Image quality</a> |
- * <a href=https://cloudinary.com/documentation/video_manipulation_and_delivery#quality_control
+ * <a href=https://cloudinary.com/documentation/video_optimization#how_to_optimize_video_quality
  * target="_blank">Video quality</a>
  *
  * @api

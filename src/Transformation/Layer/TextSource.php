@@ -18,7 +18,7 @@ use Cloudinary\Transformation\Argument\Text\TextStyleTrait;
  * Defines how to manipulate a text layer.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/image_transformations#adding_text_captions" target="_blank">
+ * href="https://cloudinary.com/documentation/layers#text_layer_options" target="_blank">
  * Adding text captions</a>
  *
  * @api

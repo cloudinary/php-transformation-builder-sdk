@@ -29,7 +29,7 @@ trait MiscEffectTrait
      *
      *
      * @see ArtisticFilter
-     * @see https://cloudinary.com/documentation/image_transformations#available_filters
+     * @see https://cloudinary.com/documentation/effects_and_artistic_enhancements#artistic_filter_effects
      */
     public static function artisticFilter(string|ArtisticFilter $filter): mixed
     {
@@ -164,7 +164,7 @@ trait MiscEffectTrait
      *
      * @see Outline
      * @see OutlineMode
-     * @see https://cloudinary.com/documentation/image_transformations#outline_effects
+     * @see https://cloudinary.com/documentation/effects_and_artistic_enhancements#outline
      *
      */
     public static function outline(?string $mode = null, ?int $width = null, ?int $blurLevel = null): Outline

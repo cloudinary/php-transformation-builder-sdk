@@ -27,7 +27,7 @@ trait VideoSpecificTransformationTrait
      * @param Timeline $range Specify the range of the video to leave.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#trimming_videos
+     * @see https://cloudinary.com/documentation/video_trimming_and_concatenating#trimming_videos
      */
     public function trim(Timeline $range): static
     {
@@ -40,7 +40,7 @@ trait VideoSpecificTransformationTrait
      * @param int|string $radius The radius of the corners in pixels.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#rounding_corners_and_creating_circular_videos
+     * @see https://cloudinary.com/documentation/video_effects_and_enhancements#rounding
      */
     public function roundCorners(int|string $radius): static
     {
@@ -55,7 +55,7 @@ trait VideoSpecificTransformationTrait
      * @param Timeline|null                         $timeline   The timeline position of the overlay.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_video_overlays
+     * @see https://cloudinary.com/documentation/video_layers#video_overlays
      */
     public function overlay(
         BaseSource|BaseSourceContainer|string $videoLayer,
@@ -79,7 +79,7 @@ trait VideoSpecificTransformationTrait
      * @param string|Concatenate|BaseSource $videoLayer The source of the video/audio to concatenate.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos
+     * @see https://cloudinary.com/documentation/video_trimming_and_concatenating#concatenating_media
      */
     public function concatenate(Concatenate|BaseSource|string $videoLayer): static
     {
@@ -176,7 +176,7 @@ trait VideoSpecificTransformationTrait
      * @param string $streamingProfile The streaming profile.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#predefined_streaming_profiles
+     * @see https://cloudinary.com/documentation/adaptive_bitrate_streaming#predefined_streaming_profiles
      *
      */
     public function streamingProfile(string $streamingProfile): static

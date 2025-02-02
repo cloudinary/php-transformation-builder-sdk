@@ -30,7 +30,7 @@ trait ReshapeTrait
      * @see Distort
      *
      *
-     * @see https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects
+     * @see https://cloudinary.com/documentation/effects_and_artistic_enhancements#distort
      */
     public static function distort(...$args): Distort
     {
@@ -47,7 +47,7 @@ trait ReshapeTrait
      *
      *
      *
-     * @see https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects
+     * @see https://cloudinary.com/documentation/effects_and_artistic_enhancements#distort
      */
     public static function distortArc(mixed $degree): EffectAction
     {

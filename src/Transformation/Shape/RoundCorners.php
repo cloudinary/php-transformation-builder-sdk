@@ -16,10 +16,10 @@ use Cloudinary\ClassUtils;
  * Round one or more corners of an image or video.
  *
  * **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#rounding_corners_and_creating_circular_images
+ * <a href=https://cloudinary.com/documentation/effects_and_artistic_enhancements#rounding_corners_and_creating_circular_images
  * target="_blank">Rounded images</a> |
  * <a href=
- * https://cloudinary.com/documentation/video_manipulation_and_delivery#rounding_corners_and_creating_circular_videos
+ * https://cloudinary.com/documentation/video_effects_and_enhancements#rounding
  * target="_blank">Rounded videos</a>
  *
  * @api

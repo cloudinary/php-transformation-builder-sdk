@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines how to improve an image by automatically adjusting image colors, contrast and brightness.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/image_transformations#image_improvement_effects target="_blank">
+ * href=https://cloudinary.com/documentation/effects_and_artistic_enhancements#improve target="_blank">
  * Image improvement effects</a>
  *
  * @api

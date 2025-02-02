@@ -21,7 +21,7 @@ use Cloudinary\Transformation\Argument\ColorValue;
  * approaching white, black, or gray.
  *
  * **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#replace_color_effect
+ * <a href=https://cloudinary.com/documentation/generative_ai_transformations#generative_replace
  * target="_blank">Replace colors example</a>
  *
  * @api

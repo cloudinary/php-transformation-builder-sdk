@@ -16,9 +16,9 @@ use Cloudinary\ArrayUtils;
  * Defines effects that you can apply to transform your assets.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/image_transformations#applying_image_effects_and_filters target="_blank">
+ * href=https://cloudinary.com/documentation/effects_and_artistic_enhancements target="_blank">
  * Image effects</a> |
- * <a href=https://cloudinary.com/documentation/video_manipulation_and_delivery#video_effects target="_blank">
+ * <a href=https://cloudinary.com/documentation/video_effects_and_enhancements target="_blank">
  * Video effects</a>
  *
  * @api

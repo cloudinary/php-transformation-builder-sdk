@@ -53,7 +53,7 @@ trait QualityBuilderTrait
     /**
      * Controls the final quality by setting a maximum quantization percentage
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#control_the_quality_of_webm_transcoding
+     * @see https://cloudinary.com/documentation/video_optimization#control_the_quality_of_webm_transcoding
      *
      * @param int $quantization The quantization level. Is a % (1-100) setting.
      *

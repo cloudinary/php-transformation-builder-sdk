@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines how to manipulate an image layer.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/image_transformations#image_and_text_overlays target="_blank">
+ * href=https://cloudinary.com/documentation/layers target="_blank">
  * Image overlays</a>
  *
  * @api

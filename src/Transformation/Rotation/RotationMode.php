@@ -17,7 +17,7 @@ use Cloudinary\Transformation\RotationModeInterface;
  * Defines how to rotate an image.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/image_transformations#rotating_images" target="_blank">
+ * href="https://cloudinary.com/documentation/effects_and_artistic_enhancements#rotating_images" target="_blank">
  * Rotate an image</a>
  *
  * @api
