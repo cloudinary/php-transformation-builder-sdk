@@ -1,6 +1,6 @@
 {
   "name": "cloudinary/transformation-builder-sdk",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Cloudinary PHP Transformation Builder SDK",
   "keywords": [
     "cloudinary",
