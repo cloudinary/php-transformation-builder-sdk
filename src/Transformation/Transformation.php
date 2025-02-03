@@ -11,7 +11,7 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Defines how to manipulate and transform images.
+ * Defines how to modify and transform images.
  *
  * **Learn more**: <a
  * href="https://cloudinary.com/documentation/image_transformations" target="_blank">

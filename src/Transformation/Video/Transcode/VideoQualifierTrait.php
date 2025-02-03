@@ -85,7 +85,7 @@ trait VideoQualifierTrait
      *
      * @param string $streamingProfile The streaming profile.
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#predefined_streaming_profiles
+     * @see https://cloudinary.com/documentation/adaptive_bitrate_streaming#predefined_streaming_profiles
      */
     public static function streamingProfile(string $streamingProfile): StreamingProfile
     {

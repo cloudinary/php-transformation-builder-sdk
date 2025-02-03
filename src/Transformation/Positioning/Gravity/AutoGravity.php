@@ -14,9 +14,9 @@ namespace Cloudinary\Transformation;
  * Automatically identifies the most interesting regions to include when resizing.
  *
  * **Learn more**:
- * <a href="https://cloudinary.com/documentation/image_transformations#automatic_cropping_g_auto" target="_blank">
+ * <a href="https://cloudinary.com/documentation/resizing_and_cropping#automatic_cropping_g_auto" target="_blank">
  * Automatic gravity for images</a> |
- * <a href="https://cloudinary.com/documentation/video_manipulation_and_delivery#automatic_cropping" target="_blank">
+ * <a href="https://cloudinary.com/documentation/video_resizing_and_cropping#automatic_gravity_for_crops_g_auto" target="_blank">
  * Automatic gravity for videos</a>
  *
  * @api

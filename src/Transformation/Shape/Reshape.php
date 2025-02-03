@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Adjusts the shape of the delivered image.
  *
  * **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects
+ * <a href=https://cloudinary.com/documentation/effects_and_artistic_enhancements#distort
  * target="_blank">Shape changes and distortion effects</a>
  *
  * @api

@@ -11,7 +11,7 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Defines how to manipulate a fetched video layer.
+ * Defines how to modify a fetched video layer.
  *
  * **Learn more**: <a
  * href=https://cloudinary.com/documentation/video_layers#layer_transformations target="_blank">

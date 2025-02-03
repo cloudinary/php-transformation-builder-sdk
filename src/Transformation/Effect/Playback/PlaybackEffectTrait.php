@@ -36,10 +36,10 @@ trait PlaybackEffectTrait
      *
      * Use in conjunction with trimming qualifiers ('duration', 'start_offset', or 'end_offset') and the 'loop' effect
      * to deliver a classic (short, repeating) boomerang clip.
-     * For details and examples, see 'Create a boomerang video clip' in the Video Transformations guide.
+     * For details and examples, see 'Boomerang' in the Video Transformations guide.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#create_a_boomerang_video_clip
+     * @see https://cloudinary.com/documentation/video_effects_and_enhancements#boomerang
      */
     public static function boomerang(): EffectAction
     {

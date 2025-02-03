@@ -16,9 +16,9 @@ use Cloudinary\ClassUtils;
  * Defines the 3D lookup table to apply to images and videos.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/image_transformations#applying_3d_luts_to_images" target="_blank">
+ * href="https://cloudinary.com/documentation/effects_and_artistic_enhancements#3d_luts" target="_blank">
  * Applying 3D LUTs to images</a> | <a
- * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#applying_3d_luts_to_video"
+ * href="https://cloudinary.com/documentation/video_effects_and_enhancements#3d_luts"
  * target="_blank"> Applying 3D LUTs to videos</a>
  *
  * @api

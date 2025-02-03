@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Automatically sets the background color when resizing with padding.
  *
  * **Learn more**:
- * <a href="https://cloudinary.com/documentation/image_transformations#content_aware_padding" target="_blank">
+ * <a href="https://cloudinary.com/documentation/effects_and_artistic_enhancements#content_aware_padding" target="_blank">
  * Content-aware padding</a>
  *
  * @api

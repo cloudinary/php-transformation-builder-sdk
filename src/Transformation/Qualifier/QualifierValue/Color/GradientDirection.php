@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation\Argument;
  * The available directions for a background gradient fade effect.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/image_transformations#content_aware_padding" target="_blank">
+ * href="https://cloudinary.com/documentation/effects_and_artistic_enhancements#content_aware_padding" target="_blank">
  * Content aware padding</a>
  *
  * @api

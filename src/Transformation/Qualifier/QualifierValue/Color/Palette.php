@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines the custom colors to use when resizing using content-aware padding.
  *
  * **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#content_aware_padding
+ * <a href=https://cloudinary.com/documentation/effects_and_artistic_enhancements#content_aware_padding
  * target="_blank">Content-aware padding with custom color palette</a>
  *
  * @api

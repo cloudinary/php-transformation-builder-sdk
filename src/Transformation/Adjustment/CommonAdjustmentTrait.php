@@ -66,7 +66,7 @@ trait CommonAdjustmentTrait
     /**
      * Applies the 3D LUT file to the asset.
      *
-     * @see https://cloudinary.com/documentation/image_transformations#applying_3d_luts_to_images
+     * @see https://cloudinary.com/documentation/effects_and_artistic_enhancements#3d_luts
      *
      * @param string|null $lutId The 3D LUT file id
      *

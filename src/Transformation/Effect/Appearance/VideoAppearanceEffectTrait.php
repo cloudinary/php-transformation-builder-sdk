@@ -40,7 +40,7 @@ trait VideoAppearanceEffectTrait
      * @param int|null $duration The time in ms for the fade to occur. (Server default: 1000)
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#fade_in_and_out
+     * @see https://cloudinary.com/documentation/video_effects_and_enhancements#fade_in_out
      */
     public static function fadeIn(?int $duration = null): DurationEffectAction
     {
@@ -55,7 +55,7 @@ trait VideoAppearanceEffectTrait
      * @param int|null $duration The time in ms for the fade to occur.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#fade_in_and_out
+     * @see https://cloudinary.com/documentation/video_effects_and_enhancements#fade_in_out
      */
     public static function fadeOut(?int $duration = null): DurationEffectAction
     {

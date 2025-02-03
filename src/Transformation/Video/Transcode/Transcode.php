@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines how to transcode a video to another format
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats"
+ * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_videos_to_other_formats"
  * target="_blank">Transcoding video to other formats</a>
  *
  * @api

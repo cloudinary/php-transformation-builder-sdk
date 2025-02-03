@@ -16,7 +16,7 @@ use Cloudinary\Transformation\Qualifier\BaseQualifier;
  * The predefined streaming profiles.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#predefined_streaming_profiles"
+ * href="https://cloudinary.com/documentation/adaptive_bitrate_streaming#predefined_streaming_profiles"
  * target="_blank">Predefined streaming profiles</a>
  *
  * @api

@@ -27,7 +27,7 @@ trait VideoEditBuilderTrait
      * @param mixed|null $duration
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#trimming_videos
+     * @see https://cloudinary.com/documentation/video_trimming_and_concatenating#trimming_videos
      */
     public static function trim(mixed $startOffset = null, mixed $endOffset = null, mixed $duration = null): Timeline
     {
@@ -40,7 +40,7 @@ trait VideoEditBuilderTrait
      * @param string|VideoSource $videoSource The source to concatenate.
      *
      *
-     * @see https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos
+     * @see https://cloudinary.com/documentation/video_trimming_and_concatenating#concatenating_media
      */
     public static function concatenate(string|VideoSource $videoSource): Concatenate
     {

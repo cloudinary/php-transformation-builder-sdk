@@ -15,10 +15,10 @@ use Cloudinary\ClassUtils;
 /**
  * Defines the format of the delivered asset.
  *
- * **Learn more**: <a href=https://cloudinary.com/documentation/image_transformations#image_format_support
+ * **Learn more**: <a href=https://cloudinary.com/documentation/image_optimization#how_to_optimize_image_format
  * target="_blank">
  * Image formats</a> |
- * <a href=https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats
+ * <a href=https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_videos_to_other_formats
  * target="_blank">Video formats</a>
  *
  * @api

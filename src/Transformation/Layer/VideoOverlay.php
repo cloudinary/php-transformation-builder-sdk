@@ -17,7 +17,7 @@ use Cloudinary\ClassUtils;
  * Defines how the video layer is applied.
  *
  * **Learn more**: <a
- * href="https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_video_overlays" target="_blank">
+ * href="https://cloudinary.com/documentation/video_layers#video_overlays" target="_blank">
  * Video overlays</a>
  *
  * @api
