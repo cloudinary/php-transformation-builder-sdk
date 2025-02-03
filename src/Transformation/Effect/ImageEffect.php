@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines effects that you can apply to transform your images.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/effects_and_artistic_enhancements#artistic_filter_effects target="_blank">
+ * href=https://cloudinary.com/documentation/effects_and_artistic_enhancements target="_blank">
  * Image effects</a>
  *
  * @api

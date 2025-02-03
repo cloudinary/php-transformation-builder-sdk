@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Defines the position of a layer - overlay or underlay.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/layers target="_blank">
+ * href=https://cloudinary.com/documentation/layers#layer_transformation_syntax target="_blank">
  * Applying overlays to images</a> |
  * <a href=https://cloudinary.com/documentation/video_layers#image_overlays target="_blank">
  * Applying overlays to videos</a>

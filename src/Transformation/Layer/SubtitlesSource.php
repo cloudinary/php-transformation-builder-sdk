@@ -14,7 +14,7 @@ use Cloudinary\ClassUtils;
 use Cloudinary\Transformation\Argument\Text\TextStyleTrait;
 
 /**
- * Defines how to manipulate a subtitle layer.
+ * Defines how to modify a subtitle layer.
  *
  * **Learn more**: <a
  * href="https://cloudinary.com/documentation/video_layers#subtitles" target="_blank">

@@ -13,7 +13,7 @@ namespace Cloudinary\Transformation;
 use Cloudinary\ClassUtils;
 
 /**
- * Defines how to manipulate an audio layer.
+ * Defines how to modify an audio layer.
  *
  * **Learn more**: <a
  * href="https://cloudinary.com/documentation/video_layers#audio_overlays" target="_blank">

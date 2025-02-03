@@ -45,7 +45,7 @@ trait VideoFlagTrait
      * Delivering in this format requires a private CDN configuration.
      *
      *
-     * @see https://cloudinary.com/documentation/adaptive_bitrate_streaming#manual_streaming_profile_selection
+     * @see https://cloudinary.com/documentation/adaptive_bitrate_streaming
      */
     public static function hlsv3(): FlagQualifier
     {

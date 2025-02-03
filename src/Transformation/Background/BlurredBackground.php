@@ -14,7 +14,7 @@ namespace Cloudinary\Transformation;
  * Applies a blur to the background of a video when resizing with padding.
  *
  * **Learn more**:
- * <a href="https://cloudinary.com/documentation/vvideo_resizing_and_cropping#example_3_pad_with_blurred_video_background"
+ * <a href="https://cloudinary.com/documentation/video_resizing_and_cropping#example_3_pad_with_blurred_video_background"
  * target="_blank">Apply blurred video background</a>
  *
  * @api

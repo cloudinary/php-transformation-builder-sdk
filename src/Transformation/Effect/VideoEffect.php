@@ -11,7 +11,7 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Defines how to manipulate the appearance of a video.
+ * Defines how to transform the appearance of a video.
  *
  * **Learn more**: <a
  * href="https://cloudinary.com/documentation/video_effects_and_enhancements" target="_blank">

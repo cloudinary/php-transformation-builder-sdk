@@ -11,10 +11,10 @@
 namespace Cloudinary\Transformation;
 
 /**
- * Defines how to manipulate an image layer.
+ * Defines how to modify an image layer.
  *
  * **Learn more**: <a
- * href=https://cloudinary.com/documentation/layers target="_blank">
+ * href=https://cloudinary.com/documentation/layers#layer_transformation_syntax target="_blank">
  * Image overlays</a>
  *
  * @api
