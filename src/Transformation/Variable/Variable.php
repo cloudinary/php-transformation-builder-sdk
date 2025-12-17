@@ -169,7 +169,7 @@ class Variable extends GenericQualifier
      */
     public static function isVariable(string $candidate): bool
     {
-        return (boolean)preg_match('/^\$[a-zA-Z]\w*$/', $candidate);
+        return (bool)preg_match('/^\$[a-zA-Z]\w*$/', $candidate);
     }
 
     /**
