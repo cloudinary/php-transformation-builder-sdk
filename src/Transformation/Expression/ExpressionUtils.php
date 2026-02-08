@@ -124,6 +124,6 @@ class ExpressionUtils
      */
     protected static function isLiteral(string $expression): bool
     {
-        return (boolean)preg_match('/^!.+!$/', $expression);
+        return (bool)preg_match('/^!.+!$/', $expression);
     }
 }
