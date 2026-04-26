@@ -146,13 +146,13 @@ class ArrayUtils
      */
     public static function safeImplode(array|string $glue, array|null $pieces): string
     {
-        if (! is_null($pieces)) {
-            array_walk(
-                $pieces,
-                static function (&$value) {
+        if ($pieces !== null) {
+            foreach ($pieces as &$value) {
+                if (is_float($value)) {
                     $value = TransformationUtils::floatToString($value);
                 }
-            );
+            }
+            unset($value);
         }
 
         return implode($glue, $pieces);
@@ -190,6 +190,14 @@ class ArrayUtils
      */
     protected static function safeFilterFunc(mixed $value): bool|int
     {
+        if ($value === null) {
+            return 0;
+        }
+
+        if (is_string($value)) {
+            return $value !== '' ? 1 : 0;
+        }
+
         if (is_array($value)) {
             foreach ($value as $val) {
                 if (self::safeFilterFunc($val)) {
@@ -200,11 +208,7 @@ class ArrayUtils
             return false;
         }
 
-        if (is_null($value)) {
-            return 0;
-        }
-
-        return strlen($value);
+        return strlen((string) $value);
     }
 
     /**
@@ -439,7 +443,7 @@ class ArrayUtils
             return false;
         }
 
-        return $array !== array_values($array);
+        return ! array_is_list($array);
     }
 
     /**

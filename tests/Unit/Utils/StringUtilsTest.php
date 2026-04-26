@@ -99,6 +99,25 @@ final class StringUtilsTest extends TestCase
         );
     }
 
+    public function testCaseConversionsAreStableAcrossRepeatedCalls()
+    {
+        for ($i = 0; $i < 3; $i++) {
+            self::assertSame('test_string', StringUtils::camelCaseToSnakeCase('testString'));
+            self::assertSame('test@string', StringUtils::camelCaseToSnakeCase('testString', '@'));
+            self::assertSame('testString', StringUtils::snakeCaseToCamelCase('test_string'));
+            self::assertSame('testString', StringUtils::snakeCaseToCamelCase('test@string', '@'));
+        }
+    }
+
+    public function testCaseConversionsKeepSeparatorIsolation()
+    {
+        self::assertSame('test_string', StringUtils::camelCaseToSnakeCase('testString'));
+        self::assertSame('test@string', StringUtils::camelCaseToSnakeCase('testString', '@'));
+
+        self::assertSame('testString', StringUtils::snakeCaseToCamelCase('test_string'));
+        self::assertSame('testString', StringUtils::snakeCaseToCamelCase('test@string', '@'));
+    }
+
     public function testToAcronym()
     {
         self::assertEquals(

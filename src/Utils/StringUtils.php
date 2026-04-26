@@ -20,6 +20,16 @@ class StringUtils
     public const MAX_STRING_LENGTH = 255;
 
     /**
+     * @var array<string, string>
+     */
+    private static array $camelToSnakeCache = [];
+
+    /**
+     * @var array<string, string>
+     */
+    private static array $snakeToCamelCache = [];
+
+    /**
      * Converts camelCase to snake_case.
      *
      * @param string $input     The input string.
@@ -28,13 +38,18 @@ class StringUtils
      */
     public static function camelCaseToSnakeCase(string $input, string $separator = '_'): string
     {
-        $val = preg_replace('/(?<!^)[A-Z]/', $separator . '$0', $input);
-
-        if (is_null($val)) {
-            return $input;
+        $cacheKey = $separator === '_' ? $input : $input . "\0" . $separator;
+        if (isset(self::$camelToSnakeCache[$cacheKey])) {
+            return self::$camelToSnakeCache[$cacheKey];
         }
 
-        return strtolower($val);
+        $val = preg_replace('/(?<!^)[A-Z]/', $separator . '$0', $input);
+
+        if ($val === null) {
+            return self::$camelToSnakeCache[$cacheKey] = $input;
+        }
+
+        return self::$camelToSnakeCache[$cacheKey] = strtolower($val);
     }
 
     /**
@@ -46,7 +61,14 @@ class StringUtils
      */
     public static function snakeCaseToCamelCase(string $input, string $separator = '_'): string
     {
-        return lcfirst(str_replace($separator, '', ucwords($input, $separator)));
+        $cacheKey = $separator === '_' ? $input : $input . "\0" . $separator;
+        if (isset(self::$snakeToCamelCache[$cacheKey])) {
+            return self::$snakeToCamelCache[$cacheKey];
+        }
+
+        return self::$snakeToCamelCache[$cacheKey] = lcfirst(
+            str_replace($separator, '', ucwords($input, $separator))
+        );
     }
 
     /**
