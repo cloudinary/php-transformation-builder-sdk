@@ -56,5 +56,41 @@ final class ClassUtilsTest extends TestCase
         );
     }
 
+    public function testGetConstantsReturnsAllConstants()
+    {
+        $constants = ClassUtils::getConstants(TestClassA::class);
+
+        sort($constants);
+
+        self::assertSame(['bar', 'baz', 'foo'], $constants);
+    }
+
+    public function testGetConstantsAppliesExclusions()
+    {
+        $constants = ClassUtils::getConstants(TestClassA::class, ['foo']);
+
+        sort($constants);
+
+        self::assertSame(['bar', 'baz'], $constants);
+    }
+
+    public function testGetConstantsAcceptsInstanceAndClassNameInterchangeably()
+    {
+        self::assertSame(
+            ClassUtils::getConstants(TestClassA::class),
+            ClassUtils::getConstants(new TestClassA())
+        );
+    }
+
+    public function testGetConstantsCacheDoesNotLeakExclusions()
+    {
+        ClassUtils::getConstants(TestClassA::class, ['foo']);
+
+        $all = ClassUtils::getConstants(TestClassA::class);
+        sort($all);
+
+        self::assertSame(['bar', 'baz', 'foo'], $all);
+    }
+
     // TODO: add tests for all ClassUtils functions
 }

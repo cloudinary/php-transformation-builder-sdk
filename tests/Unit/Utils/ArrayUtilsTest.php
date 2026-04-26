@@ -73,4 +73,25 @@ final class ArrayUtilsTest extends TestCase
             ArrayUtils::implodeFiltered(',', ['s', 1, 1.0, 1.1, '1.0', null])
         );
     }
+
+    public function testSafeImplodeWithoutFloats()
+    {
+        self::assertSame('a,b,c', ArrayUtils::safeImplode(',', ['a', 'b', 'c']));
+        self::assertSame('1,2,3', ArrayUtils::safeImplode(',', [1, 2, 3]));
+        self::assertSame('', ArrayUtils::safeImplode(',', []));
+    }
+
+    public function testIsAssoc()
+    {
+        self::assertFalse(ArrayUtils::isAssoc([]));
+        self::assertFalse(ArrayUtils::isAssoc(['a', 'b', 'c']));
+        self::assertFalse(ArrayUtils::isAssoc([0 => 'a', 1 => 'b', 2 => 'c']));
+
+        self::assertTrue(ArrayUtils::isAssoc(['a' => 1]));
+        self::assertTrue(ArrayUtils::isAssoc([1 => 'a', 2 => 'b']));
+        self::assertTrue(ArrayUtils::isAssoc([0 => 'a', 2 => 'c']));
+
+        self::assertFalse(ArrayUtils::isAssoc('not_an_array'));
+        self::assertFalse(ArrayUtils::isAssoc(null));
+    }
 }

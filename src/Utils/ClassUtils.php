@@ -21,6 +21,11 @@ use ReflectionException;
 class ClassUtils
 {
     /**
+     * @var array<class-string, array>
+     */
+    private static array $constantsCache = [];
+
+    /**
      * Gets class name from the instance object.
      *
      * @param object $instance The instance object
@@ -58,16 +63,24 @@ class ClassUtils
      */
     public static function getConstants(object|string $instance, array $exclusions = []): array
     {
-        $constants = [];
+        $className = is_object($instance) ? $instance::class : $instance;
 
-        try {
-            $reflectionClass = new ReflectionClass($instance);
-            $constants       = array_values($reflectionClass->getConstants());
-        } catch (ReflectionException) {
-            //TODO: log it?
+        if (! isset(self::$constantsCache[$className])) {
+            $constants = [];
+            try {
+                $reflectionClass            = new ReflectionClass($className);
+                $constants                  = array_values($reflectionClass->getConstants());
+            } catch (ReflectionException) {
+                //TODO: log it?
+            }
+            self::$constantsCache[$className] = $constants;
         }
 
-        return array_diff($constants, $exclusions);
+        if ($exclusions === []) {
+            return self::$constantsCache[$className];
+        }
+
+        return array_diff(self::$constantsCache[$className], $exclusions);
     }
 
     /**

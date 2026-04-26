@@ -15,6 +15,10 @@ namespace Cloudinary\Test\Unit\TestHelpers;
  */
 class TestClassA
 {
+    public const FOO = 'foo';
+    public const BAR = 'bar';
+    public const BAZ = 'baz';
+
     protected $args;
 
     /**
