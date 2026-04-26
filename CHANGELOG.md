@@ -1,3 +1,9 @@
+2.1.4 / 2026-04-26
+==================
+
+  * Performance improvements
+  * Avoid closure allocation in `safeFilter` / `implodeFiltered`
+
 2.1.3 / 2026-02-08
 ==================
 
