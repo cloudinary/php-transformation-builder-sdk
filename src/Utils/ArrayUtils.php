@@ -133,8 +133,6 @@ class ArrayUtils
         callable|null $filterCallback = null,
         int $flag = 0
     ): string {
-        $filterCallback ??= fn($value) => ArrayUtils::safeFilterFunc($value);
-
         return self::safeImplode($glue, self::safeFilter($pieces, $filterCallback, $flag));
     }
 
@@ -188,7 +186,7 @@ class ArrayUtils
      * @see strlen
      * @see empty
      */
-    protected static function safeFilterFunc(mixed $value): bool|int
+    public static function safeFilterFunc(mixed $value): bool|int
     {
         if ($value === null) {
             return 0;
@@ -224,9 +222,11 @@ class ArrayUtils
         callable|null $callback = null,
         int $flag = 0
     ): ?array {
-        $callback ??= fn($value) => ArrayUtils::safeFilterFunc($value);
+        if ($input === null) {
+            return null;
+        }
 
-        return is_null($input) ? $input : array_filter($input, $callback, $flag);
+        return array_filter($input, $callback ?? [self::class, 'safeFilterFunc'], $flag);
     }
 
     /**
