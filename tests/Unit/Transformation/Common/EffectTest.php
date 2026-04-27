@@ -741,4 +741,20 @@ final class EffectTest extends TransformationTestCase
             (string)Effect::theme(Color::rgb('ff9900'))
         );
     }
+
+    public function testEffectQualifierToStringIsIdempotent()
+    {
+        // Regression test for mutation bug in QualifierMultiValue::__toString().
+        // EffectName arguments were appended to $this->argumentOrder on every call,
+        // causing incorrect sort order and growing memory on repeated serializations.
+        $effect = Effect::sepia($this->effectLevel);
+
+        $first  = (string)$effect;
+        $second = (string)$effect;
+        $third  = (string)$effect;
+
+        self::assertSame($first, $second, 'Effect serialized twice must produce identical output');
+        self::assertSame($first, $third, 'Effect serialized three times must produce identical output');
+        self::assertSame("e_sepia:$this->effectLevel", $first);
+    }
 }

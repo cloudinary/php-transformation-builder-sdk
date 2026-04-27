@@ -28,9 +28,17 @@ class JsonUtils
      */
     public static function isJsonString(mixed $string): bool
     {
-        return is_string($string)
-               && is_array(json_decode($string, true)) //TODO: improve performance
-               && json_last_error() === JSON_ERROR_NONE;
+        if (! is_string($string) || ! isset($string[0]) || ($string[0] !== '{' && $string[0] !== '[')) {
+            return false;
+        }
+
+        if (PHP_VERSION_ID >= 80300) {
+            return json_validate($string);
+        }
+
+        json_decode($string, true);
+
+        return json_last_error() === JSON_ERROR_NONE;
     }
 
     /**
