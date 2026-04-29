@@ -41,6 +41,11 @@ abstract class BaseQualifier extends BaseComponent
     protected static string $key = "";
 
     /**
+     * @var array<class-string, string> $keyCache Per-class cache for getKey() results.
+     */
+    private static array $keyCache = [];
+
+    /**
      * @var mixed $value The value.
      */
     protected mixed $value;
@@ -148,13 +153,18 @@ abstract class BaseQualifier extends BaseComponent
      */
     public static function getKey(): string
     {
+        $class = static::class;
+        if (isset(self::$keyCache[$class])) {
+            return self::$keyCache[$class];
+        }
+
         $key = static::$key;
 
         if (empty($key)) {
             $key = StringUtils::toAcronym(static::getName(), self::CLASS_NAME_SUFFIX_EXCLUSIONS);
         }
 
-        return $key;
+        return self::$keyCache[$class] = $key;
     }
 
     /**

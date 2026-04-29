@@ -252,18 +252,19 @@ class QualifierMultiValue extends BaseComponent
      */
     public function __toString()
     {
+        $argumentOrder = $this->argumentOrder;
         foreach ($this->arguments as $argumentKey => $argumentValue) {
             if ($argumentValue instanceof EffectName) {
-                $this->argumentOrder[] = $argumentKey;
+                $argumentOrder[] = $argumentKey;
             }
         }
 
         $values      = ArrayUtils::implodeFiltered(
             static::VALUE_DELIMITER,
-            ArrayUtils::sortByArray($this->arguments, $this->argumentOrder)
+            ArrayUtils::sortByArray($this->arguments, $argumentOrder)
         );
         $namedValues = ArrayUtils::implodeAssoc(
-            ArrayUtils::sortByArray($this->namedArguments, $this->argumentOrder),
+            ArrayUtils::sortByArray($this->namedArguments, $argumentOrder),
             static::VALUE_DELIMITER,
             static::KEY_VALUE_DELIMITER
         );

@@ -29,4 +29,34 @@ final class JsonUtilsTest extends TestCase
         $this->expectException(Exception::class);
         JsonUtils::decode('{NOT_A_JSON}');
     }
+
+    /**
+     * @dataProvider isJsonStringProvider
+     */
+    public function testIsJsonString(mixed $input, bool $expected): void
+    {
+        self::assertSame($expected, JsonUtils::isJsonString($input));
+    }
+
+    public static function isJsonStringProvider(): array
+    {
+        return [
+            'valid JSON object'               => ['{"foo":"bar"}', true],
+            'valid JSON array'                => ['[1,2,3]', true],
+            'empty JSON object'               => ['{}', true],
+            'empty JSON array'                => ['[]', true],
+            'nested JSON object'              => ['{"a":{"b":1}}', true],
+            'JSON scalar string'              => ['"hello"', false],
+            'JSON scalar integer'             => ['42', false],
+            'JSON boolean true'               => ['true', false],
+            'JSON null'                       => ['null', false],
+            'invalid JSON'                    => ['{NOT_JSON}', false],
+            'empty string'                    => ['', false],
+            'non-string integer'              => [42, false],
+            'non-string array'                => [['foo' => 'bar'], false],
+            'non-string null'                 => [null, false],
+            'non-string boolean'              => [false, false],
+            'object with leading whitespace'  => [' {"foo":"bar"}', false],
+        ];
+    }
 }

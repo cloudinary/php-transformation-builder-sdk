@@ -24,6 +24,11 @@ abstract class BaseComponent implements ComponentInterface
     protected static string $name;
 
     /**
+     * @var array<class-string, string> $nameCache Per-class cache for getName() results.
+     */
+    private static array $nameCache = [];
+
+    /**
      * BaseComponent constructor.
      *
      */
@@ -61,13 +66,18 @@ abstract class BaseComponent implements ComponentInterface
      */
     public static function getName(): string
     {
+        $class = static::class;
+        if (isset(self::$nameCache[$class])) {
+            return self::$nameCache[$class];
+        }
+
         $name = static::$name ?? "";
 
         if (empty($name)) {
-            $name = StringUtils::camelCaseToSnakeCase(ClassUtils::getBaseName(static::class));
+            $name = StringUtils::camelCaseToSnakeCase(ClassUtils::getBaseName($class));
         }
 
-        return $name;
+        return self::$nameCache[$class] = $name;
     }
 
     /**
